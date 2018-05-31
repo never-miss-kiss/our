@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HamiSchool:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="WebMaverDemo1.war">
+      <element id="artifact" artifact-name="HamiSchool:war exploded" />
+    </root>
+  </artifact>
+</component>
