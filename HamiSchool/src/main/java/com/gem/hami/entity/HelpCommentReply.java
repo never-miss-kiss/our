@@ -2,7 +2,7 @@ package com.gem.hami.entity;
 
 import java.util.Date;
 
-public class HelpCommentReplyId {
+public class HelpCommentReply {
     private Integer helpCommentReplyId;
 
     private String content;

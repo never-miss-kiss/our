@@ -9,6 +9,8 @@ public class User {
 
     private Integer age;
 
+    private  String qq;
+
     private String phone;
 
     private String email;
@@ -23,6 +25,24 @@ public class User {
 
     private String photo;
 
+    private String state;
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public Integer getUserId() {
         return userId;
     }
@@ -30,6 +50,7 @@ public class User {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+
 
     public String getPassword() {
         return password;

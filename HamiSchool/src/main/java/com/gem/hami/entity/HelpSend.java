@@ -25,6 +25,26 @@ public class HelpSend {
 
     private Integer userId;
 
+    private  Date endTime;
+
+    private String isFinished;
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getIsFinished() {
+        return isFinished;
+    }
+
+    public void setIsFinished(String isFinished) {
+        this.isFinished = isFinished;
+    }
+
     public Integer getHelpSendId() {
         return helpSendId;
     }
