@@ -5,7 +5,7 @@ public class School {
 
     private String name;
 
-    private Byte schoolSateId;
+    private SchoolState schoolState;
 
     private String remark;
 
@@ -25,12 +25,12 @@ public class School {
         this.name = name == null ? null : name.trim();
     }
 
-    public Byte getSchoolSateId() {
-        return schoolSateId;
+    public SchoolState getSchoolState() {
+        return schoolState;
     }
 
-    public void setSchoolSateId(Byte schoolSateId) {
-        this.schoolSateId = schoolSateId;
+    public void setSchoolState(SchoolState schoolState) {
+        this.schoolState = schoolState;
     }
 
     public String getRemark() {

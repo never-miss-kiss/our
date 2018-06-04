@@ -2,10 +2,9 @@ package com.gem.hami.entity;
 
 import java.util.Date;
 
-public class HelpSend {
-    private Integer helpSendId;
+public class HelpSend extends HelpInfo{
 
-    private String name;
+    private Integer helpSendId;
 
     private String sendAddress;
 
@@ -17,17 +16,7 @@ public class HelpSend {
 
     private Float distance;
 
-    private Float recommendedPrice;
-
-    private Float personPrice;
-
-    private Date createTime;
-
-    private Integer userId;
-
-    private  Date endTime;
-
-    private String isFinished;
+    protected byte helpType = 4;
 
     public Date getEndTime() {
         return endTime;

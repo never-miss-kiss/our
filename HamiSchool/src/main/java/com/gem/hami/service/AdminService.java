@@ -39,9 +39,6 @@ public interface AdminService {
     public List<Admin> findAdminsByCondition(String name);
 
 
-
-
-
 //            /admin/removeUser.action
 //            删除用户信息
     public boolean removeUser(int userId);
@@ -52,12 +49,12 @@ public interface AdminService {
     public boolean addReport(Report report);
 
 
-
 //  /admin/removeReport.action
 //    处理举报信息；
     public boolean removeReport(int reportId);
 
-//  /admin/findReports.adction
+
+//  /admin/findReport.action
 //   显示所有举报信息；
     public List<Report> findReports();
 

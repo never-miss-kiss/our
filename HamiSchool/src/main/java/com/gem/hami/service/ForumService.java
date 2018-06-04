@@ -1,8 +1,6 @@
 package com.gem.hami.service;
 
-import com.gem.hami.entity.ForumCommentReply;
-import com.gem.hami.entity.ForumPost;
-import com.gem.hami.entity.ForumPostComment;
+import com.gem.hami.entity.*;
 
 import java.util.List;
 
@@ -52,6 +50,18 @@ public interface ForumService {
 //            删帖
     public  boolean removeForumPost(int postId);
 
+    //     /home/findCollectionByCondition.action
+//    显示我的收藏（帖子)：
+//   userId 用户号
+    public List<ForumPostCollection> findForumPostCollectionsbyCondition(int userId);
 
+
+
+
+// /home/removeCollection.action
+//            取消收藏的东西
+// typeId 表示要删除的类型(2论坛 ) ，
+// collectionId  表示要删除的数据在它的表中的主键
+    public boolean removeForumPostCollection(int forumPostCollectionId);
 
 }

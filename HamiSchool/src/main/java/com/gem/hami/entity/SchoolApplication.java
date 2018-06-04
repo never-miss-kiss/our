@@ -5,7 +5,7 @@ import java.util.Date;
 public class SchoolApplication {
     private Integer schoolApplicationId;
 
-    private Integer schoolId;
+    private School school;
 
     private Integer userId;
 
@@ -17,7 +17,7 @@ public class SchoolApplication {
 
     private String qq;
 
-    private Integer applicationStateId;
+    private ApplicationState applicationState;
 
     private Date submitTime;
 
@@ -25,7 +25,15 @@ public class SchoolApplication {
 
     private String remark;
 
-    private Integer adminId;
+    private Admin admin;
+
+    public ApplicationState getApplicationState() {
+        return applicationState;
+    }
+
+    public void setApplicationState(ApplicationState applicationState) {
+        this.applicationState = applicationState;
+    }
 
     public Integer getSchoolApplicationId() {
         return schoolApplicationId;
@@ -35,12 +43,12 @@ public class SchoolApplication {
         this.schoolApplicationId = schoolApplicationId;
     }
 
-    public Integer getSchoolId() {
-        return schoolId;
+    public School getSchool() {
+        return school;
     }
 
-    public void setSchoolId(Integer schoolId) {
-        this.schoolId = schoolId;
+    public void setSchool(School school) {
+        this.school = school;
     }
 
     public Integer getUserId() {
@@ -83,13 +91,7 @@ public class SchoolApplication {
         this.qq = qq == null ? null : qq.trim();
     }
 
-    public Integer getApplicationStateId() {
-        return applicationStateId;
-    }
 
-    public void setApplicationStateId(Integer applicationStateId) {
-        this.applicationStateId = applicationStateId;
-    }
 
     public Date getSubmitTime() {
         return submitTime;
@@ -115,11 +117,11 @@ public class SchoolApplication {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public Integer getAdminId() {
-        return adminId;
+    public Admin getAdmin() {
+        return admin;
     }
 
-    public void setAdminId(Integer adminId) {
-        this.adminId = adminId;
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
     }
 }

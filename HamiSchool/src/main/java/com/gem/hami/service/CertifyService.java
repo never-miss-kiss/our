@@ -27,7 +27,6 @@ public interface CertifyService {
     public boolean removePersonApplication(int adminId,int personApplicationId);
 
 
-
 //     /certify/removeSchoolApplication.action
 //    学校认证（即学校认证的表单提交功能）
     public boolean removeSchoolApplication(int adminId,int schoolApplicationId);

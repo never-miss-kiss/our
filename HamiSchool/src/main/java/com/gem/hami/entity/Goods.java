@@ -25,9 +25,9 @@ public class Goods {
 
     private Integer clickCount;
 
-    private Integer goodsCategoryId;
+    private GoodsCategory goodsCategory;
 
-    private Integer userId;
+    private User user;
 
     public Integer getGoodsId() {
         return goodsId;
@@ -117,19 +117,21 @@ public class Goods {
         this.clickCount = clickCount;
     }
 
-    public Integer getGoodsCategoryId() {
-        return goodsCategoryId;
+    public GoodsCategory getGoodsCategory() {
+        return goodsCategory;
     }
 
-    public void setGoodsCategoryId(Integer goodsCategoryId) {
-        this.goodsCategoryId = goodsCategoryId;
+    public void setGoodsCategory(GoodsCategory goodsCategory) {
+        this.goodsCategory = goodsCategory;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
+
+
 }

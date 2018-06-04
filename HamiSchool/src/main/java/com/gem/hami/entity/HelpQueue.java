@@ -2,10 +2,9 @@ package com.gem.hami.entity;
 
 import java.util.Date;
 
-public class HelpQueue {
-    private Integer helpQueueId;
+public class HelpQueue extends HelpInfo{
 
-    private String name;
+    private Integer helpQueueId;
 
     private String remarkInfomation;
 
@@ -21,17 +20,7 @@ public class HelpQueue {
 
     private Float distance;
 
-    private Float recommendedPrice;
-
-    private Float personPrice;
-
-    private Date createTime;
-
-    private Integer userId;
-
-    private  Date endTime;
-
-    private String isFinished;
+    protected byte helpType = 3;
 
     public Date getEndTime() {
         return endTime;

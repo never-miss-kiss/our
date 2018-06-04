@@ -11,7 +11,7 @@ public class GoodsComment {
 
     private Date releaseTime;
 
-    private Integer goodsId;
+    private Goods goods;
 
     public Integer getGoodsCommentId() {
         return goodsCommentId;
@@ -45,11 +45,13 @@ public class GoodsComment {
         this.releaseTime = releaseTime;
     }
 
-    public Integer getGoodsId() {
-        return goodsId;
+    public Goods getGoods() {
+        return goods;
     }
 
-    public void setGoodsId(Integer goodsId) {
-        this.goodsId = goodsId;
+    public void setGoods(Goods goods) {
+        this.goods = goods;
     }
+
+
 }

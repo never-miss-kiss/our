@@ -7,13 +7,13 @@ public class Report {
 
     private Integer userId;
 
-    private Integer reasonCategoryId;
+    private ReasonCategory reasonCategory;
 
     private String reasonRemark;
 
     private Integer reportedUserId;
 
-    private Integer sourceCategoryId;
+    private SourceCategory sourceCategory;//------改了
 
     private Integer sourceItemId;
 
@@ -35,12 +35,12 @@ public class Report {
         this.userId = userId;
     }
 
-    public Integer getReasonCategoryId() {
-        return reasonCategoryId;
+    public ReasonCategory getReasonCategory() {
+        return reasonCategory;
     }
 
-    public void setReasonCategoryId(Integer reasonCategoryId) {
-        this.reasonCategoryId = reasonCategoryId;
+    public void setReasonCategory(ReasonCategory reasonCategory) {
+        this.reasonCategory = reasonCategory;
     }
 
     public String getReasonRemark() {
@@ -59,12 +59,12 @@ public class Report {
         this.reportedUserId = reportedUserId;
     }
 
-    public Integer getSourceCategoryId() {
-        return sourceCategoryId;
+    public SourceCategory getSourceCategory() {
+        return sourceCategory;
     }
 
-    public void setSourceCategoryId(Integer sourceCategoryId) {
-        this.sourceCategoryId = sourceCategoryId;
+    public void setSourceCategory(SourceCategory sourceCategory) {
+        this.sourceCategory = sourceCategory;
     }
 
     public Integer getSourceItemId() {
