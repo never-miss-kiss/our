@@ -18,6 +18,15 @@ public class HelpInfo {
 
     protected String isFinished;
 
+    protected int click_count;
+
     protected byte helpType;//表示跑腿表的种类 1帮我买 2.帮我送 3.帮我取 4.代排队
 
+    public int getClick_count() {
+        return click_count;
+    }
+
+    public void setClick_count(int click_count) {
+        this.click_count = click_count;
+    }
 }
