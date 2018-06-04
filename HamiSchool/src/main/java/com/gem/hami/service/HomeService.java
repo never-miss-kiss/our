@@ -8,11 +8,11 @@ import java.util.List;
 public interface HomeService {
 //   /home/findUser.action
 //   查询个人资料
-    public User findUser(int userId);
+    public User findUserByName(String uname);
 
 ///home/modifyUser.action
 //            修改个人资料,修改密码
-    public User modifyUser(User user);
+    public boolean modifyUser(User user);
 
 
 //====================================================================================================
@@ -23,7 +23,7 @@ public interface HomeService {
     public List<UserMessage> findUserMessagesByCondition(int userId);
 
 
-//    消息删除（已读）功能
+//    消息删除功能
     public boolean removeUserMessage(int userMessageId);
 
 //    /admin/removeUser.action
