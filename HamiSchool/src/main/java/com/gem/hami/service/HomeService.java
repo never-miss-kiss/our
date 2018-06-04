@@ -24,10 +24,9 @@ public interface HomeService {
 
 
 //    消息删除（已读）功能
+    //先标为已读，后删掉
     public boolean removeUserMessage(int userMessageId);
 
-//    /admin/removeUser.action
-//            删除用户信息
-    public boolean removeUser(int adminId,int userId);
+
 
 }

@@ -13,7 +13,7 @@ public interface ForumService {
 
 //userId 用户id(用户id)    根据用户号查帖子
 //schoolId  学校的id,学生属于哪个学校查哪个学校
-//type 排序类型(如按时间,按点击量)
+//sortId分类 type 排序类型(如按时间,按点击量)
 //显示帖子点击量
 
     public List<ForumPost> findForumPostsByCondition(int userId,int schoolId,int sortId);
@@ -27,6 +27,7 @@ public interface ForumService {
 //    帖子点赞量的增加
 //    修改是否置顶
 // forumPostId 帖子Id ， isTop是否置顶
+    //实现方法若isTop为true
     public boolean modifyForumPost(int forumPostId,boolean isTop);
 
 //   /forum/addForumPostComment.action
@@ -55,7 +56,15 @@ public interface ForumService {
 //   userId 用户号
     public List<ForumPostCollection> findForumPostCollectionsbyCondition(int userId);
 
-
+/**
+  * @Author：sunshilin
+  * @param: 一条收藏
+  * @result:
+  * @Description: 添加收藏
+  * @Date：Created in 20:16 2018/6/4
+  * @Modified By:
+ */
+    public boolean addForumPostCollection(ForumPostCollection forumPostCollection);
 
 
 // /home/removeCollection.action

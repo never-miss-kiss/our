@@ -10,7 +10,7 @@ public interface InitService {
     public boolean register(int id,String password);
 
 
-//  获得验证码
+//  获得验证码 图片验证码不需要写接口
     public String  getPhotoVerification(int userId);
     public String  getEmailVerification(int userId,String email);
     public String  getPhoneVerification(int userId,String phone);
