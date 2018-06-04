@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface GoodsService {
 
-//    /goods/findGoods.action
+//    /goods/findGoodsById.action
 //    查询单个商品（按id）
-    public Goods findGoods(int id);
+    public Goods findGoodsById(int id);
 
 //  /goods/findGoodsByCondition.action
 //    按条件查询商品列表（对应搜索框的模糊查询，
@@ -73,12 +73,11 @@ public interface GoodsService {
 //     /home/findCollectionByCondition.action
 //    显示我的收藏（包含收藏的物品）：
 //   userId 用户号
-    public List<GoodsCollection> findGoodsCollectionsbyCondition(int userId);
+    public List<GoodsCollection> findGoodsCollectionsByCondition(int userId);
 
 
 // /home/removeCollection.action
 //            取消收藏的东西
-// typeId 表示要删除的类型(1.二手 2.论坛 3.跑腿) ，
 // collectionId  表示要删除的数据在它的表中的主键
     public boolean removeGoodsCollection(int goodsCollectionId);
 
