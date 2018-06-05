@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.ForumCommentReplyMapper">
+   <!--插入评论回复-->
+    <!--public boolean insertForumCommentReply(ForumCommentReply forumCommentReply);-->
+    <insert id="insertForumCommentReply" parameterType="ForumCommentReply">
+        INSERT INTO forum_comment_reply(content,user_id,commented_user_id,create_time,forum_post_comment_id)VALUES
+        (#{content},#{userId},#{commentedUserId},#{createTime},#{forumPostCommentId})
+    </insert>
 
+
+    <!--public boolean deleteForumCommentReply(int replyId);-->
+        <delete id="deleteForumCommentReply" parameterType="int">
+            DELETE FROM forum_comment_reply WHERE forum_comment_reply_id=#{_parameter}
+        </delete>
 </mapper>
