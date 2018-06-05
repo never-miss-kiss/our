@@ -2,51 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.HelpSendMapper">
 
-    <!--public List<HelpSend> selectByUserId(int  userId);
-
-    where help_send_id=#{param1}
-    select hs.* from help_send hs,user u where hs.user_id=u.user_id and school_id=?
-    -->
 
     <select id="selectByUserId"  resultType="HelpSend">
-        select hs.* form help_send hs,user u
-        <where>
-            <if test="user_id != null">
-                and user_id = #{param1}
-            </if>
-            <if test="user_id != null">
-                AND  school_id = #{param2}
-            </if>
-
-        </where>
-        <where>
-            <if test="state != null">
-                state = #{state}
-            </if>
-            <if test="title != null">
-                AND title like #{title}
-            </if>
-            <if test="author != null and author.name != null">
-                AND author_name like #{author.name}
-            </if>
-        </where>
-
+        select * from help_send where id=#{param1}
     </select>
 
 
-    <!--public List<HelpSend> insertHelpSend(HelpSend helpSend);-->
-
-
-
-    <!--public List<HelpSend> deleteHelpSend(int helpId);-->
-
-
-
-
-    <!--<insert id="insertAuthor" useGeneratedKeys="true"-->
-            <!--keyProperty="id">-->
-        <!--insert into Author (username,password,email,bio)-->
-        <!--values (#{username},#{password},#{email},#{bio})-->
-    <!--</insert>-->
 
 </mapper>

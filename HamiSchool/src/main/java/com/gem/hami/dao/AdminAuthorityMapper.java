@@ -1,12 +1,14 @@
 package com.gem.hami.dao;
 
 
+import com.gem.hami.entity.AdminAuthority;
+
 public interface AdminAuthorityMapper {
-    public void updateAdminAuthority();
+    public void updateAdminAuthorityById(AdminAuthority adminAuthority);
 
-    public void deleteAdminAuthority();
+    public void deleteAdminAuthorityById(int id);
 
-    public void addAdminAuthority();
+    public void insertAdminAuthority(AdminAuthority adminAuthority);
 
     public void selectAdminAuthority();
 
