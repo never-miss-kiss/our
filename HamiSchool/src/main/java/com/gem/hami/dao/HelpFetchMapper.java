@@ -13,7 +13,7 @@ public interface HelpFetchMapper {
      * @Date：Created in 19:20 2018/6/4
      * @Modified By:
      */
-    public List<HelpFetch> selectByUsreId(int  userId);
+    public List<HelpFetch> selectByUsreId(int userId);
 
     public List<HelpFetch> insertHelpFetch(HelpBuy helpBuy);
 

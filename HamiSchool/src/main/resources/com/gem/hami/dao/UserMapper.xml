@@ -18,4 +18,40 @@
 
 
 
+    <!--public List<User> selectAllUser()-->
+    <select id="selectAllUser" resultMap="User">
+        select * from user;
+    </select>
+    
+    <!--public void selectUserById(String uid)-->
+    <select id="selectUserById" parameterType="String">
+        select * from user WHERE user_id=#{_parameter};
+    </select>
+
+    <!--public User selectUserBySchoolId(int sid)-->
+    <select id="selectUserBySchoolId" parameterType="int">
+        select * from user WHERE school_id=#{_parameter};
+    </select>
+
+    <!--public boolean updateUserById(int id);-->
+    <update id="updateUserById" parameterType="int">
+        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state}where user_id=#{userId};
+    </update>
+
+    <!--public User selectUserByName(String uname)-->
+    <select id="selectUserByName" parameterType="String">
+        select * from user WHERE nickname=#{_parameter};
+    </select>
+
+    <!--public boolean deleteUserByCondition(String uname)-->
+    <delete id="deleteUserByCondition" parameterType="String">
+        DELETE * FROM user WHERE nickname=#{_parameter}
+    </delete>
+
+    <!--public boolean deleteUserById(int userId);-->
+    <delete id="deleteUserById" parameterType="int">
+        DELETE * FROM  user WHERE user_id=#{_parameter}
+    </delete>
+
+
 </mapper>

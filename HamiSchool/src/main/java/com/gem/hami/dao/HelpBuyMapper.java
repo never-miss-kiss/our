@@ -14,7 +14,7 @@ public interface HelpBuyMapper {
       * @Date：Created in 19:27 2018/6/4
       * @Modified By:
      */
-    public List<HelpBuy> selectByUsreId(int  userId);
+    public List<HelpBuy> selectByUsreId(int userId);
 
     public List<HelpBuy> insertHelpBuy(HelpBuy helpBuy);
 

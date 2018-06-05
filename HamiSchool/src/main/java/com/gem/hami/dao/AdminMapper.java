@@ -47,7 +47,7 @@ public interface AdminMapper {
      * @param removedId
      * @return
      */
-    public boolean deleteAdmin(int adminId,int removedId);
+    public boolean deleteAdminById(int adminId, int removedId);
 
     /**
      * @Author：Wang
@@ -63,7 +63,7 @@ public interface AdminMapper {
      * @param admin
      * @return
      */
-    public boolean updateAdmin(int adminId,Admin admin);
+    public boolean updateAdmin(int adminId, Admin admin);
 
     /**
      * @Author：Wang
@@ -91,20 +91,6 @@ public interface AdminMapper {
 
     /**
      * @Author：Wang
-     * @Date：Created in 19:44 2018/6/4
-     * @Modified By:
-     */
-    /**
-     * public boolean removeUser(int userId);
-     * 根据id删除用户
-     * @param userId
-     * @return
-     */
-
-    public boolean deleteUser(int userId);
-
-    /**
-     * @Author：Wang
      * @Date：Created in 20:04 2018/6/4
      * @Modified By:
      */
@@ -115,50 +101,5 @@ public interface AdminMapper {
      */
     public boolean updateAdmin(Admin admin);
 
-    /**
-     * @Author：Wang
-     * @Date：Created in 20:12 2018/6/4
-     * @Modified By:
-     */
-    /**
-     * 查询所有举报
-     * @return
-     */
-    public List<Report> selectReport();
-
-    /**
-     * @Author：Wang
-     * @Date：Created in 20:17 2018/6/4
-     * @Modified By: tian
-     */
-    /**
-     * 根据id删除举报
-     * @param id
-     * @return
-     */
-    public boolean  deleteReportById(String id);
-
-    /**
-     * @Author：Wang
-     * @Date：Created in 20:20 2018/6/4
-     * @Modified By:
-     */
-    /**
-     * 根据名字查User
-     * @param uname
-     * @return
-     */
-    public User selectUserByName(String uname);
-    /**
-     * @Author：Wang
-     * @Date：Created in 20:15 2018/6/4
-     * @Modified By:
-     */
-    /**
-     * 根据名字删除用户
-     * @param uname
-     * @return
-     */
-    public boolean deleteUserByCondition(String uname);
 
 }

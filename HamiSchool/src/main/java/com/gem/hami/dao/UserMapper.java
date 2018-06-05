@@ -24,7 +24,7 @@ public interface UserMapper {
       * @Date：Created in 20:37 2018/6/4
       * @Modified By:
      */
-    public boolean insertUser(int id,String password);
+    public boolean insertUser(int id, String password);
 
 
 
@@ -76,7 +76,7 @@ public interface UserMapper {
       * @Date：Created in 20:57 2018/6/4
       * @Modified By:
      */
-    public boolean updateUser(int id,String password);
+    public boolean updateUser(int id, String password);
 
 //================================================================================================================
 
@@ -105,17 +105,6 @@ public interface UserMapper {
     /**
      * @Author：Wang
      * @Result:
-     * @Date：Created in 19:15 2018/6/4
-     * @Modified By:
-     */
-    /**
-     * @param uname
-     */
-    public void selectUserByName(String uname);
-
-    /**
-     * @Author：Wang
-     * @Result:
      * @Date：Created in 19:14 2018/6/4
      * @Modified By:
      */
@@ -136,5 +125,41 @@ public interface UserMapper {
      * @Date：Created in 19:19 2018/6/4
      * @Modified By:
      */
-    public boolean updateUser(User user);
+    public boolean updateUserById(int id);
+
+    /**
+     * @Author：Wang
+     * @Date：Created in 20:20 2018/6/4
+     * @Modified By:
+     */
+    /**
+     * 根据名字查User
+     * @param uname
+     * @return
+     */
+    public User selectUserByName(String uname);
+    /**
+     * @Author：Wang
+     * @Date：Created in 20:15 2018/6/4
+     * @Modified By:
+     */
+    /**
+     * 根据名字删除用户
+     * @param uname
+     * @return
+     */
+    public boolean deleteUserByCondition(String uname);
+    /**
+     * @Author：Wang
+     * @Date：Created in 19:44 2018/6/4
+     * @Modified By:
+     */
+    /**
+     * public boolean removeUser(int userId);
+     * 根据id删除用户
+     * @param userId
+     * @return
+     */
+    public boolean deleteUserById(int userId);
+
 }
