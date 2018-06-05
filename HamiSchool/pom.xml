@@ -49,7 +49,6 @@
       <artifactId>spring-test</artifactId>
       <version>5.0.1.RELEASE</version>
       <scope>test</scope>
-
       <!--springmvc-->
     </dependency>
     <dependency>
@@ -77,6 +76,12 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.21</version>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
     </dependency>
 
     <!--jackson 异步 2.9.0-->

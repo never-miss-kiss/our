@@ -7,13 +7,17 @@ public class ForumCommentReply {
 
     private String content;
 
-    private User user;
+    private Integer userId;
 
-    private User commentedUser;
+    private Integer commentedUserId;
 
     private Date createTime;
 
     private Integer forumPostCommentId;
+
+    private User user;
+
+    private User commentedUser;
 
     public Integer getForumCommentReplyId() {
         return forumCommentReplyId;
@@ -29,6 +33,22 @@ public class ForumCommentReply {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getCommentedUserId() {
+        return commentedUserId;
+    }
+
+    public void setCommentedUserId(Integer commentedUserId) {
+        this.commentedUserId = commentedUserId;
     }
 
     public User getUser() {

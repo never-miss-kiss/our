@@ -15,6 +15,8 @@ public class PersonApplication {
 
     private String photo;
 
+    private Integer applicationStateId;
+
     private  ApplicationState applicationState;
 
     private Date submitTime;
@@ -31,6 +33,14 @@ public class PersonApplication {
 
     public void setPersonApplicationId(Integer personApplicationId) {
         this.personApplicationId = personApplicationId;
+    }
+
+    public Integer getApplicationStateId() {
+        return applicationStateId;
+    }
+
+    public void setApplicationStateId(Integer applicationStateId) {
+        this.applicationStateId = applicationStateId;
     }
 
     public ApplicationState getApplicationState() {

@@ -7,17 +7,21 @@ public class Report {
 
     private Integer userId;
 
-    private ReasonCategory reasonCategory;
+    private Integer reasonCategoryId;
 
     private String reasonRemark;
 
     private Integer reportedUserId;
 
-    private SourceCategory sourceCategory;//------改了
+    private Integer sourceCategoryId;
 
     private Integer sourceItemId;
 
     private Date createTime;
+
+    private ReasonCategory reasonCategory;
+
+    private SourceCategory sourceCategory;//------改了
 
     public Integer getReportId() {
         return reportId;
@@ -33,6 +37,14 @@ public class Report {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getReasonCategoryId() {
+        return reasonCategoryId;
+    }
+
+    public void setReasonCategoryId(Integer reasonCategoryId) {
+        this.reasonCategoryId = reasonCategoryId;
     }
 
     public ReasonCategory getReasonCategory() {
@@ -57,6 +69,14 @@ public class Report {
 
     public void setReportedUserId(Integer reportedUserId) {
         this.reportedUserId = reportedUserId;
+    }
+
+    public Integer getSourceCategoryId() {
+        return sourceCategoryId;
+    }
+
+    public void setSourceCategoryId(Integer sourceCategoryId) {
+        this.sourceCategoryId = sourceCategoryId;
     }
 
     public SourceCategory getSourceCategory() {

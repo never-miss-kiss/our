@@ -19,7 +19,7 @@ public class Admin {
 
     private String nickname;
 
-    private AdminAuthority adminAuthorit;
+    private Integer adminAuthorityId;
 
     private Integer schoolId;
 
@@ -28,6 +28,9 @@ public class Admin {
     private Integer creatorId;
 
     private String remark;
+
+    private AdminAuthority adminAuthority;
+
 
     public Integer getAdminId() {
         return adminId;
@@ -93,12 +96,21 @@ public class Admin {
         this.nickname = nickname == null ? null : nickname.trim();
     }
 
-    public AdminAuthority getAdminAuthorit() {
-        return adminAuthorit;
+
+    public Integer getAdminAuthorityId() {
+        return adminAuthorityId;
     }
 
-    public void setAdminAuthorit(AdminAuthority adminAuthorit) {
-        this.adminAuthorit = adminAuthorit;
+    public void setAdminAuthorityId(Integer adminAuthorityId) {
+        this.adminAuthorityId = adminAuthorityId;
+    }
+
+    public AdminAuthority getAdminAuthority() {
+        return adminAuthority;
+    }
+
+    public void setAdminAuthority(AdminAuthority adminAuthority) {
+        this.adminAuthority = adminAuthority;
     }
 
     public Integer getSchoolId() {

@@ -7,13 +7,19 @@ public class GoodsCommentReply {
 
     private String content;
 
+    private Integer userId;
+
+    private Integer commentedUserId;
+
+    private Integer goodsCommentId;
+
+    private Date createTime;
+
     private User user;
 
     private User commentedUser;
 
     private GoodsComment goodsComment;
-
-    private Date createTime;
 
     public Integer getGoodsCommentReplyId() {
         return goodsCommentReplyId;
@@ -29,6 +35,30 @@ public class GoodsCommentReply {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getCommentedUserId() {
+        return commentedUserId;
+    }
+
+    public void setCommentedUserId(Integer commentedUserId) {
+        this.commentedUserId = commentedUserId;
+    }
+
+    public Integer getGoodsCommentId() {
+        return goodsCommentId;
+    }
+
+    public void setGoodsCommentId(Integer goodsCommentId) {
+        this.goodsCommentId = goodsCommentId;
     }
 
     public User getUser() {

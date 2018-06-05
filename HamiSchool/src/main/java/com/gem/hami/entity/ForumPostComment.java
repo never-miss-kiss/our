@@ -7,11 +7,15 @@ public class ForumPostComment {
 
     private String content;
 
-    private User user;
+    private Integer userId;
 
     private Date releaseTime;
 
+    private Integer forumPostId;
+
     private ForumPost forumPost;
+
+    private User user;
 
     public Integer getForumPostCommentId() {
         return forumPostCommentId;
@@ -27,6 +31,14 @@ public class ForumPostComment {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public User getUser() {
@@ -51,5 +63,13 @@ public class ForumPostComment {
 
     public void setReleaseTime(Date releaseTime) {
         this.releaseTime = releaseTime;
+    }
+
+    public Integer getForumPostId() {
+        return forumPostId;
+    }
+
+    public void setForumPostId(Integer forumPostId) {
+        this.forumPostId = forumPostId;
     }
 }

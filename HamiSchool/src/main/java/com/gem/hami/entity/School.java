@@ -5,9 +5,11 @@ public class School {
 
     private String name;
 
-    private SchoolState schoolState;
+    private Byte schoolStateId;
 
     private String remark;
+
+    private SchoolState schoolState;
 
     public Integer getSchoolId() {
         return schoolId;
@@ -23,6 +25,14 @@ public class School {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public Byte getSchoolStateId() {
+        return schoolStateId;
+    }
+
+    public void setSchoolStateId(Byte schoolStateId) {
+        this.schoolStateId = schoolStateId;
     }
 
     public SchoolState getSchoolState() {

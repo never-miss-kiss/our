@@ -17,7 +17,7 @@ public class SchoolApplication {
 
     private String qq;
 
-    private ApplicationState applicationState;
+    private Integer applicationStateId;
 
     private Date submitTime;
 
@@ -26,6 +26,8 @@ public class SchoolApplication {
     private String remark;
 
     private Admin admin;
+
+    private ApplicationState applicationState;
 
     public ApplicationState getApplicationState() {
         return applicationState;
@@ -91,7 +93,13 @@ public class SchoolApplication {
         this.qq = qq == null ? null : qq.trim();
     }
 
+    public Integer getApplicationStateId() {
+        return applicationStateId;
+    }
 
+    public void setApplicationStateId(Integer applicationStateId) {
+        this.applicationStateId = applicationStateId;
+    }
 
     public Date getSubmitTime() {
         return submitTime;

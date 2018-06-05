@@ -25,6 +25,10 @@ public class Goods {
 
     private Integer clickCount;
 
+    private Integer goodsCategoryId;
+
+    private Integer userId;
+
     private GoodsCategory goodsCategory;
 
     private User user;
@@ -115,6 +119,22 @@ public class Goods {
 
     public void setClickCount(Integer clickCount) {
         this.clickCount = clickCount;
+    }
+
+    public Integer getGoodsCategoryId() {
+        return goodsCategoryId;
+    }
+
+    public void setGoodsCategoryId(Integer goodsCategoryId) {
+        this.goodsCategoryId = goodsCategoryId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public GoodsCategory getGoodsCategory() {

@@ -11,7 +11,11 @@ public class GoodsComment {
 
     private Date releaseTime;
 
+    private Integer goodsId;
+
     private Goods goods;
+
+
 
     public Integer getGoodsCommentId() {
         return goodsCommentId;
@@ -43,6 +47,14 @@ public class GoodsComment {
 
     public void setReleaseTime(Date releaseTime) {
         this.releaseTime = releaseTime;
+    }
+
+    public Integer getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(Integer goodsId) {
+        this.goodsId = goodsId;
     }
 
     public Goods getGoods() {

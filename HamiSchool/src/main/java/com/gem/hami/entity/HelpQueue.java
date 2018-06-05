@@ -141,4 +141,28 @@ public class HelpQueue extends HelpInfo{
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+    @Override
+    public String toString() {
+        return "HelpQueue{" +
+                "helpQueueId=" + helpQueueId +
+                ", remarkInfomation='" + remarkInfomation + '\'' +
+                ", queueAddress='" + queueAddress + '\'' +
+                ", remarkQueueAddress='" + remarkQueueAddress + '\'' +
+                ", phone='" + phone + '\'' +
+                ", queueTime='" + queueTime + '\'' +
+                ", duration='" + duration + '\'' +
+                ", distance=" + distance +
+                ", helpType=" + helpType +
+                ", name='" + name + '\'' +
+                ", recommendedPrice=" + recommendedPrice +
+                ", personPrice=" + personPrice +
+                ", createTime=" + createTime +
+                ", userId=" + userId +
+                ", endTime=" + endTime +
+                ", isFinished='" + isFinished + '\'' +
+                ", clickCount=" + clickCount +
+                ", helpType=" + helpType +
+                '}';
+    }
 }

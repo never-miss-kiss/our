@@ -7,7 +7,7 @@ public class UserMessage {
 
     private Integer userId;
 
-    private MessageType messageType;
+    private Byte messageTypeId;
 
     private Integer messageId;
 
@@ -25,6 +25,8 @@ public class UserMessage {
 
     private String isRead;
 
+    private MessageType messageType;
+
     public Integer getUserMessageId() {
         return userMessageId;
     }
@@ -39,6 +41,14 @@ public class UserMessage {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Byte getMessageTypeId() {
+        return messageTypeId;
+    }
+
+    public void setMessageTypeId(Byte messageTypeId) {
+        this.messageTypeId = messageTypeId;
     }
 
     public MessageType getMessageType() {
