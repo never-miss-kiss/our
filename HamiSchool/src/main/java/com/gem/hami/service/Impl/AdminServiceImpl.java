@@ -35,9 +35,21 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean removeUser(int userId) {
+    public List<Admin> findAdmin() {
+        return null;
+    }
+
+    @Override
+    public boolean removeUserByName(String uname) {
         return false;
     }
+
+    @Override
+    public List<Report> findReport() {
+        return null;
+    }
+
+
 
     @Override
     public boolean addReport(Report report) {
@@ -45,12 +57,9 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean removeReport(int reportId) {
+    public boolean removeReportByTietle(String title) {
         return false;
     }
 
-    @Override
-    public List<Report> findReports() {
-        return null;
-    }
+
 }

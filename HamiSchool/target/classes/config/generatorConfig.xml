@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/hamischool"
+						userId="root"
+			            password="root">
+		</jdbcConnection>
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.gem.hami.entity"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.gem.hami.dao"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.gem.mapper"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 指定数据库表 -->
+		<table  tableName="admin" domainObjectName="Admin"></table>
+		<table  tableName="admin_authority" domainObjectName="AdminAuthority"></table>
+		<table  tableName="application_state" domainObjectName="ApplicationState"></table>
+		<table  tableName="forum_comment_reply" domainObjectName="ForumCommentReply"></table>
+		<table  tableName="forum_post" domainObjectName="ForumPost"></table>
+		<table  tableName="forum_post_collection" domainObjectName="ForumPostCollection"></table>
+		<table  tableName="forum_post_comment" domainObjectName="ForumPostComment"></table>
+		<table  tableName="forum_post_like" domainObjectName="ForumPostLike"></table>
+		<table  tableName="goods" domainObjectName="Goods"></table>
+		<table  tableName="goods_category" domainObjectName="GoodsCategory"></table>
+		<table  tableName="goods_collection" domainObjectName="GoodsCollection"></table>
+		<table  tableName="goods_comment" domainObjectName="GoodsComment"></table>
+		<table  tableName="goods_comment_reply" domainObjectName="GoodsCommentReply"></table>
+		<table  tableName="help_buy" domainObjectName="HelpBuy"></table>
+		<table  tableName="help_comment" domainObjectName="HelpComment"></table>
+		<table  tableName="help_comment_reply_id" domainObjectName="HelpCommentReplyId"></table>
+		<table  tableName="help_fetch" domainObjectName="HelpFetch"></table>
+		<table  tableName="help_queue" domainObjectName="HelpQueue"></table>
+		<table  tableName="help_send" domainObjectName="HelpSend"></table>
+		<table  tableName="message_type" domainObjectName="MessageType"></table>
+		<table  tableName="person_application" domainObjectName="PersonApplication"></table>
+		<table  tableName="reason_category" domainObjectName="ReasonCategory"></table>
+		<table  tableName="report" domainObjectName="Report"></table>
+		<table  tableName="school" domainObjectName="School"></table>
+		<table  tableName="school_application" domainObjectName="SchoolApplication"></table>
+		<table  tableName="school_state" domainObjectName="SchoolState"></table>
+		<table  tableName="source_category" domainObjectName="SourceCategory"></table>
+		<table  tableName="user" domainObjectName="User"></table>
+		<table  tableName="user_message" domainObjectName="UserMessage"></table>
+	</context>
+</generatorConfiguration>

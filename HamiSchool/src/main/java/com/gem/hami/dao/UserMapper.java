@@ -78,7 +78,7 @@ public interface UserMapper {
      */
     public boolean updateUser(int id,String password);
 
-
+//================================================================================================================
 
     /**
      * @Author：Wang
@@ -90,12 +90,12 @@ public interface UserMapper {
      * 查找所有的User
      * @return
      */
-    public List<User> selectUser();
+    public List<User> selectAllUser();
     /**
      * @Author：Wang
      * @Result:
      * @Date：Created in 19:17 2018/6/4
-     * @Modified By:
+     * @Modified By:tian
      */
     /**
      * 根据Id查找User
@@ -123,7 +123,7 @@ public interface UserMapper {
      *
      * @param sid
      */
-    public void selectUserBySchoolId(int sid);
+    public User selectUserBySchoolId(int sid);
 
     /**
      *

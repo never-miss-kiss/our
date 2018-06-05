@@ -69,7 +69,6 @@ public interface ForumService {
 
 // /home/removeCollection.action
 //            取消收藏的东西
-// typeId 表示要删除的类型(2论坛 ) ，
 // collectionId  表示要删除的数据在它的表中的主键
     public boolean removeForumPostCollection(int forumPostCollectionId);
 

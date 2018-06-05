@@ -32,13 +32,13 @@ public interface AdminMapper {
      * @param admin
      * @return
      */
-    public boolean addAdmin(Admin admin);
+    public boolean insertAdmin(Admin admin);
 
     /**
      * @Author：Wang
      * @Result:
      * @Date：Created in 19:34 2018/6/4
-     * @Modified By:
+     * @Modified By:tian
      */
     /**
      * public boolean removeAdmin(int adminId,int removedId)
@@ -100,6 +100,7 @@ public interface AdminMapper {
      * @param userId
      * @return
      */
+
     public boolean deleteUser(int userId);
 
     /**
@@ -128,14 +129,14 @@ public interface AdminMapper {
     /**
      * @Author：Wang
      * @Date：Created in 20:17 2018/6/4
-     * @Modified By:
+     * @Modified By: tian
      */
     /**
      * 根据id删除举报
      * @param id
      * @return
      */
-    public boolean  deleteReportByid(String id);
+    public boolean  deleteReportById(String id);
 
     /**
      * @Author：Wang

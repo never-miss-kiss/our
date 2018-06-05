@@ -81,14 +81,6 @@ public class PersonApplication {
         this.photo = photo == null ? null : photo.trim();
     }
 
-    public Integer getApplicationStateId() {
-        return applicationStateId;
-    }
-
-    public void setApplicationStateId(Integer applicationStateId) {
-        this.applicationStateId = applicationStateId;
-    }
-
     public Date getSubmitTime() {
         return submitTime;
     }

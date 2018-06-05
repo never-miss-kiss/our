@@ -61,7 +61,6 @@ public interface GoodsService {
     public boolean removeGoods(int goodsId);
 
 
-
     //  /goods/removeGoodsComment.action
 //            删除商品评论
     public boolean removeGoodsComment(int goodsCommentId);

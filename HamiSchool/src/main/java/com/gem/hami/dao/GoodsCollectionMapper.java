@@ -22,7 +22,7 @@ public interface GoodsCollectionMapper {
       * @Description 查询用户收藏商品信息
       * @Modified By:
      */
-    public List<GoodsCollection> findGoodsCollectionsyCondition(int userId);
+    public List<GoodsCollection> findGoodsCollectionsByCondition(int userId);
     /**
       * @Author：Zhu
        * @param
