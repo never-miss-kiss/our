@@ -3,7 +3,7 @@
 <mapper namespace="com.gem.hami.dao.UserMapper">
 
     <!--public List<User> selectAllUser()-->
-    <select id="selectAllUser" resultMap="User">
+    <select id="selectAllUser" resultType="User">
         select * from user;
     </select>
     
@@ -17,9 +17,9 @@
         select * from user WHERE school_id=#{_parameter};
     </select>
 
-    <!--public boolean updateUserById(int id);-->
-    <update id="updateUserById" parameterType="int">
-        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state}where user_id=#{userId};
+    <!--public User updateUser(User user);-->
+    <update id="updateUser" parameterType="User">
+        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state} where user_id=#{userId};
     </update>
 
     <!--public User selectUserByName(String uname)-->

@@ -51,6 +51,18 @@ public interface AdminMapper {
 
     /**
      * @Author：Wang
+     * @Date：Created in 8:55 2018/6/6
+     * @Modified By:
+     */
+    /**
+     * g根据管理员Id删除管理员
+     * @param adminId
+     * @return
+     */
+    public boolean deleteAdminById(int adminId);
+
+    /**
+     * @Author：Wang
      * @Result:
      * @Date：Created in 19:37 2018/6/4
      * @Modified By:
@@ -76,7 +88,7 @@ public interface AdminMapper {
      * 根据管理员id查找管理员
      * @param adminId
      */
-    public void selectAdminById(int adminId);
+    public Admin selectAdminById(int adminId);
     /**
      * @Author：Wang
      * @Date：Created in 19:42 2018/6/4
@@ -87,7 +99,7 @@ public interface AdminMapper {
      * 根据条件查询管理员
      * @param aname
      */
-    public void selectAdminByCondition(String aname);
+    public List<Admin> selectAdminByCondition(String aname);
 
     /**
      * @Author：Wang

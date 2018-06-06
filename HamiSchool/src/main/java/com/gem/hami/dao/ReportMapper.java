@@ -27,7 +27,7 @@ public interface ReportMapper {
      * 查询所有举报
      * @return
      */
-    public List<Report> selectReport();
+    public List<Report> selectAllReport();
 
    /**
     * @Author：Wang
@@ -40,6 +40,19 @@ public interface ReportMapper {
      * @return
      */
     public boolean  deleteReportById(int id);
+
+    /**
+     * @Author：Wang
+     * @Date：Created in 9:18 2018/6/6
+     * @Modified By:
+     */
+    /**
+     * public List<Report> findReportByTitle(String title)
+     * 根据标题查找举报
+     * @param title
+     * @return
+     */
+    public List<Report> selectReportByTitle(String title);
 
 
 }

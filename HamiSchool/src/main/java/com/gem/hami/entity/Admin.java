@@ -3,7 +3,10 @@ package com.gem.hami.entity;
 import java.util.Date;
 
 public class Admin {
+
     private Integer adminId;
+
+    private Integer userId;
 
     private String realname;
 
@@ -34,6 +37,14 @@ public class Admin {
 
     public Integer getAdminId() {
         return adminId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public void setAdminId(Integer adminId) {

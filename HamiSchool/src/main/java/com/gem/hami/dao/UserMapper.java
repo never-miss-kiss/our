@@ -125,7 +125,7 @@ public interface UserMapper {
      * @Date：Created in 19:19 2018/6/4
      * @Modified By:
      */
-    public boolean updateUserById(int id);
+    public User updateUser(User user);
 
     /**
      * @Author：Wang

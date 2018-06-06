@@ -2,16 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.HelpSendMapper">
 
-    <!--public List<HelpSend> selectByUserId(int  userId);-->
+
     <select id="selectByUserId"  resultType="HelpSend">
-        select * from help_send where help_send_id=#{param1}
+        select * from help_send where id=#{param1}
     </select>
 
-    <!--public List<HelpSend> insertHelpSend(HelpSend helpSend);-->
-
-
-
-    <!--public List<HelpSend> deleteHelpSend(int helpId);-->
 
 
 </mapper>

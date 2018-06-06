@@ -2,4 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.AdminMapper">
 
+    <!--public List<Admin> selectAllAdmin()-->
+    <select id="selectAllAdmin" resultType="Admin">
+        select * from admin;
+    </select>
+
+    <!--public boolean insertAdmin(Admin admin);-->
+    <insert id="insertAdmin" parameterType="Admin">
+        insert into admin (user_id,name,password,sex,age,phone,email,nickname,admin_authority_id,school_id,create_time,creator_id,remark)
+                values (#{userId},#{realname},#{password},#{sex},#{age},#{phone},#{email},#{nickname},#{adminAuthorityId},#{schoolId},#{createTime},#{creatorId},#{remark});
+    </insert>
+
+    <!--public boolean deleteAdminById(int adminId);-->
+    <delete id="deleteAdminById" parameterType="int">
+        delete FROM admin WHERE admin_id=#{_parameter}
+    </delete>
+
+    <!--public boolean updateAdmin(Admin admin) 明天继续-->
+    <update id="updateAdmin" parameterType="Admin">
+        update admin set name=#{realname},password=#{password},sex=#{sex},age=#{age},phone=#{phone},email=#{email},nickname=#{nickname},admin_authority_id=#{adminAuthorityId}  where admin_id=${adminId};
+    </update>
+
+    <!--public Admin selectAdminById(int adminId);-->
+    <select id="selectAdminById" parameterType="int" resultType="Admin">
+        select * from admin WHERE admin_id=#{_parameter}
+    </select>
+
+    <!--public void selectAdminByCondition(String aname);-->
+    <select id="selectAdminByCondition" parameterType="string" resultType="Admin">
+        select * from admin WHERE name LIKE "%" #{realname} "%"
+    </select>
 </mapper>

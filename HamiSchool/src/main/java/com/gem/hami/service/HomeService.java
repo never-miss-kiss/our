@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 
 public interface HomeService {
+
 //   /home/findUser.action
 //   查询个人资料
     public User findUser(int userId);

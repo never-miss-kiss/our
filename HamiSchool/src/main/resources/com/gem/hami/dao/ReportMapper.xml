@@ -9,7 +9,7 @@
     </insert>
 
     <!--public List<Report> selectReport();-->
-    <select id="selectReport" resultMap="Report">
+    <select id="selectAllReport" resultType="Report">
         select * from report;
     </select>
 

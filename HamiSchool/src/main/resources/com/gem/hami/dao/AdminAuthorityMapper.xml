@@ -13,7 +13,7 @@
     </delete>
 
     <!--public void selectAdminAuthority()-->
-    <select id="selectAdminAuthority" resultMap="AdminAuthority">
+    <select id="selectAdminAuthority" resultType="AdminAuthority">
         SELECT * FROM admin_authority
     </select>
 
