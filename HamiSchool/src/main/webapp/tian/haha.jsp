@@ -7,7 +7,7 @@
 
 <html>
 <head>
-    <title>新闻详情</title>
+    <title>哈哈哈你弟</title>
 </head>
 <body>
 

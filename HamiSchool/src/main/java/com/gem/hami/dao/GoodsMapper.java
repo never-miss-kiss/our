@@ -25,8 +25,8 @@ public interface GoodsMapper {
   * sortId 表示排序的类型 1为按学校 2为按热度(点击量) 3为按价格 4为按时间
   * @Modified By:
  */
-public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int userId,
-                                        int schoolId,int sortId);
+public List<Goods> findGoodsByCondition(String name, int goodsCategoryId, int userId,
+                                        int schoolId, int sortId);
 
     /**
       * @Author：Zhu
@@ -45,7 +45,7 @@ public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int user
   * @Description 商品推荐
   * @Modified By:
  */
-    public List<Goods> recommend(int userId,int goodsId);
+    public List<Goods> recommend(int userId, int goodsId);
 /**
   * @Author：Zhu
    * @param
@@ -54,7 +54,7 @@ public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int user
   * @Description 修改商品信息（点赞、增加点击量）
   * @Modified By:
  */
-    public boolean modifyGoodsByCondition(Goods goods,int goodsId);
+    public boolean modifyGoodsByCondition(Goods goods, int goodsId);
     /**
       * @Author：Zhu
        * @param

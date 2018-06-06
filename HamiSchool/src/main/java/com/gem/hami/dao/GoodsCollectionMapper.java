@@ -13,7 +13,7 @@ public interface GoodsCollectionMapper {
       * @Description 商品收藏
       * @Modified By:
      */
-    public boolean addGoodsCollection(int userId,int goodsId);
+    public boolean addGoodsCollection(int userId, int goodsId);
     /**
       * @Author：Zhu
        * @param
