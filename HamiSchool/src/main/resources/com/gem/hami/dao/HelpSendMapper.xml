@@ -3,50 +3,34 @@
 <mapper namespace="com.gem.hami.dao.HelpSendMapper">
 
     <!--public List<HelpSend> selectByUserId(int  userId);
-
-    where help_send_id=#{param1}
-    select hs.* from help_send hs,user u where hs.user_id=u.user_id and school_id=?
+            select hs.* FROM help_send hs,user u where hs.user_id = u.user_id
+        and hs.user_id = ${param1}
+        AND u.school_id = ${param2}
+        终于写好了这个插入语句，建议过来人好好看看 中间细节很多坑
     -->
 
     <select id="selectByUserId"  resultType="HelpSend">
-        select hs.* form help_send hs,user u
-        <where>
-            <if test="user_id != null">
-                and user_id = #{param1}
-            </if>
-            <if test="user_id != null">
-                AND  school_id = #{param2}
-            </if>
-
-        </where>
-        <where>
-            <if test="state != null">
-                state = #{state}
-            </if>
-            <if test="title != null">
-                AND title like #{title}
-            </if>
-            <if test="author != null and author.name != null">
-                AND author_name like #{author.name}
-            </if>
-        </where>
-
+        select hs.* FROM help_send hs,user u where hs.user_id = u.user_id
+        <if test=" param1 != 0">
+            and hs.user_id = ${param1}
+        </if>
+        <if test=" param2 != 0">
+            AND u.school_id = ${param2}
+        </if>
     </select>
 
-
-    <!--public List<HelpSend> insertHelpSend(HelpSend helpSend);-->
-
-
-
-    <!--public List<HelpSend> deleteHelpSend(int helpId);-->
+    <!--insert into help_send(name,send_address,receipt_address,send_information,send_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)-->
+    <!--VALUES (#{name},#{send_address},#{receipt_address},#{send_information},#{send_time},-->
+    <!--#{distance},#{recommended_price},#{person_price},#{create_time},#{user_id},#{end_time},#{is_finished},#{click_count})-->
 
 
+    <insert id="insertHelpSend" parameterType="HelpSend" useGeneratedKeys="true">
+        insert into help_send(name,send_address,receipt_address,send_information,send_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)
+        VALUES (#{name},#{sendAddress},#{receiptAddress},#{sendInformation},#{sendTime},
+        #{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount})
+    </insert>
 
-
-    <!--<insert id="insertAuthor" useGeneratedKeys="true"-->
-            <!--keyProperty="id">-->
-        <!--insert into Author (username,password,email,bio)-->
-        <!--values (#{username},#{password},#{email},#{bio})-->
-    <!--</insert>-->
-
+    <delete id="deleteHelpSend" parameterType="java.lang.Integer" >
+        delete FROM help_send WHERE help_send_id = #{param1}
+    </delete>
 </mapper>

@@ -29,4 +29,73 @@ public class HelpInfo {
     public void setClickCount(int clickCount) {
         this.clickCount = clickCount;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Float getRecommendedPrice() {
+        return recommendedPrice;
+    }
+
+    public void setRecommendedPrice(Float recommendedPrice) {
+        this.recommendedPrice = recommendedPrice;
+    }
+
+    public Float getPersonPrice() {
+        return personPrice;
+    }
+
+    public void setPersonPrice(Float personPrice) {
+        this.personPrice = personPrice;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getIsFinished() {
+        return isFinished;
+    }
+
+    public void setIsFinished(String isFinished) {
+        this.isFinished = isFinished;
+    }
+
+    public byte getHelpType() {
+        return helpType;
+    }
+
+    public void setHelpType(byte helpType) {
+        this.helpType = helpType;
+    }
+
+    public HelpInfo() {
+    }
+
+
 }
