@@ -18,22 +18,6 @@ public class HelpSend extends HelpInfo{
 
     protected byte helpType = 4;
 
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getIsFinished() {
-        return isFinished;
-    }
-
-    public void setIsFinished(String isFinished) {
-        this.isFinished = isFinished;
-    }
-
     public Integer getHelpSendId() {
         return helpSendId;
     }
@@ -42,20 +26,12 @@ public class HelpSend extends HelpInfo{
         this.helpSendId = helpSendId;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
     public String getSendAddress() {
         return sendAddress;
     }
 
     public void setSendAddress(String sendAddress) {
-        this.sendAddress = sendAddress == null ? null : sendAddress.trim();
+        this.sendAddress = sendAddress;
     }
 
     public String getReceiptAddress() {
@@ -63,7 +39,7 @@ public class HelpSend extends HelpInfo{
     }
 
     public void setReceiptAddress(String receiptAddress) {
-        this.receiptAddress = receiptAddress == null ? null : receiptAddress.trim();
+        this.receiptAddress = receiptAddress;
     }
 
     public String getSendInformation() {
@@ -71,7 +47,7 @@ public class HelpSend extends HelpInfo{
     }
 
     public void setSendInformation(String sendInformation) {
-        this.sendInformation = sendInformation == null ? null : sendInformation.trim();
+        this.sendInformation = sendInformation;
     }
 
     public Date getSendTime() {
@@ -90,35 +66,16 @@ public class HelpSend extends HelpInfo{
         this.distance = distance;
     }
 
-    public Float getRecommendedPrice() {
-        return recommendedPrice;
+    public byte getHelpType() {
+        return helpType;
     }
 
-    public void setRecommendedPrice(Float recommendedPrice) {
-        this.recommendedPrice = recommendedPrice;
+    public void setHelpType(byte helpType) {
+        this.helpType = helpType;
     }
 
-    public Float getPersonPrice() {
-        return personPrice;
+    public HelpSend() {
     }
 
-    public void setPersonPrice(Float personPrice) {
-        this.personPrice = personPrice;
-    }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
 }

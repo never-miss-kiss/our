@@ -15,9 +15,11 @@ public interface HelpSendMapper {
       * @Date：Created in 19:28 2018/6/4
       * @Modified By:
      */
-    public List<HelpSend> selectByUserId(int userId);
 
-    public List<HelpSend> insertHelpSend(HelpSend helpSend);
+    public List<HelpSend> selectByUserId(int  userId,int schoolId);
 
-    public List<HelpSend> deleteHelpSend(int helpId);
+    public boolean insertHelpSend(HelpSend helpSend);
+//
+    public boolean deleteHelpSend(int helpId);
+
 }

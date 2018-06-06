@@ -2,11 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.HelpSendMapper">
 
+    <!--public List<HelpSend> selectByUserId(int  userId);
+            select hs.* FROM help_send hs,user u where hs.user_id = u.user_id
+        and hs.user_id = ${param1}
+        AND u.school_id = ${param2}
+        终于写好了这个插入语句，建议过来人好好看看 中间细节很多坑
+    -->
 
     <select id="selectByUserId"  resultType="HelpSend">
-        select * from help_send where id=#{param1}
+        select hs.* FROM help_send hs,user u where hs.user_id = u.user_id
+        <if test=" param1 != 0">
+            and hs.user_id = ${param1}
+        </if>
+        <if test=" param2 != 0">
+            AND u.school_id = ${param2}
+        </if>
     </select>
 
+    <!--insert into help_send(name,send_address,receipt_address,send_information,send_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)-->
+    <!--VALUES (#{name},#{send_address},#{receipt_address},#{send_information},#{send_time},-->
+    <!--#{distance},#{recommended_price},#{person_price},#{create_time},#{user_id},#{end_time},#{is_finished},#{click_count})-->
 
 
+    <insert id="insertHelpSend" parameterType="HelpSend" useGeneratedKeys="true">
+        insert into help_send(name,send_address,receipt_address,send_information,send_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)
+        VALUES (#{name},#{sendAddress},#{receiptAddress},#{sendInformation},#{sendTime},
+        #{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount})
+    </insert>
+
+    <delete id="deleteHelpSend" parameterType="java.lang.Integer" >
+        delete FROM help_send WHERE help_send_id = #{param1}
+    </delete>
 </mapper>

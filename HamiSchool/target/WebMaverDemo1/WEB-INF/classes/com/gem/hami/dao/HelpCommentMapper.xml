@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.HelpCommentMapper">
+    <insert id="insertHelpComment" parameterType="HelpComment" useGeneratedKeys="true">
+        insert into help_comment(content,user_id,release_type,help_id)
+        VALUES (#{content},#{userId},#{releaseType},#{helpId})
+    </insert>
+
+    <delete id="deleteHelpComment" parameterType="java.lang.Integer">
+        delete FROM help_comment WHERE help_comment_id = #{param1}
+    </delete>
 
 </mapper>

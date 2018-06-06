@@ -21,16 +21,16 @@ public interface HelpService {
 //    代排队
 
     //    /help/addHelpBuy.action
-    public List<HelpBuy> addHelpBuy(HelpBuy helpBuy);
+    public boolean addHelpBuy(HelpBuy helpBuy);
 
     //    /help/addHelpFetch.action
-    public List<HelpFetch> addHelpFetch(HelpFetch helpFetch);
+    public boolean addHelpFetch(HelpFetch helpFetch);
 
     //    /help/addHelpSend.action
-    public List<HelpSend> addHelpSend(HelpSend helpSend);
+    public boolean addHelpSend(HelpSend helpSend);
 
     //    /help/addHelpQueue.action
-    public List<HelpQueue> addHelpQueue(HelpQueue helpQueue);
+    public boolean addHelpQueue(HelpQueue helpQueue);
 
 
 //    /help/addHelpComment.action

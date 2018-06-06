@@ -14,7 +14,7 @@ public interface HelpCommentMapper {
      */
     public boolean insertHelpComment(HelpComment helpComment);
 
-    public boolean deleteHelpComment(int helpCommentReplyId);
+    public boolean deleteHelpComment(int helpCommentId);
 
 
 }
