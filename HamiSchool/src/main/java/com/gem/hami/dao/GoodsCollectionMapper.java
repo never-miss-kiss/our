@@ -13,7 +13,7 @@ public interface GoodsCollectionMapper {
       * @Description 商品收藏
       * @Modified By:
      */
-    public boolean addGoodsCollection(int userId,int goodsId);
+    public boolean insertGoodsCollection(GoodsCollection goodsCollection);
     /**
       * @Author：Zhu
        * @param
@@ -22,7 +22,7 @@ public interface GoodsCollectionMapper {
       * @Description 查询用户收藏商品信息
       * @Modified By:
      */
-    public List<GoodsCollection> findGoodsCollectionsByCondition(int userId);
+    public List<GoodsCollection> selectGoodsCollectionsByCondition(int userId);
     /**
       * @Author：Zhu
        * @param
@@ -31,6 +31,6 @@ public interface GoodsCollectionMapper {
       * @Description 删除用户收藏商品信息
       * @Modified By:
      */
-    public boolean removeGoodsCollection(int goodsCollectionId);
+    public boolean deleteGoodsCollection(int goodsCollectionId);
 
 }
