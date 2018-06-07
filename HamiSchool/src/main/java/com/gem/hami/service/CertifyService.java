@@ -14,7 +14,7 @@ public interface CertifyService {
 
 //    /certify/findCertifiedSchool.action
 //            显示已开通学校
-    public List<String> findCertifiedSchool();
+    public List<School> findCertifiedSchool();
 
 
 //    个人认证（即个人认证的表单提交功能）
@@ -24,12 +24,12 @@ public interface CertifyService {
 
 //    /certify/removeApplication.action
 //            处理个人申请表单;
-    public boolean removePersonApplication(int adminId,int personApplicationId);
+    public boolean removePersonApplication(int adminId, int personApplicationId);
 
 
 //     /certify/removeSchoolApplication.action
 //    学校认证（即学校认证的表单提交功能）
-    public boolean removeSchoolApplication(int adminId,int schoolApplicationId);
+    public boolean removeSchoolApplication(int adminId, int schoolApplicationId);
 
 
 }

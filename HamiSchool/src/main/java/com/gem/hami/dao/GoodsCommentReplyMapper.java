@@ -11,7 +11,7 @@ public interface GoodsCommentReplyMapper {
       * @Description 添加回复评论
       * @Modified By:
      */
-    public boolean addGoodsCommentReply(GoodsCommentReply goodsCommentReply);
+    public boolean insertGoodsCommentReply(GoodsCommentReply goodsCommentReply);
 /**
   * @Author：Zhu
    * @param
@@ -20,6 +20,6 @@ public interface GoodsCommentReplyMapper {
   * @Description 删除商品回复评论
   * @Modified By:
  */
-    public boolean removeGoodsCommentReply(int replyId);
+    public boolean deleteGoodsCommentReply(int replyId);
 
 }

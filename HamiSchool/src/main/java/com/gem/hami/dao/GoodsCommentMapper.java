@@ -11,7 +11,7 @@ public interface GoodsCommentMapper {
      * @Description 添加商品评论
      * @Modified By:
      */
-    public boolean addGoodsComment(GoodsComment goodsComment);
+    public boolean insertGoodsComment(GoodsComment goodsComment);
     /**
       * @Author：Zhu
        * @param
@@ -20,7 +20,7 @@ public interface GoodsCommentMapper {
       * @Description 删除商品评论
       * @Modified By:
      */
-    public boolean removeGoodsComment(int goodsCommentId);
+    public boolean deleteGoodsComment(int goodsCommentId);
 
 
 }
