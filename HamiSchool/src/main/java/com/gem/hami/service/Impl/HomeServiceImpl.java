@@ -4,6 +4,7 @@ import com.gem.hami.dao.UserMapper;
 import com.gem.hami.entity.User;
 import com.gem.hami.entity.UserMessage;
 import com.gem.hami.service.HomeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class HomeServiceImpl implements HomeService {
      * @Date：Created in 10:08 2018/6/6
      * @Modified By:
      */
+    @Autowired
     private UserMapper userMapper;
 
     /**
@@ -23,10 +25,9 @@ public class HomeServiceImpl implements HomeService {
      * @Modified By:
      */
     @Override
-    public User findUser(String userId) {
+    public User findUserById(Integer userId) {
         return userMapper.selectUserById(userId);
     }
-
 
     /**
      * @Author：Wang
@@ -34,7 +35,7 @@ public class HomeServiceImpl implements HomeService {
      * @Modified By:
      */
     @Override
-    public User modifyUser(User user) {
+    public boolean modifyUser(User user) {
         return userMapper.updateUser(user);
     }
 //===================================================================================================

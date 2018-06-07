@@ -98,10 +98,11 @@ public interface UserMapper {
      * @Modified By:tian
      */
     /**
+     *  public User findUserById(Integer userId)
      * 根据Id查找User
-     * @param uid
+     * @param
      */
-    public User selectUserById(String uid);
+    public User selectUserById(Integer userid);
     /**
      * @Author：Wang
      * @Result:
@@ -125,7 +126,7 @@ public interface UserMapper {
      * @Date：Created in 19:19 2018/6/4
      * @Modified By:
      */
-    public User updateUser(User user);
+    public boolean updateUser(User user);
 
     /**
      * @Author：Wang

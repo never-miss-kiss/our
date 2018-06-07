@@ -32,4 +32,10 @@
     <select id="selectAdminByCondition" parameterType="string" resultType="Admin">
         select * from admin WHERE name LIKE "%" #{realname} "%"
     </select>
+
+
+
+
 </mapper>
+
+

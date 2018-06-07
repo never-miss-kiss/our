@@ -2,6 +2,7 @@ package com.gem.hami.service;
 
 import com.gem.hami.entity.Admin;
 import com.gem.hami.entity.Report;
+import com.gem.hami.entity.User;
 
 import java.util.List;
 
@@ -79,8 +80,9 @@ public interface AdminService {
 
 
 //            /admin/removeUser.action
-//            删除用户信息
-    public boolean removeUserByName(String uname);
+//            查找用户信息
+    public User findUserByName(String uname);
+
 
     /**
      * @Author：Wang
@@ -133,10 +135,10 @@ public interface AdminService {
      */
     /**
      * 根据标题模糊查询举报信息
-     * @param title
+     * @param rid
      * @return
      */
-    public List<Report> findReportByTitle(String title);
+    public List<Report> findReportByReson(int rid);
 
 
 }
