@@ -1,6 +1,5 @@
 package com.gem.hami.control;
 
-import com.gem.hami.service.AdminService;
 import com.gem.hami.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +22,12 @@ public class HomeControl {
        request.getRequestDispatcher("/wang/index.jsp").forward(request,response);
     }
 
+    @RequestMapping(value = "/findmessage.action")
+    public void findmessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("mlist",homeService.findUserMessagesByCondition(1));
+        request.getRequestDispatcher("/index.jsp").forward(request,response);
 
 
 
+    }
 }

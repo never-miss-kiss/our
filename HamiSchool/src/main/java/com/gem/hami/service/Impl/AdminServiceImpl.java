@@ -71,7 +71,6 @@ public class AdminServiceImpl implements AdminService {
         return adminMapper.selectAllAdmin();
     }
 
-
     @Override
     public boolean removeUserByName(String uname) {
         return userMapper.deleteUserByCondition(uname);
@@ -86,6 +85,8 @@ public class AdminServiceImpl implements AdminService {
     public List<Report> findReport() {
         return reportMapper.selectAllReport();
     }
+
+
 
     @Override
     public boolean addReport(Report report) {

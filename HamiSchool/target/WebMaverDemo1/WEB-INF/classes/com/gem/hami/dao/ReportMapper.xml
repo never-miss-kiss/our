@@ -2,21 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.ReportMapper">
 
-    <!--public boolean insertReport(Report report)-->
-    <insert id="insertReport" parameterType="Report">
-        insert into report (user_id,reason_category_id,reason_remark,reported_user_id,source_category_id,source_item_id,create_time)
-                    values (#{userId},#{reasonCategoryId},#{reasonRemark},#{reportedUserId},#{sourceCategoryId},#{sourceItemId},#{createTime});
-    </insert>
-
-    <!--public List<Report> selectReport();-->
-    <select id="selectAllReport" resultType="Report">
-        select * from report;
-    </select>
-
-    <!--public boolean  deleteReportById(int id);-->
-    <delete id="deleteReportById" parameterType="int">
-        DELETE * FROM report WHERE report_id=#{_parameter}
-    </delete>
-
-
 </mapper>

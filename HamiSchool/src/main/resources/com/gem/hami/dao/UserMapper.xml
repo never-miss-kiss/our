@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.UserMapper">
-    <!--public User selectUserByName(int id);-->
-    <select id="selectUserByNameAndPwd" resultType="User" parameterType="int">
-        select * from user WHERE telphone=#{_parameter}and email=#{_parameter};
+    <!--public User selectUserByNum(String id);-->
+    <select id="selectUserByNum" resultType="User" parameterType="string">
+        select * from user WHERE telphone=#{_parameter} OR email=#{_parameter};
     </select>
 
 
@@ -22,9 +22,9 @@
     <select id="selectAllUser" resultType="User">
         select * from user;
     </select>
-
+    
     <!--public void selectUserById(String uid)-->
-    <select id="selectUserById" parameterType="String">
+    <select id="selectUserById" parameterType="string">
         select * from user WHERE user_id=#{_parameter};
     </select>
 
@@ -39,12 +39,12 @@
     </update>
 
     <!--public User selectUserByName(String uname)-->
-    <select id="selectUserByName" parameterType="String">
+    <select id="selectUserByName" parameterType="string">
         select * from user WHERE nickname=#{_parameter};
     </select>
 
     <!--public boolean deleteUserByCondition(String uname)-->
-    <delete id="deleteUserByCondition" parameterType="String">
+    <delete id="deleteUserByCondition" parameterType="string">
         DELETE * FROM user WHERE nickname=#{_parameter}
     </delete>
 

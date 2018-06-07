@@ -21,30 +21,6 @@ public interface AdminService {
 //    adminId 高级管理员id,removedId 被删除的管理员id
     public boolean removeAdmin(int adminId,int removedId);
 
-    /**
-     * @Author：Wang
-     * @Date：Created in 8:54 2018/6/6
-     * @Modified By:
-     */
-    /**
-     * 根据管理员Id删除管理员
-     * @param adminId
-     * @return
-     */
-    public boolean removeAdminById(int adminId);
-
-    /**
-     * @Author：Wang
-     * @Date：Created in 8:50 2018/6/6
-     * @Modified By:
-     */
-    /**
-     * 修改管理员信息
-     * @param admin
-     * @return
-     */
-    public boolean modifyAdmin(Admin admin);
-
 
 
 //  /admin/modifyAdmin.action
