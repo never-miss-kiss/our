@@ -15,10 +15,12 @@ public interface HelpQueueMapper {
       * @Date：Created in 19:24 2018/6/4
       * @Modified By:
      */
-    public List<HelpQueue> selectByUsreId(int userId);
+    public List<HelpQueue> selectByUserId(int  userId,int schoolId);
 
-    public List<HelpQueue> insertHelpQueue(HelpQueue helpQueue);
+    public boolean insertHelpQueue(HelpQueue helpQueue);
 
-    public List<HelpQueue> deleteHelpQueue(int helpId);
+    public boolean deleteHelpQueue(int helpId);
+
+    public boolean updateHelpClickCount(int helpId);
 
 }

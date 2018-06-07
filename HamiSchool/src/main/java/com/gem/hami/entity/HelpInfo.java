@@ -94,8 +94,18 @@ public class HelpInfo {
         this.helpType = helpType;
     }
 
-    public HelpInfo() {
+    @Override
+    public String toString() {
+        return "HelpInfo{" +
+                "name='" + name + '\'' +
+                ", recommendedPrice=" + recommendedPrice +
+                ", personPrice=" + personPrice +
+                ", createTime=" + createTime +
+                ", userId=" + userId +
+                ", endTime=" + endTime +
+                ", isFinished='" + isFinished + '\'' +
+                ", clickCount=" + clickCount +
+                ", helpType=" + helpType +
+                '}';
     }
-
-
 }

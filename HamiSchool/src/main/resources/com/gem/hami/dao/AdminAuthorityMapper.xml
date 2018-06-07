@@ -2,25 +2,5 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.AdminAuthorityMapper">
 
-    <!--public void insertAdminAuthority();-->
-    <insert id="insertAdminAuthority" parameterType="AdminAuthority">
-        INSERT INTO admin_authority(authority_id,name) VALUES (#{_parameter},#{_parameter})
-    </insert>
-
-    <!--public void deleteAdminAuthorityById(int id);-->
-    <delete id="deleteAdminAuthorityById" parameterType="int">
-        DELETE * FROM admin_authority WHERE id=#{_parameter}
-    </delete>
-
-    <!--public void selectAdminAuthority()-->
-    <select id="selectAdminAuthority" resultMap="AdminAuthority">
-        SELECT * FROM admin_authority
-    </select>
-
-    <!--public void updateAdminAuthorityById(AdminAuthority adminAuthority)-->
-    <update id="updateAdminAuthority" parameterType="AdminAuthority">
-        UPDATE admin_authority SET name=#{name} WHERE authority_id=#{authorityId}
-    </update>
-
 
 </mapper>

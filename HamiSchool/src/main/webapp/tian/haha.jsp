@@ -7,11 +7,11 @@
 
 <html>
 <head>
-    <title>哈哈哈你弟</title>
+    <title>新闻详情</title>
 </head>
 <body>
+的11111111111111111111
 
-11111111111111
 <c:forEach items="${helpInfos}"  var="helpInfo">
 
     <a href="#">${helpInfo.name}</a><br/>

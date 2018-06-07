@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface HelpService {
 
-//    /help/findHelpByCondition.action
+    //    /help/findHelpByCondition.action
 //    显示所有跑腿信息（按学校)
 //   按用户号查询
 //   按发布时间,点击量排序
@@ -32,15 +32,16 @@ public interface HelpService {
     //    /help/addHelpQueue.action
     public boolean addHelpQueue(HelpQueue helpQueue);
 
+    public boolean modifyHelpClickCount(int typeId,int helpId);
 
-//    /help/addHelpComment.action
+    //    /help/addHelpComment.action
 //            对跑腿贴评论
     public boolean addHelpComment(HelpComment helpComment);
 
 
     //    /help/addCommentReply.action
 //            对评论回复
-    public boolean addCommentReply(HelpCommentReply helpCommentReply);
+    public boolean addHelpCommentReply(HelpCommentReply helpCommentReply);
 
 
     //     /help/removeHelp.action
@@ -48,11 +49,11 @@ public interface HelpService {
 //type 跑腿类型 ,helpId跑腿主键id
     public boolean removeHelp(short typeId,int helpId);
 
-//    /help/removeHelpComment.action
+    //    /help/removeHelpComment.action
 //            删除跑腿信息评论
     public boolean removeHelpComment(int helpCommentId);
 
-//    /help/removeHelpCommentReply.action
+    //    /help/removeHelpCommentReply.action
 //            删除跑腿信息评论回复
     public boolean removeHelpCommentReply(int replyId);
 

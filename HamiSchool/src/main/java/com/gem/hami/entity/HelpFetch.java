@@ -24,7 +24,7 @@ public class HelpFetch extends HelpInfo{
 
     private Float distance;
 
-    protected byte helpType = 2;
+    protected byte helpType = 3;
 
     public Date getEndTime() {
         return endTime;

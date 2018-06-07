@@ -33,4 +33,10 @@
     <delete id="deleteHelpSend" parameterType="java.lang.Integer" >
         delete FROM help_send WHERE help_send_id = #{param1}
     </delete>
+
+    <update id="updateHelpClickCount" parameterType="java.lang.Integer">
+        UPDATE help_send set click_count = click_count+1 where help_send_id = #{param1}
+    </update>
+
+
 </mapper>

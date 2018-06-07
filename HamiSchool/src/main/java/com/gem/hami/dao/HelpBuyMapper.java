@@ -14,9 +14,11 @@ public interface HelpBuyMapper {
       * @Date：Created in 19:27 2018/6/4
       * @Modified By:
      */
-    public List<HelpBuy> selectByUsreId(int userId);
+    public List<HelpBuy> selectByUserId(int  userId,int schoolId);
 
-    public List<HelpBuy> insertHelpBuy(HelpBuy helpBuy);
+    public boolean insertHelpBuy(HelpBuy helpBuy);
 
-    public List<HelpBuy> deleteHelpBuy(int helpId);
+    public boolean deleteHelpBuy(int helpId);
+
+    public boolean updateHelpClickCount(int helpId);
 }

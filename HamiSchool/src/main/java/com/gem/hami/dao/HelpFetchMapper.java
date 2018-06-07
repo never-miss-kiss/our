@@ -13,9 +13,12 @@ public interface HelpFetchMapper {
      * @Date：Created in 19:20 2018/6/4
      * @Modified By:
      */
-    public List<HelpFetch> selectByUsreId(int userId);
 
-    public List<HelpFetch> insertHelpFetch(HelpBuy helpBuy);
+    public List<HelpFetch> selectByUserId(int  userId,int schoolId);
 
-    public List<HelpFetch> deleteHelpFetch(int helpId);
+    public boolean insertHelpFetch(HelpFetch helpFetch);
+
+    public boolean deleteHelpFetch(int helpId);
+
+    public boolean updateHelpClickCount(int helpId);
 }
