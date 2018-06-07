@@ -23,9 +23,11 @@ public class HomeServiceImpl implements HomeService {
      * @Modified By:
      */
     @Override
-    public User findUser(int userId) {
+    public User findUser(String userId) {
         return userMapper.selectUserById(userId);
     }
+
+
     /**
      * @Author：Wang
      * @Date：Created in 10:08 2018/6/6

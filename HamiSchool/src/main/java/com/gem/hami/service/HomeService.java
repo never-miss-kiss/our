@@ -9,7 +9,7 @@ public interface HomeService {
 
 //   /home/findUser.action
 //   查询个人资料
-    public User findUser(int userId);
+    public User findUser(String userId);
 
 ///home/modifyUser.action
 //            修改个人资料,修改密码

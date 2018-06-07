@@ -63,7 +63,7 @@ public interface UserMapper {
       * @Date：Created in 20:52 2018/6/4
       * @Modified By:
      */
-    public User selectUserById(int userId);
+//    public User selectUserById(int userId);
 
 
 
@@ -101,7 +101,7 @@ public interface UserMapper {
      * 根据Id查找User
      * @param uid
      */
-    public void selectUserById(String uid);
+    public User selectUserById(String uid);
     /**
      * @Author：Wang
      * @Result:
