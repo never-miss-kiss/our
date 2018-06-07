@@ -51,18 +51,6 @@ public interface AdminMapper {
 
     /**
      * @Author：Wang
-     * @Date：Created in 8:55 2018/6/6
-     * @Modified By:
-     */
-    /**
-     * g根据管理员Id删除管理员
-     * @param adminId
-     * @return
-     */
-    public boolean deleteAdminById(int adminId);
-
-    /**
-     * @Author：Wang
      * @Result:
      * @Date：Created in 19:37 2018/6/4
      * @Modified By:

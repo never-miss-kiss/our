@@ -1,6 +1,9 @@
 package com.gem.hami.service;
 
-import com.gem.hami.entity.*;
+import com.gem.hami.entity.ForumCommentReply;
+import com.gem.hami.entity.ForumPost;
+import com.gem.hami.entity.ForumPostCollection;
+import com.gem.hami.entity.ForumPostComment;
 
 import java.util.List;
 
@@ -15,8 +18,13 @@ public interface ForumService {
 //schoolId  学校的id,学生属于哪个学校查哪个学校
 //sortId分类 type 排序类型(如按时间,按点击量)
 //显示帖子点击量
+    public List<ForumPost> findTopForumPostBySchoolId(int schoolId);
 
-    public List<ForumPost> findForumPostsByCondition(int userId,int schoolId,int sortId);
+    public List<ForumPost> selectForumPostByTime(int schoolId);
+
+    public List<ForumPost> selectForumPostByLikeCount(int schoolId);
+
+    public List<ForumPost> findForumPostsByCondition(int userId);
 
 
 //    /forum/addForumPost.action
@@ -28,7 +36,7 @@ public interface ForumService {
 //    修改是否置顶
 // forumPostId 帖子Id ， isTop是否置顶
     //实现方法若isTop为true
-    public boolean modifyForumPost(int forumPostId,boolean isTop);
+    public boolean modifyForumPost(int forumPostId, boolean isTop);
 
 //   /forum/addForumPostComment.action
 //   帖子评论

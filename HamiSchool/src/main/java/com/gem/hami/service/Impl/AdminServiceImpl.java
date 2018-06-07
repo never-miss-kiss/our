@@ -87,6 +87,8 @@ public class AdminServiceImpl implements AdminService {
         return reportMapper.selectAllReport();
     }
 
+
+
     @Override
     public boolean addReport(Report report) {
         return reportMapper.insertReport(report);
