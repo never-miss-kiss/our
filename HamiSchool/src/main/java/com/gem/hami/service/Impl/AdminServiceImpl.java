@@ -6,6 +6,7 @@ import com.gem.hami.dao.ReportMapper;
 import com.gem.hami.dao.UserMapper;
 import com.gem.hami.entity.Admin;
 import com.gem.hami.entity.Report;
+import com.gem.hami.entity.User;
 import com.gem.hami.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,10 +72,9 @@ public class AdminServiceImpl implements AdminService {
         return adminMapper.selectAllAdmin();
     }
 
-
     @Override
-    public boolean removeUserByName(String uname) {
-        return userMapper.deleteUserByCondition(uname);
+    public User findUserByName(String uname) {
+        return userMapper.selectUserByName(uname);
     }
 
     @Override
@@ -87,6 +87,8 @@ public class AdminServiceImpl implements AdminService {
         return reportMapper.selectAllReport();
     }
 
+
+
     @Override
     public boolean addReport(Report report) {
         return reportMapper.insertReport(report);
@@ -98,8 +100,9 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<Report> findReportByTitle(String title) {
-        return reportMapper.selectReportByTitle(title);
+    public List<Report> findReportByReson(int rid) {
+        return reportMapper.selectReportByReson(rid);
     }
+
 
 }

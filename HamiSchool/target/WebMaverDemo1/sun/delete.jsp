@@ -1,4 +1,10 @@
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html lang="zh-CN" xml:lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,9 +28,9 @@
     <!--<script type="text/javascript" src="../jquery.lazyload.js.下载"></script>-->
     <!--<script type="text/javascript" async="" src="../sign.js.下载" charset="UTF-8"></script>-->
 
-    <link rel="stylesheet" href="../css/homepage.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/sign.css">
+    <link rel="stylesheet" href="<%=path%>/sun/css/homepage.css">
+    <link rel="stylesheet" href="<%=path%>/sun/css/index.css">
+    <link rel="stylesheet" href="sun/css/sign.css">
 </head>
 
 <body class="xmbbs_desktop" >
@@ -261,6 +267,7 @@
             }
         }
     </style>
+    测试：${tlist}
     <div class="xmcomm_header_wrap">
         <div class="xmcomm_header">
 
@@ -430,6 +437,82 @@
                                 /*padding-left: 24px;*/
                             /*}*/
                         </style>
+                        <ul>
+                        <c:forEach items="${flist}" var="list">
+                            <li class="theme_list clearfix" u-id="137006033">
+                                <div class="theme_list_img">
+                                    <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
+                                       rel="noopener noreferrer">
+                                        <img class="user_head" src="../images/avatar.jpg"
+                                             data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/137006033/avatar.jpg?&amp;width=50&amp;height=50"
+                                             style="display: block;">
+                                    </a>
+                                </div>
+                                <div class="theme_list_con">
+
+                                    <div class="title">
+                                        <a href="http://bbs.xiaomi.cn/t-29629024"  class="title_name " target="_blank"
+                                           rel="noopener noreferrer"
+                                           onclick="">
+                                            ${list.title} </a>
+
+                                        <div class="auth_msg clearfix">
+                                            <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_name" target="_blank"
+                                               rel="noopener noreferrer">${list.userId}</a>
+                                            <i class=""></i>
+
+                                            <span class="time txt"><fmt:formatDate value="${list.releaseTime}" pattern="MM-dd-yyyy hh:mm:ss"></fmt:formatDate> </span>
+
+                                            <span class="comefrom txt"></span>
+                                            <span class="stick txt">${list.isTop}</span>
+                                            <p class="see">
+                                                <span class="numb msg"><i></i>收藏</span>
+                                                <span class="numb view"><i></i>点赞</span>
+                                                <span class="numb msg"><i></i>点赞数：${list.clickCount}</span>
+                                                <span class="numb view"><i></i>点击量：93276</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </li>
+                        </c:forEach>
+
+                            <c:forEach items="${tlist}" var="timelist">
+                                <li class="theme_list clearfix" u-id="137006033">
+                                    <div class="theme_list_img">
+                                        <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
+                                           rel="noopener noreferrer">
+                                            <img class="user_head" src="../images/avatar.jpg"
+                                                 data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/137006033/avatar.jpg?&amp;width=50&amp;height=50"
+                                                 style="display: block;">
+                                        </a>
+                                    </div>
+                                    <div class="theme_list_con">
+
+                                        <div class="title">
+                                            <a href="http://bbs.xiaomi.cn/t-29629024"  class="title_name " target="_blank"
+                                               rel="noopener noreferrer"
+                                               onclick="">
+                                                    ${timelist.title} </a>
+
+                                            <div class="auth_msg clearfix">
+                                                <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_name" target="_blank"
+                                                   rel="noopener noreferrer">${timelist.userId}</a>
+                                                <i class=""></i>
+
+                                                <span class="time txt">${timelist.releaseTime}</span>
+
+                                                <span class="comefrom txt"></span>
+                                                <span class="stick txt">${timelist.isTop}</span>
+                                                <p class="see">
+                                                    <span class="numb msg"><i></i>收藏</span>
+                                                    <span class="numb view"><i></i>点赞</span>
+                                                    <span class="numb msg"><i></i>点赞数：${timelist.clickCount}</span>
+                                                    <span class="numb view"><i></i>点击量：93276</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                </li>
+                            </c:forEach>
                         <li class="theme_list clearfix" u-id="137006033">
                             <div class="theme_list_img">
                                 <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
@@ -465,7 +548,7 @@
                                 </div>
                             </div>
                          </li>
-
+                 </ul>
 
 
                                     </ul>

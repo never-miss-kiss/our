@@ -33,15 +33,15 @@ public interface ForumPostMapper {
 
 
 
-    /**
-      * @Author：sunshilin
-      * @param: 某学校的id
-      * @result: 帖子集合
-      * @Description:按照点赞量从高到低查询出所有的帖子
-      * @Date：Created in 19:18 2018/6/4
-      * @Modified By:
-     */
-    public List<ForumPost> selectForumPostByLikeCount(int schoolId);
+//    /**
+//      * @Author：sunshilin
+//      * @param: 某学校的id
+//      * @result: 帖子集合
+//      * @Description:按照点赞量从高到低查询出所有的帖子
+//      * @Date：Created in 19:18 2018/6/4
+//      * @Modified By:
+//     */
+//    public List<ForumPost> selectForumPostByLikeCount(int schoolId);
 
 
 
@@ -70,7 +70,7 @@ public interface ForumPostMapper {
       * @Date：Created in 19:36 2018/6/4
       * @Modified By:
      */
-    public boolean  insertForumPost();
+    public boolean  insertForumPost(ForumPost forumPost);
 
 
 
@@ -87,7 +87,7 @@ public interface ForumPostMapper {
       * @Date：Created in 19:49 2018/6/4
       * @Modified By:
      */
-    public void  updateForumPostIsTop(int forumPostId);
+    public boolean  updateForumPostIsTop(int forumPostId);
 
 
 
@@ -99,7 +99,7 @@ public interface ForumPostMapper {
       * @Date：Created in 19:55 2018/6/4
       * @Modified By:
      */
-    public void  updateForumPostIsnotTop(int forumPostId);
+    public boolean  updateForumPostIsnotTop(int forumPostId);
 
 
 

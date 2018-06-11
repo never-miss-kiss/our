@@ -2,6 +2,7 @@ package com.gem.hami.service;
 
 import com.gem.hami.entity.Admin;
 import com.gem.hami.entity.Report;
+import com.gem.hami.entity.User;
 
 import java.util.List;
 
@@ -20,30 +21,6 @@ public interface AdminService {
 //   删除管理员
 //    adminId 高级管理员id,removedId 被删除的管理员id
     public boolean removeAdmin(int adminId,int removedId);
-
-    /**
-     * @Author：Wang
-     * @Date：Created in 8:54 2018/6/6
-     * @Modified By:
-     */
-    /**
-     * 根据管理员Id删除管理员
-     * @param adminId
-     * @return
-     */
-    public boolean removeAdminById(int adminId);
-
-    /**
-     * @Author：Wang
-     * @Date：Created in 8:50 2018/6/6
-     * @Modified By:
-     */
-    /**
-     * 修改管理员信息
-     * @param admin
-     * @return
-     */
-    public boolean modifyAdmin(Admin admin);
 
 
 
@@ -79,8 +56,9 @@ public interface AdminService {
 
 
 //            /admin/removeUser.action
-//            删除用户信息
-    public boolean removeUserByName(String uname);
+//            查找用户信息
+    public User findUserByName(String uname);
+
 
     /**
      * @Author：Wang
@@ -133,10 +111,10 @@ public interface AdminService {
      */
     /**
      * 根据标题模糊查询举报信息
-     * @param title
+     * @param rid
      * @return
      */
-    public List<Report> findReportByTitle(String title);
+    public List<Report> findReportByReson(int rid);
 
 
 }
