@@ -2,6 +2,8 @@ package com.gem.hami.dao;
 
 import com.gem.hami.entity.HelpCommentReply;
 
+import java.util.List;
+
 public interface HelpCommentReplyMapper {
 
     /**
@@ -12,6 +14,10 @@ public interface HelpCommentReplyMapper {
      * @Date：Created in 20:03 2018/6/4
      * @Modified By:
      */
+    public List<HelpCommentReply> selectReplysByCommentId(int CommentId);
+
+    public HelpCommentReply selectReplyByReplyId(int ReplyId);
+
     public boolean insertHelpCommentReply(HelpCommentReply helpCommentReply);
 
     public boolean deleteHelpCommentReply(int replyId);

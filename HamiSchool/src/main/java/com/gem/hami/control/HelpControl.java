@@ -2,10 +2,13 @@ package com.gem.hami.control;
 
 import com.gem.hami.entity.*;
 import com.gem.hami.service.HelpService;
+import com.gem.hami.service.Impl.HelpServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,9 +26,9 @@ public class HelpControl {
     HelpService helpService;
 
     @RequestMapping(value = "/selectByCondition.action",method = RequestMethod.GET)
-    public void addHelp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void findByCondition(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<HelpInfo> helpInfos = helpService.findHelpByCondition(0,0,1);
+        List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,1);
         for(HelpInfo helpInfo : helpInfos){
             System.out.println(helpInfo);
         }
@@ -34,6 +37,34 @@ public class HelpControl {
 
     }
 
+    @RequestMapping(value = "/showHelp.action",method = RequestMethod.GET)
+    public void findHelp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        int typeId=2;
+        int helpId=1;
+        switch (typeId){
+            case 1:HelpBuy helpBuy = helpService.findHelpBuy(helpId);
+                    request.setAttribute("helpBuy",helpBuy);
+                    request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+                    break;
+
+
+            case 2:HelpSend helpSend = helpService.findHelpSend(helpId);
+                request.setAttribute("helpSend",helpSend);
+                request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+                break;
+
+            case 3:HelpFetch helpFetch = helpService.findHelpFetch(helpId);
+                request.setAttribute("helpFetch",helpFetch);
+                request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+                break;
+
+            case 4:HelpQueue helpQueue = helpService.findHelpQueue(helpId);
+                request.setAttribute("helpQueue",helpQueue);
+                request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+                break;
+        }
+    }
 
     @RequestMapping(value = "/addHelpBuy.action",method = RequestMethod.GET)
     public void addHelpBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -84,9 +115,6 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
     }
 
-
-
-
     @RequestMapping(value="/removeHelp.action",method = RequestMethod.GET)
     public void removeHelp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -101,6 +129,26 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
     }
 
+    @RequestMapping(value="/findHelpCommentsByCondition.action",method = RequestMethod.GET)
+    public void findHelpCommentsByCondition(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int typeId = 0;
+        int helpId = 0;
+        short userId=2;
+        List<HelpComment> helpCommentList = helpService.findHelpCommentsByCondition(typeId,helpId,userId);
+
+        request.setAttribute("helpComentList",helpCommentList);
+        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+    }
+
+    @RequestMapping(value="/findCommentReplyByCondition.action")
+    @ResponseBody
+    public List<HelpCommentReply> findCommentsReplyByCondition(int commentId) throws ServletException, IOException {
+
+        List<HelpCommentReply> helpCommentReplyList = helpService.findReplysByCommentId(commentId);
+//        String name = helpCommentReplyList.get(0).getCommentedUser().getNickname();
+//        System.out.println(name);
+        return helpCommentReplyList;
+    }
 
     @RequestMapping(value="/addHelpComment.action",method = RequestMethod.GET)
     public void addHelpComment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -132,7 +180,7 @@ public class HelpControl {
         helpCommentReply.setCreateTime(new Date());
         helpCommentReply.setUserId(2);
         helpCommentReply.setHelpCommentReplyId(3);
-        helpCommentReply.setHelpPostCommentId(2);
+        helpCommentReply.setHelpCommentId(2);
         helpService.addHelpCommentReply(helpCommentReply);
         request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
     }
@@ -143,5 +191,21 @@ public class HelpControl {
         helpService.removeHelpCommentReply(2);
         request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
     }
+
+
+
+
+    @RequestMapping(value="/helpDetail.action",method = RequestMethod.GET)
+    public void helpDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HelpBuy helpBuy = helpService.findHelpBuy(2);
+        List<HelpComment> helpCommentList = helpService.findHelpCommentsByCondition(1,2,0);
+        List<HelpCommentReply> helpCommentReplyList = helpService.findReplysByCommentId(5);
+        request.setAttribute("helpBuy",helpBuy);
+        request.setAttribute("helpCommentList",helpCommentList);
+        request.setAttribute("helpCommentReplyList",helpCommentReplyList);
+        request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request,response);
+    }
+
+
 
 }

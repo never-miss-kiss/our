@@ -14,7 +14,9 @@ public interface HelpBuyMapper {
       * @Date：Created in 19:27 2018/6/4
       * @Modified By:
      */
-    public List<HelpBuy> selectByUserId(int  userId,int schoolId);
+    public List<HelpBuy> selectHelpsById(int  userId,int schoolId);
+
+    public HelpBuy selectHelpByHelpId(int helpId);
 
     public boolean insertHelpBuy(HelpBuy helpBuy);
 
