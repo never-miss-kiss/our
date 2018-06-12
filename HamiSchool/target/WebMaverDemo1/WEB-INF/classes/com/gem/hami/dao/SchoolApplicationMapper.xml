@@ -2,12 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.SchoolApplicationMapper">
 
-    <!--开通学校-->
-    <insert id="insetSchoolApplication" parameterType="SchoolApplication">
-        INSERT into school_application VALUES ()
-    </insert>
-    <!--处理学校申请表单-->
-    <delete id="deleteSchoolApplication" parameterType="int">
-        DELETE FROM school_application where school_application_id=#{parameter}
-    </delete>
 </mapper>

@@ -14,6 +14,8 @@ public class HelpInfo {
 
     protected Integer userId;
 
+    protected String nickname;
+
     protected  Date endTime;
 
     protected String isFinished;
@@ -22,13 +24,7 @@ public class HelpInfo {
 
     protected byte helpType;//表示跑腿表的种类 1帮我买 2.帮我送 3.帮我取 4.代排队
 
-    public int getClickCount() {
-        return clickCount;
-    }
-
-    public void setClickCount(int clickCount) {
-        this.clickCount = clickCount;
-    }
+    protected User user;
 
     public String getName() {
         return name;
@@ -70,6 +66,14 @@ public class HelpInfo {
         this.userId = userId;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     public Date getEndTime() {
         return endTime;
     }
@@ -86,12 +90,28 @@ public class HelpInfo {
         this.isFinished = isFinished;
     }
 
+    public int getClickCount() {
+        return clickCount;
+    }
+
+    public void setClickCount(int clickCount) {
+        this.clickCount = clickCount;
+    }
+
     public byte getHelpType() {
         return helpType;
     }
 
     public void setHelpType(byte helpType) {
         this.helpType = helpType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -102,10 +122,12 @@ public class HelpInfo {
                 ", personPrice=" + personPrice +
                 ", createTime=" + createTime +
                 ", userId=" + userId +
+                ", nickname='" + nickname + '\'' +
                 ", endTime=" + endTime +
                 ", isFinished='" + isFinished + '\'' +
                 ", clickCount=" + clickCount +
                 ", helpType=" + helpType +
+                ", user=" + user +
                 '}';
     }
 }

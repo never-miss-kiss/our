@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -80,10 +80,10 @@
 		<div class="container-fluid">
 			<div class="header-main " >
 				<div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
-					<a href="#"><img src="<%= basePath %>Gallery_files/logo.png" alt=""></a>
+					<a href="#"><img src="<%= basePath %>zhu/Gallery_files/logo.png" alt=""></a>
 				</div>
 				<div class="top-navg">
-					<span class="menu"> <img src="./Gallery_files/icon.png" alt=" "></span>
+					<span class="menu"> <img src="<%= basePath %>zhu/Gallery_files/icon.png" alt=" "></span>
 					<ul class="res">
 						<a href="main.jsp"><span class="res1">首页</span></a>
 						<a href="#"><span class="res2">二手</span></a>
@@ -112,20 +112,20 @@
 		<div id="person-pic" >
 			<div id="head-portrait" class="col-xs-5">
 				<a href="#">
-					<img src="<%= basePath %>Gallery_files/头像.jpg">
+					<img src="<%= basePath %>zhu/Gallery_files/头像.jpg">
 				</a>
 			</div>
 
 			<div class="col-xs-7" >
 				<div id="message">
 					<a href="#">
-						<img src="<%= basePath %>Gallery_files/通知3.png"></img>
+						<img src="<%= basePath %>zhu/Gallery_files/通知3.png"></img>
 					</a>
 				</div>
 
 				<div id="exit">
 					<a href="#">
-						<img src="<%= basePath %>Gallery_files/登出.png" ></img>
+						<img src="<%= basePath %>zhu/Gallery_files/登出.png" ></img>
 					</a>
 				</div>
 			</div>
@@ -202,13 +202,13 @@
 		 <!-- Wrapper for slides -->
 		 <div class="carousel-inner " role="listbox">
 			 <div class="item active">
-				 <img src="<%= basePath %>img/thumbs/thumb-review2.jpg" style="width:900px;height: 250px" alt="...">
+				 <img src="<%= basePath %>zhu/img/thumbs/thumb-review2.jpg" style="width:900px;height: 250px" alt="...">
 			 </div>
 			 <div class="item">
-				 <img src="<%= basePath %>img/thumbs/thumb-review3.jpg" style="width:900px;height: 250px" alt="...">
+				 <img src="<%= basePath %>zhu/img/thumbs/thumb-review3.jpg" style="width:900px;height: 250px" alt="...">
 			 </div>
 			 <div class="item">
-				 <img src="<%= basePath %>img/thumbs/thumb-review4.jpg" style="width:900px;height: 250px" alt="...">
+				 <img src="<%= basePath %>zhu/img/thumbs/thumb-review4.jpg" style="width:900px;height: 250px" alt="...">
 			 </div>
 		 </div>
 
@@ -275,7 +275,7 @@
 			 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -294,7 +294,7 @@
 			 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -313,7 +313,7 @@
 			 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -332,7 +332,7 @@
 		 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -351,7 +351,7 @@
 			 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -370,7 +370,7 @@
 			 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -389,7 +389,7 @@
 		 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -408,7 +408,7 @@
 		 <div class="post post-medium" >
 				 <div class="thumbr">
 					 <a class="post-thumb" href="#">
-						 <img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+						 <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 					 </a>
 				 </div>
 				 <div class="infor">
@@ -469,7 +469,7 @@
 											<div class="post post-medium" >
 												<div class="thumbr">
 													<a class="post-thumb" href="#">
-														<img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+														<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 													</a>
 												</div>
 												<div class="infor">
@@ -488,7 +488,7 @@
 											<div class="post post-medium" >
 												<div class="thumbr">
 													<a class="post-thumb" href="#">
-														<img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+														<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 													</a>
 												</div>
 												<div class="infor">
@@ -507,7 +507,7 @@
 											<div class="post post-medium" >
 												<div class="thumbr">
 													<a class="post-thumb" href="#">
-														<img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+														<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 													</a>
 												</div>
 												<div class="infor">
@@ -526,7 +526,7 @@
 											<div class="post post-medium" >
 												<div class="thumbr">
 													<a class="post-thumb" href="#">
-														<img class="img-responsive" src="<%= basePath %>img/thumbs/thumb-s.jpg" alt="#">
+														<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
 													</a>
 												</div>
 												<div class="infor">

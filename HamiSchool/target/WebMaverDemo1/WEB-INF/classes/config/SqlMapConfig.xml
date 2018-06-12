@@ -12,6 +12,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<package name="com.gem.hami.entity"/>
 	</typeAliases>
+	<plugins>
+		<!--sql拦截器-->
+		<!--<plugin interceptor="com.gem.hami.util.SqlIntecept"></plugin>-->
+		<!--第三方分页插件-->
+		<plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+	</plugins>
+
 
 	<!-- 加载 映射文件 -->
 	<mappers>

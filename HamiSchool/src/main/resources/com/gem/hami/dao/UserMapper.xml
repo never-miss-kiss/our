@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.UserMapper">
-
-    <resultMap id="selectUserByIdMap" type="User">
-        <id column="user_id" property="userId"></id>
-        <result column="password" property="password"></result>
-        <result column="sex" property="sex"></result>
-        <result column="age" property="age"></result>
-        <result column="qq" property="qq"></result>
-        <result column="telphone" property="phone"></result>
-        <result column="email" property="email"></result>
-        <result column="signature" property="signature"></result>
-        <result column="nickname" property="nickname"></result>
-        <result column="person_application_id" property="personApplicationId"></result>
-        <result column="photo" property="photo" ></result>
-        <result column="school_state_id" property="schoolStateId"></result>
-        <association property="school" javaType="School">
-            <id column="school_id" property="schoolId"></id>
-            <result column="name" property="name"></result>
-            <result column="school_state_id" property="schoolStateId"></result>
-        </association>
-    </resultMap>
     <!--public User selectUserByName(int id);-->
     <select id="selectUserByNameAndPwd" resultType="User" parameterType="int">
         select * from user WHERE telphone=#{_parameter}and email=#{_parameter};
@@ -31,10 +11,11 @@
     <insert id="insertUser" parameterType="User">
         INSERT INTO user(telphone,password) VALUES (#{phone},#{password})
     </insert>
+    
 
 
 
-
+<!--============================================================================================================-->
 
 
     <!--public List<User> selectAllUser()-->
@@ -42,9 +23,9 @@
         select * from user;
     </select>
 
-    <!--public void selectUserById(String uid)-->
-    <select id="selectUserById" parameterType="int" resultMap="selectUserByIdMap">
-        select u.*,s.name from user u,school s WHERE user_id=#{_parameter} and u.school_id=s.school_id;
+    <!--public User selectUserById(Integer uid)-->
+    <select id="selectUserById" resultType="User" parameterType="Integer">
+        select * from user WHERE user_id=#{__parameter}
     </select>
 
     <!--public User selectUserBySchoolId(int sid)-->
@@ -54,23 +35,41 @@
 
     <!--public User updateUser(User user);-->
     <update id="updateUser" parameterType="User">
-        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state} where user_id=#{userId};
+        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{phone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state} where user_id=#{userId};
     </update>
 
     <!--public User selectUserByName(String uname)-->
-    <select id="selectUserByName" parameterType="String">
-        select * from user WHERE nickname=#{_parameter};
+    <select id="selectUserByName" parameterType="String" resultType="User">
+        select * from user WHERE nickname LIKE "%"#{_parameter} "%";
     </select>
 
     <!--public boolean deleteUserByCondition(String uname)-->
     <delete id="deleteUserByCondition" parameterType="String">
-        DELETE * FROM user WHERE nickname=#{_parameter}
+        DELETE FROM user WHERE nickname=#{_parameter}
     </delete>
 
     <!--public boolean deleteUserById(int userId);-->
     <delete id="deleteUserById" parameterType="int">
-        DELETE * FROM  user WHERE user_id=#{_parameter}
+        DELETE FROM  user WHERE user_id=#{_parameter}
     </delete>
 
+    <!--public List<User> selectUserByCondition(String user)-->
+    <select id="selectUserByCondition" resultType="User" parameterType="QueryPojo">
+        select * from user
+        <where>
+            <if test="userId neq null">
+                and user_id = #{userId}
+            </if>
+            <if test="shoolId neq null">
+                and shool_id = #{shoolId}
+            </if>
+            <if test="nickname neq null">
+                and nickname = #{nickname}
+            </if>
+            <if test="sex neq null">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
 
 </mapper>

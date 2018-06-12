@@ -1,7 +1,10 @@
 package com.gem.hami.dao;
 
+import com.gem.hami.entity.QueryPojo;
 import com.gem.hami.entity.User;
+
 import java.util.List;
+
 public interface UserMapper {
     /**
       * @Author：sunshilin
@@ -11,7 +14,7 @@ public interface UserMapper {
       * @Date：Created in 20:32 2018/6/4
       * @Modified By:
      */
-    public User selectUserByNameAndPwd(int id, String password);
+    public User selectUserByNum(String id);
 
 
 
@@ -24,7 +27,7 @@ public interface UserMapper {
       * @Date：Created in 20:37 2018/6/4
       * @Modified By:
      */
-    public boolean insertUser(int id, String password);
+    public boolean insertUser(String id, String password);
 
 
 
@@ -63,7 +66,7 @@ public interface UserMapper {
       * @Date：Created in 20:52 2018/6/4
       * @Modified By:
      */
-       public User selectUserById(int userId);
+    public User selectUserById(int userId);
 
 
 
@@ -91,8 +94,18 @@ public interface UserMapper {
      * @return
      */
     public List<User> selectAllUser();
-
-
+    /**
+     * @Author：Wang
+     * @Result:
+     * @Date：Created in 19:17 2018/6/4
+     * @Modified By:tian
+     */
+    /**
+     *  public User findUserById(Integer userId)
+     * 根据Id查找User
+     * @param
+     */
+    public User selectUserById(Integer userid);
     /**
      * @Author：Wang
      * @Result:
@@ -116,7 +129,7 @@ public interface UserMapper {
      * @Date：Created in 19:19 2018/6/4
      * @Modified By:
      */
-    public User updateUser(User user);
+    public boolean updateUser(User user);
 
     /**
      * @Author：Wang
@@ -152,5 +165,17 @@ public interface UserMapper {
      * @return
      */
     public boolean deleteUserById(int userId);
+
+    /**
+     * @Author：Wang
+     * @Date：Created in 2018-6-11 15:07:20
+     * @Modified By:
+     */
+    /**
+     * 根据条件查询User
+     * @param queryPojo
+     * @return
+     */
+    public List<User> selectUserByCondition(QueryPojo queryPojo);
 
 }

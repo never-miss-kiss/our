@@ -1,8 +1,13 @@
 package com.gem.hami.service;
 
-import com.gem.hami.entity.*;
+import com.gem.hami.entity.ForumCommentReply;
+import com.gem.hami.entity.ForumPost;
+import com.gem.hami.entity.ForumPostCollection;
+import com.gem.hami.entity.ForumPostComment;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ForumService {
 //    /forum/findForumPostByCondition.action
@@ -15,9 +20,28 @@ public interface ForumService {
 //schoolId  学校的id,学生属于哪个学校查哪个学校
 //sortId分类 type 排序类型(如按时间,按点击量)
 //显示帖子点击量
+    public List<ForumPost> findTopForumPostBySchoolId(int schoolId);
 
-    public List<ForumPost> findForumPostsByCondition(int userId,int schoolId,int sortId);
+    public PageInfo<ForumPost> findTopForumPostBySchoolId1(Map<String,Object> map);
 
+//    public List<ForumPost> selectForumPostByTime(int schoolId);
+
+    public List<ForumPost> selectForumPostByLikeCount(int schoolId);
+
+    public List<ForumPost> findForumPostsByCondition(int userId);
+
+    //根据帖子id查找某个帖子，用于帖子详情
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:用来显示某帖子详情的所有内容
+      * @Date：Created in 18:52 2018/6/12
+      * @Modified By:
+     */
+    public ForumPost findForumPostByForudId(int forumId);
+//    public ForumPostComment findForumComment(int forumId);
+//    public ForumCommentReply findOneAllReply(int userId,int forumId);
 
 //    /forum/addForumPost.action
 //    发表论坛帖子（即发帖）
@@ -28,11 +52,12 @@ public interface ForumService {
 //    修改是否置顶
 // forumPostId 帖子Id ， isTop是否置顶
     //实现方法若isTop为true
-    public boolean modifyForumPost(int forumPostId,boolean isTop);
+    public boolean modifyForumPost(int forumPostId, boolean isTop);
 
 //   /forum/addForumPostComment.action
 //   帖子评论
     public boolean addForumPostComment(ForumPostComment forumPostComment);
+
 
 //   /forum/addForumCommentReply.action
 //            对评论的回复
@@ -64,7 +89,7 @@ public interface ForumService {
   * @Date：Created in 20:16 2018/6/4
   * @Modified By:
  */
-    public boolean addForumPostCollection(ForumPostCollection forumPostCollection);
+    public boolean addForumPostCollection(int userId,int forumId);
 
 
 // /home/removeCollection.action

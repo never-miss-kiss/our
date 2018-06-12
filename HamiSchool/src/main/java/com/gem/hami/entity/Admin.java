@@ -3,7 +3,6 @@ package com.gem.hami.entity;
 import java.util.Date;
 
 public class Admin {
-
     private Integer adminId;
 
     private Integer userId;

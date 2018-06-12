@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.HelpFetchMapper">
-    <select id="selectByUserId"  resultType="HelpFetch">
+
+    <resultMap id="selectHelpFetchMap" type="HelpFetch">
+        <id column="help_fetch_id" property="helpFetchId"></id>
+        <result column="name" property="name"/>
+        <result column="fetch_address" property="fetchAddress"/>
+        <result column="remark_ship_address" property="remarkShipAddress"/>
+        <result column="fetch_phone" property="fetchPhone"/>
+        <result column="receipt_address" property="receiptAddress"/>
+        <result column="remark_receipt_address" property="remarkReceiptAddress"/>
+        <result column="receipt_phone" property="receiptPhone"/>
+        <result column="fetch_information" property="fetchInformation"/>
+        <result column="fetch_time" property="fetchTime"/>
+        <result column="distance" property="distance"/>
+        <result column="recommended_price" property="recommendedPrice"/>
+        <result column="person_price" property="personPrice"/>
+        <result column="create_time" property="createTime"/>
+        <result column="user_id" property="userId"/>
+        <result column="end_time" property="endTime"/>
+        <result column="is_finished" property="isFinished"/>
+        <result column="click_count" property="clickCount"/>
+        <association property="user" javaType="User">
+            <result column="nickname" property="nickname"/>
+        </association>
+    </resultMap>
+
+    <select id="selectHelpsById"  resultType="HelpFetch">
         select hf.* FROM help_fetch hf,user u where hf.user_id = u.user_id
         <if test=" param1 != 0">
             and hf.user_id = ${param1}
@@ -11,6 +36,9 @@
         </if>
     </select>
 
+    <select id="selectHelpByHelpId" resultMap="selectHelpFetchMap">
+        select hf.*,u.* FROM help_fetch hf,user u where hf.user_id = u.user_id and hf.help_fetch_id = #{param1}
+    </select>
 
     <insert id="insertHelpFetch" parameterType="HelpFetch" useGeneratedKeys="true">
         insert into help_fetch(name,fetch_address,remark_ship_address,fetch_phone,receipt_address,remark_receipt_address,receipt_phone,fetch_information,fetch_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)

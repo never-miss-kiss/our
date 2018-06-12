@@ -32,4 +32,9 @@
     <select id="selectAdminByCondition" parameterType="string" resultType="Admin">
         select * from admin WHERE name LIKE "%" #{realname} "%"
     </select>
+
+    <!--public List<User> selectAllUser()-->
+    <select id="selectAllUser" resultType="User">
+        select * from user;
+    </select>
 </mapper>

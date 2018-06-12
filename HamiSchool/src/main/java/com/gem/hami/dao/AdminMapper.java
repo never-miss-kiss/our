@@ -47,7 +47,7 @@ public interface AdminMapper {
      * @param removedId
      * @return
      */
-    public boolean deleteAdmin(int adminId,int removedId);
+    public boolean deleteAdmin(int adminId, int removedId);
 
     /**
      * @Author：Wang
@@ -172,5 +172,16 @@ public interface AdminMapper {
      * @return
      */
     public boolean deleteUserByCondition(String uname);
+
+    /**
+     *@Author：wang
+     *@Date: Created in 2018-6-11 08:57:21
+     *@Modified By:
+     */
+    /**
+     * 查找所有用户
+     * @return
+     */
+    public List<User> selectAllUser();
 
 }

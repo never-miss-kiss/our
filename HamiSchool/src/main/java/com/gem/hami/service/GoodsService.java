@@ -1,10 +1,11 @@
 package com.gem.hami.service;
 
-import com.gem.hami.entity.*;
-import com.github.pagehelper.PageInfo;
+import com.gem.hami.entity.Goods;
+import com.gem.hami.entity.GoodsCollection;
+import com.gem.hami.entity.GoodsComment;
+import com.gem.hami.entity.GoodsCommentReply;
 
 import java.util.List;
-import java.util.Map;
 
 public interface GoodsService {
 //    查询商品类别
@@ -15,10 +16,6 @@ public interface GoodsService {
 //    查询单个商品（按id）
     public Goods findGoodsById(int id);
 
-    //按商品类别查询商品
-    public List<Goods> findGoodsByCategoryId(int id);
-
-
 //  /goods/findGoodsByCondition.action
 //    按条件查询商品列表（对应搜索框的模糊查询，
 //    (对应按商品种类，按学校分类功能)
@@ -28,9 +25,7 @@ public interface GoodsService {
 //userId 用户主键
 //schoolId 学校id
 //sortId 表示排序的类型 1为按学校 2为按热度(点击量) 3为按价格
-public PageInfo<Goods> findGoodsByCondition(Map<String,Object> map);
-
-
+    public List<Goods> findGoodsByCondition(QueryPojo queryPojo);
 
 //    /goods/addGoods.action
 //            发布二手商品
@@ -54,13 +49,13 @@ public PageInfo<Goods> findGoodsByCondition(Map<String,Object> map);
 
 //   /goods/recommend.action
 //            推荐功能
-    public List<Goods> recommend(int userId, int goodsId);
+    public List<Goods> recommend(int userId,int goodsId);
 
 
 //  /goods/modifyGoodsByCondition.action
 //   修改商品信息
 //            点击量增加
-    public boolean modifyGoodsByCondition(Goods goods);
+    public boolean modifyGoodsByCondition(Goods goods,int goodsId);
 
 
 ///home/removeGoods.action
