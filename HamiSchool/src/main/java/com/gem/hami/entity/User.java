@@ -27,6 +27,16 @@ public class User {
 
     private String state;
 
+    private School school;
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
     public String getQq() {
         return qq;
     }

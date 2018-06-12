@@ -14,6 +14,13 @@ public interface SchoolMapper {
       * @Modified By:
      */
     public List<School> selectCertifiedSchool();
-
-
+/**
+  * @Author：Zhu
+   * @param
+  * @Result:
+  * @Date：Created in 21:13 2018/6/7
+  * @Description
+  * @Modified By:
+ */
+    public School selectSchoolByUserId(int userId);
 }

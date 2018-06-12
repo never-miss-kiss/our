@@ -3,6 +3,10 @@
    String path = request.getContextPath();
    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -51,6 +55,7 @@
        h2.title{position: relative;top:-60px;}
       .talk{position: relative;top: -60px;height: 380px;overflow:hidden}
       .add{position: relative;left:90%;top:50px;border: 1px solid red; }
+      .picture{position: relative;width: 300px;height: 320px;top:-35px;float: left;padding: 50px;}
    </style>
    <script type="text/javascript">
           $(document).ready(function(){
@@ -103,7 +108,7 @@
                      <a href="#"><img src="<%= basePath %>zhu/Gallery_files/logo.png" alt=""></a>
                   </div>
                   <div class="top-navg">
-                     <span class="menu"> <img src="./Gallery_files/icon.png" alt=" "></span>
+                     <span class="menu"> <img src="<%= basePath %>zhu/Gallery_files/icon.png" alt=" "></span>
                      <ul class="res">
                         <a href="#"><span class="res1">首页</span></a>
                         <a href="#"><span class="res2">二手</span></a>
@@ -182,33 +187,34 @@
                            </p>
                         </div>
                         <div class="centerbox">
-                           <p class="imgname">叠叠杯水杯茶杯套杯陶瓷咖啡牛奶杯具套装</p>
+                           <%--<p class="imgname">叠叠杯水杯茶杯套杯陶瓷咖啡牛奶杯具套装</p>--%>
+                           <p class="imgname">${goods.name}</p>
 
-                           <p class="price"><span class="fa fa-rmb"></span>&nbsp;&nbsp;&nbsp;&nbsp;<samp>49.00</samp></p>
+                           <p class="price"><span class="fa fa-rmb"></span>&nbsp;&nbsp;&nbsp;&nbsp;<samp>${goods.price}</samp></p>
                            <p class="price">
                               <span class="fa fa-user"></span>
-                              <a href="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">181144592</span>(去看他)</a>
+                              <a href="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">${userNickname}</span>(去看他)</a>
                            </p>
                            <p class="price">
-                              <span class="fa fa-qq"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">2467142788</span>
+                              <span class="fa fa-qq"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">${goods.qq}</span>
                            </p>
                            <p class="price">
-                              <span class="fa fa-phone"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">15660671633</span>
+                              <span class="fa fa-phone"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">${goods.phone}</span>
                            </p>
                            <p class="price">
-                              <span class="fa fa-home"></span>&nbsp;&nbsp;&nbsp;<span class="text">桂林电子科技大学</span>
+                              <span class="fa fa-home"></span>&nbsp;&nbsp;&nbsp;<span class="text">${schoolName}</span>
                            </p>
-                           <p class="price fa fa-map-market">
-                              <span class="fa fa-map-marker" ></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">等等等等等等</span>
-                           </p>
-                           <p class="price">
-                              <span class="fa fa-anchor"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">未认证</span>
+                           <p class="price ">
+                              <span class="fa fa-map-marker" ></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">${goods.location}</span>
                            </p>
                            <p class="price">
-                              <span class="fa fa-calendar"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">2018-05-30</span>
+                              <span class="fa fa-anchor"><span class="iconfont"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="text">未认证</span>
                            </p>
                            <p class="price">
-                              <span class="fa fa-weixin"><span class="iconfont"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="text">
+                              <span class="fa fa-calendar"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text"><fmt:formatDate value="${goods.releaseTime}" pattern="yyyy-MM-dd hh:mm:ss"/></span>
+                           </p>
+                           <p class="price">
+                              <span class="fa fa-weixin"><span class="iconfont"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="text">
                             该同学没留下微信号</span>
                            </p>
                            <div class="btn">
@@ -298,201 +304,42 @@
                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <h2 class="icon"><i class="fa fa-leaf" aria-hidden="true"></i>商品推荐</h2>
                         <div class="carousel-control-box">
-                           <a class="left carousel-control" href="#myCarousel"  role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                           <a class="right carousel-control" href="#myCarousel"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                           <a class="left carousel-control" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=1&goodsId=${goodsId}"  role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                           <a class="right carousel-control" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=2&goodsId=${goodsId}"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                         </div>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                            <div class="item active">
                               <div class="row auto-clear">
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
+                                 <C:forEach items="${pageInfo.list}" var="good">
+                                 <div class="picture">
                                     <div class="post post-medium">
                                        <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
+                                          <a class="post-thumb" href="<%= basePath %>goods/findGoodsById.action?goodsId=${good.goodsId}">
+                                             <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
                                           </a>
                                        </div>
                                        <div class="infor">
+                                          <br>
                                           <h4>
-                                             <a class="title" href="#">Fancy Channel Name</a>
+                                             <a class="title" >${good.name}</a>
                                           </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
+                                          <span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>${good.clickCount}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>${good.price}</span>
+                                          <h5>
+                                             <a class="title" >吉林大学
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未认证
+                                             </a>
+                                          </h5>
                                        </div>
                                     </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Premium MakeUp Beauty Channel</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Private Golden CH</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">4K Quality Videos</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Japan Couture Video</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Burlesque French Movies</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
+
+                                 </div>
+                                 </C:forEach>
                               </div>
                            </div>
-                           <div class="item">
-                              <div class="row auto-clear">
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Fancy Channel Name</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Premium MakeUp Beauty Channel</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Private Golden CH</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">4K Quality Videos</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Japan Couture Video</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                                 <article class="col-lg-2 col-md-4 col-sm-4">
-                                    <div class="post post-medium">
-                                       <div class="thumbr">
-                                          <a class="post-thumb" href="#">
-                                             <img class="img-responsive" src="<%= basePath %>img/channels/ch-1.jpg" alt="#">
-                                          </a>
-                                       </div>
-                                       <div class="infor">
-                                          <h4>
-                                             <a class="title" href="#">Burlesque French Movies</a>
-                                          </h4>
-                                          <span class="posts-channel" title="Posts from Channel"><i class="fa fa-video-camera" aria-hidden="true"></i>4000</span>
-                                       </div>
-                                    </div>
-                                 </article>
-                              </div>
                            </div>
                         </div>
-                     </div>
                   </section>
                   <div class="clearfix"></div>
                </div>

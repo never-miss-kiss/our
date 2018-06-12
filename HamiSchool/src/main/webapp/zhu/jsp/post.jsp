@@ -8,12 +8,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>jQuery Contact Form Plugin: FFForm</title>
     <link href="<%= basePath %>zhu/css/demo.css" rel="stylesheet" type="text/css">
-    <script src="<%= basePath %>js/jquery-1.12.1.min.js" type="text/javascript"></script>
+    <script src="<%= basePath %>zhu/js/jquery-1.12.1.min.js" type="text/javascript"></script>
     <!--Framework-->
-    <script src="<%= basePath %>js/jquery-1.12.1.min.js" type="text/javascript"></script>
-    <script src="<%= basePath %>js/jquery-ui.js" type="text/javascript"></script>
+    <%--<script src="<%= basePath %>js/jquery-1.12.1.min.js" type="text/javascript"></script>--%>
+    <script src="<%= basePath %>zhu/js/jquery-ui.js" type="text/javascript"></script>
     <!--End Framework-->
-     <script src="<%= basePath %>js/jquery.ffform.js" type="text/javascript"></script>
+     <script src="<%= basePath %>zhu/js/jquery.ffform.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#form').ffform({ animation: 'flip', submitButton: '#submit', validationIndicator: '#validation', errorIndicator: '#error', successIndicator: '#success', 'fields': [{ 'id': 'name', required: true, requiredMsg: 'Name is required', type: 'alpha', validate: true, msg: 'Invalid Name' }, { 'id': 'email', required: true, requiredMsg: 'E-Mail is required', type: 'email', validate: true, msg: 'Invalid E-Mail Address' }, { 'id': 'phone', required: false, type: 'custom', validate: false, msg: 'Invalid Phone #' }, { 'id': 'message', required: false, type: 'text', validate: false, msg: ''}] });

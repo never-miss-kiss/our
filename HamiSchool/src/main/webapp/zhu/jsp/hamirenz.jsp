@@ -7,10 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>CSS3登录注册窗口界面滑动切换特效</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath }/zhu/bootstrap/css/bootstrap.min.css" />
-  <script type="text/javascript" src="${pageContext.request.contextPath }/zhu/bootstrap/js/jquery-1.11.2.js"></script>
-  <script type="text/javascript" src="${pageContext.request.contextPath }/zhu/bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="<%= basePath %>css/style.css">
+  <link rel="stylesheet" href="<%= basePath %>zhu/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="<%= basePath %>zhu/bootstrap/js/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="<%= basePath %>zhu/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<%= basePath %>zhu/css/style.css">
 
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
@@ -42,10 +42,10 @@
         </div>
       </div>
       <div class="cont_back_info">
-        <div class="cont_img_back_grey"> <img src="po.jpg" alt="" /> </div>
+        <div class="cont_img_back_grey"> <img src="<%= basePath %>zhu/img/hamirenz/po.jpg" alt="" /> </div>
       </div>
       <div class="cont_forms" >
-        <div class="cont_img_back_"> <img src="po.jpg" alt="" /> </div>
+        <div class="cont_img_back_"> <img src="<%= basePath %>zhu/img/hamirenz/po.jpg" alt="" /> </div>
         <div class="cont_form_login"> <a href="#" onClick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
           <h2>开通学校</h2>
           <label class="col-sm-4 control-label">昵称:<span></span></label>

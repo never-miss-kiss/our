@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface GoodsMapper {
@@ -19,6 +20,18 @@ public interface GoodsMapper {
       * @Modified By:
      */
     public Goods selectGoodsById(int id);
+
+    /**
+      * @Author：Zhu
+       * @param
+      * @Result:
+      * @Date：Created in 15:55 2018/6/12
+      * @Description 根据商品类别ID查询商品
+      * @Modified By:
+     */
+    public List<Goods> selectGoodsByCategoryId(int id);
+
+
 /**
   * @Author：Zhu
    * @param

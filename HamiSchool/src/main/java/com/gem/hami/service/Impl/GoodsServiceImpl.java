@@ -3,10 +3,14 @@ package com.gem.hami.service.Impl;
 import com.gem.hami.dao.*;
 import com.gem.hami.entity.*;
 import com.gem.hami.service.GoodsService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class GoodsServiceImpl implements GoodsService{
 
@@ -34,9 +38,24 @@ public class GoodsServiceImpl implements GoodsService{
     }
 
     @Override
-    public List<Goods> findGoodsByCondition(QueryPojo queryPojo) {
-        return goodsMapper.selectGoodsByCondition(queryPojo);
+    public List<Goods> findGoodsByCategoryId(int id) {
+        return goodsMapper.selectGoodsByCategoryId(id);
     }
+
+    @Override
+    public PageInfo<Goods> findGoodsByCondition
+            (Map<String, Object> map) {
+
+
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+
+        PageHelper.startPage(curPage,pageSize);
+        List<Goods> goods = goodsMapper.selectGoodsByCondition((QueryPojo) map.get("queryPojo"));
+        PageInfo<Goods> pageInfo = new PageInfo<>(goods);
+        return pageInfo ;
+    }
+
 
 
     @Override

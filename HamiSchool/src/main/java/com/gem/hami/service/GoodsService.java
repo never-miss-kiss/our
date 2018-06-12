@@ -1,8 +1,10 @@
 package com.gem.hami.service;
 
 import com.gem.hami.entity.*;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+import java.util.Map;
 
 public interface GoodsService {
 //    查询商品类别
@@ -13,6 +15,10 @@ public interface GoodsService {
 //    查询单个商品（按id）
     public Goods findGoodsById(int id);
 
+    //按商品类别查询商品
+    public List<Goods> findGoodsByCategoryId(int id);
+
+
 //  /goods/findGoodsByCondition.action
 //    按条件查询商品列表（对应搜索框的模糊查询，
 //    (对应按商品种类，按学校分类功能)
@@ -22,7 +28,9 @@ public interface GoodsService {
 //userId 用户主键
 //schoolId 学校id
 //sortId 表示排序的类型 1为按学校 2为按热度(点击量) 3为按价格
-    public List<Goods> findGoodsByCondition(QueryPojo queryPojo);
+public PageInfo<Goods> findGoodsByCondition(Map<String,Object> map);
+
+
 
 //    /goods/addGoods.action
 //            发布二手商品
