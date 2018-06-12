@@ -23,6 +23,7 @@
     <script src="../js1/base.js"></script>
     <script src="../js1/sign.js" charset="UTF-8"></script>
     <script src="../js1/codemirror.js" defer="defer"></script>
+    <script src="../js1/zh-cn (2).js"></script>
 
     <link rel="canonical" href="http://bbs.xiaomi.cn/t-29693730">
     <link rel="stylesheet" href="<%=path%>/sun/css/ueditor.css">
@@ -31,14 +32,14 @@
     <link rel="stylesheet" href="<%=path%>/sun/css/index.css">
     <link rel="stylesheet" href="<%=path%>/sun/css/invitation.css">
     <link rel="stylesheet" href="<%=path%>/sun/css/datePicker.css">
-    <script src="../js1/zh-cn (2).js"></script>
+
 </head>
 
 
 
 <body class="xmbbs_desktop" style="">
 
-<script>switchMobile.init()</script>
+<%--<script>switchMobile.init()</script>--%>
 
 <div class="main" style="">
 
@@ -376,6 +377,7 @@
             <a href="http://hd.xiaomi.cn/mipop/2016dl/" target="_blank" rel="noopener noreferrer" class="download_pc"><img src="http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2016/0819/20160819070742289.jpg"></a>
         </div> -->
     <div class="container_wrap wrap_990 clearfix">
+
         <div class="plateinfor " >
             <a href="http://bbs.xiaomi.cn/thread/add/fid/501/type/forum" class="btn sendtheme">+发表新主题</a>
         </div>
@@ -499,28 +501,29 @@
 
                 <div class="invitation_con">
                     <!--回复框-->
-                    <div class="scollReplyWrap" style="top: 485px; display: block;">
-                        <input type="text" id="J_scollReplytxt">
-                        <span class="btn btnlineLight" id="J_scollReply">回复</span>
-                    </div>
+                    <%--<div class="scollReplyWrap" style="top: 485px; display: block;">--%>
+                        <%--<input type="text" id="J_scollReplytxt">--%>
+                        <%--<span class="btn btnlineLight" id="J_scollReply">回复</span>--%>
+                    <%--</div>--%>
 
 
                     <h1>
                         <span></span>
                         <span></span>
-                        <span class="name">【视频】王文祥自己臭(｡･∀･)ﾉﾞ嗨好玩吗？</span>
+                        <span class="name">${forumPost.title}</span>
                     </h1>
                     <p class="txt">
                         <span class="user_msg_mobile"></span>
-                        <span class="marktxt">置顶</span>
+                        <span class="marktxt"></span>
 
                         <span>发表在 </span>
-                        <span class="time"> 05-28 10:54:48</span>
-                        <span class="f_r"><i class="msg"></i>点击数：802</span>
+                        <span class="time">${forumPost.releaseTime}</span>
+                        <span class="f_r"><i class="msg"></i>点击数：${forumPost.clickCount}</span>
                         <span class="f_r"><i class="see"></i>点赞数：8430</span>
                     </p>
 
                     <div class="invitation_content">
+                        ${forumPost.content}
                         <p></p>
                         <blockquote><p style="text-align: center;"><strong><span style="font-family: 微软雅黑;"><a
                                 href="http://bbs.xiaomi.cn/t-29545641" target="_blank"
@@ -613,199 +616,6 @@
                                 </p>
                             </div>
                         </li>
-                        <li class="clearfix" post-id="650782568" id="809" float-id="809" u-id="4436653">
-                            <div class="reply_list_img">
-                                <a href="http://bbs.xiaomi.cn/u-detail-4436653" class="headportrait" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <img class="user_head"
-                                         data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/4436653/avatar.jpg?&amp;width=50&amp;height=50"
-                                         src="HamiSchool/js1/noavatar_small.gif">
-                                </a>
-                            </div>
-                            <div class="reply_list_con">
-                                <div class="auth_msg clearfix">
-                                    <a href="http://bbs.xiaomi.cn/u-detail-4436653" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">junny008</a>
-                                    <i class="vip_icon 											   vip_icon_m2										   "></i>
-                                    <span class="time">&nbsp;&nbsp;</span>
-                                    <span class="at"> 发表于</span>
-                                    <span class="time">05-28 16:16:12</span>
-                                    <span class="comefrom">·来自</span>
-                                    <a class="only_read_auth"
-                                       href="http://bbs.xiaomi.cn/t-29693730-u4436653#comment_top">只看该作者</a>
-                                    <span class="reply_list_float">809#</span>
-                                </div>
-                                <div class="reply_txt"><p>不喜欢</p></div>
-                                <p class="replay_bu">
-                                    <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650782568"
-                                       class="replay_btn">回复</a>
-
-                                    <span class="replay_btn J_report">举报</span>
-
-                                </p>
-                            </div>
-                        </li>
-                        <li class="clearfix" post-id="650782517" id="808" float-id="808" u-id="4436653">
-                            <div class="reply_list_img">
-                                <a href="http://bbs.xiaomi.cn/u-detail-4436653" class="headportrait" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <img class="user_head"
-                                         data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/4436653/avatar.jpg?&amp;width=50&amp;height=50"
-                                         src="HamiSchool/js1/noavatar_small.gif">
-                                </a>
-                            </div>
-                            <div class="reply_list_con">
-                                <div class="auth_msg clearfix">
-                                    <a href="http://bbs.xiaomi.cn/u-detail-4436653" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">junny008</a>
-                                    <i class="vip_icon 											   vip_icon_m2										   "></i>
-                                    <span class="time">&nbsp;&nbsp;</span>
-                                    <span class="at"> 发表于</span>
-                                    <span class="time">05-28 16:15:57</span>
-                                    <span class="comefrom">·来自</span>
-                                    <a class="only_read_auth"
-                                       href="http://bbs.xiaomi.cn/t-29693730-u4436653#comment_top">只看该作者</a>
-                                    <span class="reply_list_float">808#</span>
-                                </div>
-                                <div class="reply_txt"><p>不喜欢</p></div>
-                                <p class="replay_bu">
-                                    <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650782517"
-                                       class="replay_btn">回复</a>
-
-                                    <span class="replay_btn J_report">举报</span>
-
-                                </p>
-                            </div>
-                        </li>
-                        <li class="clearfix" post-id="650781645" id="807" float-id="807" u-id="27344175">
-                            <div class="reply_list_img">
-                                <a href="http://bbs.xiaomi.cn/u-detail-27344175" class="headportrait" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <img class="user_head"
-                                         data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/27344175/avatar.jpg?&amp;width=50&amp;height=50"
-                                         src="HamiSchool/js1/noavatar_small.gif">
-                                </a>
-                            </div>
-                            <div class="reply_list_con">
-                                <div class="auth_msg clearfix">
-                                    <a href="http://bbs.xiaomi.cn/u-detail-27344175" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">newwjh</a>
-                                    <i class="vip_icon "></i>
-                                    <span class="time">&nbsp;&nbsp;</span>
-                                    <span class="at"> 发表于</span>
-                                    <span class="time">05-28 16:11:57</span>
-                                    <span class="comefrom">·来自</span>
-                                    <a class="only_read_auth"
-                                       href="http://bbs.xiaomi.cn/t-29693730-u27344175#comment_top">只看该作者</a>
-                                    <span class="reply_list_float">807#</span>
-                                </div>
-                                <div class="reply_txt"><p>永远相信美好的事情即将发生</p></div>
-                                <p class="replay_bu">
-                                    <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650781645"
-                                       class="replay_btn">回复</a>
-
-                                    <span class="replay_btn J_report">举报</span>
-
-                                </p>
-                            </div>
-                        </li>
-                        <li class="clearfix" post-id="650781423" id="806" float-id="806" u-id="36370887">
-                            <div class="reply_list_img">
-                                <a href="http://bbs.xiaomi.cn/u-detail-36370887" class="headportrait" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <img class="user_head"
-                                         data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/36370887/avatar.jpg?&amp;width=50&amp;height=50"
-                                         src="HamiSchool/js1/noavatar_small.gif">
-                                </a>
-                            </div>
-                            <div class="reply_list_con">
-                                <div class="auth_msg clearfix">
-                                    <a href="http://bbs.xiaomi.cn/u-detail-36370887" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">米，too!</a>
-                                    <i class="vip_icon 											   vip_icon_m2										   "></i>
-                                    <span class="time">&nbsp;&nbsp;神仙级手机控</span>
-                                    <span class="at"> 发表于</span>
-                                    <span class="time">05-28 16:11:00</span>
-                                    <span class="comefrom">·来自PC</span>
-                                    <a class="only_read_auth"
-                                       href="http://bbs.xiaomi.cn/t-29693730-u36370887#comment_top">只看该作者</a>
-                                    <span class="reply_list_float">806#</span>
-                                </div>
-                                <div class="reply_txt">为小米8年度旗舰发布会打call送祝福。祝福小米</div>
-                                <p class="replay_bu">
-                                    <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650781423"
-                                       class="replay_btn">回复</a>
-
-                                    <span class="replay_btn J_report">举报</span>
-
-                                </p>
-                            </div>
-                        </li>
-                        <li class="clearfix" post-id="650781422" id="805" float-id="805" u-id="36370887">
-                            <div class="reply_list_img">
-                                <a href="http://bbs.xiaomi.cn/u-detail-36370887" class="headportrait" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <img class="user_head"
-                                         data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/36370887/avatar.jpg?&amp;width=50&amp;height=50"
-                                         src="HamiSchool/js1/noavatar_small.gif">
-                                </a>
-                            </div>
-                            <div class="reply_list_con">
-                                <div class="auth_msg clearfix">
-                                    <a href="http://bbs.xiaomi.cn/u-detail-36370887" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">米，too!</a>
-                                    <i class="vip_icon 											   vip_icon_m2										   "></i>
-                                    <span class="time">&nbsp;&nbsp;神仙级手机控</span>
-                                    <span class="at"> 发表于</span>
-                                    <span class="time">05-28 16:10:59</span>
-                                    <span class="comefrom">·来自PC</span>
-                                    <a class="only_read_auth"
-                                       href="http://bbs.xiaomi.cn/t-29693730-u36370887#comment_top">只看该作者</a>
-                                    <span class="reply_list_float">805#</span>
-                                </div>
-                                <div class="reply_txt">为小米8年度旗舰发布会打call送祝福。祝福小米</div>
-                                <p class="replay_bu">
-                                    <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650781422"
-                                       class="replay_btn">回复</a>
-
-                                    <span class="replay_btn J_report">举报</span>
-
-                                </p>
-                            </div>
-                        </li>
-                        <li class="clearfix" post-id="650781161" id="804" float-id="804" u-id="30753813">
-                            <div class="reply_list_img">
-                                <a href="http://bbs.xiaomi.cn/u-detail-30753813" class="headportrait" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <img class="user_head"
-                                         data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/30753813/avatar.jpg?&amp;width=50&amp;height=50"
-                                         src="HamiSchool/js1/noavatar_small.gif">
-                                </a>
-                            </div>
-                            <div class="reply_list_con">
-                                <div class="auth_msg clearfix">
-                                    <a href="http://bbs.xiaomi.cn/u-detail-30753813" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">冰点星云</a>
-                                    <i class="vip_icon 											   vip_icon_m2										   "></i>
-                                    <span class="time">&nbsp;&nbsp;神仙级手机控</span>
-                                    <span class="at"> 发表于</span>
-                                    <span class="time">05-28 16:09:53</span>
-                                    <span class="comefrom">·来自</span>
-                                    <a class="only_read_auth"
-                                       href="http://bbs.xiaomi.cn/t-29693730-u30753813#comment_top">只看该作者</a>
-                                    <span class="reply_list_float">804#</span>
-                                </div>
-                                <div class="reply_txt"><p>动物世界呀</p></div>
-                                <p class="replay_bu">
-                                    <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650781161"
-                                       class="replay_btn">回复</a>
-
-                                    <span class="replay_btn J_report">举报</span>
-
-                                </p>
-                            </div>
-                        </li>
-
                     </ul>
                     <div class="flotation" style="width: 200px;">
                         <h4>选中<span class="themenum">0</span>篇<span class="closebtn"></span>

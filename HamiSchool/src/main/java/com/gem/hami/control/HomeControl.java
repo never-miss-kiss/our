@@ -26,8 +26,9 @@ public class HomeControl {
     public void findmessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("mlist",homeService.findUserMessagesByCondition(1));
         request.getRequestDispatcher("/index.jsp").forward(request,response);
-
-
-
+    }
+    @RequestMapping(value = "/deletemessage.action")
+    public void deletemessage(HttpServletRequest request,HttpServletResponse response){
+        homeService.removeUserMessage(5);
     }
 }

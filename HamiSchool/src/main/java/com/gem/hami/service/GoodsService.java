@@ -1,6 +1,9 @@
 package com.gem.hami.service;
 
-import com.gem.hami.entity.*;
+import com.gem.hami.entity.Goods;
+import com.gem.hami.entity.GoodsCollection;
+import com.gem.hami.entity.GoodsComment;
+import com.gem.hami.entity.GoodsCommentReply;
 
 import java.util.List;
 
@@ -46,13 +49,13 @@ public interface GoodsService {
 
 //   /goods/recommend.action
 //            推荐功能
-    public List<Goods> recommend(int userId, int goodsId);
+    public List<Goods> recommend(int userId,int goodsId);
 
 
 //  /goods/modifyGoodsByCondition.action
 //   修改商品信息
 //            点击量增加
-    public boolean modifyGoodsByCondition(Goods goods);
+    public boolean modifyGoodsByCondition(Goods goods,int goodsId);
 
 
 ///home/removeGoods.action

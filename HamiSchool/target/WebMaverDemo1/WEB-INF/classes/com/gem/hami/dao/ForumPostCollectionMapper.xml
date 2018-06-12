@@ -12,7 +12,20 @@
         INSERT INTO forum_post_collection(user_id,forum_post_id,time) VALUES (#{userId},#{forumPostId},#{time})
     </insert>
 
+    <!--查询某人是否已经收藏某帖子-->
+    <!--public ForumPostCollection selectIfCollectOneForum(int userId,int forumId);-->
+    <select id="selectIfCollectOneForum" resultType="ForumPostCollection" >
+        SELECT * FROM forum_post_collection WHERE user_id=#{param1} AND forum_post_id=#{param2}
+    </select>
+
+    <!--public boolean selectCollectionId(int userId,int forumId);-->
+    <select id="selectCollectionId" resultType="int" >
+        SELECT forum_post_collection_id FROM  forum_post_collection WHERE user_id=#{param1} AND forum_post_id=#{param2}
+    </select>
+
+
 <!--删除收藏帖子-->
+
     <!--public boolean removeForumPostCollection(int forumPostCollectionId);-->
     <delete id="removeForumPostCollection" parameterType="int">
         DELETE FROM forum_post_collection WHERE forum_post_collection_id=#{_parameter}

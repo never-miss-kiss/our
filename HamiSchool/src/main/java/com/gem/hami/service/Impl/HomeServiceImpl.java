@@ -1,6 +1,5 @@
 package com.gem.hami.service.Impl;
 
-import com.gem.hami.dao.UserMapper;
 import com.gem.hami.dao.UserMessageMapper;
 import com.gem.hami.entity.User;
 import com.gem.hami.entity.UserMessage;
@@ -27,8 +26,8 @@ public class HomeServiceImpl implements HomeService {
      * @Modified By:
      */
     @Override
-    public User findUser(String userId) {
-        return userMapper.selectUserById(userId);
+    public User findUser(int userId) {
+        return null;
     }
 
 
@@ -41,7 +40,6 @@ public class HomeServiceImpl implements HomeService {
     public User modifyUser(User user) {
         return userMapper.updateUser(user);
     }
-
 
     /**
       * @Author：sunshilin

@@ -4,8 +4,10 @@ import com.gem.hami.entity.ForumCommentReply;
 import com.gem.hami.entity.ForumPost;
 import com.gem.hami.entity.ForumPostCollection;
 import com.gem.hami.entity.ForumPostComment;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ForumPostMapper {
 
@@ -19,6 +21,16 @@ public interface ForumPostMapper {
  */
     public List<ForumPost> selectTopForumPostBySchoolId(int schoolId);
 
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:分页用的，其实和上面的一模一样
+      * @Date：Created in 16:49 2018/6/12
+      * @Modified By:
+     */
+    public List<ForumPost> selectTopForumPostBySchoolId1(int schoolId);
+
 
 
     /**
@@ -29,7 +41,7 @@ public interface ForumPostMapper {
       * @Date：Created in 19:13 2018/6/4
       * @Modified By:
      */
-    public List<ForumPost> selectForumPostByTime(int schoolId);
+//    public List<ForumPost> selectForumPostByTime(int schoolId);
 
 
 
@@ -42,6 +54,11 @@ public interface ForumPostMapper {
 //      * @Modified By:
 //     */
 //    public List<ForumPost> selectForumPostByLikeCount(int schoolId);
+
+
+
+
+    public ForumPost findForumPostByForudId(int forumId);
 
 
 
