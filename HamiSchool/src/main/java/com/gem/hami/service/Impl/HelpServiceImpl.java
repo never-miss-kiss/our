@@ -30,19 +30,18 @@ public class HelpServiceImpl implements HelpService{
     private HelpCommentReplyMapper helpCommentReplyMapper;
 
     @Override
-    public List<HelpInfo> findHelpByCondition(int userId, int schoolId, int sortId) {
+    public List<HelpInfo> findHelpsByCondition(int userId, int schoolId, int sortId) {
 
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        List<HelpBuy> helpBuys = helpBuyMapper.selectByUserId(userId,schoolId);
-        List<HelpSend>  helpSends =  helpSendMapper.selectByUserId(userId,schoolId);
-        List<HelpFetch>  helpFetch =  helpFetchMapper.selectByUserId(userId,schoolId);
-        List<HelpQueue>  helpQueues =  helpQueueMapper.selectByUserId(userId,schoolId);
+        List<HelpBuy> helpBuys = helpBuyMapper.selectHelpsById(userId,schoolId);
+        List<HelpSend>  helpSends =  helpSendMapper.selectHelpsById(userId,schoolId);
+        List<HelpFetch>  helpFetch =  helpFetchMapper.selectHelpsById(userId,schoolId);
+        List<HelpQueue>  helpQueues =  helpQueueMapper.selectHelpsById(userId,schoolId);
 
         helpInfos.addAll(helpBuys);
         helpInfos.addAll(helpFetch);
         helpInfos.addAll(helpSends);
         helpInfos.addAll(helpQueues);
-
 
         if(sortId==1) {
             //按最新的 create_time 排序
@@ -126,6 +125,27 @@ public class HelpServiceImpl implements HelpService{
     }
 
     @Override
+    public HelpBuy findHelpBuy(int helpId) {
+        return helpBuyMapper.selectHelpByHelpId(helpId);
+    }
+
+    @Override
+    public HelpSend findHelpSend(int helpId) {
+        return helpSendMapper.selectHelpByHelpId(helpId);
+    }
+
+    @Override
+    public HelpFetch findHelpFetch(int helpId) {
+        return helpFetchMapper.selectHelpByHelpId(helpId);
+    }
+
+    @Override
+    public HelpQueue findHelpQueue(int helpId) {
+        return helpQueueMapper.selectHelpByHelpId(helpId);
+    }
+
+
+    @Override
     public boolean addHelpBuy(HelpBuy helpBuy) {
         helpBuyMapper.insertHelpBuy(helpBuy);
         return true;
@@ -153,12 +173,35 @@ public class HelpServiceImpl implements HelpService{
     public boolean modifyHelpClickCount(int typeId, int helpId) {
         switch (typeId){
             case 1:helpBuyMapper.updateHelpClickCount(helpId);
+                   break;
             case 2:helpSendMapper.updateHelpClickCount(helpId);
+                    break;
             case 3:helpFetchMapper.updateHelpClickCount(helpId);
+                    break;
             case 4:helpQueueMapper.updateHelpClickCount(helpId);
-
+                    break;
         }
         return false;
+    }
+
+    @Override
+    public List<HelpComment> findHelpCommentsByCondition(int typeId, int helpId, int userId) {
+        if(typeId!=0&&helpId!=0){
+            return helpCommentMapper.selectCommentsByHelpId(typeId,helpId);
+        }else if (userId!=0){
+            return helpCommentMapper.selectCommentsByUserId(userId);
+        }
+        return null;
+    }
+
+    @Override
+    public List<HelpCommentReply> findReplysByCommentId(int commentId) {
+        return helpCommentReplyMapper.selectReplysByCommentId(commentId);
+    }
+
+    @Override
+    public HelpCommentReply findReplyByReplyId(int ReplyId) {
+        return null;
     }
 
     @Override
