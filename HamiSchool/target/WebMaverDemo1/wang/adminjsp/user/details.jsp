@@ -10,10 +10,10 @@
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0"> 
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/css/pintuer.css"/>
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/css/admin.css"/>
-	<script src="${pageContext.request.contextPath}/script/pintuer.js"></script>
-	<script src="${pageContext.request.contextPath}/script/jquery-1.11.2.js"></script>   
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/pintuer.css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/admin.css"/>
+	<script src="${pageContext.request.contextPath}/wang/script/pintuer.js"></script>
+	<script src="${pageContext.request.contextPath}/wang/script/jquery-1.11.2.js"></script>
   </head>
   
   <body>
@@ -70,7 +70,7 @@
     			</div>
     		</div>
       	
-    		<button class="button border-dot ret desname" onclick="window.location.href='${pageContext.request.contextPath }/adminUser/adminUser_userList'">返回</button>
+    		<button class="button border-dot ret desname" onclick="window.location.href='${pageContext.request.contextPath }/admin/selectAllUser.action'">返回</button>
  
     	</div>
     </div>

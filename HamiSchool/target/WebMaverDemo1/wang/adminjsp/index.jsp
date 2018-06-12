@@ -17,7 +17,7 @@
     <h1><img src="${pageContext.request.contextPath }/wang/images/in.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
   </div>
   <div class="head-l">
-	  <a class="button button-little bg-green" href="${pageContext.request.contextPath }/homepage/homepage_showAdvert" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;
+	  <a class="button button-little bg-green" href="${pageContext.request.contextPath }/wang/adminjsp/homepage/adv.jsp" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;
 	  <a class="button button-little bg-red" href="${pageContext.request.contextPath }/jsp/login.jsp"><span class="icon-power-off"></span> 退出登录</a> 
   </div>
 </div>
@@ -40,8 +40,8 @@
     <li><a href="${pageContext.request.contextPath }/adminLegwork/adminLegwork_queryAllLegWorkType" target="right"><span class="icon-caret-right"></span>跑腿管理</a></li>
     <li><a href="${pageContext.request.contextPath }/adminGoods/adminGoods_goodsList?goods.goodsName=${queryName}&goods.goodsKind.goodsKindId=${kindsId}" target="right"><span class="icon-caret-right"></span>商品管理</a></li>
    
-    <li><a href="${pageContext.request.contextPath }/adminUser/adminUser_userList?user.nickname=${queryName }&user.sex=${sex}" target="right"><span class="icon-caret-right"></span>用户管理</a></li>  
-    <li><a href="${pageContext.request.contextPath }/adminTip/adminTip_tipsList?tip.user.telephone=${queryTel }" target="right"><span class="icon-caret-right"></span>举报管理</a></li>          
+    <li><a href="${pageContext.request.contextPath }/admin/selectAllUser.action" target="right"><span class="icon-caret-right"></span>用户管理</a></li>
+    <li><a href="${pageContext.request.contextPath }/admin/reportList.action" target="right"><span class="icon-caret-right"></span>举报管理</a></li>
   </ul>  
 </div>
 <script type="text/javascript">

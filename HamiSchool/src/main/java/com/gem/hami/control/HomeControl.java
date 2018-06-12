@@ -19,9 +19,9 @@ public class HomeControl {
     private HomeService homeService;
 
     @RequestMapping("/selectUser.action")
-    public void selectUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void selectUser(Integer userId,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        homeService.findUserById(2);
+        homeService.findUserById(userId);
 
        request.getRequestDispatcher("/wang/index.jsp").forward(request,response);
     }

@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
     <title>后台管理中心</title>  
-    <script src="${pageContext.request.contextPath }/script/jquery-1.11.2.js"></script>   
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/pintuer.css">
-	<script src="${pageContext.request.contextPath }/script/pintuer.js"></script>  
+    <script src="${pageContext.request.contextPath }/wang/script/jquery-1.11.2.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/pintuer.css">
+	<script src="${pageContext.request.contextPath }/wang/script/pintuer.js"></script>
 </head>
 
 <style>

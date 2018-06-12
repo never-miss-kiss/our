@@ -3,8 +3,10 @@ package com.gem.hami.service;
 import com.gem.hami.entity.Admin;
 import com.gem.hami.entity.Report;
 import com.gem.hami.entity.User;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface AdminService {
@@ -20,7 +22,31 @@ public interface AdminService {
 //   /admin/removeAdmin.action
 //   删除管理员
 //    adminId 高级管理员id,removedId 被删除的管理员id
-    public boolean removeAdmin(int adminId,int removedId);
+    public boolean removeAdmin(int adminId, int removedId);
+
+    /**
+     * @Author：Wang
+     * @Date：Created in 8:54 2018/6/6
+     * @Modified By:
+     */
+    /**
+     * 根据管理员Id删除管理员
+     * @param adminId
+     * @return
+     */
+    public boolean removeAdminById(int adminId);
+
+    /**
+     * @Author：Wang
+     * @Date：Created in 8:50 2018/6/6
+     * @Modified By:
+     */
+    /**
+     * 修改管理员信息
+     * @param admin
+     * @return
+     */
+    public boolean modifyAdmin(Admin admin);
 
 
 
@@ -28,7 +54,7 @@ public interface AdminService {
 //  修改管理员id
 //  adminId 本人的管理员号,根据本人的管理员级别决定能不能修改
 // admin要修改的管理员信息
-    public boolean modifyAdmin(int adminId,Admin admin);
+    public boolean modifyAdmin(int adminId, Admin admin);
 
 
 //  /admin/findAdmin.action
@@ -59,6 +85,20 @@ public interface AdminService {
 //            查找用户信息
     public User findUserByName(String uname);
 
+    /**
+     * @Author：Wang
+     * @Date：Created in 2018-6-11 08:51:24
+     * @Modified By:
+     */
+    /**
+     * 查找所有用户
+     * @return
+     */
+    public List<User> findAllUser();
+
+//    分页
+    public PageInfo<User> getAllUser(Map<String,Object> map);
+
 
     /**
      * @Author：Wang
@@ -67,10 +107,10 @@ public interface AdminService {
      */
     /**
      * 根据用户id删除用户
-     * @param uid
+     * @param userId
      * @return
      */
-    public boolean removeUserById(int uid);
+    public boolean removeUserById(int userId);
 
     /**
      * @Author：Wang

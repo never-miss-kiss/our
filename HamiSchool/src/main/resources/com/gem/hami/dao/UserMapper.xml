@@ -53,5 +53,23 @@
         DELETE FROM  user WHERE user_id=#{_parameter}
     </delete>
 
+    <!--public List<User> selectUserByCondition(String user)-->
+    <select id="selectUserByCondition" resultType="User" parameterType="QueryPojo">
+        select * from user
+        <where>
+            <if test="userId neq null">
+                and user_id = #{userId}
+            </if>
+            <if test="shoolId neq null">
+                and shool_id = #{shoolId}
+            </if>
+            <if test="nickname neq null">
+                and nickname = #{nickname}
+            </if>
+            <if test="sex neq null">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
 
 </mapper>

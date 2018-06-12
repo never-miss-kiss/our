@@ -58,15 +58,6 @@
           <div class="tips"></div>
         </div>
       </div>
-<!--       <div class="form-group">
-        <div class="label">
-          <label>URL：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input w50" name="url" value=""  />
-          <div class="tips"></div>
-        </div>
-      </div> -->
       <div class="form-group">
         <div class="label">
           <label>图片：</label>
