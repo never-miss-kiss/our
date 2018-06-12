@@ -14,7 +14,9 @@ public interface HelpFetchMapper {
      * @Modified By:
      */
 
-    public List<HelpFetch> selectByUserId(int  userId,int schoolId);
+    public List<HelpFetch> selectHelpsById(int  userId,int schoolId);
+
+    public HelpFetch selectHelpByHelpId(int helpId);
 
     public boolean insertHelpFetch(HelpFetch helpFetch);
 

@@ -1,5 +1,6 @@
 package com.gem.hami.dao;
 
+import com.gem.hami.entity.QueryPojo;
 import com.gem.hami.entity.User;
 
 import java.util.List;
@@ -100,10 +101,11 @@ public interface UserMapper {
      * @Modified By:tian
      */
     /**
+     *  public User findUserById(Integer userId)
      * 根据Id查找User
-     * @param uid
+     * @param
      */
-    public User selectUserById(String uid);
+    public User selectUserById(Integer userid);
     /**
      * @Author：Wang
      * @Result:
@@ -127,7 +129,7 @@ public interface UserMapper {
      * @Date：Created in 19:19 2018/6/4
      * @Modified By:
      */
-    public User updateUser(User user);
+    public boolean updateUser(User user);
 
     /**
      * @Author：Wang
@@ -163,5 +165,17 @@ public interface UserMapper {
      * @return
      */
     public boolean deleteUserById(int userId);
+
+    /**
+     * @Author：Wang
+     * @Date：Created in 2018-6-11 15:07:20
+     * @Modified By:
+     */
+    /**
+     * 根据条件查询User
+     * @param queryPojo
+     * @return
+     */
+    public List<User> selectUserByCondition(QueryPojo queryPojo);
 
 }

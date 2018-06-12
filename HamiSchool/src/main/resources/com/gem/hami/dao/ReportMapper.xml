@@ -15,8 +15,11 @@
 
     <!--public boolean  deleteReportById(int id);-->
     <delete id="deleteReportById" parameterType="int">
-        DELETE * FROM report WHERE report_id=#{_parameter}
+        DELETE FROM report WHERE report_id=#{_parameter}
     </delete>
 
-
+    <!--public List<Report> selectReportByReson(int rid);-->
+    <select id="selectReportByReson" parameterType="int" resultType="Report">
+        select * from report WHERE reason_category_id=#{_parameter};
+    </select>
 </mapper>

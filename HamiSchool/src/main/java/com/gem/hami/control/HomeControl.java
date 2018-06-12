@@ -1,5 +1,7 @@
 package com.gem.hami.control;
 
+import com.gem.hami.entity.User;
+import com.gem.hami.service.AdminService;
 import com.gem.hami.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,19 +18,25 @@ public class HomeControl {
     @Autowired
     private HomeService homeService;
 
-    @RequestMapping("/user.action")
-    public void selectUser(Integer id,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       homeService.findUser("1");
+    @RequestMapping("/selectUser.action")
+    public void selectUser(Integer userId,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        homeService.findUserById(userId);
+
        request.getRequestDispatcher("/wang/index.jsp").forward(request,response);
     }
 
-    @RequestMapping(value = "/findmessage.action")
-    public void findmessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("mlist",homeService.findUserMessagesByCondition(1));
-        request.getRequestDispatcher("/index.jsp").forward(request,response);
+//    public User modifyUser(User user)
+    @RequestMapping("/updateUser.action")
+    public void updateUser(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        User user = homeService.findUserById(2);
+        user.setAge(101);
+        user.setNickname("奈克");
+        homeService.modifyUser(user);
+        request.getRequestDispatcher("/wang/index.jsp").forward(request,response);
     }
-    @RequestMapping(value = "/deletemessage.action")
-    public void deletemessage(HttpServletRequest request,HttpServletResponse response){
-        homeService.removeUserMessage(5);
-    }
+
+
+
+
 }

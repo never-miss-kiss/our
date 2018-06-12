@@ -15,7 +15,9 @@ public interface HelpQueueMapper {
       * @Date：Created in 19:24 2018/6/4
       * @Modified By:
      */
-    public List<HelpQueue> selectByUserId(int  userId,int schoolId);
+    public List<HelpQueue> selectHelpsById(int  userId,int schoolId);
+
+    public HelpQueue selectHelpByHelpId(int helpId);
 
     public boolean insertHelpQueue(HelpQueue helpQueue);
 

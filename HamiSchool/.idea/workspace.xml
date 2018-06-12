@@ -18,11 +18,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ForumServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/ForumServiceImpl.java">
+      <file leaf-file-name="AdminControl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/control/AdminControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-899">
-              <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+            <state relative-caret-position="-181">
+              <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsMapper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/dao/GoodsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="31" column="61" lean-forward="false" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/adminjsp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/adminjsp/user/userList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="84" column="110" lean-forward="false" selection-start-line="84" selection-start-column="107" selection-end-line="84" selection-end-column="110" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/adminjsp/user/details.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/dao/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1188">
+              <caret line="108" column="7" lean-forward="false" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/AdminService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="132" column="7" lean-forward="false" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/AdminServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,6 +119,12 @@
       <find>helps</find>
       <find>help_send</find>
       <find>send</find>
+      <find>useryu</find>
+      <find>telphone</find>
+      <find>extends</find>
+      <find>page</find>
+      <find>fix</find>
+      <find>uc</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -55,57 +135,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/HelpCommentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/tian/haha.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/HelpCommentReplyMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/HelpCommentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/HelpCommentReplyIdMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/HelpFetch.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/HelpSend.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/HelpInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/HelpQueue.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/HelpService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/HelpBuyMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/HelpFetchMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/HelpSendMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/HelpQueueMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/HelpQueueMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/HelpBuyMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/HelpSendMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/HelpServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/HelpFetchMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/control/HelpControl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/db.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/InitService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/InitService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/InitServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/HomeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/HomeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/UserMessageMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/control/HomeControl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sun/fonts/iconfont.svg" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sun/userLogin/loginRegister.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/ForumPost.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sun/css/homepage.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/ForumPostCollectionMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/ForumPostCollectionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/db.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/GoodsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/CertifyService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/GoodsCategoryMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/PersonApplicationMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/GoodsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/SchoolMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/GoodsCategoryMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/GoodsCollectionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/GoodsCollectionMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/GoodsCommentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/GoodsCommentReplyMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/GoodsCommentReplyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/PersonApplicationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/SchoolApplicationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/CertifyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/zhu/jsp/hamirenz.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/zhu/jsp/single-goods.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/zhu/jsp/post.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/zhu/jsp/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/feedback/feedbackList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/ReportMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/homepage/adv.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/tip/tipList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/legwork/legWorkList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/tip/reportList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/AdminMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/PageBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/util/SqlIntecept.java" />
+        <option value="F:/接收文件/分页/pagehelper-5.0.0.jar!/com/github/pagehelper/PageHelper.class" />
+        <option value="F:/接收文件/分页/pagehelper-5.0.0.jar!/com/github/pagehelper/PageInfo.class" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/QueryPojo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/css/all.css" />
         <option value="$PROJECT_DIR$/src/main/resources/config/SqlMapConfig.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sun/css/all.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sun/delete.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/ForumPostMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/entity/ForumPostComment.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/ForumPostMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/dao/ForumPostCommentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/control/PageControl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/ForumService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sun/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/control/ForumControl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sun/jsp/postandcomment.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/ForumServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/service/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/control/HomeControl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/user/details.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/wang/adminjsp/user/userList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/hami/control/AdminControl.java" />
       </list>
     </option>
   </component>
@@ -125,8 +205,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../JAVATrain/Web/maven/apache-maven-3.5.2" />
-        <option name="userSettingsFile" value="C:\JAVA\JAVATrain\Web\maven\apache-maven-3.5.2\conf\settings.xml" />
+        <option name="mavenHome" value="F:/apache-maven-3.5.2" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -136,10 +215,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-4" />
-    <option name="y" value="32" />
-    <option name="width" value="1343" />
-    <option name="height" value="624" />
+    <option name="x" value="148" />
+    <option name="y" value="62" />
+    <option name="width" value="1386" />
+    <option name="height" value="698" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -160,10 +239,10 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
-      <showMembers />
+      <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
-      <hideEmptyPackages />
+      <hideEmptyPackages ProjectPane="false" />
       <abbreviatePackageNames />
       <autoscrollToSource />
       <autoscrollFromSource />
@@ -172,9 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,10 +303,234 @@
               <item name="gem" type="462c0819:PsiDirectoryNode" />
               <item name="hami" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gem" type="462c0819:PsiDirectoryNode" />
+              <item name="hami" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+              <item name="adminjsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+              <item name="adminjsp" type="462c0819:PsiDirectoryNode" />
+              <item name="tip" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+              <item name="adminjsp" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HamiSchool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HamiSchool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -250,28 +550,25 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="SearchEverywhereHistoryKey" value="pagei&#9;PSI&#9;JAVA://com.github.pagehelper.PageInfo&#10;pageinfo&#9;PSI&#9;JAVA://com.sun.prism.j2d.print.J2DPrinterJob.PageInfo&#10;pagein&#9;FILE&#9;jar://F:/接收文件/分页/pagehelper-5.0.0.jar!/com/github/pagehelper/PageInfo.class&#10;pageI&#9;PSI&#9;JAVA://com.sun.prism.j2d.print.J2DPrinterJob.PageInfo&#10;pageh&#9;FILE&#9;jar://F:/接收文件/分页/pagehelper-5.0.0.jar!/com/github/pagehelper/PageHelper.class&#10;Pageh&#9;PSI&#9;JAVA://com.github.pagehelper.PageHelper" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\IDE\our\HamiSchool\src\main\webapp\wang\images" />
+      <recent name="F:\IDE\our\HamiSchool\src\main\webapp\wang\css" />
+      <recent name="F:\IDE\our\HamiSchool\src\main\webapp\wang\script" />
+      <recent name="F:\IDE\our\HamiSchool\src\main\java\com\gem\hami\entity" />
+      <recent name="F:\IDE\our\HamiSchool\src\main\java\com\gem\hami\dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gem.hami.entity" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\JAVA\HamiSchool\our\HamiSchool\src\main\webapp\sun\csslogin" />
       <recent name="G:\FinalProject\our\HamiSchool\src\main\resources" />
       <recent name="G:\FinalProject\our\HamiSchool\src\main" />
       <recent name="G:\FinalProject\HamiSchool\src\main\webapp\WEB-INF" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.gem.hami.control" />
-      <recent name="com.gem.hami.service.Impl" />
-      <recent name="com.gem.hami.dao" />
-      <recent name="com.gem.hami.service" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\JAVA\HamiSchool\our\HamiSchool\src\main\webapp\sun" />
-      <recent name="C:\JAVA\HamiSchool\our\HamiSchool\src\main\webapp\sun\images\imagepage" />
-      <recent name="C:\JAVA\HamiSchool\our\HamiSchool\src\main\webapp\sun\js1" />
-      <recent name="C:\JAVA\HamiSchool\our\HamiSchool\src\main\webapp\sun\css" />
-      <recent name="C:\JAVA\HamiSchool\our\HamiSchool\src\main\webapp\bootstrap" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,8 +584,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.HamiSchool">
-    <configuration name="HamiSchool" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.30" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/HamiSchool/" />
+    <configuration name="HamiSchool" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.31" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="HamiSchool:war exploded">
           <settings>
@@ -537,22 +836,16 @@
       <workItem from="1528278592133" duration="7080000" />
       <workItem from="1528324944722" duration="382000" />
       <workItem from="1528331852488" duration="22000" />
-      <workItem from="1528332169069" duration="7234000" />
-      <workItem from="1528342629743" duration="524000" />
-      <workItem from="1528343347580" duration="136000" />
-      <workItem from="1528343564967" duration="249000" />
-      <workItem from="1528343869011" duration="3658000" />
-      <workItem from="1528358153906" duration="22000" />
-      <workItem from="1528358311176" duration="2556000" />
-      <workItem from="1528366689196" duration="71000" />
-      <workItem from="1528371191282" duration="881000" />
-      <workItem from="1528372356639" duration="4436000" />
-      <workItem from="1528418915619" duration="3367000" />
-      <workItem from="1528506417520" duration="9224000" />
-      <workItem from="1528524262883" duration="5522000" />
-      <workItem from="1528677424274" duration="40831000" />
-      <workItem from="1528763607003" duration="27865000" />
-      <workItem from="1528805238295" duration="179000" />
+      <workItem from="1528332236942" duration="200000" />
+      <workItem from="1528332567474" duration="2437000" />
+      <workItem from="1528338610076" duration="985000" />
+      <workItem from="1528418190030" duration="821000" />
+      <workItem from="1528419661646" duration="5559000" />
+      <workItem from="1528506308578" duration="11776000" />
+      <workItem from="1528677118059" duration="31723000" />
+      <workItem from="1528764119077" duration="3747000" />
+      <workItem from="1528781358233" duration="7670000" />
+      <workItem from="1528790073300" duration="2572000" />
     </task>
     <servers />
   </component>
@@ -589,76 +882,43 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216736000" />
+    <option name="totallyTimeSpent" value="183297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11356467" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21134594" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12776025" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16617863" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5061179" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30441642" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14126807" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33258426" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21134594" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5061179" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31861198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30441642" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29652998" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07570978" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34700316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17130308" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14126807" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25841874" sideWeight="0.49335864" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2510981" sideWeight="0.5066414" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30599368" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -675,277 +935,356 @@
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/AdminServiceImpl.java</url>
+          <line>93</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/csslogin/admin.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/csslogin/iconfont.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/jslogin/pintuer.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/InitService.java">
+    <entry file="jar://F:/接收文件/分页/pagehelper-5.0.0.jar!/com/github/pagehelper/PageHelper.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/util/SqlIntecept.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/control/InitControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/InitServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/HomeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="50" column="60" lean-forward="false" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/control/HomeControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/userLogin/reg.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/userLogin/secret.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/userLogin/sms.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/fonts/iconfont.svg" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/images/注册背景.JPEG" />
-    <entry file="file://$PROJECT_DIR$/../../../JAVATrain/Web/Mybatis分页_5.15/Mybatis_Demo3/src/com/gem/shop/entity/PageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../JAVATrain/Web/Mybatis分页_5.15/Mybatis_Demo3/src/com/gem/shop/entity/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../JAVATrain/Web/Mybatis分页_5.15/Mybatis_Demo3/src/com/gem/shop/entity/QueryPojo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../JAVATrain/Web/Mybatis分页_5.15/Mybatis_Demo3/src/com/gem/shop/dao/GoodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-522">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding>
-            <marker date="1526372310000" expanded="true" signature="1097:1245" ph="select , fro... " />
-            <marker date="1526372310000" expanded="true" signature="1331:1386" ph="delete from " />
-            <marker date="1526372310000" expanded="true" signature="1468:1774" ph="insert into goods... " />
-            <marker date="1526372310000" expanded="true" signature="1877:2190" ph="update goods... " />
-            <marker date="1526372310000" expanded="true" signature="2284:2550" ph="update goods... " />
-            <marker date="1526372310000" expanded="true" signature="4129:4249" ph="select g.*,c... goods" />
-            <marker date="1526372310000" expanded="true" signature="4433:4470" ph="select count... goods" />
+            <element signature="e#580#581#0" expanded="false" />
+            <element signature="e#627#628#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../JAVATrain/Web/Mybatis分页_5.15/Mybatis_Demo3/src/com/gem/shop/entity/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-366">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../JAVATrain/Web/mybatis_5.14/Mybatis_Demo3/src/com/gem/shop/entity/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/userLogin/loginRegister.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/HomeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/bootstrap/jQuery.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/css/homepage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1156" column="0" lean-forward="false" selection-start-line="1156" selection-start-column="0" selection-end-line="1156" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/entity/ForumPostCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3750">
-          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/applicationContext_dao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-395">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/dao/ForumPostCollectionMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1653">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/js1/jquery-1.8.0.min.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/js1/list.js" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/block.rnc">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/script/all.css" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/44.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/add.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/page_be.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/page.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/上衣1.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/11.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/22.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/btn02.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/btn01.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/btn03.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/btn04.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/btn11.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/cxy.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/default.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/graybg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/in.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/in_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/loading.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/unread.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/uploadto.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/webdec.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/images/upload.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/css/pintuer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1158">
-          <caret line="237" column="16" lean-forward="false" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+        <state relative-caret-position="247">
+          <caret line="56" column="54" lean-forward="true" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/css/all.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/SqlMapConfig.xml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.dtd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="16" column="77" lean-forward="true" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
+        <state relative-caret-position="158">
+          <caret line="654" column="10" lean-forward="false" selection-start-line="654" selection-start-column="10" selection-end-line="654" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/images/imagepage/page.gif" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/ForumPostCollectionMapper.xml">
+    <entry file="jar://F:/接收文件/分页/pagehelper-5.0.0.jar!/com/github/pagehelper/PageInfo.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/AdminMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/delete.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="740" column="90" lean-forward="true" selection-start-line="740" selection-start-column="90" selection-end-line="740" selection-end-column="90" />
+        <state relative-caret-position="189">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#form#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1528678815114" expanded="true" signature="305:324" ph="select * fro... admin" />
+            <marker date="1528678815114" expanded="true" signature="453:754" ph="insert into admin... " />
+            <marker date="1528678815114" expanded="true" signature="889:935" ph="delete FROM " />
+            <marker date="1528678815114" expanded="true" signature="1067:1260" ph="update admin... " />
+            <marker date="1528678815114" expanded="true" signature="1412:1460" ph="select * fro... admin" />
+            <marker date="1528678815114" expanded="true" signature="1628:1683" ph="select * fro... admin" />
+            <marker date="1528678815114" expanded="true" signature="1802:1820" ph="select * fro... user" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/entity/ForumPostComment.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/SqlMapConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="22" column="51" lean-forward="false" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        <state relative-caret-position="486">
+          <caret line="18" column="77" lean-forward="false" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/entity/ForumCommentReply.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="81">
+          <caret line="129" column="19" lean-forward="true" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/ForumPostMapper.xml">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/javafx-src.zip!/com/sun/prism/j2d/print/J2DPrinterJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="35" column="70" lean-forward="false" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
+        <state relative-caret-position="-42">
+          <caret line="860" column="30" lean-forward="false" selection-start-line="860" selection-start-column="30" selection-end-line="860" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/control/PageControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/ForumPostCommentMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/entity/QueryPojo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#349#350#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="113" column="38" lean-forward="false" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="38" />
+          <folding>
+            <element signature="e#2013#2014#0" expanded="false" />
+            <element signature="e#2075#2076#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/css/all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="100" column="38" lean-forward="false" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/script/jquery-1.11.2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-178">
+          <caret line="7748" column="4" lean-forward="false" selection-start-line="7748" selection-start-column="4" selection-end-line="7748" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/5.1.3/pagehelper-5.1.3.jar!/com/github/pagehelper/PageInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/control/HomeControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/adminjsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="132" column="7" lean-forward="false" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/adminjsp/user/details.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1188">
+          <caret line="108" column="7" lean-forward="false" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/gem/hami/dao/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="56" column="81" lean-forward="false" selection-start-line="56" selection-start-column="72" selection-end-line="56" selection-end-column="81" />
+          <folding>
+            <marker date="1528719913427" expanded="true" signature="332:402" ph="select * fro... user" />
+            <marker date="1528719913427" expanded="true" signature="540:605" ph="INSERT INTO user... " />
+            <marker date="1528719913427" expanded="true" signature="849:867" ph="select * fro... user" />
+            <marker date="1528719913427" expanded="true" signature="1018:1065" ph="select * fro... user" />
+            <marker date="1528719913427" expanded="true" signature="1201:1249" ph="select * fro... user" />
+            <marker date="1528719913427" expanded="true" signature="1370:1635" ph="update user " />
+            <marker date="1528719913427" expanded="true" signature="1790:1849" ph="select * fro... user" />
+            <marker date="1528719913427" expanded="true" signature="1999:2044" ph="DELETE FROM " />
+            <marker date="1528719913427" expanded="true" signature="2044:2057" ph="..." />
+            <marker date="1528719913427" expanded="true" signature="2175:2220" ph="DELETE FROM " />
+            <marker date="1528719913427" expanded="true" signature="2392:2410" ph="select * fro... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/wang/adminjsp/user/userList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="84" column="110" lean-forward="false" selection-start-line="84" selection-start-column="107" selection-end-line="84" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/5.1.3/pagehelper-5.1.3.jar!/com/github/pagehelper/page/PageMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/list.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/infor.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/ForumService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="60" />
+        <state relative-caret-position="208">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/dao/ForumPostCommentMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/control/AdminControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="-181">
+          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/dao/ForumPostMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/dao/GoodsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/control/ForumControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="70" column="83" lean-forward="false" selection-start-line="70" selection-start-column="83" selection-end-line="70" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/entity/ForumPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sun/jsp/postandcomment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4292">
-          <caret line="559" column="54" lean-forward="true" selection-start-line="559" selection-start-column="54" selection-end-line="559" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/hami/service/Impl/ForumServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-899">
-          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        <state relative-caret-position="128">
+          <caret line="31" column="61" lean-forward="false" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -1009,7 +1348,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1017,7 +1355,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0</last-edited>
+          <last-edited>Maven: commons-pool:commons-pool:1.5.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

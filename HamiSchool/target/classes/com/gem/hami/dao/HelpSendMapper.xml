@@ -2,6 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.HelpSendMapper">
 
+    <resultMap id="selectHelpSendMap" type="HelpSend">
+        <id column="help_send_id" property="helpSendId"></id>
+        <result column="name" property="name"/>
+        <result column="send_address" property="sendAddress"/>
+        <result column="receipt_address" property="receiptAddress"/>
+        <result column="send_information" property="sendInformation"/>
+        <result column="send_time" property="sendTime"/>
+        <result column="distance" property="distance"/>
+        <result column="recommended_price" property="recommendedPrice"/>
+        <result column="person_price" property="personPrice"/>
+        <result column="create_time" property="createTime"/>
+        <result column="user_id" property="userId"/>
+        <result column="end_time" property="endTime"/>
+        <result column="is_finished" property="isFinished"/>
+        <result column="click_count" property="clickCount"/>
+        <association property="user" javaType="User">
+            <result column="nickname" property="nickname"/>
+        </association>
+    </resultMap>
+
     <!--public List<HelpSend> selectByUserId(int  userId);
             select hs.* FROM help_send hs,user u where hs.user_id = u.user_id
         and hs.user_id = ${param1}
@@ -9,7 +29,8 @@
         终于写好了这个插入语句，建议过来人好好看看 中间细节很多坑
     -->
 
-    <select id="selectByUserId"  resultType="HelpSend">
+
+    <select id="selectHelpsById"  resultType="HelpSend">
         select hs.* FROM help_send hs,user u where hs.user_id = u.user_id
         <if test=" param1 != 0">
             and hs.user_id = ${param1}
@@ -19,6 +40,9 @@
         </if>
     </select>
 
+    <select id="selectHelpByHelpId" resultMap="selectHelpSendMap">
+        select hs.*,u.* FROM help_send hs,user u where hs.user_id = u.user_id and hs.help_send_id = #{param1}
+    </select>
     <!--insert into help_send(name,send_address,receipt_address,send_information,send_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)-->
     <!--VALUES (#{name},#{send_address},#{receipt_address},#{send_information},#{send_time},-->
     <!--#{distance},#{recommended_price},#{person_price},#{create_time},#{user_id},#{end_time},#{is_finished},#{click_count})-->
