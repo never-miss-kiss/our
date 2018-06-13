@@ -31,6 +31,30 @@ public interface ForumPostCollectionMapper {
 
 
     /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:
+      * @Date：Created in 15:24 2018/6/11
+      * @Modified By:
+     */
+    public ForumPostCollection selectIfCollectOneForum(int userId,int forumId);
+
+
+
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:
+      * @Date：Created in 16:04 2018/6/11
+      * @Modified By:
+     */
+    public int selectCollectionId(int userId,int forumId);
+
+
+
+    /**
      * @Author：sunshilin
      * @param: 帖子收藏表id
      * @result:

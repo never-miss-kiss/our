@@ -8,6 +8,9 @@ import com.gem.hami.entity.GoodsCommentReply;
 import java.util.List;
 
 public interface GoodsService {
+//    查询商品类别
+
+    public List<GoodsCategory> findGoodsCategory();
 
 //    /goods/findGoodsById.action
 //    查询单个商品（按id）
@@ -22,8 +25,7 @@ public interface GoodsService {
 //userId 用户主键
 //schoolId 学校id
 //sortId 表示排序的类型 1为按学校 2为按热度(点击量) 3为按价格
-    public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int userId,
-                                            int schoolId,int sortId);
+    public List<Goods> findGoodsByCondition(QueryPojo queryPojo);
 
 //    /goods/addGoods.action
 //            发布二手商品
@@ -42,7 +44,7 @@ public interface GoodsService {
 
 //    /goods/addGoodsCollection.action
 //            商品收藏
-    public boolean addGoodsCollection(int userId,int goodsId);
+    public boolean addGoodsCollection(GoodsCollection goodsCollection);
 
 
 //   /goods/recommend.action

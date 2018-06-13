@@ -49,10 +49,10 @@ public interface ReportMapper {
     /**
      * public List<Report> findReportByTitle(String title)
      * 根据标题查找举报
-     * @param title
+     * @param rid
      * @return
      */
-    public List<Report> selectReportByTitle(String title);
+    public List<Report> selectReportByReson(int rid);
 
 
 }

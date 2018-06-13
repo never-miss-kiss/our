@@ -4,8 +4,10 @@ import com.gem.hami.entity.ForumCommentReply;
 import com.gem.hami.entity.ForumPost;
 import com.gem.hami.entity.ForumPostCollection;
 import com.gem.hami.entity.ForumPostComment;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ForumPostMapper {
 
@@ -19,6 +21,16 @@ public interface ForumPostMapper {
  */
     public List<ForumPost> selectTopForumPostBySchoolId(int schoolId);
 
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:分页用的，其实和上面的一模一样
+      * @Date：Created in 16:49 2018/6/12
+      * @Modified By:
+     */
+    public List<ForumPost> selectTopForumPostBySchoolId1(int schoolId);
+
 
 
     /**
@@ -29,19 +41,24 @@ public interface ForumPostMapper {
       * @Date：Created in 19:13 2018/6/4
       * @Modified By:
      */
-    public List<ForumPost> selectForumPostByTime(int schoolId);
+//    public List<ForumPost> selectForumPostByTime(int schoolId);
 
 
 
-    /**
-      * @Author：sunshilin
-      * @param: 某学校的id
-      * @result: 帖子集合
-      * @Description:按照点赞量从高到低查询出所有的帖子
-      * @Date：Created in 19:18 2018/6/4
-      * @Modified By:
-     */
-    public List<ForumPost> selectForumPostByLikeCount(int schoolId);
+//    /**
+//      * @Author：sunshilin
+//      * @param: 某学校的id
+//      * @result: 帖子集合
+//      * @Description:按照点赞量从高到低查询出所有的帖子
+//      * @Date：Created in 19:18 2018/6/4
+//      * @Modified By:
+//     */
+//    public List<ForumPost> selectForumPostByLikeCount(int schoolId);
+
+
+
+
+    public ForumPost findForumPostByForudId(int forumId);
 
 
 
@@ -70,7 +87,7 @@ public interface ForumPostMapper {
       * @Date：Created in 19:36 2018/6/4
       * @Modified By:
      */
-    public boolean  insertForumPost();
+    public boolean  insertForumPost(ForumPost forumPost);
 
 
 
@@ -87,7 +104,7 @@ public interface ForumPostMapper {
       * @Date：Created in 19:49 2018/6/4
       * @Modified By:
      */
-    public void  updateForumPostIsTop(int forumPostId);
+    public boolean  updateForumPostIsTop(int forumPostId);
 
 
 
@@ -99,7 +116,7 @@ public interface ForumPostMapper {
       * @Date：Created in 19:55 2018/6/4
       * @Modified By:
      */
-    public void  updateForumPostIsnotTop(int forumPostId);
+    public boolean  updateForumPostIsnotTop(int forumPostId);
 
 
 

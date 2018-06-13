@@ -1,8 +1,12 @@
 package com.gem.hami.dao;
 
 import com.gem.hami.entity.Goods;
+import com.gem.hami.entity.QueryPojo;
+import org.apache.ibatis.annotations.Param;
+
 
 import java.util.List;
+import java.util.Map;
 
 public interface GoodsMapper {
     /**
@@ -14,7 +18,19 @@ public interface GoodsMapper {
      * parameter 商品ID
       * @Modified By:
      */
-    public Goods findGoodsById(int id);
+    public Goods selectGoodsById(int id);
+
+    /**
+      * @Author：Zhu
+       * @param
+      * @Result:
+      * @Date：Created in 15:55 2018/6/12
+      * @Description 根据商品类别ID查询商品
+      * @Modified By:
+     */
+    public List<Goods> selectGoodsByCategoryId(int id);
+
+
 /**
   * @Author：Zhu
    * @param
@@ -25,8 +41,7 @@ public interface GoodsMapper {
   * sortId 表示排序的类型 1为按学校 2为按热度(点击量) 3为按价格 4为按时间
   * @Modified By:
  */
-public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int userId,
-                                        int schoolId,int sortId);
+public List<Goods> selectGoodsByCondition(QueryPojo queryPojo);
 
     /**
       * @Author：Zhu
@@ -36,7 +51,7 @@ public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int user
       * @Description 发布商品
       * @Modified By:
      */
-     public boolean addGoods(Goods goods);
+     public boolean insertGoods(Goods goods);
 /**
   * @Author：Zhu
    * @param
@@ -45,7 +60,7 @@ public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int user
   * @Description 商品推荐
   * @Modified By:
  */
-    public List<Goods> recommend(int userId,int goodsId);
+    public List<Goods> selectRecommend(@Param("userId") int userId, @Param("goodsId") int goodsId);
 /**
   * @Author：Zhu
    * @param
@@ -54,7 +69,7 @@ public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int user
   * @Description 修改商品信息（点赞、增加点击量）
   * @Modified By:
  */
-    public boolean modifyGoodsByCondition(Goods goods,int goodsId);
+    public boolean updateGoodsByCondition(Goods goods);
     /**
       * @Author：Zhu
        * @param
@@ -63,7 +78,7 @@ public List<Goods> findGoodsByCondition(String name,int goodsCategoryId,int user
       * @Description 删除商品
       * @Modified By:
      */
-    public boolean removeGoods(int goodsId);
+    public boolean deleteGoods(int goodsId);
 
 
 

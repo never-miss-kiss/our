@@ -1,4 +1,10 @@
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html lang="zh-CN" xml:lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,24 +17,20 @@
     <!--<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css">-->
 
 
-    <!--[if lt IE 9]>
-    <link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
-    <![endif]-->
-    <!--<script type="text/javascript" async="" src="../mstr.js.下载"></script>-->
-    <!--<script type="text/javascript" async="" src="../xmst.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../zh-cn.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../jquery.min.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../base.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../jquery.lazyload.js.下载"></script>-->
-    <!--<script type="text/javascript" async="" src="../sign.js.下载" charset="UTF-8"></script>-->
 
-    <link rel="stylesheet" href="../css/homepage.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/sign.css">
+    <link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
+    <link rel="stylesheet" href="<%=path%>/sun/css/homepage.css">
+    <link rel="stylesheet" href="<%=path%>/sun/css/index.css">
+    <link rel="stylesheet" href="sun/css/sign.css">
+    <link href="<%=path%>/sun/css/all.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%=path%>/bootstrap/js/jquery.min.js"></script>
+    <script src="<%=path%>/bootstrap/jQuery.js"></script>
+    <script src="<%=path%>/sun/js1/jquery-1.8.0.min.js"></script>
+    <script src="<%=path%>/sun/js1/list.js"></script>
 </head>
 
 <body class="xmbbs_desktop" >
-<script>switchMobile.init()</script>
+<%--<script>switchMobile.init()</script>--%>
 <div class="main">
     <style>
         .xmcomm_header_wrap {
@@ -261,6 +263,289 @@
             }
         }
     </style>
+
+    <style type="text/css">
+        /*body{*/
+        /*margin:0;*/
+        /*padding:0;*/
+        /*}*/
+        .text-content{
+            min-width:1180px;
+            border-bottom: 1px solid #e7e7e7;
+            border-top: 1px solid #e7e7e7;
+            background: #f4f4f4;
+        }
+        .text-content h1{
+            text-align:center;
+            font-size: 20px;
+            padding-top: 50px;
+            color: #EB4F38;
+        }
+        .text-content p{
+            padding: 10px 100px 40px 100px;
+            clear: both;
+            color: #333;
+            display: block;
+            font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 auto;
+            outline: medium none;
+            position: relative;
+            width: 900px;
+            word-wrap: break-word;
+        }
+        .praise{
+            width:20px;
+            height:20px;
+            margin: 50px auto;
+            cursor: pointer;
+            font-size: 12px;
+            text-align:center;
+            position: relative;
+        }
+        #praise{
+            display:block;
+            width:20px;
+            height:20px;
+            /*margin:0;*/
+            /*margin:0 auto;*/
+        }
+        #praise-img{
+            vertical-align: middle;
+        }
+        #praise-txt{
+            height:20px;
+            line-height:20px;
+            display: block;
+        }
+        .praise img{
+            width:20px;
+            height:20px;
+            display:block;
+            vertical-align: middle;
+            /*margin: 0 auto;*/
+        }
+        #praise img .animation{
+            animation: myfirst 0.5s;
+            -moz-animation: myfirst 0.5s;
+            -webkit-animation: myfirst 0.5s;
+            -o-animation: myfirst 0.5s;
+        }
+        #add-num{
+            display:none;
+        }
+        #add-num .add-animation{
+            color: #000;
+            position:absolute;
+            top:-15px;
+            left: 10px;
+            font-size: 15px;
+            opacity: 0;
+            filter: Alpha(opacity=0);
+            -moz-opacity:0;
+            animation: mypraise 0.5s ;
+            -moz-animation: mypraise 0.5s ;
+            -webkit-animation: mypraise 0.5s ;
+            -o-animation: mypraise 0.5s ;
+            font-style:normal;
+        }
+        .praise .hover , #add-num .add-animation.hover , #praise-txt.hover{
+            color: #EB4F38;
+        }
+        @keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @-moz-keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @-webkit-keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @-o-keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+        @-moz-keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+        @-webkit-keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+        @-o-keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+    </style>
     <div class="xmcomm_header_wrap">
         <div class="xmcomm_header">
 
@@ -430,6 +715,155 @@
                                 /*padding-left: 24px;*/
                             /*}*/
                         </style>
+
+                        <ul>
+                        <c:forEach items="${pageInfo.list}" var="list">
+                            ${list.userId}
+                            <li class="theme_list clearfix" u-id="137006033">
+                                <div class="theme_list_img">
+                                    <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
+                                       rel="noopener noreferrer">
+                                        <img class="user_head" src="../images/avatar.jpg"
+                                             data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/137006033/avatar.jpg?&amp;width=50&amp;height=50"
+                                             style="display: block;">
+                                    </a>
+                                </div>
+                                <script>
+                                    function tiaoZhuan(forum){
+                                        alert(forum);
+                                        session.setAttribute("forum",forum);
+
+                                    }
+                                </script>
+                                <div class="theme_list_con">
+
+                                    <div class="title">
+                                        <a href="${pageContext.request.contextPath}/forum/content.action?postId=${list.forumPostId}"  class="title_name " target="_blank"
+                                           rel="noopener noreferrer"
+                                           onclick="tiaoZhuan(${list})">
+                                            ${list.title} </a>
+
+                                        <div class="auth_msg clearfix">
+                                            <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_name" target="_blank"
+                                               rel="noopener noreferrer">${list.user.nickname}</a>
+                                            <i class=""></i>
+
+                                            <span class="time txt"><fmt:formatDate value="${list.releaseTime}" pattern="MM-dd-yyyy hh:mm:ss"></fmt:formatDate> </span>
+
+                                            <span class="comefrom txt"></span>
+                                            <span class="stick txt">${list.isTop}</span>
+
+
+                                            <p class="see">
+                                                <span class="numb msg user_name domy1" id="${list.forumPostId+100}" onclick="shoucang(${list.forumPostId},${list.forumPostId+100},${list.user.userId})"><i></i>收藏</span>
+                                                <span class="numb view">
+
+
+                                                         <span id="praise">
+                                                             <img src="<%=path%>/sun/images/zan.png" height="15px" width="15px" id="praise-img" />
+                                                         </span>
+                                                         <span id="praise-txt">${list.clickCount}</span>
+                                                            <span id="add-num"><em>+1</em></span>
+
+                                                </span>
+                                                <span class="numb msg"><i></i>点赞数：</span>
+                                                <span class="numb view"><i></i>点击量：93276</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </li>
+                        </c:forEach>
+                            <script>
+                                function shoucang(forumId,collection,userId){
+                                    if( document.getElementById(collection).innerText=="已收藏"){
+                                        alert("您已加入收藏，请到个人中心查看!");
+                                    }
+                                    alert("123");
+                                    alert(collection);
+                                    $.ajax({
+                                        type:"get",
+//                                        processData:false,
+                                        url:"${pageContext.request.contextPath}/forum/addonesCollection.action?forumId="+forumId+"&userId="+userId,
+//                                        data:{forumId:forumId,userId:userId},
+                                        success:function (mag) {
+
+                                                document.getElementById(collection).innerText = "已收藏";
+
+
+                                        }
+                                    })
+                                }
+                            </script>
+
+
+                            <c:forEach items="${tlist}" var="timelist">
+                                <li class="theme_list clearfix" u-id="137006033">
+                                    <div class="theme_list_img">
+                                        <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
+                                           rel="noopener noreferrer">
+                                            <img class="user_head" src="../images/avatar.jpg"
+                                                 data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/137006033/avatar.jpg?&amp;width=50&amp;height=50"
+                                                 style="display: block;">
+                                        </a>
+                                    </div>
+                                    <div class="theme_list_con">
+
+                                        <div class="title">
+                                            <a href="http://bbs.xiaomi.cn/t-29629024"  class="title_name " target="_blank"
+                                               rel="noopener noreferrer"
+                                               onclick="">
+                                                    ${timelist.title} </a>
+
+                                            <div class="auth_msg clearfix">
+                                                <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_name" target="_blank"
+                                                   rel="noopener noreferrer">${timelist.userId}</a>
+                                                <i class=""></i>
+
+                                                <span class="time txt">${timelist.releaseTime}</span>
+
+                                                <span class="comefrom txt"></span>
+                                                <span class="stick txt">${timelist.isTop}</span>
+                                                <p class="see">
+                                                    <span class="numb msg user_name"><i></i>收藏</span>
+                                                    <span class="numb view"><i></i>点赞</span>
+                                                    <span class="numb msg"><i></i>点赞数：${timelist.clickCount}</span>
+                                                    <span class="numb view"><i></i>点击量：93276</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                </li>
+                            </c:forEach>
+
+
+                            <script>
+                                /* @author:Romey
+                                 * 动态点赞
+                                 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
+                                */
+                                $(function(){
+                                    $("#praise").click(function(){
+                                        var praise_img = $("#praise-img");
+                                        var text_box = $("#add-num");
+                                        var praise_txt = $("#praise-txt");
+                                        var num=parseInt(praise_txt.text());
+                                        if(praise_img.attr("src") == ("<%=path%>/sun/images/yizan.png")){
+                                            $(this).html("<img src='<%=path%>/sun/images/zan.png' id='praise-img' height='15px' width='15px'/>");
+                                            praise_txt.removeClass("hover");
+                                            text_box.show().html("<em class='add-animation'>-1</em>");
+                                            $(".add-animation").removeClass("hover");
+                                            num -=1;
+                                            praise_txt.text(num)
+                                        }else{
+                                            $(this).html("<img src='<%=path%>/sun/images/yizan.png' id='praise-img' height='15px' width='15px' />");
+                                            praise_txt.addClass("hover");
+                                            text_box.show().html("<em class='add-animation'>+1</em>");
+                                            $(".add-animation").addClass("hover");
+                                            num +=1;
+                                            praise_txt.text(num)
+                                        }
+                                    });
+                                })
+                            </script>
                         <li class="theme_list clearfix" u-id="137006033">
                             <div class="theme_list_img">
                                 <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
@@ -465,52 +899,86 @@
                                 </div>
                             </div>
                          </li>
+                 </ul>
 
 
 
-                                    </ul>
-                                    <div class="base_widget_paging">
-                                        <div class="paging_widget_2">
-                                            <ul>
-                                                <li class="page selected "><a
-                                                        onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">1</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-2"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">2</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-3"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">3</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-4"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">4</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-5"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">5</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-6"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">6</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-7"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">7</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-8"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">8</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-9"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">9</a>
-                                                </li>
-                                                <li class="page"><a href="http://bbs.xiaomi.cn/d-10"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">10</a>
-                                                </li>
-                                                <li class="next"><a href="http://bbs.xiaomi.cn/d-2"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">&gt;</a>
-                                                </li>
-                                                <li class="last"><a href="http://bbs.xiaomi.cn/d-1034"
-                                                                    onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">末页&gt;&gt;</a>
-                                                    <!--</li-->                </li>
-                            </ul>
+
+                    <script >
+                        function getPage(curPage) {
+                            //将隐藏域的值变成curPage
+                            document.getElementById("curPage").value=curPage;
+//             触发表单的提交事件
+                            document.getElementById("mainForm").submit();
+                        }
+                    </script>
+                    <form action="${pageContext.request.contextPath}/forum/list.action" method="post" id="mainForm">
+
+                        <input type="hidden" name="curPage" id="curPage"/>
+                        <div class='page fix'>
+                            共 <b>${pageInfo.total}</b> 条
+
+                            <a href="javascript:getPage(${pageInfo.firstPage})"  class="first">首页</a>
+                            <c:if test="${!pageInfo.isFirstPage}">
+                                <a href="javascript:getPage(${pageInfo.prePage})" class="pre">上一页</a>
+                            </c:if>
+                            当前第<span>${pageInfo.pageNum}</span>页
+                            <c:if test="${!pageInfo.isLastPage}">
+                            <a href="javascript:getPage(${pageInfo.nextPage})" class="next">下一页</a>
+                            </c:if>
+
+
+                            <a href="javascript:getPage(${pageInfo.lastPage})" class="last">末页</a>
+
                         </div>
-                    </div>
+                    </form>
+
+
+
+
+
+                                    <%--<div class="base_widget_paging">--%>
+                                        <%--<div class="paging_widget_2">--%>
+                                            <%--<ul>--%>
+                                                <%--<li class="page selected "><a--%>
+                                                        <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">1</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-2"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">2</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-3"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">3</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-4"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">4</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-5"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">5</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-6"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">6</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-7"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">7</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-8"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">8</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-9"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">9</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-10"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">10</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="next"><a href="http://bbs.xiaomi.cn/d-2"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">&gt;</a>--%>
+                                                <%--</li>--%>
+                                                <%--<li class="last"><a href="http://bbs.xiaomi.cn/d-1034"--%>
+                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">末页&gt;&gt;</a>--%>
+                                                    <%--<!--</li-->                </li>--%>
+                                            <%--</ul>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
                 </div>
             </div>
             <script type="text/javascript" src="../personLayer.js.下载"></script>

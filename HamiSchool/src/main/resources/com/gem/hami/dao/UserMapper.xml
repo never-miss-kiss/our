@@ -15,7 +15,7 @@
 
 
 
-
+<!--============================================================================================================-->
 
 
     <!--public List<User> selectAllUser()-->
@@ -23,9 +23,9 @@
         select * from user;
     </select>
 
-    <!--public void selectUserById(String uid)-->
-    <select id="selectUserById" parameterType="String">
-        select * from user WHERE user_id=#{_parameter};
+    <!--public User selectUserById(Integer uid)-->
+    <select id="selectUserById" resultType="User" parameterType="Integer">
+        select * from user WHERE user_id=#{__parameter}
     </select>
 
     <!--public User selectUserBySchoolId(int sid)-->
@@ -35,23 +35,41 @@
 
     <!--public User updateUser(User user);-->
     <update id="updateUser" parameterType="User">
-        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state} where user_id=#{userId};
+        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{phone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state} where user_id=#{userId};
     </update>
 
     <!--public User selectUserByName(String uname)-->
-    <select id="selectUserByName" parameterType="String">
-        select * from user WHERE nickname=#{_parameter};
+    <select id="selectUserByName" parameterType="String" resultType="User">
+        select * from user WHERE nickname LIKE "%"#{_parameter} "%";
     </select>
 
     <!--public boolean deleteUserByCondition(String uname)-->
     <delete id="deleteUserByCondition" parameterType="String">
-        DELETE * FROM user WHERE nickname=#{_parameter}
+        DELETE FROM user WHERE nickname=#{_parameter}
     </delete>
 
     <!--public boolean deleteUserById(int userId);-->
     <delete id="deleteUserById" parameterType="int">
-        DELETE * FROM  user WHERE user_id=#{_parameter}
+        DELETE FROM  user WHERE user_id=#{_parameter}
     </delete>
 
+    <!--public List<User> selectUserByCondition(String user)-->
+    <select id="selectUserByCondition" resultType="User" parameterType="QueryPojo">
+        select * from user
+        <where>
+            <if test="userId neq null">
+                and user_id = #{userId}
+            </if>
+            <if test="shoolId neq null">
+                and shool_id = #{shoolId}
+            </if>
+            <if test="nickname neq null">
+                and nickname = #{nickname}
+            </if>
+            <if test="sex neq null">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
 
 </mapper>

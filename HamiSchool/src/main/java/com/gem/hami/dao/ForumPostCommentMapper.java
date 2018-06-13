@@ -13,6 +13,16 @@ public interface ForumPostCommentMapper {
      */
     public boolean insertForumPostComment(ForumPostComment forumPostComment);
 
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:查询
+      * @Date：Created in 18:55 2018/6/12
+      * @Modified By:
+     */
+    public ForumPostComment findForumComment(int forumId);
+
 
 
     /**

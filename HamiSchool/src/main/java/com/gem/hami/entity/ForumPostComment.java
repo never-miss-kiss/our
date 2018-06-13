@@ -1,6 +1,7 @@
 package com.gem.hami.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class ForumPostComment {
     private Integer forumPostCommentId;
@@ -16,6 +17,16 @@ public class ForumPostComment {
     private ForumPost forumPost;
 
     private User user;
+
+    private List<ForumCommentReply> replyList;
+
+    public List<ForumCommentReply> getReplyList() {
+        return replyList;
+    }
+
+    public void setReplyList(List<ForumCommentReply> replyList) {
+        this.replyList = replyList;
+    }
 
     public Integer getForumPostCommentId() {
         return forumPostCommentId;
