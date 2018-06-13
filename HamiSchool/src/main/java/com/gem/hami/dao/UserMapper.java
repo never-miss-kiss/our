@@ -1,6 +1,6 @@
 package com.gem.hami.dao;
 
-import com.gem.hami.entity.QueryPojo;
+import com.gem.hami.entity.QueryPojo_User;
 import com.gem.hami.entity.User;
 
 import java.util.List;
@@ -176,6 +176,6 @@ public interface UserMapper {
      * @param queryPojo
      * @return
      */
-    public List<User> selectUserByCondition(QueryPojo queryPojo);
+    public List<User> selectUserByCondition(QueryPojo_User queryPojo);
 
 }

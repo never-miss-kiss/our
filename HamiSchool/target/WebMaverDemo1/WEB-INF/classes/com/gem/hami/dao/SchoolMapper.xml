@@ -2,4 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.SchoolMapper">
 
+
+    <!--查询开通过的学校信息-->
+    <select id="selectCertifiedSchool">
+        SELECT  * FROM  school where school_state_id=3
+    </select>
+    <!--&lt;!&ndash;查询用户所在的学校&ndash;&gt;-->
+    <!--<select id="selectSchoolByUserId" parameterType="int" resultType="School">-->
+        <!--SELECT  * from school where user_id=#{_parameter}-->
+    <!--</select>-->
 </mapper>

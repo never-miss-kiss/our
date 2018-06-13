@@ -5,7 +5,7 @@ import com.gem.hami.dao.AdminMapper;
 import com.gem.hami.dao.ReportMapper;
 import com.gem.hami.dao.UserMapper;
 import com.gem.hami.entity.Admin;
-import com.gem.hami.entity.QueryPojo;
+import com.gem.hami.entity.QueryPojo_User;
 import com.gem.hami.entity.Report;
 import com.gem.hami.entity.User;
 import com.gem.hami.service.AdminService;
@@ -97,7 +97,7 @@ public class AdminServiceImpl implements AdminService {
 //        拦截sql语句 添加limit分页
         PageHelper.startPage(curPage,pageSieze);
 
-        List<User> userList = userMapper.selectUserByCondition((QueryPojo) map.get("queryPojo"));
+        List<User> userList = userMapper.selectUserByCondition((QueryPojo_User) map.get("queryPojo"));
 
         PageInfo<User> pageInfo = new PageInfo<>(userList);
 

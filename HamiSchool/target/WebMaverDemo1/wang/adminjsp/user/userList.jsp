@@ -71,87 +71,60 @@
   
   <body>
    	<div class="rightCont">
-	  <%--<form action="${pageContext.request.contextPath }/" method="post">
-		用户名:<input type='text' name='user.nickname' value='${queryName }'>&nbsp;&nbsp;
-		性别:<select name='user.sex'>
-			   	<option value=''>请选择</option>
-			    	<option value="男">男</option>
-			    	<option value="女">女</option>
-		    </select>
-		    
-		    &nbsp;&nbsp;
-		    <input type='submit' value='查询' />
-	   </form>--%>
 		<form action="${pageContext.request.contextPath}/admin/selectAllUser.action" id="mainForm" method="get">
-		<table class="tab1">
-			<tr>
-				<%--隐藏域 保存我们当前的页面数--%>
-				<input type="hidden" name="curPage" id="curPage" />
+			<table class="tab1">
+				<tr>
+					<%--隐藏域 保存我们当前的页面数--%>
+					<input type="hidden" name="curPage" id="curPage" />
 
-				<td width="90" align="right">userid</td>
-				<td >
-					<input name="userId" type="text" class="allInput" >
-				</td>
-				<td width="90" align="right">schoolid</td>
-				<td >
-					<input name="schoolId" type="text" class="allInput">
-				</td>
-				<td width="90" align="right">性别</td>
-				<td>
-					<select name="sex">
-						<option value="1">--请选择性别--</option>
-						<%--<c:choose>
-							<c:when test="${sex==queryPojo.sex}">
-
-								<option value="F">男</option>
-								<option value="M" >女</option>
-							</c:when>
-							<c:otherwise>--%>
-								<option value="F">男</option>
-								<option value="M">女</option>
-							<%--</c:otherwise>--%>
-						<%--</c:choose>--%>
-
-					</select>
-				</td>
-
-					<td width="85" align="right"><input type="submit" class="tabSub" value="查 询" /></td>
-
-			</tr>
-		</table>
-
-	</div>   
+					<td width="90" align="right">userid</td>
+					<td >
+						<input name="userId" type="text" class="allInput" >
+					</td>
+					<td width="90" align="right">schoolid</td>
+					<td >
+						<input name="schoolId" type="text" class="allInput">
+					</td>
+					<td width="90" align="right">性别</td>
+					<td>
+						<select name="sex">
+							<option value="1">--请选择性别--</option>
+							<option value="F">男</option>
+							<option value="M">女</option>
+						</select>
+					</td>
+						<td width="85" align="right"><input type="submit" class="tabSub" value="查 询" /></td>
+				</tr>
+			</table>
+		</form>
 	<br />
-	 <table class="table table-hover">
-		 <tr> 
-		     <th width="20%" style="text-align: center">用户名</th>
-			 <th width="10%" style="text-align: center">用户编号</th>
-			 <th width="10%" style="text-align: center">是否注销</th>
-			 <th width="10%" style="text-align: center">性别</th>
-			 <th width="20%" style="text-align: center">电话号码</th>
-			 <th width="30%" >操作</th>
-		 </tr> 
-		 
+	<tbody>
+	<table class="table table-hover">
+		<tr>
+			<th width="20%" style="text-align: center">用户名</th>
+			<th width="10%" style="text-align: center">用户编号</th>
+			<th width="10%" style="text-align: center">是否注销</th>
+			<th width="10%" style="text-align: center">性别</th>
+			<th width="20%" style="text-align: center">电话号码</th>
+			<th width="30%" >操作</th>
+		</tr>
+		<c:forEach var="e" items="${pageInfo.list}">
+			<tr>
+				<td style="text-align: center">${e.nickname}</td>
+				<td style="text-align: center">${e.userId}</td>
+				<td style="text-align: center">${e.schoolId}</td>
+				<td style="text-align: center">${e.sex}</td>
+				<td style="text-align: center">${e.telphone}</td>
+				<td>
+					<button id="button01${e.userId}" class="button border-dot" onclick="window.location.href='${pageContext.request.contextPath }/home/selectUser.action?userId=${e.userId }'">详情</button>
+					<button id="button02${e.userId}" class="button border-dot" onclick="return del('${e.userId}');">注销</button>
+					<button id="button03${e.userId}" class="button border-dot" onclick="window.location.href='${pageContext.request.contextPath }/adminUser/adminUser_retUser?userId=${e.userId }'">留言</button>
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
+	</tbody>
 
-		 <c:forEach var="e" items="${pageInfo.list}">
-
-
-			 <tr>
-				 <td style="text-align: center">${e.nickname}</td>
-				 <td style="text-align: center">${e.userId}</td>
-				 <td style="text-align: center">${e.schoolId}</td>
-				 <td style="text-align: center">${e.sex}</td>
-				 <td style="text-align: center">${e.telphone}</td>
-				 <td>
-					 <button id="button01${e.userId}" class="button border-dot" onclick="window.location.href='${pageContext.request.contextPath }/admin/selectUserById.action?userId=${e.userId}'">详情</button>
-					 <button id="button02${e.userId}" class="button border-dot" onclick="return del('${e.userId}');">注销</button>
-					 <button id="button03${e.userId}" class="button border-dot" onclick="window.location.href='${pageContext.request.contextPath }/adminUser/adminUser_retUser?userId=${e.userId }'">留言</button>
-				 </td>
-			 </tr>
-		 </c:forEach>
-		
-		 
-     </table>
 	   <br />
 	   <%--<c:set var='url' value="${pageContext.request.contextPath }/adminUser/adminUser_userList?user.nickname=${queryName }&user.sex=${sex}"></c:set>--%>
 	<%--pageInfo.getPageSize();//每页显示的数目--%>
@@ -180,8 +153,9 @@
 		跳至&nbsp;<input id="currentPageText" type='text' value='${currentPage}' class='allInput w28' />&nbsp;页&nbsp;
 		<a href="javascript:getPage($('#currentPageText').val())" class='go'>GO</a>
 
-		</form>
+
 	</div>
 
+	</div>
   </body>
 </html>

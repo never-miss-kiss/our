@@ -21,9 +21,11 @@ public class HomeControl {
     @RequestMapping("/selectUser.action")
     public void selectUser(Integer userId,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        homeService.findUserById(userId);
+        request.setAttribute("userId",homeService.findUserById(userId));
 
-       request.getRequestDispatcher("/wang/index.jsp").forward(request,response);
+
+
+       request.getRequestDispatcher("/wang/adminjsp/user/details.jsp").forward(request,response);
     }
 
 //    public User modifyUser(User user)

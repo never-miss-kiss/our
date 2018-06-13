@@ -15,13 +15,22 @@
         <result column="qq" property="qq"></result>
         <result column="remark" property="remark"></result>
         <result column="click_count" property="clickCount"></result>
+        <result column="goods_category_id" property="goodsCategoryId"></result>
         <association property="goodsCategory" javaType="GoodsCategory">
             <id column="goods_category_id" property="goodsCategoryId"></id>
             <result column="goods_category_name" property="goodsCategoryName"></result>
         </association>
         <association property="user" javaType="User">
             <id column="user_id" property="userId"></id>
+            <result column="password" property="password"></result>
+            <result column="sex" property="sex"></result>
+            <result column="age" property="age"></result>
+            <result column="qq" property="qq"></result>
+            <result column="telphone" property="phone"></result>
+            <result column="email" property="email"></result>
             <result column="nickname" property="nickname"></result>
+            <result column="signature" property="signature"></result>
+            <result column="school_id" property="schoolId"></result>
         </association>
     </resultMap>
     <!--按ID查询商品信息-->
@@ -31,33 +40,35 @@
         where g.goods_id=#{_parameter}
         and g.goods_category_id=gc.goods_category_id and g.user_id=u.user_id and u.school_id=s.school_id
     </select>
-    <!--按条件查询商品信息-->
-    <select id="selectGoodsByCondition" resultType="Goods" parameterType="QueryPojo">
+    <!--根据商品类别ID查询商品-->
+    <select id="selectGoodsByCategoryId" parameterType="int" resultMap="getGoodsMap">
         select g.*,gc.goods_category_name,u.nickname
-        from goods g,goods_category gc,user u
+        from goods g,goods_category gc,user u,school s
+        where g.goods_category_id=#{_parameter}
+        and g.goods_category_id=gc.goods_category_id and g.user_id=u.user_id and u.school_id=s.school_id
+        limit 0,12
+    </select>
+    <!--按条件查询商品信息-->
+    <select id="selectGoodsByCondition" resultMap="getGoodsMap" parameterType="QueryPojo">
+        select g.*,gc.goods_category_name,u.nickname
+        from goods g,goods_category gc,user u,school s
         <where>
             g.goods_category_id=gc.goods_category_id
-            and g.user_id=u.user_id
+            and g.user_id=u.user_id and u.school_id = s.school_id
             <if test="goodsCategoryId neq null">
                 and g.goods_category_id =#{goodsCategoryId}
             </if>
-            <if test="name neq null">
-                and g.name like "%" #{name} "%"
-            </if>
-            <if test="name neq null">
-                and u.nickname like "%#{name}%"
-            </if>
             <if test="schoolId neq null">
-                and s.school_id =#{schoolId}
+                and s.school_id = #{schoolId}
             </if>
-            <if test="userId neq null">
-                and u.user_id =#{userId}
+            <if test="releaseTime neq null">
+                order by g.release_time DESC
             </if>
-            <if test="time neq null">
-                and order BY  g.release_time DESC
+            <if test="clickCount neq null">
+                order by g.click_count DESC
             </if>
-            <if test="click_counts neq null">
-                and order BY  g.click_count DESC
+            <if test="price neq null">
+                order by g.price ASC
             </if>
         </where>
     </select>

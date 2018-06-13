@@ -23,7 +23,6 @@
     <script src="../js1/base.js"></script>
     <script src="../js1/sign.js" charset="UTF-8"></script>
     <script src="../js1/codemirror.js" defer="defer"></script>
-    <script src="../js1/zh-cn (2).js"></script>
 
     <link rel="canonical" href="http://bbs.xiaomi.cn/t-29693730">
     <link rel="stylesheet" href="<%=path%>/sun/css/ueditor.css">
@@ -510,15 +509,15 @@
                     <h1>
                         <span></span>
                         <span></span>
-                        <span class="name">${forumPost.title}</span>
+                        <span class="name">【视频】王文祥自己臭(｡･∀･)ﾉﾞ嗨好玩吗？</span>
                     </h1>
                     <p class="txt">
                         <span class="user_msg_mobile"></span>
-                        <span class="marktxt"></span>
+                        <span class="marktxt">置顶</span>
 
                         <span>发表在 </span>
-                        <span class="time">${forumPost.releaseTime}</span>
-                        <span class="f_r"><i class="msg"></i>点击数：${forumPost.clickCount}</span>
+                        <span class="time"> 05-28 10:54:48</span>
+                        <span class="f_r"><i class="msg"></i>点击数：802</span>
                         <span class="f_r"><i class="see"></i>点赞数：8430</span>
                     </p>
 

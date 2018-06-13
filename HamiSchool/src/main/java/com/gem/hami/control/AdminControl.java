@@ -2,12 +2,10 @@ package com.gem.hami.control;
 //管理员模块 控制层
 
 import com.gem.hami.entity.Admin;
-import com.gem.hami.entity.WQueryPojo;
-import com.gem.hami.entity.Report;
+import com.gem.hami.entity.QueryPojo_User;
 import com.gem.hami.entity.User;
 import com.gem.hami.service.AdminService;
 import com.gem.hami.service.HomeService;
-import com.gem.hami.service.Impl.AdminServiceImpl;
 
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -127,7 +124,7 @@ public class AdminControl {
     }
 
     @RequestMapping("selectAllUser.action")
-    public void selectAllUser(WQueryPojo queryPojo,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    public void selectAllUser(QueryPojo_User queryPojo, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        编码问题，解决乱码
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
