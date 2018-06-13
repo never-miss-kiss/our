@@ -3,6 +3,7 @@ package com.gem.hami.service.Impl;
 import com.gem.hami.dao.*;
 import com.gem.hami.entity.*;
 import com.gem.hami.service.HelpService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,19 +31,18 @@ public class HelpServiceImpl implements HelpService{
     private HelpCommentReplyMapper helpCommentReplyMapper;
 
     @Override
-    public List<HelpInfo> findHelpByCondition(int userId, int schoolId, int sortId) {
+    public List<HelpInfo> findHelpsByCondition(int userId, int schoolId, int sortId) {
 
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        List<HelpBuy> helpBuys = helpBuyMapper.selectByUserId(userId,schoolId);
-        List<HelpSend>  helpSends =  helpSendMapper.selectByUserId(userId,schoolId);
-        List<HelpFetch>  helpFetch =  helpFetchMapper.selectByUserId(userId,schoolId);
-        List<HelpQueue>  helpQueues =  helpQueueMapper.selectByUserId(userId,schoolId);
+        List<HelpBuy> helpBuys = helpBuyMapper.selectHelpsById(userId,schoolId);
+        List<HelpSend>  helpSends =  helpSendMapper.selectHelpsById(userId,schoolId);
+        List<HelpFetch>  helpFetch =  helpFetchMapper.selectHelpsById(userId,schoolId);
+        List<HelpQueue>  helpQueues =  helpQueueMapper.selectHelpsById(userId,schoolId);
 
         helpInfos.addAll(helpBuys);
         helpInfos.addAll(helpFetch);
         helpInfos.addAll(helpSends);
         helpInfos.addAll(helpQueues);
-
 
         if(sortId==1) {
             //按最新的 create_time 排序
@@ -102,6 +102,7 @@ public class HelpServiceImpl implements HelpService{
                 }
             });
         }else if(sortId==3){
+            //按截止时间排序
             Collections.sort(helpInfos, new Comparator<HelpInfo>() {
                 //按创建日期排序 按最新日期排序
                 public int compare(HelpInfo t1,HelpInfo t2) {
@@ -124,6 +125,32 @@ public class HelpServiceImpl implements HelpService{
         }
         return helpInfos;
     }
+
+    @Override
+    public PageInfo<HelpInfo> findHelpsByCondition1(Map<String, Object> map) {
+        return null;
+    }
+
+    @Override
+    public HelpBuy findHelpBuy(int helpId) {
+        return helpBuyMapper.selectHelpByHelpId(helpId);
+    }
+
+    @Override
+    public HelpSend findHelpSend(int helpId) {
+        return helpSendMapper.selectHelpByHelpId(helpId);
+    }
+
+    @Override
+    public HelpFetch findHelpFetch(int helpId) {
+        return helpFetchMapper.selectHelpByHelpId(helpId);
+    }
+
+    @Override
+    public HelpQueue findHelpQueue(int helpId) {
+        return helpQueueMapper.selectHelpByHelpId(helpId);
+    }
+
 
     @Override
     public boolean addHelpBuy(HelpBuy helpBuy) {
@@ -153,12 +180,35 @@ public class HelpServiceImpl implements HelpService{
     public boolean modifyHelpClickCount(int typeId, int helpId) {
         switch (typeId){
             case 1:helpBuyMapper.updateHelpClickCount(helpId);
+                   break;
             case 2:helpSendMapper.updateHelpClickCount(helpId);
+                    break;
             case 3:helpFetchMapper.updateHelpClickCount(helpId);
+                    break;
             case 4:helpQueueMapper.updateHelpClickCount(helpId);
-
+                    break;
         }
         return false;
+    }
+
+    @Override
+    public List<HelpComment> findHelpCommentsByCondition(int typeId, int helpId, int userId) {
+        if(typeId!=0&&helpId!=0){
+            return helpCommentMapper.selectCommentsByHelpId(typeId,helpId);
+        }else if (userId!=0){
+            return helpCommentMapper.selectCommentsByUserId(userId);
+        }
+        return null;
+    }
+
+    @Override
+    public List<HelpCommentReply> findReplysByCommentId(int commentId) {
+        return helpCommentReplyMapper.selectReplysByCommentId(commentId);
+    }
+
+    @Override
+    public HelpCommentReply findReplyByReplyId(int ReplyId) {
+        return null;
     }
 
     @Override

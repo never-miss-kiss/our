@@ -11,9 +11,29 @@ public class HelpCommentReply {
 
     private Integer commentedUserId;
 
-    private Integer helpPostCommentId;
+    private Integer helpCommentId;
 
     private Date createTime;
+
+    private User user;
+
+    private User commentedUser;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getCommentedUser() {
+        return commentedUser;
+    }
+
+    public void setCommentedUser(User commentedUser) {
+        this.commentedUser = commentedUser;
+    }
 
     public Integer getHelpCommentReplyId() {
         return helpCommentReplyId;
@@ -47,12 +67,12 @@ public class HelpCommentReply {
         this.commentedUserId = commentedUserId;
     }
 
-    public Integer getHelpPostCommentId() {
-        return helpPostCommentId;
+    public Integer getHelpCommentId() {
+        return helpCommentId;
     }
 
-    public void setHelpPostCommentId(Integer helpPostCommentId) {
-        this.helpPostCommentId = helpPostCommentId;
+    public void setHelpCommentId(Integer helpCommentId) {
+        this.helpCommentId = helpCommentId;
     }
 
     public Date getCreateTime() {
