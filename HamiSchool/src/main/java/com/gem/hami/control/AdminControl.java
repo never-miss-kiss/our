@@ -2,7 +2,7 @@ package com.gem.hami.control;
 //管理员模块 控制层
 
 import com.gem.hami.entity.Admin;
-import com.gem.hami.entity.QueryPojo;
+import com.gem.hami.entity.WQueryPojo;
 import com.gem.hami.entity.Report;
 import com.gem.hami.entity.User;
 import com.gem.hami.service.AdminService;
@@ -127,7 +127,7 @@ public class AdminControl {
     }
 
     @RequestMapping("selectAllUser.action")
-    public void selectAllUser(QueryPojo queryPojo,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    public void selectAllUser(WQueryPojo queryPojo,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 //        编码问题，解决乱码
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");

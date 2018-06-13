@@ -27,6 +27,9 @@ public class User {
 
     private String state;
 
+    private School school;
+
+
     public Integer getUserId() {
         return userId;
     }
@@ -129,5 +132,13 @@ public class User {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 }
