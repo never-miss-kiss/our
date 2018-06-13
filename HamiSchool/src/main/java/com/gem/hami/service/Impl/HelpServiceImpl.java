@@ -3,6 +3,7 @@ package com.gem.hami.service.Impl;
 import com.gem.hami.dao.*;
 import com.gem.hami.entity.*;
 import com.gem.hami.service.HelpService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -101,6 +102,7 @@ public class HelpServiceImpl implements HelpService{
                 }
             });
         }else if(sortId==3){
+            //按截止时间排序
             Collections.sort(helpInfos, new Comparator<HelpInfo>() {
                 //按创建日期排序 按最新日期排序
                 public int compare(HelpInfo t1,HelpInfo t2) {
@@ -122,6 +124,11 @@ public class HelpServiceImpl implements HelpService{
             });
         }
         return helpInfos;
+    }
+
+    @Override
+    public PageInfo<HelpInfo> findHelpsByCondition1(Map<String, Object> map) {
+        return null;
     }
 
     @Override

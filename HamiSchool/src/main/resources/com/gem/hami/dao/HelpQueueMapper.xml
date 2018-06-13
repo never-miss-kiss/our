@@ -24,8 +24,8 @@
     </resultMap>
 
 
-    <select id="selectHelpsById"  resultType="HelpQueue">
-        select hq.* FROM help_queue hq,user u where hq.user_id = u.user_id
+    <select id="selectHelpsById"  resultMap="selectHelpQueueMap">
+        select hq.*, u.* FROM help_queue hq,user u where hq.user_id = u.user_id
         <if test=" param1 != 0">
             and hq.user_id = ${param1}
         </if>

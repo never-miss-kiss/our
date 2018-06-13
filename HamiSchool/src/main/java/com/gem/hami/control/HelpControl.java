@@ -3,6 +3,8 @@ package com.gem.hami.control;
 import com.gem.hami.entity.*;
 import com.gem.hami.service.HelpService;
 import com.gem.hami.service.Impl.HelpServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,9 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RequestMapping(value = "/help")
 @Controller
@@ -29,11 +29,29 @@ public class HelpControl {
     public void findByCondition(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,1);
+
         for(HelpInfo helpInfo : helpInfos){
             System.out.println(helpInfo);
         }
+
         request.setAttribute("helpInfos",helpInfos);
-        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+        request.getRequestDispatcher("/tian/showHelp/showHelp.jsp").forward(request,response);
+    }
+
+    @RequestMapping(value = "/selectByCondition1.action",method = RequestMethod.GET)
+    public void findByCondition1(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int pageSize = 5;
+        int curPage = 1;
+        String scurPage = request.getParameter("curPage");
+        if(scurPage!=null && !scurPage.trim().equals("")) {
+            curPage = Integer.parseInt(scurPage);
+        }
+        PageHelper.startPage(curPage,pageSize);
+        List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,1);
+        PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
+
+        request.setAttribute("pageInfo",pageInfo);
+        request.getRequestDispatcher("/tian/showHelp/showHelp1.jsp").forward(request,response);
 
     }
 

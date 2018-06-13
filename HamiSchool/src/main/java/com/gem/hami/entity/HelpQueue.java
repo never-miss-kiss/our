@@ -20,7 +20,9 @@ public class HelpQueue extends HelpInfo{
 
     private Float distance;
 
-    protected byte helpType = 4;
+    public HelpQueue() {
+        helpType = 4;
+    }
 
     public Date getEndTime() {
         return endTime;

@@ -24,8 +24,8 @@
     </resultMap>
 
 
-    <select id="selectHelpsById"  resultType="HelpBuy">
-        select hb.* FROM help_buy hb,user u where hb.user_id = u.user_id
+    <select id="selectHelpsById"  resultMap="selectHelpBuyMap">
+        select hb.* , u.* FROM help_buy hb,user u where hb.user_id = u.user_id
         <if test=" param1 != 0">
             and hb.user_id = ${param1}
         </if>

@@ -1,8 +1,10 @@
 package com.gem.hami.service;
 
 import com.gem.hami.entity.*;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+import java.util.Map;
 
 public interface HelpService {
 
@@ -12,6 +14,8 @@ public interface HelpService {
 //   按发布时间,点击量排序
 // userId 用户号，schoolId 学校号，sortId（排序方式：1.按发布时间，2点击量排序）
     public List<HelpInfo> findHelpsByCondition(int userId,int schoolId,int sortId);
+
+    public PageInfo<HelpInfo> findHelpsByCondition1(Map<String,Object> map);
 
 
 //    查找单个跑腿信息

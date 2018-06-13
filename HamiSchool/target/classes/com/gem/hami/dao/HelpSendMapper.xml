@@ -30,8 +30,8 @@
     -->
 
 
-    <select id="selectHelpsById"  resultType="HelpSend">
-        select hs.* FROM help_send hs,user u where hs.user_id = u.user_id
+    <select id="selectHelpsById"  resultMap="selectHelpSendMap">
+        select hs.*, u.* FROM help_send hs,user u where hs.user_id = u.user_id
         <if test=" param1 != 0">
             and hs.user_id = ${param1}
         </if>

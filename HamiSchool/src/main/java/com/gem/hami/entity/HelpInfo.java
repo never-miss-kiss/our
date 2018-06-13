@@ -24,7 +24,12 @@ public class HelpInfo {
 
     protected byte helpType;//表示跑腿表的种类 1帮我买 2.帮我送 3.帮我取 4.代排队
 
+    protected String title;
+
+    protected String content;
+
     protected User user;
+
 
     public String getName() {
         return name;
@@ -112,6 +117,22 @@ public class HelpInfo {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override

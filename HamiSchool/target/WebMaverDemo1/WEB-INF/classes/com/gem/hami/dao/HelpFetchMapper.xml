@@ -26,8 +26,8 @@
         </association>
     </resultMap>
 
-    <select id="selectHelpsById"  resultType="HelpFetch">
-        select hf.* FROM help_fetch hf,user u where hf.user_id = u.user_id
+    <select id="selectHelpsById"  resultMap="selectHelpFetchMap">
+        select hf.*, u.*  FROM help_fetch hf,user u where hf.user_id = u.user_id
         <if test=" param1 != 0">
             and hf.user_id = ${param1}
         </if>

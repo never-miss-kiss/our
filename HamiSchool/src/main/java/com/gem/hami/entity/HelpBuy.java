@@ -18,7 +18,9 @@ public class HelpBuy extends HelpInfo{
 
     private Float distance;
 
-    protected byte helpType = 1;
+    public HelpBuy() {
+        helpType = 1;
+    }
 
     public Date getEndTime() {
         return endTime;

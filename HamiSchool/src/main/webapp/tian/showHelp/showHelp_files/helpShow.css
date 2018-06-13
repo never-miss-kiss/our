@@ -1,0 +1,39 @@
+nav a{
+	font-size: 14px;
+	height: 34px !important;
+	width: 34px !important;
+}
+
+nav{
+	width: 240px !important;
+	margin: 0 auto !important;
+}
+
+
+
+.paging2{
+	height: 80px !important;
+	width:auto !important;
+	border: 2px solid green;
+	font-size: 14px !important;
+}
+
+.fix {
+	clear: both;
+	zoom: 1;
+}
+
+.fix:after {
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	content: ".";
+}
+
+.page {
+	float: right;
+	margin: 10px 0;
+	line-height: 25px;
+}

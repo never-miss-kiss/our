@@ -16,7 +16,9 @@ public class HelpSend extends HelpInfo{
 
     private Float distance;
 
-    protected byte helpType = 2;
+    public HelpSend() {
+        helpType = 4;
+    }
 
     public Date getEndTime() {
         return endTime;
