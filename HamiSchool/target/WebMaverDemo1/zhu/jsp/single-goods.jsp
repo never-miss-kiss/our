@@ -14,7 +14,7 @@
       <meta name="description" content="">
       <meta name="author" content="OrcasThemes">
       <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-      <title></title>
+      <title>商品详情</title>
       <link rel="stylesheet" href="<%= basePath %>zhu/bootstrap/css/bootstrap.min.css" />
       <script type="text/javascript" src="<%= basePath %>zhu/js/jquery-1.12.1.min.js"></script>
       <script type="text/javascript" src="<%= basePath %>zhu/bootstrap/js/bootstrap.min.js"></script>
@@ -47,15 +47,24 @@
       <link href="<%= basePath %>zhu/css/shopdetail.css" rel="stylesheet" type="text/css">
       <script src="<%= basePath %>zhu/js/common.js"></script>
       <script src="<%= basePath %>zhu/js/lity.js"></script>
+      <script type="text/javascript" src="<%= basePath %>zhu/js/showMore.js"  charset="gbk"></script>
 
-   <style>
+      <link href="<%= basePath %>zhu/lib/css/emoji.css" rel="stylesheet">
+      <script src="<%= basePath %>zhu/lib/js/config.js"></script>
+      <script src="<%= basePath %>zhu/lib/js/util.js"></script>
+      <script src="<%= basePath %>zhu/lib/js/jquery.emojiarea.js"></script>
+      <script src="<%= basePath %>zhu/lib/js/emoji-picker.js"></script>
+
+      <style>
       .head-top{background-color: #a6e1ec}
       .dark-bg{border-color: #8a6d3b;}
       .search-block{position: absolute;top:82px;left: 17%}
       .catorys{margin-top: 30px;}
-      .btn{margin-top: 10px;margin-left: 19px;margin-right: 7px;}
+      .btn{margin-top: 10px;margin-left: 19px;margin-right: 50px;}
+      .pBtn{margin-top: -15px;margin-bottom: -10px;margin-left: -10px;}
        h2.title{position: relative;top:-60px;}
-      .talk{position: relative;top: -60px;height: 380px;overflow:hidden}
+      .talk{position: relative;top: -60px; }
+      /*#button{position:absolute;top:1133px;left: 670px;width: 100px;}*/
       .add{position: relative;left:90%;top:50px;border: 1px solid red; }
       .picture{position: relative;width: 300px;height: 320px;top:-35px;float: left;padding: 50px;}
    </style>
@@ -230,65 +239,67 @@
 						<h2 class="title" style="color:#2aabd2">欢迎评论</h2>
 						<div class="widget-area">
 							<div class="status-upload">
-								<form>
-									<textarea placeholder="Your comment goes here" ></textarea>
-									<div class="comment-box-control">
-										<ul>
-											<li><a title="" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
-											<li><a title="" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
-											<li><a title="" data-placement="bottom" data-original-title="Smile"><i class="fa fa-smile-o"></i></a></li>
-										</ul>
-										<button type="submit" class="btn pull-right"><i class="fa fa-share"></i>发表评论</button>
-									</div>
-								</form>
+                               <p class="lead emoji-picker-container">
+                                  <input type="email" class="form-control" placeholder="Input field" data-emojiable="true">
+                               </p>
+                               <div class="pBtn">
+                               <button type="submit" class="btn pull-left btn-info btn-sm"><i class="fa fa-share"></i>发表评论</button>
+                               </div>
+                            <%--<form>--%>
+									<%--<textarea placeholder="Your comment goes here" data-emojiable="true" data-emoji-input="unicode" ></textarea>--%>
+									<%--<div class="comment-box-control">--%>
+										<%--&lt;%&ndash;<ul>&ndash;%&gt;--%>
+											<%--&lt;%&ndash;<li><a title="" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>&ndash;%&gt;--%>
+											<%--&lt;%&ndash;<li><a title="" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>&ndash;%&gt;--%>
+											<%--&lt;%&ndash;<li><a title="" data-placement="bottom" data-original-title="Smile" ><i class="fa fa-smile-o" ></i></a></li>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
+										<%--<button type="submit" class="btn pull-right"><i class="fa fa-share"></i>发表评论</button>--%>
+									<%--</div>--%>
+								<%--</form>--%>
 							</div><!-- Status Upload  -->
 						</div><!-- Widget Area -->
 
                        <h2 class="title" style="color:#2aabd2">商品评论</h2>
-                    <div class="talk" id="talk">
+                       <%--<div class="col-sm-2" id="button">--%>
+                          <%--<input name="" type="button"  value="+"  id="btn" onclick="btn()"  >--%>
+                       <%--</div>--%>
+                    <div class="talk" >
                        <div class="row comment-posts">
 							<div class="col-sm-11">
+                               <div  class="showMoreNChildren" pagesize="2">
+                               <C:forEach items="${goodsComment}" var="comment">
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										<strong>John Doe</strong> <span class="pull-right">commented 5 days ago</span>
+										<strong>
+                                           <C:forEach items="${username}" var="name">
+                                           <C:if test="${name.key eq comment.userId}">
+                                              <C:out value="${name.value}"></C:out>
+                                           </C:if>
+                                           </C:forEach>
+                                        </strong>
+                                       <span class="pull-right"><fmt:formatDate value="${comment.releaseTime}" pattern="yyyy-MM-dd "/></span>
 									</div>
 									<div class="panel-body">
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
+                                          <c:forTokens items="${comment.content}" delims="" begin="0" end="20" var="name">
+                                          <c:out value="${name}"/><p>
+                                          </c:forTokens>
+                                      <%--<c:out value="${comment.content}"></c:out>--%>
 									</div>
+                                    <div class="panel-footer">
+                                       <a href="<%= basePath %>goods/findGoodsCommentDetail.action?goodsCommentId=${comment.goodsCommentId}" class="badge">
+                                          <C:forEach items="${count}" var="c">
+                                             <C:if test="${c.key eq comment.goodsCommentId}">
+                                                <C:out value="${c.value}"></C:out>
+                                             </C:if>
+                                          </C:forEach>
+                                          回复
+                                       </a>
+                                    </div>
 								</div>
+                               </C:forEach>
+                               </div>
 							</div>
-							<div class="col-sm-11">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<strong>John Doe</strong> <span class="pull-right">commented 5 days ago</span>
-									</div>
-									<div class="panel-body">
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
-									</div>
-								</div>
-							</div>
-                          <a href="javascript:void(0);" id="add" style="font-size: 40px">+</a>
-                          <div class="col-sm-11">
-                                <div class="panel panel-default">
-                                   <div class="panel-heading">
-                                      <strong>John Doe</strong> <span class="pull-right">commented 5 days ago</span>
-                                   </div>
-                                   <div class="panel-body">
-                                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
-                                   </div>
-                                </div>
-                             </div>
-                             <div class="col-sm-11">
-                                <div class="panel panel-default">
-                                   <div class="panel-heading">
-                                      <strong>John Doe</strong> <span class="pull-right">commented 5 days ago</span>
-                                   </div>
-                                   <div class="panel-body">
-                                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
-                                   </div>
-                                </div>
-                             </div>
-						</div>
+                       </div>
                     </div>
                     </section>
 
@@ -347,11 +358,38 @@
                </div>
             </div>
       </div>
-
       <script>
          $(".nav .dropdown").hover(function() {
            $(this).find(".dropdown-toggle").dropdown("toggle");
          });
+      </script>
+      <script type="text/javascript">
+          //调用显示更多插件。参数是标准的 jquery 选择符
+          $.showMore(".showMoreNChildren");
+      </script>
+      <script>
+          $(function() {
+              // Initializes and creates emoji set from sprite sheet
+              window.emojiPicker = new EmojiPicker({
+                  emojiable_selector: '[data-emojiable=true]',
+                  assetsPath: '<%= basePath %>zhu/lib/img/',
+                  popupButtonClasses: 'fa fa-smile-o'
+              });
+              // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+              // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+              // It can be called as many times as necessary; previously converted input fields will not be converted again
+              window.emojiPicker.discover();
+          });
+      </script>
+      <script>
+          // Google Analytics
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-49610253-3', 'auto');
+          ga('send', 'pageview');
       </script>
       </div>
    </div>

@@ -4,9 +4,7 @@ import com.gem.hami.entity.Goods;
 import com.gem.hami.entity.QueryPojo;
 import org.apache.ibatis.annotations.Param;
 
-
 import java.util.List;
-import java.util.Map;
 
 public interface GoodsMapper {
     /**

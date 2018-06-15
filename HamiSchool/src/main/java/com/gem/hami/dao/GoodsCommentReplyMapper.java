@@ -2,7 +2,14 @@ package com.gem.hami.dao;
 
 import com.gem.hami.entity.GoodsCommentReply;
 
+import java.util.List;
+
 public interface GoodsCommentReplyMapper {
+
+
+    //查询用户之间的评论
+    public List<GoodsCommentReply> selectGoodsCommentReply(int goodsCommentId);
+
     /**
       * @Author：Zhu
        * @param

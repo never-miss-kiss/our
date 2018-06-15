@@ -11,4 +11,9 @@
     <insert id="deleteGoodsCommentReply" parameterType="int">
         DELETE FROM goods_comment_reply where goods_comment_reply_id=#{_parameter}
     </insert>
+
+    <!--查询用户之间的评论-->
+    <select id="selectGoodsCommentReply" parameterType="int" resultType="GoodsCommentReply">
+        SELECT * FROM goods_comment_reply where goods_comment_id=#{_parameter}
+    </select>
 </mapper>

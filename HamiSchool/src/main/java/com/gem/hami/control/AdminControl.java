@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -271,7 +270,7 @@ public class AdminControl {
         gmap.put("curPage",curPage);
 
 //        PageInfo<User> pageInfo = adminService.getAllUser(gmap);
-        PageInfo<Goods> pageInfo = goodsService.selectGoodByCondition(gmap);
+        PageInfo<Goods> pageInfo = goodsService.findGoodsByCondition(gmap);
         request.setAttribute("pageInfo",pageInfo);
 
         List<GoodsCategory> categoryList =  goodsService.findGoodsCategory();

@@ -11,7 +11,6 @@ public interface GoodsService {
 
     public List<GoodsCategory> findGoodsCategory();
 
-
 //    /goods/findGoodsById.action
 //    查询单个商品（按id）
     public Goods findGoodsById(int id);
@@ -29,18 +28,22 @@ public interface GoodsService {
 //userId 用户主键
 //schoolId 学校id
 //sortId 表示排序的类型 1为按学校 2为按热度(点击量) 3为按价格
-    public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
-
-
-//    管理员分页用
-    public PageInfo<Goods> selectGoodByCondition(Map<String, Object> map);
-
+public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
 
 
 
 //    /goods/addGoods.action
 //            发布二手商品
     public boolean addGoods(Goods goods);
+
+//    查询商品评论（根据商品ID）
+    public List<GoodsComment> findGoodsCommentByGoodsId(int goodsId);
+
+//    查询单个商品评论（评论ID）
+    public GoodsComment findGoodsCommentByGoodsCommentId(int goodsCommentId);
+
+//    查询被回复的评论
+    public List<GoodsCommentReply> findGoodsCommentReply(int goodsCommentId);
 
 
 //    /goods/addGoodsComment.action
@@ -92,7 +95,5 @@ public interface GoodsService {
 //            取消收藏的东西
 // collectionId  表示要删除的数据在它的表中的主键
     public boolean removeGoodsCollection(int goodsCollectionId);
-
-
 
 }

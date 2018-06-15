@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.UserMapper">
+    <resultMap id="selectUserByIdMap" type="User">
+        <id column="user_id" property="userId"></id>
+        <result column="password" property="password"></result>
+        <result column="sex" property="sex"></result>
+        <result column="age" property="age"></result>
+        <result column="qq" property="qq"></result>
+        <result column="telphone" property="telphone"></result>
+        <result column="email" property="email"></result>
+        <result column="signature" property="signature"></result>
+        <result column="nickname" property="nickname"></result>
+        <result column="person_application_id" property="personApplicationId"></result>
+        <result column="photo" property="photo" ></result>
+        <result column="school_state_id" property="schoolStateId"></result>
+        <association property="school" javaType="School">
+            <id column="school_id" property="schoolId"></id>
+            <result column="name" property="name"></result>
+            <result column="school_state_id" property="schoolStateId"></result>
+        </association>
+    </resultMap>
     <!--public User selectUserByNum(String id);-->
     <select id="selectUserByNum" resultType="User" parameterType="string">
         select * from user WHERE telphone=#{_parameter} OR email=#{_parameter};
@@ -24,8 +43,8 @@
     </select>
 
     <!--public User selectUserById(Integer uid)-->
-    <select id="selectUserById" resultType="User" parameterType="Integer">
-        select * from user WHERE user_id=#{__parameter}
+    <select id="selectUserById" parameterType="int" resultMap="selectUserByIdMap">
+        select u.*,s.name from user u,school s WHERE user_id=#{_parameter} and u.school_id=s.school_id;
     </select>
 
     <!--public User selectUserBySchoolId(int sid)-->

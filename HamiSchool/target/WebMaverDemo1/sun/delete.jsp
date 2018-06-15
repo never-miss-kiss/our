@@ -1,3 +1,4 @@
+<%@ page import="com.gem.hami.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -27,6 +28,11 @@
     <script src="<%=path%>/bootstrap/jQuery.js"></script>
     <script src="<%=path%>/sun/js1/jquery-1.8.0.min.js"></script>
     <script src="<%=path%>/sun/js1/list.js"></script>
+
+    <script>
+        alert("123");
+        alert(${sessionScope.userInfo});
+    </script>
 </head>
 
 <body class="xmbbs_desktop" >
@@ -546,6 +552,7 @@
             }
         }
     </style>
+
     <div class="xmcomm_header_wrap">
         <div class="xmcomm_header">
 
@@ -561,11 +568,14 @@
             </ul>
         </div>
     </div>
+    1${sessionScope.userInfo.nickname}<br/>
+    2<% User user = (User) session.getAttribute("userInfo");%>
+
     <div class="head_wrap">
         <div class="header wrap_990">
             <div class="user_wrap">
                 <div class="topbar-info J_userInfo " id="login">
-                    <a class="loginbtn" href="http://bbs.xiaomi.cn/site/login">登录</a>
+                    <a class="loginbtn" href="http://bbs.xiaomi.cn/site/login"><%=user.getNickname()%></a>
                     <a href="http://account.xiaomi.com/pass/register" class="registerbtn">注册</a>
                 </div>
             </div>
@@ -728,13 +738,7 @@
                                              style="display: block;">
                                     </a>
                                 </div>
-                                <script>
-                                    function tiaoZhuan(forum){
-                                        alert(forum);
-                                        session.setAttribute("forum",forum);
 
-                                    }
-                                </script>
                                 <div class="theme_list_con">
 
                                     <div class="title">
@@ -794,46 +798,6 @@
                                     })
                                 }
                             </script>
-
-
-                            <c:forEach items="${tlist}" var="timelist">
-                                <li class="theme_list clearfix" u-id="137006033">
-                                    <div class="theme_list_img">
-                                        <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
-                                           rel="noopener noreferrer">
-                                            <img class="user_head" src="../images/avatar.jpg"
-                                                 data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/137006033/avatar.jpg?&amp;width=50&amp;height=50"
-                                                 style="display: block;">
-                                        </a>
-                                    </div>
-                                    <div class="theme_list_con">
-
-                                        <div class="title">
-                                            <a href="http://bbs.xiaomi.cn/t-29629024"  class="title_name " target="_blank"
-                                               rel="noopener noreferrer"
-                                               onclick="">
-                                                    ${timelist.title} </a>
-
-                                            <div class="auth_msg clearfix">
-                                                <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_name" target="_blank"
-                                                   rel="noopener noreferrer">${timelist.userId}</a>
-                                                <i class=""></i>
-
-                                                <span class="time txt">${timelist.releaseTime}</span>
-
-                                                <span class="comefrom txt"></span>
-                                                <span class="stick txt">${timelist.isTop}</span>
-                                                <p class="see">
-                                                    <span class="numb msg user_name"><i></i>收藏</span>
-                                                    <span class="numb view"><i></i>点赞</span>
-                                                    <span class="numb msg"><i></i>点赞数：${timelist.clickCount}</span>
-                                                    <span class="numb view"><i></i>点击量：93276</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                </li>
-                            </c:forEach>
-
 
                             <script>
                                 /* @author:Romey

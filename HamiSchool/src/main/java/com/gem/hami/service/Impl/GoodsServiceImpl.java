@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class GoodsServiceImpl implements GoodsService{
+public class GoodsServiceImpl implements GoodsService {
 
     @Autowired
     private GoodsMapper goodsMapper;
@@ -43,34 +43,39 @@ public class GoodsServiceImpl implements GoodsService{
     }
 
     @Override
-    public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map) {
+    public PageInfo<Goods> findGoodsByCondition
+            (Map<String, Object> map) {
+
 
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");
 
         PageHelper.startPage(curPage,pageSize);
         List<Goods> goods = goodsMapper.selectGoodsByCondition((QueryPojo) map.get("queryPojo"));
-
         PageInfo<Goods> pageInfo = new PageInfo<>(goods);
         return pageInfo ;
     }
 
-    @Override
-    public PageInfo<Goods> selectGoodByCondition(Map<String, Object> map) {
-        int curPage1 = (int) map.get("curPage");
-        int pageSize1 = (int) map.get("pageSize");
-
-        PageHelper.startPage(curPage1,pageSize1);
-        List<Goods> goodsList = goodsMapper.getAllGoods((QueryPojo_Goods) map.get("queryPojo"));
-
-        PageInfo<Goods> pageInfo = new PageInfo<>(goodsList);
-        return pageInfo ;
-    }
 
 
     @Override
     public boolean addGoods(Goods goods) {
         return goodsMapper.insertGoods(goods);
+    }
+
+    @Override
+    public List<GoodsComment> findGoodsCommentByGoodsId(int goodsId) {
+        return goodsCommentMapper.selectGoodsCommentByGoodsId(goodsId);
+    }
+
+    @Override
+    public GoodsComment findGoodsCommentByGoodsCommentId(int goodsCommentId) {
+        return goodsCommentMapper.selectGoodsCommentByGoodsCommentId(goodsCommentId);
+    }
+
+    @Override
+    public List<GoodsCommentReply> findGoodsCommentReply(int goodsCommentId) {
+        return goodsCommentReplyMapper.selectGoodsCommentReply(goodsCommentId);
     }
 
     @Override
@@ -129,5 +134,4 @@ public class GoodsServiceImpl implements GoodsService{
 
         return goodsCollectionMapper.deleteGoodsCollection(goodsCollectionId);
     }
-
 }
