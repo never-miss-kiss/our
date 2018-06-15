@@ -1,5 +1,6 @@
 package com.gem.hami.dao;
 
+import com.gem.hami.entity.QueryPojo_Report;
 import com.gem.hami.entity.Report;
 
 import java.util.List;
@@ -53,6 +54,18 @@ public interface ReportMapper {
      * @return
      */
     public List<Report> selectReportByReson(int rid);
+
+    /**
+     *@Author：wang
+     *@Date: Created in 2018-6-13 11:36:14
+     *@Modified By:
+     */
+    /**
+     * 根据条件查询Report
+     * @param queryPojo
+     * @return
+     */
+    public List<Report> selectReportByCondition(QueryPojo_Report queryPojo);
 
 
 }

@@ -32,6 +32,15 @@ public class Goods {
     private GoodsCategory goodsCategory;
 
     private User user;
+    private GoodsCategory category;
+
+    public GoodsCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(GoodsCategory category) {
+        this.category = category;
+    }
 
     public Integer getGoodsId() {
         return goodsId;

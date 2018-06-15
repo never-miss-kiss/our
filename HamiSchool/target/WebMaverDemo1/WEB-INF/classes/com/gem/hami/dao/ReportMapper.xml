@@ -22,4 +22,28 @@
     <select id="selectReportByReson" parameterType="int" resultType="Report">
         select * from report WHERE reason_category_id=#{_parameter};
     </select>
+
+    <!--public List<Report> selectReportByCondition(QueryPojo_Report queryPojo);-->
+    <select id="selectReportByCondition" resultType="Report" parameterType="QueryPojo_Report">
+        select * from report
+        <where>
+            <if test="reportId neq null">
+                and report_id = #{reportId}
+            </if>
+            <if test="reasonCategoryId neq null">
+                and reason_category_id = #{reasonCategoryId}
+            </if>
+            <if test="reportedUserId neq null">
+                and nickname = #{reportedUserId}
+            </if>
+            <if test="sourceItemId neq null">
+                and source_item_id = #{sourceItemId}
+            </if>
+            <if test="createTime neq null">
+                and create_time = #{createTime}
+            </if>
+        </where>
+
+    </select>
+
 </mapper>

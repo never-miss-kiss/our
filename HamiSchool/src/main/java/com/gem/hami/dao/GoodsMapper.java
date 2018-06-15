@@ -2,6 +2,7 @@ package com.gem.hami.dao;
 
 import com.gem.hami.entity.Goods;
 import com.gem.hami.entity.QueryPojo;
+import com.gem.hami.entity.QueryPojo_Goods;
 import org.apache.ibatis.annotations.Param;
 
 
@@ -42,6 +43,8 @@ public interface GoodsMapper {
   * @Modified By:
  */
 public List<Goods> selectGoodsByCondition(QueryPojo queryPojo);
+//    分页
+    public List<Goods> findtGoodsByCondition(QueryPojo_Goods queryPojo);
 
     /**
       * @Author：Zhu
@@ -80,7 +83,15 @@ public List<Goods> selectGoodsByCondition(QueryPojo queryPojo);
      */
     public boolean deleteGoods(int goodsId);
 
-
-
-
+    /**
+     *@Author：wang
+     *@Date: Created in 2018-6-14 10:14:16
+     *@Modified By:
+     */
+    /**
+     * 管理员查询商品
+     * @param queryPojo
+     * @return
+     */
+    public List<Goods> getAllGoods(QueryPojo_Goods queryPojo);
 }

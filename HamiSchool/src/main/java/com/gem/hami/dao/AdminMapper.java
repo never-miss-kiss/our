@@ -1,8 +1,6 @@
 package com.gem.hami.dao;
 
-import com.gem.hami.entity.Admin;
-import com.gem.hami.entity.Report;
-import com.gem.hami.entity.User;
+import com.gem.hami.entity.*;
 
 import java.util.List;
 
@@ -18,7 +16,7 @@ public interface AdminMapper {
      * 查找所有的管理员
      * @return
      */
-    public List<Admin> selectAllAdmin();
+    public List<Admin> selectAllAdmin(QueryPojo_Admin queryPojo);
 
     /**
      * @Author：Wang
@@ -78,17 +76,16 @@ public interface AdminMapper {
     public boolean updateAdmin(int adminId,Admin admin);
 
     /**
-     * @Author：Wang
-     * @Result:
-     * @Date：Created in 19:40 2018/6/4
-     * @Modified By:
+     *@Author：wang
+     *@Date: Created in 2018-6-14 19:08:51
+     *@Modified By:
      */
     /**
-     * public Admin findAdmin(int adminId)
-     * 根据管理员id查找管理员
-     * @param adminId
+     * 根据nickname查询admin
+     * @param nickname
+     * @return
      */
-    public Admin selectAdminById(int adminId);
+    public Admin selectAdminByNickname(String nickname);
     /**
      * @Author：Wang
      * @Date：Created in 19:42 2018/6/4

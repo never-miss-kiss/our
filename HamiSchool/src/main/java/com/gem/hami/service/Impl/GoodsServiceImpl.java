@@ -43,19 +43,29 @@ public class GoodsServiceImpl implements GoodsService{
     }
 
     @Override
-    public PageInfo<Goods> findGoodsByCondition
-            (Map<String, Object> map) {
-
+    public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map) {
 
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");
 
         PageHelper.startPage(curPage,pageSize);
         List<Goods> goods = goodsMapper.selectGoodsByCondition((QueryPojo) map.get("queryPojo"));
+
         PageInfo<Goods> pageInfo = new PageInfo<>(goods);
         return pageInfo ;
     }
 
+    @Override
+    public PageInfo<Goods> selectGoodByCondition(Map<String, Object> map) {
+        int curPage1 = (int) map.get("curPage");
+        int pageSize1 = (int) map.get("pageSize");
+
+        PageHelper.startPage(curPage1,pageSize1);
+        List<Goods> goodsList = goodsMapper.getAllGoods((QueryPojo_Goods) map.get("queryPojo"));
+
+        PageInfo<Goods> pageInfo = new PageInfo<>(goodsList);
+        return pageInfo ;
+    }
 
 
     @Override
@@ -119,4 +129,5 @@ public class GoodsServiceImpl implements GoodsService{
 
         return goodsCollectionMapper.deleteGoodsCollection(goodsCollectionId);
     }
+
 }

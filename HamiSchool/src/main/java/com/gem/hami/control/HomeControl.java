@@ -25,7 +25,7 @@ public class HomeControl {
 
 
 
-       request.getRequestDispatcher("/wang/adminjsp/user/details.jsp").forward(request,response);
+       request.getRequestDispatcher("/wang/user/details.jsp").forward(request,response);
     }
 
 //    public User modifyUser(User user)

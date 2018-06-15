@@ -17,24 +17,20 @@
     <!--<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css">-->
 
 
-    <!--[if lt IE 9]>
-    <link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
-    <![endif]-->
-    <!--<script type="text/javascript" async="" src="../mstr.js.下载"></script>-->
-    <!--<script type="text/javascript" async="" src="../xmst.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../zh-cn.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../jquery.min.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../base.js.下载"></script>-->
-    <!--<script type="text/javascript" src="../jquery.lazyload.js.下载"></script>-->
-    <!--<script type="text/javascript" async="" src="../sign.js.下载" charset="UTF-8"></script>-->
 
+    <link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
     <link rel="stylesheet" href="<%=path%>/sun/css/homepage.css">
     <link rel="stylesheet" href="<%=path%>/sun/css/index.css">
     <link rel="stylesheet" href="sun/css/sign.css">
+    <link href="<%=path%>/sun/css/all.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%=path%>/bootstrap/js/jquery.min.js"></script>
+    <script src="<%=path%>/bootstrap/jQuery.js"></script>
+    <script src="<%=path%>/sun/js1/jquery-1.8.0.min.js"></script>
+    <script src="<%=path%>/sun/js1/list.js"></script>
 </head>
 
 <body class="xmbbs_desktop" >
-<script>switchMobile.init()</script>
+<%--<script>switchMobile.init()</script>--%>
 <div class="main">
     <style>
         .xmcomm_header_wrap {
@@ -267,7 +263,289 @@
             }
         }
     </style>
-    测试：${tlist}
+
+    <style type="text/css">
+        /*body{*/
+        /*margin:0;*/
+        /*padding:0;*/
+        /*}*/
+        .text-content{
+            min-width:1180px;
+            border-bottom: 1px solid #e7e7e7;
+            border-top: 1px solid #e7e7e7;
+            background: #f4f4f4;
+        }
+        .text-content h1{
+            text-align:center;
+            font-size: 20px;
+            padding-top: 50px;
+            color: #EB4F38;
+        }
+        .text-content p{
+            padding: 10px 100px 40px 100px;
+            clear: both;
+            color: #333;
+            display: block;
+            font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 auto;
+            outline: medium none;
+            position: relative;
+            width: 900px;
+            word-wrap: break-word;
+        }
+        .praise{
+            width:20px;
+            height:20px;
+            margin: 50px auto;
+            cursor: pointer;
+            font-size: 12px;
+            text-align:center;
+            position: relative;
+        }
+        #praise{
+            display:block;
+            width:20px;
+            height:20px;
+            /*margin:0;*/
+            /*margin:0 auto;*/
+        }
+        #praise-img{
+            vertical-align: middle;
+        }
+        #praise-txt{
+            height:20px;
+            line-height:20px;
+            display: block;
+        }
+        .praise img{
+            width:20px;
+            height:20px;
+            display:block;
+            vertical-align: middle;
+            /*margin: 0 auto;*/
+        }
+        #praise img .animation{
+            animation: myfirst 0.5s;
+            -moz-animation: myfirst 0.5s;
+            -webkit-animation: myfirst 0.5s;
+            -o-animation: myfirst 0.5s;
+        }
+        #add-num{
+            display:none;
+        }
+        #add-num .add-animation{
+            color: #000;
+            position:absolute;
+            top:-15px;
+            left: 10px;
+            font-size: 15px;
+            opacity: 0;
+            filter: Alpha(opacity=0);
+            -moz-opacity:0;
+            animation: mypraise 0.5s ;
+            -moz-animation: mypraise 0.5s ;
+            -webkit-animation: mypraise 0.5s ;
+            -o-animation: mypraise 0.5s ;
+            font-style:normal;
+        }
+        .praise .hover , #add-num .add-animation.hover , #praise-txt.hover{
+            color: #EB4F38;
+        }
+        @keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @-moz-keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @-webkit-keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @-o-keyframes myfirst
+        {
+            0%{
+                width:40px;
+                height:40px;
+            }
+            50%{
+                width:50px;
+                height:50px;
+            }
+            100% {
+                width:40px;
+                height:40px;
+            }
+        }
+        @keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+        @-moz-keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+        @-webkit-keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+        @-o-keyframes mypraise
+        {
+            0%{
+                top:-15px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+            25%{
+                top:-20px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            50%{
+                top:-25px;
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -moz-opacity:1;
+            }
+            75%{
+                top:-30px;
+                opacity: 0.5;
+                filter: Alpha(opacity=50);
+                -moz-opacity:0.5;
+            }
+            100% {
+                top:-35px;
+                opacity: 0;
+                filter: Alpha(opacity=0);
+                -moz-opacity:0;
+            }
+        }
+    </style>
     <div class="xmcomm_header_wrap">
         <div class="xmcomm_header">
 
@@ -437,8 +715,10 @@
                                 /*padding-left: 24px;*/
                             /*}*/
                         </style>
+
                         <ul>
-                        <c:forEach items="${flist}" var="list">
+                        <c:forEach items="${pageInfo.list}" var="list">
+                            ${list.userId}
                             <li class="theme_list clearfix" u-id="137006033">
                                 <div class="theme_list_img">
                                     <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"

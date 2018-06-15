@@ -54,7 +54,7 @@
     </delete>
 
     <!--public List<User> selectUserByCondition(String user)-->
-    <select id="selectUserByCondition" resultType="User" parameterType="QueryPojo">
+    <select id="selectUserByCondition" resultType="User" parameterType="QueryPojo_User">
         select * from user
         <where>
             <if test="userId neq null">
