@@ -4,7 +4,9 @@ import com.gem.hami.dao.UserMapper;
 import com.gem.hami.entity.User;
 import com.gem.hami.service.InitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class InitServiceImpl implements InitService {
     @Autowired
     private UserMapper userMapper;

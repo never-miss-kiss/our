@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.UserMapper">
-    <!--public User selectUserByName(int id);-->
-    <select id="selectUserByNameAndPwd" resultType="User" parameterType="int">
-        select * from user WHERE telphone=#{_parameter}and email=#{_parameter};
+    <!--public User selectUserByNum(String id);-->
+    <select id="selectUserByNum" resultType="User" parameterType="string">
+        select * from user WHERE telphone=#{_parameter} OR email=#{_parameter};
     </select>
 
 

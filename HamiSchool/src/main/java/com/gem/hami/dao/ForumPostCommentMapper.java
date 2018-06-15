@@ -2,6 +2,8 @@ package com.gem.hami.dao;
 
 import com.gem.hami.entity.ForumPostComment;
 
+import java.util.List;
+
 public interface ForumPostCommentMapper {
     /**
      * @Author：sunshilin
@@ -21,7 +23,7 @@ public interface ForumPostCommentMapper {
       * @Date：Created in 18:55 2018/6/12
       * @Modified By:
      */
-    public ForumPostComment findForumComment(int forumId);
+    public List<ForumPostComment> selectForumComment(int forumId);
 
 
 

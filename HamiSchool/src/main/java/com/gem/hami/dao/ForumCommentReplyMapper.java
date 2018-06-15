@@ -2,6 +2,8 @@ package com.gem.hami.dao;
 
 import com.gem.hami.entity.ForumCommentReply;
 
+import java.util.List;
+
 public interface ForumCommentReplyMapper {
     /**
      * @Author：sunshilin
@@ -13,6 +15,15 @@ public interface ForumCommentReplyMapper {
      */
     public boolean insertForumCommentReply(ForumCommentReply forumCommentReply);
 
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:查找某帖子下的所有评论回复
+      * @Date：Created in 8:49 2018/6/14
+      * @Modified By:
+     */
+    public List<ForumCommentReply> selectForumCommentReply(int forumId);
 
 
     /**
