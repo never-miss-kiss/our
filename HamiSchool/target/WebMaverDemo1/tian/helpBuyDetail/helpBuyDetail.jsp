@@ -157,7 +157,8 @@
         <div class="comment">
             <div id="comment-container" class="comment-container" style="height:auto !important">
                 <c:forEach items="${helpCommentList}" var="helpComment">
-                    <div class="comment-item col-sm-10" id="comment${helpComment.helpCommentId}">
+                    <div class="comment-item col-sm-10">
+                        <!--回复上方的一个评论-->
                         <div class="col-sm-8 comment-item-top">
                             <div class="col-sm-3">
                                 <img src="<%=basePath%>/tian/images/headPortrait.jpg" alt="${username}" class="img-circle" height="50" width="50">
@@ -167,37 +168,55 @@
                             </div>
                         </div>
                         <div class="col-sm-8 comment-item-middle">
+                            <!--评论内容-->
                         </div>
                         <div class="col-sm-8 comment-item-bottom">
-                            <button type="button" class="btn btn-default" value="${helpComment.helpCommentId}" data-toggle="modal" data-target="#" onClick="findCommentReply(${helpComment.helpCommentId})">
+                            <button type="button" id="showButton${helpComment.helpCommentId}" class="btn btn-default" value="${helpComment.helpCommentId}"  onClick="findCommentReply(${helpComment.helpCommentId})">
                                 查看回复
                             </button>
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#test">
+
+                            <button type="button"  id="clearButton${helpComment.helpCommentId}" class="btn btn-default hidden"
+                                    value="${helpComment.helpCommentId}" onClick="clearReply(${helpComment.helpCommentId})">
+                               收起回复
+                            </button>
+
+                            <button type="button" id="btn-commentReply${helpComment.helpCommentId}" class="btn btn-default" data-toggle="modal" data-target="#commentReply${helpComment.helpCommentId}">
                                 回复
                             </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <button type="button" id="btn-commentReport${helpComment.helpCommentId}" class="btn btn-default" data-toggle="modal" data-target="#commentReport${helpComment.helpCommentId}">举报</button>
+                            <!-- Modal 回复的模态框-->
+                            <div class="modal fade" id="commentReply${helpComment.helpCommentId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">回复： 无心</h4>
+                                            <h4 class="modal-title" id="myModalLabel">回复： ${helpComment.user.nickname}</h4>
                                         </div>
-                                        <form method="post" action="###">
+
+                                        <form method="post" action="<%=basePath %>/help/addHelpCommentReply.action">
+                                            <input name="userId" type="hidden" value="${helpComment.userId}">
+                                            <input name="commentedUserId" type="hidden" value="${helpComment.commentedUserId}">
+                                            <input name="helpCommentId" type="hidden" value="${helpComment.helpCommentId}">
+
                                             <div class="modal-body">
-                                                <textarea class="form-control" rows="3"></textarea>
+
+                                                    <textarea name="content" class="form-control" rows="3">
+                                                    </textarea>
+
                                             </div>
+
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                                                 <button type="submit" class="btn btn-primary">发表</button>
                                             </div>
+
                                         </form>
+
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#btn-report">举报</button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="btn-report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <!-- Modal 举报的模态框-->
+                            <div class="modal fade" id="commentReport${helpComment.helpCommentId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -242,35 +261,14 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-8 reply-container">
-                            <c:forEach items="${helpCommentReplyList}" var="reply">
-                                <div class="reply-item col-sm-12">
-                                    <div class="col-sm-12 reply-item-top">
-                                        <div class="col-sm-3">
-                                            <img src="<%=basePath%>/tian/images/headPortrait.jpg" alt="${username}" class="img-circle" height="50" width="50">
-                                        </div>
-                                        <div>
-                                            <p class="col-sm-3 name1">${reply.user.nickname}</p>
-                                            <p class="col-sm-2">回复</p>
-                                            <p class="col-sm-3 name1">${reply.commentedUser.nickname}</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 reply-item-middle">
-                                        <p>${reply.content}</p>
-                                    </div>
-                                    <div class="col-sm-12 reply-item-bottom">
-                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#test">
-                                            回复
-                                        </button>
-                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#btn-report">举报</button>
-                                    </div>
-                                </div>
-                            </c:forEach>
-
+                        <!--单条评论下面的回复模块-->
+                        <div class="col-sm-8 reply-container" id="comment${helpComment.helpCommentId}">
+                        <!--ajax要插入的地方-->
                         </div>
-
                     </div>
                 </c:forEach>
+
+                <!--下面这俩是评论和回复实例-->
                 <div class="comment-item col-sm-10">
 
                     <div class="col-sm-8 comment-item-top">
@@ -397,7 +395,6 @@
                 </div>
                 <div style="clear:both"></div>
 
-
                 <div class="comment-item col-sm-10">
 
                     <div class="col-sm-8 comment-item-top">
@@ -426,9 +423,6 @@
                 <div style="clear:both"></div>
             </div>
 
-
-
-
         </div>
     </div>
 
@@ -436,6 +430,7 @@
     <div class="col-sm-2  right">
         <ul class="nav nav-pills nav-stacked">
             <li role="presentation" class="active"><a href="#"><h3>返回上一级</h3></a></li>
+            <li role="presentation" class="active"><a href="#"><h3>我要留言</h3></a></li>
             <li role="presentation"><a href="#"><h3></h3></a></li>
             <li role="presentation"><a href="#"><h3></h3></a></li>
             <li role="presentation"><a href="#"><h3></h3></a></li>

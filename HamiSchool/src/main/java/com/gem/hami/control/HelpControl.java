@@ -5,6 +5,7 @@ import com.gem.hami.service.HelpService;
 import com.gem.hami.service.Impl.HelpServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,36 +26,86 @@ public class HelpControl {
     @Autowired
     HelpService helpService;
 
-    @RequestMapping(value = "/selectByCondition.action",method = RequestMethod.GET)
-    public void findByCondition(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,1);
+     //通过条件查询，主要用于showHelps右边栏目框中的按 点击量，截至日期，价格排序
+    @RequestMapping(value = "/selectByCondition.action")
+    @ResponseBody
+    public void findByCondition(String sortId,String schoolId, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        for(HelpInfo helpInfo : helpInfos){
+        int schoolId1 = Integer.parseInt(schoolId);
+        int sortId1 = Integer.parseInt(sortId);
+        List<HelpInfo> helpSorts = helpService.findHelpsByCondition(0,schoolId1,sortId1);
+        for(HelpInfo helpInfo : helpSorts){
             System.out.println(helpInfo);
         }
-
-        request.setAttribute("helpInfos",helpInfos);
-        request.getRequestDispatcher("/tian/showHelp/showHelp.jsp").forward(request,response);
+        System.out.println(helpSorts);
+        request.setAttribute("helpSorts",helpSorts);
+        request.setAttribute("helpType",0);
+        request.setAttribute("sortId",sortId);
+        request.getRequestDispatcher("/tian/showHelp/sortHelp.jsp").forward(request,response);
     }
 
-    @RequestMapping(value = "/selectByCondition1.action",method = RequestMethod.GET)
-    public void findByCondition1(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    //按左边跑腿分类或下面的分页筛选中间帖子栏目的信息。 通过ajax异步刷新实现
+    @RequestMapping(value = "/selectInfos.action")
+    @ResponseBody
+    public  void selectInfos(String typeId,String curPage,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        int typeId1 = Integer.parseInt(typeId);
+        Map<String,Object> cmap = new HashMap<>();
+        int pageSize = 5;
+        int curPage1 = Integer.parseInt(curPage);
+        cmap.put("curPage",curPage1);
+        cmap.put("pageSize",pageSize);
+        PageInfo<HelpInfo> pageInfo;
+        switch (typeId1){
+            case 0:pageInfo = helpService.findAllHelpsByCreateTime(cmap);
+                    request.setAttribute("helpType",0);
+                    break;
+            case 1:pageInfo = helpService.findBuyInfosByCreateTime(cmap);
+                    request.setAttribute("helpType",1);
+                    break;
+            case 2:pageInfo = helpService.findSendInfosByCreateTime(cmap);
+                    request.setAttribute("helpType",2);
+                    break;
+            case 3:pageInfo = helpService.findFetchInfosByCreateTime(cmap);
+                    request.setAttribute("helpType",3);
+                    break;
+            case 4:pageInfo = helpService.findQueueInfosByCreateTime(cmap);
+                    request.setAttribute("helpType",4);
+                    break;
+            default:pageInfo=new PageInfo<>();
+        }
+
+        System.out.println(pageInfo);
+        request.setAttribute("pageInfo",pageInfo);
+        request.getRequestDispatcher("/tian/showHelp/selectInfos.jsp").forward(request,response);
+    }
+
+    //用于从栏目框等跳转而来时刷新整体页面
+    @RequestMapping(value = "/selectAllHelps.action")
+    public void selectAllHelps(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        Map<String,Object> cmap = new HashMap<>();
         int pageSize = 5;
         int curPage = 1;
         String scurPage = request.getParameter("curPage");
-        if(scurPage!=null && !scurPage.trim().equals("")) {
+        if(scurPage!=null && !scurPage.trim().equals("")){
             curPage = Integer.parseInt(scurPage);
         }
-        PageHelper.startPage(curPage,pageSize);
-        List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,1);
-        PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
-
+        cmap.put("curPage",curPage);
+        cmap.put("pageSize",pageSize);
+        PageInfo<HelpInfo> pageInfo = helpService.findAllHelpsByCreateTime(cmap);
+        System.out.println(pageInfo);
+        List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,2);
+        request.setAttribute("helpSorts",helpInfos);
         request.setAttribute("pageInfo",pageInfo);
+        request.setAttribute("helpType",0);
         request.getRequestDispatcher("/tian/showHelp/showHelp1.jsp").forward(request,response);
 
     }
 
+
+    //用于测试的
     @RequestMapping(value = "/showHelp.action",method = RequestMethod.GET)
     public void findHelp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -147,6 +198,7 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
     }
 
+    //test
     @RequestMapping(value="/findHelpCommentsByCondition.action",method = RequestMethod.GET)
     public void findHelpCommentsByCondition(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int typeId = 0;
@@ -160,12 +212,13 @@ public class HelpControl {
 
     @RequestMapping(value="/findCommentReplyByCondition.action")
     @ResponseBody
-    public List<HelpCommentReply> findCommentsReplyByCondition(int commentId) throws ServletException, IOException {
+    public void findCommentsReplyByCondition(int commentId,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         List<HelpCommentReply> helpCommentReplyList = helpService.findReplysByCommentId(commentId);
 //        String name = helpCommentReplyList.get(0).getCommentedUser().getNickname();
 //        System.out.println(name);
-        return helpCommentReplyList;
+        request.setAttribute("helpCommentReplyList",helpCommentReplyList);
+        request.getRequestDispatcher("/tian/helpBuyDetail/commentReply.jsp").forward(request,response);
     }
 
     @RequestMapping(value="/addHelpComment.action",method = RequestMethod.GET)
@@ -188,20 +241,25 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
     }
 
-    @RequestMapping(value="/addHelpCommentReply.action",method = RequestMethod.GET)
+    //对评论进行回复
+    @RequestMapping(value="/addHelpCommentReply.action")
     public void addHelpCommentReply(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String content =  request.getParameter("content");
+        int commentedUserId = Integer.parseInt(request.getParameter("commentedUserId"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        int helpCommentId = Integer.parseInt(request.getParameter("helpCommentId"));
         System.out.println("什么情况");
         HelpCommentReply helpCommentReply = new HelpCommentReply();
-        helpCommentReply.setContent("人生迟早会碰壁的，只是早晚问题，而我只要稳住心态就行");
-        helpCommentReply.setCommentedUserId(1);
+        helpCommentReply.setContent(content);
+        helpCommentReply.setCommentedUserId(commentedUserId);
         helpCommentReply.setCreateTime(new Date());
-        helpCommentReply.setUserId(2);
-        helpCommentReply.setHelpCommentReplyId(3);
-        helpCommentReply.setHelpCommentId(2);
+        helpCommentReply.setUserId(userId);
+        helpCommentReply.setHelpCommentId(helpCommentId);
         helpService.addHelpCommentReply(helpCommentReply);
-        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+        request.getRequestDispatcher("/help/helpDetail.action").forward(request,response);
     }
+
 
     @RequestMapping(value="/removeHelpCommentReply.action",method = RequestMethod.GET)
     public void removeHelpCommentReply(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -210,10 +268,8 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
     }
 
-
-
-
-    @RequestMapping(value="/helpDetail.action",method = RequestMethod.GET)
+    //帖子详情的入口界面
+    @RequestMapping(value="/helpDetail.action")
     public void helpDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HelpBuy helpBuy = helpService.findHelpBuy(2);
         List<HelpComment> helpCommentList = helpService.findHelpCommentsByCondition(1,2,0);
@@ -224,6 +280,78 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request,response);
     }
 
-
-
 }
+
+
+
+
+//    @RequestMapping(value = "/selectBuyInfos.action")
+//    public  void selectBuyInfos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        Map<String,Object> cmap = new HashMap<>();
+//        int pageSize = 5;
+//        int curPage = 1;
+//        String scurPage = request.getParameter("curPage");
+//        if(scurPage!=null && !scurPage.trim().equals("")){
+//            curPage = Integer.parseInt(scurPage);
+//        }
+//        cmap.put("curPage",curPage);
+//        cmap.put("pageSize",pageSize);
+//        PageInfo<HelpInfo> pageInfo = helpService.findBuyInfosByCreateTime(cmap);
+//        System.out.println(pageInfo);
+//        request.setAttribute("pageInfo",pageInfo);
+//        request.setAttribute("helpType",1);
+//        request.getRequestDispatcher("/tian/showHelp/showHelp1.jsp").forward(request,response);
+//    }
+//
+//    @RequestMapping(value = "/selectSendInfos.action")
+//    public  void selectSendInfos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        Map<String,Object> cmap = new HashMap<>();
+//        int pageSize = 5;
+//        int curPage = 1;
+//        String scurPage = request.getParameter("curPage");
+//        if(scurPage!=null && !scurPage.trim().equals("")){
+//            curPage = Integer.parseInt(scurPage);
+//        }
+//        cmap.put("curPage",curPage);
+//        cmap.put("pageSize",pageSize);
+//        PageInfo<HelpInfo> pageInfo = helpService.findSendInfosByCreateTime(cmap);
+//        System.out.println(pageInfo);
+//        request.setAttribute("pageInfo",pageInfo);
+//        request.setAttribute("helpType",2);
+//        request.getRequestDispatcher("/tian/showHelp/showHelp1.jsp").forward(request,response);
+//    }
+//
+//    @RequestMapping(value = "/selectFetchInfos.action")
+//    public  void selectFetchInfos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        Map<String,Object> cmap = new HashMap<>();
+//        int pageSize = 5;
+//        int curPage = 1;
+//        String scurPage = request.getParameter("curPage");
+//        if(scurPage!=null && !scurPage.trim().equals("")){
+//            curPage = Integer.parseInt(scurPage);
+//        }
+//        cmap.put("curPage",curPage);
+//        cmap.put("pageSize",pageSize);
+//        PageInfo<HelpInfo> pageInfo = helpService.findFetchInfosByCreateTime(cmap);
+//        System.out.println(pageInfo);
+//        request.setAttribute("pageInfo",pageInfo);
+//        request.setAttribute("helpType",3);
+//        request.getRequestDispatcher("/tian/showHelp/showHelp1.jsp").forward(request,response);
+//    }
+//    @RequestMapping(value = "/selectQueueInfos.action")
+//    public  void selectQueueInfos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        Map<String,Object> cmap = new HashMap<>();
+//        int pageSize = 5;
+//        int curPage = 1;
+//        String scurPage = request.getParameter("curPage");
+//        if(scurPage!=null && !scurPage.trim().equals("")){
+//            curPage = Integer.parseInt(scurPage);
+//        }
+//        cmap.put("curPage",curPage);
+//        cmap.put("pageSize",pageSize);
+//        PageInfo<HelpInfo> pageInfo = helpService.findQueueInfosByCreateTime(cmap);
+//        System.out.println(pageInfo);
+//        request.setAttribute("pageInfo",pageInfo);
+//        request.setAttribute("helpType",4);
+//        request.getRequestDispatcher("/tian/showHelp/showHelp1.jsp").forward(request,response);
+//    }

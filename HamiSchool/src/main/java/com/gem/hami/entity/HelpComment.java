@@ -11,7 +11,19 @@ public class HelpComment {
 
     private Integer helpId;
 
+    private Integer commentedUserId;
+
     private User user;
+
+    private User commentedUser;
+
+    public User getCommentedUser() {
+        return commentedUser;
+    }
+
+    public void setCommentedUser(User commentedUser) {
+        this.commentedUser = commentedUser;
+    }
 
     public User getUser() {
         return user;
@@ -59,5 +71,13 @@ public class HelpComment {
 
     public void setHelpId(Integer helpId) {
         this.helpId = helpId;
+    }
+
+    public Integer getCommentedUserId() {
+        return commentedUserId;
+    }
+
+    public void setCommentedUserId(Integer commentedUserId) {
+        this.commentedUserId = commentedUserId;
     }
 }

@@ -18,6 +18,7 @@
         <result column="end_time" property="endTime"/>
         <result column="is_finished" property="isFinished"/>
         <result column="click_count" property="clickCount"/>
+        <result column="title" property="title"/>
         <association property="user" javaType="User">
             <result column="nickname" property="nickname"/>
         </association>

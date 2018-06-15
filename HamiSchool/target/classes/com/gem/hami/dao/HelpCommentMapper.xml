@@ -9,9 +9,11 @@
         <result column="release_time" property="releaseTime"/>
         <result column="release_type" property="releaseType"/>
         <result column="help_id" property="helpId"/>
+        <result column="commented_user_id" property="commentedUserId"/>
         <association property="user" javaType="User">
             <result column="nickname" property="nickname"/>
         </association>
+
 
     </resultMap>
 
@@ -25,8 +27,8 @@
     </select>
 
     <insert id="insertHelpComment" parameterType="HelpComment" useGeneratedKeys="true">
-        insert into help_comment(content,user_id,release_type,help_id)
-        VALUES (#{content},#{userId},#{releaseType},#{helpId})
+        insert into help_comment(content,user_id,release_type,help_id,commented_user_id)
+        VALUES (#{content},#{userId},#{releaseType},#{helpId},#{commentedUserId})
     </insert>
 
     <delete id="deleteHelpComment" parameterType="java.lang.Integer">

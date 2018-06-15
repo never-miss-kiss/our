@@ -30,8 +30,8 @@
     </select>
 
     <insert id="insertHelpCommentReply" parameterType="HelpCommentReply" useGeneratedKeys="true">
-        insert into help_comment_reply(content,user_id,commented_user_id,help_post_comment_id,create_time)
-        VALUES (#{content},#{userId},#{commentedUserId},#{helpPostCommentId},#{createTime})
+        insert into help_comment_reply(content,user_id,commented_user_id,help_comment_id,create_time)
+        VALUES (#{content},#{userId},#{commentedUserId},#{helpCommentId},#{createTime})
     </insert>
 
     <delete id="deleteHelpCommentReply" parameterType="java.lang.Integer">
