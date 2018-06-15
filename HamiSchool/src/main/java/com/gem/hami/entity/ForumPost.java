@@ -27,6 +27,8 @@ public class ForumPost {
 
     private byte[] content;
 
+    private User user;
+
     public Integer getForumPostId() {
         return forumPostId;
     }
@@ -121,5 +123,13 @@ public class ForumPost {
 
     public void setContent(byte[] content) {
         this.content = content;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

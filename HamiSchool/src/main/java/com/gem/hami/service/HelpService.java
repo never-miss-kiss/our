@@ -15,8 +15,11 @@ public interface HelpService {
 // userId 用户号，schoolId 学校号，sortId（排序方式：1.按发布时间，2点击量排序）
     public List<HelpInfo> findHelpsByCondition(int userId,int schoolId,int sortId);
 
-    public PageInfo<HelpInfo> findHelpsByCondition1(Map<String,Object> map);
-
+    public PageInfo<HelpInfo> findBuyInfosByCreateTime(Map<String, Object> map);
+    public PageInfo<HelpInfo> findSendInfosByCreateTime(Map<String, Object> map);
+    public PageInfo<HelpInfo> findFetchInfosByCreateTime(Map<String, Object> map);
+    public PageInfo<HelpInfo> findQueueInfosByCreateTime(Map<String, Object> map);
+    public PageInfo<HelpInfo> findAllHelpsByCreateTime(Map<String, Object> map);
 
 //    查找单个跑腿信息
     public HelpBuy findHelpBuy(int helpId);

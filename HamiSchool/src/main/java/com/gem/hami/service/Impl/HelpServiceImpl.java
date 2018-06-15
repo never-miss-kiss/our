@@ -3,6 +3,7 @@ package com.gem.hami.service.Impl;
 import com.gem.hami.dao.*;
 import com.gem.hami.entity.*;
 import com.gem.hami.service.HelpService;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,25 +29,29 @@ public class HelpServiceImpl implements HelpService{
     private HelpCommentMapper helpCommentMapper;
 
     @Autowired
+    private HelpInfoMapper helpInfoMapper;
+
+    @Autowired
     private HelpCommentReplyMapper helpCommentReplyMapper;
 
     @Override
     public List<HelpInfo> findHelpsByCondition(int userId, int schoolId, int sortId) {
 
-        List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
+        List<HelpInfo> allHelpInfos = new ArrayList<HelpInfo>();
         List<HelpBuy> helpBuys = helpBuyMapper.selectHelpsById(userId,schoolId);
         List<HelpSend>  helpSends =  helpSendMapper.selectHelpsById(userId,schoolId);
         List<HelpFetch>  helpFetch =  helpFetchMapper.selectHelpsById(userId,schoolId);
         List<HelpQueue>  helpQueues =  helpQueueMapper.selectHelpsById(userId,schoolId);
 
-        helpInfos.addAll(helpBuys);
-        helpInfos.addAll(helpFetch);
-        helpInfos.addAll(helpSends);
-        helpInfos.addAll(helpQueues);
+        allHelpInfos.addAll(helpBuys);
+        allHelpInfos.addAll(helpFetch);
+        allHelpInfos.addAll(helpSends);
+        allHelpInfos.addAll(helpQueues);
+
 
         if(sortId==1) {
             //按最新的 create_time 排序
-            Collections.sort(helpInfos, new Comparator<HelpInfo>() {
+            Collections.sort(allHelpInfos, new Comparator<HelpInfo>() {
                 //按创建日期排序 按最新日期排序
 
                 public int compare(HelpInfo t1,HelpInfo t2) {
@@ -85,7 +90,7 @@ public class HelpServiceImpl implements HelpService{
 
         }else if(sortId==2){
             //按点击量排序
-            Collections.sort(helpInfos, new Comparator<HelpInfo>() {
+            Collections.sort(allHelpInfos, new Comparator<HelpInfo>() {
                 @Override
                 public int compare(HelpInfo o1, HelpInfo o2) {
                     int flag = 0;
@@ -103,7 +108,7 @@ public class HelpServiceImpl implements HelpService{
             });
         }else if(sortId==3){
             //按截止时间排序
-            Collections.sort(helpInfos, new Comparator<HelpInfo>() {
+            Collections.sort(allHelpInfos, new Comparator<HelpInfo>() {
                 //按创建日期排序 按最新日期排序
                 public int compare(HelpInfo t1,HelpInfo t2) {
                     int flag = 0;
@@ -122,13 +127,89 @@ public class HelpServiceImpl implements HelpService{
                     return flag;
                 }
             });
+        }else if(sortId==4){
+            //按价格排序
+            Collections.sort(allHelpInfos, new Comparator<HelpInfo>() {
+                @Override
+                public int compare(HelpInfo o1, HelpInfo o2) {
+                    int flag = 0;
+                    if(o1==null||o2==null||o1.getPersonPrice()==null||o2.getPersonPrice()==null)
+                        return flag;
+                    if(o1.getPersonPrice()<o2.getPersonPrice())
+                    {
+                        flag=-1;
+                    }
+                    else if (o1.getPersonPrice()>o2.getPersonPrice()){
+                        flag = 1;
+                    }
+                    return flag;
+                }
+            });
+        };
+
+        List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
+        for(int i = 0;i<10;i++){
+            helpInfos.add(allHelpInfos.get(i));
+            helpInfos.get(i).setId(i+1);
         }
         return helpInfos;
     }
 
+
     @Override
-    public PageInfo<HelpInfo> findHelpsByCondition1(Map<String, Object> map) {
-        return null;
+    public PageInfo<HelpInfo> findBuyInfosByCreateTime(Map<String, Object> map) {
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+        PageHelper.startPage(curPage,pageSize);
+        List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
+        helpInfos = helpInfoMapper.selectBuyInfosByCreateTime();
+        PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
+        return pageInfo;
+    }
+
+    @Override
+    public PageInfo<HelpInfo> findSendInfosByCreateTime(Map<String, Object> map) {
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+        PageHelper.startPage(curPage,pageSize);
+        List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
+        helpInfos = helpInfoMapper.selectSendInfosByCreateTime();
+        PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
+        return pageInfo;
+
+    }
+
+    @Override
+    public PageInfo<HelpInfo> findFetchInfosByCreateTime(Map<String, Object> map) {
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+        PageHelper.startPage(curPage,pageSize);
+        List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
+        helpInfos = helpInfoMapper.selectFetchInfosByCreateTime();
+        PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
+        return pageInfo;
+    }
+
+    @Override
+    public PageInfo<HelpInfo> findQueueInfosByCreateTime(Map<String, Object> map) {
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+        PageHelper.startPage(curPage,pageSize);
+        List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
+        helpInfos = helpInfoMapper.selectQueueInfosByCreateTime();
+        PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
+        return pageInfo;
+    }
+
+    @Override
+    public PageInfo<HelpInfo> findAllHelpsByCreateTime(Map<String, Object> map) {
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+        PageHelper.startPage(curPage,pageSize);
+        List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
+        helpInfos = helpInfoMapper.selectAllHelpsByCreateTime();
+        PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
+        return pageInfo;
     }
 
     @Override

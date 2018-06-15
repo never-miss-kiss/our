@@ -4,16 +4,31 @@ function findCommentReply(commentId) {
         type: "POST",
         url: "/HamiSchool/help/findCommentReplyByCondition.action",
         data: "commentId="+commentId,
-        success: function(replyList) {
-            if(replyList){
-                for(var i = 0;i<replyList.length;i++){  //循环LIST
-					alert(replyList[i].helpCommentId);
-					findCommentReply1(replyList[i].helpCommentId);
-                }
-            }
+        success: function(data) {
+            var comment = "#comment" + commentId;
+            var showButton = "#showButton" + commentId;
+            var clearButton = "#clearButton" + commentId;
+            $(comment).html(data);
+
+            $(showButton).addClass("hidden");
+            $(clearButton).removeClass("hidden");
+
+        },
+        error : function(){
+            alert("nani");
         }
 	});
 }
+
+function clearReply(commentId) {
+    var comment = "#comment" + commentId;
+    var showButton = "#showButton" + commentId;
+    var clearButton = "#clearButton" + commentId;
+    $(clearButton).addClass("hidden");
+    $(showButton).removeClass("hidden");
+    $(comment).html(" ");
+}
+
 
 function findCommentReply1(commentId)
 {
@@ -89,9 +104,9 @@ function findCommentReply1(commentId)
                         <div style="clear:both"></div>\
 						';
 			$(comment).append(function(){
-				return strs;							
-			})	
-						
+				return strs;
+			})
+
 }
 									
 								

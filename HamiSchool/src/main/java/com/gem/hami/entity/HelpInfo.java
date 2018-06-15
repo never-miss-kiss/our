@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class HelpInfo {
 
+    protected int id;
     protected String name;
 
     protected Float recommendedPrice;
@@ -26,10 +27,17 @@ public class HelpInfo {
 
     protected String title;
 
-    protected String content;
+    protected int commentCount;
 
     protected User user;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -127,18 +135,19 @@ public class HelpInfo {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public int getCommentCount() {
+        return commentCount;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setCommentCount(int commentCount) {
+        this.commentCount = commentCount;
     }
 
     @Override
     public String toString() {
         return "HelpInfo{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", recommendedPrice=" + recommendedPrice +
                 ", personPrice=" + personPrice +
                 ", createTime=" + createTime +
@@ -148,6 +157,8 @@ public class HelpInfo {
                 ", isFinished='" + isFinished + '\'' +
                 ", clickCount=" + clickCount +
                 ", helpType=" + helpType +
+                ", title='" + title + '\'' +
+                ", commentCount=" + commentCount +
                 ", user=" + user +
                 '}';
     }

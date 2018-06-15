@@ -32,7 +32,7 @@
     <li><a href="${pageContext.request.contextPath }/jsp/updateAdmin.jsp" target="right"><span class="icon-caret-right"></span>修改管理员权限</a></li>
     <li><a href="${pageContext.request.contextPath }/admin/allAdmin.action" target="right"><span class="icon-caret-right"></span>查找管理员</a></li>
     <li><a href="${pageContext.request.contextPath }/homepage/homepage_listAll" target="right"><span class="icon-caret-right"></span>首页轮播</a></li>   
-    <li><a href="${pageContext.request.contextPath }/feedBack/feedBack_backList" target="right"><span class="icon-caret-right"></span>反馈信息</a></li>   
+    <li><a href="${pageContext.request.contextPath }/wang/adminjsp/feedback/feedbackList.jsp" target="right"><span class="icon-caret-right"></span>反馈信息</a></li>
   </ul>   
   <h2><span class="icon-pencil-square-o"></span>模块管理</h2>
   <ul>
