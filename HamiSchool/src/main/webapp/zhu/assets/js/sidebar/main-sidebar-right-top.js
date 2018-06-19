@@ -3,7 +3,7 @@ $( "document" ).ready( function() {
 
 	$mainSidebar.simplerSidebar( {
 		attr: "sidebar-main",
-		top: 56,
+		top: 86,
 		selectors: {
 			trigger: "#sidebar-main-trigger",
 			quitter: ".quitter"

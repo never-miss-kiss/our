@@ -10,7 +10,7 @@ $( "document" ).ready( function() {
 			quitter: ".quitter"
 		},
 		sidebar: {
-			width: 500
+			width: 80
 		},
 		animation: {
 			easing: "easeOutQuint"

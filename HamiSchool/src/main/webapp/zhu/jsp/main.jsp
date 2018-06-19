@@ -9,6 +9,7 @@
 %>
 <html lang="en">
 <head>
+<meta name="toTop" content="true">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -42,15 +43,13 @@
 <link rel="stylesheet" href="<%= basePath %>zhu/css/ie.css" type="text/css" media="screen, projection">
 <![endif]-->
 <link href="<%= basePath %>zhu/css/lity.css" rel="stylesheet">
-		<%--侧导航栏--%>
+
 	<link rel="stylesheet" href="<%= basePath %>zhu/assets/css/normalize.css" />
 	<link rel="stylesheet" href="<%= basePath %>zhu/assets/css/main.css" />
 	<script src="<%= basePath %>zhu/assets/js/html5shiv.min.js"></script>
-	<script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script>
-	<script src="<%= basePath %>zhu/dist/jquery.simpler-sidebar.min.js"></script>
-	<script src="<%= basePath %>zhu/assets/js/sidebar/main-sidebar-left-top.js"></script>
 	<style>
 
+		body{background-color: #E3EEEC}
 		#top{background-color:#a6e1ec}
 		.dark-bg{border-color: #8a6d3b;}
 		.search-block{position: absolute;top:82px;left: 17%}
@@ -79,7 +78,7 @@
 		#person{position: absolute;top:-10px;left: 70%;}
 		#message{position:relative;top:-50px;left:50px;}
 		#exit{position:relative;top:-91px;left:100px;}
-		#search{position: relative;margin-top:540px;margin-left:850px;}
+		#search{position: absolute;margin-top:1170px;margin-left:850px; }
 	</style>
 	<script>
         function getPage(curPage){
@@ -132,34 +131,6 @@
 							<input type="search" placeholder="Search">
 						</form>
 					</div>
-				</div>
-				<%--<div class="load-this">--%>
-					<%--<div id="sidebar-main-trigger" class="icon float-left">--%>
-						<%--<img src="<%= basePath %>zhu/assets/imgs/icon-menu-24px-x2.png" width="24px" alt="Menu Icon" />--%>
-					<%--</div>--%>
-				<%--</div>--%>
-				<%--<div class="sidebar main left" id="sidebar-main">--%>
-					<%--<div class="wrapper">--%>
-						<%--<nav>--%>
-							<%--<ul>--%>
-								<%--<li class="title">Playground</li>--%>
-								<%--<li><a href="./index.html">Home</a></li>--%>
-								<%--<li><a href="./right.html">Right</a></li>--%>
-								<%--<li><a href="./right-top.html">Right Top</a></li>--%>
-								<%--<li><a href="./left.html">Left</a></li>--%>
-								<%--<li><a href="./left-top.html">Left Top</a></li>--%>
-								<%--<li><a href="./jquery-v2.html">jQuery v2</a></li>--%>
-								<%--<li><a href="./jquery-v3.html">jQuery v3</a></li>--%>
-								<%--<li><a href="./right-left.html">Right and Left</a></li>--%>
-								<%--<li><a href="./init-opened.html">Init Opened</a></li>--%>
-								<%--<li><a href="./no-mask.html">No Mask</a></li>--%>
-								<%--<li><a href="./allow-scrolling.html">Allow Scrolling</a></li>--%>
-								<%--<li><a href="./custom-functions.html">Custom Functions</a></li>--%>
-								<%--<li><a href="./ajax.html">Ajax</a></li>--%>
-								<%--<li><a href="./browserify.html">Browserify</a></li>--%>
-							<%--</ul>--%>
-						<%--</nav>--%>
-					<%--</div><!--#sidebar-main-->--%>
 			</div>
 		</div>
 	<div class="col-xs-2 " id="person">
@@ -212,35 +183,44 @@
         );
 	</script>
 </div>
- <!-- CORE -->
 
-	<div class="catorys">
-		<div class=" hidden-sm hidden-xs">
-			<aside class="dark-bg">
-				<article>
-					<h2 class="icon">商品类别</h2>
-					<ul class="sidebar-links ">
-						<li class="fa fa-chevron-right "><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=1">所有分类</a></li>
-						<li class="fa fa-chevron-right "><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
-						<li class="fa fa-chevron-right "><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
-						<li class="fa fa-chevron-right "><a href="#">电脑</a></li>
-						<li class="fa fa-chevron-right "><a href="#">数码</a></li>
-						<li class="fa fa-chevron-right "><a href="#">电器</a></li>
-						<li class="fa fa-chevron-right "><a href="#">衣鞋伞帽</a></li>
-						<li class="fa fa-chevron-right "><a href="#">书籍教材</a></li>
-						<li class="fa fa-chevron-right "><a href="#">体育健身</a></li>
-						<li class="fa fa-chevron-right"><a href="#">乐器</a></li>
-						<li class="fa fa-chevron-right "><a href="#">自行设计</a></li>
-						<li class="fa fa-chevron-right "><a href="#">宠物</a></li>
-						<li class="fa fa-chevron-right "><a href="#">文具</a></li>
-						<li class="fa fa-chevron-right"><a href="#">其它</a></li>
-					</ul>
-				</article>
-			</aside>
+	<!-- sidebar -->
+	<div class="navbar main" id="navbar-main">
+		<div class="load-this">
+			<div id="sidebar-main-trigger" class="icon float-left">
+				<img src="<%= basePath %>zhu/assets/imgs/icon-menu-24px-x2.png" width="24px" alt="Menu Icon" />
+			</div>
+		</div><!--a ajax helper-->
+	</div><!--.navbar.main-->
+	<div class="sidebar main left" id="sidebar-main">
+		<div class="wrapper">
+			<nav>
+				<ul>
+					<li class="title">所有分类</li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
+					<li><a href="./right-top.html">电脑</a></li>
+					<li><a href="./left.html">数码</a></li>
+					<li><a href="./left-top.html">电器</a></li>
+					<li><a href="./jquery-v2.html">衣鞋伞帽</a></li>
+					<li><a href="./jquery-v3.html">书籍教材</a></li>
+					<li><a href="./right-left.html">体育健身</a></li>
+					<li><a href="./init-opened.html">乐器</a></li>
+					<li><a href="./no-mask.html">自行设计</a></li>
+					<li><a href="./allow-scrolling.html">宠物</a></li>
+					<li><a href="./custom-functions.html">文具</a></li>
+					<li><a href="./ajax.html">其它</a></li>
+					<li><a href="./browserify.html">Browserify</a></li>
+				</ul>
+			</nav>
 		</div>
-	</div>
-
-<div class="row">
+	</div><!--#sidebar-main-->
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js">
+	</script><script src="http://cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js"></script>
+	<script src="<%= basePath %>zhu/dist/jquery.simpler-sidebar.min.js"></script>
+	<script src="<%= basePath %>zhu/assets/js/sidebar/main-sidebar-left-top.js"></script>
+<div class="row" style="background-color: #E3EEEC">
 	<!-- SIDEBAR -->
 
 	<!-- HOME MAIN POSTS -->
@@ -357,28 +337,35 @@
 	 <div  id="search">
 		共 <b>${pageInfo.total}</b> 条
 
-		<a href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=1&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='first' >首页</a>
+		<a id="begin" href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=1&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='first' >首页</a>
 		<c:if test="${!pageInfo.isFirstPage}">
-			<a href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=${pageInfo.pageNum-1}&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='pre'>上一页</a>
+			<a id="previous" href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=${pageInfo.pageNum-1}&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='pre'>上一页</a>
 		</c:if>
 
 		当前第<span>${pageInfo.pageNum}</span>页
 
 		<c:if test="${!pageInfo.isLastPage}">
-			<a href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=${pageInfo.pageNum+1}&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='next'>下一页</a>
+			<a id="next" href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=${pageInfo.pageNum+1}&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='next'>下一页</a>
 		</c:if>
-		<a href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=${pageInfo.pages}&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='last'>末页</a>
+		<a id="end" href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=${pageInfo.pages}&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='last'>末页</a>
 	</div>
+	<script>
+        document.getElementById("begin").scrollIntoView();
+        document.getElementById("end").scrollIntoView();
+        document.getElementById("next").scrollIntoView();
+        document.getElementById("previous").scrollIntoView();
+	</script>
 
 </div>
-	<div class="part2">
+
+<div class="part2">
 		<a href="#" >随机<sapn class="glyphicon glyphicon-resize-vertical"></sapn></a>
 		<a href="<%= basePath %>goods/findAllGoods.action?releaseTime=1" >时间<sapn class="glyphicon glyphicon-resize-vertical"></sapn></a>
 		<a href="<%= basePath %>goods/findAllGoods.action?price=1" >价格<sapn class="glyphicon glyphicon-resize-vertical"></sapn></a>
 		<a href="<%= basePath %>goods/findAllGoods.action?clickCount=1" >热度<sapn class="glyphicon glyphicon-resize-vertical"></sapn></a>
 	</div>
 <!-- TABS -->
-<div class="tab">
+<div class="tab" style="background-color: #E3EEEC">
 	<div class="head-section" id="tag">
 		<ul class="nav nav-tabs text-left">
 			<li >
@@ -499,11 +486,12 @@
 	</div>
 	</div>
 </div>
-
+</div>
 	<script>
         $(".nav .dropdown").hover(function() {
             $(this).find(".dropdown-toggle").dropdown("toggle");
         });
 	</script>
+	<script type="text/javascript" src="<%= basePath %>zhu/js/toTop.js"></script>
 </body>
 </html>

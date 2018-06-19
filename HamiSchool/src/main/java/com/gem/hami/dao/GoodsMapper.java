@@ -2,6 +2,7 @@ package com.gem.hami.dao;
 
 import com.gem.hami.entity.Goods;
 import com.gem.hami.entity.QueryPojo;
+import com.gem.hami.entity.QueryPojo_Goods;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -28,7 +29,15 @@ public interface GoodsMapper {
      */
     public List<Goods> selectGoodsByCategoryId(int id);
 
-
+/**
+  * @Author：Zhu
+   * @param null
+  * @Result:
+  * @Date：Created in 19:57 2018/6/19
+  * @Description
+  * @Modified By: 每点击一次商品实现点击量加1
+ */
+    public void updateClickCount(Goods goods);
 /**
   * @Author：Zhu
    * @param
@@ -77,6 +86,21 @@ public List<Goods> selectGoodsByCondition(QueryPojo queryPojo);
       * @Modified By:
      */
     public boolean deleteGoods(int goodsId);
+
+//===============================================================================================
+    /**
+     *@Author：wang
+     *@Date: Created in 2018-6-14 10:14:16
+     *@Modified By:
+     */
+    /**
+     * 管理员查询商品
+     * @param queryPojo
+     * @return
+     */
+    public List<Goods> getAllGoods(QueryPojo_Goods queryPojo);
+
+    public List<Goods> getAllGoodsByUserId(QueryPojo_Goods queryPojo);
 
 
 

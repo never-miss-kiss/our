@@ -317,8 +317,8 @@
                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <h2 class="icon"><i class="fa fa-leaf" aria-hidden="true"></i>商品推荐</h2>
                         <div class="carousel-control-box">
-                           <a class="left carousel-control" href="javascript:void(0)" onclick="ajaxList(1,${queryPojo.goodsCategoryId},${goodsId})" role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                           <a class="right carousel-control" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=2&goodsId=${goodsId}"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                           <a class="left carousel-control" id="previous" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=1&goodsId=${goodsId}"  role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                           <a class="right carousel-control" id="next" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=2&goodsId=${goodsId}"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                         </div>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
@@ -358,6 +358,10 @@
                </div>
             </div>
       </div>
+      <script>
+          document.getElementById("next").scrollIntoView();
+          document.getElementById("previous").scrollIntoView();
+      </script>
       <script>
          $(".nav .dropdown").hover(function() {
            $(this).find(".dropdown-toggle").dropdown("toggle");

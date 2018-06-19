@@ -1,9 +1,11 @@
 package com.gem.hami.service;
 
 import com.gem.hami.entity.*;
+import com.github.pagehelper.PageInfo;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 public interface HomeService {
 
@@ -14,6 +16,12 @@ public interface HomeService {
 ///home/modifyUser.action
 //            修改个人资料,修改密码
     public boolean modifyUser(User user);
+
+    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map);
+
+    public PageInfo<GoodsCollection> selectAllGoodsCollection(Map<String, Object> map);
+
+    public PageInfo<UserMessage> getAllUserMessageByUserId(Map<String, Object> map);
 
 
 //====================================================================================================
