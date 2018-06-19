@@ -64,9 +64,26 @@
 
     <script>
         function subm(){
-            var title = document.getElementById('title').value;
-            document.getElementById('content').value=editor.txt.html();
+           var title = document.getElementById("title").value;
+            document.getElementById("content").value=editor.txt.html();
+            var content = document.getElementById("content").value;
+            alert(title+"=="+document.getElementById("content").value);
             document.getElementById('newspost').submit();
+            <%--var jqxhr;--%>
+            <%--$.ajax({--%>
+                <%--type:"post",--%>
+                <%--url:"${pageContext.request.contextPath}/forum/addpost.action",--%>
+                <%--data:{"title":title,"content":content},--%>
+                <%--success:function(){--%>
+                    <%--if("REDIRECT" == jqxhr.getResponseHeader("REDIRECT")){ //若HEADER中含有REDIRECT说明后端想重定向，--%>
+                        <%--var win = window;--%>
+
+                        <%--win.location.href = jqxhr.getResponseHeader("CONTENTPATH");//将后端重定向的地址取出来,使用win.location.href去实现重定向的要求--%>
+                    <%--}--%>
+                <%--}--%>
+
+            <%--})--%>
+
         }
     </script>
 
@@ -119,7 +136,7 @@
 </head>
 <body>
 
-<form id="newspost" method="post" action="<%=application.getContextPath()%>/forum/addpost.action" enctype="multipart/form-data">
+
 
     <%--标题：--%>
     <%--<input type="text" id="title" name="title"/><br/><br/>--%>
@@ -127,12 +144,15 @@
             <span>发表新主题</span>
         </div>
 
+    <form id="newspost" method="post" action="<%=application.getContextPath()%>/forum/addpost.action">
+
         <div id="ziji" class="importtopic">
             <span id="text1" class="label"></span>
             <input id="title" placeholder="标题" type="text" name="title">
+            <input type="hidden" id="content" name="content"/>
         </div>
 
-    <input type="hidden" id="content" name="content"/>
+
 
     <div id="div1" class="toolbar">
     </div>
@@ -140,9 +160,9 @@
     <div id="div2" class="text">
 
     </div>
-    <input type="button" value="保存" onclick="subm()"></input>
+    <input type="button" value="发表" onclick="subm()"/>
+    </form>
 
-</form>
 
 
 <script type="text/javascript">

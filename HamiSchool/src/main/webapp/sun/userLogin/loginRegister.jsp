@@ -109,9 +109,7 @@
 			<%--<li><a href="${pageContext.request.contextPath }/homepage/homepage_showAdvert"><span style="color:white;">返回首页</span></a></li>--%>
 		<%--</ul>--%>
 	<%--</div>--%>
-		<script>
-			alert(${param.info})
-		</script>
+
 	<div class="login-banner"></div>
 	<div class="login-box">
 		<div class="box-con tran">

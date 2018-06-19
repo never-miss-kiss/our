@@ -1,9 +1,6 @@
 package com.gem.hami.service;
 
-import com.gem.hami.entity.ForumCommentReply;
-import com.gem.hami.entity.ForumPost;
-import com.gem.hami.entity.ForumPostCollection;
-import com.gem.hami.entity.ForumPostComment;
+import com.gem.hami.entity.*;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -98,5 +95,7 @@ public interface ForumService {
 //            取消收藏的东西
 // collectionId  表示要删除的数据在它的表中的主键
     public boolean removeForumPostCollection(int forumPostCollectionId);
+
+    public List<ForumPostLike> findForumPostLikeByUserId(int userid);
 
 }

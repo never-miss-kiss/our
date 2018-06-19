@@ -10,7 +10,7 @@
     <!--查询某个帖子的评论-->
     <!--public ForumPostComment selectForumComment(int forumId);-->
     <select id="selectForumComment" resultType="ForumPostComment" parameterType="int">
-        SELECT * FROM forum_post_comment c  WHERE c.forum_post_id=#{_parameter}
+        SELECT * FROM forum_post_comment c  WHERE c.forum_post_id=#{_parameter} ORDER BY release_time DESC
     </select>
 
     <!--删除评论-->

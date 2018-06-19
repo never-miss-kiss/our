@@ -308,7 +308,6 @@
             cursor: pointer;
             font-size: 12px;
             text-align:center;
-            position: relative;
         }
         #praise{
             display:block;
@@ -319,6 +318,9 @@
         }
         #praise-img{
             vertical-align: middle;
+            margin-top: 0px;
+            margin-left: 3px;
+            position: relative;
         }
         #praise-txt{
             height:20px;
@@ -330,6 +332,8 @@
             height:20px;
             display:block;
             vertical-align: middle;
+            padding: 0;
+            margin-top: 0;
             /*margin: 0 auto;*/
         }
         #praise img .animation{
@@ -706,12 +710,12 @@
                            onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;bbs首页&#39;, &#39;内容区&#39;, &#39;推荐button&#39;]);_msq.push([&#39;trackEvent&#39;, &#39;tj&#39;,&#39;&#39;,&#39;mibbis_c&#39;]);">
                             推荐
                         </a>
-                        <a href="http://bbs.xiaomi.cn/l" class="theme_nav_list"
-                           onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;bbs首页&#39;, &#39;最新主题button&#39;, &#39;&#39;]);_msq.push([&#39;trackEvent&#39;, &#39;new&#39;,&#39;&#39;,&#39;mibbis_c&#39;]);">
+                        <a href="" class="theme_nav_list"
+                           onclick="">
                             最新主题
                         </a>
-                        <a href="http://bbs.xiaomi.cn/thread/add" class="btn theme_nav_btn"
-                           onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;bbs首页&#39;, &#39;内容区&#39;, &#39;发表新主题&#39;]);">发表新主题</a>
+                        <a href="${pageContext.request.contextPath}/sun/index.jsp" class="btn theme_nav_btn"
+                           onclick="">发表新主题</a>
                     </div>
 
                     <ul>
@@ -729,6 +733,10 @@
                         <ul>
                         <c:forEach items="${pageInfo.list}" var="list">
                             ${list.userId}
+                            <script>
+                                alert("1234");
+                                alert(${list});
+                            </script>
                             <li class="theme_list clearfix" u-id="137006033">
                                 <div class="theme_list_img">
                                     <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"
@@ -760,17 +768,32 @@
 
                                             <p class="see">
                                                 <span class="numb msg user_name domy1" id="${list.forumPostId+100}" onclick="shoucang(${list.forumPostId},${list.forumPostId+100},${list.user.userId})"><i></i>收藏</span>
-                                                <span class="numb view">
 
-
-                                                         <span id="praise">
-                                                             <img src="<%=path%>/sun/images/zan.png" height="15px" width="15px" id="praise-img" />
+                                                <c:forEach items="${forumPostLikes}" var="forumPostLike">
+                                                    <script>
+                                                        alert(${forumPostLike});
+                                                    </script>
+                                                    <span class="numb view" id="${list.forumPostId+1000}" onclick="dianzan(${list.forumPostId+1000})">
+                                                    <c:choose>
+                                                        <c:when test="${forumPostLike.froumPostId==list.forumPostId}">
+                                                         <span class="praise_my" name="praise_my">
+                                                                 <img src="<%=path%>/sun/images/yizan.png" name="praise_img" height="15px" width="15px" class="praise-img" />
                                                          </span>
-                                                         <span id="praise-txt">${list.clickCount}</span>
-                                                            <span id="add-num"><em>+1</em></span>
-
+                                                         <span id="praise-txt" class="hover" name="txt_my">${list.clickCount}</span>
+                                                            <span id="add-num" name="addnum_my"><em>+1</em></span>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                         <span id="praise" name="praise_my">
+                                                                 <img src="<%=path%>/sun/images/yizan.png" height="15px" width="15px" class="praise-img" />
+                                                         </span>
+                                                        <span id="praise-txt" class="txt_my"  name="txt_my" >${list.clickCount}</span>
+                                                        <span id="add-num" class="addnum_my" name="addnum_my"><em>+1</em></span>
+                                                    </c:otherwise>
+                                                    </c:choose>
                                                 </span>
-                                                <span class="numb msg"><i></i>点赞数：</span>
+
+                                                </c:forEach>
+                                                <%--<span class="numb msg"><i></i>点赞数：</span>--%>
                                                 <span class="numb view"><i></i>点击量：93276</span>
                                             </p>
                                         </div>
@@ -790,10 +813,7 @@
                                         url:"${pageContext.request.contextPath}/forum/addonesCollection.action?forumId="+forumId+"&userId="+userId,
 //                                        data:{forumId:forumId,userId:userId},
                                         success:function (mag) {
-
                                                 document.getElementById(collection).innerText = "已收藏";
-
-
                                         }
                                     })
                                 }
@@ -804,11 +824,11 @@
                                  * 动态点赞
                                  * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
                                 */
-                                $(function(){
-                                    $("#praise").click(function(){
-                                        var praise_img = $("#praise-img");
-                                        var text_box = $("#add-num");
-                                        var praise_txt = $("#praise-txt");
+                                function dianzan(id){
+
+                                        var praise_img = $("span[name='parise_img']");
+                                        var text_box = $("span[name='addnum_my']");
+                                        var praise_txt = $("span[name='txt_my']");
                                         var num=parseInt(praise_txt.text());
                                         if(praise_img.attr("src") == ("<%=path%>/sun/images/yizan.png")){
                                             $(this).html("<img src='<%=path%>/sun/images/zan.png' id='praise-img' height='15px' width='15px'/>");
@@ -825,8 +845,8 @@
                                             num +=1;
                                             praise_txt.text(num)
                                         }
-                                    });
-                                })
+
+                                }
                             </script>
                         <li class="theme_list clearfix" u-id="137006033">
                             <div class="theme_list_img">

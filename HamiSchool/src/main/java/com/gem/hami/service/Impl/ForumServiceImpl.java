@@ -1,13 +1,7 @@
 package com.gem.hami.service.Impl;
 
-import com.gem.hami.dao.ForumCommentReplyMapper;
-import com.gem.hami.dao.ForumPostCollectionMapper;
-import com.gem.hami.dao.ForumPostCommentMapper;
-import com.gem.hami.dao.ForumPostMapper;
-import com.gem.hami.entity.ForumCommentReply;
-import com.gem.hami.entity.ForumPost;
-import com.gem.hami.entity.ForumPostCollection;
-import com.gem.hami.entity.ForumPostComment;
+import com.gem.hami.dao.*;
+import com.gem.hami.entity.*;
 import com.gem.hami.service.ForumService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -28,6 +22,8 @@ public class ForumServiceImpl implements ForumService {
     private ForumCommentReplyMapper forumCommentReplyMapper;
     @Autowired
     private ForumPostCollectionMapper forumPostCollectionMapper;
+    @Autowired
+    private ForumPostLikeMapper forumPostLikeMapper;
 
     @Override
     public List<ForumPost> findTopForumPostBySchoolId(int schoolId) {
@@ -157,5 +153,10 @@ public class ForumServiceImpl implements ForumService {
     @Override
     public boolean removeForumPostCollection(int forumPostCollectionId) {
         return forumPostCollectionMapper.removeForumPostCollection(forumPostCollectionId);
+    }
+
+    @Override
+    public List<ForumPostLike> findForumPostLikeByUserId(int userid) {
+        return forumPostLikeMapper.selectForumPostLikeByUserId(userid);
     }
 }

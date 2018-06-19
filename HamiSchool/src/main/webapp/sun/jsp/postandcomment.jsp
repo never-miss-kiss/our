@@ -39,9 +39,39 @@
 
 
 <body class="xmbbs_desktop">
+<%--<script>--%>
+    <%--function  showLogin() {--%>
+        <%--var w = document.body.clientWidth;--%>
+        <%--var h = document.documentElement.clientHeight;--%>
+        <%--var maskDiv = document.createElement("div");--%>
+        <%--maskDiv.id="mask";--%>
+        <%--maskDiv.style.position="absolute";--%>
+        <%--maskDiv.style.width=w+"px";--%>
+        <%--maskDiv.style.height=h+"px";--%>
+        <%--maskDiv.style.top=0;--%>
+        <%--maskDiv.style.left=0;--%>
+        <%--maskDiv.style.backgroundColor="#F3F3F3";--%>
+        <%--maskDiv.style.opacity=0.3;--%>
+        <%--maskDiv.style.zIndex=5;--%>
+        <%--document.body.appendChild(maskDiv);--%>
+        <%--document.getElementById("div1").style.display="block";--%>
+    <%--}--%>
+<%--</script>--%>
+<%--<script>--%>
+    <%--function closeDiv(obj) {--%>
+        <%--var maskDiv = document.getElementById("mask");--%>
+        <%--var loginDiv = obj.parentNode;--%>
+
+        <%--loginDiv.style.display = "none";--%>
+        <%--document.body.removeChild(maskDiv);--%>
+    <%--}--%>
+<%--</script>--%>
+
+
+
 <div class="main">
 
-<div id="shishi">wo</div>
+
 
     <style>
         .xmcomm_header_wrap {
@@ -629,8 +659,7 @@
 
                                 <div class="reply_txt"><p>${forumcomment.content}</p>
                                     <p class="replay_bu">
-                                        <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650782626"
-                                           class="replay_btn">回复</a>
+                                        <a class="replay_btn" onclick="showkuang(${forumcomment.userId},${forumcomment.forumPostCommentId},${ForumPost.forumPostId})">回复</a>
 
                                         <span class="replay_btn J_report">举报</span>
 
@@ -642,7 +671,8 @@
                                     <c:if test="${forumcomment.forumPostCommentId==formcommentreply.forumPostCommentId}">
                                         <p><li class="copyli"><span class="myauth_name">${formcommentreply.userId}</span>回复<span class="myauth_name">${formcommentreply.commentedUserId}</span>:${formcommentreply.content}
                                             </li>
-                                        <span class="replyspan" onclick="showkuang(${formcommentreply.userId},${formcommentreply.forumPostCommentId})" >
+                                        <span class="replyspan" onclick="showkuang(${formcommentreply.userId},${formcommentreply.forumPostCommentId},${ForumPost.forumPostId})" >
+                                            <%--<span class="replyspan" onclick="showkuang()" >--%>
                                            回复
                                             </span>
                                         </p>
@@ -684,47 +714,104 @@
                             </div>
                         </li>
                         <!--回复框-->
-                        <div class="scollReplyWrap" style="top: 485px; display: none;" id="replykuang" >
+                        <div class="scollReplyWrap" style="top: 485px; display: none;" id="showkuang" >
 
-                            <form action="${pageContext.request.contextPath}/forum/addcommentreply.action" method="post">
-                                <input type="text" id="J_scollReplytxt" name="contentmy"></input>
+                                <input type="text" id="reply_conntent" name="contentmy" />
+                                <input type="hidden" id="reply_commentedid" name="comedid"/>
+                                <input type="hidden" id="reply_commentid" name="comid"/>
+                                <input type="hidden" id="reply_forumId" name="forumId"/>
                                 <span class="btn" id="cancelmy">取消</span>
-                                <button type="submit" class="btn" id="replymy">回复</button>
-                            </form>
+                                <button type="button" class="btn" id="replymy" onclick="replymy()">回复</button>
+
                         </div>
+                        <style>
+                            #reply_p{
+                                margin-top: 0px;
+                            }
+                            #reply_span{
+                                margin-top: 0px;
+                                margin-left: 380px;
+                                width: 40px;
+                                height: 30px;
+                                font-size: 19px;
+                                text-align: center;
+                                line-height: 30px;
+
+                            }
+                            #input1{
+
+                                margin-left: 10px;
+                            }
+                            #button{
+                                margin-left: 100px;
+                                margin-top: 150px;
+                            }
+
+                            #div1{
+                                border-top:4px orange solid;
+                                position:absolute;
+
+                                left: 190px;
+                                width:400px;
+                                height:150px;
+                                z-index:10;
+                                background:#F3F3F3;
+
+                            }
+                        </style>
+                        <%--<div id="div1" style="display:none;">--%>
+                            <%--<span id="reply_span" onclick="closeDiv(this)" >x</span>--%>
+                            <%--<p id="reply_p"><span style="margin-left: 10px">回复：</span><span>田野</span></p>--%>
+                            <%--<input type="text" name="input1" id="input1" style="width:300px;height: 40px; ">--%>
+                            <%--<button type="submit" style="height: 40px;width: 60px;" >回复</button>--%>
+                        <%--</div>--%>
 
                         <script>
-                            function showkuang(userid,commentId) {
-                                document.getElementById("replykuang").style.display="block";
 
-                                $.ajax({
-                                    type:"post",
-                                    url:"${pageContext.request.contextPath}/forum/addcommentreply.action?userId="+userid+"&commentId="+commentId,
-//                                    data:{"userId":userid},
-                                    success:function (abd) {
-                                        if(abd){
-                                            alert("回复成功");
-                                        }
-                                    }
+                                function showkuang(userid,commentId,postId) {
+//                                alert(postId);
+                                document.getElementById("showkuang").style.display="block";
+                                document.getElementById("reply_commentedid").value=userid;
+//                                alert("要回复的人的id"+document.getElementById("reply_commentedid").value);
+                                document.getElementById("reply_commentid").value=commentId;
+//                                alert("评论id"+document.getElementById("reply_commentid").value);
+                                document.getElementById("reply_forumId").value=postId;
+//                                alert("帖子id"+document.getElementById("reply_forumId").value);
+
+                                <%--$.ajax({--%>
+                                    <%--type:"post",--%>
+                                    <%--&lt;%&ndash;url:"${pageContext.request.contextPath}/forum/addcommentreply.action?userId="+userid+"&commentId="+commentId,&ndash;%&gt;--%>
+<%--//                                    data:{"userId":userid},--%>
+                                    <%--success:function (abd) {--%>
+                                        <%--if(abd){--%>
+                                            <%--alert("回复成功");--%>
+                                        <%--}--%>
+                                    <%--}--%>
 
 
-                                })
-
-
-
-
+                                <%--})--%>
                             }
                         </script>
                         <script>
-//                            function load() {
-//                                document.getElementsByClassName("myselfhidden").onclick();
-//                            }
-                            <%--alert(${forumcomment.forumPostCommentId})--%>
-//                            function transfer(crid){
-//                                alert("点击时这个页面就执行这个函数");
-//                                alert("是这个吗"+crid);
-//
-//                            }
+                            function replymy() {
+
+                                var commedid = document.getElementById("reply_commentedid").value;
+                                var contentreply = document.getElementById("reply_conntent").value;
+                                var commid = document.getElementById("reply_commentid").value;
+                                var foruId = document.getElementById("reply_forumId").value;
+//                                alert(foruId);
+                                $.ajax({
+                                    type:"post",
+                                    url:"${pageContext.request.contextPath}/forum/addcommentreply.action",
+                                    data:{"commid":commid,"commedid":commedid,"contentreply":contentreply,"forumId":foruId},
+                                    success:function (abs) {
+                                        if(abs){
+                                            alert("回复成功");
+                                            window.location.reload();
+                                        }
+                                    }
+                                })
+                            }
 
                         </script>
 
@@ -741,6 +828,7 @@
                             <span id="J_reply_stick">置顶</span>
                         </p>
                     </div>
+
                 </div>
 
 
