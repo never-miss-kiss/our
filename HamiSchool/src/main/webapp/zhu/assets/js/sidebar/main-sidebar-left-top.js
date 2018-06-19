@@ -4,7 +4,7 @@ $( "document" ).ready( function() {
 	$mainSidebar.simplerSidebar( {
 		align: "left",
 		attr: "sidebar-main",
-		top: 56,
+		top: 206,
 		selectors: {
 			trigger: "#sidebar-main-trigger",
 			quitter: ".quitter"

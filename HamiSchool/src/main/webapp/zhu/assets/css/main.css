@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  margin-top: 56px;
+  margin-top: 0px;
 }
 
 img {
@@ -76,15 +76,15 @@ section {
 
 .navbar.main {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  top: 10;
+  right: 5;
+  left: 5;
   padding: 0 4px;
 
   height: 56px;
   line-height: 56px;
 
-  background-color: #29b6f6;
+  /*background-color: #29b6f6;*/
 
   -webkit-box-sizig: border-box;
   -moz-box-sizing: border-box;
@@ -117,23 +117,23 @@ section {
 
 .sidebar {
   position: fixed;
-  top: 56px;
+  top: 66px;
   bottom: 0;
-  width: 300px;
-  background-color: #fafafa;
+  width: 0px;
+  background-color: #9acfea;
 }
 
 #sidebar-main {
-  top: 56px;
+  top: 66px;
 }
 
 .sidebar.right {
-  right: -300px;
+  right: -100px;
   text-align: right;
 }
 
 .sidebar.left {
-  left: -300px;
+  left: -100px;
 }
 
 .sidebar a {

@@ -47,6 +47,8 @@ public class GoodsControl {
             goodsId = Integer.parseInt(gId);
         }
 
+        Goods good = goodsService.findGoodsById(goodsId);
+        goodsService.modifyClickCount(good);
         Goods goods = goodsService.findGoodsById(goodsId);
         List<GoodsComment> goodsComments = goodsService.findGoodsCommentByGoodsId(goodsId);
         Map<Integer,String> usernames = new HashMap<>();

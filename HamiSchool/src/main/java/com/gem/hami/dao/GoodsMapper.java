@@ -28,7 +28,15 @@ public interface GoodsMapper {
      */
     public List<Goods> selectGoodsByCategoryId(int id);
 
-
+/**
+  * @Author：Zhu
+   * @param null
+  * @Result:
+  * @Date：Created in 19:57 2018/6/19
+  * @Description
+  * @Modified By: 每点击一次商品实现点击量加1
+ */
+    public void updateClickCount(Goods goods);
 /**
   * @Author：Zhu
    * @param

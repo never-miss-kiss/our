@@ -19,6 +19,9 @@ public interface GoodsService {
     public List<Goods> findGoodsByCategoryId(int id);
 
 
+    //点击商品时实现点击数加1
+    public void modifyClickCount(Goods goods);
+
 //  /goods/findGoodsByCondition.action
 //    按条件查询商品列表（对应搜索框的模糊查询，
 //    (对应按商品种类，按学校分类功能)

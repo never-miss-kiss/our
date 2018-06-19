@@ -43,6 +43,11 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    public void modifyClickCount(Goods goods) {
+        goodsMapper.updateClickCount(goods);
+    }
+
+    @Override
     public PageInfo<Goods> findGoodsByCondition
             (Map<String, Object> map) {
 

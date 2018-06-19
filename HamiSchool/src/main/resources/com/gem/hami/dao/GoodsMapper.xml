@@ -74,6 +74,9 @@
         </where>
     </select>
 
+    <update id="updateClickCount" parameterType="Goods">
+        UPDATE goods set click_count =#{clickCount}+1 where goods_id =#{goodsId}
+    </update>
     <!--发布商品-->
     <insert id="insertGoods" parameterType="Goods">
         INSERT into goods (goods_id,name,price,picture,location,release_time,phone,email,qq,remark,click_count,goods_category_id,user_id)
