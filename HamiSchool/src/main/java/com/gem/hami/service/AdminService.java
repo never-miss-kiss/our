@@ -59,7 +59,8 @@ public interface AdminService {
 
 //  /admin/findAdmin.action
 //  按管理员id 查找,显示个人资料
-    public Admin findAdmin(int adminId);
+    public Admin findAdminByname(String nickname);
+    public Admin findAdminByEmail(String email);
 
 //  /admin/findAdminsByCondition
 //  显示所有管理员信息
@@ -70,7 +71,7 @@ public interface AdminService {
      * @Author：Wang
      * @Result:
      * @Date：Created in 19:30 2018/6/4
-     * @Modified By: tian
+     * @Modified By: tian (2018-6-14 21:48:44  wang 删除此接口)
      * 因为这是service层接口，一个seivice层接口可能要调用几个dao层接口
      * dao层接口属于对数据库的原子操作 方法名一般用 insert delete update select
      * service层是 是对数据库的一组操作  本项目中方法名一般用 add remove modify find
@@ -78,7 +79,19 @@ public interface AdminService {
      * 查找所有的管理员
      * @return
      */
-    public List<Admin> findAllAdmin();
+//    public List<Admin> findAllAdmin();
+
+    /**
+     *@Author：wang
+     *@Date: Created in 2018-6-14 21:48:35
+     *@Modified By:
+     */
+    /**
+     * 管理员分页
+     * @param map
+     * @return
+     */
+    public PageInfo<Admin> getAllAdmin(Map<String,Object> map);
 
 
 //            /admin/removeUser.action
@@ -96,7 +109,16 @@ public interface AdminService {
      */
     public List<User> findAllUser();
 
-//    分页
+    /**
+     *@Author：wang
+     *@Date: Created in 2018年6月13日 11:25:40
+     *@Modified By:
+     */
+    /**
+     * User分页
+     * @param map
+     * @return
+     */
     public PageInfo<User> getAllUser(Map<String,Object> map);
 
 
@@ -155,6 +177,18 @@ public interface AdminService {
      * @return
      */
     public List<Report> findReportByReson(int rid);
+
+    /**
+     *@Author：wang
+     *@Date: Created in 2018年6月13日 11:25:10
+     *@Modified By:
+     */
+    /**
+     * 举报分页
+     * @param map
+     * @return
+     */
+    public PageInfo<Report> getAllReprort(Map<String,Object> map);
 
 
 }

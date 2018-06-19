@@ -11,8 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width">
 
-    <title>原型修改</title>
-
+    <title>帖子详情</title>
     <!--[if lt IE 9]>
     <link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
     <![endif]-->
@@ -23,6 +22,9 @@
     <script src="../js1/base.js"></script>
     <script src="../js1/sign.js" charset="UTF-8"></script>
     <script src="../js1/codemirror.js" defer="defer"></script>
+    <script src="../js1/zh-cn (2).js"></script>
+    <script src="<%=path%>/bootstrap/jQuery.js"></script>">
+
 
     <link rel="canonical" href="http://bbs.xiaomi.cn/t-29693730">
     <link rel="stylesheet" href="<%=path%>/sun/css/ueditor.css">
@@ -36,11 +38,10 @@
 
 
 
-<body class="xmbbs_desktop" style="">
+<body class="xmbbs_desktop">
+<div class="main">
 
-<%--<script>switchMobile.init()</script>--%>
-
-<div class="main" style="">
+<div id="shishi">wo</div>
 
     <style>
         .xmcomm_header_wrap {
@@ -393,10 +394,10 @@
                                  class="user_pic">
                         </a>
                         <div class="user_msg">
-					<span><a href="http://bbs.xiaomi.cn/user/detail/miid/137006033" class="user_name" u-id="137006033">永_恆</a>
+					<span><a href="http://bbs.xiaomi.cn/user/detail/miid/137006033" class="user_name" u-id="137006033">${ForumPost.forumPostId}</a>
 							 							<i class="vip_icon vip_icon_m5"></i>
 											</span>
-                            <p><span class="txt">运营团队</span>
+                            <p><span class="txt">用户学校</span>
                                 <i class="vipnum vipnum_2"></i>
                             </p>
                         </div>
@@ -431,27 +432,12 @@
                             <li>
                                 <a href="http://bbs.xiaomi.cn/t-29693730">【视频】小米手机新功能首曝光，这样的小米铃声你喜欢吗？</a>
                             </li>
-                            <li>
-                                <a href="http://bbs.xiaomi.cn/t-29629024">小米8周年代表作勋章上线！速度领，一起为发布会打Call！</a>
-                            </li>
-                            <li>
-                                <a href="http://bbs.xiaomi.cn/t-29626726">首期《小米8点档》开播！看美女直播还能赢手机</a>
-                            </li>
-                            <li>
-                                <a href="http://bbs.xiaomi.cn/t-29601295">资源组五月活动：小米8周年祝福视频征集中</a>
-                            </li>
-                            <li>
-                                <a href="http://bbs.xiaomi.cn/t-29598169">【抢先体验】MIUI10开启内测招募！</a>
-                            </li>
-                            <li>
-                                <a href="http://bbs.xiaomi.cn/t-29570572">“奋斗体”海报设计大赛开赛啦，小米8喊你来奋斗！</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
-
-
+            <%--列表百宝箱--%>
             <div class="left_wrap">
                 <div class="sidebarplate"
                      onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;侧边栏&#39;, &#39;版块推荐&#39;]);">
@@ -468,18 +454,18 @@
                                     style="color:#ff0000;">小米8</span></a></li>
                             <li><a href="http://bbs.xiaomi.cn/f-475" target="_blank"><span style="color:#ff0000;">小米MIX 2S</span></a>
                             </li>
-                            <li><a href="http://bbs.xiaomi.cn/f-487" target="_blank">小米 6X</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-451" target="_blank">小米5/5c/5s/Plus</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-458" target="_blank">小米Max2</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-450" target="_blank">小米笔记本</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-360" target="_blank">红米Note 5</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-9" target="_blank">小米电视</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-364" target="_blank">小米盒子</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-354" target="_blank">小米路由器</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-361" target="_blank">红米5</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-362" target="_blank">小米手环</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-439" target="_blank">九号平衡车</a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-10" target="_blank">小米空气净化器</a></li>
+                            <li><a href="" target="_blank">小米 6X</a></li>
+                            <li><a href="" target="_blank">小米5/5c/5s/Plus</a></li>
+                            <li><a href="" target="_blank">小米Max2</a></li>
+                            <li><a href="" target="_blank">小米笔记本</a></li>
+                            <li><a href="" target="_blank">红米Note 5</a></li>
+                            <li><a href="" target="_blank">小米电视</a></li>
+                            <li><a href="" target="_blank">小米盒子</a></li>
+                            <li><a href="" target="_blank">小米路由器</a></li>
+                            <li><a href="" target="_blank">红米5</a></li>
+                            <li><a href="" target="_blank">小米手环</a></li>
+                            <li><a href="" target="_blank">九号平衡车</a></li>
+                            <li><a href="" target="_blank">小米空气净化器</a></li>
 
                         </ul>
 
@@ -498,31 +484,37 @@
 
             <div class="filtrate invitation" f-id="501" date-id="29693730" t-id="2167">
 
+                <%--帖子详情--%>
                 <div class="invitation_con">
-                    <!--回复框-->
-                    <%--<div class="scollReplyWrap" style="top: 485px; display: block;">--%>
-                        <%--<input type="text" id="J_scollReplytxt">--%>
-                        <%--<span class="btn btnlineLight" id="J_scollReply">回复</span>--%>
-                    <%--</div>--%>
+                    <%--<script>--%>
+                    <%--$(document).click(function(e){--%>
+                    <%--var _list = $("#replykuang");--%>
+                    <%--if(!_list.is(e.target)&&_list.has(e.target).length === 0){--%>
+                    <%--$("#replykuang").css({display:"none"});--%>
+                    <%--}--%>
+                    <%--});--%>
+                    <%--</script>--%>
+
+
 
 
                     <h1>
                         <span></span>
                         <span></span>
-                        <span class="name">【视频】王文祥自己臭(｡･∀･)ﾉﾞ嗨好玩吗？</span>
+                        <span class="name">${ForumPost.title}</span>
                     </h1>
                     <p class="txt">
                         <span class="user_msg_mobile"></span>
-                        <span class="marktxt">置顶</span>
+                        <span class="marktxt"></span>
 
                         <span>发表在 </span>
-                        <span class="time"> 05-28 10:54:48</span>
-                        <span class="f_r"><i class="msg"></i>点击数：802</span>
+                        <span class="time">${ForumPost.releaseTime}</span>
+                        <span class="f_r"><i class="msg"></i>点击数：${ForumPost.clickCount}</span>
                         <span class="f_r"><i class="see"></i>点赞数：8430</span>
                     </p>
 
                     <div class="invitation_content">
-                        ${forumPost.content}
+                        ${ForumPost.content}
                         <p></p>
                         <blockquote><p style="text-align: center;"><strong><span style="font-family: 微软雅黑;"><a
                                 href="http://bbs.xiaomi.cn/t-29545641" target="_blank"
@@ -531,40 +523,68 @@
                         <p style="padding: 1px 0px;"></p>
                         <p>这个合唱团，团员有些萌！♬︎(๑`･ᴗ･´๑)</p>
                         <p>小米手机新功能首曝光，这样的小米铃声你喜欢吗？~</p>
-                        <p style="text-align: center;">
-                            <embed type="application/x-shockwave-flash" class="edui-faked-video"
-                                   pluginspage="http://www.macromedia.com/go/getflashplayer"
-                                   src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&amp;v=20161117&amp;vid=m0667p67vn3&amp;auto=0"
-                                   width="650" height="480" wmode="transparent" play="true" loop="false" menu="false"
-                                   allowaccess="never" allowfullscreen="true">
-                        </p>
+                        <%--<p style="text-align: center;">--%>
+                            <%--<embed type="application/x-shockwave-flash" class="edui-faked-video"--%>
+                                   <%--pluginspage="http://www.macromedia.com/go/getflashplayer"--%>
+                                   <%--src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&amp;v=20161117&amp;vid=m0667p67vn3&amp;auto=0"--%>
+                                   <%--width="650" height="480" wmode="transparent" play="true" loop="false" menu="false"--%>
+                                   <%--allowaccess="never" allowfullscreen="true">--%>
+                        <%--</p>--%>
                         <p><br></p>
                         <p>距离小米8 年度旗舰发布会还有3天，5月31日下午2点直播见！</p>
                         <p></p>
                     </div>
                 </div>
 
+                <!--评论框-->
+                <div>
+                    <script>
+//                        alert("pinglun");
+                        function fabiao(){
 
+                            var comment = $("#fabiao").val();
 
+                            var tiziid = $("#teziid").val();
 
-<!--说说自己的看法-->
-                <div class="faster_reply">
-                    <a u-id="" u-name="" post-manage="" post-rate="" post-comment=""
-                       href="http://bbs.xiaomi.cn/user/detail/miid/" class="headportrait" target="_blank"
-                       rel="noopener noreferrer">
-                        <img src="../images/noavatar_small.gif"
-                             onerror="javascript:this.src=&#39;http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif&#39;;">
+                            $.ajax({
+                                type:"post",
+                                url:"${pageContext.request.contextPath}/forum/addcomment.action",
+                                data:{"comment":comment,"tiziid":tiziid},
+                                success:function (ssb) {
+                                    if(ssb){
+                                        window.location.reload();
+                                    }
+                                }
+                            })
 
-                    </a>
-                    <input placeholder="说说你的看法" id="J_txt">
-                    <span class="btn" id="J_fastpublish">发表</span>
+                        }
+
+                    </script>
+
+                       <a href="" target="_blank" id="myimagepar">
+                            <img src="<%=path%>/sun/images/noavatar_small.gif" id="myimage" onerror="javascript:void (0);"/>
+                       </a>
+                       <input id="fabiao" name="comment" placeholder="说说你的看法" \>
+                        <input id="teziid" name="postid" type="hidden" value="${param.postId}">
+                       <button  class="btn" id="butt" onclick="fabiao()">发表</button>
+
                 </div>
 
-<!--收藏举报点赞  -->
+                    <style>
+                        #myimage{
+                            position:absolute;
+                            margin-top: -5px;
+                        }
+                        #fabiao{
+                            width: 462px;
+                            height: 40px;
+                            margin-left: 50px;
+                        }
+                    </style>
+
+                <!--收藏举报点赞  -->
                 <div class="btn_wrap clearfix">
-
                     <a href="javascript:void(0);" class="report_btn J_reportBtn">举报</a>
-
                     <a href="javascript:void(0)" class="collect_btn J_collect">收藏</a>
                 </div>
             </div>
@@ -584,6 +604,7 @@
 
                     <ul class="reply_list">
                         <!-- top post list-->
+                        <c:forEach items="${ForumComment}" var="forumcomment">
                         <li class="clearfix" post-id="650782626" id="810" float-id="810" u-id="405698082">
                             <div class="reply_list_img">
                                 <a href="http://bbs.xiaomi.cn/u-detail-405698082" class="headportrait" target="_blank"
@@ -596,26 +617,118 @@
                             <div class="reply_list_con">
                                 <div class="auth_msg clearfix">
                                     <a href="http://bbs.xiaomi.cn/u-detail-405698082" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">Mi_405698082</a>
+                                       rel="noopener noreferrer">${forumcomment.userId}</a>
                                     <i class="vip_icon 	vip_icon_m0	"></i>
                                     <span class="time">&nbsp;&nbsp;</span>
                                     <span class="at"> 发表于</span>
-                                    <span class="time">05-28 16:16:28</span>
+                                    <span class="time">${forumcomment.releaseTime}</span>
                                     <span class="comefrom"></span>
 
                                     <span class="reply_list_float">810#</span>
                                 </div>
-                                <div class="reply_txt"><p>小米加油</p></div>
-                                <p class="replay_bu">
-                                    <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650782626"
-                                       class="replay_btn">回复</a>
 
-                                    <span class="replay_btn J_report">举报</span>
+                                <div class="reply_txt"><p>${forumcomment.content}</p>
+                                    <p class="replay_bu">
+                                        <a href="http://bbs.xiaomi.cn/post/reply/thread_id/29693730/post_id/650782626"
+                                           class="replay_btn">回复</a>
 
-                                </p>
+                                        <span class="replay_btn J_report">举报</span>
+
+                                    </p>
+                                <c:forEach items="${ForumPostReply}" var="formcommentreply">
+
+
+                                    <ul>
+                                    <c:if test="${forumcomment.forumPostCommentId==formcommentreply.forumPostCommentId}">
+                                        <p><li class="copyli"><span class="myauth_name">${formcommentreply.userId}</span>回复<span class="myauth_name">${formcommentreply.commentedUserId}</span>:${formcommentreply.content}
+                                            </li>
+                                        <span class="replyspan" onclick="showkuang(${formcommentreply.userId},${formcommentreply.forumPostCommentId})" >
+                                           回复
+                                            </span>
+                                        </p>
+
+                                    </c:if>
+                                    </ul>
+                                        <style>
+                                            .replyspan{
+                                                float: right;
+                                                width: 30px;
+                                                font-size: 13px;
+                                                margin-right: 20px;
+                                                color: #8c8c8c;
+                                            }
+                                            .copyli{
+                                                display:block;
+                                                width:500px;
+                                                margin-left:70px;
+                                                white-space:normal;
+                                                word-break : break-all;
+                                                word-wrap: break-word;
+                                            }
+                                            .myauth_name{
+                                                margin-right: 5px;
+                                                font-size: 14px;
+                                                color: #ff8b3d
+                                            }
+                                            #huifukongge{
+                                                position: relative;
+                                                height: 20px;
+                                                margin-top: 20px;
+                                            }
+                                        </style>
+                                    <input id="huifukongge" type="hidden" value="空格">
+                                </c:forEach>
+                                </div>
+                                <input type="hidden" class="myselfhidden" onclick="transfer(${forumcomment.forumPostCommentId})"/>
+
                             </div>
                         </li>
-                    </ul>
+                        <!--回复框-->
+                        <div class="scollReplyWrap" style="top: 485px; display: none;" id="replykuang" >
+
+                            <form action="${pageContext.request.contextPath}/forum/addcommentreply.action" method="post">
+                                <input type="text" id="J_scollReplytxt" name="contentmy"></input>
+                                <span class="btn" id="cancelmy">取消</span>
+                                <button type="submit" class="btn" id="replymy">回复</button>
+                            </form>
+                        </div>
+
+                        <script>
+                            function showkuang(userid,commentId) {
+                                document.getElementById("replykuang").style.display="block";
+
+                                $.ajax({
+                                    type:"post",
+                                    url:"${pageContext.request.contextPath}/forum/addcommentreply.action?userId="+userid+"&commentId="+commentId,
+//                                    data:{"userId":userid},
+                                    success:function (abd) {
+                                        if(abd){
+                                            alert("回复成功");
+                                        }
+                                    }
+
+
+                                })
+
+
+
+
+                            }
+                        </script>
+                        <script>
+//                            function load() {
+//                                document.getElementsByClassName("myselfhidden").onclick();
+//                            }
+                            <%--alert(${forumcomment.forumPostCommentId})--%>
+//                            function transfer(crid){
+//                                alert("点击时这个页面就执行这个函数");
+//                                alert("是这个吗"+crid);
+//
+//                            }
+
+                        </script>
+
+                    </c:forEach>
                     <div class="flotation" style="width: 200px;">
                         <h4>选中<span class="themenum">0</span>篇<span class="closebtn"></span>
                             <span class="allcheck_txt">全选</span>
@@ -652,445 +765,6 @@
                 </div>
             </div>
 
-            <!--<div class="reply_area" style="">-->
-                <!--<div class="reply_area_con clearfix" style="">-->
-
-                    <!--&lt;!&ndash;低端评论头像&ndash;&gt;-->
-                    <!--<a href="http://bbs.xiaomi.cn/user/detail/miid/" target="_blank" rel="noopener noreferrer"><img-->
-                            <!--class="user_head" src="HamiSchool/js1/noavatar_small.gif"-->
-                            <!--onerror="javascript:this.src=&#39;http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif&#39;;">-->
-                    <!--</a>-->
-
-
-                    <!--&lt;!&ndash;低端评论框&ndash;&gt;-->
-                    <!--<div class="area_con">-->
-                        <!--<div id="editor" class="edui-default">-->
-                            <!--<div id="edui1" class="edui-editor  edui-default" style="width: 584px; z-index: 0;">-->
-                                <!--<div id="edui1_toolbarbox" class="edui-editor-toolbarbox edui-default" style="">-->
-                                    <!--<div id="edui1_toolbarboxouter" class="edui-editor-toolbarboxouter edui-default">-->
-                                        <!--&lt;!&ndash;<div class="edui-editor-toolbarboxinner edui-default">&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<div id="edui2" class="edui-toolbar   edui-default"&ndash;&gt;-->
-                                                 <!--&lt;!&ndash;onselectstart="return false;"&ndash;&gt;-->
-                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui2&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                 <!--&lt;!&ndash;style="user-select: none;">&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui3" class="edui-box edui-button edui-for-bold edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui3_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui3_body" unselectable="on" title="加粗"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui3&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui3&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui4"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-combox edui-for-fontsize edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div title="字号" id="edui4_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-combox-body edui-default"&ndash;&gt;-->
-                                                             <!--&lt;!&ndash;onclick="$EDITORUI[&quot;edui4&quot;]._onArrowClick();">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui4_button_body"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-box edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="$EDITORUI[&quot;edui4&quot;]._onButtonClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;字号&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div class="edui-box edui-arrow edui-default"></div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui15"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-blockquote edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui15_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui15_body" unselectable="on" title="引用"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui15&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui15&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui16"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-splitbutton edui-for-forecolor edui-default edui-colorbutton">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div title="字体颜色" id="edui16_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-splitbutton-body edui-default"&ndash;&gt;-->
-                                                             <!--&lt;!&ndash;onclick="$EDITORUI[&quot;edui16&quot;]._onArrowClick();">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui16_button_body"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-box edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="$EDITORUI[&quot;edui16&quot;]._onButtonClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div class="edui-box edui-arrow edui-default"></div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui19"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-justifyleft edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui19_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui19_body" unselectable="on" title="居左对齐"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui19&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui19&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui20"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-justifycenter edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui20_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui20&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui20&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui20&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui20&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui20_body" unselectable="on" title="居中对齐"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui20&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui20&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui21"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-justifyright edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui21_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui21_body" unselectable="on" title="居右对齐"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui21&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui21&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui28"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-link edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui28_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui28_body" unselectable="on" title="超链接"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui28&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui28&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui29"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-unlink edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui29_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui29_body" unselectable="on" title="取消链接"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui29&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui29&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui30"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-simpleupload edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui30_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui30_body" unselectable="on" title="单图上传"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui30&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui30&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default">&ndash;&gt;-->
-                                                                    <!--&lt;!&ndash;<iframe style="display: block; width: 30px; height: 30px; overflow: hidden; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; opacity: 0; cursor: pointer;"&ndash;&gt;-->
-                                                                            <!--&lt;!&ndash;src="HamiSchool/js1/saved_resource.html"></iframe>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui35"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-insertimage edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui35_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui35&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui35&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui35&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui35&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui35_body" unselectable="on" title="多图上传"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui35&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui35&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui40"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-insertvideo edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui40_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui40&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui40&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui40&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui40&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui40_body" unselectable="on" title="视频"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui40&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui40&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui41"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-splitbutton edui-for-inserttable edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div title="插入表格" id="edui41_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-splitbutton-body edui-default"&ndash;&gt;-->
-                                                             <!--&lt;!&ndash;onclick="$EDITORUI[&quot;edui41&quot;]._onArrowClick();">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui41_button_body"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-box edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="$EDITORUI[&quot;edui41&quot;]._onButtonClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div class="edui-box edui-arrow edui-default"></div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui44"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-deletetable edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui44_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui44&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui44&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui44&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui44&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui44_body" unselectable="on" title="删除表格"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui44&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui44&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui45"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-mergecells edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui45_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui45&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui45&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui45&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui45&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui45_body" unselectable="on" title="合并多个单元格"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui45&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui45&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui46"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-splittocells edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui46_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui46&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui46&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui46&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui46&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui46_body" unselectable="on" title="完全拆分单元格"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui46&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui46&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui51"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-attachment edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui51_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui51_body" unselectable="on" title="附件"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui51&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui51&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui52"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-source edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui52_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui52&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui52&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui52&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui52&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui52_body" unselectable="on" title="源代码"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui52&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui52&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div id="edui57"&ndash;&gt;-->
-                                                     <!--&lt;!&ndash;class="edui-box edui-button edui-for-hide edui-default">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<div id="edui57_state"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmousedown="$EDITORUI[&quot;edui57&quot;].Stateful_onMouseDown(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseup="$EDITORUI[&quot;edui57&quot;].Stateful_onMouseUp(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseover="$EDITORUI[&quot;edui57&quot;].Stateful_onMouseOver(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;onmouseout="$EDITORUI[&quot;edui57&quot;].Stateful_onMouseOut(event, this);"&ndash;&gt;-->
-                                                         <!--&lt;!&ndash;class="edui-default">&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;<div class="edui-button-wrap edui-default">&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;<div id="edui57_body" unselectable="on" title="隐藏"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;class="edui-button-body edui-default"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onmousedown="return $EDITORUI[&quot;edui57&quot;]._onMouseDown(event, this);"&ndash;&gt;-->
-                                                                 <!--&lt;!&ndash;onclick="return $EDITORUI[&quot;edui57&quot;]._onClick(event, this);">&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-icon edui-default"></div>&ndash;&gt;-->
-                                                                <!--&lt;!&ndash;<div class="edui-box edui-label edui-default"></div>&ndash;&gt;-->
-                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--</div>-->
-
-                                    <!--&lt;!&ndash;评论上传照片&ndash;&gt;-->
-                                    <!--<div id="edui1_toolbarmsg" class="edui-editor-toolbarmsg edui-default"-->
-                                         <!--style="display:none;">-->
-                                        <!--<div id="edui1_upload_dialog" class="edui-editor-toolbarmsg-upload edui-default"-->
-                                             <!--onclick="$EDITORUI[&quot;edui1&quot;].showWordImageDialog();">点击上传-->
-                                        <!--</div>-->
-                                        <!--<div class="edui-editor-toolbarmsg-close edui-default"-->
-                                             <!--onclick="$EDITORUI[&quot;edui1&quot;].hideToolbarMsg();">x-->
-                                        <!--</div>-->
-                                        <!--<div id="edui1_toolbarmsg_label"-->
-                                             <!--class="edui-editor-toolbarmsg-label edui-default"></div>-->
-                                        <!--<div style="height:0;overflow:hidden;clear:both;" class="edui-default"></div>-->
-                                    <!--</div>-->
-
-
-                                    <!--<div id="edui1_message_holder" class="edui-editor-messageholder edui-default"-->
-                                         <!--style="top: 44px; z-index: 1;"></div>-->
-                                <!--</div>-->
-                                <!--&lt;!&ndash;<div id="edui1_iframeholder" class="edui-editor-iframeholder edui-default"&ndash;&gt;-->
-                                     <!--&lt;!&ndash;style="width: 584px; height: 100px; z-index: 0; overflow: hidden;">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<iframe id="ueditor_0" width="100%" height="100%" frameborder="0"&ndash;&gt;-->
-                                            <!--&lt;!&ndash;src="javascript:void(function(){document.open();document.write(&quot;&lt;!DOCTYPE html&gt;&lt;html xmlns=&#39;http://www.w3.org/1999/xhtml&#39; class=&#39;view&#39; &gt;&lt;head&gt;&lt;style type=&#39;text/css&#39;&gt;.view{padding:0;word-wrap:break-word;cursor:text;height:90%;}&ndash;&gt;-->
-<!--&lt;!&ndash;body{margin:8px;font-family:sans-serif;font-size:16px;}p{margin:5px 0;}&lt;/style&gt;&lt;link rel=&#39;stylesheet&#39; type=&#39;text/css&#39; href=&#39;http://bbs.xiaomi.cn/statics/ueditor/themes/iframe.css&#39;/&gt;&lt;/head&gt;&lt;body class=&#39;view&#39; &gt;&lt;/body&gt;&lt;script type=&#39;text/javascript&#39;  id=&#39;_initialScript&#39;&gt;setTimeout(function(){editor = window.parent.UE.instants[&#39;ueditorInstant0&#39;];editor._setup(document);},0);var _tmpScript = document.getElementById(&#39;_initialScript&#39;);_tmpScript.parentNode.removeChild(_tmpScript);&lt;/script&gt;&lt;/html&gt;&quot;);document.close();}())"&ndash;&gt;-->
-                                            <!--&lt;!&ndash;src="HamiSchool/js1/saved_resource(1).html"></iframe>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div id="edui1_bottombar" class="edui-editor-bottomContainer edui-default">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<table class="edui-default">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<tbody class="edui-default">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<tr class="edui-default">&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<td id="edui1_elementpath" class="edui-editor-bottombar edui-default"></td>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<td id="edui1_wordcount" class="edui-editor-wordcount edui-default">字数统计&ndash;&gt;-->
-                                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<td id="edui1_scale" class="edui-editor-scale edui-default"&ndash;&gt;-->
-                                                <!--&lt;!&ndash;style="display: none;">&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div class="edui-editor-icon edui-default"></div>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;</tbody>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</table>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div id="edui1_scalelayer" class="edui-default"></div>&ndash;&gt;-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-
-
-
-                        <!--&lt;!&ndash;<textarea isuploadattach="1" style="height: 100px; display: none;"></textarea>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<input type="hidden" id="token" value="">&ndash;&gt;-->
-                        <!--<span class="btn" id="J_reply">回复</span>-->
-                    <!--</div>-->
-
-                <!--</div>-->
-            <!--</div>-->
-
-            <!--<div class="sidebar">-->
-                <!--<a href="http://bbs.xiaomi.cn/t-29693730#J_fastpublish" class="sidebar_btn sidebar_msg">回复</a>-->
-                <!--<a href="http://bbs.xiaomi.cn/thread/add/fid/501/type/forum" class="sidebar_btn sidebar_postmsg">发贴</a>-->
-            <!--</div>-->
 
             <script type="text/javascript" src="HamiSchool/js1/jquery.lazyload.js"></script>
             <script type="text/javascript" src="HamiSchool/js1/jquery.datePicker-min.js"></script>

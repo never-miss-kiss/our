@@ -40,10 +40,12 @@ public class ForumServiceImpl implements ForumService {
         int curPage = (int)map.get("curPage");
         int pageSize = (int)map.get("pageSize");
         PageHelper.startPage(curPage,pageSize);
-        List<ForumPost> list = forumPostMapper.selectTopForumPostBySchoolId1((int)map.get("schoolId"));
-        PageInfo<ForumPost> pageInfo = new PageInfo<>(list);
-
-        return pageInfo;
+        if (map.get("schoolId")!= null) {
+            List<ForumPost> list = forumPostMapper.selectTopForumPostBySchoolId1((int) map.get("schoolId"));
+            PageInfo<ForumPost> pageInfo = new PageInfo<>(list);
+            return pageInfo;
+        }
+        return null;
     }
 
 //    @Override
@@ -65,6 +67,26 @@ public class ForumServiceImpl implements ForumService {
     @Override
     public ForumPost findForumPostByForudId(int forumId) {
         return forumPostMapper.findForumPostByForudId(forumId);
+    }
+
+
+
+    @Override
+    public List<ForumPostComment> findForumComment(int forumId) {
+        /**
+          * @Author：sunshilin
+          * @param: * @param forumId
+          * @result:
+          * @Description:查找某个帖子下的所有的评论
+          * @Date：Created in 10:49 2018/6/13
+          * @Modified By:
+         */
+        return forumPostCommentMapper.selectForumComment(forumId);
+    }
+
+    @Override
+    public List<ForumCommentReply> findForumCommentReply(int forumId) {
+        return forumCommentReplyMapper.selectForumCommentReply(forumId);
     }
 
     @Override
@@ -118,11 +140,7 @@ public class ForumServiceImpl implements ForumService {
     @Override
     public boolean addForumPostCollection( int userId,int forumId) {
        ForumPostCollection forumPostCollection = forumPostCollectionMapper.selectIfCollectOneForum(userId,forumId);
-//        if (forumPostCollection!=null){
-////            int id = forumPostCollectionMapper.selectCollectionId(userId,forumId);
-//            forumPostCollectionMapper.removeForumPostCollection(forumPostCollection.getForumPostCollectionId());
-//            return false;
-//        }else{
+
         if (forumPostCollection==null){
             forumPostCollection = new ForumPostCollection();
             Date date = new Date();

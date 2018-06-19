@@ -22,7 +22,7 @@
 	function get_mobile_code(obj){
       /*    $.post('sms.jsp', {mobile:jQuery.trim($('#mobile').val())}, function(msg) {
 			alert(222);
-			//alert(${codephone });
+			alert($});
             //alert(jQuery.trim(unescape(msg)));
 			if(msg=='提交成功'){
 				settime(obj);
@@ -81,25 +81,45 @@
 	}
 </script>
 	<style>
-		body{
-			background-image: url("<%=path%>/sun/images/注册背景.JPEG");
+		#divmy{
+			z-index: 1;
+		}
+		<%--body{--%>
+			<%--background-image: url("<%=path%>/sun/images/注册背景.JPEG") ;--%>
+			<%--background-repeat: no-repeat;--%>
+			<%--width: auto;--%>
+			<%--height: auto;--%>
+			<%--background-size: 100% 100%;--%>
+		<%--}--%>
+		#imgmy{
+			width:100%;
+			height: 1030px;
+			position: absolute;
+			opacity: 0.5;
+
 		}
 		
 	</style>
 </head>
 <body>
-	<div class="login-nav fix">
-		<ul class="f-r">
-			<li><a href="${pageContext.request.contextPath }/homepage/homepage_showAdvert"><span style="color:white;">返回首页</span></a></li>
-		</ul>
-	</div>
+<img src="<%=path%>/sun/images/注册背景.JPEG" id="imgmy"/>
+<div id="divmy">
+	<%--<div class="login-nav fix">--%>
+		<%--<ul class="f-r">--%>
+			<%--<li><a href="${pageContext.request.contextPath }/homepage/homepage_showAdvert"><span style="color:white;">返回首页</span></a></li>--%>
+		<%--</ul>--%>
+	<%--</div>--%>
+		<script>
+			alert(${param.info})
+		</script>
 	<div class="login-banner"></div>
 	<div class="login-box">
 		<div class="box-con tran">
-		<form action="${pageContext.request.contextPath }/webUser/webUser_userLogin" method="post">
+		<form action="${pageContext.request.contextPath}/loginpage/login.action" method="post">
 			<div class="login-con f-l">
 				<div class="form-group field field-icon-right">
-					手机号<input type="text" name="user.telephone" placeholder="手机号码"  data-validate="required:手机号不能为空,regexp#(^1(3|4|5|7|8)\d{9}$):手机号不正确" />
+					用户名<input type="text" name="user.telephone" placeholder="手机号\邮箱"  data-validate="required:手机号不能为空,regexp#(^1(3|4|5|7|8)\d{9}$):手机号不正确" />
+
 					<c:if test="${param.info == '2' }">
 						<span style='color:red;font-size:10pt'>用户不存在！</span>
 					</c:if> 
@@ -118,7 +138,9 @@
 				</div>
 				<div class="form-group">
 					<button type="submit" class="tran pr">
-						<a href="javascript:;" class="tran">登录</a>						
+						<%--<a href="javascript:;" class="tran">登录</a>
+									--%>
+						登录
 					</button>
 				</div>
 				<div class="from-line"></div>
@@ -284,11 +306,11 @@
 		</div>
 	</div>
 	
-	<div style="height:80px;"></div>
-	
-	<div class="login-footer">
-		<p>Copyright© 2017 Powered by 斗地主 </p>
-	</div>
+	<%--<div style="height:80px;"></div>--%>
+	<%----%>
+	<%--<div class="login-footer">--%>
+		<%--<p>Copyright© 2017 Powered by 斗地主 </p>--%>
+	<%--</div>--%>
 	<script>
 		var _handle='';//储存电话是否填写正确
 		$(function(){
@@ -329,6 +351,6 @@
 		});
 		
 	</script>
-	
+</div>
 </body>
 </html>

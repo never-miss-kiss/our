@@ -2,8 +2,8 @@ package com.gem.hami.control;
 
 import com.gem.hami.entity.ForumCommentReply;
 import com.gem.hami.entity.ForumPost;
-import com.gem.hami.entity.ForumPostCollection;
 import com.gem.hami.entity.ForumPostComment;
+import com.gem.hami.entity.User;
 import com.gem.hami.service.ForumService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 
 @RequestMapping(value = "/forum")
@@ -31,10 +31,17 @@ public class ForumControl {
 
     @RequestMapping(value = "/list.action")
     public void listTop(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("flist",forumService.findTopForumPostBySchoolId(4));
+//        request.setAttribute("flist",forumService.findTopForumPostBySchoolId(4));
 //        request.setAttribute("tlist",forumService.selectForumPostByTime(4));
         Map<String,Object> cmap = new HashMap<>();
-        cmap.put("schoolId",4);
+
+        User user= (User) request.getSession().getAttribute("userInfo");
+
+        if (user!=null) {
+            System.out.println(user.getSchoolId());
+            System.out.println("123");
+            cmap.put("schoolId", user.getSchoolId());
+        }
         int pageSize=2;
         int curPage=1;
         String scurPage = request.getParameter("curPage");
@@ -62,27 +69,38 @@ public class ForumControl {
     }
 
     @RequestMapping(value = "/addpost.action")
-    public void insertpost(ForumPost forumPost,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void insertpost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        String id= UUID.randomUUID().toString().replaceAll("-","");
+        String title = request.getParameter("title");
+        String content1 = request.getParameter("content");
+        byte[] content = content1.getBytes();
+        System.out.println(title + "==" + content);
+        System.out.println(content);
+        ForumPost forumPost = new ForumPost();
+        forumPost.setTitle(title);
+        forumPost.setContent(content);
         forumPost.setUserId(4);
         forumPost.setReleaseTime(new Date());
         forumService.addForumPost(forumPost);
-        request.getServletContext().setAttribute("forumPost",forumPost);
-        response.sendRedirect(request.getContextPath()+"/sun/jsp/postandcomment.jsp");
+        request.getServletContext().setAttribute("forumPost", forumPost);
+        response.sendRedirect(request.getContextPath() + "/sun/jsp/postandcomment.jsp");
+    }
 //        response.sendRedirect(request.getContextPath()+"/infor.jsp");sun/jsp/postandcomment.jsp
 //        request.setAttribute("olist",forumService.addForumPost(forumPost));
 //        System.out.println(forumService.addForumPost(forumPost));
 //        response.sendRedirect("/HamiSchool/forum/list.action");
 //    }
-//    @RequestMapping(value = "/content")
-//    public  void forumContent(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-//        String postId=request.getParameter("postId");
-//        int postid = Integer.parseInt(postId);
-//        ForumPost forumPost = forumService.findForumPostByForudId(postid);
-//        System.out.println(forumPost.getReleaseTime());
-//        System.out.println(postid);
-//        request.setAttribute("Forum",forum);
-//        request.getRequestDispatcher("/sun/jsp/postandcomment.jsp").forward(request,response);
+    @RequestMapping(value = "/content.action")
+    public  void forumContent(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        String postId = request.getParameter("postId");
+        int postid = Integer.parseInt(postId);
+        ForumPost forumPost = forumService.findForumPostByForudId(postid);
+        List<ForumPostComment> forumPostComments = forumService.findForumComment(forumPost.getForumPostId());
+        List<ForumCommentReply> forumCommentReplies = forumService.findForumCommentReply(postid);
+        request.setAttribute("ForumPostReply",forumCommentReplies);
+        request.setAttribute("ForumPost", forumPost);
+        request.setAttribute("ForumComment",forumPostComments);
+        request.getRequestDispatcher("/sun/jsp/postandcomment.jsp").forward(request, response);
 
     }
 
@@ -96,27 +114,63 @@ public class ForumControl {
 
 
     @RequestMapping(value = "/addcomment.action")
-    public void addComment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       forumPostComment=new ForumPostComment();
-       forumPostComment.setContent("你说的有道理");
-       forumPostComment.setUserId(1);
-       forumPostComment.setForumPostId(3);
-       forumPostComment.setReleaseTime(new Date());
+    public void addComment(String comment,int tiziid,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        ForumPostComment forumPostComment1 = new ForumPostComment();
+        forumPostComment1.setReleaseTime(new Date());
+        forumPostComment1.setForumPostId(tiziid);
+        forumPostComment1.setContent(comment);
+        User user = (User) request.getSession().getAttribute("userInfo");
+        System.out.println(comment +"--"+tiziid);
 
-        forumService.addForumPostComment(forumPostComment);
-        System.out.println(forumService.addForumPostComment(forumPostComment));
+        if (user != null){
+            forumPostComment1.setUserId(user.getUserId());
+            if (forumService.addForumPostComment(forumPostComment1)){
+                out.println(true);
+            }
+        }
+
+
+
+        request.setAttribute("forumPostComment1",forumPostComment1);
+
     }
 
-    @RequestMapping(value = "/addcommentreply.action")
-    public void addCommentReply(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ForumCommentReply forumCommentReply =new ForumCommentReply();
-        forumCommentReply.setContent("谢谢支持");
-        forumCommentReply.setCommentedUserId(1);
-        forumCommentReply.setUserId(8);
-        forumCommentReply.setCreateTime(new Date());
-        forumCommentReply.setForumPostCommentId(11);
 
-        forumService.addForumCommentReply(forumCommentReply);
+
+    @RequestMapping(value = "/addcommentreply.action" )
+    public void addCommentReply(String contentmy,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        ForumCommentReply forumCommentReply = new ForumCommentReply();
+        PrintWriter out = response.getWriter();
+
+        String commentedUserId =  request.getParameter("userId");
+        String commentId = request.getParameter("commentId");
+        if (commentedUserId!=null&&commentId!=null) {
+            int commentedUserid = Integer.parseInt(commentedUserId);
+            int commentid = Integer.parseInt(commentId);
+            User user = (User) request.getSession().getAttribute("userInfo");
+            if (user!=null){
+                int usermyself = user.getUserId();
+                forumCommentReply.setUserId(usermyself);
+                forumCommentReply.setCommentedUserId(commentedUserid);
+                forumCommentReply.setForumPostCommentId(commentid);
+                forumCommentReply.setCreateTime(new Date());
+                forumCommentReply.setContent(contentmy);
+
+                forumService.addForumCommentReply(forumCommentReply);
+
+                System.out.println("评论人id"+usermyself+"被评论人id"+commentedUserid+"评论内容"+"要回复评论的id"+commentid);
+            }
+        }
+
+
+        if (commentedUserId!=null){
+            out.println(true);
+        }
+        response.sendRedirect(request.getContextPath()+"");
+
+//        forumService.addForumCommentReply(forumCommentReply);
 
     }
 
@@ -202,48 +256,4 @@ public class ForumControl {
         forumService.removeForumPostCollection(2);
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

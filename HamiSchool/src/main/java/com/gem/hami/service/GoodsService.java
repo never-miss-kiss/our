@@ -36,6 +36,15 @@ public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
 //            发布二手商品
     public boolean addGoods(Goods goods);
 
+//    查询商品评论（根据商品ID）
+    public List<GoodsComment> findGoodsCommentByGoodsId(int goodsId);
+
+//    查询单个商品评论（评论ID）
+    public GoodsComment findGoodsCommentByGoodsCommentId(int goodsCommentId);
+
+//    查询被回复的评论
+    public List<GoodsCommentReply> findGoodsCommentReply(int goodsCommentId);
+
 
 //    /goods/addGoodsComment.action
 //            添加商品评论

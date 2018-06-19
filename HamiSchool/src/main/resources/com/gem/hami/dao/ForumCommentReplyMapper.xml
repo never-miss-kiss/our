@@ -8,6 +8,10 @@
         (#{content},#{userId},#{commentedUserId},#{createTime},#{forumPostCommentId})
     </insert>
 
+    <!--public List<ForumCommentReply> selectForumCommentReply(int forumId);-->
+    <select id="selectForumCommentReply" resultType="ForumCommentReply" parameterType="int">
+        SELECT * FROM forum_comment_reply WHERE forum_post_comment_id IN (SELECT forum_post_comment_id FROM forum_post_comment WHERE forum_post_id=#{_parameter})
+    </select>
 
     <!--public boolean deleteForumCommentReply(int replyId);-->
         <delete id="deleteForumCommentReply" parameterType="int">

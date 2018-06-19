@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class GoodsServiceImpl implements GoodsService{
+public class GoodsServiceImpl implements GoodsService {
 
     @Autowired
     private GoodsMapper goodsMapper;
@@ -61,6 +61,21 @@ public class GoodsServiceImpl implements GoodsService{
     @Override
     public boolean addGoods(Goods goods) {
         return goodsMapper.insertGoods(goods);
+    }
+
+    @Override
+    public List<GoodsComment> findGoodsCommentByGoodsId(int goodsId) {
+        return goodsCommentMapper.selectGoodsCommentByGoodsId(goodsId);
+    }
+
+    @Override
+    public GoodsComment findGoodsCommentByGoodsCommentId(int goodsCommentId) {
+        return goodsCommentMapper.selectGoodsCommentByGoodsCommentId(goodsCommentId);
+    }
+
+    @Override
+    public List<GoodsCommentReply> findGoodsCommentReply(int goodsCommentId) {
+        return goodsCommentReplyMapper.selectGoodsCommentReply(goodsCommentId);
     }
 
     @Override

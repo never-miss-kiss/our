@@ -1,13 +1,9 @@
 package com.gem.hami.service.Impl;
 
-import com.gem.hami.dao.AdminAuthorityMapper;
 import com.gem.hami.dao.AdminMapper;
 import com.gem.hami.dao.ReportMapper;
 import com.gem.hami.dao.UserMapper;
-import com.gem.hami.entity.Admin;
-import com.gem.hami.entity.QueryPojo_User;
-import com.gem.hami.entity.Report;
-import com.gem.hami.entity.User;
+import com.gem.hami.entity.*;
 import com.gem.hami.service.AdminService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -32,6 +28,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Autowired
     private UserMapper userMapper;
+
     @Autowired
     private ReportMapper reportMapper;
 
@@ -63,20 +60,45 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Admin findAdmin(int adminId) {
-        return adminMapper.selectAdminById(adminId);
+    public Admin findAdminByname(String nickname) {
+        return adminMapper.selectAdminByNickname(nickname);
     }
+
+    @Override
+    public Admin findAdminByEmail(String email) {
+        return null;
+    }
+
+
 
     @Override
     public List<Admin> findAdminsByCondition(String name) {
         return adminMapper.selectAdminByCondition(name);
     }
 
+//    分页
     @Override
-    public List<Admin> findAllAdmin() {
-        return adminMapper.selectAllAdmin();
+    public PageInfo<Admin> getAllAdmin(Map<String, Object> map) {
+
+//        起始条件
+        int curPage = (int) map.get("curPage");
+//        查询的条数
+        int pageSieze = (int) map.get("pageSize");
+//        拦截sql语句 添加limit分页
+        PageHelper.startPage(curPage,pageSieze);
+
+        List<Admin> adminList = adminMapper.selectAllAdmin((QueryPojo_Admin) map.get("queryPojo"));
+        PageInfo<Admin> pageInfo = new PageInfo<>(adminList);
+
+        return pageInfo;
     }
 
+    /*@Override
+    public List<Admin> findAllAdmin() {
+        return adminMapper.selectAllAdmin();
+    }*/
+//    管理员结束
+//    用户开始
     @Override
     public User findUserByName(String uname) {
         return userMapper.selectUserByName(uname);
@@ -110,6 +132,8 @@ public class AdminServiceImpl implements AdminService {
         return userMapper.deleteUserById(uid);
     }
 
+//    用户结束
+//    举报开始
     @Override
     public List<Report> findReport() {
         return reportMapper.selectAllReport();
@@ -131,6 +155,25 @@ public class AdminServiceImpl implements AdminService {
     public List<Report> findReportByReson(int rid) {
         return reportMapper.selectReportByReson(rid);
     }
+
+    @Override
+    public PageInfo<Report> getAllReprort(Map<String, Object> map) {
+
+//        起始条件
+        int curPage = (int) map.get("curPage");
+//        查询的条数
+        int pageSieze = (int) map.get("pageSize");
+//        拦截sql语句 添加limit分页
+        PageHelper.startPage(curPage,pageSieze);
+
+        List<Report> reportList = reportMapper.selectReportByCondition((QueryPojo_Report) map.get("queryPojo"));
+
+        PageInfo<Report> pageInfo = new PageInfo<>(reportList);
+
+
+        return pageInfo;
+    }
+//    举报结束
 
 
 }

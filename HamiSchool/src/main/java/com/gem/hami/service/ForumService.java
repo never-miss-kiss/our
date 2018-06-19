@@ -22,7 +22,7 @@ public interface ForumService {
 //显示帖子点击量
     public List<ForumPost> findTopForumPostBySchoolId(int schoolId);
 
-    public PageInfo<ForumPost> findTopForumPostBySchoolId1(Map<String,Object> map);
+    public PageInfo<ForumPost> findTopForumPostBySchoolId1(Map<String, Object> map);
 
 //    public List<ForumPost> selectForumPostByTime(int schoolId);
 
@@ -40,9 +40,11 @@ public interface ForumService {
       * @Modified By:
      */
     public ForumPost findForumPostByForudId(int forumId);
-//    public ForumPostComment findForumComment(int forumId);
+    public List<ForumPostComment> findForumComment(int forumId);
 //    public ForumCommentReply findOneAllReply(int userId,int forumId);
 
+    //根据帖子id查询某帖子下的所有评论回复
+    public List<ForumCommentReply> findForumCommentReply(int forumId);
 //    /forum/addForumPost.action
 //    发表论坛帖子（即发帖）
     public boolean addForumPost(ForumPost forumPost);
@@ -89,7 +91,7 @@ public interface ForumService {
   * @Date：Created in 20:16 2018/6/4
   * @Modified By:
  */
-    public boolean addForumPostCollection(int userId,int forumId);
+    public boolean addForumPostCollection(int userId, int forumId);
 
 
 // /home/removeCollection.action

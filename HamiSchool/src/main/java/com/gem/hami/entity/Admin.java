@@ -8,7 +8,7 @@ public class Admin {
 
     private Integer userId;
 
-    private String realname;
+    private String name;
 
     private String password;
 
@@ -51,12 +51,12 @@ public class Admin {
         this.adminId = adminId;
     }
 
-    public String getRealname() {
-        return realname;
+    public String getName() {
+        return name;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname == null ? null : realname.trim();
+    public void setName(String realname) {
+        this.name = realname == null ? null : realname.trim();
     }
 
     public String getPassword() {

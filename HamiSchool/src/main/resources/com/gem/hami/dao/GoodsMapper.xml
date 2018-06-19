@@ -4,6 +4,7 @@
     <!--通过商品ID查询商品-->
     <resultMap id="getGoodsMap" type="Goods">
         <id column="goods_id" property="goodsId"></id>
+        <result column="user_id" property="userId"></result>
         <result column="name" property="name"></result>
         <result column="price" property="price"></result>
         <result column="picture" property="picture"></result>
