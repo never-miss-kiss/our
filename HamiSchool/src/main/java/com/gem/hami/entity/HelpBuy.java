@@ -10,6 +10,8 @@ public class HelpBuy extends HelpInfo{
 
     private String receiptAddressAlternative;
 
+    private String buyPhone;
+
     private String buyAddress;
 
     private String buyAddressAlternative;
@@ -76,6 +78,14 @@ public class HelpBuy extends HelpInfo{
 
     public void setReceiptAddressAlternative(String receiptAddressAlternative) {
         this.receiptAddressAlternative = receiptAddressAlternative == null ? null : receiptAddressAlternative.trim();
+    }
+
+    public String getBuyPhone() {
+        return buyPhone;
+    }
+
+    public void setBuyPhone(String buyPhone) {
+        this.buyPhone = buyPhone;
     }
 
     public String getBuyAddress() {

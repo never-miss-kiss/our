@@ -26,7 +26,7 @@
     <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
     <script src="<%= basePath %>tian/helpBuyDetail/help-buy.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4MuXt8BaTfnKIcCU0Q8UBuSyHuLAZcvN"></script>
-    <title>HelpBuyDetail</title>
+    <title>HelpFetchDetail</title>
 
 </head>
 <body>
@@ -39,84 +39,101 @@
 
     <div class="col-sm-8  middle">
         <form class="form-horizontal">
-
             <div class="form1">
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">购买内容</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" type="text"  placeholder="${helpBuy.name}" value="" disabled>
-                    </div>
-                </div>
+                <form class="form-horizontal">
 
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" type="text" placeholder="${helpBuy.title}" value="" disabled>
-                    </div>
-                </div>
+                    <div class="form1">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">物品类型</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="text"  placeholder="${helpQueue.name}" value="" disabled>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">收货地址</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" type="text" id="suggestId" placeholder="${helpBuy.receiptAddress}" value="${helpBuy.receiptAddress}" disabled>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">备注地址</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" id="disabledInput" type="text" placeholder="${helpBuy.receiptAddressAlternative}"  disabled>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">收货电话</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" id="disabledInput" type="text" placeholder="${helpBuy.buyPhone}" disabled>
-                    </div>
-                </div>
-            </div>
-            <div class="form2">
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">购买地址</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" id="suggestId2" type="text" placeholder="${helpBuy.buyAddress}" value="${helpBuy.buyAddress}" disabled>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">备注地址</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" id="disabledInput" type="text" placeholder="${helpBuy.buyAddressAlternative}" disabled>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">购买要求</label>
-                    <div class="col-sm-7">
-                        <input class="form-control" id="disabledInput" type="text" placeholder="${helpBuy.buyDemand}" disabled>
-                    </div>
-                </div>
-            </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="text" placeholder="${helpQueue.title}" value="" disabled>
+                            </div>
+                        </div>
 
-            <div class="form3">
-                <div class="form3-left col-sm-6">
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label">订单距离</label>
-                        <div class="col-sm-8">
-                            <p class="form-control-static">${helpBuy.distance}</p>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">备注信息</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="text" placeholder="${helpQueue.remarkInfomation}" value="" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">排队地址</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="text" id="suggestId" placeholder="${helpQueue.queueAddress}" value="${helpQueue.queueAddress}" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">备注地址</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="disabledInput" type="text" placeholder="${helpQueue.remarkQueueAddress}"  disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">联系电话</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="disabledInput" type="text" placeholder="${helpQueue.queuePhone}" disabled>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label">跑腿费</label>
-                        <div class="col-sm-8">
-                            <p class="form-control-static">${helpBuy.personPrice}</p>
+                    <div class="form2">
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">排队时间</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="text" placeholder="${helpQueue.queueTime}" value="" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">排队时长</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="disabledInput" type="text" placeholder="${helpQueue.duration}" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">截止时间</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="disabledInput" type="text" placeholder="${helpQueue.endTime}" disabled>
+                            </div>
                         </div>
                     </div>
 
-                </div>
+                    <div class="form3">
+                        <div class="form3-left col-sm-6">
 
-                <%--地图框--%>
-                <div class="form3-right col-sm-6" id="l-map" style="border:#F00 1px solid; height:300px">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">订单距离</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="disabledInput" type="text" placeholder="${helpQueue.distance}" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">薪酬</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="disabledInput" type="text" placeholder="${helpQueue.personPrice}" disabled>
+                                </div>
+                            </div>
 
-                </div>
+                        </div>
+
+                        <%--地图框--%>
+                        <div class="form3-right col-sm-6" id="l-map" style="border:#F00 1px solid; height:300px">
+
+                        </div>
+                    </div>
+                </form>
             </div>
+
+
         </form>
 
         <div class="comment">
@@ -142,7 +159,7 @@
 
                             <button type="button"  id="clearButton${helpComment.helpCommentId}" class="btn btn-default hidden"
                                     value="${helpComment.helpCommentId}" onClick="clearReply(${helpComment.helpCommentId})">
-                               收起回复
+                                收起回复
                             </button>
 
                             <button type="button" id="btn-commentReply${helpComment.helpCommentId}" class="btn btn-default" data-toggle="modal" data-target="#commentReply${helpComment.helpCommentId}">
@@ -227,7 +244,7 @@
 
                         <!--单条评论下面的回复模块-->
                         <div class="col-sm-8 reply-container" id="comment${helpComment.helpCommentId}">
-                        <!--ajax要插入的地方-->
+                            <!--ajax要插入的地方-->
                         </div>
                     </div>
                 </c:forEach>
@@ -249,7 +266,7 @@
                     回复
                 </button>
             </li>
-            <li role="presentation" class="active"><a href="<%=basePath %>tian/addHelpBuy/addHelpBuy.jsp"><h3>帮我买</h3></a></li>
+            <li role="presentation" class="active"><a href="<%=basePath %>tian/addHelpQueue/addHelpQueue.jsp"><h3>帮我买</h3></a></li>
             <!-- Modal 回复的模态框-->
             <div class="modal fade" id="addComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">

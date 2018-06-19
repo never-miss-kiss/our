@@ -12,7 +12,7 @@ public class HelpQueue extends HelpInfo{
 
     private String remarkQueueAddress;
 
-    private String phone;
+    private String queuePhone;
 
     private String queueTime;
 
@@ -88,12 +88,12 @@ public class HelpQueue extends HelpInfo{
         this.remarkQueueAddress = remarkQueueAddress == null ? null : remarkQueueAddress.trim();
     }
 
-    public String getPhone() {
-        return phone;
+    public String getQueuePhone() {
+        return queuePhone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+    public void setQueuePhone(String queuePhone) {
+        this.queuePhone = queuePhone;
     }
 
     public String getQueueTime() {

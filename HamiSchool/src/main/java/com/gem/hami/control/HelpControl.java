@@ -17,6 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @RequestMapping(value = "/help")
@@ -81,6 +83,7 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/showHelp/selectInfos.jsp").forward(request,response);
     }
 
+
     //用于从栏目框等跳转而来时刷新整体页面
     @RequestMapping(value = "/selectAllHelps.action")
     public void selectAllHelps(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -136,52 +139,175 @@ public class HelpControl {
     }
 
     @RequestMapping(value = "/addHelpBuy.action",method = RequestMethod.GET)
-    public void addHelpBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HelpBuy helpBuy = new HelpBuy();
-        helpBuy.setIsFinished("T");
-        Date date = new Date();
-        helpBuy.setEndTime(date);
-        helpBuy.setName("德玛西亚");
-        helpService.addHelpBuy(helpBuy);
+    public void addHelpBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
+        String name = request.getParameter("name");
+        String title =  request.getParameter("title");
+        String receiptAddress =  request.getParameter("receiptAddress");
+        String receiptAddressAlternative =  request.getParameter("receiptAddressAlternative");
+        String buyPhone =  request.getParameter("buyPhone");
+        String buyAddress =  request.getParameter("buyAddress");
+        String buyAddressAlternative =  request.getParameter("buyAddressAlternative");
+        String buyDemand =  request.getParameter("buyDemand");
+        String endTime1=  request.getParameter("endTime");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date endTime = sdf.parse(endTime1);//设置截止日期
+        String distance1 = request.getParameter("distance");
+        distance1 = distance1.trim().replaceAll("公里","").replaceAll("米","");;
+        Float distance = Float.parseFloat(distance1);
+        float personPrice =  Float.parseFloat(request.getParameter("personPrice"));
+        float recommendedPrice =   Float.parseFloat((request.getParameter("recommendedPrice")));
 
-        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+        HelpBuy helpBuy = new HelpBuy();
+        helpBuy.setName(name);
+        helpBuy.setTitle(title);
+        helpBuy.setReceiptAddress(receiptAddress);
+        helpBuy.setReceiptAddressAlternative(receiptAddressAlternative);
+        helpBuy.setBuyPhone(buyPhone);
+        helpBuy.setBuyAddress(buyAddress);
+        helpBuy.setBuyAddressAlternative(buyAddressAlternative);
+        helpBuy.setBuyDemand(buyDemand);
+        helpBuy.setDistance(distance);
+        helpBuy.setPersonPrice(personPrice);
+        helpBuy.setRecommendedPrice(recommendedPrice);
+
+        Date date = new Date();
+        helpBuy.setCreateTime(date);
+        helpBuy.setEndTime(endTime);
+        helpBuy.setName("德玛西亚");
+
+        helpBuy.setUserId(5);//userId根据session的值来设定
+
+        helpService.addHelpBuy(helpBuy);
+        response.sendRedirect("/HamiSchool/help/selectAllHelps.action");
     }
 
     @RequestMapping(value = "/addHelpSend.action",method = RequestMethod.GET)
-    public void addHelpSend(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HelpSend helpSend1 = new HelpSend();
-        //helpSend1.setName("jiayou");
-        helpSend1.setIsFinished("T");
+    public void addHelpSend(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
+        String name = request.getParameter("name");
+        String title =  request.getParameter("title");
+        String sendAddress =  request.getParameter("sendAddress");
+        String sendAddressAlternative =  request.getParameter("sendAddressAlternative");
+        String sendPhone =  request.getParameter("sendPhone");
+        String receiptAddress =  request.getParameter("receiptAddress");
+        String receiptAddressAlternative =  request.getParameter("receiptAddressAlternative");
+        String receiptPhone =  request.getParameter("receiptPhone");
+        String sendInfomation =  request.getParameter("sendInfomation");
+
+        String endTime1=  request.getParameter("endTime");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date endTime = sdf.parse(endTime1);//设置截止日期
+        String distance1 = request.getParameter("distance");
+        distance1 = distance1.trim().replaceAll("公里","").replaceAll("米","");
+        Float distance = Float.parseFloat(distance1);
+        float personPrice =  Float.parseFloat(request.getParameter("personPrice"));
+        float recommendedPrice =   Float.parseFloat((request.getParameter("recommendedPrice")));
+
+        HelpSend helpSend = new HelpSend();
+        helpSend.setName(name);
+        helpSend.setTitle(title);
+        helpSend.setSendAddress(sendAddress);
+        helpSend.setSendAddressAlternative(sendAddressAlternative);
+        helpSend.setSendPhone(sendPhone);
+        helpSend.setReceiptAddress(receiptAddress);
+        helpSend.setReceiptAddressAlternative(receiptAddressAlternative);
+        helpSend.setReceiptPhone(receiptPhone);
+        helpSend.setSendInformation(sendInfomation);
+        helpSend.setPersonPrice(personPrice);
+        helpSend.setRecommendedPrice(recommendedPrice);
+
         Date date = new Date();
-        helpSend1.setEndTime(date);
-        helpSend1.setName("德玛西亚");
-        helpService.addHelpSend(helpSend1);
-        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+        helpSend.setCreateTime(date);
+        helpSend.setEndTime(endTime);
+        helpSend.setName("德玛西亚");
+        helpSend.setUserId(5);//userId根据session的值来设定
+        helpService.addHelpSend(helpSend);
+        response.sendRedirect("/HamiSchool/help/selectAllHelps.action");
     }
 
     @RequestMapping(value = "/addHelpFetch.action",method = RequestMethod.GET)
-    public void addHelpFetch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void addHelpFetch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
+            String name = request.getParameter("name");
+            String title =  request.getParameter("title");
+            String fetchAddress =  request.getParameter("fetchAddress");
+            String remarkShipAddress =  request.getParameter("remarkShipAddress");
+            String fetchPhone =  request.getParameter("fetchPhone");
+            String receiptAddress =  request.getParameter("receiptAddress");
+            String remarkReciptAddress =  request.getParameter("remarkReciptAddress");
+            String receiptPhone =  request.getParameter("receiptPhone");
+            String fetchInfomation=  request.getParameter("fetchInfomation");
+            String endTime1=  request.getParameter("endTime");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date endTime = sdf.parse(endTime1);//设置截止日期
+            String distance1 = request.getParameter("distance");
+            distance1 = distance1.trim().replaceAll("公里","").replaceAll("米","");;
+            Float distance = Float.parseFloat(distance1);
+            float personPrice =  Float.parseFloat(request.getParameter("personPrice"));
+            float recommendedPrice =   Float.parseFloat((request.getParameter("recommendedPrice")));
+
         HelpFetch helpFetch = new HelpFetch();
-        helpFetch.setIsFinished("T");
+        helpFetch.setName(name);
+        helpFetch.setTitle(title);
+        helpFetch.setFetchAddress(fetchAddress);
+        helpFetch.setFetchPhone(fetchPhone);
+        helpFetch.setReceiptAddress(receiptAddress);
+        helpFetch.setReceiptPhone(receiptPhone);
+        helpFetch.setFetchInformation(fetchInfomation);
+        helpFetch.setRemarkShipAddress(remarkShipAddress);
+        helpFetch.setEndTime(endTime);
+        helpFetch.setDistance(distance);
+        helpFetch.setPersonPrice(personPrice);
+        helpFetch.setRecommendedPrice(recommendedPrice);
         Date date = new Date();
-        helpFetch.setEndTime(date);
+        helpFetch.setCreateTime(date);
+        helpFetch.setEndTime(endTime);
         helpFetch.setName("德玛西亚");
+        helpFetch.setUserId(5);//userId根据session的值来设定
         helpService.addHelpFetch(helpFetch);
-        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+        response.sendRedirect("/HamiSchool/help/selectAllHelps.action");
+
     }
 
     @RequestMapping(value = "/addHelpQueue.action",method = RequestMethod.GET)
-    public void addHelpQueue(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void addHelpQueue(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
+        String name = request.getParameter("name");
+        String title =  request.getParameter("title");
+        String remarkInformation =  request.getParameter("remarkInformation");
+        String queueAddress =  request.getParameter("queueAddress");
+        String remarkQueueAddress =  request.getParameter("remarkQueueAddress");
+        String queuePhone =  request.getParameter("queuePhone");
+
+        String queueDay1 = request.getParameter("queueDay");
+        String queueHour1 = request.getParameter("queueHour");
+        String queueMinute1 = request.getParameter("queueMinute");
+        String queueTime = queueDay1+queueDay1+queueMinute1;
+
+        String endTime1=  request.getParameter("endTime");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date endTime = sdf.parse(endTime1);//设置截止日期
+
+        float personPrice =  Float.parseFloat(request.getParameter("personPrice"));
+        float recommendedPrice =   Float.parseFloat((request.getParameter("recommendedPrice")));
+
         HelpQueue helpQueue = new HelpQueue();
+        helpQueue.setName(name);
+        helpQueue.setTitle(title);
+        helpQueue.setRemarkInfomation(remarkInformation);
+        helpQueue.setQueueAddress(queueAddress);
+        helpQueue.setRemarkQueueAddress(remarkQueueAddress);
+        helpQueue.setQueuePhone(queuePhone);
+        helpQueue.setQueueTime(queueTime);
 
+        helpQueue.setPersonPrice(personPrice);
+        helpQueue.setRecommendedPrice(recommendedPrice);
 
-        helpQueue.setIsFinished("T");
         Date date = new Date();
-        helpQueue.setEndTime(date);
-        helpQueue.setName("德玛西亚");
-        helpService.addHelpQueue(helpQueue);
+        helpQueue.setCreateTime(date);
+        helpQueue.setEndTime(endTime);
 
-        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+        helpQueue.setUserId(5);//userId根据session的值来设定
+
+        helpService.addHelpQueue(helpQueue);
+        response.sendRedirect("/HamiSchool/help/selectAllHelps.action");
     }
 
     @RequestMapping(value="/removeHelp.action",method = RequestMethod.GET)
@@ -246,8 +372,14 @@ public class HelpControl {
     public void addHelpCommentReply(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String content =  request.getParameter("content");
-        int commentedUserId = Integer.parseInt(request.getParameter("commentedUserId"));
-        int userId = Integer.parseInt(request.getParameter("userId"));
+
+        String commentedUserId1 =  request.getParameter("commentedUserId");
+        int commentedUserId = Integer.parseInt(commentedUserId1);
+
+        String userId1 =request.getParameter("userId");
+        int userId = Integer.parseInt(userId1);
+        int helpType = Integer.parseInt(request.getParameter("releaseType"));
+        int helpId = Integer.parseInt(request.getParameter("helpId"));
         int helpCommentId = Integer.parseInt(request.getParameter("helpCommentId"));
         System.out.println("什么情况");
         HelpCommentReply helpCommentReply = new HelpCommentReply();
@@ -257,7 +389,36 @@ public class HelpControl {
         helpCommentReply.setUserId(userId);
         helpCommentReply.setHelpCommentId(helpCommentId);
         helpService.addHelpCommentReply(helpCommentReply);
-        request.getRequestDispatcher("/help/helpDetail.action").forward(request,response);
+        List<HelpComment> helpCommentList;
+
+        switch (helpType){
+            case 0:
+            case 1:HelpBuy helpBuy = helpService.findHelpBuy(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpBuy",helpBuy);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request,response);
+                break;
+            case 2:HelpSend helpSend = helpService.findHelpSend(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpSend",helpSend);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpSendDetail/helpSendDetail.jsp").forward(request,response);
+                break;
+            case 3:HelpFetch helpFetch = helpService.findHelpFetch(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpFetch",helpFetch);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpFetchDetail/helpFetchDetail.jsp").forward(request,response);
+                break;
+            case 4:HelpQueue helpQueue = helpService.findHelpQueue(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpQueue",helpQueue);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpQueueDetail/helpQueueDetail.jsp").forward(request,response);
+                break;
+            default:
+        }
     }
 
 
@@ -271,19 +432,41 @@ public class HelpControl {
     //帖子详情的入口界面
     @RequestMapping(value="/helpDetail.action")
     public void helpDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HelpBuy helpBuy = helpService.findHelpBuy(2);
-        List<HelpComment> helpCommentList = helpService.findHelpCommentsByCondition(1,2,0);
-        List<HelpCommentReply> helpCommentReplyList = helpService.findReplysByCommentId(5);
-        request.setAttribute("helpBuy",helpBuy);
-        request.setAttribute("helpCommentList",helpCommentList);
-        request.setAttribute("helpCommentReplyList",helpCommentReplyList);
-        request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request,response);
+        int helpId = Integer.parseInt(request.getParameter("helpId"));
+        int helpType = Integer.parseInt(request.getParameter("helpType"));
+        List<HelpComment> helpCommentList;
+        switch (helpType){
+            case 0:
+            case 1:HelpBuy helpBuy = helpService.findHelpBuy(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpBuy",helpBuy);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request,response);
+                break;
+            case 2:HelpSend helpSend = helpService.findHelpSend(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpSend",helpSend);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpSendDetail/helpSendDetail.jsp").forward(request,response);
+                break;
+            case 3:HelpFetch helpFetch = helpService.findHelpFetch(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpFetch",helpFetch);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpFetchDetail/helpFetchDetail.jsp").forward(request,response);
+                break;
+            case 4:HelpQueue helpQueue = helpService.findHelpQueue(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType,helpId,0);
+                request.setAttribute("helpQueue",helpQueue);
+                request.setAttribute("helpCommentList",helpCommentList);
+                request.getRequestDispatcher("/tian/helpQueueDetail/helpQueueDetail.jsp").forward(request,response);
+                break;
+            default:
+        }
+        return;
     }
 
 }
-
-
-
 
 //    @RequestMapping(value = "/selectBuyInfos.action")
 //    public  void selectBuyInfos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

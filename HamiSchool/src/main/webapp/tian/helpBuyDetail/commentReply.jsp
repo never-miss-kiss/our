@@ -12,11 +12,13 @@
             <div class="col-sm-3">
                 <img src="<%=basePath%>/tian/images/headPortrait.jpg" alt="${username}" class="img-circle" height="50" width="50">
             </div>
+
             <div>
                 <p class="col-sm-3 name1">${reply.user.nickname}</p>
                 <p class="col-sm-2">回复</p>
                 <p class="col-sm-3 name1">${reply.commentedUser.nickname}</p>
             </div>
+
         </div>
         <div class="col-sm-12 reply-item-middle">
             <p>${reply.content}</p>
@@ -36,15 +38,22 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel">回复： ${reply.user.nickname}</h4>
                         </div>
-                        <form method="post" action="###">
+                        <form method="post" action="<%=basePath %>/help/addHelpCommentReply.action">
+                            <input name="userId" type="hidden" value="5">
+                            <input name="commentedUserId" type="hidden" value="${reply.userId}">
+                            <input name="helpCommentId" type="hidden" value="${reply.helpCommentId}">
+                            <input name="releaseType" type="hidden" value="${reply.helpComment.releaseType}">
+                            <input name="helpId" type="hidden" value="${reply.helpComment.helpId}">
                             <div class="modal-body">
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea name="content" class="form-control" rows="3">
+                                </textarea>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                                 <button type="submit" class="btn btn-primary">发表</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -57,6 +66,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel">举报表</h4>
                         </div>
+
                         <form method="post" action="###">
                             <div class="modal-body">
                                 <div class="btn-group-vertical col-sm-6" role="group" aria-label="...">
@@ -89,7 +99,6 @@
                                 <button type="submit" class="btn btn-primary">发表</button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>

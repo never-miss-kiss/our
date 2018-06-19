@@ -7,7 +7,7 @@
         <result column="remark_infomation" property="remarkInfomation"/>
         <result column="queue_address" property="queueAddress"/>
         <result column="remark_queue_address" property="remarkQueueAddress"/>
-        <result column="phone" property="phone"/>
+        <result column="queue_phone" property="queuePhone"/>
         <result column="queue_time" property="queueTime"/>
         <result column="duration" property="duration"/>
         <result column="distance" property="distance"/>
@@ -39,8 +39,8 @@
         select hq.*,u.* FROM help_queue hq,user u where hq.user_id = u.user_id and hq.help_queue_id = #{param1}
     </select>
     <insert id="insertHelpQueue" parameterType="HelpQueue" useGeneratedKeys="true">
-        insert into help_queue(name,remark_infomation,queue_address,remark_queue_address,phone,queue_time,duration,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)
-        VALUES (#{name},#{remarkInfomation},#{queueAddress},#{remarkQueueAddress},#{phone},#{queueTime},#{duration},#{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount})
+        insert into help_queue(name,remark_infomation,queue_address,remark_queue_address,queue_phone,queue_time,duration,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count,title)
+        VALUES (#{name},#{remarkInfomation},#{queueAddress},#{remarkQueueAddress},#{queuePhone},#{queueTime},#{duration},#{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount},#{title})
     </insert>
 
     <delete id="deleteHelpQueue" parameterType="java.lang.Integer" >

@@ -12,6 +12,7 @@
         <result column="is_finished" property="isFinished"/>
         <result column="click_count" property="clickCount"/>
         <result column="help_type" property="helpType"/>
+        <result column="help_id" property="helpId"/>
         <result column="title" property="title"/>
         <result column="comment_count" property="commentCount"/>
         <association property="user" javaType="User">
@@ -20,20 +21,20 @@
     </resultMap>
 
     <select id="selectAllHelpsByCreateTime"  resultMap="HelpInfoMap">
-        select h.* , u.* from(
-        (select '1' help_type,hb.name,hb.recommended_price,hb.person_price,hb.create_time,
+        select h.* , u.*  from(
+        (select '1' help_type,hb.help_buy_id as help_id,hb.name,hb.recommended_price,hb.person_price,hb.create_time,
         hb.user_id,hb.end_time,hb.is_finished,hb.click_count,hb.title,hb.comment_count
         from help_buy hb)
         UNION
-        (select '2' help_type,hs.name,hs.recommended_price,hs.person_price,hs.create_time,
+        (select '2' help_type,hs.help_send_id as help_id,hs.name,hs.recommended_price,hs.person_price,hs.create_time,
         hs.user_id,hs.end_time,hs.is_finished,hs.click_count,hs.title,hs.comment_count
         from help_send hs)
         UNION
-        (select '3' help_type,hf.name,hf.recommended_price,hf.person_price,hf.create_time,
+        (select '3' help_type,hf.help_fetch_id as help_id,hf.name,hf.recommended_price,hf.person_price,hf.create_time,
         hf.user_id,hf.end_time,hf.is_finished,hf.click_count,hf.title,hf.comment_count
         from help_fetch hf)
         UNION
-        (select '4' help_type,hq.name,hq.recommended_price,hq.person_price,hq.create_time,
+        (select '4' help_type,hq.help_queue_id as help_id,hq.name,hq.recommended_price,hq.person_price,hq.create_time,
         hq.user_id,hq.end_time,hq.is_finished,hq.click_count,hq.title,hq.comment_count
         from help_queue hq)
         )h , user u
@@ -43,7 +44,7 @@
 
     <select id="selectBuyInfosByCreateTime"  resultMap="HelpInfoMap">
         select h.* , u.* from(
-        (select '1' help_type,hb.name,hb.recommended_price,hb.person_price,hb.create_time,
+        (select '1' help_type,hb.help_buy_id as help_id,hb.name,hb.recommended_price,hb.person_price,hb.create_time,
         hb.user_id,hb.end_time,hb.is_finished,hb.click_count,hb.title,hb.comment_count
         from help_buy hb)
         )h , user u
@@ -53,7 +54,7 @@
 
     <select id="selectSendInfosByCreateTime"  resultMap="HelpInfoMap">
         select h.* , u.* from(
-        (select '2' help_type,hs.name,hs.recommended_price,hs.person_price,hs.create_time,
+        (select '2' help_type,hs.help_send_id as help_id,hs.name,hs.recommended_price,hs.person_price,hs.create_time,
         hs.user_id,hs.end_time,hs.is_finished,hs.click_count,hs.title,hs.comment_count
         from help_send hs)
         )h , user u
@@ -63,7 +64,7 @@
 
     <select id="selectFetchInfosByCreateTime"  resultMap="HelpInfoMap">
         select h.* , u.* from(
-        (select '3' help_type,hf.name,hf.recommended_price,hf.person_price,hf.create_time,
+        (select '3' help_type,hf.help_fetch_id as help_id,hf.name,hf.recommended_price,hf.person_price,hf.create_time,
         hf.user_id,hf.end_time,hf.is_finished,hf.click_count,hf.title,hf.comment_count
         from help_fetch hf)
         )h , user u
@@ -73,7 +74,7 @@
 
     <select id="selectQueueInfosByCreateTime"  resultMap="HelpInfoMap">
         select h.* , u.* from(
-        (select '4' help_type,hq.name,hq.recommended_price,hq.person_price,hq.create_time,
+        (select '4' help_type,hq.help_queue_id as help_id,hq.name,hq.recommended_price,hq.person_price,hq.create_time,
         hq.user_id,hq.end_time,hq.is_finished,hq.click_count,hq.title,hq.comment_count
         from help_queue hq)
         )h , user u

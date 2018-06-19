@@ -98,10 +98,10 @@ public class HelpServiceImpl implements HelpService{
                         return flag;
                     if(o1.getClickCount()<o2.getClickCount())
                     {
-                        flag=-1;
+                        flag=1;
                     }
                     else if (o1.getClickCount()>o2.getClickCount()){
-                        flag = 1;
+                        flag = -1;
                     }
                     return flag;
                 }

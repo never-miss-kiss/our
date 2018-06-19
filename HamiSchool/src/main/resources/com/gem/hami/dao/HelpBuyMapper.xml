@@ -9,6 +9,7 @@
         <result column="receipt_address_alternative" property="receiptAddressAlternative"/>
         <result column="buy_address" property="buyAddress"/>
         <result column="buy_address_alternative" property="buyAddressAlternative"/>
+        <result column="buy_phone" property="buyPhone"/>
         <result column="buy_demand" property="buyDemand"/>
         <result column="distance" property="distance"/>
         <result column="recommended_price" property="recommendedPrice"/>
@@ -25,6 +26,7 @@
     </resultMap>
 
 
+    <!--可以通过学校ID或用户ID查询-->
     <select id="selectHelpsById"  resultMap="selectHelpBuyMap">
         select hb.* , u.* FROM help_buy hb,user u where hb.user_id = u.user_id
         <if test=" param1 != 0">
@@ -35,6 +37,7 @@
         </if>
     </select>
 
+    <!--单个查询帮我买帖子详情-->
     <select id="selectHelpByHelpId" resultMap="selectHelpBuyMap">
        select hb.*,u.* FROM help_buy hb,user u where hb.user_id = u.user_id and hb.help_buy_id = #{param1}
     </select>
@@ -44,8 +47,8 @@
 
 
     <insert id="insertHelpBuy" parameterType="HelpBuy" useGeneratedKeys="true">
-        insert into help_buy(name,receipt_address,receipt_address_alternative,buy_address,buy_address_alternative,buy_demand,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)
-        VALUES (#{name},#{receiptAddress},#{receiptAddressAlternative},#{buyAddress},#{buyAddressAlternative},#{buyDemand},#{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount})
+        insert into help_buy(name,receipt_address,receipt_address_alternative,buy_phone,buy_address,buy_address_alternative,buy_demand,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count,title)
+        VALUES (#{name},#{receiptAddress},#{receiptAddressAlternative},#{buyPhone},#{buyAddress},#{buyAddressAlternative},#{buyDemand},#{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount},#{title})
     </insert>
 
     <delete id="deleteHelpBuy" parameterType="java.lang.Integer" >

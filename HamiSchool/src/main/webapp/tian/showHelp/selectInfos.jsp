@@ -14,41 +14,43 @@
             <div class="item-holder">
                 <div class="article-content">
                     <div class="article-left-block">
-                        <a href="#" target="_blank" class="article-title-holder">
-
-                            <c:if test="${helpInfo.helpType==1}">
-                                <span class="article-title" title="帮我买">帮我买</span>
+                        <c:if test="${helpInfo.helpType==1}">
+                        <a href="<%= basePath%>/help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                            <span class="article-title" title="帮我买">帮我买</span>
                             </c:if>
                             <c:if test="${helpInfo.helpType==2}">
+                            <a href="<%= basePath%>/help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
                                 <span class="article-title" title="帮我送">帮我送</span>
-                            </c:if>
-                            <c:if test="${helpInfo.helpType==3}">
-                                <span class="article-title" title="帮我取">帮我取</span>
-                            </c:if>
-                            <c:if test="${helpInfo.helpType==4}">
-                                <span class="article-title" title="代排队">代排队</span>
-                            </c:if>
+                                </c:if>
+                                <c:if test="${helpInfo.helpType==3}">
+                                <a href="<%= basePath%>/help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                    <span class="article-title" title="帮我取">帮我取</span>
+                                    </c:if>
+                                    <c:if test="${helpInfo.helpType==4}">
+                                    <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                        <span class="article-title" title="代排队">代排队</span>
+                                        </c:if>
 
-                        </a>
-                        <div class="article-desc">
-                            <p>${helpInfo.name}   酬劳：${helpInfo.personPrice}元   截止日期：${helpInfo.endTime}</p>
+                                    </a>
+                                    <div class="article-desc">
+                                        <p>${helpInfo.name}   酬劳：${helpInfo.personPrice}元   截止日期：${helpInfo.endTime}</p>
 
-                        </div>
+                                    </div>
 
-                        <div class="article-info-bar">
-                            <a href="#" target="_blank" class="up-content">
-                                <span class="face-holder"><img src="<%= basePath %>tian/showHelp/showHelp_files/头像.jpg" class="face-img"></span>
-                                <span class="nick-name">${helpInfo.user.nickname}</span>
-                            </a>
-                            <a href="https://www.bilibili.com/read/douga#rid=4" target="_self">
-                                <span class="category">帮我取</span>
-                            </a>
-                            <span class="view">${helpInfo.clickCount}</span>
-                            <span class="like ">点赞量</span>
-                            <a href="#" target="_blank">
-                                <span class="reply">${helpInfo.commentCount}</span>
-                            </a>
-                        </div>
+                                    <div class="article-info-bar">
+                                        <a href="#" target="_blank" class="up-content">
+                                            <span class="face-holder"><img src="<%= basePath %>tian/showHelp/showHelp_files/头像.jpg" class="face-img"></span>
+                                            <span class="nick-name">${helpInfo.user.nickname}</span>
+                                        </a>
+                                        <a href="https://www.bilibili.com/read/douga#rid=4" target="_self">
+                                            <span class="category">帮我取</span>
+                                        </a>
+                                        <span class="view">${helpInfo.clickCount}</span>
+                                        <span class="like ">点赞量</span>
+                                        <a href="#" target="_blank">
+                                            <span class="reply">${helpInfo.commentCount}</span>
+                                        </a>
+                                    </div>
                     </div>
                     <div class="cover-img">
                         <a href="#" target="_blank">
@@ -58,9 +60,9 @@
                 </div>
             </div>
         </div>
-
     </c:forEach>
 
+    <%--末尾的示例帖子--%>
     <div class="article-item item-tp-4" data-id="515423">
         <div class="item-holder">
             <div class="article-content">
@@ -81,6 +83,7 @@
         </div>
     </div>
 
+    <%--分页--%>
     <div class="paging2">
 
         <form  onsubmit="return false" action="#" id="mainForm" method="post">

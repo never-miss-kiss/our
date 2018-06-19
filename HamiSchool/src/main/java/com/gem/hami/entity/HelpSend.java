@@ -8,13 +8,37 @@ public class HelpSend extends HelpInfo{
 
     private String sendAddress;
 
+    private String sendAddressAlternative;
+
+    private String sendPhone;
+
     private String receiptAddress;
+
+    private String receiptAddressAlternative;
+
+    private String receiptPhone;
 
     private String sendInformation;
 
     private Date sendTime;
 
     private Float distance;
+
+    public String getSendAddressAlternative() {
+        return sendAddressAlternative;
+    }
+
+    public void setSendAddressAlternative(String sendAddressAlternative) {
+        this.sendAddressAlternative = sendAddressAlternative;
+    }
+
+    public String getReceiptAddressAlternative() {
+        return receiptAddressAlternative;
+    }
+
+    public void setReceiptAddressAlternative(String receiptAddressAlternative) {
+        this.receiptAddressAlternative = receiptAddressAlternative;
+    }
 
     public HelpSend() {
         helpType = 4;
@@ -58,6 +82,22 @@ public class HelpSend extends HelpInfo{
 
     public void setSendAddress(String sendAddress) {
         this.sendAddress = sendAddress == null ? null : sendAddress.trim();
+    }
+
+    public String getSendPhone() {
+        return sendPhone;
+    }
+
+    public void setSendPhone(String sendPhone) {
+        this.sendPhone = sendPhone;
+    }
+
+    public String getReceiptPhone() {
+        return receiptPhone;
+    }
+
+    public void setReceiptPhone(String receiptPhone) {
+        this.receiptPhone = receiptPhone;
     }
 
     public String getReceiptAddress() {

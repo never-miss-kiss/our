@@ -6,7 +6,11 @@
         <id column="help_send_id" property="helpSendId"></id>
         <result column="name" property="name"/>
         <result column="send_address" property="sendAddress"/>
+        <result column="send_address_alternative" property="sendAddressAlternative"/>
+        <result column="send_phone" property="sendPhone"/>
         <result column="receipt_address" property="receiptAddress"/>
+        <result column="receipt_address_alternative" property="receiptAddressAlternative"/>
+        <result column="receipt_phone" property="receiptPhone"/>
         <result column="send_information" property="sendInformation"/>
         <result column="send_time" property="sendTime"/>
         <result column="distance" property="distance"/>
@@ -50,9 +54,9 @@
 
 
     <insert id="insertHelpSend" parameterType="HelpSend" useGeneratedKeys="true">
-        insert into help_send(name,send_address,receipt_address,send_information,send_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)
-        VALUES (#{name},#{sendAddress},#{receiptAddress},#{sendInformation},#{sendTime},
-        #{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount})
+        insert into help_send(name,send_address,send_address_alternative,send_phone,receipt_address,receipt_address_alternative,receipt_phone,send_information,send_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count,title)
+        VALUES (#{name},#{sendAddress},#{sendAddressAlternative},#{sendPhone},#{receiptAddress},#{receiptAddressAlternative},#{receiptPhone},#{sendInformation},#{sendTime},
+        #{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount},#{title})
     </insert>
 
     <delete id="deleteHelpSend" parameterType="java.lang.Integer" >

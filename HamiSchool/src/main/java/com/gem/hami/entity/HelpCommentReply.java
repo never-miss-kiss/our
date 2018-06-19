@@ -19,6 +19,16 @@ public class HelpCommentReply {
 
     private User commentedUser;
 
+    private HelpComment helpComment;
+
+    public HelpComment getHelpComment() {
+        return helpComment;
+    }
+
+    public void setHelpComment(HelpComment helpComment) {
+        this.helpComment = helpComment;
+    }
+
     public User getUser() {
         return user;
     }

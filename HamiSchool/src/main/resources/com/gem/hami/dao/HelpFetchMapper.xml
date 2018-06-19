@@ -42,8 +42,8 @@
     </select>
 
     <insert id="insertHelpFetch" parameterType="HelpFetch" useGeneratedKeys="true">
-        insert into help_fetch(name,fetch_address,remark_ship_address,fetch_phone,receipt_address,remark_receipt_address,receipt_phone,fetch_information,fetch_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count)
-        VALUES (#{name},#{fetchAddress},#{remarkShipAddress},#{fetchPhone},#{receiptAddress},#{remarkReceiptAddress},#{receiptPhone},#{fetchInformation},#{fetchTime},#{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount})
+        insert into help_fetch(name,fetch_address,remark_ship_address,fetch_phone,receipt_address,remark_receipt_address,receipt_phone,fetch_information,fetch_time,distance,recommended_price,person_price,create_time,user_id,end_time,is_finished,click_count,title)
+        VALUES (#{name},#{fetchAddress},#{remarkShipAddress},#{fetchPhone},#{receiptAddress},#{remarkReceiptAddress},#{receiptPhone},#{fetchInformation},#{fetchTime},#{distance},#{recommendedPrice},#{personPrice},#{createTime},#{userId},#{endTime},#{isFinished},#{clickCount},#{title})
     </insert>
 
     <delete id="deleteHelpFetch" parameterType="java.lang.Integer" >

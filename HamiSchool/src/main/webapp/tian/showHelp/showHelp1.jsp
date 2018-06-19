@@ -952,18 +952,20 @@
                             <div class="item-holder">
                                 <div class="article-content">
                                     <div class="article-left-block">
-                                        <a href="#" target="_blank" class="article-title-holder">
-
-                                            <c:if test="${helpInfo.helpType==1}">
-                                                <span class="article-title" title="帮我买">帮我买</span>
+                                        <c:if test="${helpInfo.helpType==1}">
+                                        <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                            <span class="article-title" title="帮我买">帮我买</span>
                                             </c:if>
                                             <c:if test="${helpInfo.helpType==2}">
+                                            <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
                                                 <span class="article-title" title="帮我送">帮我送</span>
                                             </c:if>
                                             <c:if test="${helpInfo.helpType==3}">
+                                                <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
                                                 <span class="article-title" title="帮我取">帮我取</span>
                                             </c:if>
                                             <c:if test="${helpInfo.helpType==4}">
+                                                    <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
                                                 <span class="article-title" title="代排队">代排队</span>
                                             </c:if>
 
@@ -996,9 +998,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </c:forEach>
 
+                    <%--末尾的示例帖子--%>
                     <div class="article-item item-tp-4" data-id="515423">
                         <div class="item-holder">
                             <div class="article-content">
@@ -1019,6 +1021,7 @@
                         </div>
                     </div>
 
+                    <%--分页--%>
                     <div class="paging2">
 
                         <form  onsubmit="return false" action="#" id="mainForm" method="post">
@@ -1192,33 +1195,33 @@
 </div>
 </div>
 <div class="to-top"> </div>
-<%--<script src="<%= basePath %>tian/showHelp/showHelp_files/jquery.min.js.下载"></script>--%>
-<%--<script type="text/javascript" charset="utf-8" src="<%= basePath %>tian/showHelp/showHelp_files/header.js.下载"></script>--%>
-<%--<script src="<%= basePath %>tian/showHelp/showHelp_files/log-reporter.js.下载"></script>--%>
-<%--<script>--%>
-    <%--window.reportMsgObj = {}--%>
-    <%--window.reportConfig = {--%>
-        <%--sample: 1,--%>
-        <%--errorTracker: false,--%>
-        <%--resourceTracker: false,--%>
-        <%--scrollTracker: false,--%>
-        <%--msgObjects: 'reportMsgObj'--%>
-    <%--}--%>
-    <%--var reportScript = document.createElement('script');--%>
-    <%--reportScript.src = "//s1.hdslb.com/bfs/seed/log/report/log-reporter.js";--%>
-    <%--$(function () {--%>
-        <%--document.getElementsByTagName('body')[0].appendChild(reportScript);--%>
-    <%--})--%>
-<%--</script>--%>
-<%--<script type="text/javascript" src="<%= basePath %>tian/showHelp/showHelp_files/manifest.42d79f81f299efa3cf40cae42dfe4e28c0f11ae9.js.下载">--%>
-<%--</script>--%>
-<%--<script type="text/javascript" src="<%= basePath %>tian/showHelp/showHelp_files/vendor.42d79f81f299efa3cf40cae42dfe4e28c0f11ae9.js.下载">--%>
+<script src="<%= basePath %>tian/showHelp/showHelp_files/jquery.min.js.下载"></script>
+<script type="text/javascript" charset="utf-8" src="<%= basePath %>tian/showHelp/showHelp_files/header.js.下载"></script>
+<script src="<%= basePath %>tian/showHelp/showHelp_files/log-reporter.js.下载"></script>
+<script>
+    window.reportMsgObj = {}
+    window.reportConfig = {
+        sample: 1,
+        errorTracker: false,
+        resourceTracker: false,
+        scrollTracker: false,
+        msgObjects: 'reportMsgObj'
+    }
+    var reportScript = document.createElement('script');
+    reportScript.src = "//s1.hdslb.com/bfs/seed/log/report/log-reporter.js";
+    $(function () {
+        document.getElementsByTagName('body')[0].appendChild(reportScript);
+    })
+</script>
+<script type="text/javascript" src="<%= basePath %>tian/showHelp/showHelp_files/manifest.42d79f81f299efa3cf40cae42dfe4e28c0f11ae9.js.下载">
+</script>
+<script type="text/javascript" src="<%= basePath %>tian/showHelp/showHelp_files/vendor.42d79f81f299efa3cf40cae42dfe4e28c0f11ae9.js.下载">
 
-<%--</script>--%>
-<%--<script type="text/javascript" src="<%= basePath %>tian/showHelp/showHelp_files/list.42d79f81f299efa3cf40cae42dfe4e28c0f11ae9.js.下载"></script>--%>
-<%--<script src="<%= basePath %>tian/showHelp/showHelp_files/log-reporter.js.下载"></script>--%>
+</script>
+<script type="text/javascript" src="<%= basePath %>tian/showHelp/showHelp_files/list.42d79f81f299efa3cf40cae42dfe4e28c0f11ae9.js.下载"></script>
+<script src="<%= basePath %>tian/showHelp/showHelp_files/log-reporter.js.下载"></script>
 
-<%--<script src="file://s1.hdslb.com/bfs/seed/log/report/log-reporter.js"></script><script src="file://s1.hdslb.com/bfs/seed/log/report/log-reporter.js"></script>--%>
+<script src="file://s1.hdslb.com/bfs/seed/log/report/log-reporter.js"></script><script src="file://s1.hdslb.com/bfs/seed/log/report/log-reporter.js"></script>
 
 
 

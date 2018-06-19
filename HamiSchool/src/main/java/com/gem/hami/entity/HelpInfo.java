@@ -5,6 +5,7 @@ import java.util.Date;
 public class HelpInfo {
 
     protected int id;
+
     protected String name;
 
     protected Float recommendedPrice;
@@ -24,6 +25,8 @@ public class HelpInfo {
     protected int clickCount;
 
     protected byte helpType;//表示跑腿表的种类 1帮我买 2.帮我送 3.帮我取 4.代排队
+
+    protected int helpId;
 
     protected String title;
 
@@ -117,6 +120,14 @@ public class HelpInfo {
 
     public void setHelpType(byte helpType) {
         this.helpType = helpType;
+    }
+
+    public int getHelpId() {
+        return helpId;
+    }
+
+    public void setHelpId(int helpId) {
+        this.helpId = helpId;
     }
 
     public User getUser() {
