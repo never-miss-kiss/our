@@ -9,7 +9,7 @@
         <module name="HamiSchool" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel>
       <module name="HamiSchool" target="1.7" />
     </bytecodeTargetLevel>
   </component>

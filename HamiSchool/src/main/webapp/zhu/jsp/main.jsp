@@ -133,33 +133,33 @@
 						</form>
 					</div>
 				</div>
-				<div class="load-this">
-					<div id="sidebar-main-trigger" class="icon float-left">
-						<img src="<%= basePath %>zhu/assets/imgs/icon-menu-24px-x2.png" width="24px" alt="Menu Icon" />
-					</div>
-				</div>
-				<div class="sidebar main left" id="sidebar-main">
-					<div class="wrapper">
-						<nav>
-							<ul>
-								<li class="title">Playground</li>
-								<li><a href="./index.html">Home</a></li>
-								<li><a href="./right.html">Right</a></li>
-								<li><a href="./right-top.html">Right Top</a></li>
-								<li><a href="./left.html">Left</a></li>
-								<li><a href="./left-top.html">Left Top</a></li>
-								<li><a href="./jquery-v2.html">jQuery v2</a></li>
-								<li><a href="./jquery-v3.html">jQuery v3</a></li>
-								<li><a href="./right-left.html">Right and Left</a></li>
-								<li><a href="./init-opened.html">Init Opened</a></li>
-								<li><a href="./no-mask.html">No Mask</a></li>
-								<li><a href="./allow-scrolling.html">Allow Scrolling</a></li>
-								<li><a href="./custom-functions.html">Custom Functions</a></li>
-								<li><a href="./ajax.html">Ajax</a></li>
-								<li><a href="./browserify.html">Browserify</a></li>
-							</ul>
-						</nav>
-					</div><!--#sidebar-main-->
+				<%--<div class="load-this">--%>
+					<%--<div id="sidebar-main-trigger" class="icon float-left">--%>
+						<%--<img src="<%= basePath %>zhu/assets/imgs/icon-menu-24px-x2.png" width="24px" alt="Menu Icon" />--%>
+					<%--</div>--%>
+				<%--</div>--%>
+				<%--<div class="sidebar main left" id="sidebar-main">--%>
+					<%--<div class="wrapper">--%>
+						<%--<nav>--%>
+							<%--<ul>--%>
+								<%--<li class="title">Playground</li>--%>
+								<%--<li><a href="./index.html">Home</a></li>--%>
+								<%--<li><a href="./right.html">Right</a></li>--%>
+								<%--<li><a href="./right-top.html">Right Top</a></li>--%>
+								<%--<li><a href="./left.html">Left</a></li>--%>
+								<%--<li><a href="./left-top.html">Left Top</a></li>--%>
+								<%--<li><a href="./jquery-v2.html">jQuery v2</a></li>--%>
+								<%--<li><a href="./jquery-v3.html">jQuery v3</a></li>--%>
+								<%--<li><a href="./right-left.html">Right and Left</a></li>--%>
+								<%--<li><a href="./init-opened.html">Init Opened</a></li>--%>
+								<%--<li><a href="./no-mask.html">No Mask</a></li>--%>
+								<%--<li><a href="./allow-scrolling.html">Allow Scrolling</a></li>--%>
+								<%--<li><a href="./custom-functions.html">Custom Functions</a></li>--%>
+								<%--<li><a href="./ajax.html">Ajax</a></li>--%>
+								<%--<li><a href="./browserify.html">Browserify</a></li>--%>
+							<%--</ul>--%>
+						<%--</nav>--%>
+					<%--</div><!--#sidebar-main-->--%>
 			</div>
 		</div>
 	<div class="col-xs-2 " id="person">
