@@ -51,23 +51,23 @@
 	<br />
   <table class="table table-hover table-condensed ">
 	  <tr>
-		  <th style="text-align: center">二手商品Id</th>
-		  <th  style="text-align: center">二手商品名</th>
-		  <th  style="text-align: center">商品类型</th>
-		  <th style="text-align: center">发布用户</th>
-		  <th  style="text-align: center">发布时间</th>
-		  <th <%--width="30%"--%> >操作</th>
+		  <th width="10%" style="text-align: center">二手商品Id</th>
+		  <th width="10%" style="text-align: center">二手商品名</th>
+		  <th width="10%" style="text-align: center">商品类型</th>
+		  <th width="10%" style="text-align: center">发布用户</th>
+		  <th width="20%" style="text-align: center">发布时间</th>
+		  <th width="30%" style="text-align: left">操作</th>
 	  </tr>
 	  <c:forEach var="g" items="${pageInfo.list}">
 		  <tr>
-			  <td style="text-align: center">${g.goodsId}</td>
-			  <td style="text-align: center">${g.name }</td>
-			  <td style="text-align: center">${g.category.goodsCategoryName }</td>
-			  <td style="text-align: center">${g.userId}</td>
+			  <td width="10%" style="text-align: center">${g.goodsId}</td>
+			  <td width="10%" style="text-align: center">${g.name }</td>
+			  <td width="10%" style="text-align: center">${g.category.goodsCategoryName }</td>
+			  <td width="10%" style="text-align: center">${g.userId}</td>
 
-			  <td style="text-align: center"><fmt:formatDate value='${g.releaseTime }' pattern='yyyy-MM-dd' /></td>
-			  <td style="text-align: center"></td>
-			  <td>
+			  <td width="20%" style="text-align: center"><fmt:formatDate value='${g.releaseTime }' pattern='yyyy-MM-dd' /></td>
+			  <%--<td style="text-align: center"></td>--%>
+			  <td width="30%" style="text-align: left" >
 				  <button id="button01${e.userId}" class="button border-dot" onclick="window.location.href='${pageContext.request.contextPath }/home/selectUser.action?userId=${e.userId }'">详情</button>
 				  <button id="button02${e.userId}" class="button border-dot" onclick="return del('${e.userId}');">删除</button>
 				  <%--<button id="button03${e.userId}" class="button border-dot" onclick="window.location.href='${pageContext.request.contextPath }/adminUser/adminUser_retUser?userId=${e.userId }'"></button>--%>

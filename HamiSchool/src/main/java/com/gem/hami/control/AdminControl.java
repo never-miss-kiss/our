@@ -270,7 +270,7 @@ public class AdminControl {
         gmap.put("curPage",curPage);
 
 //        PageInfo<User> pageInfo = adminService.getAllUser(gmap);
-        PageInfo<Goods> pageInfo = goodsService.findGoodsByCondition(gmap);
+        PageInfo<Goods> pageInfo = goodsService.selectGoodByCondition(gmap);
         request.setAttribute("pageInfo",pageInfo);
 
         List<GoodsCategory> categoryList =  goodsService.findGoodsCategory();

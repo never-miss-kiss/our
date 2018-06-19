@@ -1,24 +1,27 @@
 package com.gem.hami.service.Impl;
 
+import com.gem.hami.dao.GoodsMapper;
 import com.gem.hami.dao.UserMapper;
 import com.gem.hami.dao.UserMessageMapper;
-import com.gem.hami.entity.User;
-import com.gem.hami.entity.UserMessage;
+import com.gem.hami.entity.*;
 import com.gem.hami.service.HomeService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class HomeServiceImpl implements HomeService {
+
     @Autowired
     private UserMessageMapper userMessageMapper ;
 
-    /**
-     * @Author：Wang
-     * @Date：Created in 10:08 2018/6/6
-     * @Modified By:
-     */
+    @Autowired
+    private GoodsMapper goodsMapper;
+
     @Autowired
     private UserMapper userMapper;
 
@@ -40,6 +43,28 @@ public class HomeServiceImpl implements HomeService {
     @Override
     public boolean modifyUser(User user) {
         return userMapper.updateUser(user);
+    }
+
+    @Override
+    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map) {
+        int curPage1 = (int) map.get("curPage");
+        int pageSize1 = (int) map.get("pageSize");
+
+        PageHelper.startPage(curPage1,pageSize1);
+        List<Goods> goodsList = goodsMapper.getAllGoodsByUserId((QueryPojo_Goods) map.get("queryPojo"));
+
+        PageInfo<Goods> pageInfo = new PageInfo<>(goodsList);
+        return pageInfo ;
+    }
+
+    @Override
+    public PageInfo<GoodsCollection> selectAllGoodsCollection(Map<String, Object> map) {
+        return null;
+    }
+
+    @Override
+    public PageInfo<UserMessage> getAllUserMessageByUserId(Map<String, Object> map) {
+        return null;
     }
 
 

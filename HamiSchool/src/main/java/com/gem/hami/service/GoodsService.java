@@ -33,7 +33,8 @@ public interface GoodsService {
 //sortId 表示排序的类型 1为按学校 2为按热度(点击量) 3为按价格
 public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
 
-
+    //    管理员分页用
+    public PageInfo<Goods> selectGoodByCondition(Map<String, Object> map);
 
 //    /goods/addGoods.action
 //            发布二手商品
