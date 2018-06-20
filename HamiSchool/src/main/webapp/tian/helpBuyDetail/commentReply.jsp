@@ -10,7 +10,7 @@
     <div class="reply-item col-sm-12">
         <div class="col-sm-12 reply-item-top">
             <div class="col-sm-3">
-                <img src="<%=basePath%>/tian/images/headPortrait.jpg" alt="${username}" class="img-circle" height="50" width="50">
+                <img src="<%=basePath%>profilePicture/${reply.user.photo}" alt="${username}" class="img-circle" height="50" width="50">
             </div>
 
             <div>

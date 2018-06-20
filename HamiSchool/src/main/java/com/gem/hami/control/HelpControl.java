@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,7 +52,12 @@ public class HelpControl {
     @RequestMapping(value = "/selectInfos.action")
     @ResponseBody
     public  void selectInfos(String typeId,String curPage,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session =request.getSession();
+        User user =(User)session.getAttribute("userInfo");
+        int schoolId = 0 ;
+        if(user!=null){
+            schoolId = user.getSchoolId();
+        }
         int typeId1 = Integer.parseInt(typeId);
         Map<String,Object> cmap = new HashMap<>();
         int pageSize = 5;
@@ -60,7 +66,7 @@ public class HelpControl {
         cmap.put("pageSize",pageSize);
         PageInfo<HelpInfo> pageInfo;
         switch (typeId1){
-            case 0:pageInfo = helpService.findAllHelpsByCreateTime(cmap);
+            case 0:pageInfo = helpService.findAllHelpsByCreateTime(schoolId,0,cmap);
                     request.setAttribute("helpType",0);
                     break;
             case 1:pageInfo = helpService.findBuyInfosByCreateTime(cmap);
@@ -88,6 +94,10 @@ public class HelpControl {
     @RequestMapping(value = "/selectAllHelps.action")
     public void selectAllHelps(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session =request.getSession();
+        User user =(User)session.getAttribute("userInfo");
+        List<HelpInfo> helpInfos;
+
         Map<String,Object> cmap = new HashMap<>();
         int pageSize = 5;
         int curPage = 1;
@@ -97,9 +107,22 @@ public class HelpControl {
         }
         cmap.put("curPage",curPage);
         cmap.put("pageSize",pageSize);
-        PageInfo<HelpInfo> pageInfo = helpService.findAllHelpsByCreateTime(cmap);
-        System.out.println(pageInfo);
-        List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,2);
+        PageInfo<HelpInfo> pageInfo;
+        if(user!=null)
+        {
+            int schoolId = user.getSchoolId();
+            int userId = user.getUserId();
+            System.out.println(user);
+            pageInfo = helpService.findAllHelpsByCreateTime(schoolId,userId,cmap);
+            System.out.println(pageInfo);
+            helpInfos = helpService.findHelpsByCondition(userId,schoolId,2);
+        }else{
+            pageInfo = helpService.findAllHelpsByCreateTime(0,0,cmap);
+            System.out.println(pageInfo);
+            helpInfos = helpService.findHelpsByCondition(0,0,2);
+        }
+
+       // List<HelpInfo> helpInfos = helpService.findHelpsByCondition(0,0,2);
         request.setAttribute("helpSorts",helpInfos);
         request.setAttribute("pageInfo",pageInfo);
         request.setAttribute("helpType",0);
@@ -372,10 +395,8 @@ public class HelpControl {
     public void addHelpCommentReply(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String content =  request.getParameter("content");
-
         String commentedUserId1 =  request.getParameter("commentedUserId");
         int commentedUserId = Integer.parseInt(commentedUserId1);
-
         String userId1 =request.getParameter("userId");
         int userId = Integer.parseInt(userId1);
         int helpType = Integer.parseInt(request.getParameter("releaseType"));
@@ -434,6 +455,7 @@ public class HelpControl {
     public void helpDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int helpId = Integer.parseInt(request.getParameter("helpId"));
         int helpType = Integer.parseInt(request.getParameter("helpType"));
+        helpService.modifyHelpClickCount(helpType,helpId);
         List<HelpComment> helpCommentList;
         switch (helpType){
             case 0:

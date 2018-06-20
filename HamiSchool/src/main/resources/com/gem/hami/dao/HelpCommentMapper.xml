@@ -12,6 +12,7 @@
         <result column="commented_user_id" property="commentedUserId"/>
         <association property="user" javaType="User">
             <result column="nickname" property="nickname"/>
+            <result column="photo" property="photo"/>
         </association>
 
 

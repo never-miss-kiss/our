@@ -11,6 +11,7 @@
         <result column="create_time" property="createTime"/>
         <association property="user" javaType="User">
             <result column="nickname" property="nickname"/>
+            <result column="photo" property="photo"/>
         </association>
         <association property="commentedUser" javaType="User">
             <result column="commented_nickname" property="nickname"/>
@@ -23,13 +24,13 @@
 
 
     <select id="selectReplysByCommentId" resultMap="ReplyMap">
-        select hcr.* ,u1.nickname , u2.nickname as commented_nickname,hc.help_id,hc.release_type  FROM help_comment hc,help_comment_reply hcr,user u1,user u2 where u1.user_id = hcr.user_id
+        select hcr.* ,u1.photo,u1.nickname , u2.nickname as commented_nickname,hc.help_id,hc.release_type  FROM help_comment hc,help_comment_reply hcr,user u1,user u2 where u1.user_id = hcr.user_id
         and u2.user_id = hcr.commented_user_id and hcr.help_comment_id=#{param1} and hc.help_comment_id=hcr.help_comment_id
     </select>
 
 
     <select id="selectReplyByReplyId" resultMap="ReplyMap">
-        select hcr.* ,u1.* , u2.* ,hc.help_id,hc.release_type  FROM help_comment hc,help_comment_reply hcr,user u1,user u2 where u1.user_id = hcr.user_id
+        select hcr.* ,u1.* ,u1.photo , u2.* ,hc.help_id,hc.release_type  FROM help_comment hc,help_comment_reply hcr,user u1,user u2 where u1.user_id = hcr.user_id
         and u2.user_id = hcr.commented_user_id and help_comment_reply_id=#{param1} and hc.help_comment_id=hcr.help_comment_id
     </select>
 

@@ -50,6 +50,6 @@
 
   <!--首页，启动页面 只要是项目名，就直接跳到这个启动页面-->
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>tian/index/index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

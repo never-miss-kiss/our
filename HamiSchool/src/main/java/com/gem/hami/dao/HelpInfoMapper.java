@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.SortedMap;
 
 public interface HelpInfoMapper {
-    public List<HelpInfo> selectAllHelpsByCreateTime();
+    public List<HelpInfo> selectAllHelpsByCreateTime(int schoolId,int userId);
     public List<HelpInfo> selectBuyInfosByCreateTime();
     public List<HelpInfo> selectSendInfosByCreateTime();
     public List<HelpInfo> selectFetchInfosByCreateTime();

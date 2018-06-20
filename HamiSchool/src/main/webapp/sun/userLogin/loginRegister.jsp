@@ -115,7 +115,7 @@
 	<div class="login-banner"></div>
 	<div class="login-box">
 		<div class="box-con tran">
-		<form action="${pageContext.request.contextPath}/loginpage/login.action" method="post">
+		<form action="<%= basePath%>loginpage/login.action" method="post">
 			<div class="login-con f-l">
 				<div class="form-group field field-icon-right">
 					用户名<input type="text" name="user.telephone" placeholder="手机号\邮箱"  data-validate="required:手机号不能为空,regexp#(^1(3|4|5|7|8)\d{9}$):手机号不正确" />

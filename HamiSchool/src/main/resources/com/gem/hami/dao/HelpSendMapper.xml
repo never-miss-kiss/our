@@ -24,6 +24,7 @@
         <result column="title" property="title"/>
         <association property="user" javaType="User">
             <result column="nickname" property="nickname"/>
+            <result column="photo" property="photo"/>
         </association>
     </resultMap>
 

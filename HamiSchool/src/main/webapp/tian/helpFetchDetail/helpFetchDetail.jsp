@@ -147,7 +147,7 @@
                         <!--回复上方的一个评论-->
                         <div class="col-sm-8 comment-item-top">
                             <div class="col-sm-3">
-                                <img src="<%=basePath%>/tian/images/headPortrait.jpg" alt="${username}" class="img-circle" height="50" width="50">
+                                <img src="<%=basePath%>profilePicture/${helpComment.user.photo}" alt="${username}" class="img-circle" height="50" width="50">
                             </div>
                             <div>
                                 <h3 class="col-sm-7">${helpComment.user.nickname}</h3>

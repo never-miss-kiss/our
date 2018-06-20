@@ -558,9 +558,9 @@
 
             <ul class="header_menu">
                 <li><a href="http://www.xiaomi.cn/index.html">主页</a></li>
-                <li><a href="http://bbs.xiaomi.cn/">二手物品</a></li>
-                <li>
-                    <span>跑腿</span>
+                <li><a href="<%=basePath%>/goods/findAllGoods.action">二手物品</a></li>
+                <li><a href="<%=basePath%>help/selectAllHelps.action">
+                    <span>跑腿</span></a>
                 </li>
                 <li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>
                 <li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>

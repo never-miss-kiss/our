@@ -101,7 +101,6 @@ public class ForumControl {
         request.setAttribute("ForumPost", forumPost);
         request.setAttribute("ForumComment",forumPostComments);
         request.getRequestDispatcher("/sun/jsp/postandcomment.jsp").forward(request, response);
-
     }
 
 

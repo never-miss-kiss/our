@@ -20,7 +20,7 @@
         </association>
     </resultMap>
 
-    <select id="selectAllHelpsByCreateTime"  resultMap="HelpInfoMap">
+    <select id="selectAllHelpsByCreateTime"  resultMap="HelpInfoMap" parameterType="java.lang.Integer">
         select h.* , u.*  from(
         (select '1' help_type,hb.help_buy_id as help_id,hb.name,hb.recommended_price,hb.person_price,hb.create_time,
         hb.user_id,hb.end_time,hb.is_finished,hb.click_count,hb.title,hb.comment_count
@@ -39,6 +39,9 @@
         from help_queue hq)
         )h , user u
         where u.user_id=h.user_id
+        <if test=" param1 != 0">
+            and u.school_id = ${param1}
+        </if>
         ORDER BY h.create_time DESC
     </select>
 

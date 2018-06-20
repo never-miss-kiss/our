@@ -19,7 +19,7 @@ public interface HelpService {
     public PageInfo<HelpInfo> findSendInfosByCreateTime(Map<String, Object> map);
     public PageInfo<HelpInfo> findFetchInfosByCreateTime(Map<String, Object> map);
     public PageInfo<HelpInfo> findQueueInfosByCreateTime(Map<String, Object> map);
-    public PageInfo<HelpInfo> findAllHelpsByCreateTime(Map<String, Object> map);
+    public PageInfo<HelpInfo> findAllHelpsByCreateTime(int schoolId,int userId,Map<String, Object> map);
 
 //    查找单个跑腿信息
     public HelpBuy findHelpBuy(int helpId);

@@ -27,6 +27,7 @@
     <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
     <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
+    <script src="<%= basePath%>tian/tian.js"></script>
 <!--Gallery栏目框-->
     <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
@@ -840,7 +841,12 @@
 
                         <div id="head-portrait" class="col-xs-5" >
                             <a href="#">
-                                <img src="<%= basePath %>tian/showHelp/Gallery_files/头像.jpg"></img>
+                                <c:if test="${userInfo.photo == null}">
+                                    <img src="<%= basePath %>profilePicture/0.jpg"></img>
+                                </c:if>
+                                <c:if test="${userInfo != null}">
+                                    <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
+                                </c:if>
                             </a>
                         </div>
 

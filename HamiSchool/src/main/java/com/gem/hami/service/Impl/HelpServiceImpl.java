@@ -202,12 +202,12 @@ public class HelpServiceImpl implements HelpService{
     }
 
     @Override
-    public PageInfo<HelpInfo> findAllHelpsByCreateTime(Map<String, Object> map) {
+    public PageInfo<HelpInfo> findAllHelpsByCreateTime(int schoolId,int userId,Map<String, Object> map) {
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");
         PageHelper.startPage(curPage,pageSize);
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        helpInfos = helpInfoMapper.selectAllHelpsByCreateTime();
+        helpInfos = helpInfoMapper.selectAllHelpsByCreateTime(schoolId,userId);
         PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
         return pageInfo;
     }

@@ -32,8 +32,12 @@
         </property>
     </bean>
 
-
-
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.gem.hami.util.LoginIntercepter"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 
 

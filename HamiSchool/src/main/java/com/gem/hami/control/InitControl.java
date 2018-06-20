@@ -29,11 +29,11 @@ public class InitControl {
                 response.sendRedirect(request.getContextPath()+"/forum/list.action");
             }else{
 //                request.setAttribute("param.info","1");
-                request.getRequestDispatcher(request.getContextPath()+"/sun/userLogin/loginRegister.jsp?info=1").forward(request,response);
+                request.getRequestDispatcher("/sun/userLogin/loginRegister.jsp?info=1").forward(request,response);
             }
         }else{
 //            request.setAttribute("param.info","2");
-            request.getRequestDispatcher(request.getContextPath()+"/sun/userLogin/loginRegister.jsp?info=2").forward(request,response);
+            request.getRequestDispatcher("/sun/userLogin/loginRegister.jsp?info=2").forward(request,response);
         }
         System.out.println(user);
 
