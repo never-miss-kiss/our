@@ -74,6 +74,9 @@
         </where>
     </select>
 
+    <update id="updateClickCount" parameterType="Goods">
+        UPDATE goods set click_count =#{clickCount}+1 where goods_id =#{goodsId}
+    </update>
     <!--发布商品-->
     <insert id="insertGoods" parameterType="Goods">
         INSERT into goods (goods_id,name,price,picture,location,release_time,phone,email,qq,remark,click_count,goods_category_id,user_id)
@@ -96,4 +99,37 @@
     <delete id="deleteGoods" parameterType="int">
         delete from goods where goods_id=#{_parameter}
     </delete>
+ <!--==============================================================================================================   -->
+    <!--/**
+     *@Author：wang
+     *@Date: Created in 2018-6-19 15:57:24
+     *@Modified By:
+     *  ！莫删 ！
+     */-->
+    <!--用户显示商品-->
+    <!--public List<Goods> getAllGoodsByUserId(QueryPojo_Goods queryPojo);-->
+    <select id="getAllGoodsByUserId" resultType="Goods" parameterType="QueryPojo_Goods">
+        select * from goods where user_id=${userId};
+    </select>
+
+    <!--管理员查询商品     分页-->
+    <!--public List<Goods> getAllGoods(QueryPojo_Goods queryPojo)-->
+    <select id="getAllGoods" resultType="Goods" parameterType="QueryPojo_Goods">
+        SELECT g.goods_id,g.name,u.nickname,g.release_time,c.goods_category_name FROM goods g,goods_category c,user u
+
+        <where>
+            g.goods_category_id=c.goods_category_id
+            AND g.user_id=u.user_id
+            <if test="goodsCategoryName neq null">
+                and c.goods_category_name =#{goodsCategoryName}
+            </if>
+            <if test="nickname neq null">
+                and u.nickname=#{nickname}
+            </if>
+            <if test="name neq null">
+                AND g.name like "%" #{name} "%"
+            </if>
+        </where>
+    </select>
+
 </mapper>

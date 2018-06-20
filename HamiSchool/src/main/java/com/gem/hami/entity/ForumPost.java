@@ -27,7 +27,7 @@ public class ForumPost {
 
     private String photo;
 
-    private byte[] content;
+    private String content;
 
     public User getUser() {
         return user;
@@ -125,11 +125,11 @@ public class ForumPost {
         this.photo = photo == null ? null : photo.trim();
     }
 
-    public byte[] getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(byte[] content) {
+    public void setContent(String content) {
         this.content = content;
     }
 }

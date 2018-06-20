@@ -43,6 +43,11 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    public void modifyClickCount(Goods goods) {
+        goodsMapper.updateClickCount(goods);
+    }
+
+    @Override
     public PageInfo<Goods> findGoodsByCondition
             (Map<String, Object> map) {
 
@@ -56,6 +61,17 @@ public class GoodsServiceImpl implements GoodsService {
         return pageInfo ;
     }
 
+    @Override
+    public PageInfo<Goods> selectGoodByCondition(Map<String, Object> map) {
+        int curPage1 = (int) map.get("curPage");
+        int pageSize1 = (int) map.get("pageSize");
+
+        PageHelper.startPage(curPage1,pageSize1);
+        List<Goods> goodsList = goodsMapper.getAllGoods((QueryPojo_Goods) map.get("queryPojo"));
+
+        PageInfo<Goods> pageInfo = new PageInfo<>(goodsList);
+        return pageInfo ;
+    }
 
 
     @Override
