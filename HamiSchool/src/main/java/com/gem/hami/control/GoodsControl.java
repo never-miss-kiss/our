@@ -179,6 +179,8 @@ public class GoodsControl {
     @RequestMapping("/findGoodsCommentDetail.action")
     public void findGoodsCommentDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        User u = (User) request.getSession().getAttribute("userInfo");
+
         Integer goodsCommentId = null;
         String gcId = request.getParameter("goodsCommentId");
         if(gcId!=null && !gcId.trim().equals("")){
@@ -189,6 +191,7 @@ public class GoodsControl {
         GoodsComment goodsComment = goodsService.findGoodsCommentByGoodsCommentId(goodsCommentId);
         System.out.println(goodsComment);
         String uname = homeService.findUserById(goodsComment.getUserId()).getNickname();
+        int userId = homeService.findUserById(goodsComment.getUserId()).getUserId();
         System.out.println(uname);
         List<GoodsCommentReply> goodsCommentReplies = goodsService.findGoodsCommentReply(goodsCommentId);
         int count = goodsCommentReplies.size();
@@ -202,9 +205,10 @@ public class GoodsControl {
             usernames.put(goodsCommentReplyId,uname1);
         }
 
-
+        request.setAttribute("u",u);
         request.setAttribute("goodsComment",goodsComment);
         request.setAttribute("uname",uname);
+        request.setAttribute("userId",userId);
         request.setAttribute("count",count);
         request.setAttribute("goodsCommentReply",goodsCommentReplies);
         request.setAttribute("username",usernames);
@@ -235,12 +239,55 @@ public class GoodsControl {
         if(flag==true){
             System.out.println("nice");
         }
-        int goodsCommentId = goodsComment.getGoodsCommentId();
+    }
 
-        request.setAttribute("goodsCommentId",goodsCommentId);
-        request.setAttribute("goodsId",goodsId);
-        request.getRequestDispatcher("/goods/findGoodsById.action").forward(request,response);
+    @RequestMapping("/deleteGoodsComment.action")
+    public void deleteGoodsComment(HttpServletRequest request,HttpServletResponse response){
+        String content = request.getParameter("oSize");
+        System.out.println(content);
+        int goodsId = Integer.parseInt(request.getParameter("goodsId"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        System.out.println(goodsId);
+        System.out.println(userId);
+        GoodsComment goodsComment = new GoodsComment();
+        goodsComment.setGoodsId(goodsId);
+        goodsComment.setUserId(userId);
+        boolean flag = goodsService.removeGoodsComment(goodsComment);
+        if(flag==true){
+            System.out.println("删除评论成功");
+        }
+    }
 
-
+    @RequestMapping("/addGoodsCommentReply.action")
+    public void addGoodsCommentReply(HttpServletRequest request,HttpServletResponse response){
+        int goodsCommentId = Integer.parseInt(request.getParameter("goodsCommentId"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        String cont = request.getParameter("oSize");
+        String content = cont.split(":")[1];
+        int uId = Integer.parseInt(request.getParameter("uId"));
+        GoodsCommentReply goodsCommentReply = new GoodsCommentReply();
+        goodsCommentReply.setCommentedUserId(userId);
+        goodsCommentReply.setGoodsCommentId(goodsCommentId);
+        goodsCommentReply.setCreateTime(new Date());
+        goodsCommentReply.setUserId(uId);
+        goodsCommentReply.setContent(content);
+        boolean flag = goodsService.addGoodsCommentReply(goodsCommentReply);
+        if(flag==true){
+            System.out.println("回复评论成功");
+        }
+    }
+    @RequestMapping("/deleteGoodsCommentReply.action")
+    public void deleteGoodsCommentReply(HttpServletRequest request,HttpServletResponse response){
+        int goodsCommentId = Integer.parseInt(request.getParameter("goodsCommentId"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        int uId = Integer.parseInt(request.getParameter("uId"));
+        GoodsCommentReply goodsCommentReply = new GoodsCommentReply();
+        goodsCommentReply.setCommentedUserId(userId);
+        goodsCommentReply.setGoodsCommentId(goodsCommentId);
+        goodsCommentReply.setUserId(uId);
+        boolean flag = goodsService.removeGoodsCommentReply(goodsCommentReply);
+        if(flag==true){
+            System.out.println("删除回复评论成功");
+        }
     }
 }

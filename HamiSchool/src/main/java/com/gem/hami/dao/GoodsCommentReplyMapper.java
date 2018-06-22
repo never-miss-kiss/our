@@ -27,6 +27,6 @@ public interface GoodsCommentReplyMapper {
   * @Description 删除商品回复评论
   * @Modified By:
  */
-    public boolean deleteGoodsCommentReply(int replyId);
+    public boolean deleteGoodsCommentReply(GoodsCommentReply goodsCommentReply);
 
 }

@@ -76,6 +76,7 @@
       .add{position: relative;left:90%;top:50px;border: 1px solid red; }
       .picture{position: relative;width: 300px;height: 320px;top:-35px;float: left;padding: 50px;}
       /*.plun{position: relative;top: 5px;}*/
+      .photo{position: relative;top: 7px;}
    </style>
    <script type="text/javascript">
           $(document).ready(function(){
@@ -299,15 +300,21 @@
                        <h2 class="title" style="color:#2aabd2">商品评论</h2>
                        <div class="talk" >
                        <div class="row comment-posts">
-                          <div class="col-sm-1">
-                             <div class="thumbnail">
-                                <img class="img-responsive user-photo" src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt="Comment User Avatar">
-                             </div>
-                          </div>
-
+                          <%--<div class="col-sm-1">--%>
+                             <%--<div class="thumbnail">--%>
+                                <%--<img class="img-responsive user-photo" src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt="Comment User Avatar">--%>
+                             <%--</div>--%>
+                          <%--</div>--%>
                           <div class="col-sm-11">
                                <div  class="showMoreNChildren" pagesize="2">
                                <C:forEach items="${goodsComment}" var="comment">
+                                 <div class="photo">
+                                  <div class="col-sm-1">
+                                     <div class="thumbnail">
+                                        <img class="img-responsive user-photo" src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt="Comment User Avatar">
+                                     </div>
+                                  </div>
+                                 </div>
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<strong>
@@ -502,7 +509,7 @@
                   url:"${pageContext.request.contextPath}/goods/addGoodsComment.action",
                   data:"goodsId="+goodsId+"&oSize="+oSize+"&now="+now,
                   success:function(data){
-                      //alert("123");
+                      alert("评论成功");
                     //$("#articlelist").html(data);
                   },
                   error : function(){
@@ -581,13 +588,14 @@
               }
               $(this).parents('.date-dz-right').parents('.date-dz').parents('.comment-show-con-list').parents('.comment-show-con').remove();
               var goodsId = document.getElementById('bbb').value;
+              var userId = document.getElementById('ccc').value;
 
               $.ajax({
                   type:"get",
                   url:"${pageContext.request.contextPath}/goods/deleteGoodsComment.action",
-                  data:"goodsId="+goodsId+"&oSize="+oSize+"&now="+now,
+                  data:"goodsId="+goodsId+"&userId="+userId,
                   success:function(data){
-                      //alert("123");
+                      alert("已删除评论");
                       //$("#articlelist").html(data);
                   },
                   error : function(){
