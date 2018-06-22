@@ -18,6 +18,7 @@
     <%--<link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/pintuer.css">--%>
     <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/main_p.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/base.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/main.min.css">
 
 
 
@@ -35,7 +36,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href=""
+                                <li><a href="${pageContext.request.contextPath}/home/AllGoodsInUserId.action?goodsList"
                                        onclick="">我的商品</a>
                                 </li>
                                 <li><a href=""

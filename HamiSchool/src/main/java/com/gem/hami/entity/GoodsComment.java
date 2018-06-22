@@ -15,7 +15,8 @@ public class GoodsComment {
 
     private Goods goods;
 
-
+    public GoodsComment() {
+    }
 
     public Integer getGoodsCommentId() {
         return goodsCommentId;

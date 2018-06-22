@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 @RequestMapping(value = "/forum")
@@ -35,20 +32,15 @@ public class ForumControl {
             System.out.println(user.getSchoolId());
             System.out.println("123");
             cmap.put("schoolId", user.getSchoolId());
-            List<ForumPostLike> forumPostLikes = forumService.findForumPostLikeByUserId(user.getUserId());
-            int pageSize=10;
+            int pageSize=12;
             int curPage=1;
             String scurPage = request.getParameter("curPage");
             if (scurPage!=null&&!scurPage.trim().equals("")){
                 curPage=Integer.parseInt(scurPage);
             }
             cmap.put("curPage",curPage);
-//           每页显示的条数
             cmap.put("pageSize",pageSize);
-
-//        List<ForumPostLike> forumPostLikes;
             PageInfo<ForumPost> pageInfo=forumService.findTopForumPostBySchoolId1(cmap);
-            request.setAttribute("forumPostLikes",forumPostLikes);
             request.setAttribute("pageInfo",pageInfo);
             System.out.println(pageInfo);
         }else{
@@ -62,15 +54,13 @@ public class ForumControl {
             cmap.put("curPage",curPage);
 //           每页显示的条数
             cmap.put("pageSize",pageSize);
-
-//        List<ForumPostLike> forumPostLikes;
             PageInfo<ForumPost> pageInfo=forumService.findTopForumPostBySchoolId1(cmap);
-//        request.setAttribute("forumPostLikes",);
             request.setAttribute("pageInfo",pageInfo);
             System.out.println(pageInfo);
+            System.out.println("到这了能转发吗？");
         }
 
-        request.getRequestDispatcher("/sun/delete.jsp").forward(request,response);
+        request.getRequestDispatcher("/sun/forumhome.jsp").forward(request,response);
     }
 
 
@@ -84,8 +74,8 @@ public class ForumControl {
     @RequestMapping(value = "/addpost.action")
     public void insertpost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        String forumPostId= UUID.randomUUID().toString().replaceAll("-","");
-        ServletInputStream title1 = request.getInputStream();
-        System.out.println(title1);
+//        ServletInputStream title1 = request.getInputStream();
+//        System.out.println(title1);
         String title = request.getParameter("title");
         String content = request.getParameter("content");
         System.out.println(title + "==" +content );
@@ -108,11 +98,20 @@ public class ForumControl {
         String postId = request.getParameter("postId");
         int postid = Integer.parseInt(postId);
         ForumPost forumPost = forumService.findForumPostByForudId(postid);
-        List<ForumPostComment> forumPostComments = forumService.findForumComment(forumPost.getForumPostId());
-        List<ForumCommentReply> forumCommentReplies = forumService.findForumCommentReply(postid);
-        request.setAttribute("ForumPostReply",forumCommentReplies);
-        request.setAttribute("ForumPost", forumPost);
-        request.setAttribute("ForumComment",forumPostComments);
+            if (forumPost!=null) {
+                List<ForumPostComment> forumPostComments = forumService.findForumComment(forumPost.getForumPostId());
+                List<ForumCommentReply> forumCommentReplies = forumService.findForumCommentReply(postid);
+                List<ForumPost> onesForumPost = forumService.findForumPostsByCondition(forumPost.getUser().getUserId());
+                request.setAttribute("ForumPostReply",forumCommentReplies);
+                request.setAttribute("ForumPost", forumPost);
+                request.setAttribute("ForumComment",forumPostComments);
+                request.setAttribute("ForumPostRecent",onesForumPost);
+                System.out.println(onesForumPost);
+            }
+
+
+
+
         request.getRequestDispatcher("/sun/jsp/postandcomment.jsp").forward(request, response);
     }
 

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @RequestMapping(value = "/loginpage")
 @Controller
@@ -38,5 +39,15 @@ public class InitControl {
         System.out.println(user);
 
 
+    }
+    @RequestMapping(value = "/register.action")
+    public void  register(HttpServletRequest request,HttpServletResponse response) throws IOException {
+
+        String username = request.getParameter("username");
+        User user = initService.login(username);
+        if (user!=null){
+            PrintWriter out = response.getWriter();
+            out.println("用户名已存在");
+        }
     }
 }
