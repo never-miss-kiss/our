@@ -1,31 +1,40 @@
-<!DOCTYPE html>
-<!-- saved from url=(0061)http://demo.cssmoban.com/cssthemes4/cpts_907_ble/gallery.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gallery</title>
-<link href="./Gallery_files/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="Gallery_files/bootstrap-3.3.7/dist/js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<link href="./Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
-<link rel="stylesheet" type="text/css" href="./Gallery_files/style_common.css">
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="keywords" content="">
+<%--
+  Created by IntelliJ IDEA.
+  User: 勿忘初心
+  Date: 2018/6/10
+  Time: 17:11
+  To change this template use File | Settings | File Templates.
 
 
-<!--Google Fonts-->
-<link href="./Gallery_files/css" rel="stylesheet" type="text/css">
-<link href="./Gallery_files/css(1)" rel="stylesheet" type="text/css">
-<!--google fonts-->
-<!-- animated-css -->
-		<link href="./Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
-		<script src="./Gallery_files/wow.min.js.下载"></script>
-<!-- animated-css -->
+  大学搜索功能
+  评论功能
+  ajax左侧栏目分类
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
+    <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
+<!--Gallery栏目框-->
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
 
-<body class="" style="">
-<!--banner start here-->
+    <title>Gallery</title>
+
+</head>
+
+<body>
 <div class="header head-top" >
     <div class="container-fluid">
         <div class="col-sm-12">
@@ -115,6 +124,7 @@
         </div>
         <div style="clear: both"></div>
     </div>
-</div>
-<!--banner end here-->
+    </div>
 
+</body>
+</html>

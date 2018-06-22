@@ -4,6 +4,7 @@
 
     <resultMap id="selectHelpFetchMap" type="HelpFetch">
         <id column="help_fetch_id" property="helpFetchId"></id>
+        <result column="help_fetch_id" property="helpId"/>
         <result column="name" property="name"/>
         <result column="fetch_address" property="fetchAddress"/>
         <result column="remark_ship_address" property="remarkShipAddress"/>

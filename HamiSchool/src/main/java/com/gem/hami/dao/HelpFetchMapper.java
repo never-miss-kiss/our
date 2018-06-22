@@ -23,4 +23,6 @@ public interface HelpFetchMapper {
     public boolean deleteHelpFetch(int helpId);
 
     public boolean updateHelpClickCount(int helpId);
+
+    public boolean deleteHelpsInSchedule();
 }

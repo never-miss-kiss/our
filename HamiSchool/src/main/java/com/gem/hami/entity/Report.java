@@ -102,4 +102,20 @@ public class Report {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "reportId=" + reportId +
+                ", userId=" + userId +
+                ", reasonCategoryId=" + reasonCategoryId +
+                ", reasonRemark='" + reasonRemark + '\'' +
+                ", reportedUserId=" + reportedUserId +
+                ", sourceCategoryId=" + sourceCategoryId +
+                ", sourceItemId=" + sourceItemId +
+                ", createTime=" + createTime +
+                ", reasonCategory=" + reasonCategory +
+                ", sourceCategory=" + sourceCategory +
+                '}';
+    }
 }

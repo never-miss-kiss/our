@@ -68,28 +68,35 @@
                         </div>
 
                         <form method="post" action="###">
-                            <div class="modal-body">
+                            <div class="modal-body${reply.helpCommentReplyId}">
                                 <div class="btn-group-vertical col-sm-6" role="group" aria-label="...">
-                                    <button id="button1" type="button" class="btn btn-default active" >垃圾广告信息</button>
-                                    <button id="button1" type="button" class="btn btn-default" >不友善行为</button>
-                                    <button  id="button1" type="button" class="btn btn-default">反动言论</button>
-                                    <button  id="button1" type="button" class="btn btn-default">涉黄信息</button>
+                                    <button id="button1" value="1" type="button" class="btn btn-default active" >垃圾广告信息</button>
+                                    <button id="button1" value="2" type="button" class="btn btn-default" >不友善行为</button>
+                                    <button  id="button1" value="3" type="button" class="btn btn-default">涉嫌造谣</button>
+                                    <button  id="button1" value="4" type="button" class="btn btn-default">涉黄信息</button>
                                 </div>
                                 <div class="btn-group-vertical col-sm-6" role="group" aria-label="...">
-                                    <button id="button1" type="button" class="btn btn-default" >垃圾广告信息</button>
-                                    <button id="button1" type="button" class="btn btn-default" >操纵言论</button>
-                                    <button  id="button1" type="button" class="btn btn-default">影响选举</button>
-                                    <button  id="button1" type="button" class="btn btn-default">涉嫌造谣</button>
+                                    <button id="button1" value="5" type="button" class="btn btn-default" >诱导赌博</button>
+                                    <button id="button1" value="6" type="button" class="btn btn-default" >操纵言论</button>
+                                    <button  id="button1" value="7" type="button" class="btn btn-default">影响选举</button>
+                                    <button  id="button1" value="8" type="button" class="btn btn-default">其他</button>
                                 </div>
+                                <input type="hidden" class="reasonCategoryId${reply.helpCommentReplyId}" name="reasonCategoryId" value="1">
+                                <input type="hidden" id="reportedUserId" name="reportedUserId" value="${reply.userId}" >
+                                <input type="hidden" id="sourceCategoryId" name="sourceCategoryId" value="12">
+                                <input type="hidden" id="sourceItemId" name="sourceItemId" value="${reply.helpCommentReplyId}">
+                                <input type="hidden" id="helpId" name="helpId" value="${reply.helpComment.helpId}">
+                                <input type="hidden" id="helpType" name="helpType" value="${reply.helpComment.releaseType}">
                                 <script>
                                     //让属性可以只选一个
-                                    $(".modal-body button").each(function(i){
-                                        $(this).click(
-                                            function(){
-                                                $(".modal-body button").removeClass("active");
-                                                $(".modal-body button").get(i).addClass("active");
-                                            }
-                                        )
+                                    $(".modal-body${reply.helpCommentReplyId} button").each(function(i,element){
+                                        $(this).click(function(){
+                                            var i = $(this).val();
+                                            $(".modal-body${reply.helpCommentReplyId}  button").removeClass("active");
+                                            $(".modal-body${reply.helpCommentReplyId}  button").eq(i-1).addClass("active");
+                                            $(".reasonCategoryId${reply.helpCommentReplyId}").val(i);
+                                            alert(i);
+                                        })
                                     });
                                 </script>
                                 <textarea class="form-control" rows="3" placeholder="补充理由..."></textarea>

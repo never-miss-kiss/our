@@ -34,6 +34,7 @@ public class HelpInfo {
 
     protected User user;
 
+
     public int getId() {
         return id;
     }

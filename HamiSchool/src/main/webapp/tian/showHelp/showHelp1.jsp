@@ -32,7 +32,7 @@
     <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
 
-
+    <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
 
     <title>HelpBuyDetail</title>
 
@@ -819,10 +819,10 @@
                     <div class="top-navg">
                         <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
                         <ul class="res">
-                            <a href="#"><span class="res1">首页</span></a>
-                            <a href="#"><span class="res2">二手</span></a>
-                            <a class="active" href="#"><span class="res3">跑腿</span></a>
-                            <a  href="#"><span class="res1">哈密社区</span></a>
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
+                            <a href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
+                            <a class="active" href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
+                            <a  href="<%=basePath%>forum/list.action"><span class="res1">哈密社区</span></a>
                             <a href="#"><span class="res2">哈密认证</span></a>
                             <a href="#"><span class="res3">联系我们</span></a>
                         </ul>
@@ -1072,18 +1072,61 @@
 
         </div>
         <div class="right-side">
-            <div class="search-module">
+            <div class="search-module1">
                 <div class="search-block">
-                    <input placeholder="搜索跑腿相关">
+                    <input placeholder="搜索学校">
                     <div class="search-icon"></div>
-                    <ul class="search-word-panel" style="display: none;">
+                    <ul class="search-word-panel" style="display: none">
                         <li class="panel-title">
                             <div class="split-line"></div>
-                            <p> <span></span> </p>
+                            <p> <span>关键词</span> </p>
+                        </li>
+                        <li class="suggest-item">
+                            <a class="content" href="<%=basePath %>">
+                                <em class="suggest_high_light">夏</em>
+                                <em class="suggest_high_light">目</em>友人帳伍
+                            </a>
+                            <div class="cancel"></div>
                         </li>
                     </ul>
                 </div>
             </div>
+<script>
+    $(".search-block input").keydown(function (event) {
+//            alert("haha");
+            var keyWord = $(".search-block input").val();
+            $(".search-word-panel").css("display","block");
+
+            $.ajax(
+                {
+//                    请求的方法
+                    type:"post",
+                    url:"${pageContext.request.contextPath}/help/selectSchoolsByKeyWord.action",
+//                    参数
+                    data:"keyWord="+keyWord,
+                    success:function (data) {
+                        $(".search-word-panel").html(data);
+                        },
+                    error:function () {
+                        alert("nanni");
+                    }
+                }
+            )
+
+    });
+
+    $(".search-module1").blur(function () {
+        $(".search-word-panel").css("display","hidden");
+        //不能设为none，太坑了
+    });
+
+//    $(".search-module").focusin(function () {
+//        $(".search-word-panel").css("display","block");
+//    });
+
+
+</script>
+
 
             <div class="rank-module" id="rankHelp">
                 <div class="rank-tabs-bar">
@@ -1096,7 +1139,9 @@
                     <div class="rank-module">
                         <ul class="rank-list">
                             <c:forEach items="${helpSorts}" var="helpInfo">
-                                <li class="item"><span class="rank-index">${helpInfo.id}</span><a href="#" target="_blank" title="${helpInfo.title}">${helpInfo.title}</a></li>
+                                <li class="item"><span class="rank-index">${helpInfo.id}</span>
+                                    <a href="<%=basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" title="${helpInfo.title}">${helpInfo.title}</a>
+                                </li>
                             </c:forEach>
                         </ul>
                         <a class="complete-rank" target="_blank" href="#">查看完整榜单</a>
@@ -1201,7 +1246,7 @@
 </div>
 </div>
 <div class="to-top"> </div>
-<script src="<%= basePath %>tian/showHelp/showHelp_files/jquery.min.js.下载"></script>
+<script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="<%= basePath %>tian/showHelp/showHelp_files/header.js.下载"></script>
 <script src="<%= basePath %>tian/showHelp/showHelp_files/log-reporter.js.下载"></script>
 <script>

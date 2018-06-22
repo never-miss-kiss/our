@@ -4,6 +4,7 @@
 
     <resultMap id="selectHelpSendMap" type="HelpSend">
         <id column="help_send_id" property="helpSendId"></id>
+        <result column="help_send_id" property="helpId"/>
         <result column="name" property="name"/>
         <result column="send_address" property="sendAddress"/>
         <result column="send_address_alternative" property="sendAddressAlternative"/>

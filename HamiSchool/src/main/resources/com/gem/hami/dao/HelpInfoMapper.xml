@@ -52,6 +52,9 @@
         from help_buy hb)
         )h , user u
         where u.user_id=h.user_id
+        <if test=" _parameter != 0">
+            and u.school_id = ${_parameter}
+        </if>
         ORDER BY h.create_time DESC
     </select>
 
@@ -62,6 +65,9 @@
         from help_send hs)
         )h , user u
         where u.user_id=h.user_id
+        <if test=" _parameter != 0">
+            and u.school_id = ${_parameter}
+        </if>
         ORDER BY h.create_time DESC
     </select>
 
@@ -72,6 +78,9 @@
         from help_fetch hf)
         )h , user u
         where u.user_id=h.user_id
+        <if test=" _parameter != 0">
+            and u.school_id = ${_parameter}
+        </if>
         ORDER BY h.create_time DESC
     </select>
 
@@ -82,6 +91,9 @@
         from help_queue hq)
         )h , user u
         where u.user_id=h.user_id
+        <if test=" _parameter != 0">
+            and u.school_id = ${_parameter}
+        </if>
         ORDER BY h.create_time DESC
     </select>
 

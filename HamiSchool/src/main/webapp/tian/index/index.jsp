@@ -102,12 +102,11 @@
 							<figure class="effect-ming wow fadeInLeft animated animated" data-wow-delay=".5s">
 								<img src="<%=basePath%>tian/index/images/1.jpg" alt="img09"/>
 								<figcaption>
-									<h3>Bo<span>at</span></h3>
+									<h3>二<span>手</span></h3>
 									<p>Ming sits in the corner the whole day. She's into crochet.</p>
 									<a href="<%=basePath%>goods/findAllGoods.action">View more</a>
 								</figcaption>			
 							</figure>
-							
 						</div>
 						<div class="bnr-btm-right">				
 							<h3>Expert Color Matching</h3>
@@ -121,18 +120,17 @@
 					 	<div class="bnr-btm-right two">				
 							<h3>Fiberglass Repairs</h3>
 							<p>Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-						<a href="<%=basePath%>forum/list.action" class="buy btn-wayra">Read More</a>
+						<a href="<%=basePath%>help/selectAllHelps.action" class="buy btn-wayra">Read More</a>
 						</div>
 				       <div class="bnr-btm-left two grid">
 							<figure class="effect-ming wow fadeInRight animated animated" data-wow-delay=".5s">
 								<img src="<%=basePath%>tian/index/images/2.jpg" alt="img09"/>
 								<figcaption>
-									<h3>Bo<span>at</span></h3>
+									<h3>跑<span>腿</span></h3>
 									<p>Ming sits in the corner the whole day. She's into crochet.</p>
-									<a href="<%=basePath%>forum/list.action">View more</a>
+									<a href="<%=basePath%>help/selectAllHelps.action">View more</a>
 								</figcaption>			
 							</figure>
-							
 						</div>
 					
 						<div class="clearfix"></div>
@@ -144,20 +142,21 @@
 							<figure class="effect-ming wow fadeInLeft animated animated" data-wow-delay=".5s">
 								<img src="<%=basePath%>tian/index/images/3.jpg" alt="img09"/>
 								<figcaption>
-									<h3>Bo<span>at</span></h3>
+									<h3>社<span>区</span></h3>
 									<p>Ming sits in the corner the whole day. She's into crochet.</p>
-									<a href="<%=basePath%>help/selectAllHelps.action">View more</a>
+									<a href="<%=basePath%>forum/list.action">View more</a>
 								</figcaption>
 							</figure>
-
 						</div>
 						<div class="bnr-btm-right">
 							<h3>Expert Color Matching</h3>
 							<p>Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-							<a href="<%=basePath%>help/selectAllHelps.action" class="buy btn-wayra">Read More</a>
+							<a href="<%=basePath%>forum/list.action" class="buy btn-wayra">Read More</a>
 						</div>
+
 						<div class="clearfix"></div>
 					</div>
+
 				</div>
 		  </div>
 		  <!-- app-->

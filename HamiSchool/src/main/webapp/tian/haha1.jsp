@@ -19,7 +19,6 @@
     <a href="#">${helpCommentReply.helpCommentReplyId}</a><br/>
     <a href="#">${helpCommentReply.content}</a><br/>
 
-
 </c:forEach>
 
 
