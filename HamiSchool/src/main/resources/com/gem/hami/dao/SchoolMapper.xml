@@ -11,4 +11,11 @@
     <!--<select id="selectSchoolByUserId" parameterType="int" resultType="School">-->
         <!--SELECT  * from school where user_id=#{_parameter}-->
     <!--</select>-->
+
+
+
+    <select id="selectSchoolsByKeyWord" parameterType="java.lang.String" resultType="School">
+        SELECT  school_id,name FROM  school where name like "%" #{param1} "%"
+    </select>
+
 </mapper>

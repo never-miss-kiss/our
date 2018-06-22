@@ -15,10 +15,12 @@ public interface HelpService {
 // userId 用户号，schoolId 学校号，sortId（排序方式：1.按发布时间，2点击量排序）
     public List<HelpInfo> findHelpsByCondition(int userId,int schoolId,int sortId);
 
-    public PageInfo<HelpInfo> findBuyInfosByCreateTime(Map<String, Object> map);
-    public PageInfo<HelpInfo> findSendInfosByCreateTime(Map<String, Object> map);
-    public PageInfo<HelpInfo> findFetchInfosByCreateTime(Map<String, Object> map);
-    public PageInfo<HelpInfo> findQueueInfosByCreateTime(Map<String, Object> map);
+    public List<School> findSchoolsByKeyWord(String keyWord);
+
+    public PageInfo<HelpInfo> findBuyInfosByCreateTime(int schoolId,Map<String, Object> map);
+    public PageInfo<HelpInfo> findSendInfosByCreateTime(int schoolId,Map<String, Object> map);
+    public PageInfo<HelpInfo> findFetchInfosByCreateTime(int schoolId,Map<String, Object> map);
+    public PageInfo<HelpInfo> findQueueInfosByCreateTime(int schoolId,Map<String, Object> map);
     public PageInfo<HelpInfo> findAllHelpsByCreateTime(int schoolId,int userId,Map<String, Object> map);
 
 //    查找单个跑腿信息
@@ -86,5 +88,7 @@ public interface HelpService {
     //    /help/removeHelpCommentReply.action
 //            删除跑腿信息评论回复
     public boolean removeHelpCommentReply(int replyId);
+
+    public boolean removeHelpsInSchedule();
 
 }

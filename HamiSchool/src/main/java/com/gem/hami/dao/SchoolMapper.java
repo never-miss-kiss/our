@@ -22,5 +22,18 @@ public interface SchoolMapper {
   * @Description
   * @Modified By:
  */
-    public School selectSchoolByUserId(int userId);
+    public List<School> selectSchoolByUserId(int userId);
+
+
+
+    /**
+      * @Author：Tian
+       * @param ：学校名
+      * @Description：用来模糊查找学校
+      * @Result:
+      * @Date：Created in 12:58 2018/6/20
+      * @Modified By:
+     */
+    public List<School> selectSchoolsByKeyWord(String keyWord);
+
 }

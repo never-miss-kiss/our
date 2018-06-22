@@ -34,6 +34,9 @@ public class HelpServiceImpl implements HelpService{
     @Autowired
     private HelpCommentReplyMapper helpCommentReplyMapper;
 
+    @Autowired
+    private SchoolMapper schoolMapper;
+
     @Override
     public List<HelpInfo> findHelpsByCondition(int userId, int schoolId, int sortId) {
 
@@ -148,55 +151,59 @@ public class HelpServiceImpl implements HelpService{
         };
 
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        for(int i = 0;i<10;i++){
+        for(int i = 0;i<10&&i<allHelpInfos.size();i++){
             helpInfos.add(allHelpInfos.get(i));
             helpInfos.get(i).setId(i+1);
         }
         return helpInfos;
     }
 
+    @Override
+    public List<School> findSchoolsByKeyWord(String keyWord) {
+        return schoolMapper.selectSchoolsByKeyWord(keyWord);
+    }
 
     @Override
-    public PageInfo<HelpInfo> findBuyInfosByCreateTime(Map<String, Object> map) {
+    public PageInfo<HelpInfo> findBuyInfosByCreateTime(int schoolId,Map<String, Object> map) {
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");
         PageHelper.startPage(curPage,pageSize);
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        helpInfos = helpInfoMapper.selectBuyInfosByCreateTime();
+        helpInfos = helpInfoMapper.selectBuyInfosByCreateTime(schoolId);
         PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
         return pageInfo;
     }
 
     @Override
-    public PageInfo<HelpInfo> findSendInfosByCreateTime(Map<String, Object> map) {
+    public PageInfo<HelpInfo> findSendInfosByCreateTime(int schoolId,Map<String, Object> map) {
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");
         PageHelper.startPage(curPage,pageSize);
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        helpInfos = helpInfoMapper.selectSendInfosByCreateTime();
+        helpInfos = helpInfoMapper.selectSendInfosByCreateTime(schoolId);
         PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
         return pageInfo;
 
     }
 
     @Override
-    public PageInfo<HelpInfo> findFetchInfosByCreateTime(Map<String, Object> map) {
+    public PageInfo<HelpInfo> findFetchInfosByCreateTime(int schoolId,Map<String, Object> map) {
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");
         PageHelper.startPage(curPage,pageSize);
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        helpInfos = helpInfoMapper.selectFetchInfosByCreateTime();
+        helpInfos = helpInfoMapper.selectFetchInfosByCreateTime(schoolId);
         PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
         return pageInfo;
     }
 
     @Override
-    public PageInfo<HelpInfo> findQueueInfosByCreateTime(Map<String, Object> map) {
+    public PageInfo<HelpInfo> findQueueInfosByCreateTime(int schoolId,Map<String, Object> map) {
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");
         PageHelper.startPage(curPage,pageSize);
         List<HelpInfo> helpInfos = new ArrayList<HelpInfo>();
-        helpInfos = helpInfoMapper.selectQueueInfosByCreateTime();
+        helpInfos = helpInfoMapper.selectQueueInfosByCreateTime(schoolId);
         PageInfo<HelpInfo> pageInfo = new PageInfo<>(helpInfos);
         return pageInfo;
     }
@@ -325,6 +332,14 @@ public class HelpServiceImpl implements HelpService{
     @Override
     public boolean removeHelpCommentReply(int replyId) {
         helpCommentReplyMapper.deleteHelpCommentReply(replyId);
+        return true;
+    }
+
+
+//    定时器删除大概就是这样
+    @Override
+    public boolean removeHelpsInSchedule(){
+//        helpBuyMapper.deleteHelpsInSchedule();
         return true;
     }
 }

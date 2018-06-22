@@ -1,5 +1,7 @@
 package com.gem.hami.entity;
 
+import java.util.Date;
+
 public class HelpComment {
     private Integer helpCommentId;
 
@@ -13,9 +15,19 @@ public class HelpComment {
 
     private Integer commentedUserId;
 
+    private Date releaseTime;
+
     private User user;
 
     private User commentedUser;
+
+    public Date getReleaseTime() {
+        return releaseTime;
+    }
+
+    public void setReleaseTime(Date releaseTime) {
+        this.releaseTime = releaseTime;
+    }
 
     public User getCommentedUser() {
         return commentedUser;

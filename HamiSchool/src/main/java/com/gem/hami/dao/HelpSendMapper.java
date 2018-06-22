@@ -26,4 +26,6 @@ public interface HelpSendMapper {
 
     public boolean updateHelpClickCount(int helpId);
 
+    public boolean deleteHelpsInSchedule();
+
 }

@@ -3,6 +3,7 @@
 <mapper namespace="com.gem.hami.dao.HelpQueueMapper">
     <resultMap id="selectHelpQueueMap" type="HelpQueue">
         <id column="help_queue_id" property="helpQueueId"></id>
+        <result column="help_queue_id" property="helpId"/>
         <result column="name" property="name"/>
         <result column="remark_infomation" property="remarkInfomation"/>
         <result column="queue_address" property="queueAddress"/>

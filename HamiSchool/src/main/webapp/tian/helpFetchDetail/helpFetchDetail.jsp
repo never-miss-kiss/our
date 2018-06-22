@@ -155,6 +155,7 @@
                         </div>
                         <div class="col-sm-8 comment-item-middle">
                             <!--评论内容-->
+                                ${helpComment.content}
                         </div>
                         <div class="col-sm-8 comment-item-bottom">
                             <button type="button" id="showButton${helpComment.helpCommentId}" class="btn btn-default" value="${helpComment.helpCommentId}"  onClick="findCommentReply(${helpComment.helpCommentId})">
@@ -171,36 +172,6 @@
                             </button>
                             <button type="button" id="btn-commentReport${helpComment.helpCommentId}" class="btn btn-default" data-toggle="modal" data-target="#commentReport${helpComment.helpCommentId}">举报</button>
                             <!-- Modal 回复的模态框-->
-                            <div class="modal fade" id="commentReply${helpComment.helpCommentId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">回复： ${helpComment.user.nickname}</h4>
-                                        </div>
-
-                                        <form method="post" action="<%=basePath %>/help/addHelpCommentReply.action">
-                                            <input name="userId" type="hidden" value="5">
-                                            <input name="commentedUserId" type="hidden" value="${helpComment.userId}">
-                                            <input name="helpCommentId" type="hidden" value="${helpComment.helpCommentId}">
-                                            <input name="releaseType" type="hidden" value="${helpComment.releaseType}">
-                                            <input name="helpId" type="hidden" value="${helpComment.helpId}">
-                                            <div class="modal-body">
-                                                    <textarea name="content" class="form-control" rows="3">
-                                                    </textarea>
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                                                <button type="submit" class="btn btn-primary">发表</button>
-                                            </div>
-
-                                        </form>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal 举报的模态框-->
                             <div class="modal fade" id="commentReport${helpComment.helpCommentId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -208,32 +179,39 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title" id="myModalLabel">举报表</h4>
                                         </div>
-                                        <form method="post" action="###">
-                                            <div class="modal-body">
+                                        <form method="post" action="<%= basePath%>help/addReport.action">
+                                            <div class="modal-body${helpComment.helpCommentId}">
                                                 <div class="btn-group-vertical col-sm-6" role="group" aria-label="...">
-                                                    <button id="button1" type="button" class="btn btn-default active" >垃圾广告信息</button>
-                                                    <button id="button1" type="button" class="btn btn-default" >不友善行为</button>
-                                                    <button  id="button1" type="button" class="btn btn-default">反动言论</button>
-                                                    <button  id="button1" type="button" class="btn btn-default">涉黄信息</button>
+                                                    <button id="button1" value="1" type="button" class="btn btn-default active" >垃圾广告信息</button>
+                                                    <button id="button1" value="2" type="button" class="btn btn-default" >不友善行为</button>
+                                                    <button  id="button1" value="3" type="button" class="btn btn-default">涉嫌造谣</button>
+                                                    <button  id="button1" value="4" type="button" class="btn btn-default">涉黄信息</button>
                                                 </div>
                                                 <div class="btn-group-vertical col-sm-6" role="group" aria-label="...">
-                                                    <button id="button1" type="button" class="btn btn-default" >垃圾广告信息</button>
-                                                    <button id="button1" type="button" class="btn btn-default" >操纵言论</button>
-                                                    <button  id="button1" type="button" class="btn btn-default">影响选举</button>
-                                                    <button  id="button1" type="button" class="btn btn-default">涉嫌造谣</button>
+                                                    <button id="button1" value="5" type="button" class="btn btn-default" >诱导赌博</button>
+                                                    <button id="button1" value="6" type="button" class="btn btn-default" >操纵言论</button>
+                                                    <button  id="button1" value="7" type="button" class="btn btn-default">影响选举</button>
+                                                    <button  id="button1" value="8" type="button" class="btn btn-default">其他</button>
                                                 </div>
+                                                <input type="hidden" class="reasonCategoryId${helpComment.helpCommentId}" name="reasonCategoryId" value="1">
+                                                <input type="hidden" id="reportedUserId" name="reportedUserId" value="${helpComment.userId}" >
+                                                <input type="hidden" id="sourceCategoryId" name="sourceCategoryId" value="9">
+                                                <input type="hidden" id="sourceItemId" name="sourceItemId" value="${helpComment.helpCommentId}">
+                                                <input type="hidden" id="helpId" name="helpId" value="${helpFetch.helpFetchId}">
+                                                <input type="hidden" id="helpType" name="helpType" value="3">
                                                 <script>
                                                     //让属性可以只选一个
-                                                    $(".modal-body button").each(function(i){
-                                                        $(this).click(
-                                                            function(){
-                                                                $(".modal-body button").removeClass("active");
-                                                                $(".modal-body button").get(i).addClass("active");
-                                                            }
-                                                        )
+                                                    $(".modal-body${helpComment.helpCommentId} button").each(function(i,element){
+                                                        $(this).click(function(){
+                                                            var i = $(this).val();
+                                                            $(".modal-body${helpComment.helpCommentId}  button").removeClass("active");
+                                                            $(".modal-body${helpComment.helpCommentId}  button").eq(i-1).addClass("active");
+                                                            $(".reasonCategoryId${helpComment.helpCommentId}").val(i);
+                                                            alert(i);
+                                                        })
                                                     });
                                                 </script>
-                                                <textarea class="form-control" rows="3" placeholder="补充理由..."></textarea>
+                                                <textarea class="form-control" rows="3" name="reasonRemark" placeholder="补充理由..."></textarea>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -266,11 +244,11 @@
         <ul class="nav nav-pills nav-stacked">
             <li role="presentation" class="active"><a href="<%=basePath %>help/selectAllHelps.action"><h3>返回上一级</h3></a></li>
             <li role="presentation" class="active" >
-                <button type="button" id="btn-addComment" class="btn btn-default" data-toggle="modal" data-target="#addComment">
+                <button type="button"  class="btn btn-default" data-toggle="modal" data-target="#addComment">
                     回复
                 </button>
             </li>
-            <li role="presentation" class="active"><a href="<%=basePath %>tian/addHelpFetch/addHelpFetch.jsp"><h3>帮我买</h3></a></li>
+            <li role="presentation" class="active"><a href="<%=basePath %>tian/addHelpFetch/addHelpFetch.jsp"><h3>帮我送</h3></a></li>
             <!-- Modal 回复的模态框-->
             <div class="modal fade" id="addComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
@@ -281,13 +259,14 @@
                         </div>
 
                         <form method="post" action="<%=basePath %>/help/addHelpComment.action">
-                            <input name="userId" type="hidden" value="5">
-                            <input name="commentedUserId" type="hidden" value="${helpComment.userId}">
-                            <input name="helpCommentId" type="hidden" value="${helpComment.helpCommentId}">
 
+                            <input name="userId" type="hidden" value="${userInfo.userId}">
+                            <input name="helpType" type="hidden" value="3">
+                            <input name="commentedUserId" type="hidden" value="${helpFetch.userId}">
+                            <input name="helpId" type="hidden" value="${helpFetch.helpFetchId}">
                             <div class="modal-body">
-                                                    <textarea name="content" class="form-control" rows="3">
-                                                    </textarea>
+                                <textarea name="content" class="form-control" rows="3">
+                                </textarea>
                             </div>
 
                             <div class="modal-footer">
@@ -296,7 +275,6 @@
                             </div>
 
                         </form>
-
                     </div>
                 </div>
             </div>

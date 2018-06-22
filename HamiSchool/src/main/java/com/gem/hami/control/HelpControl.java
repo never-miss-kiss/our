@@ -1,12 +1,15 @@
 package com.gem.hami.control;
 
 import com.gem.hami.entity.*;
+import com.gem.hami.service.AdminService;
 import com.gem.hami.service.HelpService;
-import com.gem.hami.service.Impl.HelpServiceImpl;
-import com.github.pagehelper.PageHelper;
+
 import com.github.pagehelper.PageInfo;
+
+
 import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,13 +25,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+
 @RequestMapping(value = "/help")
 @Controller
 public class HelpControl {
-
     @Autowired
     HelpService helpService;
 
+    @Autowired
+    AdminService adminService;
 
      //通过条件查询，主要用于showHelps右边栏目框中的按 点击量，截至日期，价格排序
     @RequestMapping(value = "/selectByCondition.action")
@@ -37,6 +42,12 @@ public class HelpControl {
 
         int schoolId1 = Integer.parseInt(schoolId);
         int sortId1 = Integer.parseInt(sortId);
+        HttpSession session =request.getSession();
+        User user =(User)session.getAttribute("userInfo");
+        if(user!=null) {
+            schoolId1 = user.getSchoolId();
+            int userId1 = user.getUserId();
+        }
         List<HelpInfo> helpSorts = helpService.findHelpsByCondition(0,schoolId1,sortId1);
         for(HelpInfo helpInfo : helpSorts){
             System.out.println(helpInfo);
@@ -48,14 +59,30 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/showHelp/sortHelp.jsp").forward(request,response);
     }
 
+
+    //右侧搜索框用于差学校的
+    @RequestMapping(value = "/selectSchoolsByKeyWord.action")
+    @ResponseBody
+    public void selectSchoolByKeyWord(String keyWord, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<School> schools1 =  helpService.findSchoolsByKeyWord(keyWord);
+        List<School> schools =new ArrayList<School>();
+        for(int i=0;i<10;i++){
+            if(i<schools1.size()){
+                schools.add(schools1.get(i));
+            }
+        }
+        request.setAttribute("schools",schools);
+        request.getRequestDispatcher("/tian/showHelp/selectSchools.jsp").forward(request,response);
+    }
+
     //按左边跑腿分类或下面的分页筛选中间帖子栏目的信息。 通过ajax异步刷新实现
     @RequestMapping(value = "/selectInfos.action")
     @ResponseBody
     public  void selectInfos(String typeId,String curPage,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session =request.getSession();
         User user =(User)session.getAttribute("userInfo");
-        int schoolId = 0 ;
-        if(user!=null){
+        int schoolId = 0 ;//设置初始值为0,表示不限学校（默认查找所有学校）
+        if(user!=null) {
             schoolId = user.getSchoolId();
         }
         int typeId1 = Integer.parseInt(typeId);
@@ -69,16 +96,16 @@ public class HelpControl {
             case 0:pageInfo = helpService.findAllHelpsByCreateTime(schoolId,0,cmap);
                     request.setAttribute("helpType",0);
                     break;
-            case 1:pageInfo = helpService.findBuyInfosByCreateTime(cmap);
+            case 1:pageInfo = helpService.findBuyInfosByCreateTime(schoolId,cmap);
                     request.setAttribute("helpType",1);
                     break;
-            case 2:pageInfo = helpService.findSendInfosByCreateTime(cmap);
+            case 2:pageInfo = helpService.findSendInfosByCreateTime(schoolId,cmap);
                     request.setAttribute("helpType",2);
                     break;
-            case 3:pageInfo = helpService.findFetchInfosByCreateTime(cmap);
+            case 3:pageInfo = helpService.findFetchInfosByCreateTime(schoolId,cmap);
                     request.setAttribute("helpType",3);
                     break;
-            case 4:pageInfo = helpService.findQueueInfosByCreateTime(cmap);
+            case 4:pageInfo = helpService.findQueueInfosByCreateTime(schoolId,cmap);
                     request.setAttribute("helpType",4);
                     break;
             default:pageInfo=new PageInfo<>();
@@ -88,7 +115,6 @@ public class HelpControl {
         request.setAttribute("pageInfo",pageInfo);
         request.getRequestDispatcher("/tian/showHelp/selectInfos.jsp").forward(request,response);
     }
-
 
     //用于从栏目框等跳转而来时刷新整体页面
     @RequestMapping(value = "/selectAllHelps.action")
@@ -112,6 +138,13 @@ public class HelpControl {
         {
             int schoolId = user.getSchoolId();
             int userId = user.getUserId();
+            if (request.getParameter("schoolId")!=null){
+                //这里用于搜索框的模糊查询
+                //同时设置session值
+                schoolId = Integer.parseInt(request.getParameter("schoolId"));
+                user.setSchoolId(schoolId);
+                session.setAttribute("userInfo",user);
+            }
             System.out.println(user);
             pageInfo = helpService.findAllHelpsByCreateTime(schoolId,userId,cmap);
             System.out.println(pageInfo);
@@ -130,6 +163,71 @@ public class HelpControl {
 
     }
 
+//    评论和回复的举报
+    @RequestMapping(value = "/addReport.action")
+    public void addReport( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int reasonCategoryId = Integer.parseInt(request.getParameter("reasonCategoryId"));
+        int reportedUserId = Integer.parseInt(request.getParameter("reportedUserId"));
+        int sourceCategoryId = Integer.parseInt(request.getParameter("sourceCategoryId"));
+        String reasonRemark = request.getParameter("reasonRemark");
+        int sourceItemId = Integer.parseInt(request.getParameter("sourceItemId"));
+        int helpId = Integer.parseInt(request.getParameter("helpId"));
+        int helpType = Integer.parseInt(request.getParameter("helpType"));
+
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("userInfo");
+
+        Report report = new Report();
+        report.setUserId(user.getUserId());
+        report.setReasonCategoryId(reasonCategoryId);
+        report.setReasonRemark(reasonRemark);
+        report.setReportedUserId(reportedUserId);
+        report.setSourceCategoryId(sourceCategoryId);
+        report.setSourceItemId(sourceItemId);
+        report.setCreateTime(new Date());
+        System.out.println(report);
+//        request.setAttribute("reasonCategoryId",reasonCategoryId);
+//        request.setAttribute("reportedUserId",reportedUserId);
+//        request.setAttribute("sourceCategoryId",sourceCategoryId);
+//        request.setAttribute("reasonRemark",reasonRemark);
+//        request.setAttribute("sourceItemId",sourceItemId);
+
+        adminService.addReport(report);
+        List<HelpComment> helpCommentList;
+        switch (helpType) {
+            case 0:
+            case 1:
+                HelpBuy helpBuy = helpService.findHelpBuy(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpBuy", helpBuy);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request, response);
+                break;
+            case 2:
+                HelpSend helpSend = helpService.findHelpSend(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpSend", helpSend);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpSendDetail/helpSendDetail.jsp").forward(request, response);
+                break;
+            case 3:
+                HelpFetch helpFetch = helpService.findHelpFetch(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpFetch", helpFetch);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpFetchDetail/helpFetchDetail.jsp").forward(request, response);
+                break;
+            case 4:
+                HelpQueue helpQueue = helpService.findHelpQueue(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpQueue", helpQueue);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpQueueDetail/helpQueueDetail.jsp").forward(request, response);
+                break;
+            default:
+                break;
+        }
+    }
 
     //用于测试的
     @RequestMapping(value = "/showHelp.action",method = RequestMethod.GET)
@@ -370,14 +468,58 @@ public class HelpControl {
         request.getRequestDispatcher("/tian/helpBuyDetail/commentReply.jsp").forward(request,response);
     }
 
-    @RequestMapping(value="/addHelpComment.action",method = RequestMethod.GET)
+    @RequestMapping(value="/addHelpComment.action")
     public void addHelpComment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        HelpComment helpComment= new HelpComment();
-        helpComment.setContent("人生迟早会碰壁的，只是早晚问题，而我只要稳住心态就行");
-        helpComment.setReleaseType((byte)2);
+        HelpComment helpComment = new HelpComment();
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        int commentedUserId = Integer.parseInt(request.getParameter("commentedUserId"));
+        String content = request.getParameter("content");
+        Byte helpType = Byte.parseByte(request.getParameter("helpType"));
+        int helpId = Integer.parseInt(request.getParameter("helpId"));
+
+        helpComment.setReleaseType(helpType);
+        helpComment.setContent(content);
+        helpComment.setUserId(userId);
+        helpComment.setCommentedUserId(commentedUserId);
+        helpComment.setHelpId(helpId);
+        helpComment.setReleaseTime(new Date());
+
         helpService.addHelpComment(helpComment);
-        request.getRequestDispatcher("/tian/haha.jsp").forward(request,response);
+        List<HelpComment> helpCommentList;
+        switch (helpType) {
+            case 0:
+            case 1:
+                HelpBuy helpBuy = helpService.findHelpBuy(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpBuy", helpBuy);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request, response);
+                break;
+            case 2:
+                HelpSend helpSend = helpService.findHelpSend(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpSend", helpSend);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpSendDetail/helpSendDetail.jsp").forward(request, response);
+                break;
+            case 3:
+                HelpFetch helpFetch = helpService.findHelpFetch(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpFetch", helpFetch);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpFetchDetail/helpFetchDetail.jsp").forward(request, response);
+                break;
+            case 4:
+                HelpQueue helpQueue = helpService.findHelpQueue(helpId);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                request.setAttribute("helpQueue", helpQueue);
+                request.setAttribute("helpCommentList", helpCommentList);
+                request.getRequestDispatcher("/tian/helpQueueDetail/helpQueueDetail.jsp").forward(request, response);
+                break;
+            default:
+                break;
+        }
     }
 
     @RequestMapping(value="/removeHelpComment.action",method = RequestMethod.GET)
@@ -410,8 +552,8 @@ public class HelpControl {
         helpCommentReply.setUserId(userId);
         helpCommentReply.setHelpCommentId(helpCommentId);
         helpService.addHelpCommentReply(helpCommentReply);
-        List<HelpComment> helpCommentList;
 
+        List<HelpComment> helpCommentList;
         switch (helpType){
             case 0:
             case 1:HelpBuy helpBuy = helpService.findHelpBuy(helpId);
@@ -441,7 +583,6 @@ public class HelpControl {
             default:
         }
     }
-
 
     @RequestMapping(value="/removeHelpCommentReply.action",method = RequestMethod.GET)
     public void removeHelpCommentReply(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -488,6 +629,13 @@ public class HelpControl {
         return;
     }
 
+
+//    设置定时器
+//    @Scheduled(cron= "* * * * * ?")
+//    public void deleteAllTempClob(){
+//        boolean count = helpService.modifyHelpClickCount(1,17);
+//        System.out.println("---->>增加点击量");
+//    }
 }
 
 //    @RequestMapping(value = "/selectBuyInfos.action")

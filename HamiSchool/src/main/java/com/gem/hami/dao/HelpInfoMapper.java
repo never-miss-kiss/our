@@ -8,8 +8,8 @@ import java.util.SortedMap;
 
 public interface HelpInfoMapper {
     public List<HelpInfo> selectAllHelpsByCreateTime(int schoolId,int userId);
-    public List<HelpInfo> selectBuyInfosByCreateTime();
-    public List<HelpInfo> selectSendInfosByCreateTime();
-    public List<HelpInfo> selectFetchInfosByCreateTime();
-    public List<HelpInfo> selectQueueInfosByCreateTime();
+    public List<HelpInfo> selectBuyInfosByCreateTime(int schoolId);
+    public List<HelpInfo> selectSendInfosByCreateTime(int schoolId);
+    public List<HelpInfo> selectFetchInfosByCreateTime(int schoolId);
+    public List<HelpInfo> selectQueueInfosByCreateTime(int schoolId);
 }

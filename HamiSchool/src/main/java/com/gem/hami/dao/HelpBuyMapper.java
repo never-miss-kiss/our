@@ -23,4 +23,6 @@ public interface HelpBuyMapper {
     public boolean deleteHelpBuy(int helpId);
 
     public boolean updateHelpClickCount(int helpId);
+
+    public boolean deleteHelpsInSchedule();
 }
