@@ -15,27 +15,51 @@
         <result column="content" property="content"/>
 
         <association property="user" javaType="User">
-            <id column="user_id" property="userId"/>
+            <id column="userid1" property="userId"/>
             <result column="nickname" property="nickname"/>
-            <result column="photo" property="photo"/>
+            <result column="userphoto" property="photo"/>
+            <result column="signature" property="signature"/>
+
         </association>
 
     </resultMap>
-    <!--public List<ForumPost> selectTopForumPostBySchoolId(int schoolId);-->
-    <select id="selectTopForumPostBySchoolId" resultMap="selectTopForumPostBySchoolIdMap" parameterType="int">
-        SELECT * FROM forum_post f LEFT JOIN user u ON f.user_id=u.user_id WHERE u.school_id=#{_parameter} ORDER BY is_top DESC ,release_time DESC
-    </select>
+    <resultMap id="findForumPostByForudIdMap" type="ForumPost">
+        <id column="forum_post_id" property="forumPostId"/>
+        <result column="title" property="title"/>
+        <result column="release_time" property="releaseTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remark" property="remark"/>
+        <result column="click_count" property="clickCount"/>
+        <result column="comment_count" property="commentCount"/>
+        <result column="is_top" property="isTop"/>
+        <result column="is_advertisement" property="isAdvertisement"/>
+        <result column="photo" property="photo"/>
+        <result column="content" property="content"/>
+
+        <association property="user" javaType="User">
+            <id column="userid1" property="userId"/>
+            <result column="nickname" property="nickname"/>
+            <result column="userphoto" property="photo"/>
+            <result column="signature" property="signature"/>
+
+        </association>
+
+    </resultMap>
+    <!--&lt;!&ndash;public List<ForumPost> selectTopForumPostBySchoolId(int schoolId);&ndash;&gt;-->
+    <!--<select id="selectTopForumPostBySchoolId" resultMap="selectTopForumPostBySchoolIdMap" parameterType="int">-->
+        <!--SELECT f.*,u.user_id,u.nickname,u.photo AS userphoto FROM forum_post f LEFT JOIN user u ON f.user_id=u.user_id WHERE u.school_id=#{_parameter} ORDER BY is_top DESC ,release_time DESC-->
+    <!--</select>-->
 
     <!--public List<ForumPost> selectTopForumPostBySchoolId1(int schoolId);-->
     <select id="selectTopForumPostBySchoolId1" resultMap="selectTopForumPostBySchoolIdMap" parameterType="int">
-        SELECT * FROM forum_post f LEFT JOIN user u ON f.user_id=u.user_id WHERE u.school_id=#{_parameter} ORDER BY is_top DESC ,release_time DESC
+        SELECT f.*,u.user_id AS userid1,u.nickname,u.photo AS userphoto,signature FROM forum_post f LEFT JOIN user u ON f.user_id=u.user_id WHERE u.school_id=#{_parameter} ORDER BY is_top DESC ,release_time DESC
     </select>
 
 
 
     <!--public ForumPost findForumPostByForudId(int forumId);用于帖子详情和评论-->
-    <select id="findForumPostByForudId" resultType="ForumPost" parameterType="int">
-        SELECT * FROM  forum_post WHERE forum_post_id =#{_parameter}
+    <select id="findForumPostByForudId" resultMap="findForumPostByForudIdMap" parameterType="int">
+        SELECT f.*,u.user_id AS userid1,u.nickname,u.photo AS userphoto,signature FROM forum_post f LEFT JOIN user u ON f.user_id=u.user_id WHERE f.forum_post_id=#{_parameter}
     </select>
     <!--&lt;!&ndash;public List<ForumPost> selectForumPostByTime(int schoolId);&ndash;&gt;-->
     <!--<select id="selectForumPostByTime" resultType="ForumPost" parameterType="int">-->

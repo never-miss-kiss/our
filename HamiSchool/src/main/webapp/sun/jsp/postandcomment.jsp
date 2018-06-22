@@ -409,7 +409,7 @@
     <div class="container_wrap wrap_990 clearfix">
 
         <div class="plateinfor " >
-            <a href="" class="btn sendtheme">发表新主的撒旦题</a>
+            <a href="http://bbs.xiaomi.cn/thread/add/fid/501/type/forum" class="btn sendtheme">+发表新主题</a>
         </div>
 
 
@@ -419,16 +419,14 @@
                 <div class="con">
                     <div class="personLayer_msg">
                         <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_head">
-                            <img src="HamiSchool/js1/avatar.jpg"
-                                 onerror="javascript:this.src=&#39;http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif&#39;;"
+                            <img src="${pageContext.request.contextPath}/profilePicture/${ForumPost.user.photo}"
                                  class="user_pic">
                         </a>
-                        <div class="user_msg">
-					<span><a href="http://bbs.xiaomi.cn/user/detail/miid/137006033" class="user_name" u-id="137006033">${ForumPost.forumPostId}</a>
-							 							<i class="vip_icon vip_icon_m5"></i>
-											</span>
-                            <p><span class="txt">用户学校</span>
-                                <i class="vipnum vipnum_2"></i>
+                        <div class="user_msg" style="margin-top: 0px">
+					        <span style="margin-top: 0px">
+                                <a href="http://bbs.xiaomi.cn/user/detail/miid/137006033" class="user_name"  style="margin-top: 0px">${ForumPost.user.nickname}</a>
+							</span>
+                            <p><span class="txt" style="font-size: 11px">${ForumPost.user.signature}</span>
                             </p>
                         </div>
                     </div>
@@ -454,15 +452,11 @@
 
                         <h3>最近发表</h3>
                         <ul class="clearfix">
-                            <c:forEach items="${olist}" var="one">
-                               <li>
-                                ${one.title}
-                               </li>
-                            </c:forEach>
+                            <c:forEach items="${ForumPostRecent}" var="one">
                             <li>
-                                <a href="http://bbs.xiaomi.cn/t-29693730">【视频】小米手机新功能首曝光，这样的小米铃声你喜欢吗？</a>
+                                <a href="${pageContext.request.contextPath}/forum/content.action?postId=${one.forumPostId}">${one.title}</a>
                             </li>
-
+                            </c:forEach>
                         </ul>
                     </div>
                 </div>
@@ -512,21 +506,10 @@
 
 
 
-            <div class="filtrate invitation" f-id="501" date-id="29693730" t-id="2167">
+         <div class="filtrate invitation" f-id="501" date-id="29693730" t-id="2167">
 
                 <%--帖子详情--%>
                 <div class="invitation_con">
-                    <%--<script>--%>
-                    <%--$(document).click(function(e){--%>
-                    <%--var _list = $("#replykuang");--%>
-                    <%--if(!_list.is(e.target)&&_list.has(e.target).length === 0){--%>
-                    <%--$("#replykuang").css({display:"none"});--%>
-                    <%--}--%>
-                    <%--});--%>
-                    <%--</script>--%>
-
-
-
 
                     <h1>
                         <span></span>
@@ -535,7 +518,7 @@
                     </h1>
                     <p class="txt">
                         <span class="user_msg_mobile"></span>
-                        <span class="marktxt"></span>
+                        <span class="marktxt">${ForumPost.user.nickname}</span>
 
                         <span>发表在 </span>
                         <span class="time">${ForumPost.releaseTime}</span>
@@ -545,26 +528,17 @@
 
                     <div class="invitation_content">
                         ${ForumPost.content}
-                        <p></p>
-                        <blockquote><p style="text-align: center;"><strong><span style="font-family: 微软雅黑;"><a
-                                href="http://bbs.xiaomi.cn/t-29545641" target="_blank"
-                                style="text-decoration-line: none; outline: 0px; font-family: arial, Microsoft Yahei, Hiragino Sans GB, sans-serif; font-size: 20px; color: rgb(245, 124, 0);">小米8年度旗舰发布会官方汇总，持续更新&gt;&gt;</a></span></strong>
-                        </p></blockquote>
-                        <p style="padding: 1px 0px;"></p>
-                        <p>这个合唱团，团员有些萌！♬︎(๑`･ᴗ･´๑)</p>
-                        <p>小米手机新功能首曝光，这样的小米铃声你喜欢吗？~</p>
-                        <%--<p style="text-align: center;">--%>
-                            <%--<embed type="application/x-shockwave-flash" class="edui-faked-video"--%>
-                                   <%--pluginspage="http://www.macromedia.com/go/getflashplayer"--%>
-                                   <%--src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&amp;v=20161117&amp;vid=m0667p67vn3&amp;auto=0"--%>
-                                   <%--width="650" height="480" wmode="transparent" play="true" loop="false" menu="false"--%>
-                                   <%--allowaccess="never" allowfullscreen="true">--%>
-                        <%--</p>--%>
-                        <p><br></p>
-                        <p>距离小米8 年度旗舰发布会还有3天，5月31日下午2点直播见！</p>
-                        <p></p>
+
+                        <%--<blockquote><p style="text-align: center;"><strong><span style="font-family: 微软雅黑;"><a--%>
+                                <%--href="http://bbs.xiaomi.cn/t-29545641" target="_blank"--%>
+                                <%--style="text-decoration-line: none; outline: 0px; font-family: arial, Microsoft Yahei, Hiragino Sans GB, sans-serif; font-size: 20px; color: rgb(245, 124, 0);">小米8年度旗舰发布会官方汇总，持续更新&gt;&gt;</a></span></strong>--%>
+                        <%--</p></blockquote>--%>
+
+
                     </div>
                 </div>
+
+
 
                 <!--评论框-->
                 <div>
@@ -592,16 +566,21 @@
                     </script>
 
                        <a href="" target="_blank" id="myimagepar">
-                            <img src="<%=path%>/sun/images/noavatar_small.gif" id="myimage" onerror="javascript:void (0);"/>
+                           <img class="user_head" id="myimage"
+                                src="${pageContext.request.contextPath}/profilePicture/${sessionScope.userInfo.photo}">
                        </a>
                        <input id="fabiao" name="comment" placeholder="说说你的看法" \>
                         <input id="teziid" name="postid" type="hidden" value="${param.postId}">
                        <button  class="btn" id="butt" onclick="fabiao()">发表</button>
 
                 </div>
-
-                    <style>
+                <style>
+                        #domyself{
+                            width: 40px;
+                        }
                         #myimage{
+                            width: 45px;
+                            height: 45px;
                             position:absolute;
                             margin-top: -5px;
                         }
@@ -612,12 +591,14 @@
                         }
                     </style>
 
+
+
                 <!--收藏举报点赞  -->
                 <div class="btn_wrap clearfix">
                     <a href="javascript:void(0);" class="report_btn J_reportBtn">举报</a>
                     <a href="javascript:void(0)" class="collect_btn J_collect">收藏</a>
                 </div>
-            </div>
+       </div>
 
 
 
@@ -631,23 +612,23 @@
 
 
 
-
+                    <%--评论回复--%>
                     <ul class="reply_list">
                         <!-- top post list-->
                         <c:forEach items="${ForumComment}" var="forumcomment">
                         <li class="clearfix" post-id="650782626" id="810" float-id="810" u-id="405698082">
                             <div class="reply_list_img">
-                                <a href="http://bbs.xiaomi.cn/u-detail-405698082" class="headportrait" target="_blank"
+                                <a href="" target="_blank"
                                    rel="noopener noreferrer">
                                     <img class="user_head"
-                                         data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/405698082/avatar.jpg?&amp;width=50&amp;height=50"
-                                         src="../images/noavatar_small.gif">
+
+                                         src="${pageContext.request.contextPath}/profilePicture/${forumcomment.user.photo}">
                                 </a>
                             </div>
                             <div class="reply_list_con">
                                 <div class="auth_msg clearfix">
                                     <a href="http://bbs.xiaomi.cn/u-detail-405698082" class="auth_name" target="_blank"
-                                       rel="noopener noreferrer">${forumcomment.userId}</a>
+                                       rel="noopener noreferrer">${forumcomment.user.nickname}</a>
                                     <i class="vip_icon 	vip_icon_m0	"></i>
                                     <span class="time">&nbsp;&nbsp;</span>
                                     <span class="at"> 发表于</span>
@@ -659,24 +640,31 @@
 
                                 <div class="reply_txt"><p>${forumcomment.content}</p>
                                     <p class="replay_bu">
-                                        <a class="replay_btn" onclick="showkuang(${forumcomment.userId},${forumcomment.forumPostCommentId},${ForumPost.forumPostId})">回复</a>
+                                        <a class="replay_btn" onclick="showkuang(${forumcomment.user.userId},${forumcomment.forumPostCommentId},${ForumPost.forumPostId})">回复</a>
 
                                         <span class="replay_btn J_report">举报</span>
 
                                     </p>
-                                <c:forEach items="${ForumPostReply}" var="formcommentreply">
 
+                                 <%--以下foreach为评论回复   --%>
+                                <c:forEach items="${ForumPostReply}" var="formcommentreply">
 
                                     <ul>
                                     <c:if test="${forumcomment.forumPostCommentId==formcommentreply.forumPostCommentId}">
-                                        <p><li class="copyli"><span class="myauth_name">${formcommentreply.userId}</span>回复<span class="myauth_name">${formcommentreply.commentedUserId}</span>:${formcommentreply.content}
-                                            </li>
-                                        <span class="replyspan" onclick="showkuang(${formcommentreply.userId},${formcommentreply.forumPostCommentId},${ForumPost.forumPostId})" >
-                                            <%--<span class="replyspan" onclick="showkuang()" >--%>
-                                           回复
+                                        <div class="reply_list_img" style="margin-left: 35px">
+                                            <a href="" target="_blank" rel="noopener noreferrer">
+                                                <img class="user_head" style="height: 30px;width: 30px "
+                                                     src="${pageContext.request.contextPath}/profilePicture/${formcommentreply.user.photo}">
+                                            </a>
+                                        </div>
+                                        <p>
+
+                                             <li class="copyli"><span class="myauth_name">${formcommentreply.user.nickname}</span>回复<span class="myauth_name">${formcommentreply.commentedUser.nickname}</span>:${formcommentreply.content}
+                                             </li>
+                                             <span class="replyspan" onclick="showkuang(${formcommentreply.user.userId},${formcommentreply.forumPostCommentId},${ForumPost.forumPostId})" >
+                                                  回复
                                             </span>
                                         </p>
-
                                     </c:if>
                                     </ul>
                                         <style>
