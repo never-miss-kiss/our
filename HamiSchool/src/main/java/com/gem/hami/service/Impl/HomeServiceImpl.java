@@ -67,6 +67,33 @@ public class HomeServiceImpl implements HomeService {
         return null;
     }
 
+    @Override
+    public PageInfo<HelpBuy> listHelpBuy(Map<String, Object> map) {
+        int curPage1 = (int) map.get("curPage");
+        int pageSize1 = (int) map.get("pageSize");
+
+        PageHelper.startPage(curPage1,pageSize1);
+//        List<HelpBuy> buyList = goodsMapper.getAllGoodsByUserId((QueryPojo_Goods) map.get("queryPojo"));
+
+//        PageInfo<Goods> pageInfo = new PageInfo<>(buyList);
+        return null ;
+    }
+
+    @Override
+    public PageInfo<HelpFetch> listHelpFetch(Map<String, Object> map) {
+        return null;
+    }
+
+    @Override
+    public PageInfo<HelpSend> listHelpSend(Map<String, Object> map) {
+        return null;
+    }
+
+    @Override
+    public PageInfo<HelpQueue> listHelpQueue(Map<String, Object> map) {
+        return null;
+    }
+
 
     /**
       * @Author：sunshilin

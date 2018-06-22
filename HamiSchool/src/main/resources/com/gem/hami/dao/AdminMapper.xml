@@ -36,7 +36,10 @@
 
     <!--public boolean updateAdmin(Admin admin) 明天继续-->
     <update id="updateAdmin" parameterType="Admin">
-        update admin set name=#{realname},password=#{password},sex=#{sex},age=#{age},phone=#{phone},email=#{email},nickname=#{nickname},admin_authority_id=#{adminAuthorityId}  where admin_id=${adminId};
+        update admin set name=#{nickname},password=#{password},sex=#{sex},age=#{age},phone=#{phone},email=#{email},nickname=#{nickname},admin_authority_id=#{adminAuthorityId}  where admin_id=#
+
+
+        {adminId};
     </update>
 
     <!--public Admin selectAdminByNickname(String nickname)-->

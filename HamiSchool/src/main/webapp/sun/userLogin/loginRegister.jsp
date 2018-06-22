@@ -28,8 +28,8 @@
 				settime(obj);
 			} */
 			//alert($("#mobile").val());
-		
-	 	$.post('sms.jsp', {mobile:jQuery.trim($('#mobile').val())}, function(code) {
+		alert("验证码");
+	 	$.post('<%=path%>sun/userLogin/sms.jsp', {mobile:jQuery.trim($('#mobile').val())}, function(code) {
            //alert(jQuery.trim(unescape(msg)));
 			settime(obj);	
 		
@@ -37,7 +37,7 @@
 	}
 	function get_phone_code(obj){
 		
-		 	$.post('sms.jsp', {mobile:jQuery.trim($('#mobilephone').val())}, function(code) {
+		 	$.post('<%=path%>sun/userLogin/sms.jsp', {mobile:jQuery.trim($('#mobilephone').val())}, function(code) {
 				setretime(obj);		
 	        }); 
 	    
@@ -151,7 +151,8 @@
 
 			</div>
 			</form>
-			<!-- 登录 -->
+			<!-- 以上是登陆 -->
+			<%--以下是注册--%>
 			<script type="text/javascript">
 				function checkUser(){
 					var mobile=document.getElementById("mobile").value;
@@ -182,7 +183,6 @@
 					});		
 					return flag;	
 				}
-				
 				function checkResUser(){
 					var mobile=$("#mobilephone").val();
 					var pass= $("#invisible").val();
@@ -211,13 +211,39 @@
 					});		
 					return flag;	
 				}
-			
-				
+				function  checkuserinput() {
+//				    此方法用来看用户名是否同名
+					var username = document.getElementById("mobile").value;
+					alert(username);
+					$.ajax({
+						type:"post",
+						url:"${pageContext.request.contextPath}/loginpage/register.action",
+						data:{username:username},
+						success:function (abs){
+							    document.getElementById("myspan").innerHTML=abs;
+                                document.getElementById("myspan").style.color="red";
+                                document.getElementById("myspan").style.fontSize="16px"
+                        }
+					})
+                }
+                function  checkuserinput1() {
+//				    此方法为判断两次密码是否相同
+				    var password1 = document.getElementById("input_invisible").value;
+
+                    var password2 = document.getElementById("input_visible").value;
+                    alert(password1 + "==" + password2) ;
+                    if(password1!=null){
+                        if(password1!==password2){
+                            alert("我们不一样");
+                            document.getElementById("myspan1").innerHTML="两次密码不一致！！！";
+						}
+					}
+                }
 			</script>
-			<form action="${pageContext.request.contextPath }/webUser/webUser_register" method="post" onsubmit="return checkUser();">
+			<form action="${pageContext.request.contextPath }/loginpage/register.action" method="post" onsubmit="return checkUser();">
 			<div class="signup f-l">
 				<div class="form-group field field-icon-right"> 
-					手机号<input type="text" id="mobile" name="user.telephone" placeholder="您的手机号" data-validate="required:手机号不能为空,regexp#(^1(3|4|5|7|8)\d{9}$):手机号不正确">
+					手机号<input type="text" id="mobile" name="user.telephone" placeholder="您的手机号" data-validate="required:手机号不能为空,regexp#(^1(3|4|5|7|8)\d{9}$):手机号不正确" onblur="checkuserinput()">
 					<span style='color:red;font-size:9pt' id="myspan"></span>
 				</div>
 				<div class="form-group field field-icon-right"> 
@@ -229,14 +255,14 @@
 				</div>
 				<div class="form-group field field-icon-right " id="psw_invisible">
 					密码<input type="password" class="input" id="input_invisible" name="user.password"  placeholder="密码（字母、数字，至少6位）" data-validate="required:密码不能为空,regexp#(^[0-9a-zA-Z]+$):请输入字母、数字,length#>=6:密码不能小于6位">
-				
-				</div> 
+				</div>
+
 			    <div class="form-group field field-icon-right " id="psw_visible">
-					确认密码<input type="password" class="input" id="input_visible"   placeholder="确认密码" data-validate="required:密码不能为空">
-					
-				</div>  
+					确认密码<input type="password" class="input" id="input_visible"   placeholder="确认密码" data-validate="required:密码不能为空" onblur="checkuserinput1()">
+				</div>
+				<span style='color:red;font-size:9pt' id="myspan1"></span>
 				<div class="form-group">
-					<input id="zphone" type="button" value=" 发送验证码 " onclick="get_mobile_code(this);" />
+					<input id="zphone" type="button" value=" 发送验证码 " onclick="get_mobile_code(this)" />
 				</div>
 				<div class="form-group field field-icon-right">
 					
@@ -276,8 +302,7 @@
 				</div>  
 				
 				<div class="form-group">
-					<input id="zphone" type="button" value=" 发送验证码 " onclick="get_phone_code(this);" />
-					
+					<input id="zphone1" type="button" value=" 发送验证码 " onclick="get_phone_code(this);" />
 				</div>
 				<div class="form-group field field-icon-right">
 					验证码<input type="text" name="codeMes" placeholder="请输入您的验证码 " data-validate="required:验证码不能为空">

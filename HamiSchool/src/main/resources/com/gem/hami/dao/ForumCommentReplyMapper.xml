@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gem.hami.dao.ForumCommentReplyMapper">
+    <resultMap id="ForumCommentReplyMap" type="ForumCommentReply">
+        <id column="forum_comment_reply_id" property="forumCommentReplyId"/>
+        <result column="content" property="content"/>
+
+        <result column="create_time" property="createTime"/>
+        <result column="forum_post_comment_id" property="forumPostCommentId"/>
+      <association property="user" javaType="User">
+          <id column="userid1" property="userId"/>
+          <result column="nickname1" property="nickname"/>
+          <result column="photo1" property="photo"/>
+      </association>
+        <association property="commentedUser" javaType="User">
+            <!--<id column="userid2" property="commentedUserId"/>-->
+            <result column="nickname2" property="nickname"/>
+        </association>
+
+
+
+    </resultMap>
    <!--插入评论回复-->
     <!--public boolean insertForumCommentReply(ForumCommentReply forumCommentReply);-->
     <insert id="insertForumCommentReply" parameterType="ForumCommentReply">
@@ -9,8 +28,10 @@
     </insert>
 
     <!--public List<ForumCommentReply> selectForumCommentReply(int forumId);-->
-    <select id="selectForumCommentReply" resultType="ForumCommentReply" parameterType="int">
-        SELECT * FROM forum_comment_reply WHERE forum_post_comment_id IN (SELECT forum_post_comment_id FROM forum_post_comment WHERE forum_post_id=#{_parameter}) ORDER BY create_time DESC
+    <select id="selectForumCommentReply" resultMap="ForumCommentReplyMap" parameterType="int">
+        SELECT cr.*,u.user_id AS userid1,u.nickname AS nickname1,u.photo AS photo1,us.user_id AS userid2,us.nickname AS nickname2 FROM forum_comment_reply cr LEFT JOIN user u on cr.user_id = u.user_id
+																			LEFT JOIN user us on cr.commented_user_id = us.user_id
+ WHERE forum_post_comment_id IN (SELECT forum_post_comment_id FROM forum_post_comment WHERE forum_post_id = #{_parameter}) ORDER BY create_time DESC
     </select>
 
     <!--public boolean deleteForumCommentReply(int replyId);-->

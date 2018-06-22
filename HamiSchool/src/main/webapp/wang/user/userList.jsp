@@ -97,6 +97,7 @@
 		</form>
 	<br />
 	<tbody>
+	<div>
 	<table class="table table-hover">
 		<tr>
 			<th width="20%" style="text-align: center">用户名</th>
@@ -121,6 +122,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 	</tbody>
 
 	   <br />

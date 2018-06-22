@@ -28,8 +28,8 @@
            <input type="text" readOnly="true"  class="input w50" name="admin.nickname"  value="${admin.nickname }"/>
           
         </div>
-      </div>  
-        
+      </div>
+
       <div class="form-group">
         <div class="label">
           <label for="sitename">原始密码：</label>
