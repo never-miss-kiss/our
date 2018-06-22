@@ -55,8 +55,14 @@
       <script src="<%= basePath %>zhu/lib/js/jquery.emojiarea.js"></script>
       <script src="<%= basePath %>zhu/lib/js/emoji-picker.js"></script>
 
+      <link rel="stylesheet" href="<%= basePath %>zhu/assets/css/normalize.css" />
+      <link rel="stylesheet" href="<%= basePath %>zhu/assets/css/main.css" />
+      <script src="<%= basePath %>zhu/assets/js/html5shiv.min.js"></script>
+
+      <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/style.css">
+      <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/comment.css">
       <style>
-      .head-top{background-color: #a6e1ec}
+      .head-top{background-color: #a6e1ec;}
       .dark-bg{border-color: #8a6d3b;}
       .search-block{position: absolute;top:82px;left: 17%}
       .catorys{margin-top: 30px;}
@@ -64,9 +70,12 @@
       .pBtn{margin-top: -15px;margin-bottom: -10px;margin-left: -10px;}
        h2.title{position: relative;top:-60px;}
       .talk{position: relative;top: -60px; }
+      .liebiao{position: relative;left: 15px}
+      .goods{position: relative;top:7px;left: 250px;}
       /*#button{position:absolute;top:1133px;left: 670px;width: 100px;}*/
       .add{position: relative;left:90%;top:50px;border: 1px solid red; }
       .picture{position: relative;width: 300px;height: 320px;top:-35px;float: left;padding: 50px;}
+      /*.plun{position: relative;top: 5px;}*/
    </style>
    <script type="text/javascript">
           $(document).ready(function(){
@@ -110,6 +119,9 @@
    </head>
    <body>
       <!-- SINGLE VIDEO -->
+      <input type="hidden" value="${u.nickname}" id="aaa"/>
+      <input type="hidden" value="${goods.goodsId}" id="bbb"/>
+      <input type="hidden" value="${u.userId}" id="ccc"/>
       <div id="single-video" class="container-fluid standard-bg">
          <!-- MENU -->
          <div class="header head-top" >
@@ -121,11 +133,11 @@
                   <div class="top-navg">
                      <span class="menu"> <img src="<%= basePath %>zhu/Gallery_files/icon.png" alt=" "></span>
                      <ul class="res">
-                        <a href="#"><span class="res1">首页</span></a>
+                        <a href="<%= basePath %>goods/findAllGoods.action"><span class="res1">首页</span></a>
                         <a href="#"><span class="res2">二手</span></a>
                         <a href="#"><span class="res3">跑腿</span></a>
                         <a class="active" href="#"><span class="res1">哈密社区</span></a>
-                        <a href="hamirenz.jsp"><span class="res2">哈密认证</span></a>
+                        <a href="<%= basePath %>zhu/jsp/hamirenz.jsp"><span class="res2">哈密认证</span></a>
                         <a href="#"><span class="res3">联系我们</span></a>
                      </ul>
                      <!-- script-for-menu -->
@@ -148,32 +160,42 @@
          <!-- SINGLE VIDEO -->
          <div class="row">
             <!-- SIDEBAR -->
-            <div class="catorys">
-            <div class="col-lg-2 col-md-4 hidden-sm hidden-xs">
-               <aside class="dark-bg">
-                  <article>
-                     <h2 class="icon">商品类别</h2>
-                     <ul class="sidebar-links">
-                        <li class="fa fa-chevron-right"><a href="#">所有分类</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">代步工具</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">手机</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">电脑</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">数码</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">电器</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">衣谢伞帽</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">电脑</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">数码</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">电器</a></li>
-                        <li class="fa fa-chevron-right"><a href="#">衣谢伞帽</a></li>
+            <div class="liebiao">
+            <div class="navbar main" id="navbar-main">
+               <div class="load-this">
+                  <div id="sidebar-main-trigger" class="icon float-left">
+                     <img src="<%= basePath %>zhu/assets/imgs/icon-menu-24px-x2.png" width="24px" alt="Menu Icon" />
+                  </div>
+               </div><!--a ajax helper-->
+            </div><!--.navbar.main-->
+            <div class="sidebar main left" id="sidebar-main">
+               <div class="wrapper">
+                  <nav>
+                     <ul>
+                        <li class="title">所有分类</li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
+                        <li><a href="./right-top.html">电脑</a></li>
+                        <li><a href="./left.html">数码</a></li>
+                        <li><a href="./left-top.html">电器</a></li>
+                        <li><a href="./jquery-v2.html">衣鞋伞帽</a></li>
+                        <li><a href="./jquery-v3.html">书籍教材</a></li>
+                        <li><a href="./right-left.html">体育健身</a></li>
+                        <li><a href="./init-opened.html">乐器</a></li>
+                        <li><a href="./no-mask.html">自行设计</a></li>
+                        <li><a href="./allow-scrolling.html">宠物</a></li>
+                        <li><a href="./custom-functions.html">文具</a></li>
+                        <li><a href="./ajax.html">其它</a></li>
+                        <li><a href="./browserify.html">Browserify</a></li>
                      </ul>
-                  </article>
-                  <div class="clearfix spacer"></div>
-                  <div class="clearfix spacer"></div>
-                  <div class="clearfix spacer"></div>
-               </aside>
+                  </nav>
+               </div>
+            </div><!--#sidebar-main-->
             </div>
-            </div>
-            <!-- SINGLE VIDEO -->	
+            <script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script>
+            <script src="<%= basePath %>zhu/dist/jquery.simpler-sidebar.min.js"></script>
+            <script src="<%= basePath %>zhu/assets/js/sidebar/main-sidebar-left-top.js"></script>
+            <div class="goods">
             <div id="single-video-wrapper" class="col-lg-10 col-md-8">
                <div class="row">
                   <!-- VIDEO SINGLE POST -->
@@ -235,37 +257,55 @@
                         </div>
                      </div>
 					<!-- COMMENTS -->
-					<section id="comments">
+					 <section id="comments">
 						<h2 class="title" style="color:#2aabd2">欢迎评论</h2>
-						<div class="widget-area">
-							<div class="status-upload">
-                               <p class="lead emoji-picker-container">
-                                  <input type="email" class="form-control" placeholder="Input field" data-emojiable="true">
-                               </p>
-                               <div class="pBtn">
-                               <button type="submit" class="btn pull-left btn-info btn-sm"><i class="fa fa-share"></i>发表评论</button>
-                               </div>
-                            <%--<form>--%>
-									<%--<textarea placeholder="Your comment goes here" data-emojiable="true" data-emoji-input="unicode" ></textarea>--%>
-									<%--<div class="comment-box-control">--%>
-										<%--&lt;%&ndash;<ul>&ndash;%&gt;--%>
-											<%--&lt;%&ndash;<li><a title="" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>&ndash;%&gt;--%>
-											<%--&lt;%&ndash;<li><a title="" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>&ndash;%&gt;--%>
-											<%--&lt;%&ndash;<li><a title="" data-placement="bottom" data-original-title="Smile" ><i class="fa fa-smile-o" ></i></a></li>&ndash;%&gt;--%>
-										<%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
-										<%--<button type="submit" class="btn pull-right"><i class="fa fa-share"></i>发表评论</button>--%>
-									<%--</div>--%>
-								<%--</form>--%>
-							</div><!-- Status Upload  -->
-						</div><!-- Widget Area -->
+						<%--<div class="widget-area">--%>
+							<%--<div class="status-upload">--%>
+                               <%--&lt;%&ndash;<p class="lead emoji-picker-container">&ndash;%&gt;--%>
+                               <%--&lt;%&ndash;<textarea type="email" id="content" class="content comment-input form-control" placeholder="Input field" data-emojiable="true" onkeyup="keyUP(this)"></textarea>&ndash;%&gt;--%>
 
+                               <%--&lt;%&ndash;&lt;%&ndash;<a href="" class="btn btn-default ">发表评论</a>&ndash;%&gt;&ndash;%&gt;--%>
+                               <%--&lt;%&ndash;<a href="javascript:;" class="plBtn">评论</a>&ndash;%&gt;--%>
+							<%--</div><!-- Status Upload  -->--%>
+						<%--</div><!-- Widget Area -->--%>
+                        <div class="commentAll">
+                           <!--评论区域 begin-->
+                           <div class="plun reviewArea clearfix">
+                                <textarea type="email" class="content comment-input form-control " placeholder="Input field" data-emojiable="true" onkeyup="keyUP(this)"></textarea>
+                              <a href="javascript:;" class="plBtn">评论</a>
+                           </div>
+                           <div class="comment-show">
+                              <%--<div class="comment-show-con clearfix">--%>
+                                 <%--<div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div>--%>
+                                 <%--<div class="comment-show-con-list pull-left clearfix">--%>
+                                    <%--<div class="pl-text clearfix">--%>
+                                       <%--<a href="#" class="comment-size-name">张三 : </a>--%>
+                                       <%--<span class="my-pl-con">&nbsp;来啊 造作啊!</span>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="date-dz">--%>
+                                       <%--<span class="date-dz-left pull-left comment-time">2017-5-2 11:11:39</span>--%>
+                                       <%--<div class="date-dz-right pull-right comment-pl-block">--%>
+                                          <%--<a href="javascript:;" class="removeBlock">删除</a>--%>
+                                          <%--<a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>--%>
+                                          <%--<span class="pull-left date-dz-line">|</span>--%>
+                                          <%--<a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a>--%>
+                                       <%--</div>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="hf-list-con"></div>--%>
+                                 <%--</div>--%>
+                              <%--</div>--%>
+                           </div>
+                        </div>
                        <h2 class="title" style="color:#2aabd2">商品评论</h2>
-                       <%--<div class="col-sm-2" id="button">--%>
-                          <%--<input name="" type="button"  value="+"  id="btn" onclick="btn()"  >--%>
-                       <%--</div>--%>
-                    <div class="talk" >
+                       <div class="talk" >
                        <div class="row comment-posts">
-							<div class="col-sm-11">
+                          <div class="col-sm-1">
+                             <div class="thumbnail">
+                                <img class="img-responsive user-photo" src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt="Comment User Avatar">
+                             </div>
+                          </div>
+
+                          <div class="col-sm-11">
                                <div  class="showMoreNChildren" pagesize="2">
                                <C:forEach items="${goodsComment}" var="comment">
 								<div class="panel panel-default">
@@ -286,15 +326,15 @@
                                       <%--<c:out value="${comment.content}"></c:out>--%>
 									</div>
                                     <div class="panel-footer">
-                                       <a href="<%= basePath %>goods/findGoodsCommentDetail.action?goodsCommentId=${comment.goodsCommentId}" class="badge">
-                                          <C:forEach items="${count}" var="c">
-                                             <C:if test="${c.key eq comment.goodsCommentId}">
-                                                <C:out value="${c.value}"></C:out>
-                                             </C:if>
-                                          </C:forEach>
-                                          回复
-                                       </a>
-                                    </div>
+                                    <a href="<%= basePath %>goods/findGoodsCommentDetail.action?goodsCommentId=${comment.goodsCommentId}" class="badge">
+                                      <C:forEach items="${count}" var="c">
+                                         <C:if test="${c.key eq comment.goodsCommentId}">
+                                            <C:out value="${c.value}"></C:out>
+                                         </C:if>
+                                      </C:forEach>
+                                      回复
+                                   </a>
+                                </div>
 								</div>
                                </C:forEach>
                                </div>
@@ -302,10 +342,10 @@
                        </div>
                     </div>
                     </section>
-
                <div class="clearfix spacer"></div>
                   </div>
                </div>
+            </div>
             </div>
          </div>
          <!-- CHANNELS -->
@@ -358,7 +398,10 @@
                </div>
             </div>
       </div>
+      </div>
+      <p id="articlelist"></p>
       <script>
+          document.getElementById("single-video").scrollIntoView();
           document.getElementById("next").scrollIntoView();
           document.getElementById("previous").scrollIntoView();
       </script>
@@ -395,10 +438,6 @@
           ga('create', 'UA-49610253-3', 'auto');
           ga('send', 'pageview');
       </script>
-      </div>
-   </div>
-      </div>
-
       <script type="text/javascript">
           function ajaxList(pageIndex,goodsCategoryId,goodsId) {
               $.ajax({
@@ -413,5 +452,153 @@
               });
           }
       </script>
+
+      <script type="text/javascript" src="<%= basePath %>zhu/comment/js/jquery.flexText.js"></script>
+      <!--textarea高度自适应-->
+      <script type="text/javascript">
+          $(function () {
+              $('.content').flexText();
+          });
+      </script>
+      <!--textarea限制字数-->
+      <script type="text/javascript">
+          function keyUP(t){
+              var len = $(t).val().length;
+              if(len > 139){
+                  $(t).val($(t).val().substring(0,140));
+              }
+          }
+      </script>
+      <!--点击评论创建评论条-->
+      <script type="text/javascript">
+            <%--var name = ${u.nickname};--%>
+          $('.commentAll').on('click','.plBtn',function(){
+              var myDate = new Date();
+              //获取当前年
+              var year=myDate.getFullYear();
+              //获取当前月
+              var month=myDate.getMonth()+1;
+              //获取当前日
+              var date=myDate.getDate();
+              var h=myDate.getHours();       //获取当前小时数(0-23)
+              var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+              if(m<10) m = '0' + m;
+              var s=myDate.getSeconds();
+              if(s<10) s = '0' + s;
+              var now=year+'-'+month+"-"+date+" "+h+':'+m+":"+s;
+              //获取输入内容
+              var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
+              var name = document.getElementById('aaa').value;
+              console.log(oSize);
+              //动态创建评论模块
+              oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">'+ name +' : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">操作</a></div><div class="hf-list-con"></div></div> </div>';
+              if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
+                  $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
+                  $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value','').siblings('pre').find('span').text('');
+              }
+              var goodsId = document.getElementById('bbb').value;
+              $.ajax({
+                  type:"get",
+                  url:"${pageContext.request.contextPath}/goods/addGoodsComment.action",
+                  data:"goodsId="+goodsId+"&oSize="+oSize+"&now="+now,
+                  success:function(data){
+                      //alert("123");
+                    //$("#articlelist").html(data);
+                  },
+                  error : function(){
+                      alert("nani");
+                  }
+              })
+
+          });
+      </script>
+      <!--评论回复块创建-->
+      <script type="text/javascript">
+          $('.comment-show').on('click','.hf-pl',function(){
+              var oThis = $(this);
+              var myDate = new Date();
+              //获取当前年
+              var year=myDate.getFullYear();
+              //获取当前月
+              var month=myDate.getMonth()+1;
+              //获取当前日
+              var date=myDate.getDate();
+              var h=myDate.getHours();       //获取当前小时数(0-23)
+              var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+              if(m<10) m = '0' + m;
+              var s=myDate.getSeconds();
+              if(s<10) s = '0' + s;
+              var now=year+'-'+month+"-"+date+" "+h+':'+m+":"+s;
+              //获取输入内容
+              var oHfVal = $(this).siblings('.flex-text-wrap').find('.hf-input').val();
+              console.log(oHfVal)
+              var oHfName = $(this).parents('.hf-con').parents('.date-dz').siblings('.pl-text').find('.comment-size-name').html();
+              var oAllVal = '回复@'+oHfName;
+              if(oHfVal.replace(/^ +| +$/g,'') == '' || oHfVal == oAllVal){
+
+              }else {
+                  $.getJSON("<%= basePath %>zhu/comment/json/pl.json",function(data){
+                      var oAt = '';
+                      var oHf = '';
+                      $.each(data,function(n,v){
+                          delete v.hfContent;
+                          delete v.atName;
+                          var arr;
+                          var ohfNameArr;
+                          if(oHfVal.indexOf("@") == -1){
+                              data['atName'] = '';
+                              data['hfContent'] = oHfVal;
+                          }else {
+                              arr = oHfVal.split(':');
+                              ohfNameArr = arr[0].split('@');
+                              data['hfContent'] = arr[1];
+                              data['atName'] = ohfNameArr[1];
+                          }
+
+                          if(data.atName == ''){
+                              oAt = data.hfContent;
+                          }else {
+                              oAt = '回复<a href="#" class="atName">@'+data.atName+'</a> : '+data.hfContent;
+                          }
+                          oHf = data.hfName;
+                      });
+
+                      var oHtml = '<div class="all-pl-con"><div class="pl-text hfpl-text clearfix"><a href="#" class="comment-size-name">我的名字 : </a><span class="my-pl-con">'+oAt+'</span></div><div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"> <a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div></div>';
+                      oThis.parents('.hf-con').parents('.comment-show-con-list').find('.hf-list-con').css('display','block').prepend(oHtml) && oThis.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf').addClass('hf-con-block') && oThis.parents('.hf-con').remove();
+                  });
+              }
+          });
+      </script>
+      <!--删除评论块-->
+      <script type="text/javascript">
+          $('.commentAll').on('click','.removeBlock',function(){
+              var oT = $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con');
+              if(oT.siblings('.all-pl-con').length >= 1){
+                  oT.remove();
+              }else {
+                  $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con').parents('.hf-list-con').css('display','none')
+                  oT.remove();
+              }
+              $(this).parents('.date-dz-right').parents('.date-dz').parents('.comment-show-con-list').parents('.comment-show-con').remove();
+              var goodsId = document.getElementById('bbb').value;
+
+              $.ajax({
+                  type:"get",
+                  url:"${pageContext.request.contextPath}/goods/deleteGoodsComment.action",
+                  data:"goodsId="+goodsId+"&oSize="+oSize+"&now="+now,
+                  success:function(data){
+                      //alert("123");
+                      //$("#articlelist").html(data);
+                  },
+                  error : function(){
+                      alert("nani");
+                  }
+              })
+
+          })
+      </script>
+
+
+
 </body>
 </html>

@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<%
-  String path = request.getContextPath();
-  String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 <html>
   <head>
     <meta charset="utf-8">
@@ -13,11 +9,11 @@
     <link rel="shortcut icon" href="favicon.png">
     <title>emoji-picker Demo</title>
 
-    <link rel="stylesheet" href="<%= basePath %>zhu/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<%= basePath %>zhu/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Begin emoji-picker Stylesheets -->
-    <link href="<%= basePath %>zhu/lib/css/emoji.css" rel="stylesheet">
+    <link href="../lib/css/emoji.css" rel="stylesheet">
     <!-- End emoji-picker Stylesheets -->
   </head>
 
@@ -30,32 +26,77 @@
     </p>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-10">
           <div class="text-left">
             <p class="lead emoji-picker-container">
               <input type="email" class="form-control" placeholder="Input field" data-emojiable="true">
             </p>
-            <%--<p class="lead emoji-picker-container">--%>
-              <%--<input type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true" maxlength="10">--%>
-            <%--</p>--%>
-            <%--<p class="lead emoji-picker-container">--%>
-              <%--<textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>--%>
-            <%--</p>--%>
-            <%--<p class="lead emoji-picker-container">--%>
-              <%--<textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji Unicode input" data-emojiable="true" data-emoji-input="unicode"></textarea>--%>
-            <%--</p>--%>
+            <p class="lead emoji-picker-container">
+              <input type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true" maxlength="10">
+            </p>
+            <p class="lead emoji-picker-container">
+              <textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
+            </p>
+            <p class="lead emoji-picker-container">
+              <textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji Unicode input" data-emojiable="true" data-emoji-input="unicode"></textarea>
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-    <script type="text/javascript" src="<%= basePath %>zhu/js/jquery-1.12.1.min.js"></script>
+
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>
+          aaa
+        </strong>
+        <span class="pull-right"><fmt:formatDate value="now" pattern="yyyy-MM-dd "/></span>
+      </div>
+      <div class="panel-body">
+        oSize
+      </div>
+      <div class="panel-footer">
+        <a href="<%= basePath %>goods/findGoodsCommentDetail.action?goodsCommentId=${comment.goodsCommentId}" class="badge">
+          0回复
+        </a>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <!-- Begin emoji-picker JavaScript -->
-    <script src="<%= basePath %>zhu/lib/js/config.js"></script>
-    <script src="<%= basePath %>zhu/lib/js/util.js"></script>
-    <script src="<%= basePath %>zhu/lib/js/jquery.emojiarea.js"></script>
-    <script src="<%= basePath %>zhu/lib/js/emoji-picker.js"></script>
+    <script src="../lib/js/config.js"></script>
+    <script src="../lib/js/util.js"></script>
+    <script src="../lib/js/jquery.emojiarea.js"></script>
+    <script src="../lib/js/emoji-picker.js"></script>
     <!-- End emoji-picker JavaScript -->
 
     <script>

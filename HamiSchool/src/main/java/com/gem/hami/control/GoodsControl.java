@@ -13,10 +13,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @RequestMapping("/goods")
 @Controller
@@ -31,7 +30,8 @@ public class GoodsControl {
 //    根据商品的ID查询商品详情
     @RequestMapping(value = "/findGoodsById.action",method = RequestMethod.GET)
     public void findGoodsById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        User u = (User) request.getSession().getAttribute("userInfo");
+        System.out.println(u.getNickname());
         Map<String,Object> cmap = new HashMap<>();
         int pageSize = 4  ;
         int curPage = 1;
@@ -96,6 +96,7 @@ public class GoodsControl {
         request.setAttribute("goodsComment",goodsComments);
         request.setAttribute("username",usernames);
         request.setAttribute("count",counts);
+        request.setAttribute("u",u);
         request.getRequestDispatcher("/zhu/jsp/single-goods.jsp").forward(request,response);
     }
 
@@ -207,8 +208,39 @@ public class GoodsControl {
         request.setAttribute("count",count);
         request.setAttribute("goodsCommentReply",goodsCommentReplies);
         request.setAttribute("username",usernames);
-        request.getRequestDispatcher("/zhu/jsp/comment-detail.jsp").forward(request,response);
+        request.getRequestDispatcher("/zhu/jsp/comment.jsp").forward(request,response);
 
     }
 
+    //提交单个用户商品评论
+    @RequestMapping("/addGoodsComment.action")
+    public void addGoodsComment(HttpServletRequest request,HttpServletResponse response) throws ParseException, ServletException, IOException {
+        User user = (User) request.getSession().getAttribute("userInfo");
+        int userId = user.getUserId();
+        System.out.println(userId);
+        String content = request.getParameter("oSize");
+        System.out.println(content);
+        int goodsId = Integer.parseInt(request.getParameter("goodsId"));
+//        String time = request.getParameter("now");
+//        Date releaseTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(time);
+//        System.out.println(time);
+        GoodsComment goodsComment = new GoodsComment();
+        goodsComment.setUserId(userId);
+        goodsComment.setContent(content);
+        goodsComment.setGoodsId(goodsId);
+        goodsComment.setReleaseTime(new Date());
+        System.out.println(goodsComment.getContent());
+        boolean flag = goodsService.addGoodsComment(goodsComment);
+        System.out.println(flag);
+        if(flag==true){
+            System.out.println("nice");
+        }
+        int goodsCommentId = goodsComment.getGoodsCommentId();
+
+        request.setAttribute("goodsCommentId",goodsCommentId);
+        request.setAttribute("goodsId",goodsId);
+        request.getRequestDispatcher("/goods/findGoodsById.action").forward(request,response);
+
+
+    }
 }
