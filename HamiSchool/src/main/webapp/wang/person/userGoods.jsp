@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: WWX
@@ -38,9 +37,22 @@
         }
     </script>
 
+    <style>
+        #nullGoods{
+            font-size: 20px;
+            color: #B0B0B0;
+        }
+    </style>
+
 
 </head>
 <body>
+<div class="breadcrumbs">
+    <div class="container">
+        <a href=""
+           onclick="">首页</a><span
+            class="sep">&gt;</span><span>我的商品</span></div>
+</div>
 <div class="page-main user-main">
     <div class="container">
         <div class="row">
@@ -53,14 +65,10 @@
                             </div>
                             <div class="box-bd">
                                 <ul class="uc-nav-list">
-                                    <li><a href=""
-                                           onclick="">我的商品</a>
+                                    <li><a href="" onclick="">我的商品</a>
                                     </li>
-                                    <li><a href=""
-                                           onclick="">我的跑腿</a>
-                                    </li>
-                                    <li><a href=""
-                                           onclick="">我的任务</a>
+
+                                    <li><a href="" onclick="">我的发布任务</a>
                                     </li>
                                 </ul>
                             </div>
@@ -72,11 +80,10 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/wang/personalcenter/perInfo.jsp" onclick="">我的个人中心</a>
+                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action?userId=${userInfo.userId}" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
-
                                 <li><a href="" onclick="">喜欢的商品</a></li>
                             </ul>
                         </div>
@@ -88,14 +95,11 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="" target="_blank"
-                                       onclick="">个人信息</a>
+                                <li><a href="" target="_blank" onclick="">个人信息</a>
                                 </li>
-                                <li><a href=""
-                                       onclick="">修改密码</a>
+                                <li><a href="" onclick="">修改密码</a>
                                 </li>
-                                <li><a href="" target="blank"
-                                       onclick="">个人认证</a>
+                                <li><a href="" target="blank" onclick="">个人认证</a>
                                 </li>
                             </ul>
                         </div>
@@ -108,44 +112,54 @@
                     <div class="uc-content-box order-list-box">
                         <div class="box-hd">
                             <h1 class="title">我的商品</h1>
+
                             <div class="more clearfix">
                                 <ul class="filter-list J_orderType">
-                                    <li class="first active"><a href="" data-type="0">卖出商品</a></li>
-                                    <li><a id="J_unpaidTab" href="" data-type="7">买入商品</a></li>
+                                    <%--<li class="first active"><a href="" data-type="0">我的商品</a></li>--%>
+                                    <%--<li><a id="J_unpaidTab" href="" data-type="7">买入商品</a></li>--%>
                                     <!--<li><a id="J_sendTab" href="https://static.mi.com/order/#type=8" data-type="8">我的任务</a></li>-->
                                 </ul>
+
                                 <form id="J_orderSearchForm" class="search-form clearfix" action="" method="get">
-                                    <label for="search" class="hide">站内搜索</label>
-                                    <input class="search-text" type="search" id="J_orderSearchKeywords" name="keywords" autocomplete="off" placeholder="输入商品名称、商品编号、订单号">
+                                    <label for="search" class="hide">搜索</label>
+                                    <input class="search-text" type="search" id="J_orderSearchKeywords" name="keywords" autocomplete="off" placeholder="输入商品名称">
                                     <input type="submit" class="search-btn iconfont" value="">
                                 </form>
                             </div>
+
                         </div>
                         <div class="box-bd">
+                            <form id="mainForm" method="get">
+                            <%--<input type="hidden" name="curPage" id="curPage" />--%>
                             <div id="J_orderList">
+
                                 <ul class="order-list">
+                                    <%--<input type="hidden" name="curPage" id="curPage" />--%>
                                     <c:forEach var="goods" items="${pageInfo.list}">
                                         <li class="uc-order-item uc-order-item-finish">
+
                                             <div class="order-detail">
                                                 <div class="order-summary">
-                                                    <div class="order-status">${goods.status}</div>
+
                                                 </div>
                                                 <table class="order-detail-table">
                                                     <thead>
                                                     <tr>
                                                         <th class="col-main">
-                                                            <p class="caption-info"><fmt:formatDate value="${goods.createTime}" pattern="yyyy-MM-dd hh:mm"/>
+                                                            <p class="caption-info"><fmt:formatDate value="${goods.releaseTime}" pattern="yyyy-MM-dd hh:mm"/>
                                                                 <span class="sep">|</span>${goods.name}
-                                                                <c:if test="${goods.status==0}">
-                                                                    <span class="sep">|</span>请选择：
-                                                                    <span class="sep">交易完成</span> || <span class="sep">下架商品</span>
-                                                                </c:if>
-                                                                <%--<span class="sep">|</span>商品状态：已过期（交易完成）--%>
+                                                                    <%-- <c:if test="${goods.status==2}">
+                                                                         <span class="sep">|</span>请选择：
+                                                                         <span class="sep">交易完成</span> || <span class="sep">下架商品</span>
+                                                                     </c:if>
+                                                                     <span class="sep">|</span>商品状态：已过期（交易完成）--%>
                                                             </p>
                                                         </th>
-                                                        <th class="col-sub">
-                                                            <p class="caption-price">交易金额：<span class="num">${goods.price}</span>元</p>
-                                                        </th>
+                                                        <c:if test="${goods.status==2 || goods.status == 3}">
+                                                            <th class="col-sub">
+                                                                <p class="caption-price">交易完成 || 下架商品<span class=""></span></p>
+                                                            </th>
+                                                        </c:if>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -161,7 +175,7 @@
                                                                     <p class="name">
                                                                         <a href="https://item.mi.com/1181000047.html" target="_blank">${goods.remark}</a>
                                                                     </p>
-                                                                    <p class="price">${goods.price}</p>
+                                                                    <p class="price">价格：${goods.price}</p>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -169,14 +183,13 @@
                                                             <a class="btn btn-small btn-line-gray" href="">订单详情</a>
                                                             <a class="btn btn-small btn-line-gray" href="">删除</a>
                                                         </td>
-
                                                     </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </li>
                                     </c:forEach>
-                                   <%-- <li class="uc-order-item uc-order-item-finish">
+                                    <%--<li class="uc-order-item uc-order-item-finish">
                                         <div class="order-detail">
                                             <div class="order-summary">
                                                 <div class="order-status">已收货</div>
@@ -294,12 +307,26 @@
                                     </li>--%>
                                 </ul>
                             </div>
+                            </form>
+
+
+
+
                             <div id="J_orderListPages">
-                                <div class="xm-pagenavi">
-                                    <span class="numbers first"><span class="iconfont"></span></span>
-                                    <span class="numbers current">1</span>
-                                    <span class="numbers last"><span class="iconfont"></span></span>
-                                </div>
+                                <c:if test="${pageInfo.total == 0}">
+
+                                    <span id="nullGoods">没有商品</span>
+
+                                </c:if>
+                                <c:if test="${pageInfo.total != 0}">
+                                    <div class="xm-pagenavi">
+                                            <%--<span class="numbers first"><span class="iconfont"></span></span>--%>
+                                        <a href="javascript:getPage(${pageInfo.prePage})" class="pre"><span class="iconfont"></span></a>
+                                        <span class="numbers current">${pageInfo.pageNum}</span>
+                                            <%--<span class="numbers last"><span class="iconfont"></span></span>--%>
+                                        <a href="javascript:getPage(${pageInfo.nextPage})" class='next'><span class="iconfont"></span></a>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </div>

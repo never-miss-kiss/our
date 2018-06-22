@@ -36,7 +36,5 @@ public class InitControl {
             request.getRequestDispatcher("/sun/userLogin/loginRegister.jsp?info=2").forward(request,response);
         }
         System.out.println(user);
-
-
     }
 }

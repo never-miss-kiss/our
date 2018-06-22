@@ -59,5 +59,15 @@
     <update id="updateHelpClickCount" parameterType="java.lang.Integer">
         UPDATE help_buy set click_count = click_count+1 where help_buy_id = #{param1}
     </update>
-
+    
+    <!--=================================================================================================-->
+    <!--/**
+     *@Author：wang
+     *@Date: Created in 2018-6-20 21:06:08
+     *@Modified By:
+     */-->
+    <!--public List<HelpBuy> getAllHelpBuy(HelpBuy helpBuy);-->
+    <select id="getAllHelpBuy" resultType="HelpBuy">
+        select * from help_buy where
+    </select>
 </mapper>

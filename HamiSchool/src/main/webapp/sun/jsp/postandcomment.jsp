@@ -409,7 +409,7 @@
     <div class="container_wrap wrap_990 clearfix">
 
         <div class="plateinfor " >
-            <a href="http://bbs.xiaomi.cn/thread/add/fid/501/type/forum" class="btn sendtheme">+发表新主题</a>
+            <a href="" class="btn sendtheme">发表新主的撒旦题</a>
         </div>
 
 

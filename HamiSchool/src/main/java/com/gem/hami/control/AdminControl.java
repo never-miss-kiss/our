@@ -89,6 +89,9 @@ public class AdminControl {
     }
     @RequestMapping(value = "/updateAdmin.action")
     public void updateAdmin(Admin admin,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+        admin.setAdminId(admin.getAdminId());
+
         adminService.modifyAdmin(admin);
 
         request.getRequestDispatcher("wang/admin/updateAdmin.jsp").forward(request,response                                                                                                                                                                     );
@@ -186,7 +189,7 @@ public class AdminControl {
         request.getRequestDispatcher("/wang/adminjsp/user/details.jsp").forward(request,response);
     }
 
-    @RequestMapping("selectAllUser.action")
+    @RequestMapping("/selectAllUser.action")
     public void selectAllUser(QueryPojo_User queryPojo, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        编码问题，解决乱码
         request.setCharacterEncoding("utf-8");
