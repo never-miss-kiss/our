@@ -29,14 +29,6 @@
     <script src="<%=path%>/sun/js1/jquery-1.8.0.min.js"></script>
     <script src="<%=path%>/sun/js1/list.js"></script>
 
-
-    <!--Gallery栏目框-->
-    <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
-    <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
-    <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
-    <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
-    <!--Gallery栏目框end-->
     <script>
 
         <%--alert(${sessionScope.userInfo});--%>
@@ -44,96 +36,6 @@
 </head>
 
 <body class="xmbbs_desktop" >
-<div class="header head-top" >
-    <div class="container-fluid">
-        <div class="col-sm-12">
-            <div class="col-xs-1" >
-            </div>
-            <div class="header-main">
-                <div class="col-xs-8">
-                    <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
-                        <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
-                    </div>
-                    <div class="top-navg">
-                        <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
-                        <ul class="res">
-                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
-                            <a href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
-                            <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
-                            <a class="active" href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
-                            <a href="#"><span class="res2">认证</span></a>
-                            <a href="#"><span class="res3">Callme</span></a>
-                        </ul>
-                        <!-- script-for-menu -->
-                        <script>
-                            $( "span.menu" ).click(function() {
-                                $( "ul.res" ).slideToggle( 300, function() {
-                                    // Animation complete.
-                                });
-                            });
-                        </script>
-                    </div>
-                </div>
-                <div class="col-xs-2 banner-right">
-                    <div id="person-pic" >
-
-                        <div id="head-portrait" class="col-xs-5" >
-                            <a href="#">
-                                <c:if test="${userInfo.photo == null}">
-                                    <img src="<%= basePath %>profilePicture/0.jpg"></img>
-                                </c:if>
-                                <c:if test="${userInfo != null}">
-                                    <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
-                                </c:if>
-                            </a>
-                        </div>
-
-                        <div class="col-xs-7">
-                            <div id="message">
-                                <a href="#">
-                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
-                                </a>
-                            </div>
-                            <div id="exit">
-                                <a href="#">
-                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <script>
-                    $("#exit img").mousedown(
-                        function(){
-                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出点击时.png");
-                        }
-                    );
-                    $("#exit img").mouseup(
-                        function(){
-                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出.png");
-                        }
-                    );
-
-                    $("#message img").mousedown(
-                        function(){
-                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知点击时.png");
-                        }
-                    );
-
-                    $("#message img").mouseup(
-                        function(){
-                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知3.png");
-                        }
-                    );
-                </script>
-
-            </div>
-        </div>
-        <div style="clear: both"></div>
-    </div>
-</div>
 <%--<script>switchMobile.init()</script>--%>
 <div class="main">
     <style>
@@ -664,23 +566,21 @@
         }
     </style>
 
-    <%--<div class="xmcomm_header_wrap">--%>
-        <%--<div class="xmcomm_header">--%>
+    <div class="xmcomm_header_wrap">
+        <div class="xmcomm_header">
 
-            <%--<ul class="header_menu">--%>
-                <%--<li><a href="http://www.xiaomi.cn/index.html">主页</a></li>--%>
-                <%--<li><a href="http://bbs.xiaomi.cn/">二手物品</a></li>--%>
-                <%--<li>--%>
-                    <%--<span>跑腿</span>--%>
-                <%--</li>--%>
-                <%--<li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>--%>
-                <%--<li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>--%>
-                <%--<li><a href="https://s1.mi.com/m/ghd/2018/mst051002/index.html" target="_blank">更换学校</a></li>--%>
-            <%--</ul>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-    用户：${sessionScope.userInfo.nickname}<br/>
-    ${listlength}
+            <ul class="header_menu">
+                <li><a href="http://www.xiaomi.cn/index.html">主页</a></li>
+                <li><a href="http://bbs.xiaomi.cn/">二手物品</a></li>
+                <li>
+                    <span>跑腿</span>
+                </li>
+                <li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>
+                <li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>
+                <li><a href="https://s1.mi.com/m/ghd/2018/mst051002/index.html" target="_blank">更换学校</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="head_wrap">
         <div class="header wrap_990">
             <div class="user_wrap">
@@ -695,7 +595,9 @@
                     <a href="http://hd.xiaomi.cn/mipop/2016dl/" target="_blank" rel="noopener noreferrer" class="download_pc"><img src="http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2016/0819/20160819070742289.jpg"></a>
                 </div> -->
     <div class="container_wrap wrap_990 clearfix">
+
         <div class="contain_left fr">
+
             <div class="left_wrap">
                 <div class="sidebarplate"
                      onclick="">
@@ -707,26 +609,22 @@
                     </div>
                     <div>
                         <ul class="on">
-                            <li><a href="" target="_blank"><span style="color:#ff0000;">河南科技大学</span></a></li>
-                            <li><a href="" target="_blank"><span style="color:#ff0000;">郑州航院</span></a>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2819" target="_blank"><span style="color:#ff0000;">河南科技大学</span></a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2836" target="_blank"><span style="color:#ff0000;">郑州航院</span></a>
                             </li>
-                            <li><a href="" target="_blank">南阳理工</a></li>
-                            <li><a href="" target="_blank">山东师范大学</a></li>
-                            <li><a href="" target="_blank">郑州大学</a></li>
-                            <li><a href="" target="_blank">洛阳理工学院</a></li>
-                            <li><a href="" target="_blank">河南师范大学</a></li>
-                            <li><a href="" target="_blank">聊城大学</a></li>
-                            <li><a href="" target="_blank">山东大学</a></li>
-                            <li><a href="" target="_blank">齐鲁工业大学</a></li>
-                            <li><a href="" target="_blank">新乡医学院</a></li>
-                            <li><a href="" target="_blank">洛阳理工大学</a></li>
-                            <li><a href="" target="_blank"></a></li>
-                            <li><a href="" target="_blank"></a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2090" target="_blank">苏州大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2686" target="_blank">山东师范大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2815" target="_blank">郑州大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2840" target="_blank">洛阳理工学院</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2827" target="_blank">河南师范大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2688" target="_blank">聊城大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2669" target="_blank">山东大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2677" target="_blank">齐鲁工业大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2825" target="_blank">新乡医学院</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2037" target="_blank">华东师范大学</a></li>
+
 
                         </ul>
-
-
-
                     </div>
                 </div>
             </div>
@@ -737,40 +635,27 @@
                     <div class="hotspot">
                         <h3>大家都在搜</h3>
                     </div>
+                    <c:forEach items="${listtrans}" var="trans">
                     <div class="shareActive">
-                        <a href="http://wan.xiaomi.cn/activity/detail/activity_id/177" target="_blank"
-                           class="shareActive_img"><img src="../images/20180528010156209.jpg"></a> <span
-                            class="shareActive_txt"> 飞利浦智睿床头灯</span>
+                        <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${trans.goodsId}" target="_blank" class="shareActive_img">
+                            <img src="${pageContext.request.contextPath}/imagesgoods/${trans.picture}">
+                        </a>
+                        <span class="shareActive_txt"> ${trans.name}</span>
                     </div>
-
-
-                    <div class="shareActive">
-                        <a href="http://bbs.xiaomi.cn/t-15121215" class="shareActive_img"><img
-                                src="../images/20180424044403369.jpg"></a> <span class="shareActive_txt">小米校园女神团招募啦!</span>
-                    </div>
-
+                    </c:forEach>
                 </div>
             </div>
 
-
+            <c:forEach items="${listnottrans}" var="nottrans">
             <div class="left_wrap">
                 <div class="con">
                     <div class="hotspot">
-                        <h3>这个地方放点啥</h3>
-                        <img src="../images/20171128094227219.png" class="two_dimension_code">
+                        <h3>${nottrans.name}</h3>
+                        <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${nottrans.goodsId}"><img src="${pageContext.request.contextPath}/imagesgoods/${nottrans.picture}" class="two_dimension_code"></a>
                     </div>
                 </div>
             </div>
-
-            <div class="left_wrap">
-                <div class="con">
-                    <div class="hotspot">
-                        <h3>这个地方放点啥</h3>
-                        <img src="../images/20180320105715268.jpg" class="two_dimension_code">
-                    </div>
-                </div>
-            </div>
-
+            </c:forEach>
 
         </div>
         <div class="contain_right fl clearfix ">
@@ -800,8 +685,6 @@
                         <ul>
 
                         <c:forEach items="${pageInfo.list}" var="list"  >
-                            ${list.user.nickname}
-                            ${list.user.photo}
                             <li class="theme_list clearfix" u-id="137006033">
                                 <div class="theme_list_img">
                                     <a href="" class="headportrait" target="_blank"
@@ -836,33 +719,40 @@
 
                                                     <span class="numb view" id="${list.forumPostId+1000}" onclick="">
                                                          <span id="${list.forumPostId+10000}" name="praise_my" onclick="dianzantest(${list.forumPostId+10000},${list.forumPostId})">
-                                                        <%--<img src="<%=path%>/sun/images/zan.png" height="15px" width="15px" id="praise-img" />--%>
-                                                             <img src="<%=path%>/sun/images/zan.png" height="15px" width="15px" id="praise-img" />
-                                                            <c:forEach items="${likelist}" var="s" varStatus="status">
-                                                            <%--<c:out value="第${status.count}次循环" ></c:out>--%>
-                                                                    <c:if test="${list.forumPostId==s}">
-                                                                         <img src="<%=path%>/sun/images/yizan.png" height="15px" width="15px" id="praise-img" />
-                                                                    </c:if>
 
-                                                         </c:forEach>
+                                                          <c:forEach items="${likelist}" var="s"  varStatus="status">
+                                                              <%--<c:out value="第${status.count}次循环" ></c:out>--%>
+                                                              <%--<script>--%>
+                                                                          <%--alert(${status.current}+"xianzai"+${s}+"===当前第几个"+${status.index});--%>
+                                                                      <%--</script>--%>
+                                                                      <c:if test="${list.forumPostId==s}" >
+                                                                          <img src="<%=path%>/sun/images/yizan.png" height="15px" width="15px" id="praise-img" />
+                                                                      </c:if>
 
+
+                                                          </c:forEach>
+                                                             <%--此script是点赞同步的关键，非百分百自信勿动，不要给上面 $("#"+${list.forumPostId+10000}下加标签--%>
+                                                       <script>
+                                                              var imgspan = $("#"+${list.forumPostId+10000});
+//                                                              alert("12345");
+//                                                              alert(imgspan.get(0).tagName);
+//                                                                alert(imgspan.children().length);
+                                                              if (imgspan.children().length==1){
+                                                                  imgspan.append("<img src=\"<%=path%>/sun/images/zan.png\" height=\"15px\" width=\"15px\" id=\"praise-img\" />")
+                                                              }
+                                                       </script>
 
                                                          </span>
                                                         <span id="praise-txt" class="txt_my"  name="txt_my" >${list.clickCount}</span>
-                                                        <span id="add-num" class="addnum_my" name="addnum_my"><em>+1</em></span>
+
                                                     </span>
-
-
-
-                                                <%--<span class="numb msg"><i></i>点赞数：</span>--%>
-                                                <span class="numb view"><i></i>点击量：93276</span>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </li>
                         </c:forEach>
-
+                            <%--收藏js代码——收藏功能还可以优化--%>
                             <script>
 
                                 function shoucang(forumId,collection,userId){
@@ -885,7 +775,6 @@
                             <script>
                                 /* @author:Romey
                                  * 动态点赞
-                                 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
                                 */
                                 function dianzantest(abs,forupostid) {
                                     var imgspan = $("#"+abs);
@@ -912,74 +801,14 @@
                                             url:"${pageContext.request.contextPath}/forum/adddianzan.action",
                                             data:{"forumPostId":forupostid},
                                             success:function (count1) {
-                                                alert(count1);
+//                                                alert(count1);
                                                 countspan.html(count1);
                                             }
                                         })
                                     }
                                 }
-                                function dianzan(id){
-//                                    alert($("#praise"));
-                                        var praise_img = $("span[name='parise_img']");
-//                                        alert(praise_img);
-                                        var text_box = $("span[name='addnum_my']");
-                                        var praise_txt = $("span[name='txt_my']");
-                                        var num=parseInt(praise_txt.text());
-//                                        alert(num);
-                                        if(praise_img.attr("src") == ("<%=path%>/sun/images/yizan.png")){
-                                            $(this).html("<img src='<%=path%>/sun/images/zan.png' id='praise-img' height='15px' width='15px'/>");
-                                            praise_txt.removeClass("hover");
-                                            text_box.show().html("<em class='add-animation'>-1</em>");
-                                            $(".add-animation").removeClass("hover");
-                                            num -=1;
-                                            praise_txt.text(num)
-                                        }else{
-                                            $(this).html("<img src='<%=path%>/sun/images/yizan.png' id='praise-img' height='15px' width='15px' />");
-                                            praise_txt.addClass("hover");
-                                            text_box.show().html("<em class='add-animation'>+1</em>");
-                                            $(".add-animation").addClass("hover");
-                                            num +=1;
-                                            praise_txt.text(num)
-                                        }
 
-                                }
                             </script>
-                        <%--<li class="theme_list clearfix" u-id="137006033">--%>
-                            <%--<div class="theme_list_img">--%>
-                                <%--<a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"--%>
-                                   <%--rel="noopener noreferrer">--%>
-                                    <%--<img class="user_head" src="../images/avatar.jpg"--%>
-                                         <%--data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/137006033/avatar.jpg?&amp;width=50&amp;height=50"--%>
-                                         <%--style="display: block;">--%>
-                                <%--</a>--%>
-                            <%--</div>--%>
-                            <%--<div class="theme_list_con">--%>
-
-                                <%--<div class="title">--%>
-                                    <%--<a href="http://bbs.xiaomi.cn/t-29629024"  class="title_name " target="_blank"--%>
-                                       <%--rel="noopener noreferrer"--%>
-                                       <%--onclick="">--%>
-                                        <%--王文祥自己臭(｡･∀･)ﾉﾞ嗨好玩吗？ </a>--%>
-
-                                <%--<div class="auth_msg clearfix">--%>
-                                    <%--<a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_name" target="_blank"--%>
-                                       <%--rel="noopener noreferrer">永_恆</a>--%>
-                                    <%--<i class=""></i>--%>
-
-                                    <%--<span class="time txt">1分钟前</span>--%>
-
-                                    <%--<span class="comefrom txt"></span>--%>
-                                    <%--<span class="stick txt">置顶</span>--%>
-                                    <%--<p class="see">--%>
-                                        <%--<span class="numb msg"><i></i>收藏</span>--%>
-                                        <%--<span class="numb view"><i></i>点赞</span>--%>
-                                        <%--<span class="numb msg"><i></i>点赞数：93276</span>--%>
-                                        <%--<span class="numb view"><i></i>点击量：93276</span>--%>
-                                    <%--</p>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                         <%--</li>--%>
-
                  </ul>
 
                         <div class="base_widget_paging" >
@@ -1013,54 +842,6 @@
                             document.getElementById("mainForm").submit();
                         }
                     </script>
-
-
-
-
-
-
-                                    <%--<div class="base_widget_paging">--%>
-                                        <%--<div class="paging_widget_2">--%>
-                                            <%--<ul>--%>
-                                                <%--<li class="page selected "><a--%>
-                                                        <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">1</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-2"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">2</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-3"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">3</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-4"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">4</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-5"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">5</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-6"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">6</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-7"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">7</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-8"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">8</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-9"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">9</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-10"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">10</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="next"><a href="http://bbs.xiaomi.cn/d-2"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">&gt;</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="last"><a href="http://bbs.xiaomi.cn/d-1034"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">末页&gt;&gt;</a>--%>
-                                                    <%--<!--</li-->                </li>--%>
-                                            <%--</ul>--%>
-                                        <%--</div>--%>
-                                    <%--</div>--%>
                 </div>
             </div>
             <script type="text/javascript" src="../personLayer.js.下载"></script>
@@ -1137,7 +918,6 @@
     var _hmt = _hmt || [];
 </script>
 <script src="../autologin.js.下载"></script>
-
 <iframe src="../autologin.html" style="width: 0px; height: 0px;"></iframe>
 </body>
 </html>

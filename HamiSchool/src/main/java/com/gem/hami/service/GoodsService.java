@@ -1,5 +1,6 @@
 package com.gem.hami.service;
 
+import com.gem.hami.dao.GoodsCommentReplyMapper;
 import com.gem.hami.entity.*;
 import com.github.pagehelper.PageInfo;
 
@@ -50,7 +51,6 @@ public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
     public List<GoodsCommentReply> findGoodsCommentReply(int goodsCommentId);
 
 
-    public GoodsComment findGoodsCommentByContent(String content);
 //    /goods/addGoodsComment.action
 //            添加商品评论
     public boolean addGoodsComment(GoodsComment goodsComment);
@@ -86,9 +86,10 @@ public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
 //            删除商品评论
     public boolean removeGoodsComment(GoodsComment goodsComment);
 
+
 //  /goods/removeGoodsCommentReply.action
 //            删除商品评论回复
-    public boolean removeGoodsCommentReply(GoodsCommentReply goodsCommentReply);
+public boolean removeGoodsCommentReply(GoodsCommentReply goodsCommentReply);
 
 //     /home/findCollectionByCondition.action
 //    显示我的收藏（包含收藏的物品）：
@@ -101,4 +102,17 @@ public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
 // collectionId  表示要删除的数据在它的表中的主键
     public boolean removeGoodsCollection(int goodsCollectionId);
 
+
+
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:论坛主页显示商品
+      * @Date：Created in 15:37 2018/6/23
+      * @Modified By:
+     */
+    public List<Goods> getFourRandomGoodsByTransport();
+
+    public List<Goods> getTwoRandomGoodsnotTransport();
 }

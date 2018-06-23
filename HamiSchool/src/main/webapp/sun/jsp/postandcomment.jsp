@@ -23,7 +23,7 @@
     <script src="../js1/sign.js" charset="UTF-8"></script>
     <script src="../js1/codemirror.js" defer="defer"></script>
     <script src="../js1/zh-cn (2).js"></script>
-    <script src="<%=path%>/bootstrap/jQuery.js"></script>">
+    <script src="<%=path%>/bootstrap/jQuery.js"></script>
 
 
     <link rel="canonical" href="http://bbs.xiaomi.cn/t-29693730">
@@ -39,33 +39,7 @@
 
 
 <body class="xmbbs_desktop">
-<%--<script>--%>
-    <%--function  showLogin() {--%>
-        <%--var w = document.body.clientWidth;--%>
-        <%--var h = document.documentElement.clientHeight;--%>
-        <%--var maskDiv = document.createElement("div");--%>
-        <%--maskDiv.id="mask";--%>
-        <%--maskDiv.style.position="absolute";--%>
-        <%--maskDiv.style.width=w+"px";--%>
-        <%--maskDiv.style.height=h+"px";--%>
-        <%--maskDiv.style.top=0;--%>
-        <%--maskDiv.style.left=0;--%>
-        <%--maskDiv.style.backgroundColor="#F3F3F3";--%>
-        <%--maskDiv.style.opacity=0.3;--%>
-        <%--maskDiv.style.zIndex=5;--%>
-        <%--document.body.appendChild(maskDiv);--%>
-        <%--document.getElementById("div1").style.display="block";--%>
-    <%--}--%>
-<%--</script>--%>
-<%--<script>--%>
-    <%--function closeDiv(obj) {--%>
-        <%--var maskDiv = document.getElementById("mask");--%>
-        <%--var loginDiv = obj.parentNode;--%>
 
-        <%--loginDiv.style.display = "none";--%>
-        <%--document.body.removeChild(maskDiv);--%>
-    <%--}--%>
-<%--</script>--%>
 
 
 
@@ -464,35 +438,31 @@
             <%--列表百宝箱--%>
             <div class="left_wrap">
                 <div class="sidebarplate"
-                     onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;侧边栏&#39;, &#39;版块推荐&#39;]);">
+                     onclick="">
 
                     <div class="sidebarplate_tab">
                         <div class="tab">
-                            <span class="on">版块推荐</span>
-                            <span>百宝箱</span>
+                            <span class="on">学校推荐</span>
                         </div>
                     </div>
                     <div>
                         <ul class="on">
-                            <li><a href="http://bbs.xiaomi.cn/f-501" target="_blank"><span
-                                    style="color:#ff0000;">小米8</span></a></li>
-                            <li><a href="http://bbs.xiaomi.cn/f-475" target="_blank"><span style="color:#ff0000;">小米MIX 2S</span></a>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2819" target="_blank"><span style="color:#ff0000;">河南科技大学</span></a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2836" target="_blank"><span style="color:#ff0000;">郑州航院</span></a>
                             </li>
-                            <li><a href="" target="_blank">小米 6X</a></li>
-                            <li><a href="" target="_blank">小米5/5c/5s/Plus</a></li>
-                            <li><a href="" target="_blank">小米Max2</a></li>
-                            <li><a href="" target="_blank">小米笔记本</a></li>
-                            <li><a href="" target="_blank">红米Note 5</a></li>
-                            <li><a href="" target="_blank">小米电视</a></li>
-                            <li><a href="" target="_blank">小米盒子</a></li>
-                            <li><a href="" target="_blank">小米路由器</a></li>
-                            <li><a href="" target="_blank">红米5</a></li>
-                            <li><a href="" target="_blank">小米手环</a></li>
-                            <li><a href="" target="_blank">九号平衡车</a></li>
-                            <li><a href="" target="_blank">小米空气净化器</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2090" target="_blank">苏州大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2686" target="_blank">山东师范大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2815" target="_blank">郑州大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2840" target="_blank">洛阳理工学院</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2827" target="_blank">河南师范大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2688" target="_blank">聊城大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2669" target="_blank">山东大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2677" target="_blank">齐鲁工业大学</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2825" target="_blank">新乡医学院</a></li>
+                            <li><a href="${pageContext.request.contextPath}/forum/list.action?schoId=2037" target="_blank">华东师范大学</a></li>
+
 
                         </ul>
-
                     </div>
                 </div>
             </div>
