@@ -96,6 +96,16 @@ public interface ForumService {
 // collectionId  表示要删除的数据在它的表中的主键
     public boolean removeForumPostCollection(int forumPostCollectionId);
 
-    public List<ForumPostLike> findForumPostLikeByUserId(int userid);
+    public List findForumPostLikeByUserId(int userid);
+
+    public int findForumPostLikeCountByPostId(int formPostId);
+
+    public boolean modifyForumPostLikeCountByPostId(int formPostId);
+
+    public boolean addForumPostLikeCountByPostId(int formPostId);
+
+    public boolean addForumPostLike(ForumPostLike forumPostLike);
+
+    public boolean deleteForumPostLike(int userid, int forumpostid);
 
 }

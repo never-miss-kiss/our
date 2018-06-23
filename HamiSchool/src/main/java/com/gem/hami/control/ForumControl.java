@@ -8,12 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 @RequestMapping(value = "/forum")
@@ -41,6 +43,13 @@ public class ForumControl {
             cmap.put("curPage",curPage);
             cmap.put("pageSize",pageSize);
             PageInfo<ForumPost> pageInfo=forumService.findTopForumPostBySchoolId1(cmap);
+            List likelist = forumService.findForumPostLikeByUserId(user.getUserId());
+            int length = likelist.size();
+
+            System.out.println(likelist);
+            System.out.println("数组长度"+length);
+            request.setAttribute("listlength",length);
+            request.setAttribute("likelist",likelist);
             request.setAttribute("pageInfo",pageInfo);
             System.out.println(pageInfo);
         }else{
@@ -287,6 +296,49 @@ public class ForumControl {
 
         forumService.removeForumPostCollection(2);
 
+    }
+
+    @RequestMapping(value = "/cancledianzan.action")
+    public  void dianzan(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        String forumPostId = request.getParameter("forumPostId");
+        User user = (User) request.getSession().getAttribute("userInfo");
+        if (user != null) {
+        if (forumPostId != null) {
+            int userId = user.getUserId();
+            int forumpostId = Integer.parseInt(forumPostId);
+            forumService.deleteForumPostLike(userId,forumpostId);
+            forumService.modifyForumPostLikeCountByPostId(forumpostId);
+            int count = forumService.findForumPostLikeCountByPostId(forumpostId);
+            System.out.println(count);
+            PrintWriter out = response.getWriter();
+            out.println(count);
+        }
+        }
+    }
+
+    @RequestMapping(value = "/adddianzan.action")
+    public  void adddianzan(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        String forumPostId = request.getParameter("forumPostId");
+        User user= (User) request.getSession().getAttribute("userInfo");
+        System.out.println(forumPostId);
+        System.out.println(user.getUserId());
+        if (user != null) {
+            if (forumPostId != null) {
+                int forumpostId = Integer.parseInt(forumPostId);
+                System.out.println("帖子id"+forumpostId);
+                ForumPostLike forumPostLike = new ForumPostLike();
+                forumPostLike.setUserId(user.getUserId());
+                forumPostLike.setFroumPostId(forumpostId);
+                forumPostLike.setCreateTime(new Date());
+                forumService.addForumPostLike(forumPostLike);
+                forumService.addForumPostLikeCountByPostId(forumpostId);
+                int count1 = forumService.findForumPostLikeCountByPostId(forumpostId);
+                System.out.println(count1);
+                PrintWriter out = response.getWriter();
+                out.println(count1);
+            }
+
+        }
     }
 
 

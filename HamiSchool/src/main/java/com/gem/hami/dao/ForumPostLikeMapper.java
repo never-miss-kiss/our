@@ -6,6 +6,18 @@ import java.util.List;
 
 public interface ForumPostLikeMapper {
 
-        public List<ForumPostLike> selectForumPostLikeByUserId(int userid);
+        public List selectForumPostLikeByUserId(int userid);
+
+        public int selectForumPostLikeCountByPostId(int formPostId);
+
+        public boolean updateForumPostLikeCountByPostId(int formPostId);
+
+        public boolean addForumPostLikeCountByPostId(int formPostId);
+
+        public boolean addForumPostLike(ForumPostLike forumPostLike);
+
+        public boolean deleteForumPostLike(int userid, int forumpostid);
+
+        public ForumPostLike selectForumPostLike(int userid, int forumpostid);
 
 }

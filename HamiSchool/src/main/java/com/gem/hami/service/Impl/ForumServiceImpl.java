@@ -156,7 +156,35 @@ public class ForumServiceImpl implements ForumService {
     }
 
     @Override
-    public List<ForumPostLike> findForumPostLikeByUserId(int userid) {
+    public List findForumPostLikeByUserId(int userid) {
         return forumPostLikeMapper.selectForumPostLikeByUserId(userid);
+    }
+
+    @Override
+    public int findForumPostLikeCountByPostId(int formPostId) {
+        return forumPostLikeMapper.selectForumPostLikeCountByPostId(formPostId);
+    }
+
+    @Override
+    public boolean modifyForumPostLikeCountByPostId(int formPostId) {
+        return forumPostLikeMapper.updateForumPostLikeCountByPostId(formPostId);
+    }
+
+    @Override
+    public boolean addForumPostLikeCountByPostId(int formPostId) {
+        return forumPostLikeMapper.addForumPostLikeCountByPostId(formPostId);
+    }
+
+    @Override
+    public boolean addForumPostLike(ForumPostLike forumPostLike) {
+        if (forumPostLikeMapper.selectForumPostLike(forumPostLike.getUserId(),forumPostLike.getFroumPostId())==null){
+            forumPostLikeMapper.addForumPostLike(forumPostLike);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean deleteForumPostLike(int userid, int forumpostid) {
+        return forumPostLikeMapper.deleteForumPostLike(userid,forumpostid);
     }
 }
