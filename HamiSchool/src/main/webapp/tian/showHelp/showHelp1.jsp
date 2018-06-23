@@ -822,9 +822,9 @@
                             <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
                             <a href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
                             <a class="active" href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
-                            <a  href="<%=basePath%>forum/list.action"><span class="res1">哈密社区</span></a>
-                            <a href="#"><span class="res2">哈密认证</span></a>
-                            <a href="#"><span class="res3">联系我们</span></a>
+                            <a  href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
+                            <a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res3">Callus</span></a>
                         </ul>
                         <!-- script-for-menu -->
                         <script>
@@ -840,7 +840,7 @@
                     <div id="person-pic" >
 
                         <div id="head-portrait" class="col-xs-5" >
-                            <a href="#">
+                            <a href="<%= basePath %>home/personalCenter.action">
                                 <c:if test="${userInfo.photo == null}">
                                     <img src="<%= basePath %>profilePicture/0.jpg"></img>
                                 </c:if>

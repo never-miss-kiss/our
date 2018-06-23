@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
@@ -11,9 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JS页面背景颜色切换网页特效 - 【科e互联】</title>
+<title>JS页面背景颜色切换网页特效 - 【科e互联】</title>
 
-    <%--正式网页代码--%>
+<%--正式网页代码--%>
 
 
     <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -24,14 +24,15 @@
     <script src="<%= basePath %>tian/helpBuyDetail/help-buy.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4MuXt8BaTfnKIcCU0Q8UBuSyHuLAZcvN"></script>
 
-    <%--闪光装逼效果--%>
-    <link rel="stylesheet" type="text/css" href="<%=basePath %>tian/addHelpBuy/Flash/style.css">
+<%--闪光装逼效果--%>
+    <link rel="stylesheet" type="text/css" href="<%=basePath %>tian/testFlash/css/style.css">
 
-    <%--切换背景颜色--%>
-    <link rel="stylesheet" href="<%= basePath %>tian/addHelpBuy/ChangeColor/reset.css" type="text/css" />
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery-ui.custom.js"></script>
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery.bgColorSelector.min.js"></script>
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/init.js"></script>
+<%--切换背景颜色--%>
+<link rel="stylesheet" href="css/reset.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.custom.js"></script>
+<script type="text/javascript" src="js/jquery.bgColorSelector.min.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
 </head>
 <body>
 <!--效果html开始-->

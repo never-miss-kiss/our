@@ -103,14 +103,14 @@
 								<img src="<%=basePath%>tian/index/images/1.jpg" alt="img09"/>
 								<figcaption>
 									<h3>二<span>手</span></h3>
-									<p>Ming sits in the corner the whole day. She's into crochet.</p>
+									<p></p>
 									<a href="<%=basePath%>goods/findAllGoods.action">View more</a>
 								</figcaption>			
 							</figure>
 						</div>
 						<div class="bnr-btm-right">				
-							<h3>Expert Color Matching</h3>
-							<p>Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							<h3>绿色环保,身体力行</h3>
+							<p>来到二手校园，走近二手商品，你将看到别样的生活场景，你将体验别样的购物情景。你需我有，你购我送，相信我，会为你的生活带来便利，更会为你创造福利！</p>
 							<a href="<%=basePath%>goods/findAllGoods.action" class="buy btn-wayra">Read More</a>
 						</div>
 						<div class="clearfix"></div>
@@ -118,8 +118,8 @@
 					<!--top_section2-->
 					 <div class="top_section two">
 					 	<div class="bnr-btm-right two">				
-							<h3>Fiberglass Repairs</h3>
-							<p>Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							<h3>力所能及，当仁不让</h3>
+							<p>分为4个模块，它们分别是帮我买、帮我送、帮我取、代排队，既方便了学生生活，又让让大家在学校能做些力所能及的事儿。</p>
 						<a href="<%=basePath%>help/selectAllHelps.action" class="buy btn-wayra">Read More</a>
 						</div>
 				       <div class="bnr-btm-left two grid">
@@ -127,7 +127,7 @@
 								<img src="<%=basePath%>tian/index/images/2.jpg" alt="img09"/>
 								<figcaption>
 									<h3>跑<span>腿</span></h3>
-									<p>Ming sits in the corner the whole day. She's into crochet.</p>
+									<p></p>
 									<a href="<%=basePath%>help/selectAllHelps.action">View more</a>
 								</figcaption>			
 							</figure>
@@ -143,14 +143,15 @@
 								<img src="<%=basePath%>tian/index/images/3.jpg" alt="img09"/>
 								<figcaption>
 									<h3>社<span>区</span></h3>
-									<p>Ming sits in the corner the whole day. She's into crochet.</p>
+									<p></p>
 									<a href="<%=basePath%>forum/list.action">View more</a>
 								</figcaption>
 							</figure>
 						</div>
 						<div class="bnr-btm-right">
-							<h3>Expert Color Matching</h3>
-							<p>Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							<h3>趣味校园，交流论坛</h3>
+							<p>
+								这里是哈密校园社区——趣味校园交流论坛。这里有最新的校园动态，新闻，活动。只要你想你就可以把你各种奇思妙想在这里发表出来，分享给大家，让大家与你一起在文的海洋里遨游；只要你想你就可以在这里为自己的“二货”打call，让大家更全面的了解你发布的“二货”；只要你想你就可以与大家分享你所碰到的鲜味猎奇，你的趣味生活动态。哈密校园社区——随心所想，随遇而安</p>
 							<a href="<%=basePath%>forum/list.action" class="buy btn-wayra">Read More</a>
 						</div>
 
@@ -160,7 +161,7 @@
 				</div>
 		  </div>
 		  <!-- app-->
-			<div class="modal ab fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal ab fade" name="myModal1" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog about" role="document">
 					<div class="modal-content about">
 						<div class="modal-header">
