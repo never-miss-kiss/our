@@ -29,13 +29,111 @@
     <script src="<%=path%>/sun/js1/jquery-1.8.0.min.js"></script>
     <script src="<%=path%>/sun/js1/list.js"></script>
 
+
+    <!--Gallery栏目框-->
+    <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
+    <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+    <!--Gallery栏目框end-->
     <script>
-//        alert("123");
+
         <%--alert(${sessionScope.userInfo});--%>
     </script>
 </head>
 
 <body class="xmbbs_desktop" >
+<div class="header head-top" >
+    <div class="container-fluid">
+        <div class="col-sm-12">
+            <div class="col-xs-1" >
+            </div>
+            <div class="header-main">
+                <div class="col-xs-8">
+                    <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
+                        <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
+                    </div>
+                    <div class="top-navg">
+                        <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
+                        <ul class="res">
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
+                            <a href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
+                            <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
+                            <a class="active" href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
+                            <a href="#"><span class="res2">认证</span></a>
+                            <a href="#"><span class="res3">Callme</span></a>
+                        </ul>
+                        <!-- script-for-menu -->
+                        <script>
+                            $( "span.menu" ).click(function() {
+                                $( "ul.res" ).slideToggle( 300, function() {
+                                    // Animation complete.
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-xs-2 banner-right">
+                    <div id="person-pic" >
+
+                        <div id="head-portrait" class="col-xs-5" >
+                            <a href="#">
+                                <c:if test="${userInfo.photo == null}">
+                                    <img src="<%= basePath %>profilePicture/0.jpg"></img>
+                                </c:if>
+                                <c:if test="${userInfo != null}">
+                                    <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
+                                </c:if>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-7">
+                            <div id="message">
+                                <a href="#">
+                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+                                </a>
+                            </div>
+                            <div id="exit">
+                                <a href="#">
+                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script>
+                    $("#exit img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出点击时.png");
+                        }
+                    );
+                    $("#exit img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出.png");
+                        }
+                    );
+
+                    $("#message img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知点击时.png");
+                        }
+                    );
+
+                    $("#message img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知3.png");
+                        }
+                    );
+                </script>
+
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
 <%--<script>switchMobile.init()</script>--%>
 <div class="main">
     <style>
@@ -566,24 +664,23 @@
         }
     </style>
 
-    <div class="xmcomm_header_wrap">
-        <div class="xmcomm_header">
+    <%--<div class="xmcomm_header_wrap">--%>
+        <%--<div class="xmcomm_header">--%>
 
-            <ul class="header_menu">
-                <li><a href="">主页</a></li>
-                <li><a href="">二手物品</a></li>
-                <li>
-                    <span>跑腿</span>
-                </li>
-                <li><a href="" target="_blank">联系我们</a></li>
-                <li><a href="" target="_blank">关于我们</a></li>
-                <li><a href="" target="_blank">更换学校</a></li>
-                <li><a href="<%=basePath%>/home/personalCenter.action?userId=${userInfo.userId}" target="_blank">个人中心</a></li>
-                <li><a href="<%=basePath%>/sun/userLogin/loginRegister.jsp" target="_blank">退出</a></li>
-            </ul>
-        </div>
-    </div>
+            <%--<ul class="header_menu">--%>
+                <%--<li><a href="http://www.xiaomi.cn/index.html">主页</a></li>--%>
+                <%--<li><a href="http://bbs.xiaomi.cn/">二手物品</a></li>--%>
+                <%--<li>--%>
+                    <%--<span>跑腿</span>--%>
+                <%--</li>--%>
+                <%--<li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>--%>
+                <%--<li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>--%>
+                <%--<li><a href="https://s1.mi.com/m/ghd/2018/mst051002/index.html" target="_blank">更换学校</a></li>--%>
+            <%--</ul>--%>
+        <%--</div>--%>
+    <%--</div>--%>
     用户：${sessionScope.userInfo.nickname}<br/>
+    ${listlength}
     <div class="head_wrap">
         <div class="header wrap_990">
             <div class="user_wrap">
@@ -678,39 +775,7 @@
         </div>
         <div class="contain_right fl clearfix ">
 
-            <!--<div class="hostplate">-->
-                <!--<span class="name">热门版块:</span>-->
-                <!--<ul class="hostplate_con clearfix">-->
-                    <!--<li class="list_item">-->
-                        <!--<a href="http://bbs.xiaomi.cn/f-390" class="list_item_con"-->
-                           <!--onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;bbs首页&#39;, &#39;热门版块&#39;, &#39;&#39;]);">-->
-                            <!--<img src="../T1SJJgBgbT1R4cSCrK.png">-->
-                            <!--<span class="txt">MIUI功能与讨论</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="list_item">-->
-                        <!--<a href="http://bbs.xiaomi.cn/f-475" class="list_item_con"-->
-                           <!--onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;bbs首页&#39;, &#39;热门版块&#39;, &#39;&#39;]);">-->
-                            <!--<img src="../58101629cb677.png">-->
-                            <!--<span class="txt">小米MIX 2</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="list_item">-->
-                        <!--<a href="http://bbs.xiaomi.cn/f-487" class="list_item_con"-->
-                           <!--onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;bbs首页&#39;, &#39;热门版块&#39;, &#39;&#39;]);">-->
-                            <!--<img src="../5915502dea48f.jpg">-->
-                            <!--<span class="txt">小米6</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="list_item">-->
-                        <!--<a href="http://bbs.xiaomi.cn/f-501" class="list_item_con"-->
-                           <!--onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;bbs首页&#39;, &#39;热门版块&#39;, &#39;&#39;]);">-->
-                            <!--<img src="../5b03cca990b74.jpg">-->
-                            <!--<span class="txt">小米8</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
+
             <div class="theme">
                 <div class="theme_con">
                     <div class="theme_nav">
@@ -726,7 +791,6 @@
                            onclick="">发表新主题</a>
                     </div>
 
-
                         <style type="text/css">
                             .personLayer ol.clearfix li:nth-child(1) {
                                 display: none;
@@ -734,7 +798,8 @@
                         </style>
 
                         <ul>
-                        <c:forEach items="${pageInfo.list}" var="list">
+
+                        <c:forEach items="${pageInfo.list}" var="list"  >
                             ${list.user.nickname}
                             ${list.user.photo}
                             <li class="theme_list clearfix" u-id="137006033">
@@ -770,12 +835,23 @@
 
 
                                                     <span class="numb view" id="${list.forumPostId+1000}" onclick="">
-                                                         <span id="${list.forumPostId+10000}" name="praise_my" onclick="dianzantest(${list.forumPostId+10000})">
-                                                                 <img src="<%=path%>/sun/images/zan.png" height="15px" width="15px" id="praise-img" />
+                                                         <span id="${list.forumPostId+10000}" name="praise_my" onclick="dianzantest(${list.forumPostId+10000},${list.forumPostId})">
+                                                        <%--<img src="<%=path%>/sun/images/zan.png" height="15px" width="15px" id="praise-img" />--%>
+                                                             <img src="<%=path%>/sun/images/zan.png" height="15px" width="15px" id="praise-img" />
+                                                            <c:forEach items="${likelist}" var="s" varStatus="status">
+                                                            <%--<c:out value="第${status.count}次循环" ></c:out>--%>
+                                                                    <c:if test="${list.forumPostId==s}">
+                                                                         <img src="<%=path%>/sun/images/yizan.png" height="15px" width="15px" id="praise-img" />
+                                                                    </c:if>
+
+                                                         </c:forEach>
+
+
                                                          </span>
                                                         <span id="praise-txt" class="txt_my"  name="txt_my" >${list.clickCount}</span>
                                                         <span id="add-num" class="addnum_my" name="addnum_my"><em>+1</em></span>
                                                     </span>
+
 
 
                                                 <%--<span class="numb msg"><i></i>点赞数：</span>--%>
@@ -785,27 +861,15 @@
                                     </div>
                                 </div>
                             </li>
-
                         </c:forEach>
 
                             <script>
-//                                alert("xingma")
-                               window.onload= function zhiding (){
-//                                   alert("zhiding")
-                                    <%--var List = ${pageInfo.list};--%>
-                                    <%--for (var list in List){--%>
-                                        <%--alert(${list.isTop});--%>
-                                        <%--if(${list.isTop}==1){--%>
-                                            <%--document.getElementById("spanzhiding").innerHTML="置顶"--%>
-                                        <%--}--%>
-                                    <%--}--%>
-                                }
+
                                 function shoucang(forumId,collection,userId){
                                     if( document.getElementById(collection).lastChild.innerText=="已收藏"){
                                         alert("您已加入收藏，请到个人中心查看!");
                                     }
-//                                    alert("123");
-//                                    alert(collection);
+//
                                     $.ajax({
                                         type:"get",
 //                                        processData:false,
@@ -823,18 +887,45 @@
                                  * 动态点赞
                                  * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
                                 */
-                                function dianzantest(abs) {
+                                function dianzantest(abs,forupostid) {
                                     var imgspan = $("#"+abs);
-                                    alert(imgspan.get(0).tagName);
+                                    var img = imgspan.children();
+                                    var countspan = imgspan.next();
+//                                    alert(countspan.get(0).tagName);
+
+                                    if (img.attr("src") == ("<%=path%>/sun/images/yizan.png")){
+                                        img.attr("src","<%=path%>/sun/images/zan.png");
+                                        $.ajax({
+                                            type:"post",
+                                            url:"${pageContext.request.contextPath}/forum/cancledianzan.action",
+                                            data:{"forumPostId":forupostid},
+                                            success:function (count) {
+//                                                alert(count);
+                                                countspan.html(count);
+
+                                            }
+                                        })
+                                    }else{
+                                        img.attr("src","<%=path%>/sun/images/yizan.png");
+                                        $.ajax({
+                                            type:"post",
+                                            url:"${pageContext.request.contextPath}/forum/adddianzan.action",
+                                            data:{"forumPostId":forupostid},
+                                            success:function (count1) {
+                                                alert(count1);
+                                                countspan.html(count1);
+                                            }
+                                        })
+                                    }
                                 }
                                 function dianzan(id){
-                                    alert($("#praise"));
+//                                    alert($("#praise"));
                                         var praise_img = $("span[name='parise_img']");
-                                        alert(praise_img);
+//                                        alert(praise_img);
                                         var text_box = $("span[name='addnum_my']");
                                         var praise_txt = $("span[name='txt_my']");
                                         var num=parseInt(praise_txt.text());
-                                        alert(num);
+//                                        alert(num);
                                         if(praise_img.attr("src") == ("<%=path%>/sun/images/yizan.png")){
                                             $(this).html("<img src='<%=path%>/sun/images/zan.png' id='praise-img' height='15px' width='15px'/>");
                                             praise_txt.removeClass("hover");
