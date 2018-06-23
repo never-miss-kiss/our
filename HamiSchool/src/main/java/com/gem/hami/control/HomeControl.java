@@ -44,22 +44,22 @@ public class HomeControl {
 //        User user = (User) request.getSession().getAttribute("user");
         User user = (User) request.getSession().getAttribute("userInfo");
 
-        User userNow = homeService.findUserById(user.getUserId());
-
-        request.setAttribute("user",userNow);
-
+//        User userNow = homeService.findUserById(user.getUserId());
+        request.setAttribute("user",user);
         request.getRequestDispatcher("/wang/person/userInfo.jsp").forward(request,response);
-
     }
 
 //    public User modifyUser(User user)
-    @RequestMapping("/updateUser.action")
+    @RequestMapping("/forUpdateUser.action")
     public void updateUser(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-        User user = homeService.findUserById(2);
-        user.setAge(101);
-        user.setNickname("奈克");
-        homeService.modifyUser(user);
-        request.getRequestDispatcher("/wang/index.jsp").forward(request,response);
+
+        User user = (User) request.getSession().getAttribute("userInfo");
+
+        System.out.println(user);
+//        User userNow = homeService.findUserById(user.getUserId());
+        request.setAttribute("user",user);
+
+        request.getRequestDispatcher("/wang/person/userSafe_1.jsp").forward(request,response);
     }
 
     @RequestMapping("/AllGoodsInUser.action")
@@ -103,7 +103,13 @@ public class HomeControl {
         String newpwd = request.getParameter("newPass");
         String confim = request.getParameter("confim");
 
+    }
 
+//    收藏
+    public void forumCollection(HttpServletRequest request,HttpServletResponse response){
+
+    }
+    public void goodsCollection(HttpServletRequest request,HttpServletResponse response){
 
     }
 

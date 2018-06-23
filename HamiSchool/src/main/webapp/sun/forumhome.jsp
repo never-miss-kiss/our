@@ -30,7 +30,7 @@
     <script src="<%=path%>/sun/js1/list.js"></script>
 
     <script>
-        alert("123");
+//        alert("123");
         <%--alert(${sessionScope.userInfo});--%>
     </script>
 </head>
@@ -570,14 +570,16 @@
         <div class="xmcomm_header">
 
             <ul class="header_menu">
-                <li><a href="http://www.xiaomi.cn/index.html">主页</a></li>
-                <li><a href="http://bbs.xiaomi.cn/">二手物品</a></li>
+                <li><a href="">主页</a></li>
+                <li><a href="">二手物品</a></li>
                 <li>
                     <span>跑腿</span>
                 </li>
-                <li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>
-                <li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>
-                <li><a href="https://s1.mi.com/m/ghd/2018/mst051002/index.html" target="_blank">更换学校</a></li>
+                <li><a href="" target="_blank">联系我们</a></li>
+                <li><a href="" target="_blank">关于我们</a></li>
+                <li><a href="" target="_blank">更换学校</a></li>
+                <li><a href="<%=basePath%>/home/personalCenter.action?userId=${userInfo.userId}" target="_blank">个人中心</a></li>
+                <li><a href="<%=basePath%>/sun/userLogin/loginRegister.jsp" target="_blank">退出</a></li>
             </ul>
         </div>
     </div>
@@ -787,9 +789,9 @@
                         </c:forEach>
 
                             <script>
-                                alert("xingma")
+//                                alert("xingma")
                                window.onload= function zhiding (){
-                                   alert("zhiding")
+//                                   alert("zhiding")
                                     <%--var List = ${pageInfo.list};--%>
                                     <%--for (var list in List){--%>
                                         <%--alert(${list.isTop});--%>

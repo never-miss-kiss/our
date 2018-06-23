@@ -66,7 +66,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/wang/personalcenter/perInfo.jsp" onclick="">我的个人中心</a>
+                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
@@ -82,11 +82,10 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="" target="_blank"
+                                <li><a href="${pageContext.request.contextPath}/home/forUpdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
                                        onclick="">个人信息</a>
                                 </li>
-                                <li><a href=""
-                                       onclick="">修改密码</a>
+                                <li><a href="" onclick="">修改密码</a>
                                 </li>
                                 <li><a href="" target="blank"
                                        onclick="">个人认证</a>
@@ -97,15 +96,6 @@
                 </div>
             </div>
             <div class="span16">
-                <%--<div class="protal-content-update hide">
-                    <div class="protal-username">
-                    </div>
-                    &lt;%&ndash;<!--<p class="msg">我们做了一个小升级：你的用户名可以直接修改啦，去换个酷炫的名字吧。<a
-                            href="https://account.xiaomi.com/pass/auth/profile/home" target="_blank"
-                            data-stat-id="ca08f41314d05305"
-                            onclick="_msq.push(['trackEvent', 'f4f3444fdfa3d27a-ca08f41314d05305', 'https://account.xiaomi.com/pass/auth/profile/home', 'pcpid', '']);">
-                        立即前往&gt;</a></p>-->&ndash;%&gt;
-                </div>--%>
                 <div class="uc-box uc-main-box">
                     <div class="uc-content-box portal-content-box">
                         <div class="box-bd">
@@ -113,7 +103,7 @@
                                 <div class="user-card">
                                     <h2 class="username">欢迎--${user.nickname}</h2>
                                     <p class="tip">您好～</p>
-                                    <a class="link" href="" target="blank"
+                                    <a class="link" href="${pageContext.request.contextPath}/home/forUpdateUser.action?userId=${user.userId}"
                                        onclick="">修改个人信息&gt;
                                     </a>
                                     <img class="avatar" src="img" width="150" height="150">
