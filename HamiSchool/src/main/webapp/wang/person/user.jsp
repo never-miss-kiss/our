@@ -36,8 +36,8 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="${pageContext.request.contextPath}/home/AllGoodsInUserId.action?goodsList"
-                                       onclick="">我的商品</a>
+                                <li <%--class="active"--%> id="goods"><a href="${pageContext.request.contextPath}/home/AllGoodsInUserId.action?goodsList"
+                                       onclick="" >我的商品</a>
                                 </li>
                                 <li><a href=""
                                        onclick="">我的跑腿</a>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/wang/personalcenter/perInfo.jsp" onclick="">我的个人中心</a>
+                                <li <%--class="active"--%>><a href="${pageContext.request.contextPath }/wang/personalcenter/perInfo.jsp" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>

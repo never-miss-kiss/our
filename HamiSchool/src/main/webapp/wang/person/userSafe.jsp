@@ -8,6 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -310,10 +314,104 @@
         })
     </script>
 
+    <link href="<%=basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<%=basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+
 </head>
 
 
 <body class="zh_CN">
+<div class="header head-top" >
+    <div class="container-fluid">
+        <div class="col-sm-12">
+            <div class="col-xs-1" >
+            </div>
+            <%--<div class="header-main">
+                <div class="col-xs-8">
+                    <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
+                        <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
+                    </div>
+                    <div class="top-navg">
+                        <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
+                        <ul class="res">
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
+                            <a href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
+                            <a class="active" href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
+                            <a  href="<%=basePath%>forum/list.action"><span class="res1">哈密社区</span></a>
+                            <a href="#"><span class="res2">哈密认证</span></a>
+                            <a href="#"><span class="res3">联系我们</span></a>
+                        </ul>
+                        <!-- script-for-menu -->
+                        <script>
+                            $( "span.menu" ).click(function() {
+                                $( "ul.res" ).slideToggle( 300, function() {
+                                    // Animation complete.
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-xs-2 banner-right">
+                    <div id="person-pic" >
+
+                        <div id="head-portrait" class="col-xs-5" >
+                            <a href="#">
+                                <c:if test="${userInfo.photo == null}">
+                                    <img src="<%= basePath %>profilePicture/0.jpg"></img>
+                                </c:if>
+                                <c:if test="${userInfo != null}">
+                                    <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
+                                </c:if>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-7">
+                            <div id="message">
+                                <a href="#">
+                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+                                </a>
+                            </div>
+                            <div id="exit">
+                                <a href="#">
+                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script>
+                    $("#exit img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出点击时.png");
+                        }
+                    );
+                    $("#exit img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出.png");
+                        }
+                    );
+
+                    $("#message img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知点击时.png");
+                        }
+                    );
+
+                    $("#message img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知3.png");
+                        }
+                    );
+                </script>
+
+            </div>--%>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+
 <div class="popup_mask" style="display: none;" id="loadingMask">
     <div class="bkc"></div>
     <div class="mod_wrap loadingmask">
@@ -322,13 +420,9 @@
 </div>
 <div class="wrapper blockimportant">
     <div class="wrap">
-        <div class="layout bugfix_ie6 dis_none">
-            <div class="n-logo-area clearfix">
+        <%--<div class="layout bugfix_ie6 dis_none">
+            &lt;%&ndash;<div class="n-logo-area clearfix">
 
-                <a id="logoutLink" class="fl-r logout"
-                   href="">
-                    退出
-                </a>
                 <script>
                     setTimeout(function () {
                         if (location.hostname === 'account.xiaomi.com') {
@@ -347,25 +441,25 @@
                     }, 100);
                 </script>
 
-            </div>
+            </div>&ndash;%&gt;
 
             <!--头像 名字-->
             <div class="n-account-area-box">
                 <div class="n-account-area clearfix">
                     <div class="na-info">
                         <p class="na-name">用户nickname</p>
-                        <%--<p class="na-num">账户id</p>--%>
+                        &lt;%&ndash;<p class="na-num">账户id</p>&ndash;%&gt;
                     </div>
                     <div class="na-img-area fl-l">
                         <!--na-img-bg-area不能插入任何子元素-->
                         <div class="na-img-bg-area"><img
-                                src=""><%--头像--%>
+                                src="">&lt;%&ndash;头像&ndash;%&gt;
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
+        </div>--%>
         <div class="layout">
             <div class="n-main-nav clearfix">
                 <ul>

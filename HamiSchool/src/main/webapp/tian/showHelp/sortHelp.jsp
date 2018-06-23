@@ -23,7 +23,7 @@
                     </li>
                 </c:forEach>
             </ul>
-            <a class="complete-rank" target="_blank" href="#">查看完整榜单</a>
+            <a class="complete-rank" target="_blank" href="<%=basePath%>tian/addHelpBuy/addHelpBuy.jsp">发布跑腿</a>
         </div>
     </div>
 

@@ -1,21 +1,18 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>JS页面背景颜色切换网页特效 - 【科e互联】</title>
+<title>HTML5+Canvas制作文本输入框闪光动画特效 - 【科e互联】</title>
 
     <%--正式网页代码--%>
-
-
     <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="<%= basePath %>tian/helpBuyDetail/help-buy.css" rel="stylesheet">
     <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
@@ -24,19 +21,21 @@
     <script src="<%= basePath %>tian/helpBuyDetail/help-buy.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4MuXt8BaTfnKIcCU0Q8UBuSyHuLAZcvN"></script>
 
-    <%--闪光装逼效果--%>
-    <link rel="stylesheet" type="text/css" href="<%=basePath %>tian/addHelpBuy/Flash/style.css">
 
     <%--切换背景颜色--%>
-    <link rel="stylesheet" href="<%= basePath %>tian/addHelpBuy/ChangeColor/reset.css" type="text/css" />
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery-ui.custom.js"></script>
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery.bgColorSelector.min.js"></script>
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/init.js"></script>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-ui.custom.js"></script>
+    <script type="text/javascript" src="js/jquery.bgColorSelector.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<!--效果html开始-->
-<div class="bgSelector"></div>
-<!--效果html结束-->
+<%--<input id="1" type="text" placeholder="请输入关键词">--%>
+<%--<input id="2" type="text" placeholder="请输入关键词">--%>
+<%--<input id="3" type="text" placeholder="请输入关键词">--%>
+<%--<input id="4" type="text" placeholder="请输入关键词">--%>
+<%--<input id="5" type="text" placeholder="请输入关键词">--%>
+<%--<input id="6" type="text" placeholder="请输入关键词">--%>
 
 <div class="container-fluid">
 
@@ -178,9 +177,9 @@
                         </div>
                     </div>
 
-                    <a href="javascript:submitCheck()"><button type="button"  class="btn btn-default">Submit</button></a>
+                    <button type="submit" class="btn btn-default">Submit</button>
 
-            </div>
+                </div>
 
                 <div class="form3-right col-sm-6" id="l-map" style="border:#F00 1px solid; height:300px">
 
@@ -324,50 +323,17 @@
         check($("#personPrice"));
 
     </script>
-
-    <script>
-        function submitTest(obj){
-            if(isnull(obj.val())){
-                obj.parent().parent().addClass("has-error");
-                return false;
-            };
-            return true
-        }
-        function submitCheck(obj) {
-            if(            submitTest($("#title"))&
-            submitTest($("#suggestId"))&
-            submitTest($("#suggestId2"))&
-            submitTest($("#buyPhone"))&
-            submitTest($("#personPrice")))
-            {
-                $("form").submit();
-            }
-            else {
-                alert("输入不能为空");
-                return;
-                $("form").submit();
-            }
-
-        }
-
-//        function submitCheck(obj) {
-//            if(isnull(obj.val())){
-//                alert("输入不能输入为空");
-//                obj.parent().parent().addClass("has-error");
-//                return;
-//            };
-//            $("form").submit();
-//        }
-//        submitCheck()
-
-    </script>
 </div>
-<script type="text/javascript" src="<%=basePath%>tian/testFlash/js/index.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
 <script>
-    var input1 = document.getElementById("title");
-    Flash(input1);
+    var input;
+    $("input").each(function (index,element) {
+        Flash(element);
+    });
 </script>
+
+
 
 </body>
 </html>

@@ -261,6 +261,22 @@ public class HelpControl {
 
     @RequestMapping(value = "/addHelpBuy.action",method = RequestMethod.GET)
     public void addHelpBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
+        HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("userInfo");
+        int userId = 0;
+        if (user!=null){
+             userId = user.getUserId();
+        }
+
+        float distance = 0.0f;
+
+        Date endTime = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        c.add(Calendar.DATE, + 30);
+        endTime = c.getTime();
+        System.out.println(endTime);
+
         String name = request.getParameter("name");
         String title =  request.getParameter("title");
         String receiptAddress =  request.getParameter("receiptAddress");
@@ -271,10 +287,16 @@ public class HelpControl {
         String buyDemand =  request.getParameter("buyDemand");
         String endTime1=  request.getParameter("endTime");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date endTime = sdf.parse(endTime1);//设置截止日期
+        if(endTime1!=null&&!("".equals(endTime1.trim()))){
+            endTime = sdf.parse(endTime1);//设置截止日期
+        }
+
         String distance1 = request.getParameter("distance");
-        distance1 = distance1.trim().replaceAll("公里","").replaceAll("米","");;
-        Float distance = Float.parseFloat(distance1);
+        distance1 = distance1.trim().replaceAll("公里","").replaceAll("米","");
+        if(distance1!=null&&!("".equals(distance1.trim()))){
+            distance = Float.parseFloat(distance1);
+        }
+
         float personPrice =  Float.parseFloat(request.getParameter("personPrice"));
         float recommendedPrice =   Float.parseFloat((request.getParameter("recommendedPrice")));
 
@@ -296,7 +318,7 @@ public class HelpControl {
         helpBuy.setEndTime(endTime);
         helpBuy.setName("德玛西亚");
 
-        helpBuy.setUserId(5);//userId根据session的值来设定
+        helpBuy.setUserId(userId);//userId根据session的值来设定
 
         helpService.addHelpBuy(helpBuy);
         response.sendRedirect("/HamiSchool/help/selectAllHelps.action");

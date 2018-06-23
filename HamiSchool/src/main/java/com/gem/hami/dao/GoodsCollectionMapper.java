@@ -1,6 +1,8 @@
 package com.gem.hami.dao;
 
+import com.gem.hami.entity.Goods;
 import com.gem.hami.entity.GoodsCollection;
+import com.gem.hami.entity.QueryPojo_Goods;
 
 import java.util.List;
 
@@ -23,6 +25,13 @@ public interface GoodsCollectionMapper {
       * @Modified By:
      */
     public List<GoodsCollection> selectGoodsCollectionsByCondition(int userId);
+    /**
+     *@Author：wang
+     *@Date: Created in
+     *@Modified By:
+     */
+
+    public List<Goods> selectAllGoodsCollections(Goods goods);
     /**
       * @Author：Zhu
        * @param

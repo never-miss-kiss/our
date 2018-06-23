@@ -23,9 +23,10 @@ public interface HomeService {
      * 添加一些分页内容和其他
      *@Modified By:
      */
-    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map);
 
-    public PageInfo<GoodsCollection> selectAllGoodsCollection(Map<String, Object> map);
+    public PageInfo<Goods> allGoodsCollection(Map<String, Object> map);
+
+    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map);
 
     public PageInfo<UserMessage> getAllUserMessageByUserId(Map<String, Object> map);
 

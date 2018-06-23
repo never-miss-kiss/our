@@ -13,6 +13,10 @@
         SELECT goods_id FROM goods_collection where user_id=#{_parameter})
     </select>
 
+    <!--public List<Goods> selectAllGoodsCollections(Goods goods);-->
+    <select id="selectAllGoodsCollections" resultType="Goods">
+        SELECT g.*,gc.time FROM goods_collection gc,goods g WHERE gc.goods_id=g.goods_id and g.user_id=gc.user_id=#{userId}
+    </select>
     <!--删除用户收藏商品信息-->
     <delete id="deleteGoodsCollection" parameterType="int">
         DELETE FROM goods_collection where goods_collection_id=#{_parameter}

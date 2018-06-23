@@ -262,8 +262,8 @@ public class GoodsControl {
     public void addGoodsCommentReply(HttpServletRequest request,HttpServletResponse response){
         int goodsCommentId = Integer.parseInt(request.getParameter("goodsCommentId"));
         int userId = Integer.parseInt(request.getParameter("userId"));
-        String cont = request.getParameter("oSize");
-        String content = cont.split(":")[1];
+        String content = request.getParameter("oSize");
+       // String content = cont.split(":")[1];
         int uId = Integer.parseInt(request.getParameter("uId"));
         GoodsCommentReply goodsCommentReply = new GoodsCommentReply();
         goodsCommentReply.setCommentedUserId(userId);

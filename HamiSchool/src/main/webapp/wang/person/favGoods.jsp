@@ -14,7 +14,7 @@
 %>
 <html>
 <head>
-    <title>我的商品</title>
+    <title>喜欢的商品</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/base.min.css">
@@ -55,7 +55,7 @@
     <div class="container">
         <a href=""
            onclick="">首页</a><span
-            class="sep">&gt;</span><span>我的商品</span></div>
+            class="sep">&gt;</span><span>喜欢的商品</span></div>
 </div>
 <div class="page-main user-main">
     <div class="container">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="box-bd">
                                 <ul class="uc-nav-list">
-                                    <li class="active"><a href="${pageContext.request.contextPath}/home/AllGoodsInUser.action"
+                                    <li ><a href="${pageContext.request.contextPath}/home/AllGoodsInUser.action"
                                            onclick="">我的商品</a>
                                     </li>
                                     <li><a href=""
@@ -92,7 +92,8 @@
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
-                                <li><a href="<%= basePath%>home/favGoodsInUser.action?userId=${user.userId}" onclick="">喜欢的商品</a></li>
+
+                                <li class="active"><a href="<%= basePath%>/home/favGoodsInUser.action?userId=${user.userId}" onclick="">喜欢的商品</a></li>
                             </ul>
                         </div>
 
@@ -121,7 +122,7 @@
                 <div class="uc-box uc-main-box">
                     <div class="uc-content-box order-list-box">
                         <div class="box-hd">
-                            <h1 class="title">我的商品</h1>
+                            <h1 class="title">喜欢的商品</h1>
 
                             <div class="more clearfix">
                                 <ul class="filter-list J_orderType">
@@ -136,7 +137,7 @@
                                     <input type="submit" class="search-btn iconfont" value="">
                                 </form>
                             </div>
-
+                            ${pageInfo.list}
                         </div>
                         <div class="box-bd">
                             <form id="mainForm" method="get">
@@ -318,6 +319,9 @@
                                 </ul>
                             </div>
                             </form>
+
+
+
 
                             <div id="J_orderListPages">
                                 <c:if test="${pageInfo.total == 0}">

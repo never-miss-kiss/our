@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 勿忘初心
+  Date: 2018/6/10
+  Time: 17:11
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
@@ -5,16 +12,12 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>JS页面背景颜色切换网页特效 - 【科e互联】</title>
-
-    <%--正式网页代码--%>
-
+    <title></title>
 
     <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="<%= basePath %>tian/helpBuyDetail/help-buy.css" rel="stylesheet">
@@ -23,20 +26,11 @@
     <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
     <script src="<%= basePath %>tian/helpBuyDetail/help-buy.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4MuXt8BaTfnKIcCU0Q8UBuSyHuLAZcvN"></script>
+    <title>HelpBuyDetail</title>
 
-    <%--闪光装逼效果--%>
-    <link rel="stylesheet" type="text/css" href="<%=basePath %>tian/addHelpBuy/Flash/style.css">
-
-    <%--切换背景颜色--%>
-    <link rel="stylesheet" href="<%= basePath %>tian/addHelpBuy/ChangeColor/reset.css" type="text/css" />
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery-ui.custom.js"></script>
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery.bgColorSelector.min.js"></script>
-    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/init.js"></script>
 </head>
 <body>
-<!--效果html开始-->
-<div class="bgSelector"></div>
-<!--效果html结束-->
+
 
 <div class="container-fluid">
 
@@ -100,7 +94,7 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">收货电话</label>
                     <div class="col-sm-7">
-                        <input type="text"  name="buyPhone"  class="form-control" id="buyPhone" placeholder="Email">
+                        <input type="text"  name="buyPhone"  class="form-control" id="inputEmail3" placeholder="Email">
                     </div>
                 </div>
             </div>
@@ -139,8 +133,8 @@
                         <label class="col-sm-4 control-label">订单距离</label>
                         <div class="col-sm-8">
                             <div class="input-group">
-                                <input id="suggestId3" type="text" name="distance" VALUE="8" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                                <span class="input-group-addon" id="basic-addon2">KM</span>
+                            <input id="suggestId3" type="text" name="distance" VALUE="8" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">KM</span>
                             </div>
                         </div>
                     </div>
@@ -148,7 +142,7 @@
                         <label class="col-sm-4 control-label">跑腿费</label>
                         <div class="col-sm-8">
                             <div class="input-group">
-                                <input type="number" name="personPrice" id="personPrice" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="number" name="personPrice"  class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2">元</span>
                             </div>
                         </div>
@@ -178,9 +172,9 @@
                         </div>
                     </div>
 
-                    <a href="javascript:submitCheck()"><button type="button"  class="btn btn-default">Submit</button></a>
+                    <button type="submit" class="btn btn-default">Submit</button>
 
-            </div>
+                </div>
 
                 <div class="form3-right col-sm-6" id="l-map" style="border:#F00 1px solid; height:300px">
 
@@ -286,9 +280,8 @@
 
     </script>
     <script type="text/javascript">
+        var title = $("#title");
 
-
-        //        var title = $("#title");
         function isnull(val) {
             var str = val.replace(/(^\s*)|(\s*$)/g, '');//去除空格;
             if (str == '' || str == undefined || str == null) {
@@ -297,77 +290,17 @@
                 return false;
             }
         };
-        //        title.blur(function () {
-        //            if(isnull(title.val())){
-        //                title.parent().parent().addClass("has-error");
-        //            }
-        //            else {
-        //                title.parent().parent().removeClass("has-error");
-        //            }
-        //        });
-        //对上述代码进行封装
-        function check(obj){
-            obj.blur(function () {
-                if(isnull(obj.val())){
-                    obj.parent().parent().addClass("has-error");
-                }
-                else {
-                    obj.parent().parent().removeClass("has-error");
-                }
-            });
-        }
-
-        check($("#title"));
-        check($("#suggestId"));
-        check($("#suggestId2"));
-        check($("#buyPhone"));
-        check($("#personPrice"));
-
-    </script>
-
-    <script>
-        function submitTest(obj){
-            if(isnull(obj.val())){
-                obj.parent().parent().addClass("has-error");
-                return false;
-            };
-            return true
-        }
-        function submitCheck(obj) {
-            if(            submitTest($("#title"))&
-            submitTest($("#suggestId"))&
-            submitTest($("#suggestId2"))&
-            submitTest($("#buyPhone"))&
-            submitTest($("#personPrice")))
-            {
-                $("form").submit();
+        
+        title.blur(function () {
+            if(isnull(title.val())){
+                title.parent().parent().addClass("has-error");
             }
             else {
-                alert("输入不能为空");
-                return;
-                $("form").submit();
+                title.parent().parent().removeClass("has-error");
             }
-
-        }
-
-//        function submitCheck(obj) {
-//            if(isnull(obj.val())){
-//                alert("输入不能输入为空");
-//                obj.parent().parent().addClass("has-error");
-//                return;
-//            };
-//            $("form").submit();
-//        }
-//        submitCheck()
+        });
 
     </script>
 </div>
-<script type="text/javascript" src="<%=basePath%>tian/testFlash/js/index.js"></script>
-
-<script>
-    var input1 = document.getElementById("title");
-    Flash(input1);
-</script>
-
 </body>
 </html>

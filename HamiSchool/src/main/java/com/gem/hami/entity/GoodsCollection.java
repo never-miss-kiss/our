@@ -10,6 +10,15 @@ public class GoodsCollection {
     private Integer goodsId;
 
     private Date time;
+    private Goods goods;
+
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
 
     public Integer getGoodsCollectionId() {
         return goodsCollectionId;
