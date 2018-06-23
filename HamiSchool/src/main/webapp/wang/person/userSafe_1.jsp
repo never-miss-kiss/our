@@ -357,7 +357,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
+                                <li ><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
@@ -373,7 +373,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="${pageContext.request.contextPath}/home/forupdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
+                                <li class="active"><a href="${pageContext.request.contextPath}/home/forupdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
                                        onclick="">个人信息</a>
                                 </li>
                                 <li><a href="" onclick="">修改密码</a>
@@ -423,9 +423,6 @@
                                     <div class="fdata ">
                                         <p><span>性别：</span>${user.sex}
                                         </p>
-                                    </div>
-                                    <div class="fdata ">
-                                        <p><span>签名：</span><span class="value" val="m">${user.remark}</span></p>
                                     </div>
                                     <div class="fdata ">
                                         <p><span>学校：</span><span class="value" val="m">${user.school}</span></p>
@@ -484,7 +481,7 @@
                             <!--正常状态-->
                             <a href="" class="n-btn">修改</a>
                         </div>
-                    </li>
+                    </li>--%>
                     <li id="changeMobile" class="click-row">
                         <div class="font-img-item clearfix">
                             <em class="fi-ico fi-ico-phone"></em>
@@ -508,7 +505,7 @@
                                 修改
                             </a>
                         </div>
-                    </li>--%>
+                    </li>
                     </ul>
                 </div>
             </div>
@@ -609,6 +606,7 @@
         </div>
     </div>
 </form>
+
 <script>
     $(document).ready(function(){
         $("#oldpassword").blur(function(){

@@ -8,6 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <html xml:lang="zh-CN" lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -66,12 +70,12 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
+                                <li class="active"><a href="<%= basePath%>/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
 
-                                <li><a href="" onclick="">喜欢的商品</a></li>
+                                <li><a href="<%= basePath%>/home/favGoodsInUser.action?userId=${user.userId}" onclick="">喜欢的商品</a></li>
                             </ul>
                         </div>
 

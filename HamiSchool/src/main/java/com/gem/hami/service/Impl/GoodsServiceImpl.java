@@ -117,6 +117,7 @@ public class GoodsServiceImpl implements GoodsService {
         return goodsCollectionMapper.insertGoodsCollection(goodsCollection);
     }
 
+
     @Override
     public List<Goods> recommend(int userId, int goodsId) {
         return goodsMapper.selectRecommend(userId, goodsId);

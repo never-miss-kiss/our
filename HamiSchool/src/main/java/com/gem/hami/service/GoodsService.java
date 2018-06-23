@@ -66,6 +66,8 @@ public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
     public boolean addGoodsCollection(GoodsCollection goodsCollection);
 
 
+
+
 //   /goods/recommend.action
 //            推荐功能
     public List<Goods> recommend(int userId, int goodsId);
