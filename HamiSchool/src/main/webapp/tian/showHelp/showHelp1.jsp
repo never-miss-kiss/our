@@ -857,7 +857,7 @@
                                 </a>
                             </div>
                             <div id="exit">
-                                <a href="#">
+                                <a href="<%=basePath%>loginpage/exit.action">
                                     <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
                                 </a>
                             </div>
@@ -986,7 +986,7 @@
                                                 <span class="face-holder"><img src="<%= basePath %>tian/showHelp/showHelp_files/头像.jpg" class="face-img"></span>
                                                 <span class="nick-name">${helpInfo.user.nickname}</span>
                                             </a>
-                                            <a href="https://www.bilibili.com/read/douga#rid=4" target="_self">
+                                            <a href="#" target="_self">
                                                 <span class="category">帮我取</span>
                                             </a>
                                             <span class="view">${helpInfo.clickCount}</span>
@@ -1014,7 +1014,7 @@
                                     <div class="article-desc">本文为转载文，原作者是【白依源】。“说你爱我！”王俊凯声音低沉，手上的速度却没有变慢。　　　　“不要…唔…嗯～”王源在愈来愈快的步伐中溢出呻·吟。　　　　“说！说你爱我！”那人加大力度，空气中弥漫奇特</div>
                                     <div class="article-info-bar"><a href="#" target="_blank" class="up-content">
                                         <span class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/0a4a84b0bdeadc31cc70639cc973daa03e65b78a.jpg@26w_26h.webp" class="face-img"></span>
-                                        <span class="nick-name">KR-卡洛伊</span>
+                                        <span class="nick-name">KR-卡洛伊</span
                                     </a>
                                         <a href="https://www.bilibili.com/read/lightnovel#rid=32" target="_self">
                                             <span class="category">短篇小说</span></a><span class="view">89</span><span class="like ">4</span><a href="https://www.bilibili.com/read/cv515423#comment&amp;from=category_0" target="_blank">
@@ -1083,8 +1083,8 @@
                         </li>
                         <li class="suggest-item">
                             <a class="content" href="<%=basePath %>">
-                                <em class="suggest_high_light">夏</em>
-                                <em class="suggest_high_light">目</em>友人帳伍
+                                <em class="suggest_high_light">郑州航空工业管理学院</em>
+                                <em class="suggest_high_light"></em>
                             </a>
                             <div class="cancel"></div>
                         </li>
@@ -1096,6 +1096,7 @@
 //            alert("haha");
             var keyWord = $(".search-block input").val();
             $(".search-word-panel").css("display","block");
+            $(".search-word-panel").css("visibility","visible");
 
             $.ajax(
                 {
@@ -1115,8 +1116,9 @@
 
     });
 
-    $(".search-module1").blur(function () {
-        $(".search-word-panel").css("display","hidden");
+    $(".search-block input").blur(function () {
+//        $(".search-word-panel").html("");
+        $(".search-word-panel").css("visibility","hidden");
         //不能设为none，太坑了
     });
 
@@ -1144,7 +1146,7 @@
                                 </li>
                             </c:forEach>
                         </ul>
-                        <a class="complete-rank" target="_blank" href="#">查看完整榜单</a>
+                        <a class="complete-rank" target="_blank" href="<%=basePath%>tian/addHelpBuy/addHelpBuy.jsp">发布跑腿</a>
                     </div>
                 </div>
 
@@ -1177,70 +1179,70 @@
 
 
 
-            <div class="up-list">
-                <div class="title">最新投稿的UP主
-                    <div class="fresh-btn"></div>
-                </div>
-                <div class="up-item"><a href="https://space.bilibili.com/111638271/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/a97cc3fb858201ce30317e7d5a7923f2182b5b50.jpg@52w_52h.webp"></a>
-                    <div class="info-holder">
-                        <div class="head"><a href="https://space.bilibili.com/111638271/#!/" target="_blank" class="nick-name">游戏日报官方账号</a>
-                            <div class="follow " data-up-mid="111638271">关注</div>
-                        </div>
-                        <div class="dynamic"><span>刚刚投稿了 </span><a href="https://www.bilibili.com/read/cv515721" target="_blank" class="arc-title">DNF：最用心的6大职业盘点 只有他们还在贯彻格斗游戏的理念</a></div>
-                    </div>
-                </div>
-                <div class="up-item"><a href="https://space.bilibili.com/21883928/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/370ab88ac9f6ab764779c68137398b44e7f5245b.jpg@52w_52h.webp"></a>
-                    <div class="info-holder">
-                        <div class="head"><a href="https://space.bilibili.com/21883928/#!/" target="_blank" class="nick-name">RoKom</a>
-                            <div class="follow " data-up-mid="21883928">关注</div>
-                        </div>
-                        <div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515719" target="_blank" class="arc-title">昆特牌—掠夺者猎人娱乐卡组分享</a></div>
-                    </div>
-                </div>
-                <div class="up-item"><a href="https://space.bilibili.com/839544/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/45609107920c06862e4c1f6bc1799fd4590c8ee7.jpg@52w_52h.webp"></a>
-                    <div class="info-holder">
-                        <div class="head"><a href="https://space.bilibili.com/839544/#!/" target="_blank" class="nick-name">新一说说</a>
-                            <div class="follow " data-up-mid="839544">关注</div>
-                        </div>
-                        <div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515718" target="_blank" class="arc-title">大刘：漫威电影 流水线式的商业电影</a></div>
-                    </div>
-                </div>
-                <div class="up-item"><a href="https://space.bilibili.com/265158073/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/416568615bea610cca6a30373148ccdb8bdc2195.jpg@52w_52h.webp"></a>
-                    <div class="info-holder">
-                        <div class="head"><a href="https://space.bilibili.com/265158073/#!/" target="_blank" class="nick-name">樱桃小任</a>
-                            <div class="follow " data-up-mid="265158073">关注</div>
-                        </div>
-                        <div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515716" target="_blank" class="arc-title">樱桃，你真的会挑选吗？</a></div>
-                    </div>
-                </div>
-                <div class="up-item"><a href="https://space.bilibili.com/240082103/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/1657ef91d7fbb9647b4f1fd9c399c8da6ccf2bdb.jpg@52w_52h.webp"></a>
-                    <div class="info-holder">
-                        <div class="head"><a href="https://space.bilibili.com/240082103/#!/" target="_blank" class="nick-name">你好28星</a>
-                            <div class="follow " data-up-mid="240082103">关注</div>
-                        </div>
-                        <div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515713" target="_blank" class="arc-title">支持国产动漫，大爱我超神学院</a></div>
-                    </div>
-                </div>
-            </div>
+            <%--<div class="up-list">--%>
+                <%--<div class="title">最新投稿的UP主--%>
+                    <%--<div class="fresh-btn"></div>--%>
+                <%--</div>--%>
+                <%--<div class="up-item"><a href="https://space.bilibili.com/111638271/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/a97cc3fb858201ce30317e7d5a7923f2182b5b50.jpg@52w_52h.webp"></a>--%>
+                    <%--<div class="info-holder">--%>
+                        <%--<div class="head"><a href="https://space.bilibili.com/111638271/#!/" target="_blank" class="nick-name">游戏日报官方账号</a>--%>
+                            <%--<div class="follow " data-up-mid="111638271">关注</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="dynamic"><span>刚刚投稿了 </span><a href="https://www.bilibili.com/read/cv515721" target="_blank" class="arc-title">DNF：最用心的6大职业盘点 只有他们还在贯彻格斗游戏的理念</a></div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="up-item"><a href="https://space.bilibili.com/21883928/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/370ab88ac9f6ab764779c68137398b44e7f5245b.jpg@52w_52h.webp"></a>--%>
+                    <%--<div class="info-holder">--%>
+                        <%--<div class="head"><a href="https://space.bilibili.com/21883928/#!/" target="_blank" class="nick-name">RoKom</a>--%>
+                            <%--<div class="follow " data-up-mid="21883928">关注</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515719" target="_blank" class="arc-title">昆特牌—掠夺者猎人娱乐卡组分享</a></div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="up-item"><a href="https://space.bilibili.com/839544/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/45609107920c06862e4c1f6bc1799fd4590c8ee7.jpg@52w_52h.webp"></a>--%>
+                    <%--<div class="info-holder">--%>
+                        <%--<div class="head"><a href="https://space.bilibili.com/839544/#!/" target="_blank" class="nick-name">新一说说</a>--%>
+                            <%--<div class="follow " data-up-mid="839544">关注</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515718" target="_blank" class="arc-title">大刘：漫威电影 流水线式的商业电影</a></div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="up-item"><a href="https://space.bilibili.com/265158073/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/416568615bea610cca6a30373148ccdb8bdc2195.jpg@52w_52h.webp"></a>--%>
+                    <%--<div class="info-holder">--%>
+                        <%--<div class="head"><a href="https://space.bilibili.com/265158073/#!/" target="_blank" class="nick-name">樱桃小任</a>--%>
+                            <%--<div class="follow " data-up-mid="265158073">关注</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515716" target="_blank" class="arc-title">樱桃，你真的会挑选吗？</a></div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="up-item"><a href="https://space.bilibili.com/240082103/#!/" target="_blank" class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/1657ef91d7fbb9647b4f1fd9c399c8da6ccf2bdb.jpg@52w_52h.webp"></a>--%>
+                    <%--<div class="info-holder">--%>
+                        <%--<div class="head"><a href="https://space.bilibili.com/240082103/#!/" target="_blank" class="nick-name">你好28星</a>--%>
+                            <%--<div class="follow " data-up-mid="240082103">关注</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="dynamic"><span>1分钟前投稿了 </span><a href="https://www.bilibili.com/read/cv515713" target="_blank" class="arc-title">支持国产动漫，大爱我超神学院</a></div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
             <!--<div class="web-show-c">
 
                 </div>-->
-            <div class="more">
-                <div class="top-bar">
-                    <label>更多</label>
-                </div>
-                <a class="ac-link" href="https://www.bilibili.com/read/apply/" target="_blank">
-                    <div class="link"> <span class="icon"> </span>
-                        <p class="title">成为创作者</p>
-                        <p class="info">申请成为专栏UP主</p>
-                    </div>
-                </a> <a href="https://www.bilibili.com/blackboard/help.html#%E4%B8%93%E6%A0%8F%E7%9B%B8%E5%85%B3" target="_blank">
-                <div class="help"> <span class="icon"> </span>
-                    <p class="title">专栏帮助</p>
-                    <p class="info">查看专栏使用说明</p>
-                </div>
-            </a> </div>
+            <%--<div class="more">--%>
+                <%--<div class="top-bar">--%>
+                    <%--<label>更多</label>--%>
+                <%--</div>--%>
+                <%--<a class="ac-link" href="https://www.bilibili.com/read/apply/" target="_blank">--%>
+                    <%--<div class="link"> <span class="icon"> </span>--%>
+                        <%--<p class="title">成为创作者</p>--%>
+                        <%--<p class="info">申请成为专栏UP主</p>--%>
+                    <%--</div>--%>
+                <%--</a> <a href="https://www.bilibili.com/blackboard/help.html#%E4%B8%93%E6%A0%8F%E7%9B%B8%E5%85%B3" target="_blank">--%>
+                <%--<div class="help"> <span class="icon"> </span>--%>
+                    <%--<p class="title">专栏帮助</p>--%>
+                    <%--<p class="info">查看专栏使用说明</p>--%>
+                <%--</div>--%>
+            <%--</a> </div>--%>
         </div>
     </div>
 </div>

@@ -178,9 +178,9 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <a href="javascript:submitCheck()"><button type="button"  class="btn btn-default">Submit</button></a>
 
-                </div>
+            </div>
 
                 <div class="form3-right col-sm-6" id="l-map" style="border:#F00 1px solid; height:300px">
 
@@ -322,6 +322,43 @@
         check($("#suggestId2"));
         check($("#buyPhone"));
         check($("#personPrice"));
+
+    </script>
+
+    <script>
+        function submitTest(obj){
+            if(isnull(obj.val())){
+                obj.parent().parent().addClass("has-error");
+                return false;
+            };
+            return true
+        }
+        function submitCheck(obj) {
+            if(            submitTest($("#title"))&
+            submitTest($("#suggestId"))&
+            submitTest($("#suggestId2"))&
+            submitTest($("#buyPhone"))&
+            submitTest($("#personPrice")))
+            {
+                $("form").submit();
+            }
+            else {
+                alert("输入不能为空");
+                return;
+                $("form").submit();
+            }
+
+        }
+
+//        function submitCheck(obj) {
+//            if(isnull(obj.val())){
+//                alert("输入不能输入为空");
+//                obj.parent().parent().addClass("has-error");
+//                return;
+//            };
+//            $("form").submit();
+//        }
+//        submitCheck()
 
     </script>
 </div>

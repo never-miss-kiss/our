@@ -73,10 +73,10 @@
 		</a>
 
 		<ul class="side_nav">
-			<li><a href="index.html" class="active"><span>Login&Register</span></a></li>
-			<li><a href="typography.html"><span>二手商品</span></a></li>
-			<li><a href="blog.html"><span>社区交流</span></a></li>
-			<li><a href="gallery.html"><span>跑腿</span></a></li>
+			<li><a href="<%=basePath%>sun/userLogin/loginRegister.jsp " class="active"><span>Login&Register</span></a></li>
+			<li><a href="<%=basePath%>goods/findAllGoods.action"><span>二手商品</span></a></li>
+			<li><a href="<%=basePath%>forum/list.action"><span>社区交流</span></a></li>
+			<li><a href="<%=basePath%>help/selectAllHelps.action"><span>跑腿</span></a></li>
 		</ul>
 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
@@ -161,6 +161,7 @@
 				</div>
 		  </div>
 		  <!-- app-->
+
 			<div class="modal ab fade" name="myModal1" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog about" role="document">
 					<div class="modal-content about">
@@ -684,7 +685,7 @@
 <!-- for bootstrap working -->
 		<script src="<%=basePath%>tian/index/js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
-
+	<a name="miao"></a><!--设置锚点方法1-->
 
 </body>
 </html>
