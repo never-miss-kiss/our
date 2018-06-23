@@ -50,6 +50,7 @@ public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
     public List<GoodsCommentReply> findGoodsCommentReply(int goodsCommentId);
 
 
+    public GoodsComment findGoodsCommentByContent(String content);
 //    /goods/addGoodsComment.action
 //            添加商品评论
     public boolean addGoodsComment(GoodsComment goodsComment);
@@ -83,11 +84,11 @@ public PageInfo<Goods> findGoodsByCondition(Map<String, Object> map);
 
     //  /goods/removeGoodsComment.action
 //            删除商品评论
-    public boolean removeGoodsComment(int goodsCommentId);
+    public boolean removeGoodsComment(GoodsComment goodsComment);
 
 //  /goods/removeGoodsCommentReply.action
 //            删除商品评论回复
-    public boolean removeGoodsCommentReply(int replyId);
+    public boolean removeGoodsCommentReply(GoodsCommentReply goodsCommentReply);
 
 //     /home/findCollectionByCondition.action
 //    显示我的收藏（包含收藏的物品）：

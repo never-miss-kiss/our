@@ -95,6 +95,11 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    public GoodsComment findGoodsCommentByContent(String content) {
+        return goodsCommentMapper.selectGoodsCommentByContent(content);
+    }
+
+    @Override
     public boolean addGoodsComment(GoodsComment goodsComment) {
 
         return goodsCommentMapper.insertGoodsComment(goodsComment);
@@ -130,13 +135,13 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public boolean removeGoodsComment(int goodsCommentId) {
-        return goodsCommentMapper.deleteGoodsComment(goodsCommentId);
+    public boolean removeGoodsComment(GoodsComment goodsComment) {
+        return goodsCommentMapper.deleteGoodsComment(goodsComment);
     }
 
     @Override
-    public boolean removeGoodsCommentReply(int replyId) {
-        return goodsCommentReplyMapper.deleteGoodsCommentReply(replyId);
+    public boolean removeGoodsCommentReply(GoodsCommentReply goodsCommentReply) {
+        return goodsCommentReplyMapper.deleteGoodsCommentReply(goodsCommentReply);
     }
 
     @Override

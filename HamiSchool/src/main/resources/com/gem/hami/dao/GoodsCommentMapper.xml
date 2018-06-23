@@ -10,13 +10,18 @@
        SELECT * FROM  goods_comment where goods_comment_id=#{_parameter}
     </select>
 
+    <select id="selectGoodsCommentByContent" parameterType="String" resultType="GoodsComment">
+        SELECT * FROM goods_comment where content=#{_parameter}
+    </select>
+
     <!--添加商品评论-->
     <insert id="insertGoodsComment" parameterType="GoodsComment">
         INSERT into goods_comment(content,user_id,release_time,goods_id) VALUES (#{content},#{userId},#{releaseTime},#{goodsId})
     </insert>
 
+
     <!--删除商品评论-->
-    <delete id="deleteGoodsComment" parameterType="int">
-        DELETE FROM goods_comment where goods_comment_id=#{_parameter}
+    <delete id="deleteGoodsComment" parameterType="GoodsComment">
+        DELETE FROM goods_comment where user_id=#{userId} and goods_id=#{goodsId}
     </delete>
 </mapper>

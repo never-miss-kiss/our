@@ -65,10 +65,14 @@
                             </div>
                             <div class="box-bd">
                                 <ul class="uc-nav-list">
-                                    <li><a href="" onclick="">我的商品</a>
+                                    <li><a href="${pageContext.request.contextPath}/home/AllGoodsInUser.action"
+                                           onclick="">我的商品</a>
                                     </li>
-
-                                    <li><a href="" onclick="">我的发布任务</a>
+                                    <li><a href=""
+                                           onclick="">我的跑腿</a>
+                                    </li>
+                                    <li><a href=""
+                                           onclick="">我的任务</a>
                                     </li>
                                 </ul>
                             </div>
@@ -80,10 +84,11 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action?userId=${userInfo.userId}" onclick="">我的个人中心</a>
+                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
+
                                 <li><a href="" onclick="">喜欢的商品</a></li>
                             </ul>
                         </div>
@@ -95,11 +100,13 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="" target="_blank" onclick="">个人信息</a>
+                                <li><a href="${pageContext.request.contextPath}/home/forupdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
+                                       onclick="">个人信息</a>
                                 </li>
                                 <li><a href="" onclick="">修改密码</a>
                                 </li>
-                                <li><a href="" target="blank" onclick="">个人认证</a>
+                                <li><a href="" target="blank"
+                                       onclick="">个人认证</a>
                                 </li>
                             </ul>
                         </div>

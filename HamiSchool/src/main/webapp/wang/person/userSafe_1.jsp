@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
     <title>个人信息</title>
@@ -284,6 +289,12 @@
             display: none;
         }
     </style>
+    <%--<style>
+        #main_r {
+            float: left;
+            width: 590px
+        }
+    </style>--%>
     <script >
         $(document).ready(function(){
             $("#editInfo").click(function(){
@@ -302,10 +313,13 @@
             })
         })
     </script>
-
+    <link href="<%=basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<%=basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
 
 </head>
 <body>
+
+
 <div class="breadcrumbs">
     <div class="container">
         <a href=""
@@ -324,10 +338,14 @@
                             </div>
                             <div class="box-bd">
                                 <ul class="uc-nav-list">
-                                    <li><a href="" onclick="">我的商品</a>
+                                    <li><a href="${pageContext.request.contextPath}/home/AllGoodsInUser.action"
+                                           onclick="">我的商品</a>
                                     </li>
-
-                                    <li><a href="" onclick="">我的发布任务</a>
+                                    <li><a href=""
+                                           onclick="">我的跑腿</a>
+                                    </li>
+                                    <li><a href=""
+                                           onclick="">我的任务</a>
                                     </li>
                                 </ul>
                             </div>
@@ -339,10 +357,11 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action?userId=${userInfo.userId}" onclick="">我的个人中心</a>
+                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
+
                                 <li><a href="" onclick="">喜欢的商品</a></li>
                             </ul>
                         </div>
@@ -354,21 +373,23 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="" target="_blank" onclick="">个人信息</a>
+                                <li><a href="${pageContext.request.contextPath}/home/forupdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
+                                       onclick="">个人信息</a>
                                 </li>
                                 <li><a href="" onclick="">修改密码</a>
                                 </li>
-                                <li><a href="" target="blank" onclick="">个人认证</a>
+                                <li><a href="" target="blank"
+                                       onclick="">个人认证</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="span16">
                 <div class="uc-box uc-main-box">
                     <div class="uinfo c_b">
-                        <div>
                             <div class="main_l">
                                 <div class="naInfoImgBox t_c">
                                     <div class="na-img-area marauto">
@@ -388,15 +409,28 @@
                                     <div class="fdata">
                                         <a class="color4a9 fr" href="" title="编辑" id="editInfo">
                                             <i class="iconpencil"></i>编辑</a>
-                                        <div method="post" id="eidt" style="display: none">
+                                        <%--<div method="post" id="eidt" style="display: none">
                                             <a class="color4a9 fr" href="" >
                                                 | 取消</a>
                                             <a class="color4a9 fr" href="">
                                                 保存 |</a>
-                                        </div>
+                                        </div>--%>
                                         <h3>基础资料</h3>
                                     </div>
-                                    <form id="user" method="post">
+                                    <div class="fdata ">
+                                        <p><span>姓名：</span><span class="value">${user.nickname}</span></p>
+                                    </div>
+                                    <div class="fdata ">
+                                        <p><span>性别：</span>${user.sex}
+                                        </p>
+                                    </div>
+                                    <div class="fdata ">
+                                        <p><span>签名：</span><span class="value" val="m">${user.remark}</span></p>
+                                    </div>
+                                    <div class="fdata ">
+                                        <p><span>学校：</span><span class="value" val="m">${user.school}</span></p>
+                                    </div>
+                                    <%--<form id="user" method="post" style="display: none">
                                         <div class="fdata ">
                                             <p><span>姓名：</span><span class="value">随未央</span></p>
                                         </div>
@@ -415,76 +449,77 @@
                                         <div class="fdata ">
                                             <p><span>学校：</span><span class="value" val="m"></span></p>
                                         </div>
-                                    </form>
+                                    </form>--%>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <ul class="device-detail-area">
-                        <li id="changePassword" class="click-row">
-                            <div class="font-img-item clearfix">
-                                <em class="fi-ico fi-ico-lock"></em>
-                                <p class="title-normal dis-inb">帐号密码</p>
+                    <li id="changePassword" class="click-row">
+                        <div class="font-img-item clearfix">
+                            <em class="fi-ico fi-ico-lock"></em>
+                            <p class="title-normal dis-inb">帐号密码</p>
 
-                                <p class="font-default">用于保护帐号信息和登录安全</p>
+                            <p class="font-default">用于保护帐号信息和登录安全</p>
+                        </div>
+                        <div class="ada-btn-area" id="btnUpdatePassword">
+                            <a href="" class="n-btn" id="btn-0">
+                                修改
+                            </a>
+                        </div>
+                    </li>
+                    <%--<li id="changeEmail" class="click-row">
+                        <div class="font-img-item clearfix">
+                            <em class="fi-ico fi-ico-email"></em>
+                            <div class="item_column">
+                                <p class="title-normal dis-inb">安全邮箱</p>
+                                <span class="title-normal wap-desc user_address">
+                                95******9@q*.com
+                            </span>
                             </div>
-                            <div class="ada-btn-area" id="btnUpdatePassword">
-                                <a href="" class="n-btn" >
-                                    修改
-                                </a>
-                            </div>
-                        </li>
-                        <li id="changeEmail" class="click-row">
-                            <div class="font-img-item clearfix">
-                                <em class="fi-ico fi-ico-email"></em>
-                                <div class="item_column">
-                                    <p class="title-normal dis-inb">安全邮箱</p>
-                                    <span class="title-normal wap-desc user_address">
-                                    95******9@q*.com
+                            <p class="font-default">
+                                安全邮箱可以用于登录小米帐号，重置密码或其他安全验证
+                            </p>
+                        </div>
+                        <div class="ada-btn-area" id="btnUpdateEmail">
+                            <!--正常状态-->
+                            <a href="" class="n-btn">修改</a>
+                        </div>
+                    </li>
+                    <li id="changeMobile" class="click-row">
+                        <div class="font-img-item clearfix">
+                            <em class="fi-ico fi-ico-phone"></em>
+                            <div class="item_column">
+                                <p class="title-normal dis-inb">安全手机</p>
+                                <span class="title-normal wap-desc user_address">
+                  <span class="phone-bind-adress">156******78</span>
+                                <span
+                                        class="ph_list_sum phone-list-sum"
+                                        data-title="等&lt;span class='ff6'&gt;{phsum}&lt
+                                    /span&gt;个">
                                 </span>
-                                </div>
-                                <p class="font-default">
-                                    安全邮箱可以用于登录小米帐号，重置密码或其他安全验证
-                                </p>
+                            </span>
                             </div>
-                            <div class="ada-btn-area" id="btnUpdateEmail">
-                                <!--正常状态-->
-                                <a href="" class="n-btn">修改</a>
-                            </div>
-                        </li>
-                        <li id="changeMobile" class="click-row">
-                            <div class="font-img-item clearfix">
-                                <em class="fi-ico fi-ico-phone"></em>
-                                <div class="item_column">
-                                    <p class="title-normal dis-inb">安全手机</p>
-                                    <span class="title-normal wap-desc user_address">
-                      <span class="phone-bind-adress">156******78</span>
-                                    <span
-                                            class="ph_list_sum phone-list-sum"
-                                            data-title="等&lt;span class='ff6'&gt;{phsum}&lt
-                                        /span&gt;个">
-                                    </span>
-                                </span>
-                                </div>
-                                <p class="font-default">
-                                    安全手机可以用于登录小米帐号，重置密码或其他安全验证
-                                </p>
-                            </div>
-                            <div class="ada-btn-area" id="btnUpdatePhone">
-                                <a class="n-btn btnChangeMobile" href="">
-                                    修改
-                                </a>
-                            </div>
-                        </li>
+                            <p class="font-default">
+                                安全手机可以用于登录小米帐号，重置密码或其他安全验证
+                            </p>
+                        </div>
+                        <div class="ada-btn-area" id="btnUpdatePhone">
+                            <a class="n-btn btnChangeMobile" href="">
+                                修改
+                            </a>
+                        </div>
+                    </li>--%>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
 
+</script>
 
-<form method="post" style="display: block">
+<form method="post" style="display: none" id="mx">
     <div class="popup_mask" style="display: block">
         <div class="bkc"></div>
         <div class="mod_wrap">
