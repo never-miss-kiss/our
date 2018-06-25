@@ -16,7 +16,13 @@ body{font-family: "Microsoft Yahei";}
 /*----------------------------------------------------------------------------------------------------------*/
 .content{float: left;}
 .flex-text-wrap,pre{margin: 0 !important;}
-.commentAll{position: relative;width: 500px;top:-150px;left:20px;padding: 20px;margin: -20px auto;}
+.commentAll{position: relative;
+    width: 500px;
+    /*top:-150px;*/
+    /*left:20px;*/
+    padding: 20px;
+    /*margin: -20px auto;*/
+}
 .plBtn{width: 75px;height: 36px;line-height: 36px;background-color: #339b53;text-align: center;display: block;float: right;color: #FFFFFF;font-size: 12px;border-radius: 6px;margin-right: 2px;margin-top: 20px;}
 .plBtn:hover{background-color: #2f904d;}
 
