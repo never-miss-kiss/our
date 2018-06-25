@@ -103,6 +103,19 @@ public List<Goods> selectGoodsByCondition(QueryPojo queryPojo);
     public List<Goods> getAllGoodsByUserId(QueryPojo_Goods queryPojo);
 
 
+    /**
+      * @Author：sunshilin
+      * @param: * @param null
+      * @result:
+      * @Description:下面的是在论坛首页显示的商品推荐
+      * @Date：Created in 15:32 2018/6/23
+      * @Modified By:
+     */
+    public List<Goods> getFourRandomGoodsByTransport();
+
+    public List<Goods> selectTwoRandomGoodsnotTransport();
+
+
 
 
 }

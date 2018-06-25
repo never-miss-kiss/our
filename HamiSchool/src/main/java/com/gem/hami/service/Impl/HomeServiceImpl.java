@@ -1,5 +1,6 @@
 package com.gem.hami.service.Impl;
 
+import com.gem.hami.dao.GoodsCollectionMapper;
 import com.gem.hami.dao.GoodsMapper;
 import com.gem.hami.dao.UserMapper;
 import com.gem.hami.dao.UserMessageMapper;
@@ -24,6 +25,8 @@ public class HomeServiceImpl implements HomeService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private GoodsCollectionMapper goodsCollectionMapper;
 
     /**
      * @Author：Wang
@@ -46,21 +49,34 @@ public class HomeServiceImpl implements HomeService {
     }
 
     @Override
-    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map) {
-        int curPage1 = (int) map.get("curPage");
-        int pageSize1 = (int) map.get("pageSize");
+    public boolean modifyPassInUser(String password) {
+        return userMapper.updatePassInUser(password);
+    }
 
-        PageHelper.startPage(curPage1,pageSize1);
-        List<Goods> goodsList = goodsMapper.getAllGoodsByUserId((QueryPojo_Goods) map.get("queryPojo"));
+    @Override
+    public PageInfo<Goods> allGoodsCollection(Map<String, Object> map) {
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+
+        PageHelper.startPage(curPage,pageSize);
+        List<Goods> goodsList = goodsCollectionMapper.selectAllGoodsCollections((Goods) map.get("queryPojo"));
 
         PageInfo<Goods> pageInfo = new PageInfo<>(goodsList);
         return pageInfo ;
     }
 
     @Override
-    public PageInfo<GoodsCollection> selectAllGoodsCollection(Map<String, Object> map) {
-        return null;
+    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map) {
+        int curPage = (int) map.get("curPage");
+        int pageSize = (int) map.get("pageSize");
+
+        PageHelper.startPage(curPage,pageSize);
+        List<Goods> goodsList = goodsMapper.getAllGoodsByUserId((QueryPojo_Goods) map.get("queryPojo"));
+
+        PageInfo<Goods> pageInfo = new PageInfo<>(goodsList);
+        return pageInfo ;
     }
+
 
     @Override
     public PageInfo<UserMessage> getAllUserMessageByUserId(Map<String, Object> map) {

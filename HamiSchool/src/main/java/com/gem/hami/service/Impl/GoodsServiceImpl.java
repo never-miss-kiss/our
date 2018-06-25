@@ -95,11 +95,6 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public GoodsComment findGoodsCommentByContent(String content) {
-        return goodsCommentMapper.selectGoodsCommentByContent(content);
-    }
-
-    @Override
     public boolean addGoodsComment(GoodsComment goodsComment) {
 
         return goodsCommentMapper.insertGoodsComment(goodsComment);
@@ -116,6 +111,7 @@ public class GoodsServiceImpl implements GoodsService {
 
         return goodsCollectionMapper.insertGoodsCollection(goodsCollection);
     }
+
 
     @Override
     public List<Goods> recommend(int userId, int goodsId) {
@@ -154,5 +150,17 @@ public class GoodsServiceImpl implements GoodsService {
     public boolean removeGoodsCollection(int goodsCollectionId) {
 
         return goodsCollectionMapper.deleteGoodsCollection(goodsCollectionId);
+    }
+
+
+
+    @Override
+    public List<Goods> getFourRandomGoodsByTransport() {
+        return goodsMapper.getFourRandomGoodsByTransport();
+    }
+
+    @Override
+    public List<Goods> getTwoRandomGoodsnotTransport() {
+        return goodsMapper.selectTwoRandomGoodsnotTransport();
     }
 }

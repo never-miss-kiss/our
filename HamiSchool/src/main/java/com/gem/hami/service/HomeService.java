@@ -17,15 +17,18 @@ public interface HomeService {
 //            修改个人资料,修改密码
     public boolean modifyUser(User user);
 
+    public boolean modifyPassInUser(String password);
+
     /**
      *@Author：wang
      *@Date: Created in 2018-6-20 20:56:24
      * 添加一些分页内容和其他
      *@Modified By:
      */
-    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map);
 
-    public PageInfo<GoodsCollection> selectAllGoodsCollection(Map<String, Object> map);
+    public PageInfo<Goods> allGoodsCollection(Map<String, Object> map);
+
+    public PageInfo<Goods> selectGoodByUserId(Map<String, Object> map);
 
     public PageInfo<UserMessage> getAllUserMessageByUserId(Map<String, Object> map);
 

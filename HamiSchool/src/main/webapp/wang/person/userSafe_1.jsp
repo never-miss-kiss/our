@@ -295,26 +295,44 @@
             width: 590px
         }
     </style>--%>
-    <script >
-        $(document).ready(function(){
-            $("#editInfo").click(function(){
-                $('#User').hide();
-                $('#editInfo').hide();
-                $('#editUser').show();
-                $('#edit').show();
-            })
-        });
-        $(document).ready(function(){
-            $("#edit").click(function(){
-                $('#User').show();
-                $('#editInfo').show();
-                $('#editUser').hide();
-                $('#edit').hide();
-            })
-        })
-    </script>
     <link href="<%=basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="<%=basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript">
+        window.onload=function () {
+            var b_tn = document.getElementById("btn-0");
+
+            var mx = document.getElementById("mx")
+
+            b_tn.onclick=function () {
+                mx.style.display="block";
+            }
+            var editInfo = document.getElementById("editInfo");
+
+            var edit = document.getElementById("edit")
+
+            var userNow = document.getElementById("userNow");
+
+            var user = document.getElementById("user")
+
+            editInfo.onclick=function () {
+                editInfo.style.display="none";
+                edit.style.display="block";
+                userNow.style.display="none";
+                user.style.display="block";
+
+            }
+            edit.onclick=function () {
+                editInfo.style.display="block";
+                edit.style.display="none";
+                userNow.style.display="block";
+                user.style.display="none";
+            }
+
+        }
+
+
+    </script>
+
 
 </head>
 <body>
@@ -357,7 +375,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
+                                <li ><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
                                 <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
@@ -373,7 +391,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="${pageContext.request.contextPath}/home/forupdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
+                                <li class="active"><a href="${pageContext.request.contextPath}/home/forupdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
                                        onclick="">个人信息</a>
                                 </li>
                                 <li><a href="" onclick="">修改密码</a>
@@ -406,33 +424,42 @@
                             </div>
                             <div class="main_r">
                                 <div class="framedatabox">
+
                                     <div class="fdata">
-                                        <a class="color4a9 fr" href="" title="编辑" id="editInfo">
+                                        <a class="color4a9 fr"  href="javascript:void(0)" title="编辑" id="editInfo">
                                             <i class="iconpencil"></i>编辑</a>
-                                        <%--<div method="post" id="eidt" style="display: none">
-                                            <a class="color4a9 fr" href="" >
+                                        <div method="post" id="edit" style="display: none">
+                                            <a class="color4a9 fr"  href="javascript:void(0)" >
                                                 | 取消</a>
-                                            <a class="color4a9 fr" href="">
+                                            <a class="color4a9 fr" href="javascript:void(0)" id="save">
                                                 保存 |</a>
-                                        </div>--%>
+                                        </div>
                                         <h3>基础资料</h3>
                                     </div>
-                                    <div class="fdata ">
-                                        <p><span>姓名：</span><span class="value">${user.nickname}</span></p>
-                                    </div>
-                                    <div class="fdata ">
-                                        <p><span>性别：</span>${user.sex}
-                                        </p>
-                                    </div>
-                                    <div class="fdata ">
-                                        <p><span>签名：</span><span class="value" val="m">${user.remark}</span></p>
-                                    </div>
-                                    <div class="fdata ">
-                                        <p><span>学校：</span><span class="value" val="m">${user.school}</span></p>
-                                    </div>
-                                    <%--<form id="user" method="post" style="display: none">
+                                    <div id="userNow">
                                         <div class="fdata ">
-                                            <p><span>姓名：</span><span class="value">随未央</span></p>
+                                            <p><span>姓名：</span><span class="value">${user.nickname}</span></p>
+                                        </div>
+                                        <c:if test="${user.sex == 'F'}">
+                                        <div class="fdata ">
+                                            <p><span>性别：</span>男</p>
+                                        </div>
+                                        </c:if>
+                                        <c:if test="${user.sex == 'M'}">
+                                            <div class="fdata ">
+                                                <p><span>性别：</span>女</p>
+                                            </div>
+                                        </c:if>
+                                        <div class="fdata ">
+                                            <p><span>签名：</span><span class="value" val="m">${user.signature}</span></p>
+                                        </div>
+                                        <div class="fdata ">
+                                            <p><span>学校：</span><span class="value" val="m">${user.school}</span></p>
+                                        </div>
+                                    </div>
+                                    <form id="user" method="post" style="display: none">
+                                        <div class="fdata ">
+                                            <p><span>姓名：</span><input value="${user.nickname}"></p>
                                         </div>
                                         <div class="fdata ">
                                             <p><span>性别：</span>
@@ -444,12 +471,35 @@
                                             </p>
                                         </div>
                                         <div class="fdata ">
-                                            <p><span>签名：</span><span class="value" val="m"></span></p>
+                                            <p><span>签名：</span><input value="${user.signature}"></p>
                                         </div>
                                         <div class="fdata ">
-                                            <p><span>学校：</span><span class="value" val="m"></span></p>
+                                            <%--<p><span>学校：</span><input value="${user.school}"></p>--%>
+                                            <p><span>学校：</span>
+                                                <select style="border: none">
+                                                    <option >请选择</option>
+
+                                                </select>
+                                            </p>
+
                                         </div>
-                                    </form>--%>
+                                    </form>
+                                    <script>
+                                        $(document).ready(function(){
+                                            $("#save").click(function(){
+                                                var param=$("#user").val();
+                                                console.log(param);
+                                                $.ajax({
+                                                    type:"post",
+                                                    url:"${pageContext.request.contextPath}/home/forUpdateUser.action",
+                                                    data:{user:param},
+                                                    success:function(e){
+                                                        console.log("成功");
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    </script>
                                 </div>
                             </div>
                     </div>
@@ -462,7 +512,7 @@
                             <p class="font-default">用于保护帐号信息和登录安全</p>
                         </div>
                         <div class="ada-btn-area" id="btnUpdatePassword">
-                            <a href="" class="n-btn" id="btn-0">
+                            <a href="javascript:void(0)" class="n-btn" id="btn-0">
                                 修改
                             </a>
                         </div>
@@ -484,7 +534,7 @@
                             <!--正常状态-->
                             <a href="" class="n-btn">修改</a>
                         </div>
-                    </li>
+                    </li>--%>
                     <li id="changeMobile" class="click-row">
                         <div class="font-img-item clearfix">
                             <em class="fi-ico fi-ico-phone"></em>
@@ -504,20 +554,18 @@
                             </p>
                         </div>
                         <div class="ada-btn-area" id="btnUpdatePhone">
-                            <a class="n-btn btnChangeMobile" href="">
+                            <a class="n-btn btnChangeMobile" href="javascript:void(0)">
                                 修改
                             </a>
                         </div>
-                    </li>--%>
+                    </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
 
-</script>
 
 <form method="post" style="display: none" id="mx">
     <div class="popup_mask" style="display: block">
@@ -609,6 +657,7 @@
         </div>
     </div>
 </form>
+
 <script>
     $(document).ready(function(){
         $("#oldpassword").blur(function(){

@@ -2,6 +2,7 @@ package com.gem.hami.control;
 
 import com.gem.hami.entity.*;
 import com.gem.hami.service.ForumService;
+import com.gem.hami.service.GoodsService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,8 @@ import java.util.Map;
 public class ForumControl {
     @Autowired
     private ForumService forumService;
+    @Autowired
+    private GoodsService goodsService;
 
      ForumPostComment forumPostComment;
 
@@ -30,43 +33,78 @@ public class ForumControl {
     public void listTop(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String,Object> cmap = new HashMap<>();
         User user= (User) request.getSession().getAttribute("userInfo");
-        if (user!=null) {
-            System.out.println(user.getSchoolId());
-            System.out.println("123");
-            cmap.put("schoolId", user.getSchoolId());
-            int pageSize=12;
-            int curPage=1;
-            String scurPage = request.getParameter("curPage");
-            if (scurPage!=null&&!scurPage.trim().equals("")){
-                curPage=Integer.parseInt(scurPage);
-            }
-            cmap.put("curPage",curPage);
-            cmap.put("pageSize",pageSize);
-            PageInfo<ForumPost> pageInfo=forumService.findTopForumPostBySchoolId1(cmap);
-            List likelist = forumService.findForumPostLikeByUserId(user.getUserId());
-            int length = likelist.size();
+        String schoId = request.getParameter("schoId");
 
-            System.out.println(likelist);
-            System.out.println("数组长度"+length);
-            request.setAttribute("listlength",length);
-            request.setAttribute("likelist",likelist);
-            request.setAttribute("pageInfo",pageInfo);
-            System.out.println(pageInfo);
-        }else{
-            cmap.put("schoolId",2836);
-            int pageSize=10;
-            int curPage=1;
-            String scurPage = request.getParameter("curPage");
-            if (scurPage!=null&&!scurPage.trim().equals("")){
-                curPage=Integer.parseInt(scurPage);
-            }
-            cmap.put("curPage",curPage);
+        if (schoId == null) {
+            if (user != null) {
+                System.out.println(user.getSchoolId());
+                System.out.println("123");
+                cmap.put("schoolId", user.getSchoolId());
+                int pageSize = 12;
+                int curPage = 1;
+                String scurPage = request.getParameter("curPage");
+                if (scurPage != null && !scurPage.trim().equals("")) {
+                    curPage = Integer.parseInt(scurPage);
+                }
+                cmap.put("curPage", curPage);
+                cmap.put("pageSize", pageSize);
+                PageInfo<ForumPost> pageInfo = forumService.findTopForumPostBySchoolId1(cmap);
+
+//            论坛用户点赞同步
+                List likelist = forumService.findForumPostLikeByUserId(user.getUserId());
+                int length = likelist.size();
+//            论坛商品显示
+                List<Goods> listtransportion = goodsService.getFourRandomGoodsByTransport();
+                List<Goods> listnottrans = goodsService.getTwoRandomGoodsnotTransport();
+
+                request.setAttribute("listnottrans", listnottrans);
+                request.setAttribute("listtrans", listtransportion);
+                request.setAttribute("listlength", length);
+                request.setAttribute("likelist", likelist);
+                request.setAttribute("pageInfo", pageInfo);
+                System.out.println(pageInfo);
+            } else {
+                cmap.put("schoolId", 2836);
+                int pageSize = 10;
+                int curPage = 1;
+                String scurPage = request.getParameter("curPage");
+                if (scurPage != null && !scurPage.trim().equals("")) {
+                    curPage = Integer.parseInt(scurPage);
+                }
+                cmap.put("curPage", curPage);
 //           每页显示的条数
-            cmap.put("pageSize",pageSize);
-            PageInfo<ForumPost> pageInfo=forumService.findTopForumPostBySchoolId1(cmap);
-            request.setAttribute("pageInfo",pageInfo);
-            System.out.println(pageInfo);
-            System.out.println("到这了能转发吗？");
+                cmap.put("pageSize", pageSize);
+                PageInfo<ForumPost> pageInfo = forumService.findTopForumPostBySchoolId1(cmap);
+                List<Goods> listtransportion = goodsService.getFourRandomGoodsByTransport();
+                List<Goods> listnottrans = goodsService.getTwoRandomGoodsnotTransport();
+
+                request.setAttribute("listnottrans", listnottrans);
+                request.setAttribute("listtrans", listtransportion);
+                request.setAttribute("pageInfo", pageInfo);
+                System.out.println(pageInfo);
+                System.out.println("到这了能转发吗？");
+            }
+        }else {
+            int schoid = Integer.parseInt(schoId);
+            cmap.put("schoolId", schoid);
+            int pageSize = 10;
+            int curPage = 1;
+            String scurPage = request.getParameter("curPage");
+            if (scurPage != null && !scurPage.trim().equals("")) {
+                curPage = Integer.parseInt(scurPage);
+            }
+            cmap.put("curPage", curPage);
+//           每页显示的条数
+            cmap.put("pageSize", pageSize);
+            PageInfo<ForumPost> pageInfo = forumService.findTopForumPostBySchoolId1(cmap);
+            List<Goods> listtransportion = goodsService.getFourRandomGoodsByTransport();
+            List<Goods> listnottrans = goodsService.getTwoRandomGoodsnotTransport();
+
+            request.setAttribute("listnottrans", listnottrans);
+            request.setAttribute("listtrans", listtransportion);
+            request.setAttribute("pageInfo", pageInfo);
+
+
         }
 
         request.getRequestDispatcher("/sun/forumhome.jsp").forward(request,response);

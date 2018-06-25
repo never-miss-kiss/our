@@ -326,7 +326,7 @@
         <div class="col-sm-12">
             <div class="col-xs-1" >
             </div>
-            <div class="header-main">
+            <%--<div class="header-main">
                 <div class="col-xs-8">
                     <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
                         <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
@@ -406,7 +406,7 @@
                     );
                 </script>
 
-            </div>
+            </div>--%>
         </div>
         <div style="clear: both"></div>
     </div>
