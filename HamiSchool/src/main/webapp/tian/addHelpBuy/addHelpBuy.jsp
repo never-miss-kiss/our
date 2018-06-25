@@ -69,10 +69,10 @@
                                 <input type="radio" name="name" id="option3" autocomplete="off"> 生鲜
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="name" id="option3" autocomplete="off"> Radio 3
+                                <input type="radio" name="name" id="option3" autocomplete="off"> 果蔬
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="name" id="option3" autocomplete="off"> Radio 3
+                                <input type="radio" name="name" id="option3" autocomplete="off"> 衣物
                             </label>
                         </div>
                     </div>
@@ -81,26 +81,26 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
                     <div class="col-sm-7">
-                        <input type="text" id="title" name="title" class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="text" id="title" name="title" class="form-control" id="inputEmail3" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">收货地址</label>
                     <div class="col-sm-7">
-                        <input type="text" name="receiptAddress" class="form-control" id="suggestId" placeholder="Email">
+                        <input type="text" name="receiptAddress" class="form-control" id="suggestId" placeholder="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">备注地址</label>
                     <div class="col-sm-7">
-                        <input type="text"  name="receiptAddressAlternative" class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="text"  name="receiptAddressAlternative" class="form-control" id="inputEmail3" placeholder="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">收货电话</label>
                     <div class="col-sm-7">
-                        <input type="text"  name="buyPhone"  class="form-control" id="buyPhone" placeholder="Email">
+                        <input type="text"  name="buyPhone"  class="form-control" id="buyPhone" placeholder="">
                     </div>
                 </div>
             </div>
@@ -108,27 +108,27 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">购买地址</label>
                     <div class="col-sm-7">
-                        <input type="text"   name="buyAddress" class="form-control" id="suggestId2" placeholder="Email">
+                        <input type="text"   name="buyAddress" class="form-control" id="suggestId2" placeholder="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">备注地址</label>
                     <div class="col-sm-7">
-                        <input type="text"  name="buyAddressAlternative"  class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="text"  name="buyAddressAlternative"  class="form-control" id="inputEmail3" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">购买要求</label>
                     <div class="col-sm-7">
-                        <input type="text"  name="buyDemand" class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="text"  name="buyDemand" class="form-control" id="inputEmail3" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">截止日期</label>
                     <div class="col-sm-7">
-                        <input type="date"  name="endTime" class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="date"  name="endTime" class="form-control" id="inputEmail3" placeholder="">
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                         <label class="col-sm-4 control-label">订单距离</label>
                         <div class="col-sm-8">
                             <div class="input-group">
-                                <input id="suggestId3" type="text" name="distance" VALUE="8" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                                <input id="suggestId3" type="text" name="distance" VALUE="8" class="form-control" placeholder="" aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2">KM</span>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                         <label class="col-sm-4 control-label">跑腿费</label>
                         <div class="col-sm-8">
                             <div class="input-group">
-                                <input type="number" name="personPrice" id="personPrice" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="number" name="personPrice" id="personPrice" class="form-control" placeholder="" aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2">元</span>
                             </div>
                         </div>
@@ -164,21 +164,41 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">手机号码</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                        </div>
-                    </div>
+                    <%--<div class="form-group">--%>
+                        <%--<label for="inputEmail3" class="col-sm-4 control-label">手机号码</label>--%>
+                        <%--<div class="col-sm-8">--%>
+                            <%--<input type="email" class="form-control" id="inputEmail3" placeholder="">--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+
 
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">短信验证</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        <label for="inputEmail3" class="col-sm-4 control-label">验证码:</label>
+                        <div class="col-sm-8" >
+                            <input type="text" class="form-control col-sm-4" name="checkcode" id="inputPassword4"  placeholder="验证码" />
+                            <img title="点击更换" onclick="javascript:refresh(this);" src="${pageContext.request.contextPath }/help/imageServlet.action"/>
+                            <c:if test="${info ==1}">
+                                <p class="col-sm-4" style="color: red !important;">验证码输入错误！</p>
+                            </c:if>
+                            <!-- cookie 的 -->
                         </div>
                     </div>
+                    <%--验证码--%>
+                    <script type="text/javascript">
+                        function refresh(obj) {
+                            obj.src = "${pageContext.request.contextPath }/help/imageServlet.action?k="+new Date().valueOf();
+                            //alert("ssssssssssss");
+                        }
+                    </script>
 
-                    <a href="javascript:submitCheck()"><button type="button"  class="btn btn-default">Submit</button></a>
+                    <%--<div class="form-group">--%>
+                        <%--<label for="inputEmail3" class="col-sm-4 control-label">短信验证</label>--%>
+                        <%--<div class="col-sm-8">--%>
+                            <%--<input type="email" class="form-control" id="inputEmail3" placeholder="">--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+
+                    <a href="javascript:submitCheck()"><button type="button"  class="btn btn-default">提交</button></a>
 
             </div>
 

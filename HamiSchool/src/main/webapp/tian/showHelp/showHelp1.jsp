@@ -1135,8 +1135,8 @@
                     <label>排行榜</label>
                     <ul class="rank-tabs-list" >
                         <a href="javascript:sort(0,2)" ><li class="on">点击量</li></a>
-                        <a href="javascript:sort(0,3)" style="color: #000;"><li>截止日期</li></a>
-                        <a href="javascript:sort(0,4)"><li>标价</li></a>
+                        <a href="javascript:sort(0,3)" ><li>截止日期</li></a>
+                        <a href="javascript:sort(0,4) "><li>标价</li></a>
                     </ul>
                     <div class="rank-module">
                         <ul class="rank-list">
@@ -1175,6 +1175,7 @@
                 }
 
             </script>
+
 
 
 

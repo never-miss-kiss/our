@@ -136,14 +136,16 @@ public class HelpServiceImpl implements HelpService{
                 @Override
                 public int compare(HelpInfo o1, HelpInfo o2) {
                     int flag = 0;
-                    if(o1==null||o2==null||o1.getPersonPrice()==null||o2.getPersonPrice()==null)
+                    if(o1==null||o2==null)
+                        return flag;
+                    else if(o1.getPersonPrice()==null||o2.getPersonPrice()==null)
                         return flag;
                     if(o1.getPersonPrice()<o2.getPersonPrice())
                     {
-                        flag=-1;
+                        flag=1;
                     }
                     else if (o1.getPersonPrice()>o2.getPersonPrice()){
-                        flag = 1;
+                        flag = -1;
                     }
                     return flag;
                 }
