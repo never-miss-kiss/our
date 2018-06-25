@@ -109,10 +109,7 @@
     <!--用户显示商品-->
     <!--public List<Goods> getAllGoodsByUserId(QueryPojo_Goods queryPojo);-->
     <select id="getAllGoodsByUserId" resultType="Goods" parameterType="QueryPojo_Goods">
-        select * from goods where user_id=${userId}
-        <where>
-
-        </where>
+        select * from goods where user_id=${userId};
     </select>
 
     <!--管理员查询商品     分页-->
@@ -135,4 +132,14 @@
         </where>
     </select>
 
+
+    <!--public List<Goods> getTwoRandomGoodsByTransport();-->
+    <select id="getFourRandomGoodsByTransport" resultType="Goods">
+        SELECT * FROM goods WHERE goods_category_id = 2 ORDER BY RAND()  LIMIT 2
+    </select>
+
+    <!--public List<Goods> selectTwoRandomGoodsnotTransport();-->
+    <select id="selectTwoRandomGoodsnotTransport" resultType="Goods">
+            SELECT * FROM goods WHERE goods_category_id != 2 ORDER BY RAND()  LIMIT 2
+    </select>
 </mapper>
