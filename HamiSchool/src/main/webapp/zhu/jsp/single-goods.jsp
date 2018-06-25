@@ -20,18 +20,11 @@
       <script type="text/javascript" src="<%= basePath %>zhu/bootstrap/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="<%= basePath %>zhu/js/jquery-1.11.2.js"></script>
 
-      <link href="<%= basePath %>zhu/Gallery_files/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-      <script src="<%= basePath %>zhu/Gallery_files/bootstrap-3.3.7/dist/js/jquery.min.js"></script>
-      <link href="<%= basePath %>zhu/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
-      <link rel="stylesheet" type="text/css" href="<%= basePath %>zhu/Gallery_files/style_common.css">
-      <link href="<%= basePath %>zhu/Gallery_files/css" rel="stylesheet" type="text/css">
-      <link href="<%= basePath %>zhu/Gallery_files/css(1)" rel="stylesheet" type="text/css">
-      <link href="<%= basePath %>zhu/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
-      <script src="<%= basePath %>zhu/Gallery_files/wow.min.js.下载"></script>
-      <script src="<%= basePath %>zhu/Gallery_files/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+
       <!-- Bootstrap core CSS -->
       <link href="<%= basePath %>zhu/css/bootstrap.css" rel="stylesheet">
       <!-- Custom styles for this template -->
+
 
       <link rel="stylesheet" href="<%= basePath %>zhu/css/screen.css">
       <link rel="stylesheet" href="<%= basePath %>zhu/css/animation.css">
@@ -61,8 +54,14 @@
 
       <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/style.css">
       <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/comment.css">
+      <!--Gallery栏目框-->
+      <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
+      <%--<script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>--%>
+      <%--<script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>--%>
+      <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+      <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+      <!--Gallery栏目框end-->
       <style>
-      .head-top{background-color: #a6e1ec;}
       .dark-bg{border-color: #8a6d3b;}
       .search-block{position: absolute;top:82px;left: 17%}
       .catorys{margin-top: 30px;}
@@ -119,27 +118,26 @@
       </script>
    </head>
    <body>
-      <!-- SINGLE VIDEO -->
-      <input type="hidden" value="${u.nickname}" id="aaa"/>
-      <input type="hidden" value="${goods.goodsId}" id="bbb"/>
-      <input type="hidden" value="${u.userId}" id="ccc"/>
-      <div id="single-video" class="container-fluid standard-bg">
-         <!-- MENU -->
-         <div class="header head-top" >
-            <div class="container">
-               <div class="header-main" >
+   <!-- HOME 1 -->
+   <div class="header head-top" >
+      <div class="container-fluid">
+         <div class="col-sm-12">
+            <div class="col-xs-1" >
+            </div>
+            <div class="header-main">
+               <div class="col-xs-8">
                   <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
-                     <a href="#"><img src="<%= basePath %>zhu/Gallery_files/logo.png" alt=""></a>
+                     <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
                   </div>
                   <div class="top-navg">
-                     <span class="menu"> <img src="<%= basePath %>zhu/Gallery_files/icon.png" alt=" "></span>
+                     <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
                      <ul class="res">
-                        <a href="<%= basePath %>goods/findAllGoods.action"><span class="res1">首页</span></a>
-                        <a href="#"><span class="res2">二手</span></a>
-                        <a href="#"><span class="res3">跑腿</span></a>
-                        <a class="active" href="#"><span class="res1">哈密社区</span></a>
-                        <a href="<%= basePath %>zhu/jsp/hamirenz.jsp"><span class="res2">哈密认证</span></a>
-                        <a href="#"><span class="res3">联系我们</span></a>
+                        <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
+                        <a class="active" href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
+                        <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
+                        <a  href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
+                        <a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
+                        <a href="<%=basePath%>tian/index/index.jsp"><span class="res3">Callus</span></a>
                      </ul>
                      <!-- script-for-menu -->
                      <script>
@@ -149,15 +147,107 @@
                              });
                          });
                      </script>
-                     <div class="search-block">
-                        <form>
-                           <input type="search" placeholder="Search">
-                        </form>
-                     </div>
                   </div>
                </div>
+               <div class="col-xs-2 banner-right">
+                  <div id="person-pic" >
+
+                     <div id="head-portrait" class="col-xs-5" >
+                        <a href="<%= basePath %>home/personalCenter.action">
+                           <c:if test="${userInfo.photo == null}">
+                              <img src="<%= basePath %>profilePicture/0.jpg"></img>
+                           </c:if>
+                           <c:if test="${userInfo != null}">
+                              <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
+                           </c:if>
+                        </a>
+                     </div>
+
+                     <div class="col-xs-7">
+                        <div id="message">
+                           <a href="#">
+                              <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+                           </a>
+                        </div>
+                        <div id="exit">
+                           <a href="#">
+                              <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+
+               <script>
+                   $("#exit img").mousedown(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出点击时.png");
+                       }
+                   );
+                   $("#exit img").mouseup(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出.png");
+                       }
+                   );
+
+                   $("#message img").mousedown(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知点击时.png");
+                       }
+                   );
+
+                   $("#message img").mouseup(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知3.png");
+                       }
+                   );
+               </script>
+
             </div>
          </div>
+         <div style="clear: both"></div>
+      </div>
+   </div>
+      <!-- SINGLE VIDEO -->
+      <input type="hidden" value="${u.nickname}" id="aaa"/>
+      <input type="hidden" value="${goods.goodsId}" id="bbb"/>
+      <input type="hidden" value="${u.userId}" id="ccc"/>
+      <div id="single-video" class="container-fluid standard-bg">
+         <!-- MENU -->
+         <%--<div class="header head-top" >--%>
+            <%--<div class="container">--%>
+               <%--<div class="header-main" >--%>
+                  <%--<div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">--%>
+                     <%--<a href="#"><img src="<%= basePath %>zhu/Gallery_files/logo.png" alt=""></a>--%>
+                  <%--</div>--%>
+                  <%--<div class="top-navg">--%>
+                     <%--<span class="menu"> <img src="<%= basePath %>zhu/Gallery_files/icon.png" alt=" "></span>--%>
+                     <%--<ul class="res">--%>
+                        <%--<a href="<%= basePath %>goods/findAllGoods.action"><span class="res1">首页</span></a>--%>
+                        <%--<a href="#"><span class="res2">二手</span></a>--%>
+                        <%--<a href="#"><span class="res3">跑腿</span></a>--%>
+                        <%--<a class="active" href="#"><span class="res1">哈密社区</span></a>--%>
+                        <%--<a href="<%= basePath %>zhu/jsp/hamirenz.jsp"><span class="res2">哈密认证</span></a>--%>
+                        <%--<a href="#"><span class="res3">联系我们</span></a>--%>
+                     <%--</ul>--%>
+                     <%--<!-- script-for-menu -->--%>
+                     <%--<script>--%>
+                         <%--$( "span.menu" ).click(function() {--%>
+                             <%--$( "ul.res" ).slideToggle( 300, function() {--%>
+                                 <%--// Animation complete.--%>
+                             <%--});--%>
+                         <%--});--%>
+                     <%--</script>--%>
+                     <%--<div class="search-block">--%>
+                        <%--<form>--%>
+                           <%--<input type="search" placeholder="Search">--%>
+                        <%--</form>--%>
+                     <%--</div>--%>
+                  <%--</div>--%>
+               <%--</div>--%>
+            <%--</div>--%>
+         <%--</div>--%>
          <!-- SINGLE VIDEO -->
          <div class="row">
             <!-- SIDEBAR -->
