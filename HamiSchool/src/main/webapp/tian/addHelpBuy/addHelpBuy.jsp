@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JS页面背景颜色切换网页特效 - 【科e互联】</title>
+    <title>帮我买</title>
 
     <%--正式网页代码--%>
 
@@ -23,6 +23,7 @@
     <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
     <script src="<%= basePath %>tian/helpBuyDetail/help-buy.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4MuXt8BaTfnKIcCU0Q8UBuSyHuLAZcvN"></script>
+
 
     <%--闪光装逼效果--%>
     <link rel="stylesheet" type="text/css" href="<%=basePath %>tian/addHelpBuy/Flash/style.css">

@@ -28,9 +28,19 @@
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4MuXt8BaTfnKIcCU0Q8UBuSyHuLAZcvN"></script>
     <title>HelpFetchDetail</title>
 
+
+    <%--闪光装逼效果--%>
+    <link rel="stylesheet" type="text/css" href="<%=basePath %>tian/addHelpBuy/Flash/style.css">
+
+    <%--切换背景颜色--%>
+    <link rel="stylesheet" href="<%= basePath %>tian/addHelpBuy/ChangeColor/reset.css" type="text/css" />
+    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery-ui.custom.js"></script>
+    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery.bgColorSelector.min.js"></script>
+    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/init.js"></script>
 </head>
 <body>
 
+<div class="bgSelector"></div>
 <div class="container-fluid">
 
     <div class="col-sm-2  left">
@@ -275,13 +285,13 @@
 
     <div class="col-sm-2  right">
         <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" class="active"><a href="<%=basePath %>help/selectAllHelps.action"><h3>返回上一级</h3></a></li>
+            <li role="presentation" class="active"><a class="btn btn-default" href="<%=basePath %>help/selectAllHelps.action"><h3>返回上一级</h3></a></li>
             <li role="presentation" class="active" >
-                <button type="button" id="btn-addComment" class="btn btn-default" data-toggle="modal" data-target="#addComment">
-                    回复
-                </button>
+                <a href="#" class="btn btn-default" data-toggle="modal" data-target="#addComment">
+                    <h3>回复</h3>
+                </a>
             </li>
-            <li role="presentation" class="active"><a href="<%=basePath %>tian/addHelpFetch/addHelpFetch.jsp"><h3>帮我买</h3></a></li>
+            <li role="presentation" class="active"><a class="btn btn-default" href="<%=basePath %>tian/addHelpFetch/addHelpSend.jsp"><h3>帮我送</h3></a></li>
             <!-- Modal 回复的模态框-->
             <div class="modal fade" id="addComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">

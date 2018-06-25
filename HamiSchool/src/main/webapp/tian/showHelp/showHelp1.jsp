@@ -895,7 +895,7 @@
         </div>
         <div style="clear: both"></div>
     </div>
-    </div>
+</div>>
     <div class="tab-content">
     <div class="nav-tab-bar">
         <%--<a href="" target="_self" class="logo"> </a>--%>
@@ -918,17 +918,17 @@
             <div class="carousel">
                 <ul class="carousel-list" style="width: 400%; transform: translateX(-50%);">
                     <li class="carousel-item" data-carousel-index="0">
-                        <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/11.jpg" class="carousel-bg" alt="广告1" height="212px" width="680px"> </a>
+                        <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog1.jpg" class="carousel-bg" alt="广告1" height="212px" width="680px"> </a>
                     </li>
-                    <li class="carousel-item" data-carousel-index="1"> <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" target="_blank"> <img src="<%= basePath %>tian/images/bear.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/8f2325f283c86789a86c82094d0708e0ee1437e9.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
-                    <li class="carousel-item" data-carousel-index="2"> <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" target="_blank"> <img src="<%= basePath %>tian/images/bear.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/45647a5e0931bf54afa318606beb508fee3834a2.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
-                    <li class="carousel-item" data-carousel-index="3"> <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" target="_blank"> <img src="<%= basePath %>tian/images/bear.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/4b0b416b349d370a48cd5946ac4592ccbca7c259.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
+                    <li class="carousel-item" data-carousel-index="1"> <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog2.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/8f2325f283c86789a86c82094d0708e0ee1437e9.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
+                    <li class="carousel-item" data-carousel-index="2"> <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog3.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/45647a5e0931bf54afa318606beb508fee3834a2.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
+                    <li class="carousel-item" data-carousel-index="3"> <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog4.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/4b0b416b349d370a48cd5946ac4592ccbca7c259.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
                 </ul>
                 <div class="titles">
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="" data-title-index="0" target="_blank">广告1</a>
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="" data-title-index="1" target="_blank">广告2</a>
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="on" data-title-index="2" target="_blank">广告3</a>
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="" data-title-index="3" target="_blank">广告4</a> </div>
+                    <a href="#" class="" data-title-index="0" target="_blank">广告1</a>
+                    <a href="#" class="" data-title-index="1" target="_blank">广告2</a>
+                    <a href=#" class="on" data-title-index="2" target="_blank">广告3</a>
+                    <a href="#" class="" data-title-index="3" target="_blank">广告4</a> </div>
                 <ul class="indicator">
                     <li class="indicator-btn-holder">
                         <div class="indicator-btn" data-indicator-index="0"></div>
@@ -977,7 +977,7 @@
 
                                         </a>
                                         <div class="article-desc">
-                                            <p>${helpInfo.name}   酬劳：${helpInfo.personPrice}元   截止日期：${helpInfo.endTime}</p>
+                                            <p>${helpInfo.name}   酬劳：${helpInfo.personPrice}元&nbsp;&nbsp;&nbsp;&nbsp;   截止日期：${helpInfo.endTime}</p>
 
                                         </div>
 
@@ -990,15 +990,32 @@
                                                 <span class="category">帮我取</span>
                                             </a>
                                             <span class="view">${helpInfo.clickCount}</span>
-                                            <span class="like ">点赞量</span>
+                                            <%--<span class="like ">点赞量</span>--%>
                                             <a href="#" target="_blank">
                                                 <span class="reply">${helpInfo.commentCount}</span>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="cover-img">
-                                        <a href="#" target="_blank">
-                                            <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/bear.jpg);"></div>
+                                        <%--<a href="#" target="_blank">--%>
+                                            <%--<div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/bear.jpg);"></div>--%>
+
+                                            <c:if test="${helpInfo.helpType==1}">
+                                            <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite1.png);"></div>
+                                                </c:if>
+                                                <c:if test="${helpInfo.helpType==2}">
+                                                <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                    <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite2.png);"></div>
+                                                    </c:if>
+                                                    <c:if test="${helpInfo.helpType==3}">
+                                                    <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                        <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite3.png);"></div>
+                                                        </c:if>
+                                                        <c:if test="${helpInfo.helpType==4}">
+                                                        <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                            <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite4.png);"></div>
+                                                            </c:if>
                                         </a>
                                     </div>
                                 </div>
@@ -1154,7 +1171,7 @@
             </div>
             <script>
                 function sort(schoolId,sortId) {
-                    alert("1");
+//                    alert("1");
                     $.ajax(
                         {
 //                    请求的方法

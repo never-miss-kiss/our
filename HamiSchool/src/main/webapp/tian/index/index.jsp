@@ -566,25 +566,25 @@
 	 <div class="section-contact" id="contact">
 	    <div class="wrap">
            <div class="contact-main">
-				 <h3 class="tittle wow fadeInUp animated animated" data-wow-delay=".5s">Contact Us</h3>
+				 <h3 class="tittle wow fadeInUp animated animated" data-wow-delay=".5s">联系我们</h3>
 					<div class="col-md-6 contact-in wow slideInUp animated animated" data-wow-delay=".5s">
-						<h5>Lorem ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor.</h5>
-						<p class="para1">Lorem ipsum dolor sit amet. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.  </p>
+						<h5>11组寄语</h5>
+						<p class="para1">有信念、有梦想、有奋斗、有奉献的人生，才是有意义的人生。当代青年建功立业的舞台空前广阔、梦想成真的前景空前光明，希望大家努力在实现中国梦的伟大实践中创造自己的精彩人生。</p>
 						<div class="more-address wow slideInUp animated animated" data-wow-delay=".5s""> 
 								<address>
-								  <strong class="one">Address</strong><br>
-								  795 Folsom Ave, Suite 600<br>
-								  San Francisco, CA 94107<br>
-								  <abbr title="Phone">P :</abbr> (123) 456-7890
+								  <strong class="one">地址</strong><br>
+								  苏州<br>
+									Xi’an Jiaotong-liverpool Uiversity<br>
+								  <abbr title="QQ">P :</abbr>931721403；2467142788；957033099；2531852077
 								</address>
 								<address>
 								  <strong class="one">Our mail</strong><br>
-								  <a href="mailto:info@example.com">mail@example.com</a>
+								  <a href="mailto:info@example.com">@qq.com</a>
 							   </address>
 						  </div>
 					</div>
 					   <div class="col-md-6 contact-grid">
-						    <form>
+						    <form >
 									<div class="styled-input wow slideInUp animated animated" data-wow-delay=".5s">
 									  <input type="text" required />
 									  <label>Name</label>
@@ -602,7 +602,7 @@
 									  <label>Message</label>
 									  <span></span> </div>
 										<div class="send wow shake animated animated" data-wow-delay=".5s">
-											<input type="submit" value="Send" >
+											<input type="submit" value="发送" >
 										</div>
 						     </form>
 					   </div>
@@ -615,18 +615,18 @@
 		<div class="bottom-middle-top">
 			<div class="container">
 				<div class="col-md-6 bottom-grid wow fadeInUp animated animated" data-wow-delay=".5s">
-					<h5>NewsLetter</h5>
-					<p>Lorem ipsum dolor sit amet, tristique nec libero. Proin vitae convallis odio. Morbi nec enim nisi. Aliquam erat volutpat. </p>
+					<h5>11组</h5>
+					<p>无数人生成功的事实表明，青年时代，选择吃苦也就选择了收获，选择奉献也就选择了高尚。青年时期多经历一点摔打、挫折、考验，有利于走好一生的路。 </p>
 					<form>					 
-					  <input type="text" placeholder="Enter Email..." required="" />
+					  <input type="text" placeholder="写下你的电子邮件..." required="" />
 
-					 <input type="submit" value="Submit">
+					 <input type="submit" value="提交">
 					 <div class="clearfix"></div>
 				 </form>
 				</div>
 				<div class="col-md-6 bottom-grid wow fadeInUp animated animated" data-wow-delay=".5s">
-					<h5>Twitter Feed</h5>
-					<p>Check out th best designs online in the world <br>at <a href="mail-to:mail@example.com">http://example.com </a></p>
+					<h5>邮箱联系</h5>
+					<p>我们会定时检查邮箱，欢迎提出宝贵意见 <br>at <a href="qq号+@.com">qq号+@.com</a></p>
 					<span>1 day ago</span>
 					<p><a href="#">Twitter</a>, may be the more visual platform for education group.</p>
 					<span>4 day ago</span>
@@ -640,15 +640,15 @@
       <div class="map-bottom">
 					<div class="col-md-4 adrs-left wow fadeInUp animated animated" data-wow-delay=".5s">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-						<p>San Francisco, CA 94107.</p>
+						<p>郑州航空工业管理学院&河南科技大学</p>
 					</div>
 					<div class="col-md-4 adrs-left adrs-middle wow fadeInUp animated animated" data-wow-delay=".5s">
 						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-						<p>+655 8654 7799 , +055 726 3845</p>
+						<p></p>
 					</div>
 					<div class="col-md-4 adrs-left adrs-right wow fadeInUp animated animated" data-wow-delay=".5s">
 						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-						<p><a href="mailto:example@email.com">mail@example.com</a></p>
+						<p><a href="mailto:example@email.com">931721403@qq.com</a></p>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -657,7 +657,7 @@
 
 	   <!--copy-right-->
 		<div class="copy">
-		    <p class="wow fadeInUp animated animated" data-wow-delay=".5s">Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> </p>
+		    <p class="wow fadeInUp animated animated" data-wow-delay=".5s">Copyright &copy; 2018.InfoSchool项目组 All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="" target="_blank">InfoSchool</a> </p>
 		</div>
 	 <!--//copy-right-->
 		<!--//footer-->

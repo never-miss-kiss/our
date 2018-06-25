@@ -7,7 +7,7 @@
 .form2{
 	/*border:blue 2px solid;*/
 	height:300px;
-	width:inherit;
+	/*width:inherit;*/
 }
 
 .form3{
@@ -42,24 +42,32 @@
 
 .comment-item{
 	height:auto;
-	/*border:solid 2px orange;*/
+	border:solid 2px gainsboro;
+	margin-bottom: 10px;
 }
 
 .comment-item-middle{
-	height:100px;	
+	height:60px;
 	/*border:solid 2px blue;*/
 }
 
 .comment-item-bottom{
-	height:40px;	
+	height:40px;
 	/*border:solid 1px red;*/
 }
 
 .comment-pageinfo{
-	
+
+}
+
+
+.reply-item{
+	height:auto;
+	border:solid 2px gainsboro;
+	margin-bottom: 10px;
 }
 
 .reply-item-middle{
-	height:100px;	
+	height:60px;
 	/*border:solid 2px blue;*/
 }
