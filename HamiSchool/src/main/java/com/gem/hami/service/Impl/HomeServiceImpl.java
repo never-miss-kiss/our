@@ -49,6 +49,11 @@ public class HomeServiceImpl implements HomeService {
     }
 
     @Override
+    public boolean modifyPassInUser(String password) {
+        return userMapper.updatePassInUser(password);
+    }
+
+    @Override
     public PageInfo<Goods> allGoodsCollection(Map<String, Object> map) {
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");

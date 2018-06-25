@@ -57,9 +57,14 @@ public class HomeControl {
 
         User user = (User) request.getSession().getAttribute("userInfo");
 
-        System.out.println(user);
+//        System.out.println(user);
+
 //        User userNow = homeService.findUserById(user.getUserId());
-        request.setAttribute("user",user);
+        request.getAttribute("user");
+
+        boolean userNow = homeService.modifyUser(user);
+
+        System.out.println(userNow);
 
         request.getRequestDispatcher("/wang/person/userSafe_1.jsp").forward(request,response);
     }

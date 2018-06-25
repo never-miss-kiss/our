@@ -36,6 +36,10 @@
 
 <!--============================================================================================================-->
 
+    <!--public boolean updatePassInUser(String password);-->
+    <update id="updatePassInUser" parameterType="String">
+        UPDATE user SET password=#{password}
+    </update>
 
     <!--public List<User> selectAllUser()-->
     <select id="selectAllUser" resultType="User">
@@ -54,7 +58,7 @@
 
     <!--public User updateUser(User user);-->
     <update id="updateUser" parameterType="User">
-        update user set password=#{password},sex=#{sex},age=#{age},qq=#{qq},telphone=#{phone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo},state=#{state} where user_id=#{userId};
+        update user set sex=#{sex},age=#{age},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo} where user_id=#{userId};
     </update>
 
     <!--public User selectUserByName(String uname)-->

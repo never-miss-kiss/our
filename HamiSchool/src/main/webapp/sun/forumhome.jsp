@@ -944,41 +944,6 @@
 
                                 }
                             </script>
-                        <%--<li class="theme_list clearfix" u-id="137006033">--%>
-                            <%--<div class="theme_list_img">--%>
-                                <%--<a href="http://bbs.xiaomi.cn/u-detail-137006033" class="headportrait" target="_blank"--%>
-                                   <%--rel="noopener noreferrer">--%>
-                                    <%--<img class="user_head" src="../images/avatar.jpg"--%>
-                                         <%--data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/137006033/avatar.jpg?&amp;width=50&amp;height=50"--%>
-                                         <%--style="display: block;">--%>
-                                <%--</a>--%>
-                            <%--</div>--%>
-                            <%--<div class="theme_list_con">--%>
-
-                                <%--<div class="title">--%>
-                                    <%--<a href="http://bbs.xiaomi.cn/t-29629024"  class="title_name " target="_blank"--%>
-                                       <%--rel="noopener noreferrer"--%>
-                                       <%--onclick="">--%>
-                                        <%--王文祥自己臭(｡･∀･)ﾉﾞ嗨好玩吗？ </a>--%>
-
-                                <%--<div class="auth_msg clearfix">--%>
-                                    <%--<a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_name" target="_blank"--%>
-                                       <%--rel="noopener noreferrer">永_恆</a>--%>
-                                    <%--<i class=""></i>--%>
-
-                                    <%--<span class="time txt">1分钟前</span>--%>
-
-                                    <%--<span class="comefrom txt"></span>--%>
-                                    <%--<span class="stick txt">置顶</span>--%>
-                                    <%--<p class="see">--%>
-                                        <%--<span class="numb msg"><i></i>收藏</span>--%>
-                                        <%--<span class="numb view"><i></i>点赞</span>--%>
-                                        <%--<span class="numb msg"><i></i>点赞数：93276</span>--%>
-                                        <%--<span class="numb view"><i></i>点击量：93276</span>--%>
-                                    <%--</p>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                         <%--</li>--%>
 
                  </ul>
 
@@ -1014,53 +979,6 @@
                         }
                     </script>
 
-
-
-
-
-
-                                    <%--<div class="base_widget_paging">--%>
-                                        <%--<div class="paging_widget_2">--%>
-                                            <%--<ul>--%>
-                                                <%--<li class="page selected "><a--%>
-                                                        <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">1</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-2"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">2</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-3"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">3</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-4"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">4</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-5"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">5</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-6"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">6</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-7"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">7</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-8"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">8</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-9"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">9</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="page"><a href="http://bbs.xiaomi.cn/d-10"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">10</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="next"><a href="http://bbs.xiaomi.cn/d-2"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">&gt;</a>--%>
-                                                <%--</li>--%>
-                                                <%--<li class="last"><a href="http://bbs.xiaomi.cn/d-1034"--%>
-                                                                    <%--onclick="_hmt.push([&#39;_trackEvent&#39;,&#39;bbs首页&#39;,&#39;帖子列表&#39;, &#39;翻页&#39;]);">末页&gt;&gt;</a>--%>
-                                                    <%--<!--</li-->                </li>--%>
-                                            <%--</ul>--%>
-                                        <%--</div>--%>
-                                    <%--</div>--%>
                 </div>
             </div>
             <script type="text/javascript" src="../personLayer.js.下载"></script>
@@ -1073,11 +991,7 @@
     </div>
 </div>
 <div class="footer">
-    <!--<div class="mobile_switch">-->
-        <!--<a class="switch_desktop disable" id="J_switchDesktop" href="http://bbs.xiaomi.cn/#">电脑版</a>-->
-        <!--<a class="switch_mobile" id="J_switchMobile" href="http://bbs.xiaomi.cn/#">手机版</a>-->
-        <!--<a class="switch_app download_m" href="http://bbs.xiaomi.cn/#">客户端<i>new</i></a>-->
-    <!--</div>-->
+
     <div class="footertop">
         <div class="wrap_990">
             <div class="footertop_con">

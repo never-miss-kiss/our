@@ -12,10 +12,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
+
 <html xml:lang="zh-CN" lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -39,10 +36,12 @@
     <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
     <!--Gallery栏目框end-->
+
+
 </head>
 <body>
-
-<div class="header head-top" >
+<div class="site-header">
+    <div class="header head-top" >
     <div class="container-fluid">
         <div class="col-sm-12">
             <div class="col-xs-1" >
@@ -132,7 +131,7 @@
         <div style="clear: both"></div>
     </div>
 </div>
-
+</div>
 
 <div class="breadcrumbs">
     <div class="container">
@@ -156,10 +155,10 @@
                                     <li><a href="${pageContext.request.contextPath}/home/AllGoodsInUser.action"
                                            onclick="">我的商品</a>
                                     </li>
-                                    <li><a href=""
+                                    <li class="li"><a href=""
                                            onclick="">我的跑腿</a>
                                     </li>
-                                    <li><a href=""
+                                    <li class="li"><a href=""
                                            onclick="">我的任务</a>
                                     </li>
                                 </ul>
@@ -172,12 +171,12 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="active"><a href="<%= basePath%>/home/personalCenter.action" onclick="">我的个人中心</a>
+                                <li class="active li"><a href="<%= basePath%>/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
-                                <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
+                                <li class="li"><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
                                 </li>
 
-                                <li><a href="<%= basePath%>/home/favGoodsInUser.action?userId=${user.userId}" onclick="">喜欢的商品</a></li>
+                                <li class="li"><a href="<%= basePath%>/home/favGoodsInUser.action?userId=${user.userId}" onclick="">喜欢的商品</a></li>
                             </ul>
                         </div>
 
@@ -188,12 +187,12 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="${pageContext.request.contextPath}/home/forUpdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
+                                <li class="li"><a href="${pageContext.request.contextPath}/home/forUpdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
                                        onclick="">个人信息</a>
+                                </li >
+                                <li class="li"><a href="" onclick="">修改密码</a>
                                 </li>
-                                <li><a href="" onclick="">修改密码</a>
-                                </li>
-                                <li><a href="" target="blank"
+                                <li class="li"><a href="" target="blank"
                                        onclick="">个人认证</a>
                                 </li>
                             </ul>

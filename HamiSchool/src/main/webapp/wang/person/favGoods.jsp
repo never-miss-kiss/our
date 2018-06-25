@@ -137,7 +137,6 @@
                                     <input type="submit" class="search-btn iconfont" value="">
                                 </form>
                             </div>
-                            ${pageInfo.list}
                         </div>
                         <div class="box-bd">
                             <form id="mainForm" method="get">

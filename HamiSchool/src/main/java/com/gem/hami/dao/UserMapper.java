@@ -83,6 +83,8 @@ public interface UserMapper {
 
 //================================================================================================================
 
+    public boolean updatePassInUser(String password);
+
     /**
      * @Author：Wang
      * @Result:

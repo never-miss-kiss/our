@@ -17,6 +17,8 @@ public interface HomeService {
 //            修改个人资料,修改密码
     public boolean modifyUser(User user);
 
+    public boolean modifyPassInUser(String password);
+
     /**
      *@Author：wang
      *@Date: Created in 2018-6-20 20:56:24
