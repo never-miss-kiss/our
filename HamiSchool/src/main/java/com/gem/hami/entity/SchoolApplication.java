@@ -7,6 +7,16 @@ public class SchoolApplication {
 
     private School school;
 
+    private  Integer schoolId;
+
+    public Integer getSchoolId() {
+        return schoolId;
+    }
+
+    public void setSchoolId(Integer schoolId) {
+        this.schoolId = schoolId;
+    }
+
     private Integer userId;
 
     private String name;

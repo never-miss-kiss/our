@@ -16,6 +16,8 @@ public interface CertifyService {
 //            显示已开通学校
     public List<School> findCertifiedSchool();
 
+    public int findSchoolIdByName(String name);
+
 
 //    个人认证（即个人认证的表单提交功能）
 //  /certify/addPersonAppliation.action

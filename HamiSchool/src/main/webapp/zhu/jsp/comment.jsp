@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="OrcasThemes">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>仿微博评论</title>
+    <title>评论详情</title>
     <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/style.css">
     <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/comment.css">
 
@@ -31,14 +31,15 @@
         .commentAll{
             float: left;
             /*position: absolute;*/
-            height: 120%;
+            height: 180%;
             /*margin-top: 40px;*/
-            left:30%;
-            background-color: #a6e1ec;}
+            left:34%;
+            margin-top: 10px;
+            background-color: #C5F3EF;}
         .tit{margin-left:40%;}
+
     </style>
 </head>
-<body>
 
 <div class="header head-top" >
     <div class="container-fluid">
@@ -138,6 +139,7 @@
 <input type="hidden" value="${userId}" id="bbb"/>
 <input type="hidden" value="${u.userId}" id="ccc"/>
 <input type="hidden" value="${u.nickname}" id="ddd"/>
+
 <div class="commentAll">
     <!--评论区域 begin-->
     <div class="tit">
@@ -195,12 +197,9 @@
             </div>
         </C:forEach>
         </div>
-    </div>
+</div>
     <%--//</C:forEach>--%>
     <!--回复区域 end-->
-</div>
-
-
 
 
 <script type="text/javascript" src="<%= basePath %>zhu/comment/js/jquery-1.12.0.min.js"></script>
@@ -415,4 +414,5 @@
     })
 </script>
 </body>
+
 </html>

@@ -539,7 +539,7 @@ public class HelpControl {
             case 0:
             case 1:
                 HelpBuy helpBuy = helpService.findHelpBuy(helpId);
-                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, )0;
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
                 request.setAttribute("helpBuy", helpBuy);
                 request.setAttribute("helpCommentList", helpCommentList);
                 request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request, response);

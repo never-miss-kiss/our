@@ -264,20 +264,19 @@
                   <nav>
                      <ul>
                         <li class="title">所有分类</li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action">全部商品</a></li>
                         <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
                         <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
-                        <li><a href="./right-top.html">电脑</a></li>
-                        <li><a href="./left.html">数码</a></li>
-                        <li><a href="./left-top.html">电器</a></li>
-                        <li><a href="./jquery-v2.html">衣鞋伞帽</a></li>
-                        <li><a href="./jquery-v3.html">书籍教材</a></li>
-                        <li><a href="./right-left.html">体育健身</a></li>
-                        <li><a href="./init-opened.html">乐器</a></li>
-                        <li><a href="./no-mask.html">自行设计</a></li>
-                        <li><a href="./allow-scrolling.html">宠物</a></li>
-                        <li><a href="./custom-functions.html">文具</a></li>
-                        <li><a href="./ajax.html">其它</a></li>
-                        <li><a href="./browserify.html">Browserify</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=4">电脑</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=5">数码</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=6">电器</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=7">衣鞋伞帽</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=8">书籍教材</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=9">体育健身</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=10">乐器</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=11">自行设计</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=12">宠物</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=13">文具</a></li>
                      </ul>
                   </nav>
                </div>
@@ -466,20 +465,29 @@
                                     <div class="post post-medium">
                                        <div class="thumbr">
                                           <a class="post-thumb" href="<%= basePath %>goods/findGoodsById.action?goodsId=${good.goodsId}">
-                                             <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
+                                             <img class="img-responsive" style="width: 200px;height:150px;" src="<%= basePath %>zhu/img/goodsPic/${good.picture}"  alt="#">
                                           </a>
                                        </div>
                                        <div class="infor">
                                           <br>
                                           <h4>
                                              <a class="title" >${good.name}</a>
+                                             <p>&nbsp;</p>
                                           </h4>
                                           <span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>${good.clickCount}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                           <span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>${good.price}</span>
+                                             <p>&nbsp;</p>
                                           <h5>
-                                             <a class="title" >吉林大学
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未认证
-                                             </a>
+                                             <%--<a class="title" >吉林大学--%>
+                                                <%--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未认证--%>
+                                             <%--</a>--%>
+                                                <a class="title" >
+                                                   <C:forEach items="${sName}" var="name">
+                                                      <C:if test="${name.key eq good.goodsId}">
+                                                         <C:out value="${name.value}"></C:out></C:if>
+                                                   </C:forEach>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未认证
+                                                </a>
                                           </h5>
                                        </div>
                                     </div>

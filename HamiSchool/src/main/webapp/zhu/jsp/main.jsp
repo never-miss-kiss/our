@@ -67,16 +67,17 @@
 		.Previous{position: absolute;top:130px;}
 		.Next{position: absolute;top:130px;left:98%}
 		.post{position: absolute;top:200px;left:88%;width: 150px;height: 60px}
-		.school{position: absolute;top:420px;left:20.5%;width: 900px;height: 140px;
-		background-color:whitesmoke}
+		.school{position: absolute;top:500px;left:20.5%;width: 900px;height: 140px;
+			background-color:whitesmoke}
+
 		.part1{float: left;padding-top:15px;padding-left: 16px;padding-right: 10px;padding-bottom: 10px}
-		.part2{position: absolute;top:540px;left:45%;}
+		.part2{position: absolute;top:610px;left:45%;}
 		.part2 a{color: black}
 		.part2 a:hover{color: red;}
 		.row .school a{color:#7B7A7A}
 		.row .school a:hover{color: cyan}
-		.allgoods{position: absolute;top:620px;left:20.5%;}
-		.pictures{position: absolute;top:690px;width: 900px;height: 660px;left:20.5%;background-color:#a6e1ec}
+		.allgoods{position: absolute;top:680px;left:20.5%;}
+		.pictures{position: absolute;top:750px;width: 900px;height: 660px;left:20.5%;background-color:#a6e1ec}
 		.picture1{position: relative;width: 200px;height: 150px;top:-35px;margin-top:-135px;margin-left: -130px;margin-right:150px;margin-bottom:285px;float: left;}
 		.picture2{position: relative;width: 200px;height: 150px;top:-35px;margin-top:-135px;margin-left: -170px;margin-right:170px;margin-bottom:285px;float: left;}
 
@@ -213,22 +214,21 @@
 			<div class="wrapper">
 				<nav>
 					<ul>
-						<li class="title">所有分类</li>
-						<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
-						<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
-						<li><a href="./right-top.html">电脑</a></li>
-						<li><a href="./left.html">数码</a></li>
-						<li><a href="./left-top.html">电器</a></li>
-						<li><a href="./jquery-v2.html">衣鞋伞帽</a></li>
-						<li><a href="./jquery-v3.html">书籍教材</a></li>
-						<li><a href="./right-left.html">体育健身</a></li>
-						<li><a href="./init-opened.html">乐器</a></li>
-						<li><a href="./no-mask.html">自行设计</a></li>
-						<li><a href="./allow-scrolling.html">宠物</a></li>
-						<li><a href="./custom-functions.html">文具</a></li>
-						<li><a href="./ajax.html">其它</a></li>
-						<li><a href="./browserify.html">Browserify</a></li>
-					</ul>
+					<li class="title">所有分类</li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action">全部商品</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=4">电脑</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=5">数码</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=6">电器</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=7">衣鞋伞帽</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=8">书籍教材</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=9">体育健身</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=10">乐器</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=11">自行设计</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=12">宠物</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=13">文具</a></li>
+				</ul>
 				</nav>
 			</div>
 		</div><!--#sidebar-main-->
@@ -254,13 +254,13 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner " role="listbox">
 						<div class="item active">
-							<img src="<%= basePath %>zhu/img/thumbs/thumb-review2.jpg" style="width:900px;height: 250px" alt="...">
+							<img src="<%= basePath %>zhu/img/lunbo/pic1.jpg" style="width:900px;height: 250px" alt="...">
 						</div>
 						<div class="item">
-							<img src="<%= basePath %>zhu/img/thumbs/thumb-review3.jpg" style="width:900px;height: 250px" alt="...">
+							<img src="<%= basePath %>zhu/img/lunbo/class.jpg" style="width:900px;height: 250px" alt="...">
 						</div>
 						<div class="item">
-							<img src="<%= basePath %>zhu/img/thumbs/thumb-review4.jpg" style="width:900px;height: 250px" alt="...">
+							<img src="<%= basePath %>zhu/img/lunbo/2018.jpg" style="width:900px;height: 250px" alt="...">
 						</div>
 					</div>
 
@@ -281,25 +281,28 @@
 			</div>
 			<div class="school">
 				<div class="part1">
-					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1" class="btn btn-default " role="button" style="background-color: #aac4bc" >吉林大学</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1460" class="btn btn-default " role="button" style="background-color: #aac4bc" >天津大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1515" class="btn btn-default " role="button" style="background-color: #aac4bc" >河北大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1547" class="btn btn-default " role="button" style="background-color: #aac4bc" >河北经贸大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1636" class="btn btn-default " role="button" style="background-color: #aac4bc" >山西大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1638" class="btn btn-default " role="button" style="background-color: #aac4bc" >中北大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >Primary link</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1637" class="btn btn-default " role="button" style="background-color: #aac4bc" >太原科技大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >Primary link</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1769" class="btn btn-default " role="button" style="background-color: #aac4bc" >大连理工大学</a>
+				</div>
+				<div class="part1">
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1885" class="btn btn-default " role="button" style="background-color: #aac4bc" >东北电力大学</a>
 				</div>
 				<div class="part1">
 					<button type="button" class="btn btn-link">更多学校</button>
@@ -328,7 +331,7 @@
 						<div class="post post-medium" >
 							<div class="thumbr">
 								<a class="post-thumb" href="<%= basePath %>goods/findGoodsById.action?goodsId=${goods.goodsId}">
-									<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
+									<img class="img-responsive" style="width: 150px;height:150px;" src="<%= basePath %>zhu/img/goodsPic/${goods.picture}" alt="#">
 								</a>
 							</div>
 							<div class="infor">

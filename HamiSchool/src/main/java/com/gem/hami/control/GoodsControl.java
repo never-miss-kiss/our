@@ -87,6 +87,18 @@ public class GoodsControl {
         String userNickname = user.getNickname();
         String schoolName = user.getSchool().getName();
 
+        Map<Integer,String> name = new HashMap<>();
+        Iterator iterator = pageInfo.getList().iterator();
+        while (iterator.hasNext()){
+            Goods g = (Goods) iterator.next();
+            int Id = g.getGoodsId();
+            int uId = g.getUser().getUserId();
+            //System.out.println(uId);
+            String sName = homeService.findUserById(uId).getSchool().getName();
+            //System.out.println(sName);
+            name.put(Id,sName);
+        }
+
         request.setAttribute("goods",goods);
         request.setAttribute("userNickname",userNickname);
         request.setAttribute("schoolName",schoolName);
@@ -97,6 +109,7 @@ public class GoodsControl {
         request.setAttribute("username",usernames);
         request.setAttribute("count",counts);
         request.setAttribute("u",u);
+        request.setAttribute("sName",name);
         request.getRequestDispatcher("/zhu/jsp/single-goods.jsp").forward(request,response);
     }
 
@@ -290,4 +303,58 @@ public class GoodsControl {
             System.out.println("删除回复评论成功");
         }
     }
+
+    //用户收藏
+    @RequestMapping("/addGoodsCollection.action")
+    public void addGoodsCollection(HttpServletRequest request,HttpServletResponse response){
+
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        int goodsId = Integer.parseInt(request.getParameter("goodsId"));
+        GoodsCollection goodsCollection = new GoodsCollection();
+        goodsCollection.setGoodsId(goodsId);
+        goodsCollection.setUserId(userId);
+        goodsCollection.setTime(new Date());
+        boolean flag = goodsService.addGoodsCollection(goodsCollection);
+        if(flag==true){
+            System.out.println("收藏成功");
+        }
+    }
+
+
+    //发布个人商品
+    @RequestMapping("/postGoods.action")
+    public  void postGoods(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+        User u = (User) request.getSession().getAttribute("userInfo");
+        int userId = u.getUserId();
+        String name = request.getParameter("title");
+        String detail = request.getParameter("detail");
+        String location = request.getParameter("address");
+        float price = Float.parseFloat(request.getParameter("price"));
+        int type = Integer.parseInt(request.getParameter("type"));
+        System.out.println(type);
+        String tel = request.getParameter("tel");
+        //int cId = goodsService.findGoodsCategoryByName(type);
+
+        Goods goods = new Goods();
+        goods.setName(name);
+        goods.setUserId(userId);
+        goods.setClickCount(0);
+        goods.setLocation(location);
+        goods.setGoodsCategoryId(1);
+        goods.setPhone(tel);
+        goods.setPrice(price);
+        goods.setReleaseTime(new Date());
+        goods.setRemark(detail);
+        goods.setGoodsCategoryId(type);
+
+        boolean flag = goodsService.addGoods(goods);
+        if(flag==true){
+            System.out.println("商品发布成功");
+            request.setAttribute("para",111);
+        }
+
+        request.getRequestDispatcher("/zhu/jsp/main.jsp").forward(request,response);
+    }
+
 }
