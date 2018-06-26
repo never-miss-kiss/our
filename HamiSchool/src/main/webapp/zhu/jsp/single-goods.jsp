@@ -170,7 +170,7 @@
                            </a>
                         </div>
                         <div id="exit">
-                           <a href="#">
+                           <a href="<%=basePath%>loginpage/exit.action">
                               <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
                            </a>
                         </div>

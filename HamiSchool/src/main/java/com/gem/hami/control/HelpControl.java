@@ -532,13 +532,14 @@ public class HelpControl {
         helpComment.setHelpId(helpId);
         helpComment.setReleaseTime(new Date());
 
+        helpService.modifyCommentCount(helpType,helpId);//顺便更新下评论表的评论数量
         helpService.addHelpComment(helpComment);
         List<HelpComment> helpCommentList;
         switch (helpType) {
             case 0:
             case 1:
                 HelpBuy helpBuy = helpService.findHelpBuy(helpId);
-                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, 0);
+                helpCommentList = helpService.findHelpCommentsByCondition(helpType, helpId, )0;
                 request.setAttribute("helpBuy", helpBuy);
                 request.setAttribute("helpCommentList", helpCommentList);
                 request.getRequestDispatcher("/tian/helpBuyDetail/helpBuyDetail.jsp").forward(request, response);

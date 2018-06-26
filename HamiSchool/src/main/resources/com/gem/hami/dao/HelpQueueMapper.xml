@@ -52,4 +52,8 @@
     <update id="updateHelpClickCount" parameterType="java.lang.Integer">
         UPDATE help_queue set click_count = click_count+1 where help_queue_id = #{param1}
     </update>
+
+    <update id="updateCommentCount" parameterType="java.lang.Integer">
+        UPDATE help_queue set comment_count = comment_count+1 where help_queue_id = #{param1}
+    </update>
 </mapper>

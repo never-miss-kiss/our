@@ -204,8 +204,8 @@
 							   </div>
 						  </div>
 					</div>
-        	  <h3><a href="#">James </a></h3>
-        	      <p>Lorem ipsum dolor sit amet. Integer gravida velit quis dolor tristiqumsan.</p>
+        	  <h3><a href="#">轻空掠掠语 </a></h3>
+        	      <p>想通了，就心甘情愿再狗一两年吧。</p>
         			<ul class="s_social">
 						<li><a href=""> <i class="fb1"> </i> </a></li>
 						<li><a href=""><i class="tw1"> </i> </a></li>
@@ -227,8 +227,8 @@
 							   </div>
 							 </div>
 					</div>
-        	 <h3><a href="#">Firoz </a></h3>
-        	      <p>Lorem ipsum dolor sit amet Integer gravida velit quis dolor tristiqumsan.</p>
+        	 <h3><a href="#">45°聆傾</a></h3>
+        	      <p>要啥签名啊！</p>
         			<ul class="s_social">
 						<li><a href=""> <i class="fb1"> </i> </a></li>
 						<li><a href=""><i class="tw1"> </i> </a></li>
@@ -250,7 +250,7 @@
 							   </div>
 						  </div>
 					</div>
-        	       <h3><a href="#">David</a></h3>
+        	       <h3><a href="#">@8102</a></h3>
         	      <p>Lorem ipsum dolor sit amet Integer gravida velit quis dolor tristiqumsan.</p>
         			<ul class="s_social">
 						<li><a href=""> <i class="fb1"> </i> </a></li>
@@ -274,8 +274,8 @@
 							   </div>
 						  </div>
 					</div>
-        	       <h3><a href="#">Joseph</a></h3>
-        	      <p>Lorem ipsum dolor sit amet Integer gravida velit quis dolor tristiqumsan.</p>
+        	       <h3><a href="#">了了</a></h3>
+        	      <p>Chase。。🐳🐳 。。鱼大人</p>
         			<ul class="s_social">
 						<li><a href=""> <i class="fb1"> </i> </a></li>
 						<li><a href=""><i class="tw1"> </i> </a></li>
@@ -575,10 +575,10 @@
 								  <strong class="one">地址</strong><br>
 								  苏州<br>
 									Xi’an Jiaotong-liverpool Uiversity<br>
-								  <abbr title="QQ">P :</abbr>931721403；2467142788；957033099；2531852077
+								  <abbr title="QQ">QQ :</abbr>931721403；2467142788；957033099；2531852077
 								</address>
 								<address>
-								  <strong class="one">Our mail</strong><br>
+								  <strong class="one">我们的电子邮箱</strong><br>
 								  <a href="mailto:info@example.com">@qq.com</a>
 							   </address>
 						  </div>
@@ -657,7 +657,7 @@
 
 	   <!--copy-right-->
 		<div class="copy">
-		    <p class="wow fadeInUp animated animated" data-wow-delay=".5s">Copyright &copy; 2018.InfoSchool项目组 All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="" target="_blank">InfoSchool</a> </p>
+		    <p class="wow fadeInUp animated animated" data-wow-delay=".5s">Copyright &copy; 2018.InfoSchool项目组 All rights reserved. <a href="http://www.cssmoban.com/" target="_blank" title="模板之家"></a><a href="http://www.cssmoban.com/" title="" target="_blank">InfoSchool</a> </p>
 		</div>
 	 <!--//copy-right-->
 		<!--//footer-->

@@ -278,7 +278,22 @@ public class HelpServiceImpl implements HelpService{
             case 4:helpQueueMapper.updateHelpClickCount(helpId);
                     break;
         }
-        return false;
+        return true;
+    }
+
+    @Override
+    public boolean modifyCommentCount(int typeId, int helpId) {
+        switch (typeId){
+            case 1:helpBuyMapper.updateCommentCount(helpId);
+                break;
+            case 2:helpSendMapper.updateCommentCount(helpId);
+                break;
+            case 3:helpFetchMapper.updateCommentCount(helpId);
+                break;
+            case 4:helpQueueMapper.updateCommentCount(helpId);
+                break;
+        }
+        return true;
     }
 
     @Override
