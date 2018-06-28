@@ -895,7 +895,7 @@
         </div>
         <div style="clear: both"></div>
     </div>
-</div>>
+</div>
     <div class="tab-content">
     <div class="nav-tab-bar">
         <%--<a href="" target="_self" class="logo"> </a>--%>

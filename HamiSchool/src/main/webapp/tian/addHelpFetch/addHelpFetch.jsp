@@ -149,7 +149,7 @@
                         <div class="col-sm-8">
                             <div class="input-group">
                             <input id="suggestId3" type="text" name="distance" VALUE="8" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-addon" id="basic-addon2">KM</span>
+
                             </div>
                         </div>
                     </div>
@@ -264,9 +264,9 @@
 
 
             var inputValue = G("suggestId").value; //获得输入框的值
-            alert(inputValue);
+//            alert(inputValue);
             var inputValue2 = G("suggestId2").value;
-            alert(inputValue2);
+//            alert(inputValue2);
 
             map.centerAndZoom(new BMap.Point(116.404, 39.915), 12);
             var output = "我算出来的距离";
