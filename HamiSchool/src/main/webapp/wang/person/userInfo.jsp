@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/main.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/base.min.css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" async="" src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/mstr.js"></script>
+    <%--<script type="text/javascript" async="" src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/mstr.js"></script>--%>
     <%--<script type="text/javascript" async="" src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/jquery.js"></script>--%>
-    <script type="text/javascript" async="" src="/wang/js/jquery.js"></script>
+    <script type="text/javascript" async="" src="<%= basePath%>/wang/js/jquery.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="UTF-8">
     <title>个人中心</title>
@@ -187,7 +187,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li class="li"><a href="${pageContext.request.contextPath}/home/forUpdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
+                                <li class="li"><a href="${pageContext.request.contextPath}/home/userSafe.action?userId=${user.userId}" <%--target="_blank"--%>
                                        onclick="">个人信息</a>
                                 </li >
                                 <li class="li"><a href="" onclick="">修改密码</a>
@@ -208,7 +208,7 @@
                                 <div class="user-card">
                                     <h2 class="username">欢迎--${user.nickname}</h2>
                                     <p class="tip">您好～</p>
-                                    <a class="link" href="${pageContext.request.contextPath}/home/forUpdateUser.action?userId=${user.userId}"
+                                    <a class="link" href="${pageContext.request.contextPath}/home/userSafe.action?userId=${user.userId}"
                                        onclick="">修改个人信息&gt;
                                     </a>
                                     <img class="avatar" src="img" width="150" height="150">
@@ -265,10 +265,9 @@
 
 <!-- .modal-globalSites END -->
 
-<script type="text/javascript" async="" src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/xmst.js"></script>
-<script src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/base.js"></script>
-
-<script type="text/javascript" src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/user.js"></script>
+<script type="text/javascript" async="" src="${pageContext.request.contextPath}/wang/script/xmst.js"></script>
+<script src="${pageContext.request.contextPath}/wang/script/base.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/wang/script/user.js"></script>
 
 
 

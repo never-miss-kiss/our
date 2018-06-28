@@ -49,28 +49,35 @@
         
       <div class="form-group">
         <div class="label">
-          <label for="sitename">原始密码：</label>
+          <label for="sitename">用户名：</label>
         </div>
         <div class="field">
         	<input type='hidden' name='admin.adminId' value='${admin.adminId }'>
           <input type="hidden"  class="input w50" id="oldPass" name="oldPass" size="50" value="${admin.password }"/>
-          <input type="password"  class="input w50" id="mpass" name="mpass" size="50" placeholder="请输入原始密码" data-validate="required:请输入原始密码,repeat#oldPass:密码错误" />
+          <input type="text"  class="input w50" id="mpass" name="mpass" size="50" placeholder="请输入要添加的管理的昵称" data-validate="required:请输入要添加的管理的昵称" />
         </div>
       </div>      
       <div class="form-group">
         <div class="label">
-          <label for="sitename">新密码：</label>
+          <label for="sitename">联系方式：</label>
         </div>
         <div class="field">
-          <input type="password" class="input w50" name="admin.password" size="50" placeholder="请输入新密码" data-validate="required:请输入新密码,length#>=5:新密码不能小于5位" />         
+          <input type="text" class="input w50" name="admin.password" size="50" placeholder="请输入真实可靠的联系方式" data-validate="required:请输入真实可靠的联系方式,<%--length#>=5:新密码不能小于5位--%>" />
         </div>
       </div>
       <div class="form-group">
         <div class="label">
-          <label for="sitename">确认新密码：</label>
+          <label for="sitename">权限：</label>
         </div>
         <div class="field">
-          <input type="password" class="input w50" name="renewpass" size="50" placeholder="请再次输入新密码" data-validate="required:请再次输入新密码,repeat#admin.password:两次输入的密码不一致" />          
+          <select>
+            <option value="0">请选择</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <%--<input type="password" class="input w50" name="renewpass" size="50" placeholder="请输入权限" data-validate="required:请再次输入新密码,repeat#admin.password:两次输入的密码不一致" />--%>
         </div>
       </div>
       

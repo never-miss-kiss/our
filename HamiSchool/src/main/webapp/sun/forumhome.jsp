@@ -577,6 +577,7 @@
                 </li>
                 <li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>
                 <li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>
+                <li><a href="${pageContext.request.contextPath}/home/personalCenter.action" target="_blank">个人中心</a></li>
                 <li><a href="https://s1.mi.com/m/ghd/2018/mst051002/index.html" target="_blank">更换学校</a></li>
             </ul>
         </div>

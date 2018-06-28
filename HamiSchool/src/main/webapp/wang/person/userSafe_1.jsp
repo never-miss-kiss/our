@@ -14,12 +14,12 @@
 <html>
 <head>
     <title>个人信息</title>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/wang/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/wang/css/layout.css">
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/wang/css/modacctip.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/base.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/wang/css/main.min.css">
-    <script src="/wang/script/jquery-1.11.2.js"></script>
+    <link type="text/css" rel="stylesheet" href="<%= basePath%>/wang/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="<%= basePath%>/wang/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="<%= basePath%>/wang/css/modacctip.css">
+    <link rel="stylesheet" href="<%= basePath%>/wang/css/base.min.css">
+    <link rel="stylesheet" href="<%= basePath%>/wang/css/main.min.css">
+    <script src="<%= basePath%>wang/script/jquery-1.11.2.js"></script>
     <style>
         html {
             overflow-y: scroll;
@@ -289,14 +289,31 @@
             display: none;
         }
     </style>
+
+    <%--修改头像--%>
+    <script src="<%= basePath%>/wang/head/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="<%= basePath%>/bootstrap/css/bootstrap.min.css">
+    <link href="<%= basePath%>/wang/head/cropper.min.css" rel="stylesheet">
+    <link href="<%= basePath%>/wang/head/sitelogo.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<%= basePath%>/wang/css/font-awesome.min.css">
+
+    <script src="<%= basePath%>/wang/head/bootstrap.min.js"></script>
+    <script src="<%= basePath%>/wang/head/cropper.js"></script>
+    <script src="<%= basePath%>/wang/head/sitelogo.js"></script>
+    <style type="text/css">
+        .avatar-btns button {
+            height: 35px;
+        }
+    </style>
     <%--<style>
         #main_r {
             float: left;
             width: 590px
         }
     </style>--%>
-    <link href="<%=basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="<%=basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+    <%--<link href="<%=basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">--%>
+    <%--<link href="<%=basePath %>tian/showHelp/Gallery_files   /animate.css" rel="stylesheet" type="text/css" media="all">--%>
     <script type="text/javascript">
         window.onload=function () {
             var b_tn = document.getElementById("btn-0");
@@ -418,7 +435,8 @@
                                         <em class="na-edit"></em>
                                     </div>
                                     <div class="naImgLink">
-                                        <a class="color4a9" href="" title="修改头像">修改头像</a>
+                                        <%--<a class="color4a9" href="" title="修改头像" >修改头像</a>--%>
+                                        <button type="button"  data-toggle="modal" data-target="#avatar-modal" style="margin: 10px; background-color: white;border: white;color: #0c80dc">修改头像</button>
                                     </div>
                                 </div>
                             </div>
@@ -454,34 +472,40 @@
                                             <p><span>签名：</span><span class="value" val="m">${user.signature}</span></p>
                                         </div>
                                         <div class="fdata ">
-                                            <p><span>学校：</span><span class="value" val="m">${user.school}</span></p>
+                                            <p><span>学校：</span><span class="value" val="m">${user.school.name}</span></p>
+                                        </div>
+                                        <%--<div class="fdata ">
+                                            <p><span>手机：</span><span class="value" val="m">${user.telphone}</span></p>
+                                        </div>--%>
+                                        <div class="fdata ">
+                                            <p><span>QQ：</span><span class="value" val="m">${user.qq}</span></p>
                                         </div>
                                     </div>
                                     <form id="user" method="post" style="display: none">
+
                                         <div class="fdata ">
-                                            <p><span>姓名：</span><input value="${user.nickname}"></p>
+                                            <p><span>姓名：</span><input value="${user.nickname}" name="userName" ></p>
                                         </div>
-                                        <div class="fdata ">
+                                        <%--<div class="fdata ">
                                             <p><span>性别：</span>
-                                                <select style="border: none">
+                                                <select style="border: none" name="userSex">
                                                     <option >请选择</option>
-                                                    <option style="border: none" value="M">男</option>
-                                                    <option style="border: none" value="F">女</option>
+                                                    <option  value="M">男</option>
+                                                    <option  value="F">女</option>
                                                 </select>
                                             </p>
-                                        </div>
+                                        </div>--%>
                                         <div class="fdata ">
                                             <p><span>签名：</span><input value="${user.signature}"></p>
                                         </div>
                                         <div class="fdata ">
-                                            <%--<p><span>学校：</span><input value="${user.school}"></p>--%>
-                                            <p><span>学校：</span>
-                                                <select style="border: none">
-                                                    <option >请选择</option>
-
-                                                </select>
-                                            </p>
-
+                                            <p><span>学校：</span><input value="${user.school.name}"></p>
+                                        </div>
+                                        <%--<div class="fdata ">
+                                            <p><span>手机：</span><input value="${user.telphone}"></p>
+                                        </div>--%>
+                                        <div class="fdata ">
+                                            <p><span>QQ：</span><input value="${user.qq}"></p>
                                         </div>
                                     </form>
                                     <script>
@@ -491,8 +515,11 @@
                                                 console.log(param);
                                                 $.ajax({
                                                     type:"post",
-                                                    url:"${pageContext.request.contextPath}/home/forUpdateUser.action",
+                                                    async:true,
+                                                    timeout: 1000,
+                                                    url:"${pageContext.request.contextPath}/home/forUpUser.action",
                                                     data:{user:param},
+                                                    dataType:"json",
                                                     success:function(e){
                                                         console.log("成功");
                                                     }
@@ -566,6 +593,140 @@
     </div>
 </div>
 
+<%--修改头像--%>
+<%--<div class="popup_mask">--%>
+<div class="user_pic" style="margin: 10px;">
+    <img src="">
+</div>
+
+<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!--<form class="avatar-form" action="upload-logo.php" enctype="multipart/form-data" method="post">-->
+            <form class="avatar-form">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                    <h4 class="modal-title" id="avatar-modal-label">上传图片</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="avatar-body">
+                        <div class="avatar-upload">
+                            <input class="avatar-src" name="avatar_src" type="hidden">
+                            <input class="avatar-data" name="avatar_data" type="hidden">
+                            <label for="avatarInput" style="line-height: 35px;">图片上传</label>
+                            <button class="btn btn-danger"  type="button" style="height: 35px;" onClick="$('input[id=avatarInput]').click();">请选择图片</button>
+                            <span id="avatar-name"></span>
+                            <input class="avatar-input hide" id="avatarInput" name="avatar_file" type="file"></div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="avatar-wrapper"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="avatar-preview preview-lg" id="imageHead"></div>
+                                <!--<div class="avatar-preview preview-md"></div>
+                        <div class="avatar-preview preview-sm"></div>-->
+                            </div>
+                        </div>
+                        <div class="row avatar-btns">
+                            <div class="col-md-4">
+                                <div class="btn-group">
+                                    <button class="btn btn-danger fa fa-undo" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees"> 向左旋转</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn  btn-danger fa fa-repeat" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees"> 向右旋转</button>
+                                </div>
+                            </div>
+                            <div class="col-md-5" style="text-align: right;">
+                                <button class="btn btn-danger fa fa-arrows" data-method="setDragMode" data-option="move" type="button" title="移动">
+								<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;setDragMode&quot;, &quot;move&quot;)">
+								</span>
+                                </button>
+                                <button type="button" class="btn btn-danger fa fa-search-plus" data-method="zoom" data-option="0.1" title="放大图片">
+								<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;zoom&quot;, 0.1)">
+								  <!--<span class="fa fa-search-plus"></span>-->
+								</span>
+                                </button>
+                                <button type="button" class="btn btn-danger fa fa-search-minus" data-method="zoom" data-option="-0.1" title="缩小图片">
+								<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;zoom&quot;, -0.1)">
+								  <!--<span class="fa fa-search-minus"></span>-->
+								</span>
+                                </button>
+                                <button type="button" class="btn btn-danger fa fa-refresh" data-method="reset" title="重置图片">
+									<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;reset&quot;)" aria-describedby="tooltip866214">
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-danger btn-block avatar-save fa fa-save" type="button" data-dismiss="modal"> 保存修改</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+<%--</div>--%>
+<script src="<%= basePath%>/wang/head/html2canvas.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    //做个下简易的验证  大小 格式
+    $('#avatarInput').on('change', function(e) {
+        var filemaxsize = 1024 * 5;//5M
+        var target = $(e.target);
+        var Size = target[0].files[0].size / 1024;
+        if(Size > filemaxsize) {
+            alert('图片过大，请重新选择!');
+            $(".avatar-wrapper").childre().remove;
+            return false;
+        }
+        if(!this.files[0].type.match(/image.*/)) {
+            alert('请选择正确的图片!')
+        } else {
+            var filename = document.querySelector("#avatar-name");
+            var texts = document.querySelector("#avatarInput").value;
+            var teststr = texts; //你这里的路径写错了
+            testend = teststr.match(/[^\\]+\.[^\(]+/i); //直接完整文件名的
+            filename.innerHTML = testend;
+        }
+
+    });
+
+    $(".avatar-save").on("click", function() {
+        var img_lg = document.getElementById('imageHead');
+        // 截图小的显示框内的内容
+        html2canvas(img_lg, {
+            allowTaint: true,
+            taintTest: false,
+            onrendered: function(canvas) {
+                canvas.id = "mycanvas";
+                //生成base64图片数据
+                var dataUrl = canvas.toDataURL("image/jpeg");
+                var newImg = document.createElement("img");
+                newImg.src = dataUrl;
+                imagesAjax(dataUrl)
+            }
+        });
+    })
+
+    function imagesAjax(src) {
+        var data = {};
+        data.img = src;
+        data.jid = $('#jid').val();
+        $.ajax({
+            url: "upload-logo.php",
+            data: data,
+            type: "POST",
+            dataType: 'json',
+            success: function(re) {
+                if(re.status == '1') {
+                    $('.user_pic img').attr('src',src );
+                }
+            }
+        });
+    }
+</script>
 
 <form method="post" style="display: none" id="mx">
     <div class="popup_mask" style="display: block">

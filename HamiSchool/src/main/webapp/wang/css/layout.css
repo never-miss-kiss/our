@@ -1492,8 +1492,8 @@ body[class^=ar] .i_currentselected, body.iw_IL .i_currentselected, body.fa_IR .i
 }
 
 a.n-btn {
-    *padding: 9px 40px;
-    _padding: 8px 40px 9px 40px
+    *padding: 9px 35px;
+    _padding: 8px 40px 9px 35px
 }
 
 .n-btn:hover {
@@ -2059,7 +2059,7 @@ a.n-btn {
 
 .fdata {
     padding-left: 20px;
-    line-height: 40px;
+    line-height: 20px;
     border-bottom: 2px solid #e6e6e6;
     overflow: hidden
 }
@@ -2602,4 +2602,3 @@ body[class^=ar] .editbasicinfo .err_tip_independ, body.iw_IL .editbasicinfo .err
     font-size: 16px
 }
 
-/*# sourceMappingURL=layout.css.map */

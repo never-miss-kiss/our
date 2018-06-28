@@ -58,7 +58,7 @@
 
     <!--public User updateUser(User user);-->
     <update id="updateUser" parameterType="User">
-        update user set sex=#{sex},age=#{age},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo} where user_id=#{userId};
+        update user set sex=#{sex},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo} where user_id=#{userId};
     </update>
 
     <!--public User selectUserByName(String uname)-->

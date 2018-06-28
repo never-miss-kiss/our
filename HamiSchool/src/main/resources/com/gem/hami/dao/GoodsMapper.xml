@@ -109,7 +109,7 @@
     <!--用户显示商品-->
     <!--public List<Goods> getAllGoodsByUserId(QueryPojo_Goods queryPojo);-->
     <select id="getAllGoodsByUserId" resultType="Goods" parameterType="QueryPojo_Goods">
-        select * from goods where user_id=${userId};
+        select * from goods where user_id=${userId}
     </select>
 
     <!--管理员查询商品     分页-->

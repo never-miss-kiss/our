@@ -52,21 +52,32 @@ public class HomeControl {
     }
 
 //    public User modifyUser(User user)
-    @RequestMapping("/forUpdateUser.action")
-    public void updateUser(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    @RequestMapping("/userSafe.action")
+    public void userSafe(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
         User user = (User) request.getSession().getAttribute("userInfo");
 
-//        System.out.println(user);
+        User userNow = homeService.findUserById(user.getUserId());
 
-//        User userNow = homeService.findUserById(user.getUserId());
-        request.getAttribute("user");
-
-        boolean userNow = homeService.modifyUser(user);
-
-        System.out.println(userNow);
+        request.setAttribute("user",userNow);
 
         request.getRequestDispatcher("/wang/person/userSafe_1.jsp").forward(request,response);
+    }
+
+    @RequestMapping("/forUpUser.action")
+    public void forUpdataUser(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        User user = (User) request.getSession().getAttribute("userInfo");
+
+        User upUser = homeService.findUserById(user.getUserId());
+
+
+        homeService.modifyUser(upUser);
+
+        request.setAttribute("user",upUser);
+
+        request.getRequestDispatcher("/wang/person/userSafe_1.jsp").forward(request,response);
+
+
     }
 
     @RequestMapping("/AllGoodsInUser.action")

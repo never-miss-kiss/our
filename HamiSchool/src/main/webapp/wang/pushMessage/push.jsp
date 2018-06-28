@@ -23,7 +23,7 @@
   
   	 <div class="form-group">
         <div class="label">
-          <label for="sitename">管理员：</label>
+          <label for="sitename">管理员：${admin.nickname }</label>
         </div>
         <div class="field">
            <input type="text" readOnly="true"  class="input w50" name="pushMessage.adminName"  value="${AdminInfo.adminName }"/> 
