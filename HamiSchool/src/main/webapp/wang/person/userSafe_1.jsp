@@ -394,10 +394,9 @@
                             <ul class="uc-nav-list">
                                 <li ><a href="${pageContext.request.contextPath }/home/personalCenter.action" onclick="">我的个人中心</a>
                                 </li>
-                                <li><a href="" onclick="">消息通知<i class="J_miMessageTotal"></i></a>
+                                <li><a href="" onclick="">圈子通知<i class="J_miMessageTotal"></i></a>
                                 </li>
-
-                                <li><a href="" onclick="">喜欢的商品</a></li>
+                                <li><a href="<%= basePath%>/wang/person/userGoods.jsp" onclick="">喜欢的商品</a></li>
                             </ul>
                         </div>
 
