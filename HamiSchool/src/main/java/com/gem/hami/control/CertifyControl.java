@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 
 //个人认证 开通学校模块控制层
@@ -25,12 +26,13 @@ public class CertifyControl {
     //开通学校
     @RequestMapping("/addSchool.action")
     public  void addSchool(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         User u = (User) request.getSession().getAttribute("userInfo");
         int userId = u.getUserId();
         String name = u.getNickname();
         String school = request.getParameter("school");
         String  telphone = request.getParameter("tel");
-        int schoolId = certifyService.findSchoolIdByName(school);
+        Integer schoolId = certifyService.findSchoolIdByName(school);
         SchoolApplication schoolApplication = new SchoolApplication();
         schoolApplication.setSchoolId(schoolId);
         schoolApplication.setUserId(userId);
@@ -39,10 +41,15 @@ public class CertifyControl {
         schoolApplication.setSubmitTime(new Date());
         boolean flag = certifyService.addSchoolApplication(schoolApplication);
         if(flag==true){
-            System.out.println("添加学校申请表单成功！");
+            if(schoolId==null) {
+                //System.out.println("添加学校申请表单成功！");
+                request.setAttribute("info", 3);
+            }else {
+                request.setAttribute("info", 1);
+            }
         }
 
-        request.getRequestDispatcher("/zhu/jsp/main.jsp").forward(request,response);
+        request.getRequestDispatcher("/zhu/jsp/hamirenz.jsp").forward(request,response);
 
     }
     //个人认证
@@ -52,17 +59,19 @@ public class CertifyControl {
         String zjh = request.getParameter("zjh");
         String schoolName = request.getParameter("pschool");
 
+        int schoolId = certifyService.findSchoolIdByName(schoolName);
+
         PersonApplication personApplication = new PersonApplication();
         personApplication.setName(uname);
         personApplication.setSubmitTime(new Date());
-        personApplication.setSchoolName(schoolName);
+        personApplication.setSchoolId(schoolId);
         personApplication.setZjh(zjh);
         boolean flag = certifyService.addPersonAplication(personApplication);
         if(flag==true){
             System.out.println("个人认证提交成功，等待通知");
+            request.setAttribute("info",2);
         }
-
-        request.getRequestDispatcher("/zhu/jsp/main.jsp").forward(request,response);
+        request.getRequestDispatcher("/zhu/jsp/hamirenz.jsp").forward(request,response);
 
     }
 }

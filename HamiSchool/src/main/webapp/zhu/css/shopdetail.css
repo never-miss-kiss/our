@@ -55,12 +55,22 @@ img{ border:0px;}
 
 /*商品详情部分*/
 .shopdetails{
-	width:1200px;
-	height:700px;
-	margin:0 auto;
-	margin-top:20px;
-	margin-left: 40px;
-	position:relative;
+	/*width:1200px;*/
+	/*height:700px;*/
+	/*margin:0 auto;*/
+	/*margin-top:20px;*/
+	/*margin-left: 40px;*/
+	/*position:relative;*/
+	width: 1030px;
+	height: 500px;
+	margin: 0 auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-top: 60px;
+	margin-left: px;
+	position: relative;
+	margin-bottom: 100px;
+	background-color: aliceblue;
 
 }
 /*放大镜*/
@@ -71,7 +81,7 @@ img{ border:0px;}
 }
 #showbox { background:#eee;}
 #showbox span {
-	 background:url(../images/shopdetail/whitebg.png) repeat;
+	 /*background:url(../images/shopdetail/whitebg.png) repeat;*/
 	 }
 #showsum { 
 	left:25px; 

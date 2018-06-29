@@ -18,8 +18,8 @@ body{font-family: "Microsoft Yahei";}
 .flex-text-wrap,pre{margin: 0 !important;}
 .commentAll{position: relative;
     width: 500px;
-    /*top:-150px;*/
-    /*left:20px;*/
+    top:-80px;
+    left:120px;
     padding: 20px;
     /*margin: -20px auto;*/
 }

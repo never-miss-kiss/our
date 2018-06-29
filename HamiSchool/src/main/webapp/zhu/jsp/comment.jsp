@@ -28,15 +28,20 @@
     <!--Gallery栏目框end-->
 
     <style>
+        body{width: 100%;height:1200px;
+            background-color: #E3EEEC;  }
         .commentAll{
             float: left;
             /*position: absolute;*/
-            height: 180%;
+            height: auto !important;
             /*margin-top: 40px;*/
             left:34%;
-            margin-top: 10px;
+            margin-top: 140px;
             background-color: #C5F3EF;}
         .tit{margin-left:40%;}
+         img.user-photo {
+            border-radius: 100%;
+        }
 
     </style>
 </head>
@@ -55,7 +60,7 @@
                         <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
                         <ul class="res">
                             <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
-                            <a class="active" href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
+                            <a class="active" href="<%=basePath%>goods/findAllGoods.action?#sa"><span class="res2">二手</span></a>
                             <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
                             <a  href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
                             <a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
@@ -139,6 +144,7 @@
 <input type="hidden" value="${userId}" id="bbb"/>
 <input type="hidden" value="${u.userId}" id="ccc"/>
 <input type="hidden" value="${u.nickname}" id="ddd"/>
+<input type="hidden" value="${u.photo}" id="eee"/>
 
 <div class="commentAll">
     <!--评论区域 begin-->
@@ -148,7 +154,7 @@
     <div class="top">
     <div class="comment-show">
         <div class="comment-show-con clearfix">
-            <div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div>
+            <div class="comment-show-con-img pull-left"><img class="img-responsive user-photo" src="<%= basePath %>profilePicture/${img}" alt=""></div>
             <div class="comment-show-con-list pull-left clearfix">
                 <div class="pl-text clearfix">
                     <a href="#" class="comment-size-name">${uname}: </a>
@@ -166,7 +172,7 @@
     </div>
     </div>
     <div class="reviewArea clearfix">
-        <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" onkeyup="keyUP(this)" ></textarea>
+        <textarea class="content comment-input" placeholder="欢迎评论...&hellip;" onkeyup="keyUP(this)" ></textarea>
         <a href="javascript:;" class="plBtn">评论</a>
     </div>
     <!--评论区域 end-->
@@ -174,7 +180,15 @@
     <div class="comment-show">
         <C:forEach items="${goodsCommentReply}" var="reply">
         <div class="comment-show-con clearfix">
-            <div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div>
+            <div class="comment-show-con-img pull-left">
+                <C:forEach items="${photo}" var="p">
+                    <C:if test="${p.key eq reply.goodsCommentReplyId}">
+                        <%--<img class="img-responsive user-photo" src="${pageContext.request.contextPath}/profilePicture/${p.value}" alt="Comment User Avatar">--%>
+                        <img class="img-responsive user-photo" src="${pageContext.request.contextPath}/profilePicture/${p.value}" alt="Comment User Avatar">
+                    </C:if>
+                </C:forEach>
+                <%--<img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt="">--%>
+            </div>
             <div class="comment-show-con-list pull-left clearfix">
                 <div class="pl-text clearfix">
                     <a href="#" class="comment-size-name" id="username">
@@ -239,10 +253,12 @@
         var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
         console.log(oSize);
         var name = document.getElementById('ddd').value;
+        var img = document.getElementById('eee').value;
+        //alert(img);
         //动态创建评论模块
-        oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">'+ name +': </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock"><span style="color:red">删除</span></a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>  </div> </div><div class="hf-list-con"></div></div> </div>';
+        oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img class="img-responsive user-photo" src="http://localhost:8080/${pageContext.request.contextPath}/profilePicture/'+img+'" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">'+ name +': </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock"><span style="color:red">删除</span></a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>  </div> </div><div class="hf-list-con"></div></div> </div>';
         if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
-            $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
+            $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);           //http://localhost:8080/HamiSchool/profilePicture/1.jpg
             $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value','').siblings('pre').find('span').text('');
         }
         var goodsCommentId = document.getElementById('aaa').value;

@@ -13,7 +13,7 @@
     <title>Simpler-Sidebar: Demo</title>
     <meta name="description" content="A simple side nav in jQuery.">
 
-    <link rel="stylesheet" href="<%= basePath %>zhu/assets/css/normalize.css" />
+    <%--<link rel="stylesheet" href="<%= basePath %>zhu/assets/css/normalize.css" />--%>
     <link rel="stylesheet" href="<%= basePath %>zhu/assets/css/main.css" />
     <script src="<%= basePath %>zhu/assets/js/html5shiv.min.js"></script>
     <![endif]-->

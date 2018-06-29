@@ -13,30 +13,86 @@
     <title>发布二手商品</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<%= basePath %>zhu/pintuer/pintuer.css" />
+    <link rel="stylesheet" href="<%= basePath %>zhu/css/font-awesome.min.css">
+<%--<script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>--%>
     <script type="text/javascript" src="<%= basePath %>zhu/pintuer/jquery.js"></script>
     <script type="text/javascript" src="<%= basePath %>zhu/pintuer/pintuer.js"></script>
 
     <link href="<%= basePath %>zhu/css/demo.css" rel="stylesheet" type="text/css">
     <script src="<%= basePath %>zhu/js/jquery-ui.js" type="text/javascript"></script>
     <!--End Framework-->
-     <script src="<%= basePath %>zhu/js/jquery.ffform.js" type="text/javascript"></script>
+    <script src="<%= basePath %>zhu/js/jquery.ffform.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="<%= basePath %>zhu/js/imgFileupload.js"></script>
+
+
+
     <script type="text/javascript">
         $(document).ready(function () {
             $('#form').ffform({ animation: 'flip', submitButton: '#submit', validationIndicator: '#validation', errorIndicator: '#error', successIndicator: '#success', 'fields': [{ 'id': 'name', required: true, requiredMsg: 'Name is required', type: 'alpha', validate: true, msg: 'Invalid Name' }, { 'id': 'email', required: true, requiredMsg: 'E-Mail is required', type: 'email', validate: true, msg: 'Invalid E-Mail Address' }, { 'id': 'phone', required: false, type: 'custom', validate: false, msg: 'Invalid Phone #' }, { 'id': 'message', required: false, type: 'text', validate: false, msg: ''}] });
         });
     </script>
     <style type="text/css">
-        body{background-color: navajowhite}
+        body{background-color: #E3EEEC;  }
+
+        p{position:relative;top:10px;left:46%;}
+        li{
+            list-style: none;
+        }
+        img{
+            border:none;display: block
+        }
+        .imgFileUploade .header{
+            height: 50px;width: 100%;line-height:50px;
+        }
+        .imgFileUploade .header span{
+            display: block;float:left;
+        }
+        .imgFileUploade .header span.imgTitle{
+            line-height:50px;
+        }
+        .imgFileUploade .header span.imgTitle b{
+            color:red;margin:0 5px;line-height: 57px;display: block;float: right;font-size: 20px;
+        }
+        .imgFileUploade .header span.imgClick{
+            width: 30px;height: 30px;margin-left: 10px;margin-top:10px;cursor: pointer;
+            background: url(<%= basePath %>zhu/img/addUpload.png) no-repeat center center;background-size:cover;
+        }
+        .imgFileUploade .header span.imgcontent{
+            color:#999;margin-left:120px;line-height: 50px;
+        }
+        .imgFileUploade .imgAll{
+            width: 100%;    margin-top: 5px;
+        }
+        .imgFileUploade .imgAll ul:after{
+            visibility: hidden;  display: block; font-size: 0; content: ".";  clear: both; height: 0
+        }
+        .imgFileUploade .imgAll li{
+            width: 100px;height: 100px;border:solid 1px #ccc;margin:8px 5px;float: left;position: relative;box-shadow: 0 0 10px #eee;
+        }
+        .imgFileUploade .imgAll li img{
+            position: absolute;top:0;left:0;width: 100%;height: 100%;display: block;
+        }
+        .delImg{
+            position: absolute;top:-10px;right:-7px;width: 22px;height: 22px;background: #000;border-radius: 50%;display: block;text-align:  center;line-height: 22px;color:#fff;font-weight: 700;font-style:normal;cursor: pointer;
+        }
+        .box4{
+            border:solid 1px #ccc;
+        }
     </style>
 </head>
 <body style="">
+
+        <span class="fa fa-hand-o-left" style="color: red;font-size: large;"></span>
+        <a href="<%=basePath%>goods/findAllGoods.action?#sa" style="font-size: large;"><strong>返回二手商品</strong></a>
+        <c:if test="${para == '1'}"><p style="color: green;font-size:24px">商品发布成功</p></c:if>
     <section id="getintouch" class="bounceIn animated">
         <div class="container" style="border-bottom: 0;">
             <h1>
                 <span>发布二手信息</span>
             </h1>
         </div>
-        <div class="container" style="height: 700px;">
+        <div class="container" style="height:auto !important;">
             <form class="contact" action="${pageContext.request.contextPath}/goods/postGoods.action" method="post" id="ajaxForm" onsubmit="return submitInfo()">
             <div class="form-group">
                 <div class="label">
@@ -54,15 +110,9 @@
                     <input type="text" class="input" id="detail" name="detail" size="50" data-validate="required:必填" placeholder="请输入内容" />
                 </div>
             </div>
-            <div class="row clearfix">
-                <div class="lbl">
-                    <label >
-                        图片</label>
-                </div>
-                <div class="ctrl">
-                    <input type="file" >
-                </div>
-            </div>
+           <div class="form-group">
+            <div class="box4" style="width: 780px;margin:30px auto"></div>
+           </div>
             <div class="form-group">
                 <div class="label">
                     <label for="address">交易地点</label>
@@ -192,6 +242,18 @@
             }
             return flag;
         }
+    </script>
+    <script>
+        var imgFile4 = new ImgUploadeFiles('.box4',function(e){
+            this.init({
+                MAX : 1,
+                MH : 800, //像素限制高度
+                MW : 900, //像素限制宽度
+                callback : function(arr){
+                    console.log(arr)
+                }
+            });
+        });
     </script>
 </body>
 </html>

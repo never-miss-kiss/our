@@ -1,86 +1,48 @@
-<!DOCTYPE html>
-<%
-  String path = request.getContextPath();
-  String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="favicon.png">
-    <title>emoji-picker Demo</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <!-- Begin emoji-picker Stylesheets -->
-    <link href="<%= basePath %>zhu/css/qqImg/emoji.css" rel="stylesheet">
-    <!-- End emoji-picker Stylesheets -->
-  </head>
-
-  <body class="text-center">
-    <h1>emoji-picker</h1>
-    <p>
-      <a class="btn btn-secondary" href="https://github.com/one-signal/emoji-picker" target="_blank">
-        View on GitHub <i class="fa fa-lg fa-github"></i>
-      </a>
-    </p>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-10">
-          <div class="text-left">
-            <p class="lead emoji-picker-container">
-              <input type="email" class="form-control" placeholder="Input field" data-emojiable="true" data-emoji-input="unicode">
-            </p>
-            <p class="lead emoji-picker-container">
-              <input type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true" maxlength="10">
-            </p>
-            <p class="lead emoji-picker-container">
-              <textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
-            </p>
-            <p class="lead emoji-picker-container">
-              <textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji Unicode input" data-emojiable="true" data-emoji-input="unicode"></textarea>
-            </p>
-          </div>
-        </div>
-      </div>
+<body style="overflow: hidden;">
+<div class="navbar main" id="navbar-main">
+  <div class="load-this">
+    <div id="sidebar-main-trigger" class="icon float-left">
+      <img src="http://localhost:8080/HamiSchool/zhu/assets/imgs/icon-menu-24px-x2.png" alt="Menu Icon" width="24px">
     </div>
+  </div><!--a ajax helper-->
+</div><!--.navbar.main-->
 
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-    <!-- Begin emoji-picker JavaScript -->
-    <script src="<%= basePath %>zhu/js/qqImg/config.js"></script>
-    <script src="<%= basePath %>zhu/js/qqImg/util.js"></script>
-    <script src="<%= basePath %>zhu/js/qqImg/jquery.emojiarea.js"></script>
-    <script src="<%= basePath %>zhu/js/qqImg/emoji-picker.js"></script>
-    <!-- End emoji-picker JavaScript -->
 
-    <script>
-      $(function() {
-        // Initializes and creates emoji set from sprite sheet
-        window.emojiPicker = new EmojiPicker({
-          emojiable_selector: '[data-emojiable=true]',
-          assetsPath: 'zhu/img/qqImg/',
-          popupButtonClasses: 'fa fa-smile-o'
-        });
-        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-        // It can be called as many times as necessary; previously converted input fields will not be converted again
-        window.emojiPicker.discover();
-      });
-    </script>
-    <script>
-      // Google Analytics
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-49610253-3', 'auto');
-      ga('send', 'pageview');
-    </script>
-  </body>
-</html>
+
+
+
+
+<div class="sidebar main left" id="sidebar-main" style="position: fixed; top: 206px; bottom: 0px; width: 300px; z-index: 3000; left: 0px;" data-simplersidebar="opened">
+  <div class="wrapper">
+    <nav>
+      <ul>
+        <li class="title">Playground</li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./right.html">Right</a></li>
+        <li><a href="./right-top.html">Right Top</a></li>
+        <li><a href="./left.html">Left</a></li>
+        <li><a href="./left-top.html">Left Top</a></li>
+        <li><a href="./jquery-v2.html">jQuery v2</a></li>
+        <li><a href="./jquery-v3.html">jQuery v3</a></li>
+        <li><a href="./right-left.html">Right and Left</a></li>
+        <li><a href="./init-opened.html">Init Opened</a></li>
+        <li><a href="./no-mask.html">No Mask</a></li>
+        <li><a href="./allow-scrolling.html">Allow Scrolling</a></li>
+        <li><a href="./custom-functions.html">Custom Functions</a></li>
+        <li><a href="./ajax.html">Ajax</a></li>
+        <li><a href="./browserify.html">Browserify</a></li>
+      </ul>
+    </nav>
+  </div><!--#sidebar-main-->
+
+  <script type="text/javascript" src="http://localhost:8080/HamiSchool/zhu/js/jquery-1.11.2.js"></script>
+  <script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script><script src="http://cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js"></script>
+  <script src="http://localhost:8080/HamiSchool/zhu/dist/jquery.simpler-sidebar.min.js"></script>
+  <script src="http://localhost:8080/HamiSchool/zhu/assets/js/sidebar/main-sidebar-left-top.js"></script>
+
+
+</div>
+<div data-simplersidebar="mask"></div>
+</body>

@@ -3,7 +3,7 @@ $( "document" ).ready( function() {
 
 	$mainSidebar.simplerSidebar( {
 		align: "left",
-		attr: "sidebar-main",
+		// attr: "sidebar-main",
 		top: 206,
 		selectors: {
 			trigger: "#sidebar-main-trigger",

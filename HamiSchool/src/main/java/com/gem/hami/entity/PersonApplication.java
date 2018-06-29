@@ -9,6 +9,8 @@ public class PersonApplication {
 
     private String schoolName;
 
+    private Integer schoolId;
+
     private String zjh;
 
     private String phone;
@@ -30,6 +32,14 @@ public class PersonApplication {
     private String remark;
 
     private Integer adminId;
+
+    public Integer getSchoolId() {
+        return schoolId;
+    }
+
+    public void setSchoolId(Integer schoolId) {
+        this.schoolId = schoolId;
+    }
 
     public String getSchoolName() {
         return schoolName;

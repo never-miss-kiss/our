@@ -53,15 +53,21 @@ public class GoodsControl {
         List<GoodsComment> goodsComments = goodsService.findGoodsCommentByGoodsId(goodsId);
         Map<Integer,String> usernames = new HashMap<>();
         Map<Integer,Integer> counts = new HashMap<>();
+        Map<Integer,String> photos = new HashMap<>();
         for(GoodsComment g:goodsComments){
             System.out.println(g.getContent());
             Integer goodsCommentId = g.getGoodsCommentId();
+            Integer userId = g.getUserId();
+            User user = homeService.findUserById(userId);
+            String photo = user.getPhoto();
+            System.out.println(photo);
             List<GoodsCommentReply> goodsCommentReplies = goodsService.findGoodsCommentReply(goodsCommentId);
             int count = goodsCommentReplies.size();
             Integer uid = g.getUserId();
             String uname = homeService.findUserById(g.getUserId()).getNickname();
             usernames.put(uid,uname);
             counts.put(goodsCommentId,count);
+            photos.put(goodsCommentId,photo);
         }
 
 
@@ -108,9 +114,10 @@ public class GoodsControl {
         request.setAttribute("goodsComment",goodsComments);
         request.setAttribute("username",usernames);
         request.setAttribute("count",counts);
+        request.setAttribute("photo",photos);
         request.setAttribute("u",u);
         request.setAttribute("sName",name);
-        request.getRequestDispatcher("/zhu/jsp/single-goods.jsp").forward(request,response);
+        request.getRequestDispatcher("/zhu/jsp/single-goods.jsp?#myCarousel").forward(request,response);
     }
 
 
@@ -119,7 +126,7 @@ public class GoodsControl {
     @RequestMapping("/findAllGoods.action")
     public  void findAllGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String,Object> cmap = new HashMap<>();
-        int pageSize = 8 ;
+        int pageSize = 16 ;
         int curPage = 1;
         Integer goodsCategoryId = null;
         Integer releaseTime = null;
@@ -205,17 +212,21 @@ public class GoodsControl {
         System.out.println(goodsComment);
         String uname = homeService.findUserById(goodsComment.getUserId()).getNickname();
         int userId = homeService.findUserById(goodsComment.getUserId()).getUserId();
+        String img = homeService.findUserById(goodsComment.getUserId()).getPhoto();
         System.out.println(uname);
         List<GoodsCommentReply> goodsCommentReplies = goodsService.findGoodsCommentReply(goodsCommentId);
         int count = goodsCommentReplies.size();
 
         Map<Integer,String> usernames = new HashMap<>();
+        Map<Integer,String> photos = new HashMap<>();
 
         for(GoodsCommentReply gcr:goodsCommentReplies){
             Integer goodsCommentReplyId = gcr.getGoodsCommentReplyId();
             String uname1 = homeService.findUserById(gcr.getUserId()).getNickname();
+            String photo = homeService.findUserById(gcr.getUserId()).getPhoto();
             System.out.println(uname1);
             usernames.put(goodsCommentReplyId,uname1);
+            photos.put(goodsCommentReplyId,photo);
         }
 
         request.setAttribute("u",u);
@@ -225,6 +236,8 @@ public class GoodsControl {
         request.setAttribute("count",count);
         request.setAttribute("goodsCommentReply",goodsCommentReplies);
         request.setAttribute("username",usernames);
+        request.setAttribute("img",img);
+        request.setAttribute("photo",photos);
         request.getRequestDispatcher("/zhu/jsp/comment.jsp").forward(request,response);
 
     }
@@ -273,6 +286,7 @@ public class GoodsControl {
 
     @RequestMapping("/addGoodsCommentReply.action")
     public void addGoodsCommentReply(HttpServletRequest request,HttpServletResponse response){
+
         int goodsCommentId = Integer.parseInt(request.getParameter("goodsCommentId"));
         int userId = Integer.parseInt(request.getParameter("userId"));
         String content = request.getParameter("oSize");
@@ -310,11 +324,14 @@ public class GoodsControl {
 
         int userId = Integer.parseInt(request.getParameter("userId"));
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
+        System.out.println(userId);
+        System.out.println(goodsId);
         GoodsCollection goodsCollection = new GoodsCollection();
         goodsCollection.setGoodsId(goodsId);
         goodsCollection.setUserId(userId);
         goodsCollection.setTime(new Date());
         boolean flag = goodsService.addGoodsCollection(goodsCollection);
+        System.out.println(flag);
         if(flag==true){
             System.out.println("收藏成功");
         }
@@ -334,6 +351,7 @@ public class GoodsControl {
         int type = Integer.parseInt(request.getParameter("type"));
         System.out.println(type);
         String tel = request.getParameter("tel");
+        String photo = request.getParameter("photo");
         //int cId = goodsService.findGoodsCategoryByName(type);
 
         Goods goods = new Goods();
@@ -347,14 +365,15 @@ public class GoodsControl {
         goods.setReleaseTime(new Date());
         goods.setRemark(detail);
         goods.setGoodsCategoryId(type);
+        goods.setPicture(photo);
 
         boolean flag = goodsService.addGoods(goods);
         if(flag==true){
             System.out.println("商品发布成功");
-            request.setAttribute("para",111);
+            request.setAttribute("para",1);
         }
 
-        request.getRequestDispatcher("/zhu/jsp/main.jsp").forward(request,response);
+        request.getRequestDispatcher("/zhu/jsp/post.jsp").forward(request,response);
     }
 
 }

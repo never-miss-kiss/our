@@ -85,7 +85,7 @@ h2 {
 }
 
 h2.title {
-	border-left:7px solid var(--primary-color);
+	border-left:7px solid #26968a;
 	padding-left:10px;
 	font-weight:900 !important;
     transform: skew(-15deg);
@@ -111,7 +111,7 @@ h2.icon {
 	text-transform:uppercase;
 	font-size:30px;
 	letter-spacing: -0.6px;
-	margin:0px 0px 15px 0;
+	margin:0px 0px 15px -10px;
 }
 
 h2.icon i {
@@ -406,7 +406,9 @@ section {margin:10px 0; display:block;}
 .comment-posts {
 	display:inline-block;
 	width:100%;
-	margin: 20px 0;
+	/*margin: 20px 0;*/
+	/*margin-left: 70px;*/
+	margin-top: 20px;
 }
 .comment-posts .thumbnail {
 	padding:0;
@@ -428,8 +430,8 @@ section {margin:10px 0; display:block;}
 .panel-heading {
 	border:none;
 	border-radius:0;
-	background: var(--primary-color) !important;
-	color:#fff !important;
+	/*background: var(--primary-color) !important;*/
+	/*color:#fff !important;*/
 	border-radius:8px 8px 0 0;
 }
 
@@ -448,7 +450,7 @@ section {margin:10px 0; display:block;}
 .carousel-control:hover, .carousel-control:focus {
 	color: var(--secondary-color);
 }
-.carousel-control i {font-size:24px;}
+.carousel-control i {font-size:24px;margin-left: -100px; margin-top: 10px;  margin-right: 15px;}
 .carousel-control.left, .carousel-control.right {background:rgba(0, 0, 0, 0) none repeat scroll 0 0; margin:0 10px;}
 .carousel {display:block; margin:20px 0;}
 .carousel-indicators {width:auto; margin:20px 0 !important; padding:0; float: left; position:absolute; left:-40px; top:40%;}
@@ -818,7 +820,8 @@ ul.social li a {
 /* SUBSCRIBE BOX */
 .subscribe-box {
     background: transparent;
-	border:3px solid var(--primary-color);
+	/*border:3px solid var(--primary-color);*/
+	border:3px solid darkorange;
     padding: 20px;
     text-align: center;
 	display:inline-block;
@@ -828,10 +831,10 @@ ul.social li a {
 	margin:0 20px 30px 20px;;
 }
 
-.subscribe-box:hover {border:3px solid var(--secondary-color);}
+.subscribe-box:hover {border:3px solid red;}
 .subscribe-box h2.head {margin:5px 0; float:none; display:inline-block; margin-bottom:20px;}
-.subscribe-btn {display:block; border:1px solid var(--primary-color); width:100%; height:auto; background-color:var(--primary-color); cursor:pointer; padding:12px; color:#fff; text-align:center; transition: all 0.1s linear 0s; border-radius:4px;}
-.subscribe-btn:hover { border:1px solid transparent; background:var(--secondary-color); color:#fff;}
+.subscribe-btn {display:block; border:1px solid orange; width:100%; height:auto; background-color: orange; cursor:pointer; padding:12px; color:#fff; text-align:center; transition: all 0.1s linear 0s; border-radius:4px;}
+.subscribe-btn:hover { border:1px solid transparent; background:red; color:#fff;}
 .subscribe-box #subscribe,
 aside #subscribe {margin-bottom:15px;}
 .subscribe-box p {
