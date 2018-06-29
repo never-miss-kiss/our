@@ -41,6 +41,7 @@ public class GoodsControl {
         if(scurPage!=null && !scurPage.trim().equals("")){
             curPage = Integer.parseInt(scurPage);
         }
+        System.out.println(curPage);
 
         String gId = request.getParameter("goodsId");
         if(gId!=null && !gId.trim().equals("")){
@@ -117,7 +118,7 @@ public class GoodsControl {
         request.setAttribute("photo",photos);
         request.setAttribute("u",u);
         request.setAttribute("sName",name);
-        request.getRequestDispatcher("/zhu/jsp/single-goods.jsp?#myCarousel").forward(request,response);
+        request.getRequestDispatcher("/zhu/jsp/single-goods.jsp").forward(request,response);
     }
 
 

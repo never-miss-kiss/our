@@ -793,7 +793,7 @@
                 <div class="base_widget_paging">
                     <div class="paging_widget_2">
                         <ul>
-                            <li class="page selected "><a>1</a></li>
+                        <%--    <li class="page selected "><a>1</a></li>
                             <li class="page"><a href="http://bbs.xiaomi.cn/t-29693730-2-o1#comment_top">2</a></li>
                             <li class="page"><a href="http://bbs.xiaomi.cn/t-29693730-3-o1#comment_top">3</a></li>
                             <li class="page"><a href="http://bbs.xiaomi.cn/t-29693730-4-o1#comment_top">4</a></li>
@@ -805,7 +805,7 @@
                             <li class="page"><a href="http://bbs.xiaomi.cn/t-29693730-10-o1#comment_top">10</a></li>
                             <li class="next"><a href="http://bbs.xiaomi.cn/t-29693730-2-o1#comment_top">&gt;</a></li>
                             <li class="last"><a href="http://bbs.xiaomi.cn/t-29693730-41-o1#comment_top">末页&gt;&gt;</a>
-                                <!--</li-->                    </li>
+                                <!--</li-->                    </li>--%>
                         </ul>
                     </div>
                 </div>

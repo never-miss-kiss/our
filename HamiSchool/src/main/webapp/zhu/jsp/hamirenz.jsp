@@ -98,7 +98,7 @@
             <div class="col-xs-7">
               <div id="message">
                 <a href="#">
-                  <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+                  <%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
                 </a>
               </div>
               <div id="exit">

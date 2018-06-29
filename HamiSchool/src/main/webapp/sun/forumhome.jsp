@@ -60,7 +60,7 @@
                         <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
                         <ul class="res">
                             <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
-                            <a href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
+                            <a href="<%=basePath%>goods/findAllGoods.action?#sa"><span class="res2">二手</span></a>
                             <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
                             <a class="active" href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
                             <a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
@@ -93,7 +93,7 @@
                         <div class="col-xs-7">
                             <div id="message">
                                 <a href="#">
-                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+                                    <%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
                                 </a>
                             </div>
                             <div id="exit">
@@ -681,7 +681,7 @@
             <%--</ul>--%>
         <%--</div>--%>
     <%--</div>--%>
-    用户：${sessionScope.userInfo.nickname}<br/>
+    <%--用户：${sessionScope.userInfo.nickname}<br/>--%>
     <div class="head_wrap">
         <div class="header wrap_990">
             <div class="user_wrap">
@@ -739,7 +739,7 @@
                     <c:forEach items="${listtrans}" var="trans">
                     <div class="shareActive">
                         <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${trans.goodsId}" target="_blank" class="shareActive_img">
-                            <img src="${pageContext.request.contextPath}/imagesgoods/${trans.picture}">
+                            <img src="${pageContext.request.contextPath}/zhu/img/goodsPic/${trans.picture}">
                         </a>
                         <span class="shareActive_txt"> ${trans.name}</span>
                     </div>
@@ -752,7 +752,7 @@
                 <div class="con">
                     <div class="hotspot">
                         <h3>${nottrans.name}</h3>
-                        <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${nottrans.goodsId}"><img src="${pageContext.request.contextPath}/imagesgoods/${nottrans.picture}" class="two_dimension_code"></a>
+                        <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${nottrans.goodsId}"><img src="${pageContext.request.contextPath}/zhu/img/goodsPic/${nottrans.picture}" class="two_dimension_code"></a>
                     </div>
                 </div>
             </div>

@@ -173,7 +173,7 @@
                      <div class="col-xs-7">
                         <div id="message">
                            <a href="#">
-                              <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+                              <%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
                            </a>
                         </div>
                         <div id="exit">
@@ -222,7 +222,10 @@
       <input type="hidden" value="${u.userId}" id="ccc"/>
       <input type="hidden" value="${goods.goodsCategoryId}" id="ddd"/>
       <input type="hidden" value="${u.photo}" id="eee"/>
-      <div id="single-video" class="container-fluid standard-bg">
+      <input type="hidden" value="1" id="fff"/>
+      <input type="hidden" value="2" id="ggg"/>
+
+   <div id="single-video" class="container-fluid standard-bg">
          <div class="row">
             <!-- SIDEBAR -->
             <div class="liebiao">
@@ -437,6 +440,7 @@
                         <div class="carousel-control-box">
                            <a class="right carousel-control" id="previous"  href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=1&goodsId=${goodsId}"   role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</a>
                            <a class="left carousel-control" id="next" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=2&goodsId=${goodsId}"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                           <%--<a class="left carousel-control" id="next" href="javascript:void(0)" onclick="gNext()"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>--%>
                         </div>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
@@ -487,9 +491,30 @@
       </div>
       </div>
       <%--<p id="articlelist"></p>--%>
+      <%--<script>--%>
+         <%--function gNext(){--%>
+             <%--var goodsId = document.getElementById('bbb').value;--%>
+             <%--var goodsCategoryId = document.getElementById('ddd').value;--%>
+             <%--var curPage = document.getElementById('ggg').value;--%>
+             <%--alert(curPage)--%>
+             <%--$.ajax({--%>
+                 <%--type:"get",--%>
+                 <%--url:"${pageContext.request.contextPath}/goods/findGoodsById.action",--%>
+                 <%--data:"goodsCategoryId="+goodsCategoryId+"&curPage="+curPage+"&goodsId="+goodsId,--%>
+                 <%--success:function(data){--%>
+                     <%--alert("静态刷新成功");--%>
+                    <%--// document.getElementById('myCarousel').scrollIntoView();--%>
+                     <%--//$("#articlelist").html(data);--%>
+                 <%--},--%>
+                 <%--error : function(){--%>
+                     <%--alert("nani");--%>
+                 <%--}--%>
+             <%--})--%>
+         <%--}--%>
+      <%--</script>--%>
       <script>
-          //document.getElementById("single-video").scrollIntoView();
- //      document.getElementById("next").scrollIntoView();
+          //document.getElementById("channels-block").scrollIntoView();
+             //document.getElementById("next").scrollIntoView();
 //          document.getElementById("previous").scrollIntoView();
       </script>
       <script>

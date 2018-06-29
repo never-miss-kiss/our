@@ -291,7 +291,7 @@
                     <h3>回复</h3>
                 </a>
             </li>
-            <li role="presentation" class="active"><a class="btn btn-default" href="<%=basePath %>tian/addHelpFetch/addHelpSend.jsp"><h3>帮我送</h3></a></li>
+            <li role="presentation" class="active"><a class="btn btn-default" href="<%=basePath %>tian/addHelpSend/addHelpSend.jsp"><h3>帮我送</h3></a></li>
             <!-- Modal 回复的模态框-->
             <div class="modal fade" id="addComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
@@ -352,10 +352,10 @@
 
 
             var inputValue = G("suggestId").getAttribute("value"); //获得输入框的值
-            alert(inputValue);
-            alert(inputValue);
+//            alert(inputValue);
+//            alert(inputValue);
             var inputValue2 = G("suggestId2").getAttribute("value");
-            alert(inputValue2);
+//            alert(inputValue2);
 
             map.centerAndZoom(new BMap.Point(116.404, 39.915), 12);
             var output = "我算出来的距离";
