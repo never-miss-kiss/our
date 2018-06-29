@@ -37,7 +37,7 @@
 <%--<link href="<%= basePath %>zhu/Gallery_files/css(1)" rel="stylesheet" type="text/css">--%>
 <%--<link href="<%= basePath %>zhu/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">--%>
 <%--<script src="<%= basePath %>zhu/Gallery_files/wow.min.js.下载"></script>--%>
-<%--<script src="<%= basePath %>zhu/Gallery_files/bootstrap-3.3.7/dist/js/bootstrap.js"></script>--%>
+<%--<script src="<%= basePath%>zhu/Gallery_files/bootstrap-3.3.7/dist/js/bootstrap.js"></script>--%>
 
 	<!-- Bootstrap core CSS -->
 <link href="<%= basePath %>zhu/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -57,7 +57,8 @@
 	<script src="<%= basePath %>zhu/assets/js/html5shiv.min.js"></script>
 	<style>
 
-		body{background-color: #E3EEEC}
+		body{background-color: #E3EEEC;}
+		a{color: #0f0f0f}
 		#top{background-color:#a6e1ec}
 		.dark-bg{border-color: #8a6d3b;}
 		.search-block{position: absolute;top:82px;left: 17%}
@@ -66,17 +67,18 @@
 		.circle{position: absolute;top:220px;left:50%}
 		.Previous{position: absolute;top:130px;}
 		.Next{position: absolute;top:130px;left:98%}
-		.post{position: absolute;top:200px;left:88%;width: 150px;height: 60px}
-		.school{position: absolute;top:420px;left:20.5%;width: 900px;height: 140px;
-		background-color:whitesmoke}
+		.post{position: absolute;top:223px;left:88%;width: 150px;height: 60px;}
+		.school{position: absolute;top:500px;left:20.5%;width: 900px;height: 140px;
+			background-color:whitesmoke}
+
 		.part1{float: left;padding-top:15px;padding-left: 16px;padding-right: 10px;padding-bottom: 10px}
-		.part2{position: absolute;top:540px;left:45%;}
+		.part2{position: absolute;top:610px;left:45%;}
 		.part2 a{color: black}
 		.part2 a:hover{color: red;}
 		.row .school a{color:#7B7A7A}
 		.row .school a:hover{color: cyan}
-		.allgoods{position: absolute;top:620px;left:20.5%;}
-		.pictures{position: absolute;top:690px;width: 900px;height: 660px;left:20.5%;background-color:#a6e1ec}
+		.allgoods{position: absolute;top:680px;left:20.5%; }
+		.pictures{position: absolute;top:750px;width: 900px;height: 1300px;left:20.5%;background-color:whitesmoke}
 		.picture1{position: relative;width: 200px;height: 150px;top:-35px;margin-top:-135px;margin-left: -130px;margin-right:150px;margin-bottom:285px;float: left;}
 		.picture2{position: relative;width: 200px;height: 150px;top:-35px;margin-top:-135px;margin-left: -170px;margin-right:170px;margin-bottom:285px;float: left;}
 
@@ -86,7 +88,7 @@
 		#person{position: absolute;top:-10px;left: 70%;}
 		/*#message{position:relative;top:-50px;left:50px;}*/
 		/*#exit{position:relative;top:-91px;left:100px;}*/
-		#search{position: absolute;margin-top:1170px;margin-left:850px; }
+		#search{position: absolute;margin-top:1820px;margin-left:850px; }
 	</style>
 	<script>
         function getPage(curPage){
@@ -105,7 +107,7 @@
 </head>
 <body>
 <!-- HOME 1 -->
-<div class="header head-top" >
+<div class="header head-top" id="sa">
 	<div class="container-fluid">
 		<div class="col-sm-12">
 			<div class="col-xs-1" >
@@ -119,7 +121,7 @@
 						<span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
 						<ul class="res">
 							<a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
-							<a class="active" href="<%=basePath%>goods/findAllGoods.action"><span class="res2">二手</span></a>
+							<a class="active" href="<%=basePath%>goods/findAllGoods.action?#sa"><span class="res2">二手</span></a>
 							<a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
 							<a  href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
 							<a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
@@ -152,7 +154,7 @@
 						<div class="col-xs-7">
 							<div id="message">
 								<a href="#">
-									<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+									<%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
 								</a>
 							</div>
 							<div id="exit">
@@ -213,22 +215,21 @@
 			<div class="wrapper">
 				<nav>
 					<ul>
-						<li class="title">所有分类</li>
-						<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
-						<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
-						<li><a href="./right-top.html">电脑</a></li>
-						<li><a href="./left.html">数码</a></li>
-						<li><a href="./left-top.html">电器</a></li>
-						<li><a href="./jquery-v2.html">衣鞋伞帽</a></li>
-						<li><a href="./jquery-v3.html">书籍教材</a></li>
-						<li><a href="./right-left.html">体育健身</a></li>
-						<li><a href="./init-opened.html">乐器</a></li>
-						<li><a href="./no-mask.html">自行设计</a></li>
-						<li><a href="./allow-scrolling.html">宠物</a></li>
-						<li><a href="./custom-functions.html">文具</a></li>
-						<li><a href="./ajax.html">其它</a></li>
-						<li><a href="./browserify.html">Browserify</a></li>
-					</ul>
+					<li class="title">所有分类</li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action">全部商品</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=4">电脑</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=5">数码</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=6">电器</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=7">衣鞋伞帽</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=8">书籍教材</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=9">体育健身</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=10">乐器</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=11">自行设计</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=12">宠物</a></li>
+					<li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=13">文具</a></li>
+				</ul>
 				</nav>
 			</div>
 		</div><!--#sidebar-main-->
@@ -239,7 +240,6 @@
 		<script src="<%= basePath %>zhu/assets/js/sidebar/main-sidebar-left-top.js"></script>
 		<div class="row" style="background-color: #E3EEEC">
 			<!-- SIDEBAR -->
-
 			<!-- HOME MAIN POSTS -->
 			<div class="Carousel">
 				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -254,13 +254,13 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner " role="listbox">
 						<div class="item active">
-							<img src="<%= basePath %>zhu/img/thumbs/thumb-review2.jpg" style="width:900px;height: 250px" alt="...">
+							<img src="<%= basePath %>zhu/img/lunbo/pic1.jpg" style="width:900px;height: 250px" alt="...">
 						</div>
 						<div class="item">
-							<img src="<%= basePath %>zhu/img/thumbs/thumb-review3.jpg" style="width:900px;height: 250px" alt="...">
+							<img src="<%= basePath %>zhu/img/lunbo/class.jpg" style="width:900px;height: 250px" alt="...">
 						</div>
 						<div class="item">
-							<img src="<%= basePath %>zhu/img/thumbs/thumb-review4.jpg" style="width:900px;height: 250px" alt="...">
+							<img src="<%= basePath %>zhu/img/lunbo/2018.jpg" style="width:900px;height: 250px" alt="...">
 						</div>
 					</div>
 
@@ -281,25 +281,28 @@
 			</div>
 			<div class="school">
 				<div class="part1">
-					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1" class="btn btn-default " role="button" style="background-color: #aac4bc" >吉林大学</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1460" class="btn btn-default " role="button" style="background-color: #aac4bc" >天津大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1515" class="btn btn-default " role="button" style="background-color: #aac4bc" >河北大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1547" class="btn btn-default " role="button" style="background-color: #aac4bc" >河北经贸大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1636" class="btn btn-default " role="button" style="background-color: #aac4bc" >山西大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >郑州航空工业管理学院</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1638" class="btn btn-default " role="button" style="background-color: #aac4bc" >中北大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >Primary link</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1637" class="btn btn-default " role="button" style="background-color: #aac4bc" >太原科技大学</a>
 				</div>
 				<div class="part1">
-					<a href="#" class="btn btn-default " role="button" style="background-color: #aac4bc" >Primary link</a>
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1769" class="btn btn-default " role="button" style="background-color: #aac4bc" >大连理工大学</a>
+				</div>
+				<div class="part1">
+					<a href="<%= basePath %>goods/findAllGoods.action?schoolId=1885" class="btn btn-default " role="button" style="background-color: #aac4bc" >东北电力大学</a>
 				</div>
 				<div class="part1">
 					<button type="button" class="btn btn-link">更多学校</button>
@@ -318,7 +321,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="allgoods">
+			<div class="allgoods" id="allgoods">
 				<h2 class="icon" style="color:#2aabd2"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: red"></i>全部商品</h2>
 			</div>
 			<div class="pictures">
@@ -328,15 +331,15 @@
 						<div class="post post-medium" >
 							<div class="thumbr">
 								<a class="post-thumb" href="<%= basePath %>goods/findGoodsById.action?goodsId=${goods.goodsId}">
-									<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
+									<img class="img-responsive" style="width: 150px;height:150px;" src="<%= basePath %>zhu/img/goodsPic/${goods.picture}" alt="#">
 								</a>
 							</div>
 							<div class="infor">
 								<h4>
 									<a class="title" >${goods.name}</a>
 								</h4>
-								<span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>${goods.clickCount}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>${goods.price}</span>
+								<span class="posts-txt" title="Posts from Channel" style="color:red;"><i class="fa fa-hand-pointer-o" aria-hidden="true"  style="color:orange;"></i>${goods.clickCount}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<span class="posts-txt" title="Posts from Channel" style="color:red;"><i class="fa fa-cny" aria-hidden="true"  style="color:orange;"></i>${goods.price}</span>
 								<h5>
 									<a class="title" >
 										<C:forEach items="${schoolName}" var="name">
@@ -367,10 +370,11 @@
 				<a id="end" href="<%= basePath %>goods/findAllGoods.action?price=${queryPojo.price}&curPage=${pageInfo.pages}&goodsCategoryId=${queryPojo.goodsCategoryId}&releaseTime=${queryPojo.releaseTime}&clickCount=${queryPojo.clickCount}&schoolId=${queryPojo.schoolId}" class='last'>末页</a>
 			</div>
 			<script>
-                document.getElementById("begin").scrollIntoView();
-                document.getElementById("end").scrollIntoView();
-                document.getElementById("next").scrollIntoView();
-                document.getElementById("previous").scrollIntoView();
+                document.getElementById("allgoods").scrollIntoView();
+//                document.getElementById("begin").scrollIntoView();
+//                document.getElementById("end").scrollIntoView();
+//                document.getElementById("next").scrollIntoView();
+//                document.getElementById("previous").scrollIntoView();
 			</script>
 
 		</div>
@@ -380,127 +384,6 @@
 			<a href="<%= basePath %>goods/findAllGoods.action?releaseTime=1" >时间<sapn class="glyphicon glyphicon-resize-vertical"></sapn></a>
 			<a href="<%= basePath %>goods/findAllGoods.action?price=1" >价格<sapn class="glyphicon glyphicon-resize-vertical"></sapn></a>
 			<a href="<%= basePath %>goods/findAllGoods.action?clickCount=1" >热度<sapn class="glyphicon glyphicon-resize-vertical"></sapn></a>
-		</div>
-		<!-- TABS -->
-		<div class="tab" style="background-color: #E3EEEC">
-			<div class="head-section" id="tag">
-				<ul class="nav nav-tabs text-left">
-					<li >
-						<a data-toggle="tab" href="#" >
-							<h2 class=" title"  style="color:#2aabd2">最近浏览</h2>
-						</a>
-					</li>
-					<li>
-						<a data-toggle="tab" href="<%= basePath %>goods/findAllGoods.action?clickCount=1">
-							<h2 class=" title" style="color:#2aabd2">最热点击</h2>
-						</a>
-					</li>
-					<li>
-						<a data-toggle="tab" href="#">
-							<h2 class=" title" style="color:#2aabd2">大众所爱</h2>
-						</a>
-					</li>
-				</ul>
-				<div id="channels-block" class="container-fluid " style="background-color:#a6e1ec">
-					<div class="container-fluid " >
-						<div class="col-md-12">
-							<!-- CHANNELS -->
-							<section id="channels">
-								<div id="myCarousel" class="carousel slide" data-ride="carousel">
-									<div class="carousel-control-box">
-										<a class="left carousel-control" href="#myCarousel"  role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-										<a class="right carousel-control" href="#myCarousel"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-									</div>
-									<!-- Wrapper for slides -->
-									<div class="carousel-inner" role="listbox">
-										<div class="item active">
-											<div class="row auto-clear">
-												<div class="picture2">
-													<div class="post post-medium" >
-														<div class="thumbr">
-															<a class="post-thumb" href="#">
-																<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
-															</a>
-														</div>
-														<div class="infor">
-															<h4>
-																<a class="title" href="#">耳机</a>
-															</h4>
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>12.5</span>
-															<h5>
-																<a class="title" href="#">中南大学</a>
-															</h5>
-														</div>
-													</div>
-												</div>
-												<div class="picture2">
-													<div class="post post-medium" >
-														<div class="thumbr">
-															<a class="post-thumb" href="#">
-																<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
-															</a>
-														</div>
-														<div class="infor">
-															<h4>
-																<a class="title" href="#">耳机</a>
-															</h4>
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>12.5</span>
-															<h5>
-																<a class="title" href="#">中南大学</a>
-															</h5>
-														</div>
-													</div>
-												</div>
-												<div class="picture2">
-													<div class="post post-medium" >
-														<div class="thumbr">
-															<a class="post-thumb" href="#">
-																<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
-															</a>
-														</div>
-														<div class="infor">
-															<h4>
-																<a class="title" href="#">耳机</a>
-															</h4>
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>12.5</span>
-															<h5>
-																<a class="title" href="#">中南大学</a>
-															</h5>
-														</div>
-													</div>
-												</div>
-												<div class="picture2">
-													<div class="post post-medium" >
-														<div class="thumbr">
-															<a class="post-thumb" href="#">
-																<img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
-															</a>
-														</div>
-														<div class="infor">
-															<h4>
-																<a class="title" href="#">耳机</a>
-															</h4>
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>12.5</span>
-															<h5>
-																<a class="title" href="#">中南大学</a>
-															</h5>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>

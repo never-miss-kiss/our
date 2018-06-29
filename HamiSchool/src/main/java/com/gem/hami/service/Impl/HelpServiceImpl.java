@@ -136,14 +136,16 @@ public class HelpServiceImpl implements HelpService{
                 @Override
                 public int compare(HelpInfo o1, HelpInfo o2) {
                     int flag = 0;
-                    if(o1==null||o2==null||o1.getPersonPrice()==null||o2.getPersonPrice()==null)
+                    if(o1==null||o2==null)
+                        return flag;
+                    else if(o1.getPersonPrice()==null||o2.getPersonPrice()==null)
                         return flag;
                     if(o1.getPersonPrice()<o2.getPersonPrice())
                     {
-                        flag=-1;
+                        flag=1;
                     }
                     else if (o1.getPersonPrice()>o2.getPersonPrice()){
-                        flag = 1;
+                        flag = -1;
                     }
                     return flag;
                 }
@@ -276,7 +278,22 @@ public class HelpServiceImpl implements HelpService{
             case 4:helpQueueMapper.updateHelpClickCount(helpId);
                     break;
         }
-        return false;
+        return true;
+    }
+
+    @Override
+    public boolean modifyCommentCount(int typeId, int helpId) {
+        switch (typeId){
+            case 1:helpBuyMapper.updateCommentCount(helpId);
+                break;
+            case 2:helpSendMapper.updateCommentCount(helpId);
+                break;
+            case 3:helpFetchMapper.updateCommentCount(helpId);
+                break;
+            case 4:helpQueueMapper.updateCommentCount(helpId);
+                break;
+        }
+        return true;
     }
 
     @Override

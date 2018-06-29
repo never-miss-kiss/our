@@ -53,9 +53,23 @@
                                     </div>
                     </div>
                     <div class="cover-img">
-                        <a href="#" target="_blank">
-                            <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/bear.jpg);"></div>
-                        </a>
+                        <c:if test="${helpInfo.helpType==1}">
+                        <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                            <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite1.png);"></div>
+                            </c:if>
+                            <c:if test="${helpInfo.helpType==2}">
+                            <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite2.png);"></div>
+                                </c:if>
+                                <c:if test="${helpInfo.helpType==3}">
+                                <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                    <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite3.png);"></div>
+                                    </c:if>
+                                    <c:if test="${helpInfo.helpType==4}">
+                                    <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                        <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite4.png);"></div>
+                                        </c:if>
+                                    </a>
                     </div>
                 </div>
             </div>
@@ -63,25 +77,6 @@
     </c:forEach>
 
     <%--末尾的示例帖子--%>
-    <div class="article-item item-tp-4" data-id="515423">
-        <div class="item-holder">
-            <div class="article-content">
-                <div class="article-left-block"><a href="#" target="_blank" class="article-title-holder"><span class="article-title" title="【凯源】腐段子">【凯源】腐段子</span></a>
-                    <div class="article-desc">本文为转载文，原作者是【白依源】。“说你爱我！”王俊凯声音低沉，手上的速度却没有变慢。　　　　“不要…唔…嗯～”王源在愈来愈快的步伐中溢出呻·吟。　　　　“说！说你爱我！”那人加大力度，空气中弥漫奇特</div>
-                    <div class="article-info-bar"><a href="#" target="_blank" class="up-content">
-                        <span class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/0a4a84b0bdeadc31cc70639cc973daa03e65b78a.jpg@26w_26h.webp" class="face-img"></span>
-                        <span class="nick-name">KR-卡洛伊</span>
-                    </a>
-                        <a href="https://www.bilibili.com/read/lightnovel#rid=32" target="_self">
-                            <span class="category">短篇小说</span></a><span class="view">89</span><span class="like ">4</span><a href="https://www.bilibili.com/read/cv515423#comment&amp;from=category_0" target="_blank">
-                            <span class="reply">3</span></a></div>
-                </div>
-                <div class="cover-img"><a href="https://www.bilibili.com/read/cv515423?from=category_0" target="_blank">
-                    <div class="cover-image loaded" pre-style="background-image:url(https://i0.hdslb.com/bfs/article/9fb67e601d926ae3de301673d39af367fcdfa05a.png@257w_193h.webp)" style="background-image: url(&quot;https://i0.hdslb.com/bfs/article/9fb67e601d926ae3de301673d39af367fcdfa05a.png@257w_193h.webp&quot;);"></div>
-                </a></div>
-            </div>
-        </div>
-    </div>
 
     <%--分页--%>
     <div class="paging2">
@@ -121,6 +116,7 @@
                 })
             }
         </script>
+
     </div>
 </div>
 

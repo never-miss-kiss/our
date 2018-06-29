@@ -50,7 +50,7 @@ public interface HelpService {
 
     public boolean modifyHelpClickCount(int typeId,int helpId);
 
-
+    public boolean modifyCommentCount(int typeId,int helpId);
 //显示跑腿贴下面的评论
 //按帖子显示
 //按用户号显示

@@ -9,7 +9,8 @@
 <html lang="zh-CN" xml:lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <%--<meta http-equiv="X-UA-Compatible" content="IE=Edge">--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="viewport" content="width=device-width">
     <title>Hami校园社区</title>
@@ -29,6 +30,15 @@
     <script src="<%=path%>/sun/js1/jquery-1.8.0.min.js"></script>
     <script src="<%=path%>/sun/js1/list.js"></script>
 
+    <!--Gallery栏目框-->
+    <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
+    <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+    <!--Gallery栏目框end-->
+
+    <title>Gallery</title>
     <script>
 
         <%--alert(${sessionScope.userInfo});--%>
@@ -36,6 +46,96 @@
 </head>
 
 <body class="xmbbs_desktop" >
+<div class="header head-top" >
+    <div class="container-fluid">
+        <div class="col-sm-12">
+            <div class="col-xs-1" >
+            </div>
+            <div class="header-main">
+                <div class="col-xs-8">
+                    <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
+                        <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
+                    </div>
+                    <div class="top-navg">
+                        <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
+                        <ul class="res">
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
+                            <a href="<%=basePath%>goods/findAllGoods.action?#sa"><span class="res2">二手</span></a>
+                            <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
+                            <a class="active" href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
+                            <a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res3">Callus</span></a>
+                        </ul>
+                        <!-- script-for-menu -->
+                        <script>
+                            $( "span.menu" ).click(function() {
+                                $( "ul.res" ).slideToggle( 300, function() {
+                                    // Animation complete.
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-xs-2 banner-right">
+                    <div id="person-pic" >
+
+                        <div id="head-portrait" class="col-xs-5" >
+                            <a href="<%= basePath %>home/personalCenter.action">
+                                <c:if test="${userInfo.photo == null}">
+                                    <img src="<%= basePath %>profilePicture/0.jpg"></img>
+                                </c:if>
+                                <c:if test="${userInfo != null}">
+                                    <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
+                                </c:if>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-7">
+                            <div id="message">
+                                <a href="#">
+                                    <%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
+                                </a>
+                            </div>
+                            <div id="exit">
+                                <a href="<%=basePath%>loginpage/exit.action">
+                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script>
+                    $("#exit img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出点击时.png");
+                        }
+                    );
+                    $("#exit img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出.png");
+                        }
+                    );
+
+                    $("#message img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知点击时.png");
+                        }
+                    );
+
+                    $("#message img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知3.png");
+                        }
+                    );
+                </script>
+
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
 <%--<script>switchMobile.init()</script>--%>
 <div class="main">
     <style>
@@ -566,22 +666,22 @@
         }
     </style>
 
-    <div class="xmcomm_header_wrap">
-        <div class="xmcomm_header">
+    <%--<div class="xmcomm_header_wrap">--%>
+        <%--<div class="xmcomm_header">--%>
 
-            <ul class="header_menu">
-                <li><a href="http://www.xiaomi.cn/index.html">主页</a></li>
-                <li><a href="http://bbs.xiaomi.cn/">二手物品</a></li>
-                <li>
-                    <span>跑腿</span>
-                </li>
-                <li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>
-                <li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>
-                <li><a href="${pageContext.request.contextPath}/home/personalCenter.action" target="_blank">个人中心</a></li>
-                <li><a href="https://s1.mi.com/m/ghd/2018/mst051002/index.html" target="_blank">更换学校</a></li>
-            </ul>
-        </div>
-    </div>
+            <%--<ul class="header_menu">--%>
+                <%--<li><a href="http://www.xiaomi.cn/index.html">主页</a></li>--%>
+                <%--<li><a href="http://bbs.xiaomi.cn/">二手物品</a></li>--%>
+                <%--<li>--%>
+                    <%--<span>跑腿</span>--%>
+                <%--</li>--%>
+                <%--<li><a href="http://wan.xiaomi.cn/" target="_blank">联系我们</a></li>--%>
+                <%--<li><a href="http://pai.xiaomi.cn/" target="_blank">关于我们</a></li>--%>
+                <%--<li><a href="https://s1.mi.com/m/ghd/2018/mst051002/index.html" target="_blank">更换学校</a></li>--%>
+            <%--</ul>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+    <%--用户：${sessionScope.userInfo.nickname}<br/>--%>
     <div class="head_wrap">
         <div class="header wrap_990">
             <div class="user_wrap">
@@ -639,7 +739,7 @@
                     <c:forEach items="${listtrans}" var="trans">
                     <div class="shareActive">
                         <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${trans.goodsId}" target="_blank" class="shareActive_img">
-                            <img src="${pageContext.request.contextPath}/imagesgoods/${trans.picture}">
+                            <img src="${pageContext.request.contextPath}/zhu/img/goodsPic/${trans.picture}">
                         </a>
                         <span class="shareActive_txt"> ${trans.name}</span>
                     </div>
@@ -652,7 +752,7 @@
                 <div class="con">
                     <div class="hotspot">
                         <h3>${nottrans.name}</h3>
-                        <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${nottrans.goodsId}"><img src="${pageContext.request.contextPath}/imagesgoods/${nottrans.picture}" class="two_dimension_code"></a>
+                        <a href="${pageContext.request.contextPath}/goods/findGoodsById.action?goodsId=${nottrans.goodsId}"><img src="${pageContext.request.contextPath}/zhu/img/goodsPic/${nottrans.picture}" class="two_dimension_code"></a>
                     </div>
                 </div>
             </div>

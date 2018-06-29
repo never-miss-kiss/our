@@ -36,4 +36,6 @@ public interface SchoolMapper {
      */
     public List<School> selectSchoolsByKeyWord(String keyWord);
 
+    public int selectSchoolIdByName(String name);
+
 }

@@ -7,7 +7,12 @@ public class SchoolApplication {
 
     private School school;
 
+
     private Integer userId;
+
+
+
+    private Integer schoolId;
 
     private String name;
 
@@ -28,6 +33,16 @@ public class SchoolApplication {
     private Admin admin;
 
     private ApplicationState applicationState;
+
+    public Integer getSchoolId() {
+        return schoolId;
+    }
+
+    public void setSchoolId(Integer schoolId) {
+        this.schoolId = schoolId;
+    }
+
+
 
     public ApplicationState getApplicationState() {
         return applicationState;

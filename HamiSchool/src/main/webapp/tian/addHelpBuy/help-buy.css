@@ -1,68 +1,68 @@
-/*设置整体样式*/
+/*!*设置整体样式*!*/
 
 
 
-.form1{
-	border:#0F9 2px solid;
-	width:inherit;
-}
+/*.form1{*/
+	/*!*border:#0F9 2px solid;*!*/
+	/*width:inherit;*/
+/*}*/
 
-.form2{
-	border:blue 2px solid;
-	height:300px;
-	width:inherit;
-}
+/*.form2{*/
+	/*!*border:blue 2px solid;*!*/
+	/*height:300px;*/
+	/*width:inherit;*/
+/*}*/
 
-.form3{
-	border:red 2px solid;
-	height:400px;
-	width:inherit;
-}
+/*.form3{*/
+	/*!*border:red 2px solid;*!*/
+	/*height:400px;*/
+	/*width:inherit;*/
+/*}*/
 
-.left{
-	height:400px;
-	border:red 2px solid;
-	float:left;
-}
+/*.left{*/
+	/*height:400px;*/
+	/*!*border:red 2px solid;*!*/
+	/*float:left;*/
+/*}*/
 
-.right{
-	height:400px;
- 	border:red 2px solid;
-	float:left;
-}
-.middle{
-	float:left;
-}
+/*.right{*/
+	/*height:400px;*/
+ 	/*!*border:red 2px solid;*!*/
+	/*float:left;*/
+/*}*/
+/*.middle{*/
+	/*float:left;*/
+/*}*/
 
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
-	color: #fff;
-  	background-color: #ef8d00 !important;	
-}
+/*.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{*/
+	/*color: #fff;*/
+  	/*!*background-color: #ef8d00 !important;	*!*/
+/*}*/
 
-.modal-body big{
-	padding-left:40px;
-}
+/*.modal-body big{*/
+	/*padding-left:40px;*/
+/*}*/
 
-.comment-item{
-	height:auto;
-	border:solid 2px orange;
-}
+/*.comment-item{*/
+	/*height:auto;*/
+	/*!*border:solid 2px orange;*!*/
+/*}*/
 
-.comment-item-middle{
-	height:100px;	
-	border:solid 2px blue;
-}
+/*.comment-item-middle{*/
+	/*height:100px;	*/
+	/*!*border:solid 2px blue;*!*/
+/*}*/
 
-.comment-item-bottom{
-	height:40px;	
-	border:solid 1px red;
-}
+/*.comment-item-bottom{*/
+	/*height:40px;	*/
+	/*!*border:solid 1px red;*!*/
+/*}*/
 
-.comment-pageinfo{
-	
-}
+/*.comment-pageinfo{*/
+	/**/
+/*}*/
 
-.reply-item-middle{
-	height:100px;	
-	border:solid 2px blue;
-}
+/*.reply-item-middle{*/
+	/*height:100px;	*/
+	/*!*border:solid 2px blue;*!*/
+/*}*/

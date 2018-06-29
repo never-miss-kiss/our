@@ -14,15 +14,129 @@
     <meta name="description" content="">
     <meta name="author" content="OrcasThemes">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>仿微博评论</title>
+    <title>评论详情</title>
     <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/style.css">
     <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/comment.css">
+
+
+    <!--Gallery栏目框-->
+    <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
+    <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+    <!--Gallery栏目框end-->
+
     <style>
-        .commentAll{position: absolute;height: 120%;top: 20px;left:30%;background-color: #a6e1ec;}
+        body{width: 100%;height:1200px;
+            background-color: #E3EEEC;  }
+        .commentAll{
+            float: left;
+            /*position: absolute;*/
+            height: auto !important;
+            /*margin-top: 40px;*/
+            left:34%;
+            margin-top: 140px;
+            background-color: #C5F3EF;}
         .tit{margin-left:40%;}
+         img.user-photo {
+            border-radius: 100%;
+        }
+
     </style>
 </head>
-<body>
+
+<div class="header head-top" >
+    <div class="container-fluid">
+        <div class="col-sm-12">
+            <div class="col-xs-1" >
+            </div>
+            <div class="header-main">
+                <div class="col-xs-8">
+                    <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
+                        <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
+                    </div>
+                    <div class="top-navg">
+                        <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
+                        <ul class="res">
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
+                            <a class="active" href="<%=basePath%>goods/findAllGoods.action?#sa"><span class="res2">二手</span></a>
+                            <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
+                            <a  href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
+                            <a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
+                            <a href="<%=basePath%>tian/index/index.jsp"><span class="res3">Callus</span></a>
+                        </ul>
+                        <!-- script-for-menu -->
+                        <script>
+                            $( "span.menu" ).click(function() {
+                                $( "ul.res" ).slideToggle( 300, function() {
+                                    // Animation complete.
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-xs-2 banner-right">
+                    <div id="person-pic" >
+
+                        <div id="head-portrait" class="col-xs-5" >
+                            <a href="<%= basePath %>home/personalCenter.action">
+                                <c:if test="${userInfo.photo == null}">
+                                    <img src="<%= basePath %>profilePicture/0.jpg"></img>
+                                </c:if>
+                                <c:if test="${userInfo != null}">
+                                    <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
+                                </c:if>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-7">
+                            <div id="message">
+                                <a href="#">
+                                    <%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
+                                </a>
+                            </div>
+                            <div id="exit">
+                                <a href="<%=basePath%>loginpage/exit.action">
+                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script>
+                    $("#exit img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出点击时.png");
+                        }
+                    );
+                    $("#exit img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出.png");
+                        }
+                    );
+
+                    $("#message img").mousedown(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知点击时.png");
+                        }
+                    );
+
+                    $("#message img").mouseup(
+                        function(){
+                            $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知3.png");
+                        }
+                    );
+                </script>
+
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+<div style="clear: both"></div>
 <!--
     此评论textarea文本框部分使用的https://github.com/alexdunphy/flexText此插件
 -->
@@ -30,6 +144,8 @@
 <input type="hidden" value="${userId}" id="bbb"/>
 <input type="hidden" value="${u.userId}" id="ccc"/>
 <input type="hidden" value="${u.nickname}" id="ddd"/>
+<input type="hidden" value="${u.photo}" id="eee"/>
+
 <div class="commentAll">
     <!--评论区域 begin-->
     <div class="tit">
@@ -38,7 +154,7 @@
     <div class="top">
     <div class="comment-show">
         <div class="comment-show-con clearfix">
-            <div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div>
+            <div class="comment-show-con-img pull-left"><img class="img-responsive user-photo" src="<%= basePath %>profilePicture/${img}" alt=""></div>
             <div class="comment-show-con-list pull-left clearfix">
                 <div class="pl-text clearfix">
                     <a href="#" class="comment-size-name">${uname}: </a>
@@ -56,7 +172,7 @@
     </div>
     </div>
     <div class="reviewArea clearfix">
-        <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" onkeyup="keyUP(this)" ></textarea>
+        <textarea class="content comment-input" placeholder="欢迎评论...&hellip;" onkeyup="keyUP(this)" ></textarea>
         <a href="javascript:;" class="plBtn">评论</a>
     </div>
     <!--评论区域 end-->
@@ -64,7 +180,15 @@
     <div class="comment-show">
         <C:forEach items="${goodsCommentReply}" var="reply">
         <div class="comment-show-con clearfix">
-            <div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div>
+            <div class="comment-show-con-img pull-left">
+                <C:forEach items="${photo}" var="p">
+                    <C:if test="${p.key eq reply.goodsCommentReplyId}">
+                        <%--<img class="img-responsive user-photo" src="${pageContext.request.contextPath}/profilePicture/${p.value}" alt="Comment User Avatar">--%>
+                        <img class="img-responsive user-photo" src="${pageContext.request.contextPath}/profilePicture/${p.value}" alt="Comment User Avatar">
+                    </C:if>
+                </C:forEach>
+                <%--<img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt="">--%>
+            </div>
             <div class="comment-show-con-list pull-left clearfix">
                 <div class="pl-text clearfix">
                     <a href="#" class="comment-size-name" id="username">
@@ -87,12 +211,9 @@
             </div>
         </C:forEach>
         </div>
-    </div>
+</div>
     <%--//</C:forEach>--%>
     <!--回复区域 end-->
-</div>
-
-
 
 
 <script type="text/javascript" src="<%= basePath %>zhu/comment/js/jquery-1.12.0.min.js"></script>
@@ -132,10 +253,12 @@
         var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
         console.log(oSize);
         var name = document.getElementById('ddd').value;
+        var img = document.getElementById('eee').value;
+        //alert(img);
         //动态创建评论模块
-        oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">'+ name +': </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock"><span style="color:red">删除</span></a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>  </div> </div><div class="hf-list-con"></div></div> </div>';
+        oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img class="img-responsive user-photo" src="http://localhost:8080/${pageContext.request.contextPath}/profilePicture/'+img+'" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">'+ name +': </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock"><span style="color:red">删除</span></a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>  </div> </div><div class="hf-list-con"></div></div> </div>';
         if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
-            $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
+            $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);           //http://localhost:8080/HamiSchool/profilePicture/1.jpg
             $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value','').siblings('pre').find('span').text('');
         }
         var goodsCommentId = document.getElementById('aaa').value;
@@ -307,4 +430,5 @@
     })
 </script>
 </body>
+
 </html>

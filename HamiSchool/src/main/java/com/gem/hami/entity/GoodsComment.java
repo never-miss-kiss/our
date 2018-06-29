@@ -9,11 +9,21 @@ public class GoodsComment {
 
     private Integer userId;
 
+    private User user;
+
     private Date releaseTime;
 
     private Integer goodsId;
 
     private Goods goods;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public GoodsComment() {
     }

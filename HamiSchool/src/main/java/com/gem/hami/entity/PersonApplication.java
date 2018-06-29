@@ -7,6 +7,12 @@ public class PersonApplication {
 
     private String name;
 
+    private String schoolName;
+
+    private Integer schoolId;
+
+    private String zjh;
+
     private String phone;
 
     private String email;
@@ -26,6 +32,30 @@ public class PersonApplication {
     private String remark;
 
     private Integer adminId;
+
+    public Integer getSchoolId() {
+        return schoolId;
+    }
+
+    public void setSchoolId(Integer schoolId) {
+        this.schoolId = schoolId;
+    }
+
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+
+    public String getZjh() {
+        return zjh;
+    }
+
+    public void setZjh(String zjh) {
+        this.zjh = zjh;
+    }
 
     public Integer getPersonApplicationId() {
         return personApplicationId;

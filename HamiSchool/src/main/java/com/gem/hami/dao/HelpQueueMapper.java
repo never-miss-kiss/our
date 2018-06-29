@@ -25,6 +25,8 @@ public interface HelpQueueMapper {
 
     public boolean updateHelpClickCount(int helpId);
 
+    public boolean updateCommentCount(int helpId);
+
     public boolean deleteHelpsInSchedule();
 
 }

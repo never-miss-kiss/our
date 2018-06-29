@@ -79,8 +79,8 @@
     </update>
     <!--发布商品-->
     <insert id="insertGoods" parameterType="Goods">
-        INSERT into goods (goods_id,name,price,picture,location,release_time,phone,email,qq,remark,click_count,goods_category_id,user_id)
-        VALUES (#{goodsId},#{name},#{price},#{picture},#{location},#{releaseTime},#{phone},#{email},#{qq},#{remark},0,#{goodsCategoryId},#{userId})
+        INSERT into goods (name,price,picture,location,release_time,phone,remark,click_count,goods_category_id,user_id)
+        VALUES (#{name},#{price},#{picture},#{location},#{releaseTime},#{phone},#{remark},0,#{goodsCategoryId},#{userId})
     </insert>
 
     <!--商品推荐-->

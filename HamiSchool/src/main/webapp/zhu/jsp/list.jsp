@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<body style="background: #e1e9eb;">
 		<form action="<%=basePath%>glist" id="mainForm" method="post">
 			<input type="hidden" name="currentPage" id="currentPage" value="${page.currentPage}"/>
-			
+
 			<div class="right">
 				<div class="current">当前位置：<a href="javascript:void(0)" style="color:#6E6E6E;" onclick="">商品管理</a> &gt; 商品列表</div>
 				<div class="rightCont">

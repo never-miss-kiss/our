@@ -55,4 +55,8 @@
     <update id="updateHelpClickCount" parameterType="java.lang.Integer">
         UPDATE help_fetch set click_count = click_count+1 where help_fetch_id = #{param1}
     </update>
+
+    <update id="updateCommentCount" parameterType="java.lang.Integer">
+        UPDATE help_fetch set comment_count = comment_count+1 where help_fetch_id = #{param1}
+    </update>
 </mapper>

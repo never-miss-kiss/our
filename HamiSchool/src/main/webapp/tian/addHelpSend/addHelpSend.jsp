@@ -26,11 +26,20 @@
     <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
     <script src="<%= basePath %>tian/helpBuyDetail/help-buy.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4MuXt8BaTfnKIcCU0Q8UBuSyHuLAZcvN"></script>
-    <title>HelpBuyDetail</title>
+    <title>帮我送</title>
 
+    <%--闪光装逼效果--%>
+    <link rel="stylesheet" type="text/css" href="<%=basePath %>tian/addHelpBuy/Flash/style.css">
+
+    <%--切换背景颜色--%>
+    <link rel="stylesheet" href="<%= basePath %>tian/addHelpBuy/ChangeColor/reset.css" type="text/css" />
+    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery-ui.custom.js"></script>
+    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/jquery.bgColorSelector.min.js"></script>
+    <script type="text/javascript" src="<%= basePath %>tian/addHelpBuy/ChangeColor/js/init.js"></script>
 </head>
 <body>
 
+<div class="bgSelector"></div>
 
 <div class="container-fluid">
 
@@ -62,12 +71,12 @@
                             <label class="btn btn-primary">
                                 <input type="radio" name="name" id="option3" autocomplete="off"> 手机
                             </label>
-                            <label class="btn btn-primary">
-                                <input type="radio" name="name" id="option3" autocomplete="off"> Radio 3
-                            </label>
-                            <label class="btn btn-primary">
-                                <input type="radio" name="name" id="option3" autocomplete="off"> Radio 3
-                            </label>
+                            <%--<label class="btn btn-primary">--%>
+                                <%--<input type="radio" name="name" id="option3" autocomplete="off"> Radio 3--%>
+                            <%--</label>--%>
+                            <%--<label class="btn btn-primary">--%>
+                                <%--<input type="radio" name="name" id="option3" autocomplete="off"> Radio 3--%>
+                            <%--</label>--%>
                         </div>
                     </div>
                 </div>
@@ -141,7 +150,6 @@
                         <div class="col-sm-8">
                             <div class="input-group">
                             <input id="suggestId3" type="text" name="distance" VALUE="8" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-addon" id="basic-addon2">KM</span>
                             </div>
                         </div>
                     </div>
@@ -166,18 +174,23 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">手机号码</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                        <label for="inputEmail3" class="col-sm-4 control-label">验证码:</label>
+                        <div class="col-sm-8" >
+                            <input type="text" class="form-control col-sm-4" name="checkcode" id="inputPassword4"  placeholder="验证码" />
+                            <img title="点击更换" onclick="javascript:refresh(this);" src="${pageContext.request.contextPath }/help/imageServlet.action"/>
+                            <c:if test="${info ==1}">
+                                <p class="col-sm-4" style="color: red !important;">验证码输入错误！</p>
+                            </c:if>
+                            <!-- cookie 的 -->
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">短信验证</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="">
-                        </div>
-                    </div>
+                    <%--验证码--%>
+                    <script type="text/javascript">
+                        function refresh(obj) {
+                            obj.src = "${pageContext.request.contextPath }/help/imageServlet.action?k="+new Date().valueOf();
+                            //alert("ssssssssssss");
+                        }
+                    </script>
 
                     <button type="submit" class="btn btn-default">Submit</button>
 
@@ -251,9 +264,9 @@
 
 
             var inputValue = G("suggestId").value; //获得输入框的值
-            alert(inputValue);
+//            alert(inputValue);
             var inputValue2 = G("suggestId2").value;
-            alert(inputValue2);
+//            alert(inputValue2);
 
             map.centerAndZoom(new BMap.Point(116.404, 39.915), 12);
             var output = "我算出来的距离";

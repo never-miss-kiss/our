@@ -40,7 +40,7 @@
 
 </head>
 <body>
-<div class="site-header">
+
     <div class="header head-top" >
     <div class="container-fluid">
         <div class="col-sm-12">
@@ -131,7 +131,7 @@
         <div style="clear: both"></div>
     </div>
 </div>
-</div>
+
 
 <div class="breadcrumbs">
     <div class="container">

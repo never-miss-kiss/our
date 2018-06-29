@@ -84,7 +84,7 @@ input:focus:-ms-input-placeholder {
 
 html, body {
   height: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 html {

@@ -853,7 +853,7 @@
                         <div class="col-xs-7">
                             <div id="message">
                                 <a href="#">
-                                    <img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>
+                                    <%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
                                 </a>
                             </div>
                             <div id="exit">
@@ -895,7 +895,7 @@
         </div>
         <div style="clear: both"></div>
     </div>
-    </div>
+</div>
     <div class="tab-content">
     <div class="nav-tab-bar">
         <%--<a href="" target="_self" class="logo"> </a>--%>
@@ -918,17 +918,17 @@
             <div class="carousel">
                 <ul class="carousel-list" style="width: 400%; transform: translateX(-50%);">
                     <li class="carousel-item" data-carousel-index="0">
-                        <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/11.jpg" class="carousel-bg" alt="广告1" height="212px" width="680px"> </a>
+                        <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog1.jpg" class="carousel-bg" alt="广告1" height="212px" width="680px"> </a>
                     </li>
-                    <li class="carousel-item" data-carousel-index="1"> <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" target="_blank"> <img src="<%= basePath %>tian/images/bear.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/8f2325f283c86789a86c82094d0708e0ee1437e9.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
-                    <li class="carousel-item" data-carousel-index="2"> <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" target="_blank"> <img src="<%= basePath %>tian/images/bear.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/45647a5e0931bf54afa318606beb508fee3834a2.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
-                    <li class="carousel-item" data-carousel-index="3"> <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" target="_blank"> <img src="<%= basePath %>tian/images/bear.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/4b0b416b349d370a48cd5946ac4592ccbca7c259.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
+                    <li class="carousel-item" data-carousel-index="1"> <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog2.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/8f2325f283c86789a86c82094d0708e0ee1437e9.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
+                    <li class="carousel-item" data-carousel-index="2"> <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog3.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/45647a5e0931bf54afa318606beb508fee3834a2.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
+                    <li class="carousel-item" data-carousel-index="3"> <a href="#" target="_blank"> <img src="<%= basePath %>tian/images/dog4.jpg" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/4b0b416b349d370a48cd5946ac4592ccbca7c259.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)" webpcheck="checked"> </a> </li>
                 </ul>
                 <div class="titles">
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="" data-title-index="0" target="_blank">广告1</a>
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="" data-title-index="1" target="_blank">广告2</a>
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="on" data-title-index="2" target="_blank">广告3</a>
-                    <a href="<%= basePath %>tian/showHelp/showHelp_files/哔哩哔哩专栏.html" class="" data-title-index="3" target="_blank">广告4</a> </div>
+                    <a href="#" class="" data-title-index="0" target="_blank">广告1</a>
+                    <a href="#" class="" data-title-index="1" target="_blank">广告2</a>
+                    <a href=#" class="on" data-title-index="2" target="_blank">广告3</a>
+                    <a href="#" class="" data-title-index="3" target="_blank">广告4</a> </div>
                 <ul class="indicator">
                     <li class="indicator-btn-holder">
                         <div class="indicator-btn" data-indicator-index="0"></div>
@@ -977,7 +977,7 @@
 
                                         </a>
                                         <div class="article-desc">
-                                            <p>${helpInfo.name}   酬劳：${helpInfo.personPrice}元   截止日期：${helpInfo.endTime}</p>
+                                            <p>${helpInfo.name}   酬劳：${helpInfo.personPrice}元&nbsp;&nbsp;&nbsp;&nbsp;   截止日期：${helpInfo.endTime}</p>
 
                                         </div>
 
@@ -990,42 +990,38 @@
                                                 <span class="category">帮我取</span>
                                             </a>
                                             <span class="view">${helpInfo.clickCount}</span>
-                                            <span class="like ">点赞量</span>
+                                            <%--<span class="like ">点赞量</span>--%>
                                             <a href="#" target="_blank">
                                                 <span class="reply">${helpInfo.commentCount}</span>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="cover-img">
-                                        <a href="#" target="_blank">
-                                            <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/bear.jpg);"></div>
+                                        <%--<a href="#" target="_blank">--%>
+                                            <%--<div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/bear.jpg);"></div>--%>
+
+                                            <c:if test="${helpInfo.helpType==1}">
+                                            <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite1.png);"></div>
+                                                </c:if>
+                                                <c:if test="${helpInfo.helpType==2}">
+                                                <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                    <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite2.png);"></div>
+                                                    </c:if>
+                                                    <c:if test="${helpInfo.helpType==3}">
+                                                    <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                        <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite3.png);"></div>
+                                                        </c:if>
+                                                        <c:if test="${helpInfo.helpType==4}">
+                                                        <a href="<%= basePath%>help/helpDetail.action?helpType=${helpInfo.helpType}&helpId=${helpInfo.helpId}" target="_blank" class="article-title-holder">
+                                                            <div class="cover-image loaded" style="background-image: url(<%= basePath %>tian/images/handwrite4.png);"></div>
+                                                            </c:if>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
-
-                    <%--末尾的示例帖子--%>
-                    <div class="article-item item-tp-4" data-id="515423">
-                        <div class="item-holder">
-                            <div class="article-content">
-                                <div class="article-left-block"><a href="#" target="_blank" class="article-title-holder"><span class="article-title" title="【凯源】腐段子">【凯源】腐段子</span></a>
-                                    <div class="article-desc">本文为转载文，原作者是【白依源】。“说你爱我！”王俊凯声音低沉，手上的速度却没有变慢。　　　　“不要…唔…嗯～”王源在愈来愈快的步伐中溢出呻·吟。　　　　“说！说你爱我！”那人加大力度，空气中弥漫奇特</div>
-                                    <div class="article-info-bar"><a href="#" target="_blank" class="up-content">
-                                        <span class="face-holder"><img src="file:///G:/%E6%80%BB%E9%A1%B9%E7%9B%AE/workplace/Mybilibili%E4%B8%93%E6%A0%8F%20-%20%E5%89%AF%E6%9C%AC/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%93%E6%A0%8F_files/0a4a84b0bdeadc31cc70639cc973daa03e65b78a.jpg@26w_26h.webp" class="face-img"></span>
-                                        <span class="nick-name">KR-卡洛伊</span
-                                    </a>
-                                        <a href="https://www.bilibili.com/read/lightnovel#rid=32" target="_self">
-                                            <span class="category">短篇小说</span></a><span class="view">89</span><span class="like ">4</span><a href="https://www.bilibili.com/read/cv515423#comment&amp;from=category_0" target="_blank">
-                                            <span class="reply">3</span></a></div>
-                                </div>
-                                <div class="cover-img"><a href="https://www.bilibili.com/read/cv515423?from=category_0" target="_blank">
-                                    <div class="cover-image loaded" pre-style="background-image:url(https://i0.hdslb.com/bfs/article/9fb67e601d926ae3de301673d39af367fcdfa05a.png@257w_193h.webp)" style="background-image: url(&quot;https://i0.hdslb.com/bfs/article/9fb67e601d926ae3de301673d39af367fcdfa05a.png@257w_193h.webp&quot;);"></div>
-                                </a></div>
-                            </div>
-                        </div>
-                    </div>
 
                     <%--分页--%>
                     <div class="paging2">
@@ -1135,8 +1131,8 @@
                     <label>排行榜</label>
                     <ul class="rank-tabs-list" >
                         <a href="javascript:sort(0,2)" ><li class="on">点击量</li></a>
-                        <a href="javascript:sort(0,3)" style="color: #000;"><li>截止日期</li></a>
-                        <a href="javascript:sort(0,4)"><li>标价</li></a>
+                        <a href="javascript:sort(0,3)" ><li>截止日期</li></a>
+                        <a href="javascript:sort(0,4) "><li>标价</li></a>
                     </ul>
                     <div class="rank-module">
                         <ul class="rank-list">
@@ -1154,7 +1150,7 @@
             </div>
             <script>
                 function sort(schoolId,sortId) {
-                    alert("1");
+//                    alert("1");
                     $.ajax(
                         {
 //                    请求的方法
@@ -1175,6 +1171,7 @@
                 }
 
             </script>
+
 
 
 

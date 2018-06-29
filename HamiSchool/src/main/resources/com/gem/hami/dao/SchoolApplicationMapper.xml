@@ -4,7 +4,7 @@
 
     <!--开通学校-->
     <insert id="insetSchoolApplication" parameterType="SchoolApplication">
-        INSERT into school_application VALUES ()
+        INSERT into school_application(school_id,user_id,name,phone,submit_time) VALUES (#{schoolId},#{userId},#{name},#{phone},#{submitTime})
     </insert>
     <!--处理学校申请表单-->
     <delete id="deleteSchoolApplication" parameterType="int">

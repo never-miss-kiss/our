@@ -33,6 +33,11 @@ public class CertifyServiceImpl implements CertifyService {
     }
 
     @Override
+    public int findSchoolIdByName(String name) {
+        return schoolMapper.selectSchoolIdByName(name);
+    }
+
+    @Override
     public boolean addPersonAplication(PersonApplication personApplication) {
         return personApplicationMapper.insertPersonAplication(personApplication);
     }

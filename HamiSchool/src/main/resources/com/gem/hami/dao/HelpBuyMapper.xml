@@ -61,6 +61,10 @@
         UPDATE help_buy set click_count = click_count+1 where help_buy_id = #{param1}
     </update>
 
+    <update id="updateCommentCount" parameterType="java.lang.Integer">
+        UPDATE help_buy set comment_count = comment_count+1 where help_buy_id = #{param1}
+    </update>
+
 
     <!--定时删除两个月之前的数据，实际项目中我倒是想定时筛选，而不是将数据删除-->
     <delete id="deleteHelpsInSchedule">

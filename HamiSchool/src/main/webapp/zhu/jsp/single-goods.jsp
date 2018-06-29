@@ -20,18 +20,11 @@
       <script type="text/javascript" src="<%= basePath %>zhu/bootstrap/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="<%= basePath %>zhu/js/jquery-1.11.2.js"></script>
 
-      <link href="<%= basePath %>zhu/Gallery_files/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-      <script src="<%= basePath %>zhu/Gallery_files/bootstrap-3.3.7/dist/js/jquery.min.js"></script>
-      <link href="<%= basePath %>zhu/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
-      <link rel="stylesheet" type="text/css" href="<%= basePath %>zhu/Gallery_files/style_common.css">
-      <link href="<%= basePath %>zhu/Gallery_files/css" rel="stylesheet" type="text/css">
-      <link href="<%= basePath %>zhu/Gallery_files/css(1)" rel="stylesheet" type="text/css">
-      <link href="<%= basePath %>zhu/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
-      <script src="<%= basePath %>zhu/Gallery_files/wow.min.js.下载"></script>
-      <script src="<%= basePath %>zhu/Gallery_files/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+
       <!-- Bootstrap core CSS -->
       <link href="<%= basePath %>zhu/css/bootstrap.css" rel="stylesheet">
       <!-- Custom styles for this template -->
+
 
       <link rel="stylesheet" href="<%= basePath %>zhu/css/screen.css">
       <link rel="stylesheet" href="<%= basePath %>zhu/css/animation.css">
@@ -61,15 +54,22 @@
 
       <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/style.css">
       <link rel="stylesheet" href="<%= basePath %>zhu/comment/css/comment.css">
+      <!--Gallery栏目框-->
+      <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
+      <%--<script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>--%>
+      <%--<script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>--%>
+      <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
+      <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+      <!--Gallery栏目框end-->
       <style>
-      .head-top{background-color: #a6e1ec;}
       .dark-bg{border-color: #8a6d3b;}
+      a{color: #0f0f0f}
       .search-block{position: absolute;top:82px;left: 17%}
       .catorys{margin-top: 30px;}
       .btn{margin-top: 10px;margin-left: 19px;margin-right: 50px;}
       .pBtn{margin-top: -15px;margin-bottom: -10px;margin-left: -10px;}
-       h2.title{position: relative;top:-60px;}
-      .talk{position: relative;top: -60px; }
+       h2.title{position: relative;top:-30px;}
+      .talk{position: relative;top: -60px;background-color: aliceblue }
       .liebiao{position: relative;left: 15px}
       .goods{position: relative;top:7px;left: 250px;}
       /*#button{position:absolute;top:1133px;left: 670px;width: 100px;}*/
@@ -77,69 +77,74 @@
       .picture{position: relative;width: 300px;height: 320px;top:-35px;float: left;padding: 50px;}
       /*.plun{position: relative;top: 5px;}*/
       .photo{position: relative;top: 7px;}
+      img.user-photo {
+         border-radius: 100%;
+      }
+         #myCarousel{left: 10px;}
+      .navbar.main{left:15px;}
+         /*#previous{position: relative;margin-left:50px;}*/
    </style>
-   <script type="text/javascript">
-          $(document).ready(function(){
-              var showproduct = {
-                  "boxid":"showbox",
-                  "sumid":"showsum",
-                  "boxw":400,
-                  "boxh":550,
-                  "sumw":60,//列表每个宽度,该版本中请把宽高填写成一样
-                  "sumh":60,//列表每个高度,该版本中请把宽高填写成一样
-                  "sumi":7,//列表间隔
-                  "sums":5,//列表显示个数
-                  "sumsel":"sel",
-                  "sumborder":1,//列表边框，没有边框填写0，边框在css中修改
-                  "lastid":"showlast",
-                  "nextid":"shownext"
-              };//参数定义
-              $.ljsGlasses.pcGlasses(showproduct);//方法调用，务必在加载完后执行
+   <%--<script type="text/javascript">--%>
+          <%--$(document).ready(function(){--%>
+              <%--var showproduct = {--%>
+                  <%--"boxid":"showbox",--%>
+                  <%--"sumid":"showsum",--%>
+                  <%--"boxw":400,--%>
+                  <%--"boxh":550,--%>
+                  <%--"sumw":60,//列表每个宽度,该版本中请把宽高填写成一样--%>
+                  <%--"sumh":60,//列表每个高度,该版本中请把宽高填写成一样--%>
+                  <%--"sumi":7,//列表间隔--%>
+                  <%--"sums":5,//列表显示个数--%>
+                  <%--"sumsel":"sel",--%>
+                  <%--"sumborder":1,//列表边框，没有边框填写0，边框在css中修改--%>
+                  <%--"lastid":"showlast",--%>
+                  <%--"nextid":"shownext"--%>
+              <%--};//参数定义--%>
+              <%--$.ljsGlasses.pcGlasses(showproduct);//方法调用，务必在加载完后执行--%>
 
-              $(function(){
+              <%--$(function(){--%>
 
-                  $('.tabs a').click(function(){
-                      var $this=$(this);
-                      $('.panel').hide();
-                      $('.tabs a.active').removeClass('active');
-                      $this.addClass('active').blur();
-                      var panel=$this.attr("href");
-                      $(panel).show();
-                      return fasle;  //告诉浏览器  不要纸箱这个链接
-                  })//end click
-                  $(".tabs li:first a").click()   //web 浏览器，单击第一个标签吧
-              })//end ready
+                  <%--$('.tabs a').click(function(){--%>
+                      <%--var $this=$(this);--%>
+                      <%--$('.panel').hide();--%>
+                      <%--$('.tabs a.active').removeClass('active');--%>
+                      <%--$this.addClass('active').blur();--%>
+                      <%--var panel=$this.attr("href");--%>
+                      <%--$(panel).show();--%>
+                      <%--return fasle;  //告诉浏览器  不要纸箱这个链接--%>
+                  <%--})//end click--%>
+                  <%--$(".tabs li:first a").click()   //web 浏览器，单击第一个标签吧--%>
+              <%--})//end ready--%>
 
-              $(".centerbox li").click(function(){
-                  $("li").removeClass("now");
-                  $(this).addClass("now")
+              <%--$(".centerbox li").click(function(){--%>
+                  <%--$("li").removeClass("now");--%>
+                  <%--$(this).addClass("now")--%>
 
-              });
-          });
-      </script>
+              <%--});--%>
+          <%--});--%>
+      <%--</script>--%>
    </head>
    <body>
-      <!-- SINGLE VIDEO -->
-      <input type="hidden" value="${u.nickname}" id="aaa"/>
-      <input type="hidden" value="${goods.goodsId}" id="bbb"/>
-      <input type="hidden" value="${u.userId}" id="ccc"/>
-      <div id="single-video" class="container-fluid standard-bg">
-         <!-- MENU -->
-         <div class="header head-top" >
-            <div class="container">
-               <div class="header-main" >
+   <!-- HOME 1 -->
+   <div class="header head-top" id="sb">
+      <div class="container-fluid">
+         <div class="col-sm-12">
+            <div class="col-xs-1" >
+            </div>
+            <div class="header-main">
+               <div class="col-xs-8">
                   <div class="logo wow bounceInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInLeft;">
-                     <a href="#"><img src="<%= basePath %>zhu/Gallery_files/logo.png" alt=""></a>
+                     <a href="#"><img src="<%= basePath %>tian/showHelp/Gallery_files/logo3.png" alt="" ></a>
                   </div>
                   <div class="top-navg">
-                     <span class="menu"> <img src="<%= basePath %>zhu/Gallery_files/icon.png" alt=" "></span>
+                     <span class="menu"> <img src="<%= basePath %>tian/showHelp/Gallery_files/icon.png" alt=" "></span>
                      <ul class="res">
-                        <a href="<%= basePath %>goods/findAllGoods.action"><span class="res1">首页</span></a>
-                        <a href="#"><span class="res2">二手</span></a>
-                        <a href="#"><span class="res3">跑腿</span></a>
-                        <a class="active" href="#"><span class="res1">哈密社区</span></a>
-                        <a href="<%= basePath %>zhu/jsp/hamirenz.jsp"><span class="res2">哈密认证</span></a>
-                        <a href="#"><span class="res3">联系我们</span></a>
+                        <a href="<%=basePath%>tian/index/index.jsp"><span class="res1">首页</span></a>
+                        <a class="active" href="<%=basePath%>goods/findAllGoods.action?#sa"><span class="res2">二手</span></a>
+                        <a href="<%=basePath%>help/selectAllHelps.action"><span class="res3">跑腿</span></a>
+                        <a  href="<%=basePath%>forum/list.action"><span class="res1">社区</span></a>
+                        <a href="<%=basePath%>zhu/jsp/hamirenz.jsp"><span class="res2">认证</span></a>
+                        <a href="<%=basePath%>tian/index/index.jsp"><span class="res3">Callus</span></a>
                      </ul>
                      <!-- script-for-menu -->
                      <script>
@@ -149,16 +154,78 @@
                              });
                          });
                      </script>
-                     <div class="search-block">
-                        <form>
-                           <input type="search" placeholder="Search">
-                        </form>
-                     </div>
                   </div>
                </div>
+               <div class="col-xs-2 banner-right">
+                  <div id="person-pic" >
+
+                     <div id="head-portrait" class="col-xs-5" >
+                        <a href="<%= basePath %>home/personalCenter.action">
+                           <c:if test="${userInfo.photo == null}">
+                              <img src="<%= basePath %>profilePicture/0.jpg"></img>
+                           </c:if>
+                           <c:if test="${userInfo != null}">
+                              <img src="<%= basePath %>profilePicture/${userInfo.photo}"></img>
+                           </c:if>
+                        </a>
+                     </div>
+
+                     <div class="col-xs-7">
+                        <div id="message">
+                           <a href="#">
+                              <%--<img src="<%= basePath %>tian/showHelp/Gallery_files/通知3.png"></img>--%>
+                           </a>
+                        </div>
+                        <div id="exit">
+                           <a href="<%=basePath%>loginpage/exit.action">
+                              <img src="<%= basePath %>tian/showHelp/Gallery_files/登出.png" ></img>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+
+               <script>
+                   $("#exit img").mousedown(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出点击时.png");
+                       }
+                   );
+                   $("#exit img").mouseup(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/登出.png");
+                       }
+                   );
+
+                   $("#message img").mousedown(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知点击时.png");
+                       }
+                   );
+
+                   $("#message img").mouseup(
+                       function(){
+                           $(this).prop("src","<%= basePath %>tian/showHelp/Gallery_files/通知3.png");
+                       }
+                   );
+               </script>
+
             </div>
          </div>
-         <!-- SINGLE VIDEO -->
+         <div style="clear: both"></div>
+      </div>
+   </div>
+      <!-- SINGLE VIDEO -->
+      <input type="hidden" value="${u.nickname}" id="aaa"/>
+      <input type="hidden" value="${goods.goodsId}" id="bbb"/>
+      <input type="hidden" value="${u.userId}" id="ccc"/>
+      <input type="hidden" value="${goods.goodsCategoryId}" id="ddd"/>
+      <input type="hidden" value="${u.photo}" id="eee"/>
+      <input type="hidden" value="1" id="fff"/>
+      <input type="hidden" value="2" id="ggg"/>
+
+   <div id="single-video" class="container-fluid standard-bg">
          <div class="row">
             <!-- SIDEBAR -->
             <div class="liebiao">
@@ -169,25 +236,24 @@
                   </div>
                </div><!--a ajax helper-->
             </div><!--.navbar.main-->
-            <div class="sidebar main left" id="sidebar-main">
+            <div class="sidebar main left" id="sidebar-main" >
                <div class="wrapper">
                   <nav>
                      <ul>
                         <li class="title">所有分类</li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action">全部商品</a></li>
                         <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=2">代步工具</a></li>
                         <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=3">手机</a></li>
-                        <li><a href="./right-top.html">电脑</a></li>
-                        <li><a href="./left.html">数码</a></li>
-                        <li><a href="./left-top.html">电器</a></li>
-                        <li><a href="./jquery-v2.html">衣鞋伞帽</a></li>
-                        <li><a href="./jquery-v3.html">书籍教材</a></li>
-                        <li><a href="./right-left.html">体育健身</a></li>
-                        <li><a href="./init-opened.html">乐器</a></li>
-                        <li><a href="./no-mask.html">自行设计</a></li>
-                        <li><a href="./allow-scrolling.html">宠物</a></li>
-                        <li><a href="./custom-functions.html">文具</a></li>
-                        <li><a href="./ajax.html">其它</a></li>
-                        <li><a href="./browserify.html">Browserify</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=4">电脑</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=5">数码</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=6">电器</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=7">衣鞋伞帽</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=8">书籍教材</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=9">体育健身</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=10">乐器</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=11">自行设计</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=12">宠物</a></li>
+                        <li><a href="<%= basePath %>goods/findAllGoods.action?goodsCategoryId=13">文具</a></li>
                      </ul>
                   </nav>
                </div>
@@ -205,20 +271,22 @@
                      <div class="shopdetails">
                         <!-------放大镜-------->
                         <div id="leftbox">
+                           <span><img src="<%= basePath %>zhu/img/goodsPic/${goods.picture}" width="400" height="450"></span>
                            <div id="showbox">
-                              <img src="<%= basePath %>zhu/img/shopdetail/img01.png" width="400" height="550" />
-                              <img src="<%= basePath %>zhu/img/shopdetail/img02.png" width="400" height="550" />
-                              <img src="<%= basePath %>zhu/img/shopdetail/img03.png" width="400" height="550" />
-                              <img src="<%= basePath %>zhu/img/shopdetail/img04.png" width="400" height="550" />
-                              <img src="<%= basePath %>zhu/img/shopdetail/img05.png" width="400" height="400" />
-                              <img src="<%= basePath %>zhu/img/shopdetail/img01.png" width="400" height="400" />
+                              <%--<span><img src="<%= basePath %>zhu/img/goodsPic/${goods.picture}" width="400" height="450"></span>--%>
+                              <%--<img src="<%= basePath %>zhu/img/shopdetail/img01.png" width="400" height="550" />--%>
+                              <%--<img src="<%= basePath %>zhu/img/shopdetail/img02.png" width="400" height="550" />--%>
+                              <%--<img src="<%= basePath %>zhu/img/shopdetail/img03.png" width="400" height="550" />--%>
+                              <%--<img src="<%= basePath %>zhu/img/shopdetail/img04.png" width="400" height="550" />--%>
+                              <%--<img src="<%= basePath %>zhu/img/shopdetail/img05.png" width="400" height="400" />--%>
+                              <%--<img src="<%= basePath %>zhu/img/shopdetail/img01.png" width="400" height="400" />--%>
 
                            </div><!--展示图片盒子-->
-                           <div id="showsum"></div><!--展示图片里边-->
-                           <p class="showpage">
-                              <a href="javascript:void(0);" id="showlast"> < </a>
-                              <a href="javascript:void(0);" id="shownext"> > </a>
-                           </p>
+                           <%--<div id="showsum"></div><!--展示图片里边-->--%>
+                           <%--<p class="showpage">--%>
+                              <%--<a href="javascript:void(0);" id="showlast"> < </a>--%>
+                              <%--<a href="javascript:void(0);" id="shownext"> > </a>--%>
+                           <%--</p>--%>
                         </div>
                         <div class="centerbox">
                            <%--<p class="imgname">叠叠杯水杯茶杯套杯陶瓷咖啡牛奶杯具套装</p>--%>
@@ -259,7 +327,7 @@
                      </div>
 					<!-- COMMENTS -->
 					 <section id="comments">
-						<h2 class="title" style="color:#2aabd2">欢迎评论</h2>
+						<h2 class="title" style="color:#26968a">欢迎评论</h2>
 						<%--<div class="widget-area">--%>
 							<%--<div class="status-upload">--%>
                                <%--&lt;%&ndash;<p class="lead emoji-picker-container">&ndash;%&gt;--%>
@@ -297,7 +365,7 @@
                               <%--</div>--%>
                            </div>
                         </div>
-                       <h2 class="title" style="color:#2aabd2">商品评论</h2>
+                       <h2 class="title" style="color:#26968a">商品评论</h2>
                        <div class="talk" >
                        <div class="row comment-posts">
                           <%--<div class="col-sm-1">--%>
@@ -311,7 +379,13 @@
                                  <div class="photo">
                                   <div class="col-sm-1">
                                      <div class="thumbnail">
-                                        <img class="img-responsive user-photo" src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt="Comment User Avatar">
+                                        <C:forEach items="${photo}" var="p">
+                                           <C:if test="${p.key eq comment.goodsCommentId}">
+                                              <img class="img-responsive user-photo" src="${pageContext.request.contextPath}/profilePicture/${p.value}" alt="Comment User Avatar">
+                                           </C:if>
+                                        </C:forEach>
+                                        <%--<img class="img-responsive user-photo" src="<%= basePath %>profilePicture/--%>
+                                          <%--" alt="Comment User Avatar">--%>
                                      </div>
                                   </div>
                                  </div>
@@ -356,16 +430,17 @@
             </div>
          </div>
          <!-- CHANNELS -->
-         <div id="channels-block" class="container-fluid " style="background-color:#a6e1ec">
+         <div id="channels-block" class="container-fluid ">
             <div class="container-fluid ">
-               <div class="col-md-12">
+               <div class="col-md-10">
                   <!-- CHANNELS -->
                   <section id="channels">
-                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <h2 class="icon"><i class="fa fa-leaf" aria-hidden="true"></i>商品推荐</h2>
+                     <div id="myCarousel" class="carousel slide" style="color:#26968a" data-ride="carousel">
+                        <h2 class="icon"><i class="fa fa-leaf" aria-hidden="true" style="color: #26968a "></i><span style="color:#26968a">商品推荐</span></h2>
                         <div class="carousel-control-box">
-                           <a class="left carousel-control" id="previous" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=1&goodsId=${goodsId}"  role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                           <a class="right carousel-control" id="next" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=2&goodsId=${goodsId}"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                           <a class="right carousel-control" id="previous"  href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=1&goodsId=${goodsId}"   role="button" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</a>
+                           <a class="left carousel-control" id="next" href="<%= basePath %>goods/findGoodsById.action?goodsCategoryId=${queryPojo.goodsCategoryId}&curPage=2&goodsId=${goodsId}"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                           <%--<a class="left carousel-control" id="next" href="javascript:void(0)" onclick="gNext()"  role="button" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>--%>
                         </div>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
@@ -376,20 +451,29 @@
                                     <div class="post post-medium">
                                        <div class="thumbr">
                                           <a class="post-thumb" href="<%= basePath %>goods/findGoodsById.action?goodsId=${good.goodsId}">
-                                             <img class="img-responsive" src="<%= basePath %>zhu/img/thumbs/thumb-s.jpg" alt="#">
+                                             <img class="img-responsive" style="width: 200px;height:150px;" src="<%= basePath %>zhu/img/goodsPic/${good.picture}"  alt="#">
                                           </a>
                                        </div>
                                        <div class="infor">
                                           <br>
                                           <h4>
                                              <a class="title" >${good.name}</a>
+                                             <p>&nbsp;</p>
                                           </h4>
-                                          <span class="posts-txt" title="Posts from Channel"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>${good.clickCount}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                          <span class="posts-txt" title="Posts from Channel"><i class="fa fa-cny" aria-hidden="true"></i>${good.price}</span>
+                                          <span class="posts-txt" title="Posts from Channel" style="color:red;"><i class="fa fa-hand-pointer-o" aria-hidden="true"  style="color:orange;"></i>${good.clickCount}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <span class="posts-txt" title="Posts from Channel" style="color:red;"><i class="fa fa-cny" aria-hidden="true"  style="color:orange;"></i>${good.price}</span>
+                                             <p>&nbsp;</p>
                                           <h5>
-                                             <a class="title" >吉林大学
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未认证
-                                             </a>
+                                             <%--<a class="title" >吉林大学--%>
+                                                <%--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未认证--%>
+                                             <%--</a>--%>
+                                                <a class="title" >
+                                                   <C:forEach items="${sName}" var="name">
+                                                      <C:if test="${name.key eq good.goodsId}">
+                                                         <C:out value="${name.value}"></C:out></C:if>
+                                                   </C:forEach>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未认证
+                                                </a>
                                           </h5>
                                        </div>
                                     </div>
@@ -406,11 +490,32 @@
             </div>
       </div>
       </div>
-      <p id="articlelist"></p>
+      <%--<p id="articlelist"></p>--%>
+      <%--<script>--%>
+         <%--function gNext(){--%>
+             <%--var goodsId = document.getElementById('bbb').value;--%>
+             <%--var goodsCategoryId = document.getElementById('ddd').value;--%>
+             <%--var curPage = document.getElementById('ggg').value;--%>
+             <%--alert(curPage)--%>
+             <%--$.ajax({--%>
+                 <%--type:"get",--%>
+                 <%--url:"${pageContext.request.contextPath}/goods/findGoodsById.action",--%>
+                 <%--data:"goodsCategoryId="+goodsCategoryId+"&curPage="+curPage+"&goodsId="+goodsId,--%>
+                 <%--success:function(data){--%>
+                     <%--alert("静态刷新成功");--%>
+                    <%--// document.getElementById('myCarousel').scrollIntoView();--%>
+                     <%--//$("#articlelist").html(data);--%>
+                 <%--},--%>
+                 <%--error : function(){--%>
+                     <%--alert("nani");--%>
+                 <%--}--%>
+             <%--})--%>
+         <%--}--%>
+      <%--</script>--%>
       <script>
-          document.getElementById("single-video").scrollIntoView();
-          document.getElementById("next").scrollIntoView();
-          document.getElementById("previous").scrollIntoView();
+          //document.getElementById("channels-block").scrollIntoView();
+             //document.getElementById("next").scrollIntoView();
+//          document.getElementById("previous").scrollIntoView();
       </script>
       <script>
          $(".nav .dropdown").hover(function() {
@@ -496,9 +601,10 @@
               //获取输入内容
               var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
               var name = document.getElementById('aaa').value;
+              var img = document.getElementById('eee').value;
               console.log(oSize);
               //动态创建评论模块
-              oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="<%= basePath %>zhu/comment/images/header-img-comment_03.png" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">'+ name +' : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">操作</a></div><div class="hf-list-con"></div></div> </div>';
+              oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img class="img-responsive user-photo" src="http://localhost:8080/${pageContext.request.contextPath}/profilePicture/'+img+'" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">'+ name +' : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">操作</a></div><div class="hf-list-con"></div></div> </div>';
               if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
                   $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
                   $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value','').siblings('pre').find('span').text('');
@@ -605,7 +711,24 @@
 
           })
       </script>
-
+      <script type="text/javascript">
+         function saleFavor(){
+             var goodsId = document.getElementById('bbb').value;
+             var userId = document.getElementById('ccc').value;
+             $.ajax({
+                 type:"get",
+                 url:"${pageContext.request.contextPath}/goods/addGoodsCollection.action",
+                 data:"goodsId="+goodsId+"&userId="+userId,
+                 success:function(data){
+                     alert("收藏成功");
+                     //$("#articlelist").html(data);
+                 },
+                 error : function(){
+                     alert("nani");
+                 }
+             })
+         }
+      </script>
 
 
 </body>

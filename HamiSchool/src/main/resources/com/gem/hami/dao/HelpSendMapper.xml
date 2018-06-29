@@ -69,5 +69,9 @@
         UPDATE help_send set click_count = click_count+1 where help_send_id = #{param1}
     </update>
 
+    <update id="updateCommentCount" parameterType="java.lang.Integer">
+        UPDATE help_send set comment_count = comment_count+1 where help_send_id = #{param1}
+    </update>
+
 
 </mapper>
