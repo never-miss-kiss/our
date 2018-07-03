@@ -85,7 +85,7 @@ public List<Goods> selectGoodsByCondition(QueryPojo queryPojo);
       * @Description 删除商品
       * @Modified By:
      */
-    public boolean deleteGoods(int goodsId);
+    public boolean deleteGoods(Integer goodsId);
 
 //===============================================================================================
     /**

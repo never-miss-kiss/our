@@ -31,9 +31,9 @@ public class GoodsControl {
     @RequestMapping(value = "/findGoodsById.action",method = RequestMethod.GET)
     public void findGoodsById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User u = (User) request.getSession().getAttribute("userInfo");
-        System.out.println(u.getNickname());
+//        System.out.println(u.getNickname());
         Map<String,Object> cmap = new HashMap<>();
-        int pageSize = 4  ;
+        int pageSize = 4 ;
         int curPage = 1;
         Integer goodsId = null;
 

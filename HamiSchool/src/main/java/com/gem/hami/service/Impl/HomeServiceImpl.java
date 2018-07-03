@@ -54,6 +54,16 @@ public class HomeServiceImpl implements HomeService {
     }
 
     @Override
+    public boolean modifyPicInUser(String photo) {
+        return userMapper.updateUserPic(photo);
+    }
+
+    @Override
+    public boolean deleteGoodsById(Integer goodsId) {
+        return goodsMapper.deleteGoods(goodsId);
+    }
+
+    @Override
     public PageInfo<Goods> allGoodsCollection(Map<String, Object> map) {
         int curPage = (int) map.get("curPage");
         int pageSize = (int) map.get("pageSize");

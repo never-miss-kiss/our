@@ -180,4 +180,6 @@ public interface UserMapper {
      */
     public List<User> selectUserByCondition(QueryPojo_User queryPojo);
 
+    public boolean updateUserPic(String photo);
+
 }

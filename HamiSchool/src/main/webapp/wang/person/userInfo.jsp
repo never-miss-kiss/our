@@ -22,7 +22,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <%--<script type="text/javascript" async="" src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/mstr.js"></script>--%>
     <%--<script type="text/javascript" async="" src="%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_files/jquery.js"></script>--%>
-    <script type="text/javascript" async="" src="<%= basePath%>/wang/js/jquery.js"></script>
+    <script type="text/javascript" async="" src="<%= basePath%>/wang/script/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="UTF-8">
     <title>个人中心</title>
@@ -30,18 +30,18 @@
     <meta name="description" content="">
 
     <!--Gallery栏目框-->
-    <link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
+    <%--<link href="<%= basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="<%= basePath %>bootstrap/js/jquery.min.js"></script>
     <script src="<%= basePath %>bootstrap/js/bootstrap.js"></script>
     <link href="<%= basePath %>tian/showHelp/Gallery_files/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<%= basePath %>tian/showHelp/Gallery_files/animate.css" rel="stylesheet" type="text/css" media="all">--%>
     <!--Gallery栏目框end-->
 
 
 </head>
 <body>
 
-    <div class="header head-top" >
+    <%--<div class="header head-top" >
     <div class="container-fluid">
         <div class="col-sm-12">
             <div class="col-xs-1" >
@@ -130,12 +130,12 @@
         </div>
         <div style="clear: both"></div>
     </div>
-</div>
+</div>--%>
 
 
 <div class="breadcrumbs">
     <div class="container">
-        <a href=""
+        <a href="<%= basePath%>/forum/list.action"
            onclick="">首页</a><span
             class="sep">&gt;</span><span>个人中心</span></div>
 </div>
@@ -211,14 +211,12 @@
                                     <a class="link" href="${pageContext.request.contextPath}/home/userSafe.action?userId=${user.userId}"
                                        onclick="">修改个人信息&gt;
                                     </a>
-                                    <img class="avatar" src="img" width="150" height="150">
+                                    <img class="avatar" src="<%= basePath%>/profilePicture/${user.photo}" width="150" height="150">
                                 </div>
                                 <div class="user-actions">
                                     <ul class="action-list">
-
                                         <li>用户名：<span>${user.nickname}</span></li>
                                         <li>绑定手机：<span class="tel">${user.telphone}</span></li>
-
                                         <li>绑定邮箱：<span class="tel">${user.email}</span></li>
                                     </ul>
                                 </div>

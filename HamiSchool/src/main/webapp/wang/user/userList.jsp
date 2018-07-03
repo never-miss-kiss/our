@@ -75,14 +75,14 @@
 				<tr>
 					<%--隐藏域 保存我们当前的页面数--%>
 					<input type="hidden" name="curPage" id="curPage" />
-					<td width="90" align="right">userid</td>
+					<td width="90" align="right">昵称</td>
 					<td >
 						<input name="userId" type="text" class="allInput" >
 					</td>
-					<td width="90" align="right">schoolid</td>
+					<%--<td width="90" align="right">schoolid</td>
 					<td >
 						<input name="schoolId" type="text" class="allInput">
-					</td>
+					</td>--%>
 					<td width="90" align="right">性别</td>
 					<td>
 						<select name="sex">
@@ -112,7 +112,13 @@
 				<td style="text-align: center">${e.nickname}</td>
 				<td style="text-align: center">${e.userId}</td>
 				<td style="text-align: center">${e.schoolId}</td>
-				<td style="text-align: center">${e.sex}</td>
+				<c:if test="${e.sex == 'F'}">
+					<td style="text-align: center">男</td>
+				</c:if>
+				<c:if test="${e.sex == 'M'}">
+					<td style="text-align: center">女</td>
+				</c:if>
+				<%--<td style="text-align: center">${e.sex}</td>--%>
 				<td style="text-align: center">${e.telphone}</td>
 				<td>
 					<button id="button01${e.userId}" class="button border-dot" onclick="window.location.href='${pageContext.request.contextPath }/home/selectUser.action?userId=${e.userId }'">详情</button>

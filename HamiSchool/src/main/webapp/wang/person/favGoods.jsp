@@ -53,7 +53,7 @@
 <body>
 <div class="breadcrumbs">
     <div class="container">
-        <a href=""
+        <a href="<%= basePath%>/forum/list.action"
            onclick="">首页</a><span
             class="sep">&gt;</span><span>喜欢的商品</span></div>
 </div>

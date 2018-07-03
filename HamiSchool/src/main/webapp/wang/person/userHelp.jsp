@@ -53,7 +53,7 @@
 <body>
 <div class="breadcrumbs">
     <div class="container">
-        <a href=""
+        <a href="<%= basePath%>/forum/list.action"
            onclick="">首页</a><span
             class="sep">&gt;</span><span>发布的任务</span></div>
 </div>
@@ -146,79 +146,6 @@
                                     <input class="search-text" type="search" id="J_orderSearchKeywords" name="keywords" autocomplete="off" placeholder="输入商品名称">
                                     <input type="submit" class="search-btn iconfont" value="">
                                 </form>
-                            </div>
-                        </div>
-                        <div class="box-bd">
-                            <form id="mainForm" method="get">
-                                <div id="J_orderList">
-                                <input type="hidden" name="curPage" id="curPage" />
-                                <ul class="order-list">
-                                    <%--<input type="hidden" name="curPage" id="curPage" />--%>
-                                    <c:forEach var="goods" items="${pageInfo.list}">
-                                        <li class="uc-order-item uc-order-item-finish">
-                                            <div class="order-detail">
-                                                <div class="order-summary">
-                                                </div>
-                                                <table class="order-detail-table">
-                                                    <thead>
-                                                    <tr>
-                                                        <th class="col-main">
-                                                            <p class="caption-info"><fmt:formatDate value="${goods.releaseTime}" pattern="yyyy-MM-dd hh:mm"/>
-                                                                <span class="sep">|</span>${goods.name}
-                                                            </p>
-                                                        </th>
-                                                        <c:if test="${goods.status==2 || goods.status == 3}">
-                                                            <th class="col-sub">
-                                                                <p class="caption-price">交易完成 || 下架商品<span class=""></span></p>
-                                                            </th>
-                                                        </c:if>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td class="order-items">
-                                                            <ul class="goods-list">
-                                                                <li>
-                                                                    <div class="figure figure-thumb">
-                                                                        <a href="" target="_blank">
-                                                                            <img src="${goods.picture}" width="80" height="80" alt="${goods.remark}">
-                                                                        </a>
-                                                                    </div>
-                                                                    <p class="name">
-                                                                        <a href="https://item.mi.com/1181000047.html" target="_blank">${goods.remark}</a>
-                                                                    </p>
-                                                                    <p class="price">价格：${goods.price}</p>
-                                                                </li>
-                                                            </ul>
-                                                        </td>
-                                                        <td class="order-actions">
-                                                            <a class="btn btn-small btn-line-gray" href="">订单详情</a>
-                                                            <a class="btn btn-small btn-line-gray" href="">删除</a>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </li>
-                                    </c:forEach>
-                                </ul>
-                            </div>
-                            </form>
-                            <div id="J_orderListPages">
-                                <c:if test="${pageInfo.total == 0}">
-
-                                    <span id="nullGoods">没有商品</span>
-
-                                </c:if>
-                                <c:if test="${pageInfo.total != 0}">
-                                    <div class="xm-pagenavi">
-                                            <%--<span class="numbers first"><span class="iconfont"></span></span>--%>
-                                        <a href="javascript:getPage(${pageInfo.prePage})" class="pre"><span class="iconfont"></span></a>
-                                        <span class="numbers current">${pageInfo.pageNum}</span>
-                                            <%--<span class="numbers last"><span class="iconfont"></span></span>--%>
-                                        <a href="javascript:getPage(${pageInfo.nextPage})" class='next'><span class="iconfont"></span></a>
-                                    </div>
-                                </c:if>
                             </div>
                         </div>
                     </div>

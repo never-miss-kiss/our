@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
@@ -66,16 +67,37 @@ public class HomeControl {
 
     @RequestMapping("/forUpUser.action")
     public void forUpdataUser(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(request);
         User user = (User) request.getSession().getAttribute("userInfo");
+//        User user = new User();
+//        User upUser = homeService.findUserById(user.getUserId());
 
-        User upUser = homeService.findUserById(user.getUserId());
+        String name = request.getParameter("userName");
+       /* String signature = request.getParameter();
+        String sex = request.getParameter();
+        String qq = request.getParameter();*/
+        System.out.println(name);
 
 
-        homeService.modifyUser(upUser);
 
-        request.setAttribute("user",upUser);
+        /*user.setNickname("1");
+        user.setSignature("2");
+        user.setSex("3");
+        user.setQq("4");*/
+        /*user.setNickname(user.getNickname());
+        user.setQq(user.getQq());
+        user.setSignature(user.getSignature());
+        user.setSex(user.getSex());*/
 
-        request.getRequestDispatcher("/wang/person/userSafe_1.jsp").forward(request,response);
+
+//        System.out.println(name);
+        homeService.modifyUser(user);
+
+//        User userNow = homeService.findUserById(upUser.getUserId());
+
+        request.setAttribute("user",user);
+
+        request.getRequestDispatcher("/wang/index.jsp").forward(request,response);
 
 
     }
@@ -89,25 +111,47 @@ public class HomeControl {
         Map<String,Object> gmap = new HashMap<>();
         gmap.put("queryPojo",queryPojo);
         User user = (User) request.getSession().getAttribute("userInfo");
-
         queryPojo.setUserId(user.getUserId());
-
         int pageSize = 3;
-
         int curPage = 1;
+        Integer goodsId = null;
+
+        String gid = request.getParameter("goodsId");
+        if(gid!=null && !gid.trim().equals("")){
+            goodsId = Integer.parseInt(gid);
+        }
 
         String gcurPage = request.getParameter("curPage");
         if (gcurPage != null && !gcurPage.trim().equals("")){
             curPage= Integer.parseInt(gcurPage);
         }
+
         gmap.put("pageSize",pageSize);
         gmap.put("curPage",curPage);
 
 //        PageInfo<User> pageInfo = adminService.getAllUser(gmap);
         PageInfo<Goods> pageInfo = homeService.selectGoodByUserId(gmap);
+
+
         request.setAttribute("pageInfo",pageInfo);
+//        request.setAttribute("goodsId",goodsId);
 
         request.getRequestDispatcher("/wang/person/userGoods.jsp").forward(request,response);
+    }
+
+    @RequestMapping(value = "/deleteGoods.action")
+    public void deleteGoodsByGoodsId(HttpServletRequest request,HttpServletResponse response) throws IOException {
+//        Goods goods = (Goods) request.getSession().getAttribute("goods");
+        String gid = request.getParameter("goodsId");
+        Integer goodsId = Integer.parseInt(gid);
+        PrintWriter out = response.getWriter();
+        try {
+            homeService.deleteGoodsById(goodsId);
+            out.print("1");
+        } catch (Exception e) {
+            e.printStackTrace();
+            out.print("0");
+        }
     }
 
     @RequestMapping("/favGoodsInUser.action")
@@ -193,6 +237,18 @@ public class HomeControl {
         String oldpwd = request.getParameter("oldPass");
         String newpwd = request.getParameter("newPass");
         String confim = request.getParameter("confim");
+
+    }
+
+
+    @RequestMapping(value = "updatePic.action")//修改头像
+    public void savaPic(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        User user = (User) request.getSession().getAttribute("userInfo");
+        User userNow = homeService.findUserById(user.getUserId());
+//        userNow.setPhoto(userNow.getPhoto());
+        homeService.modifyPicInUser(userNow.getPhoto());
+        request.setAttribute("user",userNow);
+        request.getRequestDispatcher("/wang/person/userSafe_1.jsp").forward(request,response);
 
     }
 

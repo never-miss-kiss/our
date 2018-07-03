@@ -19,7 +19,7 @@
     <link type="text/css" rel="stylesheet" href="<%= basePath%>/wang/css/modacctip.css">
     <link rel="stylesheet" href="<%= basePath%>/wang/css/base.min.css">
     <link rel="stylesheet" href="<%= basePath%>/wang/css/main.min.css">
-    <script src="<%= basePath%>wang/script/jquery-1.11.2.js"></script>
+    <script src="<%= basePath%>/wang/script/jquery-1.11.2.js"></script>
     <style>
         html {
             overflow-y: scroll;
@@ -291,7 +291,7 @@
     </style>
 
     <%--修改头像--%>
-    <script src="<%= basePath%>/wang/head/jquery.min.js"></script>
+    <%--<script src="<%= basePath%>/wang/head/jquery.min.js"></script>--%>
 
     <link rel="stylesheet" type="text/css" href="<%= basePath%>/bootstrap/css/bootstrap.min.css">
     <link href="<%= basePath%>/wang/head/cropper.min.css" rel="stylesheet">
@@ -357,7 +357,7 @@
 
 <div class="breadcrumbs">
     <div class="container">
-        <a href=""
+        <a href="<%= basePath%>/forum/list.action"
            onclick="">首页</a><span
             class="sep">&gt;</span><span>个人信息</span></div>
 </div>
@@ -429,7 +429,7 @@
                                     <div class="na-img-area marauto">
                                         <!--na-img-bg-area不能插入任何子元素-->
                                         <div class="na-img-bg-area">
-                                            <img src="%E5%B0%8F%E7%B1%B3%E5%B8%90%E5%8F%B7%20-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF_files/DiLDqkA3YsVzQI_320.jpg">
+                                            <img src="<%= basePath%>/profilePicture/${user.photo}">
                                         </div>
                                         <em class="na-edit"></em>
                                     </div>
@@ -451,7 +451,7 @@
                                             <a class="color4a9 fr" href="javascript:void(0)" id="save">
                                                 保存 |</a>
                                         </div>
-                                        <h3>基础资料</h3>
+                                        <h3 style="font-weight: 700">基础资料</h3>
                                     </div>
                                     <div id="userNow">
                                         <div class="fdata ">
@@ -470,9 +470,9 @@
                                         <div class="fdata ">
                                             <p><span>签名：</span><span class="value" val="m">${user.signature}</span></p>
                                         </div>
-                                        <div class="fdata ">
+                                        <%--<div class="fdata ">
                                             <p><span>学校：</span><span class="value" val="m">${user.school.name}</span></p>
-                                        </div>
+                                        </div>--%>
                                         <%--<div class="fdata ">
                                             <p><span>手机：</span><span class="value" val="m">${user.telphone}</span></p>
                                         </div>--%>
@@ -485,7 +485,7 @@
                                         <div class="fdata ">
                                             <p><span>姓名：</span><input value="${user.nickname}" name="userName" ></p>
                                         </div>
-                                        <%--<div class="fdata ">
+                                        <div class="fdata ">
                                             <p><span>性别：</span>
                                                 <select style="border: none" name="userSex">
                                                     <option >请选择</option>
@@ -493,31 +493,33 @@
                                                     <option  value="F">女</option>
                                                 </select>
                                             </p>
-                                        </div>--%>
-                                        <div class="fdata ">
-                                            <p><span>签名：</span><input value="${user.signature}"></p>
                                         </div>
                                         <div class="fdata ">
-                                            <p><span>学校：</span><input value="${user.school.name}"></p>
+                                            <p><span>签名：</span><input value="${user.signature}" name="signature"></p>
                                         </div>
                                         <%--<div class="fdata ">
-                                            <p><span>手机：</span><input value="${user.telphone}"></p>
+                                            <p><span>学校：</span><input value="${user.school.name}"></p>
                                         </div>--%>
                                         <div class="fdata ">
-                                            <p><span>QQ：</span><input value="${user.qq}"></p>
+                                            <p><span>QQ：</span><input value="${user.qq}" name="userQQ"></p>
                                         </div>
                                     </form>
                                     <script>
                                         $(document).ready(function(){
                                             $("#save").click(function(){
-                                                var param=$("#user").val();
-                                                console.log(param);
+                                                var userName = document.getElementsByName("userName")[0];
+                                                var sex = document.getElementsByName("userSex")[0];
+                                                var signature = document.getElementsByName("signature")[0];
+                                                var qq = document.getElementsByName("userQQ")[0];
+                                                var json = {userName:userName.value,sex:sex.value,signature:signature.value,qq:qq.value}
+                                                var str = JSON.stringify(json);
+                                                console.log(str);
                                                 $.ajax({
                                                     type:"post",
                                                     async:true,
                                                     timeout: 1000,
                                                     url:"${pageContext.request.contextPath}/home/forUpUser.action",
-                                                    data:{user:param},
+                                                    data:{user:str},
                                                     dataType:"json",
                                                     success:function(e){
                                                         console.log("成功");
@@ -598,10 +600,10 @@
     <img src="">
 </div>
 
-<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1" style="width: 65% !important; margin:-330px auto !important;  margin-bottom: 100px !important;" >
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <!--<form class="avatar-form" action="upload-logo.php" enctype="multipart/form-data" method="post">-->
+            <%--<form class="avatar-form" action="upload-logo.php" enctype="multipart/form-data" method="post">--%>
             <form class="avatar-form">
                 <div class="modal-header">
                     <button class="close" data-dismiss="modal" type="button">&times;</button>
@@ -629,28 +631,28 @@
                         <div class="row avatar-btns">
                             <div class="col-md-4">
                                 <div class="btn-group">
-                                    <button class="btn btn-danger fa fa-undo" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees"> 向左旋转</button>
+                                    <button class="btn btn-danger fa fa-undo" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees" style="width: 100px"> 向左旋转</button>
                                 </div>
                                 <div class="btn-group">
-                                    <button class="btn  btn-danger fa fa-repeat" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees"> 向右旋转</button>
+                                    <button class="btn  btn-danger fa fa-repeat" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees" style="width: 100px"> 向右旋转</button>
                                 </div>
                             </div>
                             <div class="col-md-5" style="text-align: right;">
-                                <button class="btn btn-danger fa fa-arrows" data-method="setDragMode" data-option="move" type="button" title="移动">
+                                <button class="btn btn-danger fa fa-arrows" data-method="setDragMode" data-option="move" type="button" title="移动" style="width: 20%">
 								<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;setDragMode&quot;, &quot;move&quot;)">
 								</span>
                                 </button>
-                                <button type="button" class="btn btn-danger fa fa-search-plus" data-method="zoom" data-option="0.1" title="放大图片">
+                                <button type="button" class="btn btn-danger fa fa-search-plus" data-method="zoom" data-option="0.1" title="放大图片" style="width: 20%">
 								<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;zoom&quot;, 0.1)">
 								  <!--<span class="fa fa-search-plus"></span>-->
 								</span>
                                 </button>
-                                <button type="button" class="btn btn-danger fa fa-search-minus" data-method="zoom" data-option="-0.1" title="缩小图片">
+                                <button type="button" class="btn btn-danger fa fa-search-minus" data-method="zoom" data-option="-0.1" title="缩小图片" style="width: 20%">
 								<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;zoom&quot;, -0.1)">
 								  <!--<span class="fa fa-search-minus"></span>-->
 								</span>
                                 </button>
-                                <button type="button" class="btn btn-danger fa fa-refresh" data-method="reset" title="重置图片">
+                                <button type="button" class="btn btn-danger fa fa-refresh" data-method="reset" title="重置图片" style="width: 20%">
 									<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;reset&quot;)" aria-describedby="tooltip866214">
                                     </span>
                                 </button>

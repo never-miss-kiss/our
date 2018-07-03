@@ -35,7 +35,12 @@
 
 
 <!--============================================================================================================-->
+    <!--public boolean updateUserPic(String photo);-->
+    <update id="updateUserPic" parameterType="String">
 
+        UPDATE  user SET photo = #{photo}
+
+    </update>
     <!--public boolean updatePassInUser(String password);-->
     <update id="updatePassInUser" parameterType="String">
         UPDATE user SET password=#{password}
@@ -58,7 +63,7 @@
 
     <!--public User updateUser(User user);-->
     <update id="updateUser" parameterType="User">
-        update user set sex=#{sex},qq=#{qq},telphone=#{telphone},email=#{email},nickname=#{nickname},signature=#{signature},school_id=#{schoolId},person_application_id=#{personApplicationId},photo=#{photo} where user_id=#{userId};
+        update user set sex=#{sex},qq=#{qq},nickname=#{nickname},signature=#{signature} where user_id=#{userId};
     </update>
 
     <!--public User selectUserByName(String uname)-->
