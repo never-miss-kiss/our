@@ -19,6 +19,10 @@ public interface HomeService {
 
     public boolean modifyPassInUser(String password);
 
+    public boolean modifyPicInUser(String photo);
+
+    public boolean deleteGoodsById(Integer goodsId);
+
     /**
      *@Author：wang
      *@Date: Created in 2018-6-20 20:56:24

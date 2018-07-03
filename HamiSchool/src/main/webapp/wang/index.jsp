@@ -25,5 +25,6 @@
  <%--欢迎${allAdmin}--%>
 
 <h2 id="test">这是一个测试网页，并没有内容显示</h2>
+${user}
 </body>
 </html>
