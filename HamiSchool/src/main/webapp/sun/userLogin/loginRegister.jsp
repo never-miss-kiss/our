@@ -19,29 +19,95 @@
 	<script type="text/javascript" src="<%=path%>/sun/jslogin/jquery-1.11.2.js"></script>
 	<script src="<%=path%>/sun/jslogin/pintuer.js"></script>
 	<script language="javascript">
+	<%--function get_mobile_code(obj){--%>
+      <%--/*    $.post('sms.jsp', {mobile:jQuery.trim($('#mobile').val())}, function(msg) {--%>
+			<%--alert(222);--%>
+			<%--alert($});--%>
+            <%--//alert(jQuery.trim(unescape(msg)));--%>
+			<%--if(msg=='提交成功'){--%>
+				<%--settime(obj);--%>
+			<%--} */--%>
+			<%--//alert($("#mobile").val());--%>
+		<%--alert("验证码");--%>
+
+	 	<%--$.post('<%=path%>sun/userLogin/sms.jsp', {mobile:jQuery.trim($('#mobile').val())}, function(code) {--%>
+           <%--//alert(jQuery.trim(unescape(msg)));--%>
+			<%--settime(obj);	--%>
+		<%----%>
+       	<%--}); --%>
+	<%--}--%>
 	function get_mobile_code(obj){
-      /*    $.post('sms.jsp', {mobile:jQuery.trim($('#mobile').val())}, function(msg) {
-			alert(222);
-			alert($});
-            //alert(jQuery.trim(unescape(msg)));
-			if(msg=='提交成功'){
-				settime(obj);
-			} */
-			//alert($("#mobile").val());
-		alert("验证码");
-	 	$.post('<%=path%>sun/userLogin/sms.jsp', {mobile:jQuery.trim($('#mobile').val())}, function(code) {
-           //alert(jQuery.trim(unescape(msg)));
-			settime(obj);	
-		
-       	}); 
+//		alert("点击");
+			;
+
+                $("#errormsg").html("");
+                // 获得手机号
+                var pvar= $("#mobile").val();
+//                alert(pvar);
+                var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+                if (!myreg.test(pvar)) {
+                    $("#errormsg").html("不是正确的手机号");
+                    $("#errormsg").css("color","red");
+                } else {
+					alert("手机号正确吗");
+                    //发送请求控制层，获得验证码
+                    settime(obj);
+
+                    $.ajax({
+                            type:"get",
+                            url:"${pageContext.request.contextPath}/loginpage/getYanMa.action",
+                            data:"phone="+pvar,
+                            success:function (result) {
+//                                alert("成功了");
+                                if(result.respCode=="00000"){
+//                                    alert(123);
+                                    //手机成功接受验证码短信
+
+                                    $("#yanzhengma").val(${yan});
+                                }else{
+//                                    alert(1234);
+                                    // 手机接受短信错误
+                                    $("#errormsg").html(request.respDesc);
+                                    $("#errormsg").css("color","red");
+
+                                }
+                            },
+                            error:function () {
+
+                            }
+                        }
+                    );
+//                    alert("zzz");
+                    var yan = <%= request.getAttribute("yan")%>;
+                    alert(yan);
+                    $("#yanzhengma").val(yan);
+
+                }
 	}
-	function get_phone_code(obj){
-		
-		 	$.post('<%=path%>sun/userLogin/sms.jsp', {mobile:jQuery.trim($('#mobilephone').val())}, function(code) {
-				setretime(obj);		
-	        }); 
-	    
-    }
+
+
+
+
+
+            //登录
+            $("#form1").submit(
+
+                function () {
+
+                    var yan= $("#yanzhengma").val();//验证码
+                    var  phone=$("#mycode").val();//填写的验证码
+                    if(yan==phone){
+                        return true;
+                    }
+
+                }
+
+
+            );
+
+
+
+
 	
 	
 	var countdown=60; 
@@ -79,6 +145,7 @@
 		    ,1000); 
 	
 	}
+
 </script>
 	<style>
 		#divmy{
@@ -95,6 +162,7 @@
 			width:100%;
 			height: 1030px;
 			position: absolute;
+			background-attachment: fixed;
 			opacity: 0.5;
 
 		}
@@ -116,6 +184,7 @@
 		<form action="<%= basePath%>loginpage/login.action" method="post">
 			<div class="login-con f-l">
 				<div class="form-group field field-icon-right">
+					<span id=""></span>
 					用户名<input type="text" name="user.telephone" placeholder="手机号\邮箱"  data-validate="required:手机号不能为空,regexp#(^1(3|4|5|7|8)\d{9}$):手机号不正确" />
 
 					<c:if test="${param.info == '2' }">
@@ -214,7 +283,7 @@
 				function  checkuserinput() {
 //				    此方法用来看用户名是否同名
 					var username = document.getElementById("mobile").value;
-					alert(username);
+
 					$.ajax({
 						type:"post",
 						url:"${pageContext.request.contextPath}/loginpage/register.action",
@@ -231,18 +300,28 @@
 				    var password1 = document.getElementById("input_invisible").value;
 
                     var password2 = document.getElementById("input_visible").value;
-                    alert(password1 + "==" + password2) ;
+
                     if(password1!=null){
                         if(password1!==password2){
-                            alert("我们不一样");
+
                             document.getElementById("myspan1").innerHTML="两次密码不一致！！！";
 						}
 					}
+					if(document.getElementById("myspan1").innerHTML!="两次密码不一致！！！"){
+                       $("#zphone").removeAttribute("disabled");
+					}
                 }
 			</script>
-			<form action="${pageContext.request.contextPath }/loginpage/register.action" method="post" onsubmit="return checkUser();">
-			<div class="signup f-l">
-				<div class="form-group field field-icon-right"> 
+			<c:if test="${param.info=='4'}">
+				<script>
+				alert("注册成功");
+				</script>
+			</c:if>
+			<form action="${pageContext.request.contextPath }/loginpage/registerSub.action" method="post" >
+				<%--onsubmit="return checkUser();"--%>
+				<div class="signup f-l">
+				<div class="form-group field field-icon-right">
+					<span id="errormsg"></span>
 					手机号<input type="text" id="mobile" name="user.telephone" placeholder="您的手机号" data-validate="required:手机号不能为空,regexp#(^1(3|4|5|7|8)\d{9}$):手机号不正确" onblur="checkuserinput()">
 					<span style='color:red;font-size:9pt' id="myspan"></span>
 				</div>
@@ -261,8 +340,8 @@
 					确认密码<input type="password" class="input" id="input_visible"   placeholder="确认密码" data-validate="required:密码不能为空" onblur="checkuserinput1()">
 				</div>
 				<span style='color:red;font-size:9pt' id="myspan1"></span>
-				<div class="form-group">
-					<input id="zphone" type="button" value=" 发送验证码 " onclick="get_mobile_code(this)" />
+				<div >
+					<input id="zphone" type="button" value="发送验证码 "  class="tran pr"  onclick="get_mobile_code(this)" />
 				</div>
 				<div class="form-group field field-icon-right">
 					
@@ -270,10 +349,11 @@
 					 <c:if test="${param.info == '3' }">
 			  			<span style='color:red;font-size:9pt'>验证码错误！</span>
 					</c:if>
+					<input type="hidden" id="yanzhengma" value="${yan}"/>
 				</div>
 				<div class="form-group">
 					<button type="submit" class="tran pr" >
-						<a href="javascript:;" class="tran">注册</a>
+						<a href="javascript:" class="tran" >注册</a>
 						<img class="loading" src="../images/loading.gif">
 					</button>
 				</div>

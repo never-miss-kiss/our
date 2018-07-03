@@ -133,7 +133,10 @@ public class ForumControl {
             forumPost.setContent(content);
             forumPost.setUserId(user.getUserId());
             forumPost.setReleaseTime(new Date());
+            forumPost.setUser(user);
             forumService.addForumPost(forumPost);
+            List<ForumPost> onesForumPost = forumService.findForumPostsByCondition(user.getUserId());
+            request.setAttribute("ForumPostRecent",onesForumPost);
             request.setAttribute("ForumPost", forumPost);
             request.getRequestDispatcher("/sun/jsp/postandcomment.jsp").forward(request,response);
         }

@@ -77,7 +77,7 @@
     <!--public boolean  insertForumPost();-->
     <insert id="insertForumPost" parameterType="ForumPost">
         insert into forum_post(user_id,title,content,release_time,update_time,remark,click_count,comment_count,is_top,is_advertisement,photo) values(#{userId},#{title},#{content},
-        #{releaseTime},NULL,NULL,NULL,NULL,0,#{isAdvertisement},NULL )
+        #{releaseTime},NULL,NULL,0,NULL,0,#{isAdvertisement},NULL )
     </insert>
 
 

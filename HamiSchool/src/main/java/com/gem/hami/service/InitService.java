@@ -10,7 +10,7 @@ public interface InitService {
 
 //    /init/register.action
 //    注册
-    public boolean register(String id, String password);
+    public boolean register(User user);
 
 
 //  获得验证码 图片验证码不需要写接口

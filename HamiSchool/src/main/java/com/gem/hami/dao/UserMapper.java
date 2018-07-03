@@ -27,7 +27,7 @@ public interface UserMapper {
       * @Date：Created in 20:37 2018/6/4
       * @Modified By:
      */
-    public boolean insertUser(String id, String password);
+    public boolean insertUser(User user);
 
 
 

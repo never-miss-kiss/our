@@ -28,7 +28,7 @@
 
     <!--public boolean insertUser(int id,String password);-->
     <insert id="insertUser" parameterType="User">
-        INSERT INTO user(telphone,password) VALUES (#{phone},#{password})
+        INSERT INTO user(telphone,password) VALUES (#{telphone},#{password})
     </insert>
     
 

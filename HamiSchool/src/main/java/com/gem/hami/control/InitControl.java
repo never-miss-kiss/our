@@ -2,6 +2,8 @@ package com.gem.hami.control;
 
 import com.gem.hami.entity.User;
 import com.gem.hami.service.InitService;
+import com.gem.miaodiyun.httpApiDemo.AccountInfo;
+import com.gem.miaodiyun.httpApiDemo.IndustrySMS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +43,7 @@ public class InitControl {
 
     }
     @RequestMapping(value = "/register.action")
-    public void  register(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public void  register(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String username = request.getParameter("username");
         User user = initService.login(username);
@@ -51,10 +53,59 @@ public class InitControl {
         }
     }
 
-    @RequestMapping("/exit.action")
-    public void  exit(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.removeAttribute("userInfo");
-        response.sendRedirect("/HamiSchool/tian/index/index.jsp");
+    @RequestMapping(value = "/registerSub.action")
+    public void  registerSub(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        String username = request.getParameter("user.telephone");
+       String pwd = request.getParameter("user.password");
+        System.out.println(username);
+        System.out.println(pwd);
+       User user = new User();
+       user.setTelphone(username);
+       user.setPassword(pwd);
+       initService.register(user);
+       request.getRequestDispatcher("/sun/userLogin/loginRegister.jsp?info=4").forward(request,response);
     }
+
+    @RequestMapping
+    public void yanzhengma(HttpServletRequest request, HttpServletResponse response){
+
+        String to = request.getParameter("");
+
+    }
+
+    @RequestMapping("/getYanMa.action")
+    public String getYanMa(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        PrintWriter out = response.getWriter();
+        String phone = request.getParameter("phone");
+        int num= (int)((Math.random()*9+1)*100000);//6位随机数字
+        System.out.println(phone +"=="+num);
+//        短信内容,根据注册的模板 例如"【项目中心】您的验证码为23456，请于2分钟内正确输入，如非本人操作，请忽略此短信。"
+
+        String Content="【项目中心】您的验证码为"+num+"，请于2分钟内正确输入，如非本人操作，请忽略此短信。";
+
+        request.setAttribute("yan",num);
+
+        AccountInfo.execute();
+        IndustrySMS industrySMS=new IndustrySMS(phone,Content);
+        String resJson=industrySMS.execute();
+        System.out.println(resJson+"哈哈");
+        out.println(resJson);
+        return resJson;
+
+
+    }
+
+
+
+//
+//    @RequestMapping("/login.action")
+//    public void login(User user, HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        if(user.getUname().equals("xl")&&user.getPwd().equals("123")){
+//            response.setCharacterEncoding("utf-8");
+//            response.getWriter().print("登录成功");
+//        }
+
+//    }
+
 }

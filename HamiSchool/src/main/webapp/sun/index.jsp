@@ -60,30 +60,33 @@
             border: none;
             outline:medium;
         }
+        #imgmypost{
+            width:100%;
+            height: 1030px;
+            position: absolute;
+            background-attachment: fixed;
+            opacity: 0.2;
+            z-index: -1;
+
+        }
     </style>
 
-    <script>
+    <%--<script>
         function subm(){
            var title = document.getElementById("title").value;
             document.getElementById("content").value=editor.txt.html();
             var content = document.getElementById("content").value;
             alert(title+"=="+document.getElementById("content").value);
             document.getElementById('newspost').submit();
-            <%--var jqxhr;--%>
-            <%--$.ajax({--%>
-                <%--type:"post",--%>
-                <%--url:"${pageContext.request.contextPath}/forum/addpost.action",--%>
-                <%--data:{"title":title,"content":content},--%>
-                <%--success:function(){--%>
-                    <%--if("REDIRECT" == jqxhr.getResponseHeader("REDIRECT")){ //若HEADER中含有REDIRECT说明后端想重定向，--%>
-                        <%--var win = window;--%>
-
-                        <%--win.location.href = jqxhr.getResponseHeader("CONTENTPATH");//将后端重定向的地址取出来,使用win.location.href去实现重定向的要求--%>
-                    <%--}--%>
-                <%--}--%>
-
-            <%--})--%>
-
+        }
+    </script>--%>
+    <script>
+        function subm(){
+            var title = document.getElementById("title").value;
+            document.getElementById("content").value=editor.txt.html();
+            var content = document.getElementById("content").value;
+            alert(title+"=="+document.getElementById("content").value);
+            document.getElementById('newspost').submit();
         }
     </script>
 
@@ -135,16 +138,23 @@
 
 </head>
 <body>
+<img src="<%=path%>/sun/images/post1.jpg" id="imgmypost"/>
 
 
+<style>
+    #mytest{
+        font-family: Georgia;
+        font-size: 25px;
+    }
+</style>
 
     <%--标题：--%>
     <%--<input type="text" id="title" name="title"/><br/><br/>--%>
-        <div class="title">
-            <span>发表新主题</span>
+        <div class="mytest">
+            <span id="mytest">发表新主题</span>
         </div>
 
-    <form id="newspost" method="post" action="<%=application.getContextPath()%>/forum/addpost.action">
+    <form id="newspost" method="post" action="<%=application.getContextPath()%>/forum/addpost.action" >
 
         <div id="ziji" class="importtopic">
             <span id="text1" class="label"></span>

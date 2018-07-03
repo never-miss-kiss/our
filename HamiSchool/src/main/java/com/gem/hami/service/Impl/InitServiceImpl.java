@@ -18,9 +18,9 @@ public class InitServiceImpl implements InitService {
     }
 
     @Override
-    public boolean register(String id, String password) {
+    public boolean register(User user) {
 
-        return false;
+        return userMapper.insertUser(user);
     }
 
     @Override

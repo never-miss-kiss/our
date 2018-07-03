@@ -382,8 +382,15 @@
         </div> -->
     <div class="container_wrap wrap_990 clearfix">
 
-        <div class="plateinfor " >
-            <a href="http://bbs.xiaomi.cn/thread/add/fid/501/type/forum" class="btn sendtheme">+发表新主题</a>
+        <style>
+            .myself11{
+
+                margin-left: 790px;
+
+            }
+        </style>
+        <div class="myself11 " >
+            <a href="<%=basePath%>forum/list.action" class="btn">返回论坛首页</a>
         </div>
 
 
@@ -413,11 +420,13 @@
                             border-left: none;
                             padding-left: 24px;
                         }
+                        #homemy{
+                            margin-left: 50px;
+                        }
                     </style>
 
-                    <a class="btn" href="http://bbs.xiaomi.cn/u-detail-137006033" target="_blank"
+                    <a id="homemy" class="btn" href="" target="_blank"
                        rel="noopener noreferrer">Ta的主页</a>
-                    <span class="btn btn-blue J_sendmsg">发消息</span>
                 </div>
             </div>
             <div class="left_wrap">
@@ -492,8 +501,7 @@
 
                         <span>发表在 </span>
                         <span class="time">${ForumPost.releaseTime}</span>
-                        <span class="f_r"><i class="msg"></i>点击数：${ForumPost.clickCount}</span>
-                        <span class="f_r"><i class="see"></i>点赞数：8430</span>
+                        <span class="f_r"><i class="msg"></i>点赞数：${ForumPost.clickCount}</span>
                     </p>
 
                     <div class="invitation_content">
@@ -565,7 +573,6 @@
 
                 <!--收藏举报点赞  -->
                 <div class="btn_wrap clearfix">
-                    <a href="javascript:void(0);" class="report_btn J_reportBtn">举报</a>
                     <a href="javascript:void(0)" class="collect_btn J_collect">收藏</a>
                 </div>
        </div>
@@ -604,15 +611,13 @@
                                     <span class="at"> 发表于</span>
                                     <span class="time">${forumcomment.releaseTime}</span>
                                     <span class="comefrom"></span>
-
-                                    <span class="reply_list_float">810#</span>
                                 </div>
 
                                 <div class="reply_txt"><p>${forumcomment.content}</p>
                                     <p class="replay_bu">
                                         <a class="replay_btn" onclick="showkuang(${forumcomment.user.userId},${forumcomment.forumPostCommentId},${ForumPost.forumPostId})">回复</a>
 
-                                        <span class="replay_btn J_report">举报</span>
+
 
                                     </p>
 
