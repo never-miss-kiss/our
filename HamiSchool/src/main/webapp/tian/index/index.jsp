@@ -77,6 +77,7 @@
 			<li><a href="<%=basePath%>goods/findAllGoods.action"><span>二手商品</span></a></li>
 			<li><a href="<%=basePath%>forum/list.action"><span>社区交流</span></a></li>
 			<li><a href="<%=basePath%>help/selectAllHelps.action"><span>跑腿</span></a></li>
+			<li><a href="<%=basePath%>wang/admin/login.jsp"><span>后台</span></a></li>
 		</ul>
 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>

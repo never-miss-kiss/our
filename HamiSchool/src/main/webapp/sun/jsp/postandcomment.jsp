@@ -399,7 +399,7 @@
             <div class="left_wrap personLayer">
                 <div class="con">
                     <div class="personLayer_msg">
-                        <a href="http://bbs.xiaomi.cn/u-detail-137006033" class="user_head">
+                        <a href="#" class="user_head">
                             <img src="${pageContext.request.contextPath}/profilePicture/${ForumPost.user.photo}"
                                  class="user_pic">
                         </a>

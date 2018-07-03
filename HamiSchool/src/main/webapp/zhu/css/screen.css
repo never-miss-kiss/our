@@ -821,7 +821,7 @@ ul.social li a {
 .subscribe-box {
     background: transparent;
 	/*border:3px solid var(--primary-color);*/
-	border:3px solid darkorange;
+	border:3px solid #EFDBE9;
     padding: 20px;
     text-align: center;
 	display:inline-block;
@@ -831,14 +831,14 @@ ul.social li a {
 	margin:0 20px 30px 20px;;
 }
 
-.subscribe-box:hover {border:3px solid red;}
+.subscribe-box:hover {border:3px solid #EF8D00;}
 .subscribe-box h2.head {margin:5px 0; float:none; display:inline-block; margin-bottom:20px;}
-.subscribe-btn {display:block; border:1px solid orange; width:100%; height:auto; background-color: orange; cursor:pointer; padding:12px; color:#fff; text-align:center; transition: all 0.1s linear 0s; border-radius:4px;}
-.subscribe-btn:hover { border:1px solid transparent; background:red; color:#fff;}
+.subscribe-btn {display:block; border:1px solid #EFDBE9; width:100%; height:auto; background-color: #EFDBE9; cursor:pointer; padding:12px; color:#EF8D00; text-align:center; transition: all 0.1s linear 0s; border-radius:4px;}
+.subscribe-btn:hover { border:1px solid transparent; background:#EF8D00; color:#fff;}
 .subscribe-box #subscribe,
 aside #subscribe {margin-bottom:15px;}
 .subscribe-box p {
-	color: #fff;
+	color: #EF8D00;
 	font-style:italic;
     display:inline-block;
     font-size: 14px;

@@ -104,7 +104,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="${pageContext.request.contextPath}/home/forupdateUser.action?userId=${user.userId}" <%--target="_blank"--%>
+                                <li><a href="#" <%--target="_blank"--%>
                                        onclick="">个人信息</a>
                                 </li>
                                 <li><a href="" onclick="">修改密码</a>

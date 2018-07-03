@@ -96,6 +96,12 @@ public class InitControl {
 
     }
 
+    @RequestMapping("/exit.action")
+    public void  exit(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.removeAttribute("userInfo");
+        response.sendRedirect("/HamiSchool/tian/index/index.jsp");
+    }
 
 
 //
